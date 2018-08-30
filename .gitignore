@@ -68,3 +68,6 @@ typings/
 .DS_Store
 
 # Docs Custom
+.cache/
+public
+yarn-error.log
