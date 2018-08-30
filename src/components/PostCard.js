@@ -113,7 +113,8 @@ const makeAuthorObject = author => {
 const PostCard = props => {
     const post = props.post;
     const tag = post.primaryTag ? post.primaryTag.name : (post.tags ? post.tags[0].name : 'Untagged');
-    const url = `/faq/${post.slug}`
+    // TODO: remove, once we have templates for each
+    const url = post.primaryTag.slug === 'company' ? `/faq/${post.slug}` : `/tutorials/${post.slug}`;
     const excerpt = getExcerpt(post);
     const authors = post.authors[0].name ? post.authors : post.authors.map(author => makeAuthorObject(author));
 

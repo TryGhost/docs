@@ -11,7 +11,7 @@ export default ({data}) => {
     const post = data.ghostPost;
     return (
         <Container>
-            <Link to="/faq/">&lt; Home</Link>
+            <Link to="/tutorials/">&lt; Home</Link>
               <header>
                 <section>
                     <time datetime={post.publishedAt}>{post.publishedAt}</time>
@@ -31,7 +31,7 @@ export default ({data}) => {
 };
 
 export const articleQuery = graphql`
-    query FAQQuery($slug: String!) {
+    query TutorialQuery($slug: String!) {
         ghostPost(slug: { eq: $slug }) {
           title
           custom_excerpt

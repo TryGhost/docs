@@ -7,10 +7,10 @@ exports.onCreateNode = ({node, getNode, actions}) => {
 exports.createPages = ({graphql, actions}) => {
     const {createPage} = actions;
 
-    const loadPosts = new Promise((resolve, reject) => {
+    const loadFAQPosts = new Promise((resolve, reject) => {
         graphql(`
           {
-            allGhostPost {
+            allGhostPost(filter: {primary_tag: {slug: {eq: "company"}}}) {
               edges {
                 node {
                   slug
@@ -32,6 +32,31 @@ exports.createPages = ({graphql, actions}) => {
         });
     });
 
-    return Promise.all([loadPosts]);
+    const loadTutorialPosts = new Promise((resolve, reject) => {
+        graphql(`
+          {
+            allGhostPost(filter: {primary_tag: {slug: {eq: "ghost-pro"}}}) {
+              edges {
+                node {
+                  slug
+                }
+              }
+            }
+          }
+        `).then((result) => {
+            result.data.allGhostPost.edges.forEach(({node}) => {
+                createPage({
+                    path: `/tutorials/${node.slug}/`,
+                    component: path.resolve(`./src/templates/tutorials.js`),
+                    context: {
+                        slug: node.slug
+                    }
+                });
+            });
+            resolve();
+        });
+    });
+
+    return Promise.all([loadFAQPosts, loadTutorialPosts]);
 };
 

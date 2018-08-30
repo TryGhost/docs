@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
 
 import Container from '../../components/Container';
 import PostCard from '../../components/PostCard';
@@ -37,8 +38,12 @@ export default ({ data }) => {
 };
 
 export const pageQuery = graphql`
-  query GhostPostsQuery {
-    allGhostPost(sort: { order: DESC, fields: [published_at] }, limit: 50) {
+  query GhostFAQQuery {
+    allGhostPost(
+        sort: { order: DESC, fields: [published_at] },
+        limit: 50,
+        filter: {primary_tag: {slug: {eq: "company"}}}
+    ) {
       edges {
         node {
           slug
