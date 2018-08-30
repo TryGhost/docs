@@ -1,5 +1,3 @@
-let activeEnv = process.env.NODE_ENV || 'development';
-
 require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`
 });
@@ -36,7 +34,7 @@ module.exports = {
         {
             resolve: `gatsby-source-ghost`,
             options: {
-                apiUrl: `https://ghosthq.ghost.io`,
+                apiUrl: `https://docs-2.ghost.io`,
                 clientId: `ghost-frontend`,
                 clientSecret: `${process.env.GH_CLIENT_SECRET}`
             }

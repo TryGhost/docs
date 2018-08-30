@@ -27,7 +27,7 @@ export const pageQuery = graphql`
     allGhostPost(
         sort: { order: DESC, fields: [published_at] },
         limit: 50,
-        filter: {primary_tag: {slug: {eq: "ghost-pro"}}}
+        filter: {primary_tag: {slug: {eq: "tutorial"}}}
     ) {
       edges {
         node {

@@ -10,7 +10,7 @@ exports.createPages = ({graphql, actions}) => {
     const loadFAQPosts = new Promise((resolve, reject) => {
         graphql(`
           {
-            allGhostPost(filter: {primary_tag: {slug: {eq: "company"}}}) {
+            allGhostPost(filter: {primary_tag: {slug: {eq: "faq"}}}) {
               edges {
                 node {
                   slug
@@ -35,7 +35,7 @@ exports.createPages = ({graphql, actions}) => {
     const loadTutorialPosts = new Promise((resolve, reject) => {
         graphql(`
           {
-            allGhostPost(filter: {primary_tag: {slug: {eq: "ghost-pro"}}}) {
+            allGhostPost(filter: {primary_tag: {slug: {eq: "tutorial"}}}) {
               edges {
                 node {
                   slug
