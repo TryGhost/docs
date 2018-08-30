@@ -1,8 +1,8 @@
 ---
 title: "Introduction"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-path: "/introduction/"
 next: "/setup/what-is-ghost/"
+template:
 tags:
     - concepts
 ---
