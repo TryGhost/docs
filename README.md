@@ -1,26 +1,18 @@
-# gatsby-starter-default
-The default Gatsby starter.
+# Docs
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+## Installation
+1. Make sure that `gstenv` is green. See [Dev Environment](https://github.com/TryGhost/Team/blob/master/Engineering/Dev%20Environment.md) for docs.
+2. `git clone` this repo & `cd` into it as usual
+3. Run `yarn` to install top-level dependencies.
 
-## Install
+## Run
+- Use: `yarn dev`
+- View: [http://localhost:9999](http://localhost:9999)
 
-Make sure that you have the Gatsby CLI program installed:
-```sh
-npm install --global gatsby-cli
-```
+## Test
+- `yarn lint` run just eslint
+- `yarn test` run lint && tests
 
-And run from your CLI:
-```sh
-gatsby new gatsby-example-site
-```
+# Copyright & License
 
-Then you can run it by:
-```sh
-cd gatsby-example-site
-gatsby develop
-```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+Copyright (c) 2018 Ghost Foundation - Released under the [MIT license](LICENSE).
