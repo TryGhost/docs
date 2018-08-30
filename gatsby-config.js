@@ -6,7 +6,9 @@ require('dotenv').config({
 
 module.exports = {
     siteMetadata: {
-        title: 'Ghost Docs'
+        title: `Ghost Docs`,
+        siteUrl: `https://docs.ghost.org`,
+        description: `Find all the docs you want`
     },
     plugins: [
         'gatsby-plugin-react-helmet',
@@ -36,7 +38,7 @@ module.exports = {
             options: {
                 apiUrl: `https://ghosthq.ghost.io`,
                 clientId: `ghost-frontend`,
-                clientSecret: `c78a9c8d1ef6`
+                clientSecret: `${process.env.GH_CLIENT_SECRET}`
             }
         }
     ]
