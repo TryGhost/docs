@@ -38,7 +38,6 @@ module.exports = {
                 clientId: `ghost-frontend`,
                 clientSecret: `c78a9c8d1ef6`
             }
-        },
-        `gatsby-plugin-styled-components`
+        }
     ]
 };
