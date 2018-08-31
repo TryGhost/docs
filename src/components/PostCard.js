@@ -37,7 +37,7 @@ const PostCard = props => {
     const authors = post.authors[0].name ? post.authors : post.authors.map(author => makeAuthorObject(author));
 
     return (
-        <article>
+        <article class="ml4">
             <div>
                 <Link to={url}>
                     <header>
