@@ -25,13 +25,16 @@
   },
   "dependencies": {
     "bluebird": "^3.5.1",
-    "gatsby": "next",
+    "gatsby": "^2.0.0-rc.5",
     "gatsby-plugin-manifest": "next",
     "gatsby-plugin-offline": "next",
     "gatsby-plugin-react-helmet": "next",
+    "gatsby-remark-custom-blocks": "^1.0.5",
+    "gatsby-remark-prismjs": "^2.0.5",
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-source-ghost": "^2.1.0",
     "gatsby-transformer-remark": "^1.7.44",
+    "prismjs": "^1.15.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0"

@@ -1,1 +1,5 @@
 /* Custom CSS here */
+.custom-block-danger {
+    background: tomato;
+    border: 1px grey solid;
+}
