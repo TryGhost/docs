@@ -2,4 +2,10 @@
 .custom-block-danger {
     background: tomato;
     border: 1px grey solid;
+    max-width: 500px;
+}
+.custom-block-info {
+    background: lightblue;
+    border: 1px grey solid;
+    max-width: 500px;
 }
