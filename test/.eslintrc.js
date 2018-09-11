@@ -1,6 +1,7 @@
 module.exports = {
-    plugins: ['ghost'],
+    plugins: ['ghost', 'react'],
     extends: [
         'plugin:ghost/test',
+        'plugin:react/recommended'
     ]
 };

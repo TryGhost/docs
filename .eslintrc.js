@@ -1,6 +1,12 @@
 module.exports = {
-    plugins: ['ghost'],
+    'parserOptions': {
+        'ecmaFeatures': {
+            'jsx': true
+        }
+    },
+    plugins: ['ghost', 'react'],
     extends: [
-        'plugin:ghost/node',
+        'plugin:ghost/ember',
+        'plugin:react/recommended'
     ]
 };
