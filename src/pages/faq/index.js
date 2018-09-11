@@ -1,26 +1,34 @@
-import Container from '../../components/Container'
+import Layout from '../../components/layout'
+import Link from 'gatsby-link'
 import PostCard from '../../components/PostCard'
-
+import PropTypes from 'prop-types'
 import React from 'react'
 import { graphql } from 'gatsby'
 
-export default ({ data }) => {
+const FAQPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
-        <Container>
-            <header>
-                <h1>Gatsby + Ghost Demo</h1>
-            </header>
-            <main>
+        <Layout>
+            <Link to="/">&lt; Home</Link>
+            <section>
+                <h1>FAQ</h1>
                 <div>
-                    {posts.map(({ node }) => (
-                        <PostCard key={node.id} post={node} />
-                    ))}
+                    <div>
+                        {posts.map(({ node }) => (
+                            <PostCard key={node.id} post={node} />
+                        ))}
+                    </div>
                 </div>
-            </main>
-        </Container>
+            </section>
+        </Layout>
     )
 }
+
+FAQPage.propTypes = {
+    data: PropTypes.object.isRequired,
+}
+
+export default FAQPage
 
 export const pageQuery = graphql`
   query GhostFAQQuery {

@@ -1,7 +1,7 @@
 ---
-title: "What is Ghost"
+title: "Docker"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-next: "/setup/ghost-pro/"
+next: "/setup/"
 tags:
     - setup
 ---

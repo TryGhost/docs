@@ -5,14 +5,31 @@ import { Link } from 'gatsby'
 
 const IndexPage = () => (
     <Layout>
-        <h1>Hi people</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <Link to="/setup/">Getting Started</Link><br />
-        <Link to="/concepts/">Core Concepts</Link><br />
-        <Link to="/tutorials/">Tutorials</Link><br />
-        <Link to="/api/">API</Link><br />
-        <Link to="/faq/">FAQ</Link><br />
+        <section>
+            <div>
+                <input placeholder="Search"></input>
+            </div>
+        </section>
+        <section>
+            <div>
+                <Link to="/setup/">Getting Started</Link><br />
+            </div>
+            <div>
+                <Link to="/concepts/introduction/">Core Concepts</Link><br />
+            </div>
+            <div>
+                <Link to="/tutorials/">Tutorials</Link><br />
+            </div>
+        </section>
+        <section>
+            <h2>More Resources</h2>
+            <div>
+                <Link to="/api/">API</Link><br />
+            </div>
+            <div>
+                <Link to="/faq/">FAQ</Link><br />
+            </div>
+        </section>
     </Layout>
 )
 

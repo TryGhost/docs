@@ -20,11 +20,11 @@ const Layout = ({ children }) => (
         }
       }
     `}
-        render={data => (
+        render = {data => (
       <>
         <Helmet
-            title={data.site.siteMetadata.title}
-            meta={[
+            title = {data.site.siteMetadata.title}
+            meta = {[
                 { name: `description`, content: `Ghost Docs` },
                 { name: `keywords`, content: `documentation, ghost` },
             ]}

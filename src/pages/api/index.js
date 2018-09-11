@@ -3,15 +3,43 @@ import React from 'react'
 
 import { Link } from 'gatsby'
 
-const APIIndexPage = () => (
+const APIPage = () => (
     <Layout>
-        <h1>Hi people</h1>
-        <p>Welcome to your new Setup site.</p>
-        <p>Now go build something great.</p>
         <Link to="/">Home</Link><br />
-        <Link to="/api/v2/handlebars-themes/overview/">Handlebars Themes</Link><br />
-        <Link to="/api/v0.11/migrate-to-1/">Migrate to 2.0</Link>
+        <h1>Ghost API</h1>
+        <section>
+            <h2>Frontend SDK</h2>
+            <div>
+                <div>
+                    <Link to="/api/v2/handlebars-themes/overview/">Handlebars Themes</Link><br />
+                </div>
+                <div>
+                    <Link to="/api/v0.11/migrate-to-1/">Migrate to 2.0</Link>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Client Libraries</h2>
+            <div>
+                <div>
+                    <Link to="/api/v2/handlebars-themes/overview/">Handlebars Themes</Link><br />
+                </div>
+                <div>
+                    <Link to="/api/v0.11/migrate-to-1/">Migrate to 2.0</Link>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div>
+                <div>
+                    <Link to="/api/v2/handlebars-themes/overview/">Handlebars Themes</Link><br />
+                </div>
+                <div>
+                    <Link to="/api/v0.11/migrate-to-1/">Migrate to 2.0</Link>
+                </div>
+            </div>
+        </section>
     </Layout>
 )
 
-export default APIIndexPage
+export default APIPage

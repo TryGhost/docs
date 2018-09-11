@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from 'gatsby'
 
@@ -29,5 +30,9 @@ const Header = ({ siteTitle }) => (
         </div>
     </div>
 )
+
+Header.propTypes = {
+    siteTitle: PropTypes.node.isRequired,
+}
 
 export default Header

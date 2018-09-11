@@ -1,4 +1,5 @@
 import Container from '../components/Container'
+import Layout from '../components/layout'
 import Link from 'gatsby-link'
 import Post from '../components/Post'
 
@@ -10,16 +11,18 @@ import { graphql } from 'gatsby'
 const DocTemplate = ({ data }) => {
     const post = data.markdownRemark
     return (
-        <Container>
-            <Link to="/">&lt; Home</Link>
-            <header>
-                <h1>{post.frontmatter.title}</h1>
-            </header>
+        <Layout>
+            <Container>
+                <Link to="/">&lt; Home</Link>
+                <header>
+                    <h1>{post.frontmatter.title}</h1>
+                </header>
 
-            <Post>
-                <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            </Post>
-        </Container>
+                <Post>
+                    <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                </Post>
+            </Container>
+        </Layout>
     )
 }
 

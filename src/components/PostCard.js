@@ -1,6 +1,7 @@
 import AuthorList from './AuthorList'
 import Link from 'gatsby-link'
 
+import PropTypes from 'prop-types'
 import React from 'react'
 
 const getExcerpt = (post) => {
@@ -19,6 +20,8 @@ const getExcerpt = (post) => {
     if (post.body) {
         return post.body.body.substring(0, 200)
     }
+
+    return post
 }
 
 const makeAuthorObject = (author) => {
@@ -53,6 +56,10 @@ const PostCard = (props) => {
             </div>
         </article>
     )
+}
+
+PostCard.propTypes = {
+    post: PropTypes.object.isRequired,
 }
 
 export default PostCard

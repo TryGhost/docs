@@ -1,12 +1,11 @@
 ---
-title: "What is Ghost"
+title: "Pages"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-next: "/setup/ghost-pro/"
+next: "/concepts/authors/"
+template:
 tags:
-    - setup
+    - concepts
 ---
-
-# This is a first heading
 
 ## This is the second heading
 
@@ -23,16 +22,6 @@ makeArray() {
 }
 ```
 
-This is a danger box
-
-[[danger]]
-| content
-
-This is an info box with an optional title
-
-[[info | This is a info box!]]
-| You should take care
-
 ### This is the third heading
 
 Pork chop ribeye ut chicken buffalo proident minim leberkas cupim adipisicing burgdoggen incididunt pastrami cupidatat. Prosciutto kevin dolore labore ham, cupidatat pork loin fatback picanha irure ad short ribs duis. Cupidatat excepteur jerky doner, incididunt consectetur turkey pariatur. Culpa consectetur cillum shank ham hock anim pastrami ex tempor eu. Fatback strip steak pig, bacon salami drumstick ut capicola short loin flank.
@@ -43,4 +32,3 @@ Spare ribs aute fugiat, pariatur andouille labore nulla exercitation. Aliqua pic
 
 Hamburger ham shank est, officia qui capicola proident. Ribeye dolore prosciutto sirloin alcatra. Rump short ribs quis ex fugiat proident incididunt irure t-bone meatball veniam sirloin meatloaf. Tongue anim sint pancetta bresaola sirloin.
 Does your lorem ipsum text long for something a little meatier? Give our generator a try…
-

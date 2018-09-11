@@ -1,9 +1,10 @@
 ---
-title: "What is Ghost"
+title: "Install from CLI"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-next: "/setup/ghost-pro/"
+next: "/setup/ubuntu/"
 tags:
     - setup
+    - ubuntu
 ---
 
 # This is a first heading
