@@ -1,7 +1,5 @@
-import React from 'react';
+import React from 'react'
 
-const Container = props => {
-    return <div>{props.children}</div>;
-}
+const Container = props => <div>{props.children}</div>
 
-export default Container;
+export default Container

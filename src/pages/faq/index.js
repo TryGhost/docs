@@ -1,11 +1,11 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import Container from '../../components/Container'
+import PostCard from '../../components/PostCard'
 
-import Container from '../../components/Container';
-import PostCard from '../../components/PostCard';
+import React from 'react'
+import { graphql } from 'gatsby'
 
 export default ({ data }) => {
-    const posts = data.allGhostPost.edges;
+    const posts = data.allGhostPost.edges
     return (
         <Container>
             <header>
@@ -19,8 +19,8 @@ export default ({ data }) => {
                 </div>
             </main>
         </Container>
-    );
-};
+    )
+}
 
 export const pageQuery = graphql`
   query GhostFAQQuery {
@@ -47,4 +47,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

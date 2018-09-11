@@ -1,17 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
-
+import './custom.css'
+import 'ghost-spirit/public/spirit-brand.css'
 import Header from './header'
+import Helmet from 'react-helmet'
+
+import PropTypes from 'prop-types'
 
 // CSS
-import 'ghost-spirit/public/spirit-brand.css'
-import './custom.css'
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
+    <StaticQuery
+        query={graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
@@ -20,28 +20,28 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
+        render={data => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Ghost Docs' },
-            { name: 'keywords', content: 'documentation, ghost' },
-          ]}
+            title={data.site.siteMetadata.title}
+            meta={[
+                { name: `description`, content: `Ghost Docs` },
+                { name: `keywords`, content: `documentation, ghost` },
+            ]}
         >
-          <html lang="en" />
+            <html lang="en" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div class="bg-grey">
-          {children}
+        <div className="bg-grey">
+            {children}
         </div>
       </>
-    )}
-  />
+        )}
+    />
 )
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 }
 
 export default Layout
