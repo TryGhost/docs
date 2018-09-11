@@ -16,28 +16,28 @@
     "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi"
   },
   "devDependencies": {
-    "eslint": "^5.4.0",
+    "eslint": "5.5.0",
     "eslint-plugin-ghost": "^0.0.26",
     "eslint-plugin-react": "^7.11.1",
-    "ghost-spirit": "0.0.41",
+    "ghost-spirit": "tryghost/spirit#spirit-brand-update",
     "mocha": "^5.2.0",
     "should": "^13.2.3",
-    "sinon": "^6.1.5"
+    "sinon": "6.2.0"
   },
   "dependencies": {
-    "bluebird": "^3.5.1",
-    "gatsby": "^2.0.0-rc.5",
-    "gatsby-plugin-manifest": "2.0.2-rc.1",
-    "gatsby-plugin-offline": "2.0.0-rc.1",
-    "gatsby-plugin-react-helmet": "3.0.0-rc.1",
+    "bluebird": "3.5.2",
+    "gatsby": "^2.0.0-rc.15",
+    "gatsby-plugin-manifest": "^2.0.2-rc.1",
+    "gatsby-plugin-offline": "^2.0.0-rc.6",
+    "gatsby-plugin-react-helmet": "^3.0.0-rc.1",
     "gatsby-remark-custom-blocks": "^2.0.0-rc.1",
     "gatsby-remark-prismjs": "^3.0.0-rc.2",
     "gatsby-source-filesystem": "^2.0.1-rc.1",
-    "gatsby-source-ghost": "^2.1.0",
+    "gatsby-source-ghost": "^2.1.1",
     "gatsby-transformer-remark": "^2.1.1-rc.1",
     "prismjs": "^1.15.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "16.5.0",
+    "react-dom": "16.5.0",
     "react-helmet": "^5.2.0"
   }
 }

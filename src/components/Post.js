@@ -1,6 +1,12 @@
-import Link from 'gatsby-link'
+import PropTypes from 'prop-types'
 import React from 'react'
 
-const Post = props => <div>{props.children}</div>
+const Post = ({ children }) => (
+    <div>{children}</div>
+)
+
+Post.propTypes = {
+    children: PropTypes.node.isRequired,
+}
 
 export default Post
