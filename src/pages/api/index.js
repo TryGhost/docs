@@ -11,10 +11,13 @@ const APIPage = () => (
             <h2>Frontend SDK</h2>
             <div>
                 <div>
-                    <Link to="/api/v2/handlebars-themes/overview/">Handlebars Themes</Link><br />
+                    <Link to="/api/v2/handlebars-themes/">Handlebars Themes</Link><br />
                 </div>
                 <div>
-                    <Link to="/api/v0.11/migrate-to-1/">Migrate to 2.0</Link>
+                    <Link to="/api/v2/hugo/">Hugo</Link><br />
+                </div>
+                <div>
+                    <Link to="/api/v2/gatsby/">Gatsby</Link><br />
                 </div>
             </div>
         </section>
@@ -22,20 +25,7 @@ const APIPage = () => (
             <h2>Client Libraries</h2>
             <div>
                 <div>
-                    <Link to="/api/v2/handlebars-themes/overview/">Handlebars Themes</Link><br />
-                </div>
-                <div>
-                    <Link to="/api/v0.11/migrate-to-1/">Migrate to 2.0</Link>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div>
-                <div>
-                    <Link to="/api/v2/handlebars-themes/overview/">Handlebars Themes</Link><br />
-                </div>
-                <div>
-                    <Link to="/api/v0.11/migrate-to-1/">Migrate to 2.0</Link>
+                    <Link to="/api/v2/javascript/">Javascript</Link><br />
                 </div>
             </div>
         </section>
