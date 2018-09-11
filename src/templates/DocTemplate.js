@@ -1,28 +1,33 @@
-import React from "react";
-import Link from "gatsby-link";
-import Container from '../components/Container';
-import { graphql } from 'gatsby';
+import Container from '../components/Container'
+import Link from 'gatsby-link'
+import Post from '../components/Post'
 
-import Post from '../components/Post';
+import PropTypes from 'prop-types'
+import React from 'react'
 
-import AuthorList from '../components/AuthorList';
+import { graphql } from 'gatsby'
 
-export default ({data}) => {
-    const post = data.markdownRemark;
+const DocTemplate = ({ data }) => {
+    const post = data.markdownRemark
     return (
         <Container>
             <Link to="/">&lt; Home</Link>
-              <header>
+            <header>
                 <h1>{post.frontmatter.title}</h1>
             </header>
 
-
             <Post>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
-             </Post>
+            </Post>
         </Container>
-    );
-};
+    )
+}
+
+DocTemplate.propTypes = {
+    data: PropTypes.object.isRequired,
+}
+
+export default DocTemplate
 
 export const articleQuery = graphql`
     query MDDocsQuery($slug: String!) {

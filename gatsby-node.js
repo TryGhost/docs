@@ -1,20 +1,20 @@
-const path = require('path');
-const {createFilePath} = require('gatsby-source-filesystem');
+const path = require(`path`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.onCreateNode = ({node, getNode, actions}) => {
-    const {createNodeField} = actions;
+exports.onCreateNode = ({ node, getNode, actions }) => {
+    const { createNodeField } = actions
     if (node.internal.type === `MarkdownRemark`) {
-        const slug = createFilePath({node, getNode, basePath: `pages`});
+        const slug = createFilePath({ node, getNode, basePath: `pages` })
         createNodeField({
             node,
             name: `slug`,
-            value: slug
-        });
+            value: slug,
+        })
     }
-};
+}
 
-exports.createPages = ({graphql, actions}) => {
-    const {createPage} = actions;
+exports.createPages = ({ graphql, actions }) => {
+    const { createPage } = actions
 
     const loadFAQPosts = new Promise((resolve, reject) => {
         graphql(`
@@ -28,18 +28,18 @@ exports.createPages = ({graphql, actions}) => {
             }
           }
         `).then((result) => {
-            result.data.allGhostPost.edges.forEach(({node}) => {
+            result.data.allGhostPost.edges.forEach(({ node }) => {
                 createPage({
                     path: `/faq/${node.slug}/`,
-                    component: path.resolve(`./src/templates/faq.js`),
+                    component: path.resolve(`./src/templates/GhostPostTemplate.js`),
                     context: {
-                        slug: node.slug
-                    }
-                });
-            });
-            resolve();
-        });
-    });
+                        slug: node.slug,
+                    },
+                })
+            })
+            resolve()
+        })
+    })
 
     const loadTutorialPosts = new Promise((resolve, reject) => {
         graphql(`
@@ -53,18 +53,18 @@ exports.createPages = ({graphql, actions}) => {
             }
           }
         `).then((result) => {
-            result.data.allGhostPost.edges.forEach(({node}) => {
+            result.data.allGhostPost.edges.forEach(({ node }) => {
                 createPage({
                     path: `/tutorials/${node.slug}/`,
-                    component: path.resolve(`./src/templates/tutorials.js`),
+                    component: path.resolve(`./src/templates/GhostPostTemplate.js`),
                     context: {
-                        slug: node.slug
-                    }
-                });
-            });
-            resolve();
-        });
-    });
+                        slug: node.slug,
+                    },
+                })
+            })
+            resolve()
+        })
+    })
 
     const createMDPages = new Promise((resolve, reject) => {
         graphql(`
@@ -80,21 +80,21 @@ exports.createPages = ({graphql, actions}) => {
         }
       }
     `).then((result) => {
-            result.data.allMarkdownRemark.edges.forEach(({node}) => {
+            result.data.allMarkdownRemark.edges.forEach(({ node }) => {
                 createPage({
                     path: node.fields.slug,
-                    component: path.resolve(`./src/templates/docs.js`),
+                    component: path.resolve(`./src/templates/DocTemplate.js`),
                     context: {
                         // Data passed to context is available
                         // in page queries as GraphQL variables.
-                        slug: node.fields.slug
-                    }
-                });
-            });
-            resolve();
-        });
-    });
+                        slug: node.fields.slug,
+                    },
+                })
+            })
+            resolve()
+        })
+    })
 
-    return Promise.all([loadFAQPosts, loadTutorialPosts, createMDPages]);
-};
+    return Promise.all([loadFAQPosts, loadTutorialPosts, createMDPages])
+}
 

@@ -1,34 +1,40 @@
-import React from "react";
-import Link from "gatsby-link";
-import Container from '../components/Container';
-import { graphql } from 'gatsby';
+import AuthorList from '../components/AuthorList'
+import Container from '../components/Container'
+import Link from 'gatsby-link'
+import Post from '../components/Post'
 
-import Post from '../components/Post';
+import PropTypes from 'prop-types'
+import React from 'react'
 
-import AuthorList from '../components/AuthorList';
+import { graphql } from 'gatsby'
 
-export default ({data}) => {
-    const post = data.ghostPost;
+const GhostPostTemplate = ({ data }) => {
+    const post = data.ghostPost
     return (
         <Container>
-            <Link to="/tutorials/">&lt; Home</Link>
-              <header>
+            <Link to="/">&lt; Home</Link>
+            <header>
                 <section>
-                    <time datetime={post.publishedAt}>{post.publishedAt}</time>
-                    {post.primaryTag ? <div><span>/</span> <Link to="/tag/">{post.primaryTag.name}</Link></div>: null }
+                    <time dateTime={post.publishedAt}>{post.publishedAt}</time>
+                    {post.primaryTag ? <div><span>/</span> <Link to="/tag/">{post.primaryTag.name}</Link></div> : null }
                 </section>
                 <h1>{post.title}</h1>
             </header>
 
-
             <Post>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
-             </Post>
+            </Post>
 
             <AuthorList authors={post.authors}/>
         </Container>
-    );
-};
+    )
+}
+
+GhostPostTemplate.propTypes = {
+    data: PropTypes.object.isRequired,
+}
+
+export default GhostPostTemplate
 
 export const articleQuery = graphql`
     query TutorialQuery($slug: String!) {
