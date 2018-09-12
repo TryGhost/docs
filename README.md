@@ -9,7 +9,6 @@
 3. Run `yarn` to install top-level dependencies.
 
 ## Run
-- Build Spirit (temporary): `cd node_modules/ghost-spirit/ && yarn && cd components/SearchInput && yarn && cd ../../ && NODE_ENV=production yarn build && cd ../../`
 - Use: `GH_CLIENT_SECRET='<ghost site client secret>' yarn dev`
 - View: [http://localhost:8000](http://localhost:8000)
 - GraphiQL in-browser GraphQL IDE: [http://localhost:8000/___graphql](http://localhost:8000/___graphql)
