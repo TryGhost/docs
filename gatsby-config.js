@@ -4,7 +4,7 @@ require(`dotenv`).config({
 
 module.exports = {
     siteMetadata: {
-        title: `Ghost Docs`,
+        title: `Docs`,
         siteUrl: `https://docs.ghost.org`,
         description: `Find all the docs you want`,
     },
