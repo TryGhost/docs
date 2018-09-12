@@ -4,7 +4,7 @@ require(`dotenv`).config({
 
 module.exports = {
     siteMetadata: {
-        title: `Docs`,
+        title: `Ghost Docs`,
         siteUrl: `https://docs.ghost.org`,
         description: `Find all the docs you want`,
     },
@@ -13,11 +13,11 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `gatsby-starter-default`,
-                short_name: `starter`,
+                name: `Ghost Docs`,
+                short_name: `Ghost`,
                 start_url: `/`,
-                background_color: `#663399`,
-                theme_color: `#663399`,
+                background_color: `#343f44`,
+                theme_color: `#343f44`,
                 display: `minimal-ui`,
                 icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
             },
