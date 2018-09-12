@@ -1,11 +1,17 @@
 /* Custom CSS here */
-.custom-block-danger {
-    background: tomato;
-    border: 1px grey solid;
+.callout-red {
+    background: rgba(240,82,48,.05);
+    border: 1px rgba(240,82,48,.5) solid;
     max-width: 500px;
 }
-.custom-block-info {
-    background: lightblue;
-    border: 1px grey solid;
+.callout-blue {
+    background: rgba(74,144,226,.07);
+    border: 1px rgba(74,144,226,.5) solid;
+    max-width: 500px;
+}
+
+.callout-green {
+    background: rgba(164,208,55,.07);
+    border: 1px #a4d037 solid;
     max-width: 500px;
 }

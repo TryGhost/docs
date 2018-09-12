@@ -38,11 +38,16 @@ module.exports = {
                         resolve: `gatsby-remark-custom-blocks`,
                         options: {
                             blocks: {
-                                danger: {
-                                    classes: `custom-block-danger`,
+                                red: {
+                                    classes: `callout-red`,
+                                    title: `optional`,
                                 },
-                                info: {
-                                    classes: `custom-block-info`,
+                                blue: {
+                                    classes: `callout-blue`,
+                                    title: `optional`,
+                                },
+                                green: {
+                                    classes: `callout-green`,
                                     title: `optional`,
                                 },
                             },

@@ -24,15 +24,20 @@ makeArray() {
 }
 ```
 
-This is a danger box
+Red Callout
 
-[[danger]]
-| content
+[[red | Don't do this]]
+| This is a very urgent warning
 
-This is an info box with an optional title
+Green Callout
 
-[[info | This is a info box!]]
-| You should take care
+[[green | Totally cool]]
+| Just an example
+
+Blue Callout
+
+[[blue | Info]]
+| You should know that we...
 
 ### This is the third heading
 
