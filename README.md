@@ -1,6 +1,6 @@
 # Docs
 
-*WIP*
+_[Note: This project is in active early development and is not suitable for public use]_
 
 ## Installation
 1. Make sure that `gstenv` is green. See [Dev Environment](https://hq.ghost.org/dev-environment/) for docs.
