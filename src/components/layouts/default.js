@@ -10,7 +10,7 @@ import 'ghost-spirit/public/spirit-brand.css'
 
 const DefaultLayout = ({ children }) => (
     <StaticQuery
-        query={graphql`
+        query={ graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
@@ -19,22 +19,23 @@ const DefaultLayout = ({ children }) => (
         }
       }
     `}
-        render = {data => (
-      <>
-        <Helmet
-            title = {data.site.siteMetadata.title}
-            meta = {[
-                { name: `description`, content: `Ghost Docs` },
-            ]}
-        >
-            <html lang="en" />
-        </Helmet>
-        <Header />
-        <main className="bg-grey">
-            {children}
-        </main>
-      </>
-        )}
+        render={ data => (
+            <>
+                <Helmet>
+                    <title>{ data.site.siteMetadata.title }</title>
+                    
+                    <meta name="description" content="Ghost Docs" />
+                    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6076934/7558352/css/fonts.css" />
+
+                    <html lang="en" className="fs-base" />
+                    <body className="main-layout flex flex-column whitney f-default fw4 middarkgrey readability" />
+                </Helmet>
+                <Header />
+                <main className="bg-grey">
+                    { children }
+                </main>
+            </>
+        ) }
     />
 )
 
