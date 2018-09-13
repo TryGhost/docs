@@ -5,7 +5,6 @@ import Helmet from 'react-helmet'
 
 import Header from './partials/header'
 
-
 import '../custom.css'
 import 'ghost-spirit/public/spirit-brand.css'
 

@@ -5,7 +5,6 @@ import Link from 'gatsby-link'
 
 import Layout from '../components/layouts/default'
 
-
 const FAQ = ({ data }) => {
     const post = data.ghostPost
     return (

@@ -19,10 +19,10 @@ const ErrorLayout = ({ children }) => (
         }
       }
     `}
-        render = {data => (
+        render = {() => (
       <>
         <Helmet
-            title = 'Error'
+            title = "Error"
             meta = {[
                 { name: `description`, content: `An error was enountered` },
             ]}

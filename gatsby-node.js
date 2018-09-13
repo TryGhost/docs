@@ -17,7 +17,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
 
-    const loadFAQPosts = new Promise((resolve, reject) => {
+    const loadFAQPosts = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`
           {
             allGhostPost(filter: {primary_tag: {slug: {eq: "faq"}}}) {
@@ -44,7 +44,7 @@ exports.createPages = ({ graphql, actions }) => {
         })
     })
 
-    const loadTutorialPosts = new Promise((resolve, reject) => {
+    const loadTutorialPosts = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`
           {
             allGhostPost(filter: {primary_tag: {slug: {eq: "tutorial"}}}) {
@@ -71,7 +71,7 @@ exports.createPages = ({ graphql, actions }) => {
         })
     })
 
-    const loadIntegrations = new Promise((resolve, reject) => {
+    const loadIntegrations = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`
           {
             allGhostPost(filter: {primary_tag: {slug: {eq: "integration"}}}) {
@@ -98,7 +98,7 @@ exports.createPages = ({ graphql, actions }) => {
         })
     })
 
-    const createMDPages = new Promise((resolve, reject) => {
+    const createMDPages = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`
       {
         allMarkdownRemark {
