@@ -39,6 +39,8 @@ exports.createPages = ({ graphql, actions }) => {
                 })
             })
             resolve()
+        }).catch(() => {
+            resolve()
         })
     })
 
@@ -64,15 +66,15 @@ exports.createPages = ({ graphql, actions }) => {
                 })
             })
             resolve()
+        }).catch(() => {
+            resolve()
         })
     })
 
-    {/*TODO: Change tag to `integration` */}
-    {/*TODO: If `integration` returns 0 posts, the whole build should _not_ crash (currently it does) */}
     const loadIntegrations = new Promise((resolve, reject) => {
         graphql(`
           {
-            allGhostPost(filter: {primary_tag: {slug: {eq: "tutorial"}}}) {
+            allGhostPost(filter: {primary_tag: {slug: {eq: "integration"}}}) {
               edges {
                 node {
                   slug
@@ -90,6 +92,8 @@ exports.createPages = ({ graphql, actions }) => {
                     },
                 })
             })
+            resolve()
+        }).catch(() => {
             resolve()
         })
     })
@@ -122,6 +126,8 @@ exports.createPages = ({ graphql, actions }) => {
                     })
                 }
             })
+            resolve()
+        }).catch(() => {
             resolve()
         })
     })
