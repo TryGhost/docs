@@ -32,7 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
             result.data.allGhostPost.edges.forEach(({ node }) => {
                 createPage({
                     path: `/faq/${node.slug}/`,
-                    component: path.resolve(`./src/templates/GhostPostTemplate.js`),
+                    component: path.resolve(`./src/templates/faq.js`),
                     context: {
                         slug: node.slug,
                     },
@@ -57,7 +57,34 @@ exports.createPages = ({ graphql, actions }) => {
             result.data.allGhostPost.edges.forEach(({ node }) => {
                 createPage({
                     path: `/tutorials/${node.slug}/`,
-                    component: path.resolve(`./src/templates/GhostPostTemplate.js`),
+                    component: path.resolve(`./src/templates/tutorial.js`),
+                    context: {
+                        slug: node.slug,
+                    },
+                })
+            })
+            resolve()
+        })
+    })
+
+    {/*TODO: Change tag to `integration` */}
+    {/*TODO: If `integration` returns 0 posts, the whole build should _not_ crash (currently it does) */}
+    const loadIntegrations = new Promise((resolve, reject) => {
+        graphql(`
+          {
+            allGhostPost(filter: {primary_tag: {slug: {eq: "tutorial"}}}) {
+              edges {
+                node {
+                  slug
+                }
+              }
+            }
+          }
+        `).then((result) => {
+            result.data.allGhostPost.edges.forEach(({ node }) => {
+                createPage({
+                    path: `/integrations/${node.slug}/`,
+                    component: path.resolve(`./src/templates/integration.js`),
                     context: {
                         slug: node.slug,
                     },
@@ -86,7 +113,7 @@ exports.createPages = ({ graphql, actions }) => {
                 if (!node.fields.slug.match(/readme\/$/i)) {
                     createPage({
                         path: node.fields.slug,
-                        component: path.resolve(`./src/templates/DocTemplate.js`),
+                        component: path.resolve(`./src/templates/doc.js`),
                         context: {
                             // Data passed to context is available
                             // in page queries as GraphQL variables.
@@ -99,6 +126,6 @@ exports.createPages = ({ graphql, actions }) => {
         })
     })
 
-    return Promise.all([loadFAQPosts, loadTutorialPosts, createMDPages])
+    return Promise.all([loadFAQPosts, loadTutorialPosts, loadIntegrations, createMDPages])
 }
 
