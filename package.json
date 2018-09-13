@@ -25,18 +25,21 @@
     "sinon": "6.2.0"
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^1.7.1",
     "bluebird": "3.5.2",
     "gatsby": "^2.0.0-rc.15",
     "gatsby-plugin-manifest": "^2.0.2-rc.1",
     "gatsby-plugin-offline": "^2.0.0-rc.6",
     "gatsby-plugin-react-helmet": "^3.0.0-rc.1",
+    "gatsby-plugin-styled-components": "^2.0.11",
     "gatsby-remark-prismjs": "^3.0.0-rc.2",
     "gatsby-source-filesystem": "^2.0.1-rc.1",
     "gatsby-source-ghost": "^2.1.1",
-    "gatsby-transformer-remark": "^2.1.1-rc.1",
+    "gatsby-transformer-remark": "^2.1.1-rc.5",
     "prismjs": "^1.15.0",
     "react": "16.5.0",
     "react-dom": "16.5.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "styled-components": "^3.4.6"
   }
 }

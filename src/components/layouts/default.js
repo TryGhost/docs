@@ -2,11 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import styled from "styled-components"
 
 import Header from './partials/header'
-
-import '../custom.css'
-import 'ghost-spirit/public/spirit-brand.css'
 
 const DefaultLayout = ({ children }) => (
     <StaticQuery
@@ -25,10 +23,12 @@ const DefaultLayout = ({ children }) => (
                     <title>{ data.site.siteMetadata.title }</title>
                     
                     <meta name="description" content="Ghost Docs" />
+
                     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6076934/7558352/css/fonts.css" />
 
                     <html lang="en" className="fs-base" />
                     <body className="main-layout flex flex-column whitney f-default fw4 middarkgrey readability" />
+
                 </Helmet>
                 <Header />
                 <main className="bg-grey">
@@ -38,6 +38,11 @@ const DefaultLayout = ({ children }) => (
         ) }
     />
 )
+
+// Styled components
+const Body = styled.body.attrs({
+    className: "main-layout flex flex-column whitney f-default fw4 middarkgrey readability"
+})``
 
 DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
