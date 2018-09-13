@@ -70,11 +70,11 @@ exports.createPages = ({ graphql, actions }) => {
             resolve()
         })
     })
-
+    // TODO: change tag back to 'integration'
     const loadIntegrations = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`
           {
-            allGhostPost(filter: {primary_tag: {slug: {eq: "integration"}}}) {
+            allGhostPost(filter: {primary_tag: {slug: {eq: "faq"}}}) {
               edges {
                 node {
                   slug

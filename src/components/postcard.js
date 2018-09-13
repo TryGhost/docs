@@ -18,21 +18,13 @@ const getExcerpt = (post) => {
     }
 
     if (post.body) {
-        return post.body.body.substring(0, 200)
+        return post.body.substring(0, 200)
     }
 
     return post
 }
 
-// const makeAuthorObject = (author) => {
-//     return {
-//         name: author,
-//         slug: author.split(` `)[0].toLowerCase(),
-//     }
-// }
-
-const Post = (props) => {
-    const post = props.post
+const PostCard = ({ post }) => {
     const tag = post.primaryTag ? post.primaryTag.name : (post.tags ? post.tags[0].name : `Untagged`)
     const url = `/tutorials/${post.slug}/`
     const excerpt = getExcerpt(post)
@@ -54,8 +46,8 @@ const Post = (props) => {
     )
 }
 
-Post.propTypes = {
+PostCard.propTypes = {
     post: PropTypes.object.isRequired,
 }
 
-export default Post
+export default PostCard

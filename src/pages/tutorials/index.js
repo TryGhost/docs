@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../../components/layouts/default'
-import Post from '../../components/post'
+import PostCard from '../../components/postcard'
 
 const TutorialsPage = ({ data }) => {
     const posts = data.allGhostPost.edges
@@ -11,7 +11,7 @@ const TutorialsPage = ({ data }) => {
         <Layout>
             <h1>Tutorials</h1>
             {posts.map(({ node }) => (
-                <Post key={node.id} post={node} />
+                <PostCard key={node.id} post={node} />
             ))}
         </Layout>
     )
