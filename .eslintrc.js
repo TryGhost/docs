@@ -6,10 +6,12 @@ module.exports = {
     },
     plugins: ['ghost', 'react'],
     extends: [
+        'plugin:ghost/node',
         'plugin:ghost/ember',
         'plugin:react/recommended'
     ],
     "rules": {
+        "ghost/sort-imports-es6-autofix/sort-imports-es6": "off",
         "no-console": "off",
         "no-inner-declarations": "off",
         "valid-jsdoc": "off",
