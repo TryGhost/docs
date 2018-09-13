@@ -1,8 +1,8 @@
-import Authors from './authors'
+import React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
-import PropTypes from 'prop-types'
-import React from 'react'
+import Authors from './authors'
 
 const getExcerpt = (post) => {
     if (post.custom_excerpt) {
