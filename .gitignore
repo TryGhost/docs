@@ -71,3 +71,7 @@ typings/
 .cache/
 public
 yarn-error.log
+
+# config files
+.env.*
+!.env.example
