@@ -1,4 +1,4 @@
-import Layout from '../components/layouts/error'
+import Layout from '../components/layouts/default'
 import React from 'react'
 
 const NotFoundPage = () => (
