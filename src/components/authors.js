@@ -1,8 +1,22 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import PropTypes from 'prop-types'
+// import Link from 'gatsby-link'
 
-const AuthorList = props => <>{props.authors.map(author => (
-    <Link to="/author/{author.slug}/">{author.name}</Link>
-))}</>
+const Authors = (props) => {
+    const { authors } = props
+    return (
+        <ul>{authors.map(author => (
+            <li key={author.name}>
+                {/* <Link to="/author/{author.slug}/"> */}
+                {author.name}
+                {/* </Link> */}
+            </li>
+        ))}</ul>
+    )
+}
 
-export default AuthorList
+Authors.propTypes = {
+    authors: PropTypes.array.isRequired,
+}
+
+export default Authors
