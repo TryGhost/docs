@@ -16,14 +16,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
-    const { createRedirect } = actions
-
-    createRedirect({
-        fromPath: `https://tryghost.netlify.com/*`,
-        toPath: `https://newdocs.ghost.org/:splat`,
-        isPermanent: true,
-        redirectInBrowser: true,
-    })
 
     const loadFAQPosts = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`

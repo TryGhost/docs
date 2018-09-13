@@ -76,6 +76,5 @@ module.exports = {
                 clientSecret: `${process.env.GH_CLIENT_SECRET}`,
             },
         },
-        `gatsby-plugin-netlify`,
     ],
 }
