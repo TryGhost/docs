@@ -1,2 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://tryghost.netlify.com/* https://newdocs.ghost.org/:splat 301!
