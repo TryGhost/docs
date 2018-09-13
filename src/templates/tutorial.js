@@ -5,7 +5,6 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layouts/default'
 import Authors from '../components/authors'
 
-
 const Tutorial = ({ data }) => {
     const post = data.ghostPost
     return (
