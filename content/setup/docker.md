@@ -23,21 +23,6 @@ makeArray() {
 }
 ```
 
-Red Callout
-
-[[red | Don't do this]]
-| This is a very urgent warning
-
-Green Callout
-
-[[green | Totally cool]]
-| Just an example
-
-Blue Callout
-
-[[blue | Info]]
-| You should know that we...
-
 ### This is the third heading
 
 Pork chop ribeye ut chicken buffalo proident minim leberkas cupim adipisicing burgdoggen incididunt pastrami cupidatat. Prosciutto kevin dolore labore ham, cupidatat pork loin fatback picanha irure ad short ribs duis. Cupidatat excepteur jerky doner, incididunt consectetur turkey pariatur. Culpa consectetur cillum shank ham hock anim pastrami ex tempor eu. Fatback strip steak pig, bacon salami drumstick ut capicola short loin flank.

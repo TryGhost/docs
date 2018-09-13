@@ -35,25 +35,6 @@ module.exports = {
             options: {
                 plugins: [
                     {
-                        resolve: `gatsby-remark-custom-blocks`,
-                        options: {
-                            blocks: {
-                                red: {
-                                    classes: `callout-red`,
-                                    title: `optional`,
-                                },
-                                blue: {
-                                    classes: `callout-blue`,
-                                    title: `optional`,
-                                },
-                                green: {
-                                    classes: `callout-green`,
-                                    title: `optional`,
-                                },
-                            },
-                        },
-                    },
-                    {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
                             // Class prefix for <pre> tags containing syntax highlighting;

@@ -4304,13 +4304,6 @@ gatsby-react-router-scroll@^2.0.0-rc.2:
     scroll-behavior "^0.9.9"
     warning "^3.0.0"
 
-gatsby-remark-custom-blocks@^2.0.0-rc.1:
-  version "2.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-custom-blocks/-/gatsby-remark-custom-blocks-2.0.0-rc.1.tgz#626c3f34085bea09e15628563c1340bd7e30d07c"
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-    remark-custom-blocks "^2.1.2"
-
 gatsby-remark-prismjs@^3.0.0-rc.2:
   version "3.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.0.0-rc.2.tgz#80e9c13547e545a0f61428320e16d53f0b02ac00"
@@ -8176,12 +8169,6 @@ relay-runtime@1.5.0:
     babel-runtime "^6.23.0"
     fbjs "^0.8.14"
 
-remark-custom-blocks@^2.1.2:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/remark-custom-blocks/-/remark-custom-blocks-2.2.3.tgz#ee995ef0c57c90dd88043af124396f5255b6bc10"
-  dependencies:
-    space-separated-tokens "^1.1.1"
-
 remark-parse@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/remark-parse/-/remark-parse-5.0.0.tgz#4c077f9e499044d1d5c13f80d7a98cf7b9285d95"
@@ -8903,7 +8890,7 @@ source-map@^0.6.1, source-map@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
 
-space-separated-tokens@^1.0.0, space-separated-tokens@^1.1.1:
+space-separated-tokens@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/space-separated-tokens/-/space-separated-tokens-1.1.2.tgz#e95ab9d19ae841e200808cd96bc7bd0adbbb3412"
   dependencies:
