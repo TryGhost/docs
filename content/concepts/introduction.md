@@ -22,6 +22,19 @@ makeArray() {
 }
 ```
 
+---
+
+<!-- By default it seems like Remark will wrap custom components like this here in a <p> tag
+    This limits the usage of the markup within the components, as it's not allowed to have
+    other tags as <span> etc. as child nodes.
+    Only solution I could found is to wrap the custom component in its own HTML tag like here: -->
+<section>
+    <callout-box color="red" title="This is a test callout box">
+        Hey there! That was easy to implement! Let's see what else is possible.
+        What about MDX for example?
+    </callout-box>
+</section>
+
 ### This is the third heading
 
 Pork chop ribeye ut chicken buffalo proident minim leberkas cupim adipisicing burgdoggen incididunt pastrami cupidatat. Prosciutto kevin dolore labore ham, cupidatat pork loin fatback picanha irure ad short ribs duis. Cupidatat excepteur jerky doner, incididunt consectetur turkey pariatur. Culpa consectetur cillum shank ham hock anim pastrami ex tempor eu. Fatback strip steak pig, bacon salami drumstick ut capicola short loin flank.

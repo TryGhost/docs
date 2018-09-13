@@ -1,8 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import rehypeReact from 'rehype-react'
 
 import Layout from '../components/layouts/default'
+import Callout from '../components/callout'
+
+const renderAst = new rehypeReact({
+    createElement: React.createElement,
+    components: { "callout-box": Callout },
+}).Compiler
 
 const DocTemplate = ({ data }) => {
     const post = data.markdownRemark
@@ -14,7 +21,11 @@ const DocTemplate = ({ data }) => {
 
                     <div className="post-full-content">
                         <h1 className="title">{post.frontmatter.title}</h1>
-                        <section className="post-wrapper" dangerouslySetInnerHTML={{ __html: post.html }} />
+                        <section className="post-wrapper">
+                            {
+                                renderAst(post.htmlAst)
+                            }
+                        </section>
                     </div>
 
                 </main>
@@ -36,7 +47,7 @@ export const articleQuery = graphql`
             frontmatter {
                 title
             }
-            html
+            htmlAst
         }
     }
 `
