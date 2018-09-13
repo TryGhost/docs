@@ -34,7 +34,7 @@ const makeAuthorObject = (author) => {
 const Post = (props) => {
     const post = props.post
     const tag = post.primaryTag ? post.primaryTag.name : (post.tags ? post.tags[0].name : `Untagged`)
-    const url = '/tutorials/${post.slug}'
+    const url = `/tutorials/${post.slug}`
     const excerpt = getExcerpt(post)
 
     return (
