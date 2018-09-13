@@ -24,17 +24,17 @@ const getExcerpt = (post) => {
     return post
 }
 
-const makeAuthorObject = (author) => {
-    return {
-        name: author,
-        slug: author.split(` `)[0].toLowerCase(),
-    }
-}
+// const makeAuthorObject = (author) => {
+//     return {
+//         name: author,
+//         slug: author.split(` `)[0].toLowerCase(),
+//     }
+// }
 
 const Post = (props) => {
     const post = props.post
     const tag = post.primaryTag ? post.primaryTag.name : (post.tags ? post.tags[0].name : `Untagged`)
-    const url = `/tutorials/${post.slug}`
+    const url = `/tutorials/${post.slug}/`
     const excerpt = getExcerpt(post)
 
     return (

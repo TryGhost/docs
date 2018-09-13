@@ -12,11 +12,11 @@ const getExcerpt = (post) => {
     }
 
     if (post.plaintext) {
-        return post.plaintext.substring(0, 200) + '...'
+        return post.plaintext.substring(0, 200) + `...`
     }
 
     if (post.body) {
-        return post.body.body.substring(0, 200) + '...'
+        return post.body.body.substring(0, 200) + `...`
     }
 
     return post
@@ -24,7 +24,7 @@ const getExcerpt = (post) => {
 
 const FAQ = (props) => {
     const post = props.post
-    const url = '/faq/${post.slug}'
+    const url = `/faq/${post.slug}/`
     const excerpt = getExcerpt(post)
 
     return (

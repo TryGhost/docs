@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 
 const Integration = (props) => {
     const post = props.post
-    const url = `/integrations/${post.slug}`
+    const url = `/integrations/${post.slug}/`
 
     return (
         <article className="ml4 flex">
