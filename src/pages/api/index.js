@@ -1,12 +1,11 @@
-import Layout from '../../components/layout'
+import Layout from '../../components/layouts/default'
 import React from 'react'
 
 import { Link } from 'gatsby'
 
 const APIPage = () => (
     <Layout>
-        <Link to="/">Home</Link><br />
-        <h1 className="f-subheadline fw3 tracked-tight lh-titl">Ghost API</h1>
+        <h1>Ghost API</h1>
         <section>
             <h2>Frontend SDK</h2>
             <div>

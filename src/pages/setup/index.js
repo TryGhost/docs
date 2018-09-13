@@ -1,11 +1,10 @@
-import Layout from '../../components/layout'
+import Layout from '../../components/layouts/default'
 import React from 'react'
 
 import { Link } from 'gatsby'
 
 const SetupIndexPage = () => (
     <Layout>
-        <Link to="/">Home</Link><br />
         <h1><Link to="/setup/what-is-ghost/">What is Ghost?</Link></h1>
         <section>
             <h1>I want to setup a site</h1>

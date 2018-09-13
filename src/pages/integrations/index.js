@@ -3,28 +3,29 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../../components/layouts/default'
-import Post from '../../components/post'
+import Integration from '../../components/integration'
 
-const TutorialsPage = ({ data }) => {
+const IntegrationsPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
         <Layout>
-            <h1>Tutorials</h1>
+            <h1>Integrations</h1>
+
             {posts.map(({ node }) => (
-                <Post key={node.id} post={node} />
+                <Integration key={node.id} post={node} />
             ))}
         </Layout>
     )
 }
 
-TutorialsPage.propTypes = {
+IntegrationsPage.propTypes = {
     data: PropTypes.object.isRequired,
 }
 
-export default TutorialsPage
+export default IntegrationsPage
 
 export const pageQuery = graphql`
-  query GhostTutorialsQuery {
+  query GhostIntegrationsQuery {
     allGhostPost(
         sort: { order: DESC, fields: [published_at] },
         limit: 50,

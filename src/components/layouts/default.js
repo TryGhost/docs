@@ -1,15 +1,15 @@
-import './custom.css'
-import 'ghost-spirit/public/spirit-brand.css'
-import Header from './header'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import PropTypes from 'prop-types'
+import Header from './partials/header'
 
-// CSS
-import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
 
-const Layout = ({ children }) => (
+import '../custom.css'
+import 'ghost-spirit/public/spirit-brand.css'
+
+const DefaultLayout = ({ children }) => (
     <StaticQuery
         query={graphql`
       query SiteTitleQuery {
@@ -26,12 +26,11 @@ const Layout = ({ children }) => (
             title = {data.site.siteMetadata.title}
             meta = {[
                 { name: `description`, content: `Ghost Docs` },
-                { name: `keywords`, content: `documentation, ghost` },
             ]}
         >
             <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header />
         <main className="bg-grey">
             {children}
         </main>
@@ -40,8 +39,8 @@ const Layout = ({ children }) => (
     />
 )
 
-Layout.propTypes = {
+DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default DefaultLayout

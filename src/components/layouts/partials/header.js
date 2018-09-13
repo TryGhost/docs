@@ -1,8 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Link } from "gatsby"
 
-import Logo from "components/logo"
+import Logo from "components/global/logo"
 
 const Header = () => (
     <header className="shadow-2">
@@ -24,10 +23,6 @@ const Header = () => (
         </nav>
     </header>
 )
-
-Header.propTypes = {
-    siteTitle: PropTypes.node.isRequired,
-}
 
 export default Header
 
