@@ -18,7 +18,7 @@ const Header = () => (
             </div>
             <div className="flex flex-auto flex-nowrap justify-end items-center">
                 <div className="relative">
-                    <input name="foo" type="text" className="f8 pa2 pl4 pr4 ba midgrey f8 fw4 br3 whitney form-text bn br-pill bg-whitegrey-l1" placeholder="Search..." />
+                    <input name="foo" type="text" className="f8 pa2 pl4 pr4 ba midgrey f8 fw4 br3 whitney form-text bn br-pill bg-whitegrey-l1 o-80" placeholder="Search..." />
                 </div>
             </div>
         </nav>
