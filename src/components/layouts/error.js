@@ -5,8 +5,8 @@ import { StaticQuery, graphql } from 'gatsby'
 import Header from './partials/header'
 import Helmet from 'react-helmet'
 
-import '../custom.css'
-import 'ghost-spirit/public/spirit-brand.css'
+// import '../custom.css'
+// import 'ghost-spirit/public/spirit-brand.css'
 
 const ErrorLayout = ({ children }) => (
     <StaticQuery
