@@ -29,6 +29,7 @@
     "gatsby": "^2.0.0-rc.15",
     "gatsby-plugin-manifest": "^2.0.2-rc.1",
     "gatsby-plugin-offline": "^2.0.0-rc.6",
+    "gatsby-plugin-postcss": "^1.0.0",
     "gatsby-plugin-react-helmet": "^3.0.0-rc.1",
     "gatsby-remark-prismjs": "^3.0.0-rc.2",
     "gatsby-source-filesystem": "^2.0.1-rc.1",

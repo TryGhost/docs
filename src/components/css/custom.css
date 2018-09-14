@@ -1,0 +1,33 @@
+/*
+
+Before adding custom CSS, think about if it rather should be in Spirit...
+
+*/
+
+/* TODO: these variables is copied from Spirit. Have to fix redundancy! */
+/* TODO: apply postcss */
+@import "colors.css";
+@import "typography.css";
+
+/* Markdown content styling */
+.post-md h1, h2 {
+    font-weight: 400;
+}
+
+.post-md h3, h4, h5 {
+    font-weight: 500;
+}
+
+.post-md h1 {
+    font-size: var(--ts-1);
+    line-height: var(--lh-1-4);
+    border-bottom: 1px solid var(--lightgrey);
+}
+
+.post-md .post-wrapper h1 {
+    font-size: var(--ts-2);
+}
+
+.post-md p {
+    line-height: var(--lh-1-65);
+}

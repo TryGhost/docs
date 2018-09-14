@@ -8,8 +8,8 @@ import Header from './partials/header'
 import Footer from './partials/footer'
 
 // Spirit
-import '../custom.css'
 import 'ghost-spirit/public/spirit-brand.css'
+import '../css/custom.css'
 
 // Additional styles
 // TODO: create custom Prism style
@@ -31,7 +31,7 @@ class DefaultLayout extends React.Component {
                     <title>{ title }</title>
                     <meta name="description" content="Ghost Docs" />
                     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6076934/7558352/css/fonts.css" />
-                    <body className="bg-whitegrey-l2 flex flex-column whitney f-default fw4 middarkgrey readability" />
+                    <body className="bg-whitegrey-l2 flex flex-column whitney f8 fw4 middarkgrey readability" />
                 </Helmet>
                 <Header />
                 <main className="center mw10 mt30">

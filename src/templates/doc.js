@@ -8,8 +8,10 @@ const DocTemplate = ({ data }) => {
     const post = data.markdownRemark
     return (
         <Layout title={ post.frontmatter.title }>
-            <h1>{post.frontmatter.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div className="post-md">
+                <h1 className="title">{post.frontmatter.title}</h1>
+                <div className="post-wrapper" dangerouslySetInnerHTML={{ __html: post.html }} />
+            </div>
         </Layout>
     )
 }

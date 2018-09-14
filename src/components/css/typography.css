@@ -1,0 +1,26 @@
+:root {
+    --ts-base-fontsize: 62.5%;
+    --ts-headline: 4.44rem;
+    --ts-subheadline: 3.86rem;
+    --ts-1: 3.36rem;
+    --ts-2: 2.92rem;
+    --ts-3: 2.54rem;
+    --ts-4: 2.21rem;
+    --ts-5: 1.92rem;
+    --ts-6: 1.67rem;
+    --ts-7: 1.45rem;
+    --ts-8: 1.26rem;
+    --ts-supersmall: 1.09rem;
+
+    --lh-1-15: 1.15em;
+    --lh-1-2: 1.2em;
+    --lh-1-3: 1.3em;
+    --lh-1-4: 1.4em;
+    --lh-1-5: 1.5em;
+    --lh-1-55: 1.55em;
+    --lh-1-6: 1.6em;
+    --lh-1-65: 1.65em;
+    --lh-1-8: 1.8em;
+    --lh-2-0: 2.0em;
+    --lh-2-2: 2.2em;
+}
