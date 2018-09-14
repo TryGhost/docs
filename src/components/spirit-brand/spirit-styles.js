@@ -7,5 +7,6 @@ export const SpiritStyle = {
     link: {
         blue: `link blue `,
         green: `link green `,
+        middarkgrey: `link middarkgrey dim `,
     },
 }
