@@ -5,6 +5,7 @@ import Prism from 'prismjs'
 
 // Partials and components
 import Header from './partials/header'
+import Footer from './partials/footer'
 
 // Spirit
 import '../custom.css'
@@ -36,6 +37,7 @@ class DefaultLayout extends React.Component {
                 <main className="center mw10 mt30">
                     { children }
                 </main>
+                <Footer />
             </>
         )
     }
