@@ -21,13 +21,12 @@ const DefaultLayout = ({ children }) => (
     `}
         render = {data => (
       <>
-        <Helmet
-            title = {data.site.siteMetadata.title}
-            meta = {[
-                { name: `description`, content: `Ghost Docs` },
-            ]}
-        >
-            <html lang="en" />
+        <Helmet>
+            <html lang="en" className="fs-base" />
+            <title>{ data.site.siteMetadata.title }</title>
+            <meta name="description" content="Ghost Docs" />
+            <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6076934/7558352/css/fonts.css" />
+            <body class="flex flex-column whitney f-default fw4 middarkgrey readability" />
         </Helmet>
         <Header />
         <main className="bg-grey">
