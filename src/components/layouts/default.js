@@ -2,13 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import Prism from 'prismjs'
 
+// Partials and components
 import Header from './partials/header'
 
+// Spirit
 import '../custom.css'
 import 'ghost-spirit/public/spirit-brand.css'
 
+// Additional styles
+// TODO: create custom Prism style
+import 'prismjs/themes/prism.css'
+
 class DefaultLayout extends React.Component {
+
+    componentDidMount() {
+        Prism.highlightAll();
+    }
 
     render() {
         const children = this.props.children
