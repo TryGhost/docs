@@ -16,9 +16,8 @@ import 'ghost-spirit/public/spirit-brand.css'
 import 'prismjs/themes/prism.css'
 
 class DefaultLayout extends React.Component {
-
     componentDidMount() {
-        Prism.highlightAll();
+        Prism.highlightAll()
     }
 
     render() {
@@ -41,7 +40,7 @@ class DefaultLayout extends React.Component {
                             <title>{ data.site.siteMetadata.title }</title>
                             <meta name="description" content="Ghost Docs" />
                             <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6076934/7558352/css/fonts.css" />
-                            <body class="flex flex-column whitney f-default fw4 middarkgrey readability" />
+                            <body className="flex flex-column whitney f-default fw4 middarkgrey readability" />
                         </Helmet>
                         <Header />
                         <main className="bg-grey">
@@ -52,37 +51,7 @@ class DefaultLayout extends React.Component {
             />
         )
     }
-
 }
-
-// const DefaultLayout = ({ children }) => (
-//     <StaticQuery
-//         query={graphql`
-//       query SiteTitleQuery {
-//         site {
-//           siteMetadata {
-//             title
-//           }
-//         }
-//       }
-//     `}
-//         render = {data => (
-//       <>
-//         <Helmet>
-//             <html lang="en" className="fs-base" />
-//             <title>{ data.site.siteMetadata.title }</title>
-//             <meta name="description" content="Ghost Docs" />
-//             <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6076934/7558352/css/fonts.css" />
-//             <body class="flex flex-column whitney f-default fw4 middarkgrey readability" />
-//         </Helmet>
-//         <Header />
-//         <main className="bg-grey">
-//             {children}
-//         </main>
-//       </>
-//         )}
-//     />
-// )
 
 DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
