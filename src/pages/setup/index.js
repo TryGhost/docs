@@ -4,7 +4,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const SetupIndexPage = () => (
-    <Layout>
+    <Layout title="Setup">
         <h1><Link to="/setup/what-is-ghost/">What is Ghost?</Link></h1>
         <section>
             <h1>I want to setup a site</h1>

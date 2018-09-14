@@ -8,7 +8,7 @@ import Integration from '../../components/integration'
 const IntegrationsPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
-        <Layout>
+        <Layout title="Integrations">
             <h1>Integrations</h1>
 
             {posts.map(({ node }) => (

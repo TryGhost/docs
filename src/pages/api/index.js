@@ -4,7 +4,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const APIPage = () => (
-    <Layout>
+    <Layout title="API">
         <h1>Ghost API</h1>
         <section>
             <h2>Frontend SDK</h2>

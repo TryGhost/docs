@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Prism from 'prismjs'
 
@@ -22,7 +21,7 @@ class DefaultLayout extends React.Component {
 
     render() {
         const children = this.props.children
-        const title = "Ghost Docs" + (this.props.title ? " - " + this.props.title : "")
+        const title = `Ghost Docs` + (this.props.title ? ` - ` + this.props.title : ``)
 
         return (
             <>
@@ -44,6 +43,7 @@ class DefaultLayout extends React.Component {
 
 DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
+    title: PropTypes.string,
 }
 
 export default DefaultLayout

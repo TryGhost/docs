@@ -7,7 +7,7 @@ import Layout from '../components/layouts/default'
 const DocTemplate = ({ data }) => {
     const post = data.markdownRemark
     return (
-        <Layout>
+        <Layout title={ post.frontmatter.title }>
             <h1>{post.frontmatter.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </Layout>

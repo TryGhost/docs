@@ -8,7 +8,7 @@ import FAQ from '../../components/faq'
 const FAQPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
-        <Layout>
+        <Layout title="FAQ">
             <h1>FAQ</h1>
             {posts.map(({ node }) => (
                 <FAQ key={node.id} post={node} />
