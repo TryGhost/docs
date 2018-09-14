@@ -9,9 +9,11 @@ const Integration = ({ data }) => {
     const post = data.ghostPost
     return (
         <Layout>
-            <Link to="/integrations/">Integrations</Link> / {post.title}
-            <h1>{post.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div className="post-full-content">
+                <Link to="/integrations/">Integrations</Link> / {post.title}
+                <h1>{post.title}</h1>
+                <section className="post-wrapper" dangerouslySetInnerHTML={{ __html: post.html }} />
+            </div>
         </Layout>
     )
 }

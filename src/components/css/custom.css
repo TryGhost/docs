@@ -9,25 +9,1089 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 @import "colors.css";
 @import "typography.css";
 
-/* Markdown content styling */
-.post-md h1, h2 {
-    font-weight: 400;
+.sidebar-min-width {
+    min-width: 12vw;
 }
 
-.post-md h3, h4, h5 {
+/* Content styling  - just copying Casper for now */
+
+/* 1. Global styles */
+
+.post-full-content hr {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 2.5em 0 3.5em;
+    padding: 0;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid color(var(--lightgrey) l(+10%));
+}
+
+.post-full-content audio,
+.post-full-content canvas,
+.post-full-content iframe,
+.post-full-content img,
+.post-full-content svg,
+.post-full-content video {
+    vertical-align: middle;
+}
+
+.post-full-content fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.post-full-content textarea {
+    resize: vertical;
+}
+
+.post-full-content p,
+.post-full-content ul,
+.post-full-content ol,
+.post-full-content dl,
+.post-full-content blockquote {
+    margin: 0 0 1.5em 0;
+}
+
+.post-full-content ol,
+.post-full-content ul {
+    padding-left: 1.3em;
+    padding-right: 1.5em;
+}
+
+.post-full-content ol ol,
+.post-full-content ul ul,
+.post-full-content ul ol,
+.post-full-content ol ul {
+    margin: 0.5em 0 1em;
+}
+
+.post-full-content ul {
+    list-style: disc;
+}
+
+.post-full-content ol {
+    list-style: decimal;
+}
+
+.post-full-content ul,
+.post-full-content ol {
+    max-width: 100%;
+}
+
+.post-full-content li {
+    margin: 0.5em 0;
+    padding-left: 0.3em;
+    line-height: 1.6em;
+}
+
+.post-full-content dt {
+    float: left;
+    margin: 0 20px 0 0;
+    width: 120px;
+    color: var(--darkgrey);
+    font-weight: 500;
+    text-align: right;
+}
+
+.post-full-content dd {
+    margin: 0 0 5px 0;
+    text-align: left;
+}
+
+.post-full-content blockquote {
+    margin: 1.5em 0;
+    padding: 0 1.6em 0 1.6em;
+    border-left: var(--whitegrey) 0.5em solid;
+}
+
+.post-full-content blockquote p {
+    margin: 0.8em 0;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.post-full-content blockquote small {
+    display: inline-block;
+    margin: 0.8em 0 0.8em 1.5em;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+/* Quotation marks */
+.post-full-content blockquote small:before {
+    content: "\2014 \00A0";
+}
+
+.post-full-content blockquote cite {
+    font-weight: bold;
+}
+.post-full-content blockquote cite a {
+    font-weight: normal;
+}
+
+.post-full-content a {
+    color: color(var(--blue) l(-5%));
+    text-decoration: none;
+}
+
+.post-full-content a:hover {
+    text-decoration: underline;
+}
+
+.post-full-content h1,
+.post-full-content h2,
+.post-full-content h3,
+.post-full-content h4,
+.post-full-content h5,
+.post-full-content h6 {
+    margin-top: 0;
+    line-height: 1.15;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+.post-full-content h1 {
+    margin: 0 0 0.5em 0;
+    font-size: 5rem;
+    font-weight: 300;
+}
+@media (max-width: 500px) {
+    .post-full-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+.post-full-content h2 {
+    margin: 1.5em 0 0.5em 0;
+    font-size: 2rem;
+}
+@media (max-width: 500px) {
+    .post-full-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+.post-full-content h3 {
+    margin: 1.5em 0 0.5em 0;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+@media (max-width: 500px) {
+    .post-full-content h3 {
+        font-size: 1.7rem;
+    }
+}
+
+.post-full-content h4 {
+    margin: 1.5em 0 0.5em 0;
+    font-size: 1.6rem;
     font-weight: 500;
 }
 
-.post-md h1 {
+.post-full-content h5 {
+    margin: 1.5em 0 0.5em 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.post-full-content h6 {
+    margin: 1.5em 0 0.5em 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+
+/* 6. Post Feed */
+/* ---------------------------------------------------------- */
+
+.post-feed {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+    padding: 40px 0 0 0;
+}
+
+.post-card {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0 20px 40px;
+    min-height: 300px;
+    background: #fff center center;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    transition: all 0.5s ease;
+}
+
+.post-card:hover {
+    box-shadow: rgba(39,44,49,0.07) 8px 28px 50px, rgba(39, 44, 49, 0.04) 1px 6px 12px;
+    transition: all 0.4s ease;
+    transform: translate3D(0, -1px, 0) scale(1.02);
+}
+
+.post-card-image-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+
+.post-card-image {
+    width: auto;
+    height: 200px;
+    background: var(--lightgrey) no-repeat center center;
+    background-size: cover;
+}
+
+.post-card-content-link {
+    position: relative;
+    flex-grow: 1;
+    display: block;
+    padding: 25px 25px 0;
+    color: var(--darkgrey);
+}
+
+.post-card-content-link:hover {
+    text-decoration: none;
+}
+
+.post-card-tags {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--midgrey);
+    font-size: 1.2rem;
+    line-height: 1.15em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.post-card-title {
+    margin-top: 0;
+}
+
+.post-card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.post-card-excerpt {
+    font-family: Georgia, serif;
+}
+
+.post-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 25px 25px;
+}
+
+.author-profile-image,
+.avatar-wrapper {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: color(var(--lightgrey) l(+10%));
+    border-radius: 100%;
+
+    object-fit: cover;
+}
+
+.post-card-meta .profile-image-wrapper,
+.post-card-meta .avatar-wrapper {
+    position: relative;
+}
+
+.author-list {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.author-list-item {
+    position: relative;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.author-list-item:nth-child(1) {
+    z-index: 10;
+}
+.author-list-item:nth-child(2) {
+    z-index: 9;
+}
+.author-list-item:nth-child(3) {
+    z-index: 8;
+}
+.author-list-item:nth-child(4) {
+    z-index: 7;
+}
+.author-list-item:nth-child(5) {
+    z-index: 6;
+}
+.author-list-item:nth-child(6) {
+    z-index: 5;
+}
+.author-list-item:nth-child(7) {
+    z-index: 4;
+}
+.author-list-item:nth-child(8) {
+    z-index: 3;
+}
+.author-list-item:nth-child(9) {
+    z-index: 2;
+}
+.author-list-item:nth-child(10) {
+    z-index: 1;
+}
+
+.static-avatar {
+    display: block;
+    overflow: hidden;
+    margin: 0 -5px;
+    width: 34px;
+    height: 34px;
+    border: #fff 2px solid;
+    border-radius: 100%;
+}
+
+.moving-avatar {
+    display: block;
+    overflow: hidden;
+    margin: 0 -6px;
+    width: 56px;
+    height: 56px;
+    border: #fff 2px solid;
+    border-radius: 100%;
+    transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 0.7s;
+}
+
+@media (min-width: 800px) {
+    .author-list:hover .moving-avatar {
+        margin: 0;
+        transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    }
+}
+
+.author-name-tooltip {
+    position: absolute;
+    bottom: 105%;
+    z-index: 999;
+    display: block;
+    padding: 2px 8px;
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    background: var(--darkgrey);
+    border-radius: 3px;
+    box-shadow: rgba(39,44,49,0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transform: translateY(6px);
+    pointer-events: none;
+}
+
+.author-list-item:hover .author-name-tooltip {
+    opacity: 1.0;
+    transform: translateY(0px);
+}
+
+@media (max-width: 650px) {
+    .author-name-tooltip {
+        display: none;
+    }
+}
+
+.reading-time {
+    flex-shrink: 0;
+    margin-left: 20px;
+    color: var(--midgrey);
+    font-size: 1.2rem;
+    line-height: 33px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Special Styling for home page grid (below):
+The first (most recent) post in the list is styled to be bigger than the others and take over the full width of the grid to give it more emphasis. Wrapped in a media query to make sure this only happens on large viewports / desktop-ish devices.
+ */
+
+@media (min-width: 795px) {
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) {
+        flex: 1 1 100%;
+        flex-direction: row;
+    }
+
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image-link {
+        position: relative;
+        flex: 1 1 auto;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-content {
+        flex: 0 1 357px;
+    }
+
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) h2 {
+        font-size: 2.6rem;
+    }
+
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) p {
+        font-size: 1.8rem;
+        line-height: 1.55em;
+    }
+
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-content-link {
+        padding: 30px 40px 0;
+    }
+
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-meta {
+        padding: 0 40px 30px;
+    }
+}
+
+.home-template .site-header:after {
+    display: none;
+}
+
+
+/* Adjust some margins for smaller screens */
+@media (max-width: 650px) {
+    .post-feed {
+        padding-top: 5vw;
+    }
+    .post-card {
+        margin: 0 20px 5vw;
+    }
+}
+
+
+
+/* 7. Single Post
+/* ---------------------------------------------------------- */
+
+.post-template .site-main,
+.page-template .site-main {
+    padding-bottom: 4vw;
+    background: #fff;
+}
+
+.post-full {
+    position: relative;
+    z-index: 50;
+}
+/* ^ Required to make .post-full-content:before/after z-index stacking work */
+
+.post-full-header {
+    margin: 0 auto;
+    padding: 6vw 3vw 3vw;
+    max-width: 1040px;
+    text-align: center;
+}
+@media (max-width: 500px) {
+    .post-full-header {
+        padding: 14vw 3vw 10vw;
+    }
+}
+
+.post-full-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--midgrey);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.post-full-meta-date {
+    color: var(--blue);
+}
+
+.post-full-title {
+    margin: 0;
+    color: color(var(--darkgrey) l(-5%));
+}
+
+.date-divider {
+    display: inline-block;
+    margin: 0 6px 1px;
+}
+
+.post-full-image {
+    margin: 0 -10vw -165px;
+    height: 800px;
+    background: var(--lightgrey) center center;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+@media (max-width: 1170px) {
+    .post-full-image {
+        margin: 0 -4vw -100px;
+        height: 600px;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .post-full-image {
+        height: 400px;
+    }
+}
+
+.post-full-content {
+    position: relative;
+    margin: 0 auto;
+    min-height: 230px;
+    line-height: 1.65em;
+}
+
+@media (max-width: 1170px) {
+    .post-full-content {
+        padding: 5vw 7vw 0;
+    }
+}
+@media (max-width: 800px) {
+    .post-full-content {
+        font-size: 1.9rem;
+    }
+}
+
+.no-image .post-full-content {
+    padding-top: 0;
+}
+
+.no-image .post-full-content:before,
+.no-image .post-full-content:after {
+    display: none;
+}
+
+.post-full-content h1,
+.post-full-content h2,
+.post-full-content h3,
+.post-full-content h4,
+.post-full-content h5,
+.post-full-content h6,
+.post-full-content p,
+.post-full-content ul,
+.post-full-content ol,
+.post-full-content dl,
+.post-full-content pre,
+.post-full-content blockquote,
+.post-full-comments,
+.footnotes {
+    min-width: 100%;
+}
+
+.post-full-content li {
+    word-break: break-word;
+}
+
+.post-full-content li p {
+    margin: 0;
+}
+
+.post-full-content a {
+    color: #000;
+    word-break: break-word;
+    box-shadow: var(--blue) 0 -1px 0 inset;
+}
+
+.post-full-content a:hover {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.post-full-content strong,
+.post-full-content em {
+    color: color(var(--darkgrey) l(-5%));
+}
+
+.post-full-content small {
+    display: inline-block;
+    line-height: 1.6em;
+}
+
+.post-full-content li:first-child {
+    margin-top: 0;
+}
+
+.post-full-content img,
+.post-full-content video {
+    display: block;
+    margin: 1.5em auto;
+    max-width: 1040px;
+    height: auto;
+}
+@media (max-width: 1040px) {
+    .post-full-content img,
+    .post-full-content video {
+        width: 100%;
+    }
+}
+
+
+/* Full bleed images (#full)
+Super neat trick courtesy of @JoelDrapper
+Usage (In Ghost edtior):
+![img](/some/image.jpg#full)
+*/
+.post-full-content img[src$="#full"] {
+    max-width: none;
+    width: 100vw;
+}
+
+
+/* Image captions
+Usage (In Ghost editor):
+![img](/some/image.jpg)
+<small>Your image caption</small>
+*/
+.post-full-content img + br + small {
+    display: block;
+    margin-top: -3em;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+
+/* Override third party iframe styles */
+.post-full-content iframe {
+    margin: 0 auto !important;
+}
+
+.post-full-content blockquote {
+    margin: 0 0 1.5em;
+    padding: 0 1.5em;
+    border-left: #3eb0ef 3px solid;
+}
+
+.post-full-content blockquote p {
+    margin: 0 0 1em 0;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-style: italic;
+}
+
+.post-full-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.post-full-content code {
+    padding: 0 5px 2px;
+    font-size: 0.8em;
+    line-height: 1em;
+    font-weight: 400!important;
+    background: var(--whitegrey);
+    border-radius: 3px;
+}
+
+.post-full-content pre {
+    overflow-x: auto;
+    margin: 1.5em 0 3em;
+    padding: 20px;
+    max-width: 100%;
+    border: color(var(--darkgrey) l(-10%)) 1px solid;
+    color: var(--whitegrey);
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    background: color(var(--darkgrey) l(-3%));
+    border-radius: 5px;
+}
+
+.post-full-content pre code {
+    padding: 0;
+    font-size: inherit;
+    line-height: inherit;
+    background: transparent;
+}
+
+.post-full-content pre code * {
+    color: inherit;
+}
+
+.post-full-content .fluid-width-video-wrapper {
+    margin: 1.5em 0 3em;
+}
+
+.post-full-content hr {
+    margin: 4vw 0;
+}
+
+.post-full-content hr:after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    display: block;
+    margin-left: -10px;
+    width: 1px;
+    height: 30px;
+    background: color(var(--lightgrey) l(+10%));
+    box-shadow: #fff 0 0 0 5px;
+    transform: rotate(45deg);
+}
+
+.post-full-content h1,
+.post-full-content h2,
+.post-full-content h3,
+.post-full-content h4,
+.post-full-content h5,
+.post-full-content h6 {
+    color: color(var(--darkgrey) l(-5%));
+}
+
+.post-full-content h1 {
+    margin: 0.5em 0 0.2em 0;
+    font-size: 4.6rem;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    .post-full-content h1 {
+        font-size: 2.8rem;
+    }
+}
+
+.post-full-content h2 {
+    margin: 0.5em 0 0.2em 0;
+    font-size: 3.6rem;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    .post-full-content h2 {
+        font-size: 2.6rem;
+    }
+}
+
+.post-full-content h3 {
+    margin: 0.5em 0 0.2em 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    .post-full-content h3 {
+        font-size: 2.2rem;
+    }
+}
+
+.post-full-content h4 {
+    margin: 0.5em 0 0.2em 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    .post-full-content h4 {
+        font-size: 2.2rem;
+    }
+}
+
+.post-full-content h5 {
+    display: block;
+    margin: 0.5em 0;
+    padding: 1em 0 1.5em;
+    border: 0;
+    color: var(--blue);
+    font-family: Georgia,serif;
+    font-size: 3.2rem;
+    line-height: 1.35em;
+    text-align: center;
+}
+@media (min-width: 1180px) {
+    .post-full-content h5 {
+        max-width: 1060px;
+        width: 100vw;
+    }
+}
+@media (max-width: 500px) {
+    .post-full-content h5 {
+        padding: 0 0 0.5em;
+        font-size: 2.2rem;
+    }
+}
+
+.post-full-content h6 {
+    margin: 0.5em 0 0.2em 0;
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    .post-full-content h6 {
+        font-size: 2rem;
+    }
+}
+
+.footnotes-sep {
+    margin-bottom: 30px;
+}
+
+.footnotes {
+    font-size: 1.5rem;
+}
+
+.footnotes p {
+    margin: 0;
+}
+
+.footnote-backref {
+    color: var(--blue) !important;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
+
+/* Some grouped styles for smaller viewports */
+@media (max-width: 500px) {
+    .post-full-meta {
+        font-size: 1.2rem;
+        line-height: 1.3em;
+    }
+    .post-full-title {
+        font-size: 2.9rem;
+    }
+    .post-full-image {
+        margin-bottom: 4vw;
+        height: 350px;
+    }
+    .post-full-content {
+        padding: 0;
+    }
+    .post-full-content:before,
+    .post-full-content:after {
+        display: none;
+    }
+}
+
+/* Tables */
+.post-full-content table {
+    display: inline-block;
+    overflow-x: auto;
+    margin: 0.5em 0 2.5em;
+    max-width: 100%;
+    width: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 1.6rem;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.post-full-content table {
+    -webkit-overflow-scrolling: touch;
+    background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
+    background-attachment: scroll, scroll;
+    background-size: 10px 100%, 10px 100%;
+    background-repeat: no-repeat;
+}
+
+.post-full-content table td:first-child {
+    background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-size: 20px 100%;
+    background-repeat: no-repeat;
+}
+
+.post-full-content table td:last-child {
+    background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-position: 100% 0;
+    background-size: 20px 100%;
+    background-repeat: no-repeat;
+}
+
+.post-full-content table th {
+    color: var(--darkgrey);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-align: left;
+    text-transform: uppercase;
+    background-color: color(var(--whitegrey) l(+4%));
+}
+
+.post-full-content table th,
+.post-full-content table td {
+    padding: 6px 12px;
+    border: color(var(--whitegrey) l(-1%) s(-5%)) 1px solid;
+}
+
+/* 7.6. Koenig Styles
+/* ---------------------------------------------------------- */
+
+.post-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 920px;
+}
+
+.post-template .post-content > p:first-child {
+    font-size: 1.25em;
+    line-height: 1.5em;
+}
+
+.post-full-content .kg-image {
+    max-width: 100%;
+}
+
+/* Preventing full-width image overlap with post image.  */
+.post-full-image + .post-full-content .kg-content *:first-child .kg-image {
+    width: 100%;
+}
+
+.post-full-content .kg-width-wide .kg-image {
+    max-width: 1040px;
+}
+
+.post-full-content .kg-width-full .kg-image {
+    max-width: 100vw;
+}
+
+.post-full-content figure {
+    margin: 1.5em 0 3em;
+}
+
+.post-full-content figure img {
+    margin: 0;
+}
+
+.post-full-content figcaption {
+    margin: 1.0em 0 0;
+    font-size: 80%;
+    line-height: 1.6em;
+    text-align: center;
+}
+
+.kg-width-full figcaption {
+    padding: 0 1.5em;
+}
+
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+}
+
+.kg-embed-card .fluid-width-video-wrapper {
+    margin: 0;
+}
+
+
+@media (max-width: 1040px) {
+    .post-full-content .kg-width-full .kg-image {
+        width: 100vw;
+    }
+}
+
+.kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1040px;
+    width: 100vw;
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.kg-gallery-image img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+    margin: 0.75em 0 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+    margin: 0 0 0 0.75em;
+}
+
+
+/* .post h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 20px;
+}
+
+.post h1 {
+    font-weight: 300;
     font-size: var(--ts-1);
     line-height: var(--lh-1-4);
     border-bottom: 1px solid var(--lightgrey);
 }
 
-.post-md .post-wrapper h1 {
+.post h2 {
+    font-weight: 400;
+}
+
+.post h3, h4, h5 {
+    font-weight: 500;
+}
+
+.post .title {
+    border: none;
+    font-weight: 300;
+}
+
+.post .post-wrapper h1 {
     font-size: var(--ts-2);
 }
 
-.post-md p {
+.post p,
+.post article section {
     line-height: var(--lh-1-65);
+    margin-bottom: 28px;
 }
+
+.post pre {
+    margin-bottom: 20px;
+}
+
+.post a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.post article header span {
+    text-transform: uppercase;
+    font-size: 11.5px;
+    color: var(--midgrey);
+}
+
+.post article footer {
+    display: flex;
+}
+
+.post article footer ul {
+    padding: 0;
+    margin: 0;
+}
+
+.post article footer ul li {
+    padding: 0;
+    margin: 0;
+
+} */

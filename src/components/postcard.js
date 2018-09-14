@@ -30,7 +30,7 @@ const PostCard = ({ post }) => {
     const excerpt = getExcerpt(post)
 
     return (
-        <article className="mt7 mb7">
+        <article className="post-card mt7 mb7">
             <Link to={url}>
                 <header>
                     {tag ? <span>{tag}</span> : null}

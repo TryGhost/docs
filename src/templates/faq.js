@@ -9,9 +9,11 @@ const FAQ = ({ data }) => {
     const post = data.ghostPost
     return (
         <Layout>
-            <Link to="/faq/">FAQ</Link> / {post.title} — Updated: <time dateTime={post.updatedAt}>{post.updatedAt}</time>
-            <h1>{post.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div className="post-full-content">
+                <Link to="/faq/">FAQ</Link> / {post.title} — Updated: <time dateTime={post.updatedAt}>{post.updatedAt}</time>
+                <h1 className="title">{post.title}</h1>
+                <section className="post-wrapper" dangerouslySetInnerHTML={{ __html: post.html }} />
+            </div>
         </Layout>
     )
 }
