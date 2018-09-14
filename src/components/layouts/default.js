@@ -22,33 +22,22 @@ class DefaultLayout extends React.Component {
 
     render() {
         const children = this.props.children
+        const title = "Ghost Docs" + (this.props.title ? " - " + this.props.title : "")
+
         return (
-            <StaticQuery
-                query={ graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-                render={ data => (
-                    <>
-                        <Helmet>
-                            <html lang="en" className="fs-base" />
-                            <title>{ data.site.siteMetadata.title }</title>
-                            <meta name="description" content="Ghost Docs" />
-                            <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6076934/7558352/css/fonts.css" />
-                            <body className="flex flex-column whitney f-default fw4 middarkgrey readability" />
-                        </Helmet>
-                        <Header />
-                        <main className="bg-grey">
-                            { children }
-                        </main>
-                    </>
-                ) }
-            />
+            <>
+                <Helmet>
+                    <html lang="en" className="fs-base" />
+                    <title>{ title }</title>
+                    <meta name="description" content="Ghost Docs" />
+                    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6076934/7558352/css/fonts.css" />
+                    <body className="flex flex-column whitney f-default fw4 middarkgrey readability" />
+                </Helmet>
+                <Header />
+                <main className="bg-grey">
+                    { children }
+                </main>
+            </>
         )
     }
 }

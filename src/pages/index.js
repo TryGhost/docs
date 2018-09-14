@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import Layout from '../components/layouts/default'
 
 const IndexPage = () => (
-    <Layout>
+    <Layout title="Home">
         <section>
             <div>
                 <input placeholder="Search"></input>
