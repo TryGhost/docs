@@ -9,11 +9,13 @@ const IntegrationsPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
         <Layout title="Integrations">
-            <h1>Integrations</h1>
+            <div className="mw10 center">
+                <h1>Integrations</h1>
 
-            {posts.map(({ node }) => (
-                <Integration key={node.id} post={node} />
-            ))}
+                {posts.map(({ node }) => (
+                    <Integration key={node.id} post={node} />
+                ))}
+            </div>
         </Layout>
     )
 }

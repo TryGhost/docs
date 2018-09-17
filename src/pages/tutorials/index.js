@@ -9,7 +9,7 @@ const TutorialsPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
         <Layout title="Tutorials">
-            <div className="post-feed">
+            <div className="mw10 center">
                 <h1>Tutorials</h1>
                 {posts.map(({ node }) => (
                     <PostCard key={node.id} post={node} />

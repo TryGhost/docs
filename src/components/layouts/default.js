@@ -34,13 +34,11 @@ class DefaultLayout extends React.Component {
                     <body className="bg-whitegrey-l2 flex flex-column whitney f8 fw4 middarkgrey readability" />
                 </Helmet>
                 <Header />
-                <div className="flex items-start center mw10 mt30">
-                    <nav className="w-20 pr10 sidebar-min-width">Navigation</nav>
-                    <main className="flex-auto pr10">
-                        { children }
-                    </main>
-                    <nav className="bg-white shadow-1 sidebar-min-width pa4 br3">Navigation</nav>
+
+                <div className="mt30">
+                    { children }
                 </div>
+
                 <Footer />
             </>
         )
