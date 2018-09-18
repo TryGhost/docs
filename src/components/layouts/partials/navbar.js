@@ -34,8 +34,6 @@ class NavBar extends React.Component {
                 break;
         }
 
-        const theme = (this.props.theme == "light" ? headerSkin.light : headerSkin.dark)
-
         return(
             <nav className="flex flex-auto flex-nowrap items-start justify-between mw-xl center pt6 pb6">
                 <div className="flex flex-auto flex-nowrap items-center f8">
