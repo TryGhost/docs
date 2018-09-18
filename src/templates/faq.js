@@ -9,10 +9,49 @@ const FAQ = ({ data }) => {
     const post = data.ghostPost
     return (
         <Layout>
-            <div className="mw-xl center">
-                <Link to="/faq/">FAQ</Link> / {post.title} — Updated: <time dateTime={post.updatedAt}>{post.updatedAt}</time>
-                <h1 className="title">{post.title}</h1>
-                <section className="post-wrapper" dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div className="flex flex-column mw-xl center pa12 pt10 bg-white br4">
+
+                <div className="mb8 f8">
+                    <Link className="link midgrey" to="/faq/">FAQ</Link>
+                    <span className="mr1 ml1 f8 midgrey">/</span>
+                    <span className="darkgrey fw5">Primary Tag</span>
+                </div>
+
+                <div className="flex">
+
+                    <div className="flex flex-column justify-between">
+
+                        <div className="flex flex-column">
+                            <div className="flex items-start mb8">
+                                <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 fw5 br-100 tc white bg-blue">?</div>
+                                <h1 className="ma0 f4 darkgrey">{post.title}</h1>
+                            </div>
+
+                            <div className="flex items-start">
+                                <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 f8 fw5 br-100 tc blue ba b--blue" style={{ lineHeight: `1em` }}>&raquo;</div>
+                                <section className="post-content faq-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+                            </div>
+                        </div>
+
+                        <footer className="mt8 pt5 bt b--whitegrey midgrey f8">
+                            Updated: <time dateTime={post.updatedAt}>{post.updatedAt}</time>
+                        </footer>
+
+                    </div>
+
+                    <div className="flex-shrink-0 w70 ml14">
+                        <h4 className="ma0 mt1 mb6 midgrey">Related Questions</h4>
+                        <ul className="pa0 ma0 mb8 list">
+                            <li className="mb4 f8"><a className="link blue lh-title" href="#">This is a related post pulled from the same primary tag, kind of like Casper</a></li>
+                            <li className="mb4 f8"><a className="link blue lh-title" href="#">This is a related post pulled from the same primary tag, kind of like Casper</a></li>
+                            <li className="mb4 f8"><a className="link blue lh-title" href="#">This is a related post pulled from the same primary tag, kind of like Casper</a></li>
+                            <li className="mb4 f8"><a className="link blue lh-title" href="#">This is a related post pulled from the same primary tag, kind of like Casper</a></li>
+                            <li className="mb4 f8"><a className="link blue lh-title" href="#">This is a related post pulled from the same primary tag, kind of like Casper</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
             </div>
         </Layout>
     )
