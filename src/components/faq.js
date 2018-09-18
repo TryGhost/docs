@@ -28,13 +28,9 @@ const FAQ = (props) => {
     const excerpt = getExcerpt(post)
 
     return (
-        <article className="ml4 flex mt3 mb3">
-            <Link to={url}>
-                <header>
-                    <h2>{post.title} &raquo;</h2>
-                </header>
-                {excerpt ? <section>{excerpt}</section> : null}
-            </Link>
+        <article className="flex flex-column items-start pt7 pb7 bt b--whitegrey">
+            <Link className="pa2 pl0 pt0 link blue fw5" to={url}>{post.title} &raquo;</Link>
+            <p className="ma0 f8 lh-copy">{excerpt ? <section>{excerpt}</section> : null}</p>
         </article>
     )
 }
