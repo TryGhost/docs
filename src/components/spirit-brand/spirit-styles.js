@@ -9,4 +9,8 @@ export const SpiritStyle = {
         green: `link green `,
         middarkgrey: `link middarkgrey dim `,
     },
+
+    box: {
+        main: `bg-white pa10 shadow-3 br4 `,
+    },
 }
