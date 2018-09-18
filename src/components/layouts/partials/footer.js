@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer = () => (
     <footer className="mt10">
-        <div className="bt b--whitegrey mw10 center pt6 pb10 f8">Ghost Docs</div>
+        <div className="bt b--whitegrey mw-xl center pt6 pb10 f8">Ghost Docs</div>
     </footer>
 )
 

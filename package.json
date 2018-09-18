@@ -19,7 +19,7 @@
     "eslint": "5.6.0",
     "eslint-plugin-ghost": "0.0.27",
     "eslint-plugin-react": "^7.11.1",
-    "ghost-spirit": "^0.0.43",
+    "ghost-spirit": "0.0.45",
     "mocha": "^5.2.0",
     "should": "^13.2.3",
     "sinon": "6.3.3"

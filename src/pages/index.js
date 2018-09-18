@@ -5,7 +5,7 @@ import Layout from '../components/layouts/default'
 
 const IndexPage = () => (
     <Layout title="Home">
-        <div className="mw10 center">
+        <div className="mw-xl center">
             <section>
                 <div>
                     <input placeholder="Search"></input>

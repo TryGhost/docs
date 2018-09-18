@@ -8,7 +8,7 @@ const DocTemplate = ({ data }) => {
     const post = data.markdownRemark
     return (
         <Layout title={ post.frontmatter.title }>
-            <div className="flex items-start center mw10">
+            <div className="flex items-start center mw-xl">
                 <nav className="w-20 pr10 sidebar-min-width">Navigation</nav>
                 <main className="flex-auto pr10">
 

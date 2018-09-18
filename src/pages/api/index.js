@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 
 const APIPage = () => (
     <Layout title="API">
-        <div className="mw10 center">
+        <div className="center">
             <h1>Ghost API</h1>
             <section>
                 <h2>Frontend SDK</h2>

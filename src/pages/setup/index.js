@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 
 const SetupIndexPage = () => (
     <Layout title="Setup">
-        <div className="mw10 center">
+        <div className="center">
             <h1><Link to="/setup/what-is-ghost/">What is Ghost?</Link></h1>
             <section>
                 <h1>I want to setup a site</h1>

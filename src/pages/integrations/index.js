@@ -9,7 +9,7 @@ const IntegrationsPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
         <Layout title="Integrations">
-            <div className="mw10 center">
+            <div className="center">
                 <h1>Integrations</h1>
                 <div className="flex pa12 bg-white br4">
                     {posts.map(({ node }) => (

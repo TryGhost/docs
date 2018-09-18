@@ -6,7 +6,7 @@ import Logo from "../../global/logo"
 
 const Header = () => (
     <header className="bg-white shadow-2 fixed top-0 left-0 right-0 z-9999">
-        <nav className="flex flex-auto flex-nowrap items-start justify-between mw10 center pt6 pb6">
+        <nav className="flex flex-auto flex-nowrap items-start justify-between mw-xl center pt6 pb6">
             <div className="flex flex-auto flex-nowrap items-center f8">
                 <Link className="flex items-center mr15" to="/"><Logo /> {/* TODO: mrop to pass in height value? */}</Link>
                 <Link className={ SpiritStyle.link.middarkgrey + ` mr7`} to="/setup/">Setup</Link>

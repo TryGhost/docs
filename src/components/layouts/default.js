@@ -35,7 +35,7 @@ class DefaultLayout extends React.Component {
                 </Helmet>
                 <Header />
 
-                <div className="mt30">
+                <div className="mt30 mw-xl center">
                     { children }
                 </div>
 

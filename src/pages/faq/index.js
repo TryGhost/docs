@@ -9,7 +9,7 @@ const FAQPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
         <Layout title="FAQ">
-            <div className="mw10 center">
+            <div className="center">
                 <h1>FAQ</h1>
                 {posts.map(({ node }) => (
                     <FAQ key={node.id} post={node} />
