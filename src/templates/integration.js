@@ -11,18 +11,25 @@ const Integration = ({ data }) => {
     const post = data.ghostPost
     return (
         <Layout>
-            <div className="flex items-center justify-center">
-                <div className="h8 w8 pa8 bg-white br-100 shadow-3 nl2 nr2">
-                    <img src={post.feature_image} alt={post.title} />
-                </div>
-                <div className="h8 w8 pa9 bg-white br-100 shadow-3 nl2 nr2">
-                    <img src={integrationIcon} alt="Ghost" />
+            <div className="pa-vw4 tc">
+                <h1 className="ma0 pa0 f-headline">{post.title} + Ghost</h1>
+                <p className="ma0 mt2 f4 midgrey">How to use Ghost and {post.title} together</p>
+                <div className="flex items-center justify-center mt5">
+                    <div className="flex-shrink-0 flex justify-center items-center pa7 bg-white br-100 shadow-3 nl2 nr2">
+                        <img className="w9" src={post.feature_image} alt={post.title} />
+                    </div>
+                    <div className="flex-shrink-0 flex justify-center items-center pa8 bg-white br-100 shadow-3 nl2 nr2">
+                        <img className="w8" src={integrationIcon} alt="Ghost" />
+                    </div>
                 </div>
             </div>
-            <div className="flex mw9 mt10 center">
+            <div className="flex mw-70 center">
                 <div className="pa15 pt13 bg-white br4">
-                    <Link className="link blue" to="/integrations/">Integrations</Link> / {post.title}
-                    <h1>{post.title}</h1>
+                    <div className="mb5 f8">
+                        <Link className="link midgrey" to="/integrations/">Integrations</Link>
+                        <span className="mr1 ml1 f8 midgrey">/</span>
+                        <span className="darkgrey fw5">{post.title}</span>
+                    </div>
                     <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
                 </div>
             </div>

@@ -7,9 +7,9 @@ const Integration = (props) => {
     const url = `/integrations/${post.slug}/`
 
     return (
-        <article className="ml4 flex">
-            <Link className="flex flex-column w8 pa6 tc link darkgrey" to={url}>
-                <img className="mb3" src={post.feature_image} alt={post.title} />
+        <article className="flex items-start">
+            <Link className="flex flex-column items-center pa6 tc link darkgrey" to={url}>
+                <img className="w11 mb3" src={post.feature_image} alt={post.title} />
                 <div>{post.title}</div>
             </Link>
         </article>
