@@ -1,10 +1,12 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const componentWithMDXScope = require(`gatsby-mdx/component-with-mdx-scope`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions
-    if (node.internal.type === `MarkdownRemark`) {
-        const slug = createFilePath({ node, getNode, basePath: `pages` })
+
+    if (node.internal.type === `Mdx` || node.internal.type === `MarkdownRemark`) {
+        const slug = createFilePath({ node, getNode, basePath: `pages`, trailingSlash: true })
 
         createNodeField({
             node,
@@ -161,6 +163,50 @@ exports.createPages = ({ graphql, actions }) => {
         })
     })
 
-    return Promise.all([loadFAQPosts, loadTutorialPosts, loadIntegrations, createMDPages])
+    const loadMDXFiles = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+        resolve(
+            graphql(
+                `
+          {
+            allMdx {
+              edges {
+                node {
+                  id
+                  parent {
+                    ... on File {
+                      name
+                      sourceInstanceName
+                    }
+                  }
+                  code {
+                    scope
+                  }
+                  fields {
+                      slug
+                  }
+                }
+              }
+            }
+          }
+        `).then((result) => {
+                result.data.allMdx.edges.forEach(({ node }) => {
+                    createPage({
+                        path: `/${node.fields.slug}/`,
+                        component: componentWithMDXScope(
+                            path.resolve(`./src/templates/doc-mdx.js`),
+                            node.code.scope
+                        ),
+                        context: {
+                            slug: node.fields.slug,
+                        },
+                    })
+                })
+            })
+        ).catch(() => {
+            resolve()
+        })
+    })
+
+    return Promise.all([loadFAQPosts, loadTutorialPosts, loadIntegrations, loadMDXFiles])
 }
 

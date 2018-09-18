@@ -30,6 +30,13 @@ module.exports = {
                 name: `markdown-pages`,
             },
         },
+        `gatsby-mdx`,
+        // {
+        //     resolve: `gatsby-mdx`,
+        //     options: {
+        //         extensions: [`.mdx`, `.md`],
+        //     },
+        // },
         {
             resolve: `gatsby-transformer-remark`,
             options: {
