@@ -31,7 +31,7 @@ export const pageQuery = graphql`
   query GhostFAQQuery {
     allGhostPost(
         sort: { order: DESC, fields: [published_at] },
-        limit: 50,
+        limit: 10,
         filter: {primary_tag: {slug: {eq: "faq"}}}
     ) {
       edges {
