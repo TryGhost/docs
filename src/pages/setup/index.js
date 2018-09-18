@@ -7,7 +7,7 @@ import { SpiritStyle } from '../../components/spirit-brand/spirit-styles.js';
 const SetupIndexPage = () => (
     <Layout title="Setup">
         <div className={ SpiritStyle.box.main + " content-max-width center"}>
-            <h1 class=""><Link to="/setup/what-is-ghost/">What is Ghost?</Link></h1>
+            <h1><Link to="/setup/what-is-ghost/">What is Ghost?</Link></h1>
             <section>
                 <h1>I want to setup a site</h1>
                 <div>

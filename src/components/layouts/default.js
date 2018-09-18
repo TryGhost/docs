@@ -33,7 +33,7 @@ class DefaultLayout extends React.Component {
                     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6076934/7558352/css/fonts.css" />
                     <body className="bg-whitegrey-l2 flex flex-column whitney f7 fw4 middarkgrey readability" />
                 </Helmet>
-                <Header />
+                <Header shadow="shadow" />
 
                 <div className="mt30 mw-xl center">
                     { children }
