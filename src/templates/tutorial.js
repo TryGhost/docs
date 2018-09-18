@@ -13,7 +13,7 @@ const Tutorial = ({ data }) => {
                 <time dateTime={post.publishedAt} className="db mb10">{post.publishedAt}</time>
                 <h1 className="f-headline fw3 bn ma0 mb10">{post.title}</h1>
                 
-                <section className="post-full-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+                <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
 
                 <Authors authors={post.authors} />
             </div>

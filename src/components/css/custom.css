@@ -304,7 +304,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 /* 2. Single post */
 /* ---------------------------------------------------------- */
 
-.post-full-content hr {
+.post-content hr {
     position: relative;
     display: block;
     width: 100%;
@@ -315,66 +315,66 @@ The first (most recent) post in the list is styled to be bigger than the others 
     border-top: 1px solid var(--lightgrey);
 }
 
-.post-full-content audio,
-.post-full-content canvas,
-.post-full-content iframe,
-.post-full-content img,
-.post-full-content svg,
-.post-full-content video {
+.post-content audio,
+.post-content canvas,
+.post-content iframe,
+.post-content img,
+.post-content svg,
+.post-content video {
     vertical-align: middle;
 }
 
-.post-full-content fieldset {
+.post-content fieldset {
     margin: 0;
     padding: 0;
     border: 0;
 }
 
-.post-full-content textarea {
+.post-content textarea {
     resize: vertical;
 }
 
-.post-full-content p,
-.post-full-content ul,
-.post-full-content ol,
-.post-full-content dl,
-.post-full-content blockquote {
+.post-content p,
+.post-content ul,
+.post-content ol,
+.post-content dl,
+.post-content blockquote {
     margin: 0 0 2.5em 0;
 }
 
-.post-full-content ol,
-.post-full-content ul {
+.post-content ol,
+.post-content ul {
     padding-left: 1.3em;
     padding-right: 1.5em;
 }
 
-.post-full-content ol ol,
-.post-full-content ul ul,
-.post-full-content ul ol,
-.post-full-content ol ul {
+.post-content ol ol,
+.post-content ul ul,
+.post-content ul ol,
+.post-content ol ul {
     margin: 0.5em 0 1em;
 }
 
-.post-full-content ul {
+.post-content ul {
     list-style: disc;
 }
 
-.post-full-content ol {
+.post-content ol {
     list-style: decimal;
 }
 
-.post-full-content ul,
-.post-full-content ol {
+.post-content ul,
+.post-content ol {
     max-width: 100%;
 }
 
-.post-full-content li {
+.post-content li {
     margin: 0.5em 0;
     padding-left: 0.3em;
     line-height: 1.6em;
 }
 
-.post-full-content dt {
+.post-content dt {
     float: left;
     margin: 0 20px 0 0;
     width: 120px;
@@ -383,51 +383,51 @@ The first (most recent) post in the list is styled to be bigger than the others 
     text-align: right;
 }
 
-.post-full-content dd {
+.post-content dd {
     margin: 0 0 5px 0;
     text-align: left;
 }
 
-.post-full-content blockquote {
+.post-content blockquote {
     margin: 1.5em 0;
     padding: 0 1.6em 0 1.6em;
     border-left: var(--whitegrey) 0.5em solid;
 }
 
-.post-full-content blockquote p {
+.post-content blockquote p {
     margin: 0.8em 0;
     font-size: 1.2em;
     font-weight: 300;
 }
 
-.post-full-content blockquote small {
+.post-content blockquote small {
     display: inline-block;
     margin: 0.8em 0 0.8em 1.5em;
     font-size: 0.9em;
     opacity: 0.8;
 }
 /* Quotation marks */
-.post-full-content blockquote small:before {
+.post-content blockquote small:before {
     content: "\2014 \00A0";
 }
 
-.post-full-content blockquote cite {
+.post-content blockquote cite {
     font-weight: bold;
 }
-.post-full-content blockquote cite a {
+.post-content blockquote cite a {
     font-weight: normal;
 }
 
-.post-full-content a {
+.post-content a {
     color: color(var(--blue) l(-5%));
     text-decoration: none;
 }
 
-.post-full-content a:hover {
+.post-content a:hover {
     text-decoration: underline;
 }
 
-.post-full-content {
+.post-content {
     position: relative;
     margin: 0 auto;
     min-height: 230px;
@@ -435,76 +435,76 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 
 @media (max-width: 1170px) {
-    .post-full-content {
+    .post-content {
         padding: 5vw 7vw 0;
     }
 }
 @media (max-width: 800px) {
-    .post-full-content {
+    .post-content {
         font-size: 1.9rem;
     }
 }
 
-.post-full-content h1,
-.post-full-content h2,
-.post-full-content h3,
-.post-full-content h4,
-.post-full-content h5,
-.post-full-content h6,
-.post-full-content p,
-.post-full-content ul,
-.post-full-content ol,
-.post-full-content dl,
-.post-full-content pre,
-.post-full-content blockquote,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6,
+.post-content p,
+.post-content ul,
+.post-content ol,
+.post-content dl,
+.post-content pre,
+.post-content blockquote,
 .post-full-comments,
 .footnotes {
     min-width: 100%;
 }
 
-.post-full-content li {
+.post-content li {
     word-break: break-word;
 }
 
-.post-full-content li p {
+.post-content li p {
     margin: 0;
 }
 
-.post-full-content a {
+.post-content a {
     color: #000;
     word-break: break-word;
     box-shadow: var(--blue) 0 -1px 0 inset;
 }
 
-.post-full-content a:hover {
+.post-content a:hover {
     color: var(--blue);
     text-decoration: none;
 }
 
-.post-full-content strong,
-.post-full-content em {
+.post-content strong,
+.post-content em {
     color: color(var(--darkgrey) l(-5%));
 }
 
-.post-full-content small {
+.post-content small {
     display: inline-block;
     line-height: 1.6em;
 }
 
-.post-full-content li:first-child {
+.post-content li:first-child {
     margin-top: 0;
 }
 
-.post-full-content img,
-.post-full-content video {
+.post-content img,
+.post-content video {
     display: block;
     margin: 1.5em auto;
     max-width: 1040px;
     height: auto;
 }
 @media (max-width: 1040px) {
-    .post-full-content img,
-    .post-full-content video {
+    .post-content img,
+    .post-content video {
         width: 100%;
     }
 }
@@ -515,7 +515,7 @@ Super neat trick courtesy of @JoelDrapper
 Usage (In Ghost edtior):
 ![img](/some/image.jpg#full)
 */
-.post-full-content img[src$="#full"] {
+.post-content img[src$="#full"] {
     max-width: none;
     width: 100vw;
 }
@@ -526,7 +526,7 @@ Usage (In Ghost editor):
 ![img](/some/image.jpg)
 <small>Your image caption</small>
 */
-.post-full-content img + br + small {
+.post-content img + br + small {
     display: block;
     margin-top: -3em;
     margin-bottom: 1.5em;
@@ -535,17 +535,17 @@ Usage (In Ghost editor):
 
 
 /* Override third party iframe styles */
-.post-full-content iframe {
+.post-content iframe {
     margin: 0 auto !important;
 }
 
-.post-full-content blockquote {
+.post-content blockquote {
     margin: 0 0 1.5em;
     padding: 0 1.5em;
     border-left: #3eb0ef 3px solid;
 }
 
-.post-full-content blockquote p {
+.post-content blockquote p {
     margin: 0 0 1em 0;
     color: inherit;
     font-size: inherit;
@@ -553,11 +553,11 @@ Usage (In Ghost editor):
     font-style: italic;
 }
 
-.post-full-content blockquote p:last-child {
+.post-content blockquote p:last-child {
     margin-bottom: 0;
 }
 
-.post-full-content code {
+.post-content code {
     padding: 0 5px 2px;
     font-size: 0.8em;
     line-height: 1em;
@@ -566,7 +566,7 @@ Usage (In Ghost editor):
     border-radius: 3px;
 }
 
-.post-full-content pre {
+.post-content pre {
     overflow-x: auto;
     margin: 1.5em 0 3em;
     padding: 20px;
@@ -579,31 +579,31 @@ Usage (In Ghost editor):
     border-radius: 5px;
 }
 
-.post-full-content pre code {
+.post-content pre code {
     padding: 0;
     font-size: inherit;
     line-height: inherit;
     background: transparent;
 }
 
-.post-full-content pre code * {
+.post-content pre code * {
     color: inherit;
 }
 
-.post-full-content .fluid-width-video-wrapper {
+.post-content .fluid-width-video-wrapper {
     margin: 1.5em 0 3em;
 }
 
-.post-full-content h1,
-.post-full-content h2,
-.post-full-content h3,
-.post-full-content h4,
-.post-full-content h5,
-.post-full-content h6 {
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
     color: color(var(--darkgrey) l(-5%));
 }
 
-.post-full-content h1 {
+.post-content h1 {
     margin: 0.5em 0;
     padding: 0 0 0.5em;
     font-size: var(--ts-1);
@@ -612,45 +612,45 @@ Usage (In Ghost editor):
 }
 
 @media (max-width: 500px) {
-    .post-full-content h1 {
+    .post-content h1 {
         font-size: 2.8rem;
     }
 }
 
-.post-full-content h2 {
+.post-content h2 {
     margin: 0.5em 0;
     font-size: var(--ts-2);
     font-weight: 400;
 }
 @media (max-width: 500px) {
-    .post-full-content h2 {
+    .post-content h2 {
         font-size: 2.6rem;
     }
 }
 
-.post-full-content h3 {
+.post-content h3 {
     margin: 0.5em 0 0.4em 0;
     font-size: var(--ts-3);
     font-weight: 500;
 }
 @media (max-width: 500px) {
-    .post-full-content h3 {
+    .post-content h3 {
         font-size: 2.2rem;
     }
 }
 
-.post-full-content h4 {
+.post-content h4 {
     margin: 0.5em 0 0.4em 0;
     font-size: var(--ts-4);
     font-weight: 500;
 }
 @media (max-width: 500px) {
-    .post-full-content h4 {
+    .post-content h4 {
         font-size: 2.2rem;
     }
 }
 
-.post-full-content h5 {
+.post-content h5 {
     display: block;
     margin: 0.5em 0 0.3em;
     border: 0;
@@ -659,19 +659,19 @@ Usage (In Ghost editor):
     font-weight: 600;
 }
 @media (min-width: 1180px) {
-    .post-full-content h5 {
+    .post-content h5 {
         max-width: 1060px;
         width: 100vw;
     }
 }
 @media (max-width: 500px) {
-    .post-full-content h5 {
+    .post-content h5 {
         padding: 0 0 0.5em;
         font-size: 2.2rem;
     }
 }
 
-.post-full-content h6 {
+.post-content h6 {
     margin: 0.5em 0 0.2em 0;
     font-size: var(--ts-7);
     font-weight: 700;
@@ -679,7 +679,7 @@ Usage (In Ghost editor):
     letter-spacing: 0.4px;
 }
 @media (max-width: 500px) {
-    .post-full-content h6 {
+    .post-content h6 {
         font-size: 2rem;
     }
 }
@@ -717,17 +717,17 @@ Usage (In Ghost editor):
         margin-bottom: 4vw;
         height: 350px;
     }
-    .post-full-content {
+    .post-content {
         padding: 0;
     }
-    .post-full-content:before,
-    .post-full-content:after {
+    .post-content:before,
+    .post-content:after {
         display: none;
     }
 }
 
 /* Tables */
-.post-full-content table {
+.post-content table {
     display: inline-block;
     overflow-x: auto;
     margin: 0.5em 0 2.5em;
@@ -741,7 +741,7 @@ Usage (In Ghost editor):
     vertical-align: top;
 }
 
-.post-full-content table {
+.post-content table {
     -webkit-overflow-scrolling: touch;
     background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
     background-attachment: scroll, scroll;
@@ -749,20 +749,20 @@ Usage (In Ghost editor):
     background-repeat: no-repeat;
 }
 
-.post-full-content table td:first-child {
+.post-content table td:first-child {
     background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
     background-size: 20px 100%;
     background-repeat: no-repeat;
 }
 
-.post-full-content table td:last-child {
+.post-content table td:last-child {
     background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
     background-position: 100% 0;
     background-size: 20px 100%;
     background-repeat: no-repeat;
 }
 
-.post-full-content table th {
+.post-content table th {
     color: var(--darkgrey);
     font-size: 1.2rem;
     font-weight: 700;
@@ -772,8 +772,8 @@ Usage (In Ghost editor):
     background-color: color(var(--whitegrey) l(+4%));
 }
 
-.post-full-content table th,
-.post-full-content table td {
+.post-content table th,
+.post-content table td {
     padding: 6px 12px;
     border: color(var(--whitegrey) l(-1%) s(-5%)) 1px solid;
 }
@@ -793,32 +793,32 @@ Usage (In Ghost editor):
     line-height: 1.5em;
 }
 
-.post-full-content .kg-image {
+.post-content .kg-image {
     max-width: 100%;
 }
 
 /* Preventing full-width image overlap with post image.  */
-.post-full-image + .post-full-content .kg-content *:first-child .kg-image {
+.post-full-image + .post-content .kg-content *:first-child .kg-image {
     width: 100%;
 }
 
-.post-full-content .kg-width-wide .kg-image {
+.post-content .kg-width-wide .kg-image {
     max-width: 1040px;
 }
 
-.post-full-content .kg-width-full .kg-image {
+.post-content .kg-width-full .kg-image {
     max-width: 100vw;
 }
 
-.post-full-content figure {
+.post-content figure {
     margin: 1.5em 0 3em;
 }
 
-.post-full-content figure img {
+.post-content figure img {
     margin: 0;
 }
 
-.post-full-content figcaption {
+.post-content figcaption {
     margin: 1.0em 0 0;
     font-size: 80%;
     line-height: 1.6em;
@@ -842,7 +842,7 @@ Usage (In Ghost editor):
 
 
 @media (max-width: 1040px) {
-    .post-full-content .kg-width-full .kg-image {
+    .post-content .kg-width-full .kg-image {
         width: 100vw;
     }
 }

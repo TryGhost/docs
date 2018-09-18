@@ -12,7 +12,7 @@ const DocTemplate = ({ data }) => {
                 <nav className="w-20 pr10 sidebar-min-width">Navigation</nav>
                 <main className="flex-auto pr10">
 
-                    <div className="post-full-content">
+                    <div className="post-content">
                         <h1 className="title">{post.frontmatter.title}</h1>
                         <section className="post-wrapper" dangerouslySetInnerHTML={{ __html: post.html }} />
                     </div>
