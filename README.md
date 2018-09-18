@@ -9,7 +9,7 @@ _[Note: This project is in active early development and is not suitable for publ
 ## Installation
 1. Make sure that `gstenv` is green. See [Dev Environment](https://hq.ghost.org/dev-environment/) for docs.
 2. `git clone` this repo & `cd` into it as usual
-3. Run `npm i -g gatsby@2.0.0-rc.15`
+3. Run `npm i -g gatsby@2.0.0`
 3. Run `yarn` to install top-level dependencies.
 4. Copy the existing `.env.example` file as `.env.development` and insert your API key (`client_secret`)
 

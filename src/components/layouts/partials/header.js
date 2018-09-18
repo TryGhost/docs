@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from "gatsby"
 import { SpiritStyle } from '../../spirit-brand/spirit-styles'
 
-import Logo from "components/global/logo"
+import Logo from "../../global/logo"
 
 const Header = () => (
     <header className="bg-white shadow-2 fixed top-0 left-0 right-0 z-9999">
