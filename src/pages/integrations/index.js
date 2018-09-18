@@ -11,10 +11,11 @@ const IntegrationsPage = ({ data }) => {
         <Layout title="Integrations">
             <div className="mw10 center">
                 <h1>Integrations</h1>
-
-                {posts.map(({ node }) => (
-                    <Integration key={node.id} post={node} />
-                ))}
+                <div className="flex pa12 bg-white br4">
+                    {posts.map(({ node }) => (
+                        <Integration key={node.id} post={node} />
+                    ))}
+                </div>
             </div>
         </Layout>
     )
@@ -38,6 +39,7 @@ export const pageQuery = graphql`
           id
           slug
           title
+          feature_image
           custom_excerpt
           plaintext
           publishedAt: published_at(formatString: "DD MMMM, YYYY"),

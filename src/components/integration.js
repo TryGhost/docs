@@ -8,7 +8,10 @@ const Integration = (props) => {
 
     return (
         <article className="ml4 flex">
-            <Link to={url}>{post.title}</Link>
+            <Link className="flex flex-column w8 pa6 tc link darkgrey" to={url}>
+                <img className="mb3" src={post.feature_image} alt={post.title} />
+                <div>{post.title}</div>
+            </Link>
         </article>
     )
 }
