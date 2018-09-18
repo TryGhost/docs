@@ -13,197 +13,13 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     min-width: 12vw;
 }
 
-/* Content styling  - just copying Casper for now */
-
-/* 1. Global styles */
-
-.post-full-content hr {
-    position: relative;
-    display: block;
-    width: 100%;
-    margin: 2.5em 0 3.5em;
-    padding: 0;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid color(var(--lightgrey) l(+10%));
+.content-max-width {
+    max-width: calc(114rem - 24vw);
 }
 
-.post-full-content audio,
-.post-full-content canvas,
-.post-full-content iframe,
-.post-full-content img,
-.post-full-content svg,
-.post-full-content video {
-    vertical-align: middle;
-}
+/* Content styling  - reusing Casper */
 
-.post-full-content fieldset {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-.post-full-content textarea {
-    resize: vertical;
-}
-
-.post-full-content p,
-.post-full-content ul,
-.post-full-content ol,
-.post-full-content dl,
-.post-full-content blockquote {
-    margin: 0 0 1.5em 0;
-}
-
-.post-full-content ol,
-.post-full-content ul {
-    padding-left: 1.3em;
-    padding-right: 1.5em;
-}
-
-.post-full-content ol ol,
-.post-full-content ul ul,
-.post-full-content ul ol,
-.post-full-content ol ul {
-    margin: 0.5em 0 1em;
-}
-
-.post-full-content ul {
-    list-style: disc;
-}
-
-.post-full-content ol {
-    list-style: decimal;
-}
-
-.post-full-content ul,
-.post-full-content ol {
-    max-width: 100%;
-}
-
-.post-full-content li {
-    margin: 0.5em 0;
-    padding-left: 0.3em;
-    line-height: 1.6em;
-}
-
-.post-full-content dt {
-    float: left;
-    margin: 0 20px 0 0;
-    width: 120px;
-    color: var(--darkgrey);
-    font-weight: 500;
-    text-align: right;
-}
-
-.post-full-content dd {
-    margin: 0 0 5px 0;
-    text-align: left;
-}
-
-.post-full-content blockquote {
-    margin: 1.5em 0;
-    padding: 0 1.6em 0 1.6em;
-    border-left: var(--whitegrey) 0.5em solid;
-}
-
-.post-full-content blockquote p {
-    margin: 0.8em 0;
-    font-size: 1.2em;
-    font-weight: 300;
-}
-
-.post-full-content blockquote small {
-    display: inline-block;
-    margin: 0.8em 0 0.8em 1.5em;
-    font-size: 0.9em;
-    opacity: 0.8;
-}
-/* Quotation marks */
-.post-full-content blockquote small:before {
-    content: "\2014 \00A0";
-}
-
-.post-full-content blockquote cite {
-    font-weight: bold;
-}
-.post-full-content blockquote cite a {
-    font-weight: normal;
-}
-
-.post-full-content a {
-    color: color(var(--blue) l(-5%));
-    text-decoration: none;
-}
-
-.post-full-content a:hover {
-    text-decoration: underline;
-}
-
-.post-full-content h1,
-.post-full-content h2,
-.post-full-content h3,
-.post-full-content h4,
-.post-full-content h5,
-.post-full-content h6 {
-    margin-top: 0;
-    line-height: 1.15;
-    font-weight: 300;
-    text-rendering: optimizeLegibility;
-}
-
-.post-full-content h1 {
-    margin: 0 0 0.5em 0;
-    font-size: 5rem;
-    font-weight: 300;
-}
-@media (max-width: 500px) {
-    .post-full-content h1 {
-        font-size: 2.2rem;
-    }
-}
-
-.post-full-content h2 {
-    margin: 1.5em 0 0.5em 0;
-    font-size: 2rem;
-}
-@media (max-width: 500px) {
-    .post-full-content h2 {
-        font-size: 1.8rem;
-    }
-}
-
-.post-full-content h3 {
-    margin: 1.5em 0 0.5em 0;
-    font-size: 1.8rem;
-    font-weight: 500;
-}
-@media (max-width: 500px) {
-    .post-full-content h3 {
-        font-size: 1.7rem;
-    }
-}
-
-.post-full-content h4 {
-    margin: 1.5em 0 0.5em 0;
-    font-size: 1.6rem;
-    font-weight: 500;
-}
-
-.post-full-content h5 {
-    margin: 1.5em 0 0.5em 0;
-    font-size: 1.4rem;
-    font-weight: 500;
-}
-
-.post-full-content h6 {
-    margin: 1.5em 0 0.5em 0;
-    font-size: 1.4rem;
-    font-weight: 500;
-}
-
-
-/* 6. Post Feed */
+/* 1. Post Feed */
 /* ---------------------------------------------------------- */
 
 .post-feed {
@@ -485,84 +301,137 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 
 
-/* 7. Single Post
+/* 2. Single post */
 /* ---------------------------------------------------------- */
 
-.post-template .site-main,
-.page-template .site-main {
-    padding-bottom: 4vw;
-    background: #fff;
-}
-
-.post-full {
+.post-full-content hr {
     position: relative;
-    z-index: 50;
-}
-/* ^ Required to make .post-full-content:before/after z-index stacking work */
-
-.post-full-header {
-    margin: 0 auto;
-    padding: 6vw 3vw 3vw;
-    max-width: 1040px;
-    text-align: center;
-}
-@media (max-width: 500px) {
-    .post-full-header {
-        padding: 14vw 3vw 10vw;
-    }
+    display: block;
+    width: 100%;
+    margin: 3em 0;
+    padding: 0;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--lightgrey);
 }
 
-.post-full-meta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--midgrey);
-    font-size: 1.4rem;
-    font-weight: 600;
-    text-transform: uppercase;
+.post-full-content audio,
+.post-full-content canvas,
+.post-full-content iframe,
+.post-full-content img,
+.post-full-content svg,
+.post-full-content video {
+    vertical-align: middle;
 }
 
-.post-full-meta-date {
-    color: var(--blue);
-}
-
-.post-full-title {
+.post-full-content fieldset {
     margin: 0;
-    color: color(var(--darkgrey) l(-5%));
+    padding: 0;
+    border: 0;
 }
 
-.date-divider {
+.post-full-content textarea {
+    resize: vertical;
+}
+
+.post-full-content p,
+.post-full-content ul,
+.post-full-content ol,
+.post-full-content dl,
+.post-full-content blockquote {
+    margin: 0 0 2.5em 0;
+}
+
+.post-full-content ol,
+.post-full-content ul {
+    padding-left: 1.3em;
+    padding-right: 1.5em;
+}
+
+.post-full-content ol ol,
+.post-full-content ul ul,
+.post-full-content ul ol,
+.post-full-content ol ul {
+    margin: 0.5em 0 1em;
+}
+
+.post-full-content ul {
+    list-style: disc;
+}
+
+.post-full-content ol {
+    list-style: decimal;
+}
+
+.post-full-content ul,
+.post-full-content ol {
+    max-width: 100%;
+}
+
+.post-full-content li {
+    margin: 0.5em 0;
+    padding-left: 0.3em;
+    line-height: 1.6em;
+}
+
+.post-full-content dt {
+    float: left;
+    margin: 0 20px 0 0;
+    width: 120px;
+    color: var(--darkgrey);
+    font-weight: 500;
+    text-align: right;
+}
+
+.post-full-content dd {
+    margin: 0 0 5px 0;
+    text-align: left;
+}
+
+.post-full-content blockquote {
+    margin: 1.5em 0;
+    padding: 0 1.6em 0 1.6em;
+    border-left: var(--whitegrey) 0.5em solid;
+}
+
+.post-full-content blockquote p {
+    margin: 0.8em 0;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.post-full-content blockquote small {
     display: inline-block;
-    margin: 0 6px 1px;
+    margin: 0.8em 0 0.8em 1.5em;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+/* Quotation marks */
+.post-full-content blockquote small:before {
+    content: "\2014 \00A0";
 }
 
-.post-full-image {
-    margin: 0 -10vw -165px;
-    height: 800px;
-    background: var(--lightgrey) center center;
-    background-size: cover;
-    border-radius: 5px;
+.post-full-content blockquote cite {
+    font-weight: bold;
+}
+.post-full-content blockquote cite a {
+    font-weight: normal;
 }
 
-@media (max-width: 1170px) {
-    .post-full-image {
-        margin: 0 -4vw -100px;
-        height: 600px;
-        border-radius: 0;
-    }
+.post-full-content a {
+    color: color(var(--blue) l(-5%));
+    text-decoration: none;
 }
 
-@media (max-width: 800px) {
-    .post-full-image {
-        height: 400px;
-    }
+.post-full-content a:hover {
+    text-decoration: underline;
 }
 
 .post-full-content {
     position: relative;
     margin: 0 auto;
     min-height: 230px;
-    line-height: 1.65em;
+    line-height: 1.75em;
 }
 
 @media (max-width: 1170px) {
@@ -574,15 +443,6 @@ The first (most recent) post in the list is styled to be bigger than the others 
     .post-full-content {
         font-size: 1.9rem;
     }
-}
-
-.no-image .post-full-content {
-    padding-top: 0;
-}
-
-.no-image .post-full-content:before,
-.no-image .post-full-content:after {
-    display: none;
 }
 
 .post-full-content h1,
@@ -734,24 +594,6 @@ Usage (In Ghost editor):
     margin: 1.5em 0 3em;
 }
 
-.post-full-content hr {
-    margin: 4vw 0;
-}
-
-.post-full-content hr:after {
-    content: "";
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    display: block;
-    margin-left: -10px;
-    width: 1px;
-    height: 30px;
-    background: color(var(--lightgrey) l(+10%));
-    box-shadow: #fff 0 0 0 5px;
-    transform: rotate(45deg);
-}
-
 .post-full-content h1,
 .post-full-content h2,
 .post-full-content h3,
@@ -762,10 +604,13 @@ Usage (In Ghost editor):
 }
 
 .post-full-content h1 {
-    margin: 0.5em 0 0.2em 0;
-    font-size: 4.6rem;
-    font-weight: 700;
+    margin: 0.5em 0;
+    padding: 0 0 0.5em;
+    font-size: var(--ts-1);
+    font-weight: 400;
+    border-bottom: 1px solid var(--lightgrey);
 }
+
 @media (max-width: 500px) {
     .post-full-content h1 {
         font-size: 2.8rem;
@@ -773,9 +618,9 @@ Usage (In Ghost editor):
 }
 
 .post-full-content h2 {
-    margin: 0.5em 0 0.2em 0;
-    font-size: 3.6rem;
-    font-weight: 700;
+    margin: 0.5em 0;
+    font-size: var(--ts-2);
+    font-weight: 400;
 }
 @media (max-width: 500px) {
     .post-full-content h2 {
@@ -784,9 +629,9 @@ Usage (In Ghost editor):
 }
 
 .post-full-content h3 {
-    margin: 0.5em 0 0.2em 0;
-    font-size: 2.8rem;
-    font-weight: 700;
+    margin: 0.5em 0 0.4em 0;
+    font-size: var(--ts-3);
+    font-weight: 500;
 }
 @media (max-width: 500px) {
     .post-full-content h3 {
@@ -795,9 +640,9 @@ Usage (In Ghost editor):
 }
 
 .post-full-content h4 {
-    margin: 0.5em 0 0.2em 0;
-    font-size: 2.8rem;
-    font-weight: 700;
+    margin: 0.5em 0 0.4em 0;
+    font-size: var(--ts-4);
+    font-weight: 500;
 }
 @media (max-width: 500px) {
     .post-full-content h4 {
@@ -807,14 +652,11 @@ Usage (In Ghost editor):
 
 .post-full-content h5 {
     display: block;
-    margin: 0.5em 0;
-    padding: 1em 0 1.5em;
+    margin: 0.5em 0 0.3em;
     border: 0;
-    color: var(--blue);
-    font-family: Georgia,serif;
-    font-size: 3.2rem;
+    font-size: var(--ts-5);
     line-height: 1.35em;
-    text-align: center;
+    font-weight: 600;
 }
 @media (min-width: 1180px) {
     .post-full-content h5 {
@@ -831,8 +673,10 @@ Usage (In Ghost editor):
 
 .post-full-content h6 {
     margin: 0.5em 0 0.2em 0;
-    font-size: 2.3rem;
+    font-size: var(--ts-7);
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
 }
 @media (max-width: 500px) {
     .post-full-content h6 {
@@ -1030,68 +874,3 @@ Usage (In Ghost editor):
 .kg-gallery-image:not(:first-of-type) {
     margin: 0 0 0 0.75em;
 }
-
-
-/* .post h1, h2, h3, h4, h5, h6 {
-    margin: 0 0 20px;
-}
-
-.post h1 {
-    font-weight: 300;
-    font-size: var(--ts-1);
-    line-height: var(--lh-1-4);
-    border-bottom: 1px solid var(--lightgrey);
-}
-
-.post h2 {
-    font-weight: 400;
-}
-
-.post h3, h4, h5 {
-    font-weight: 500;
-}
-
-.post .title {
-    border: none;
-    font-weight: 300;
-}
-
-.post .post-wrapper h1 {
-    font-size: var(--ts-2);
-}
-
-.post p,
-.post article section {
-    line-height: var(--lh-1-65);
-    margin-bottom: 28px;
-}
-
-.post pre {
-    margin-bottom: 20px;
-}
-
-.post a {
-    color: var(--blue);
-    text-decoration: none;
-}
-
-.post article header span {
-    text-transform: uppercase;
-    font-size: 11.5px;
-    color: var(--midgrey);
-}
-
-.post article footer {
-    display: flex;
-}
-
-.post article footer ul {
-    padding: 0;
-    margin: 0;
-}
-
-.post article footer ul li {
-    padding: 0;
-    margin: 0;
-
-} */

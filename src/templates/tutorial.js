@@ -9,10 +9,11 @@ const Tutorial = ({ data }) => {
     const post = data.ghostPost
     return (
         <Layout>
-            <div className="mw10 center">
-                <time dateTime={post.publishedAt}>{post.publishedAt}</time>
-                <h1 className="title">{post.title}</h1>
-                <section className="post-wrapper" dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div className="center content-max-width">
+                <time dateTime={post.publishedAt} className="db mb10">{post.publishedAt}</time>
+                <h1 className="f-headline fw3 bn ma0 mb10">{post.title}</h1>
+                
+                <section className="post-full-content" dangerouslySetInnerHTML={{ __html: post.html }} />
 
                 <Authors authors={post.authors} />
             </div>
