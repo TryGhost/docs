@@ -17,27 +17,27 @@ const headerSkin = {
     },
 }
 
-
 class NavBar extends React.Component {
-
     render() {
-
-        var theme;
+        var theme
 
         switch (this.props.theme) {
-            case "light":
-                theme = headerSkin.light
-                break;
+        case `light`:
+            theme = headerSkin.light
+            break
 
-            case "dark":
-                theme = headerSkin.dark
-                break;
+        case `dark`:
+            theme = headerSkin.dark
+            break
         }
 
-        return(
-            <nav className="flex flex-auto flex-nowrap items-start justify-between mw-xl center pt6 pb6">
+        return (
+            <nav className="flex flex-auto flex-nowrap items-center justify-between mw-xl center pt2 pb2">
                 <div className="flex flex-auto flex-nowrap items-center f8">
-                    <Link className="flex items-center mr15" to="/"><Logo theme={ this.props.theme } /></Link>
+                    <div className="flex items-center pt3 pb3 mr12">
+                        <a href="https://ghost.org"><Logo /></a>
+                        <Link className="gh-nav-logo-suffix" to="/">Docs</Link>
+                    </div>
                     <Link className={ theme.menuItem + ` mr7` } to="/setup/">Setup</Link>
                     <Link className={ theme.menuItem + ` mr7` } to="/concepts/introduction/">Core Concepts</Link>
                     <Link className={ theme.menuItem + ` mr7` } to="/tutorials/">Tutorials</Link>
@@ -47,21 +47,20 @@ class NavBar extends React.Component {
                 </div>
                 <div className="flex flex-auto flex-nowrap justify-end items-center">
                     <div className="relative">
-                        <input name="foo" type="text" className={ theme.searchBox + " f8 pa2 pl4 pr4 ba f8 fw4 br3 whitney form-text bn br-pill sidebar-min-width" } placeholder="Search..." />
+                        <input name="foo" type="text" className={ theme.searchBox + ` f8 pa2 pl4 pr4 ba f8 fw4 br3 whitney form-text bn br-pill sidebar-min-width` } placeholder="Search..." />
                     </div>
                 </div>
             </nav>
         )
     }
-
 }
 
 NavBar.defaultProps = {
-    theme: 'dark',
+    theme: `dark`,
 }
 
 NavBar.propTypes = {
-    theme: PropTypes.oneOf(['dark', 'light']),
+    theme: PropTypes.oneOf([`dark`, `light`]),
 }
 
 export default NavBar
