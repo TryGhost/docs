@@ -71,7 +71,7 @@ export const articleQuery = graphql`
           plaintext
           html
           updatedAt: updated_at(formatString: "MMMM, YYYY")
-          primaryTag:primary_tag{
+          tags {
             name
             slug
           }
