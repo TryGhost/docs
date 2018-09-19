@@ -11,9 +11,9 @@ const DesignIndex = () => (
                 <div className="post-content">
                     <h1>Page Templates</h1>
                     <ul>
-                        <li><Link to="/design/full-width-page/">Full width</Link></li>
-                        <li><Link to="/design/left-sidebar-page/">Left sidebar</Link></li>
-                        <li><Link to="/design/custom-page/">Custom</Link></li>
+                        <li><Link to="/design/page-templates/full-width/">Full width</Link></li>
+                        <li><Link to="/design/page-templates/left-sidebar/">Left sidebar</Link></li>
+                        <li><Link to="/design/page-templates/left-sidebar-nav/">Left sidebar + inner nav</Link></li>
                     </ul>
 
                     <h1>Typography</h1>
