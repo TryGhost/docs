@@ -17,13 +17,13 @@ const IntegrationsPage = ({ data }) => {
                 </div>
                 <div className="flex pa12 bg-white br4">
                     <div className="flex-shrink-0 w50 mr5">
-                        <div className="flex flex-column mb5">
-                            <h3>Sort by</h3>
+                        <div className="flex flex-column mb6">
+                            <h3 className="ma0 mb2">Sort by</h3>
                             <a className="link pa2 pl0 blue fw6" href="#">Most popular</a>
                             <a className="link pa2 pl0 midgrey" href="#">A – Z</a>
                         </div>
-                        <div className="flex flex-column mb5">
-                            <h3>Filter by</h3>
+                        <div className="flex flex-column mb6">
+                            <h3 className="ma0 mb2">Filter by</h3>
                             <a className="link pa2 pl0 blue fw6" href="#">All integrations</a>
                             <a className="link pa2 pl0 midgrey" href="#">Automation</a>
                             <a className="link pa2 pl0 midgrey" href="#">Analytics</a>
