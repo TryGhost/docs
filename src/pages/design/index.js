@@ -6,11 +6,17 @@ import Layout from '../../components/layouts/default'
 const DesignIndex = () => (
     <Layout title="Home" headerDividerStyle="shadow">
         <div className="center">
+            <div className="pa20 pb30 tc">
+                <h1 className="f-headline ma0 mb2">Docs Design System</h1>
+                <h2 className="f4 fw3 ma0">Design stuff for the new docs</h2>
+            </div>
             <div className="bg-white br4 shadow-1 pa15 pt12 pb12">
-                <h1 className="f-subheadline fw3 mt0">Docs Design System</h1>
                 <div className="post-content">
                     <h1>Page Templates</h1>
                     <ul>
+                        <li><Link to="/design/page-templates/section-landing/">Section landing page</Link></li>
+                        <li><Link to="/design/page-templates/custom-section-landing/">Custom section landing</Link></li>
+                        <li><Link to="/design/page-templates/posts-landing/">Posts landing</Link></li>
                         <li><Link to="/design/page-templates/full-width/">Full width</Link></li>
                         <li><Link to="/design/page-templates/left-sidebar/">Left sidebar</Link></li>
                         <li><Link to="/design/page-templates/left-sidebar-nav/">Left sidebar + inner nav</Link></li>

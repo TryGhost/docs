@@ -8,7 +8,7 @@ class Header extends React.Component {
 
         switch (this.props.dividerStyle) {
         case `hairline`:
-            headerShadow = `shadow-1`
+            headerShadow = `bb b--whitegrey`
             break
 
         case `shadow`:
@@ -21,9 +21,12 @@ class Header extends React.Component {
         }
 
         return (
-            <header className={ headerShadow + ` bg-white top-0 left-0 right-0 z-9999 mb10` }>
-                <NavBar theme="dark" />
-            </header>
+            <>
+                <header className={ headerShadow + ` fixed bg-white top-0 left-0 right-0 z-9999 mb10` }>
+                    <NavBar theme="dark" />
+                </header>
+                <div className="mb30"></div>
+            </>
         )
     }
 }

@@ -295,6 +295,7 @@ Usage (In Ghost editor):
 .post-content h5,
 .post-content h6 {
     color: color(var(--darkgrey) l(-5%));
+    line-height: 1.3em;
 }
 
 .post-content h1 {
