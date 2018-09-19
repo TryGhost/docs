@@ -8,7 +8,7 @@ import FAQ from '../../components/faq'
 const FAQPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
-        <Layout title="FAQ">
+        <Layout title="FAQ" headerDividerStyle="shadow">
             <div className="mw-xl center">
                 <div className="flex flex-column pa12 pt10 bg-white br4">
                     <h1 className="ma0 mb6 f4">Frequently Asked Questions</h1>

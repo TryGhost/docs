@@ -8,7 +8,7 @@ import PostCard from '../../components/postcard'
 const TutorialsPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
-        <Layout title="Tutorials">
+      <Layout title="Tutorials" headerDividerStyle="shadow">
             <div className="center">
                 <h1>Tutorials</h1>
                 {posts.map(({ node }) => (

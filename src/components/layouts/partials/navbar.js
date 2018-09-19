@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
 import { SpiritStyle } from '../../spirit-brand/spirit-styles'
+import PropTypes from 'prop-types'
 
 import Logo from "../../global/logo"
 
@@ -29,7 +30,6 @@ class NavBar extends React.Component {
                 break;
 
             case "dark":
-            default:
                 theme = headerSkin.dark
                 break;
         }
@@ -54,6 +54,14 @@ class NavBar extends React.Component {
         )
     }
 
+}
+
+NavBar.defaultProps = {
+    theme: 'dark',
+}
+
+NavBar.propTypes = {
+    theme: PropTypes.oneOf(['dark', 'light']),
 }
 
 export default NavBar

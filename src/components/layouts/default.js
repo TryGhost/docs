@@ -23,8 +23,7 @@ class DefaultLayout extends React.Component {
     render() {
         const children = this.props.children
         const title = `Ghost Docs` + (this.props.title ? ` - ` + this.props.title : ``)
-
-        console.log(this.props)
+        const header = this.props.header ? this.props.header : <Header dividerStyle={ this.props.headerDividerStyle }/>
 
         return (
             <>
@@ -33,10 +32,10 @@ class DefaultLayout extends React.Component {
                     <title>{ title }</title>
                     <meta name="description" content="Ghost Docs" />
                     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6076934/7558352/css/fonts.css" />
-                    <body className="bg-whitegrey-l2 flex flex-column whitney f7 fw4 middarkgrey readability" />
+                    <body className={ this.props.bodyClass + " flex flex-column whitney f7 fw4 middarkgrey readability"} />
                 </Helmet>
                 
-                { this.props.header }
+                { header }
 
                 <div className="mw-xl center">
                     { children }
@@ -49,13 +48,16 @@ class DefaultLayout extends React.Component {
 }
 
 DefaultLayout.defaultProps = {
-    header: <Header divider="shadow" />,
+    headerDividerStyle: 'shadow',
+    bodyClass: 'bg-whitegrey-l2'
 }
 
 DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
     title: PropTypes.string,
-    header: PropTypes.object,
+    bodyClass: PropTypes.string,
+    header: PropTypes.element,
+    headerDividerStyle: PropTypes.oneOf(['hairline', 'shadow']),
 }
 
 export default DefaultLayout

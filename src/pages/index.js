@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import Layout from '../components/layouts/default'
 
 const IndexPage = () => (
-    <Layout title="Home">
+    <Layout title="Home" headerDividerStyle="shadow">
         <div className="mw-xl center">
             <section>
                 <div>
@@ -30,7 +30,7 @@ const IndexPage = () => (
             <section>
                 <h2>Docs Design System Demo</h2>
                 <div>
-                    <Link to="/design/custom-header/">Custom Headers</Link><br />
+                    <Link to="/design/headers/">Headers</Link><br />
                 </div>
                 <div>
                     <Link to="/design/boxes">Boxes</Link><br />

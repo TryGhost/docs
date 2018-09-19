@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from './navbar';
+import PropTypes from 'prop-types';
 
 class Header extends React.Component {
 
@@ -7,9 +8,9 @@ class Header extends React.Component {
 
         var headerShadow
 
-        switch (this.props.divider) {
+        switch (this.props.dividerStyle) {
             case "hairline":
-                headerShadow = "bb b--whitegrey"
+                headerShadow = "shadow-1"
                 break;
 
             case "shadow":
@@ -17,7 +18,6 @@ class Header extends React.Component {
                 break;
 
             case "none":
-            default:
                 headerShadow = ""
                 break;
         }
@@ -31,5 +31,12 @@ class Header extends React.Component {
 
 }
 
+Header.defaultProps = {
+    dividerStyle: 'hairline',
+}
+
+Header.propTypes = {
+    dividerStyle: PropTypes.oneOf(['hairline', 'shadow', 'none']),
+}
 
 export default Header

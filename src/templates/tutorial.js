@@ -22,7 +22,7 @@ const Tutorial = ({ data }) => {
 }
 
 Tutorial.propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.object,
 }
 
 export default Tutorial

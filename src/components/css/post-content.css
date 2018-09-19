@@ -479,7 +479,7 @@ Usage (In Ghost editor):
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 920px;
+    /* max-width: 920px; */
 }
 
 .post-template .post-content > p:first-child {
