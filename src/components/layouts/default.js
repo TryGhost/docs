@@ -24,6 +24,8 @@ class DefaultLayout extends React.Component {
         const children = this.props.children
         const title = `Ghost Docs` + (this.props.title ? ` - ` + this.props.title : ``)
 
+        console.log(this.props)
+
         return (
             <>
                 <Helmet>
@@ -33,9 +35,10 @@ class DefaultLayout extends React.Component {
                     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6076934/7558352/css/fonts.css" />
                     <body className="bg-whitegrey-l2 flex flex-column whitney f7 fw4 middarkgrey readability" />
                 </Helmet>
-                <Header shadow="shadow" />
+                
+                { this.props.header }
 
-                <div className="mt30 mw-xl center">
+                <div className="mw-xl center">
                     { children }
                 </div>
 
@@ -45,9 +48,14 @@ class DefaultLayout extends React.Component {
     }
 }
 
+DefaultLayout.defaultProps = {
+    header: <Header divider="shadow" />,
+}
+
 DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
     title: PropTypes.string,
+    header: PropTypes.object,
 }
 
 export default DefaultLayout

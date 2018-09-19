@@ -1,8 +1,4 @@
 import React from 'react'
-import { Link } from "gatsby"
-import { SpiritStyle } from '../../spirit-brand/spirit-styles'
-
-import Logo from "../../global/logo"
 import NavBar from './navbar';
 
 class Header extends React.Component {
@@ -11,7 +7,7 @@ class Header extends React.Component {
 
         var headerShadow
 
-        switch (this.props.shadow) {
+        switch (this.props.divider) {
             case "hairline":
                 headerShadow = "bb b--whitegrey"
                 break;
@@ -27,7 +23,7 @@ class Header extends React.Component {
         }
 
         return (
-            <header className={ headerShadow + " bg-white fixed top-0 left-0 right-0 z-9999" }>
+            <header className={ headerShadow + " bg-white top-0 left-0 right-0 z-9999" }>
                 <NavBar theme="dark" />
             </header>
         )
