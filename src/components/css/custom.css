@@ -17,3 +17,10 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .content-max-width {
     max-width: calc(114rem - 24vw);
 }
+
+/* Stuff that needs to be in Spirit/Brand */
+/* -------------------------------------------------- */
+
+.lh-1-0 {
+    line-height: 1em;
+}
