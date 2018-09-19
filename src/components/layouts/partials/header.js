@@ -23,7 +23,7 @@ class Header extends React.Component {
         }
 
         return (
-            <header className={ headerShadow + " bg-white top-0 left-0 right-0 z-9999" }>
+            <header className={ headerShadow + " bg-white top-0 left-0 right-0 z-9999 mb10" }>
                 <NavBar theme="dark" />
             </header>
         )

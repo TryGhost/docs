@@ -8,11 +8,6 @@ const IndexPage = () => (
         <div className="mw-xl center">
             <section>
                 <div>
-                    <input placeholder="Search"></input>
-                </div>
-            </section>
-            <section>
-                <div>
                     <Link to="/setup/">Getting Started</Link><br />
                 </div>
                 <div>
@@ -29,6 +24,16 @@ const IndexPage = () => (
                 </div>
                 <div>
                     <Link to="/faq/">FAQ</Link><br />
+                </div>
+            </section>
+
+            <section>
+                <h2>Docs Design System Demo</h2>
+                <div>
+                    <Link to="/design/custom-header/">Custom Headers</Link><br />
+                </div>
+                <div>
+                    <Link to="/design/boxes">Boxes</Link><br />
                 </div>
             </section>
         </div>

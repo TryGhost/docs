@@ -24,3 +24,11 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .lh-1-0 {
     line-height: 1em;
 }
+
+.white-placeholder::placeholder { /* Most modern browsers support this now. */
+   color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-placeholder::placeholder { /* Most modern browsers support this now. */
+   color: rgba(52, 63, 68, 0.3);
+}
