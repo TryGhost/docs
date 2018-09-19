@@ -30,7 +30,7 @@ export const pageQuery = graphql`
     allGhostPost(
         sort: { order: DESC, fields: [published_at] },
         limit: 50,
-        filter: {primary_tag: {slug: {eq: "tutorial"}}}
+        filter: {tags: {elemMatch: {slug: {eq: "hash-tutorial"}}}}
     ) {
       edges {
         node {
@@ -40,7 +40,7 @@ export const pageQuery = graphql`
           custom_excerpt
           plaintext
           publishedAt: published_at(formatString: "DD MMMM, YYYY"),
-          primaryTag: primary_tag {
+          tags {
             name
             slug
           }

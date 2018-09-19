@@ -20,7 +20,7 @@ exports.createPages = ({ graphql, actions }) => {
     const loadFAQPosts = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`
           {
-            allGhostPost(filter: {primary_tag: {slug: {eq: "faq"}}}) {
+            allGhostPost(filter: {tags: {elemMatch: {slug: {eq: "hash-faq"}}}}) {
               edges {
                 node {
                   slug
@@ -47,7 +47,7 @@ exports.createPages = ({ graphql, actions }) => {
     const loadTutorialPosts = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`
           {
-            allGhostPost(filter: {primary_tag: {slug: {eq: "tutorial"}}}) {
+            allGhostPost(filter: {tags: {elemMatch: {slug: {eq: "hash-tutorial"}}}}) {
               edges {
                 node {
                   slug
@@ -74,7 +74,7 @@ exports.createPages = ({ graphql, actions }) => {
     const loadIntegrations = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`
           {
-            allGhostPost(filter: {primary_tag: {slug: {eq: "integration"}}}) {
+            allGhostPost(filter: {tags: {elemMatch: {slug: {eq: "hash-integration"}}}}) {
               edges {
                 node {
                   slug

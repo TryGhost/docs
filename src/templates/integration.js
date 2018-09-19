@@ -52,7 +52,7 @@ export const articleQuery = graphql`
           plaintext
           html
           publishedAt: published_at(formatString: "DD MMMM, YYYY")
-          primaryTag:primary_tag{
+          tags {
             name
             slug
           }

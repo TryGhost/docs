@@ -12,7 +12,7 @@ const Tutorial = ({ data }) => {
             <div className="center content-max-width">
                 <time dateTime={post.publishedAt} className="db mb10">{post.publishedAt}</time>
                 <h1 className="f-headline fw3 bn ma0 mb10">{post.title}</h1>
-                
+
                 <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
 
                 <Authors authors={post.authors} />
@@ -35,7 +35,7 @@ export const articleQuery = graphql`
           plaintext
           html
           publishedAt: published_at(formatString: "DD MMMM, YYYY")
-          primaryTag:primary_tag{
+          tags {
             name
             slug
           }
