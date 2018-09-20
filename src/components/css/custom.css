@@ -10,29 +10,20 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 @import "typography.css";
 @import "post-content.css";
 
-.gh-nav-logo-suffix {
-    position: relative;
-    margin: 0 0 0 12px;
-    padding: 0 0 0 11px;
-    font-size: 1.6rem;
-    line-height: 1.5em;
-    font-weight: 400;
-    color: #26a8ed!important;
-    text-decoration: none;
-    text-shadow: none;
-    transition: none;
-}
-
 .gh-nav-logo-suffix:before {
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
+    left: 1px;
     display: block;
     width: 1px;
     height: 23px;
     background: #d3e4ee;
     transform: rotate(25deg);
+}
+
+.gh-nav-logo-suffix-light:before {
+    color: #FFFFFF!important;
 }
 
 .sidebar-min-width {
