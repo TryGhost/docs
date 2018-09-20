@@ -6,13 +6,10 @@ const HairlineHeader = () => (
         <div className="post-content">
             <h1>Shadowed Header</h1>
             <h2>Usage</h2>
-            <div>
-                <ol>
-                    <li>Create a custom header react component, e.g. <code className="language-html">{ `<MyHeader />` }</code></li>
-                    <li>Include <code className="language-html">{ `<NavBar theme="['dark', 'light']">` }</code> in the custom header</li>
-                    <li>Set <code className="language-html">{ `<Layout header={ <MyHeader /> }>` }</code> property</li>
-                </ol>
-            </div>
+            <p>
+                Use shadowed header when the surface below the header is <strong>not</strong> white.
+                <pre><code className="language-html">{ `<Layout title="Custom Header" headerDividerStyle="hairline" />` }</code></pre>
+            </p>
         </div>
     </Layout>
 )

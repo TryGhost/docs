@@ -7,7 +7,8 @@ const HairlineHeader = () => (
             <h1>Hairline Header</h1>
             <h2>Usage</h2>
             <p>
-               Use hairline header divider when the surface below the header is white (e.g. full white pages etc.)
+                Use hairline header divider when the surface below the header is white (e.g. full white pages etc.). 
+                <pre><code className="language-html">{`<Layout title="Custom Header" headerDividerStyle="hairline" />`}</code></pre>
             </p>
         </div>
     </Layout>
