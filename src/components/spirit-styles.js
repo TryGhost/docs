@@ -8,6 +8,7 @@ export const SpiritStyles = {
     h4: ` f4 lh-h4 fw5 ma0 pa0 `,
     h5: ` f5 lh-h5 fw6 ma0 pa0 `,
     h6: ` f6 lh-h6 fw6 ttu ma0 pa0 measure-0-2 `,
+    excerpt: ` f4 lh-h4 ma0 pa0 `,
     p: ` f7 lh-p ma0 pa0 `,
     small: ` f8 lh-p ma0 pa0 `,
     tiny: ` f-supersmall lh-tiny ma0 pa0 `,
