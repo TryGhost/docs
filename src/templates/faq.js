@@ -5,8 +5,23 @@ import Link from 'gatsby-link'
 
 import Layout from '../components/layouts/default'
 
+const getBreadCrumb = function getBreadCrumb(post) {
+    // Get rid of internal tags
+    let tags = post.tags.filter(tag => !tag.name.match(/^#/)) || []
+
+    // If any tags left, use the first tag name and fallback to `General`
+    if (!tags.length) {
+        return `General`
+    } else {
+        const [{ name }] = tags
+        return name
+    }
+}
+
 const FAQ = ({ data }) => {
     const post = data.ghostPost
+    const primaryTag = getBreadCrumb(post)
+
     return (
         <Layout>
             <div className="flex flex-column mw-xl center pa12 pt10 bg-white br4">
@@ -14,7 +29,7 @@ const FAQ = ({ data }) => {
                 <div className="mb8 f8">
                     <Link className="link midgrey" to="/faq/">FAQ</Link>
                     <span className="mr1 ml1 f8 midgrey">/</span>
-                    <span className="darkgrey fw5">Primary Tag</span>
+                    <span className="darkgrey fw5">{primaryTag}</span>
                 </div>
 
                 <div className="flex">
