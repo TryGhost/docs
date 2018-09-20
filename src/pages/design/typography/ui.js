@@ -14,6 +14,8 @@ const Page = () => (
                 <h5 className={ SpiritStyles.h5 }>Heading five</h5>
                 <h6 className={ SpiritStyles.h6 }>Heading six</h6>
                 <p className={ SpiritStyles.p }>Irure nulla irure ullamco commodo qui ad ea aute magna sunt mollit duis. Incididunt mollit in anim sit qui anim. Cillum dolor occaecat elit velit id qui commodo proident aliqua sit. Occaecat voluptate consectetur anim anim magna nostrud esse esse nisi. Occaecat consectetur cupidatat laboris veniam non ex. Ullamco occaecat pariatur aliqua ullamco culpa Lorem proident id ex excepteur voluptate incididunt dolor. Non velit nulla elit culpa mollit anim.</p>
+                <p className={ SpiritStyles.small }>Irure nulla irure ullamco commodo qui ad ea aute magna sunt mollit duis. Incididunt mollit in anim sit qui anim. Cillum dolor occaecat elit velit id qui commodo proident aliqua sit. Occaecat voluptate consectetur anim anim magna nostrud esse esse nisi. Occaecat consectetur cupidatat laboris veniam non ex. Ullamco occaecat pariatur aliqua ullamco culpa Lorem proident id ex excepteur voluptate incididunt dolor. Non velit nulla elit culpa mollit anim.</p>
+                <p className={ SpiritStyles.tiny }>Irure nulla irure ullamco commodo qui ad ea aute magna sunt mollit duis. Incididunt mollit in anim sit qui anim. Cillum dolor occaecat elit velit id qui commodo proident aliqua sit. Occaecat voluptate consectetur anim anim magna nostrud esse esse nisi. Occaecat consectetur cupidatat laboris veniam non ex. Ullamco occaecat pariatur aliqua ullamco culpa Lorem proident id ex excepteur voluptate incididunt dolor. Non velit nulla elit culpa mollit anim.</p>
 
             </div>
         </div>

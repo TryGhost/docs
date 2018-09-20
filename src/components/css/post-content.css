@@ -30,7 +30,7 @@
 .post-content ol,
 .post-content dl,
 .post-content blockquote {
-    margin: var(--vr-2) 0 0;
+    margin: var(--vr-3) 0 0;
 }
 
 .post-content ol,
@@ -275,6 +275,7 @@ Usage (In Ghost editor):
     font-size: 4.4rem;
     font-weight: 600;
     line-height: var(--vr-8);
+    letter-spacing: -0.2px;
     margin: var(--vr-8) 0 0;
 }
 
@@ -301,6 +302,7 @@ Usage (In Ghost editor):
     font-weight: 500;
     line-height: var(--vr-5);
     margin: var(--vr-6) 0 0;
+    letter-spacing: -0.4px;
 }
 @media (max-width: 500px) {
     .post-content h3 {
@@ -341,6 +343,8 @@ Usage (In Ghost editor):
     line-height: var(--vr-3);
     margin: var(--vr-6) 0 0;
     text-transform: uppercase;
+    letter-spacing: 0.2px;
+    word-spacing: 3px;
 }
 @media (max-width: 500px) {
     .post-content h6 {
@@ -641,6 +645,7 @@ Usage (In Ghost editor):
     font-size: 80%;
     line-height: var(--vr-2);
     text-align: center;
+    letter-spacing: 0.2px;
 }
 
 .kg-width-full figcaption {

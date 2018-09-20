@@ -47,11 +47,10 @@ const Page = () => (
 
                 <h1>Text type relations</h1>
 
-                <h1>Heading one, a really long heading that probably will break into multiple lines even on big screens</h1>
-                <h2>Heading twoTypewriter delectus cred Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher</h2>
+                <h2>Heading two typewriter delectus cred Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher</h2>
                 <p>Laboris selfies occaecat umami, forage Tumblr American Apparel. Retro Terry Richardson culpa id swag polaroid Intelligentsia American Apparel eu, esse non post-ironic fugiat master cleanse. Direct trade gluten-free blog, fanny pack cray labore skateboard before they sold out adipisicing non magna id Helvetica freegan. Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher.</p>
 
-                <h2>Heading twoTypewriter delectus cred Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher</h2>
+                <h2>Heading two typewriter delectus cred Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher</h2>
                 <h3>Heading three that is really long heading that probably will break into multiple lines even on big screens</h3>
                 <p>Laboris selfies occaecat umami, forage Tumblr American Apparel. Retro Terry Richardson culpa id swag polaroid Intelligentsia American Apparel eu, esse non post-ironic fugiat master cleanse. Direct trade gluten-free blog, fanny pack cray labore skateboard before they sold out adipisicing non magna id Helvetica freegan. Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher.</p>
 
@@ -67,7 +66,6 @@ const Page = () => (
 
                 <h1>Images</h1>
 
-                <h1>Heading one</h1>
                 <figure className="kg-card kg-image-card"><img src="https://source.unsplash.com/random" className="kg-image" /></figure>
                 <p>Laboris selfies occaecat umami, forage Tumblr American Apparel. Retro Terry Richardson culpa id swag polaroid Intelligentsia American Apparel eu, esse non post-ironic fugiat master cleanse. Direct trade gluten-free blog, fanny pack cray labore skateboard before they sold out adipisicing non magna id Helvetica freegan. Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher.</p>
 

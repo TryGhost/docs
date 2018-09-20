@@ -34,7 +34,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     max-width: calc(114rem - 24vw);
 }
 
-/* Custom typography for UI */
+/* Custom typography for UI -- maybe should be in Spirit... */
 /* -------------------------------------------------- */
 .lh-h1 { line-height: var(--vr-8); }
 .lh-h2 { line-height: var(--vr-6); }
@@ -43,6 +43,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .lh-h5 { line-height: var(--vr-3); }
 .lh-h6 { line-height: var(--vr-3); }
 .lh-p  { line-height: var(--vr-3); }
+.lh-tiny  { line-height: var(--vr-2); }
 
 
 /* Stuff that needs to be in Spirit/Brand */
@@ -60,6 +61,12 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .f7 { font-size: 1.45rem; }
 .f8 { font-size: 1.3rem; }
 .f-supersmall { font-size: 1.1rem; }
+
+/* _measure.css */
+.measure-0-4 { letter-spacing: 0.4px; }
+.measure-0-2 { letter-spacing: 0.2px; }
+.measure--0-2 { letter-spacing: -0.2px; }
+.measure--0-4 { letter-spacing: -0.4px; }
 
 .lh-1-0 {
     line-height: 1em;
