@@ -27,13 +27,15 @@ const IntegrationsPage = ({ data }) => {
                             <a className="link pa2 pl0 blue fw6" href="#">All integrations</a>
                             <a className="link pa2 pl0 midgrey" href="#">Automation</a>
                             <a className="link pa2 pl0 midgrey" href="#">Analytics</a>
+                            <a className="link pa2 pl0 midgrey" href="#">Editor Cards</a>
                             <a className="link pa2 pl0 midgrey" href="#">Communication</a>
                             <a className="link pa2 pl0 midgrey" href="#">Marketing</a>
                             <a className="link pa2 pl0 midgrey" href="#">Support</a>
+                            <a className="link pa2 pl0 midgrey" href="#">Storage</a>
                             <a className="link pa2 pl0 midgrey" href="#">Utilities</a>
                         </div>
                     </div>
-                    <div className="flex">
+                    <div className="flex flex-wrap">
                         {posts.map(({ node }) => (
                             <Integration key={node.id} post={node} />
                         ))}
@@ -54,7 +56,7 @@ export const pageQuery = graphql`
   query GhostIntegrationsQuery {
     allGhostPost(
         sort: { order: DESC, fields: [published_at] },
-        limit: 50,
+        limit: 70,
         filter: {tags: {elemMatch: {slug: {eq: "hash-integration"}}}}
     ) {
       edges {
@@ -67,11 +69,11 @@ export const pageQuery = graphql`
           plaintext
           publishedAt: published_at(formatString: "DD MMMM, YYYY"),
           tags {
-            name 
+            name
             slug
           }
           authors {
-            name 
+            name
             slug
           }
         }

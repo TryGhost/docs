@@ -101,6 +101,12 @@ const APIPage = () => (
                             </div>
                             <div>Admin</div>
                         </Link>
+                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 ba b--whitegrey tc link darkgrey fw5 br4 shadow-3 code" to="#">
+                            <div className="flex-grow-1 flex justify-center items-center">
+                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
+                            </div>
+                            <div>Webhooks</div>
+                        </Link>
                     </div>
                 </div>
 

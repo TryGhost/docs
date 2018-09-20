@@ -7,12 +7,12 @@ const Integration = (props) => {
     const url = `/integrations/${post.slug}/`
 
     return (
-        <article className="flex items-start">
-            <Link className="flex flex-column items-center pa6 tc link darkgrey" to={url}>
-                <img className="w11 mb3" src={post.feature_image} alt={post.title} />
-                <div>{post.title}</div>
-            </Link>
-        </article>
+        <Link className="flex-grow-0 flex flex-column items-center w50 h40 tc link darkgrey" to={url}>
+            <div className="flex justify-center items-center h10 w13 mb3">
+                <img className="w-100 h-100" style={{ objectFit: `contain` }} src={post.feature_image} alt={post.title} />
+            </div>
+            <div>{post.title}</div>
+        </Link>
     )
 }
 
