@@ -1,24 +1,13 @@
 import React from 'react'
 import Layout from '../../../components/layouts/default'
+import { SpiritStyles } from '../../../components/spirit-styles';
+import DummyContent from './dummy-post';
 
 const Page = () => (
     <Layout title="Home" headerDividerStyle="hairline" bodyClass="bg-white">
-        <div className="center mw-m pt10">
-            <h1 className="f-headline fw6 mt0 mb6">Standalone post demo</h1>
-            <div className="post-content">
-                <h2>Kitsch retro Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher.</h2>
-
-                <p>Bushwick Schlitz. Est Shoreditch small batch, dolor Schlitz sapiente twee stumptown ex. Duis Carles pickled, cornhole Thundercats minim PBR vegan Tumblr irony. Kogi eu Thundercats, sed scenester before they sold out et aesthetic. Elit cred Vice ethical pickled sartorial. Stumptown roof party freegan High Life vero, ea sed minim meggings.</p>
-
-                <p>Minim PBR vegan Tumblr irony. Kogi eu Thundercats, sed scenester before they sold out et aesthetic. Elit cred Vice ethical pickled sartorial. Stumptown roof party freegan High Life vero, ea sed minim meggings.</p>
-
-                <h3>Truffaut disrupt sartorial deserunt Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher.</h3>
-
-                <p>Cosby sweater plaid shabby chic kitsch pour-over ex. Try-hard fanny pack mumblecore cornhole cray scenester. Assumenda narwhal occupy, Blue Bottle nihil culpa fingerstache. Meggings kogi vinyl meh, food truck banh mi Etsy magna duis typewriter banjo organic leggings Vice.</p>
-
-                <h4>Fingerstache nesciunt lomo nostrud hoodie Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher.</h4>
-                Laboris selfies occaecat umami, forage Tumblr American Apparel. Retro Terry Richardson culpa id swag polaroid Intelligentsia American Apparel eu, esse non post-ironic fugiat master cleanse. Direct trade gluten-free blog, fanny pack cray labore skateboard before they sold out adipisicing non magna id Helvetica freegan. Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher.
-            </div>
+        <div className="center mw-m pt20">
+            <h1 className={ SpiritStyles.headline }>Standalone post demo</h1>
+            <DummyContent />
             <div className="bt b--lightgrey pa6 pt6 pb1 mt20">
                 <h2 className="ma0 pa0 mb6 fw5">Usage</h2>
                 <p>

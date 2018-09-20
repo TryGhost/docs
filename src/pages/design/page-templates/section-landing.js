@@ -1,14 +1,12 @@
 import React from 'react'
+import SectionHeading from '../../../components/layouts/partials/section-heading';
 
 import Layout from '../../../components/layouts/default'
 
 const Page = () => (
     <Layout title="Home" headerDividerStyle="shadow">
         <div className="center">
-            <div className="pa20 pb30 tc">
-                <h1 className="f-headline ma0 mb2">Section home</h1>
-                <h2 className="f4 fw3 ma0">Here comes some additional text yo</h2>
-            </div>
+            <SectionHeading title="Section landing page" subtitle="You can have subtitles" />
             <div className="bg-white br4 shadow-1 pa15 pt12 pb12">
                 <div className="post-content">
                     Custom content...

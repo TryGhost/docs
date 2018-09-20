@@ -4,7 +4,7 @@ import { SpiritStyles } from '../../../components/spirit-styles';
 
 const Page = () => (
     <Layout title="Home" headerDividerStyle="hairline" bodyClass="bg-white">
-        <div className="center mw-m">
+        <div className="center mw-m mt10">
             <div>
 
                 <h1 className={ SpiritStyles.h1 }>UI typography</h1>

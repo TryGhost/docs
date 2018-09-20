@@ -25,7 +25,7 @@ class Header extends React.Component {
                 <header className={ headerShadow + ` fixed bg-white top-0 left-0 right-0 z-9999 mb10` }>
                     <NavBar theme="dark" />
                 </header>
-                <div className="mb30"></div>
+                <div className="h17"></div> {/* We need to push down all the content because of the fixed header */}
             </>
         )
     }

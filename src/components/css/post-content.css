@@ -33,6 +33,12 @@
     margin: var(--vr-3) 0 0;
 }
 
+.post-content>p:first-child {
+    margin: var(--vr-1) 0 0;
+    font-size: 1.9rem;
+    line-height: var(--vr-4);
+}
+
 .post-content ol,
 .post-content ul {
     padding-left: 1.3em;
@@ -271,9 +277,18 @@ Usage (In Ghost editor):
     color: inherit;
 }
 
+.post-content > h1:first-child,
+.post-content > h2:first-child,
+.post-content > h3:first-child,
+.post-content > h4:first-child,
+.post-content > h5:first-child,
+.post-content > h6:first-child {
+    margin: var(--vr-4) 0 0;
+}
+
 .post-content h1 {
     font-size: 4.4rem;
-    font-weight: 600;
+    font-weight: 400;
     line-height: var(--vr-8);
     letter-spacing: -0.2px;
     margin: var(--vr-8) 0 0;
@@ -287,7 +302,7 @@ Usage (In Ghost editor):
 
 .post-content h2 {
     font-size: 3.3rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: var(--vr-6);
     margin: var(--vr-7) 0 0;
 }
@@ -352,6 +367,7 @@ Usage (In Ghost editor):
     }
 }
 
+.post-content h2 + p,
 .post-content h3 + p,
 .post-content h4 + p,
 .post-content h6 + p
@@ -608,11 +624,6 @@ Usage (In Ghost editor):
     flex-direction: column;
     align-items: center;
     /* max-width: 920px; */
-}
-
-.post-template .post-content > p:first-child {
-    font-size: 1.25em;
-    line-height: 1.5em;
 }
 
 .post-content .kg-image {

@@ -1,14 +1,12 @@
 import React from 'react'
 
 import Layout from '../../../components/layouts/default'
+import SectionHeading from '../../../components/layouts/partials/section-heading';
 
 const Page = () => (
     <Layout title="Home" headerDividerStyle="shadow">
         <div className="center">
-            <div className="pt10 pb10 pl0 pr0">
-                <h1 className="f-headline ma0 mb2">Post landing</h1>
-                <h2 className="f4 fw3 ma0">Here comes some additional text yo</h2>
-            </div>
+            <SectionHeading title="Post landing" subtitle="Here comes your subtitle" type="blog" />
             <div className="grid gutter-2">
                 <div className="col-8 mb5">
                     <div className=" bg-white br4 shadow-1 h50"></div>

@@ -50,7 +50,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 /* -------------------------------------------------- */
 
 /* Overriding Spirit/Brand font sizes */
-.f-headline { font-size: 5.2rem; }
+.f-headline { font-size: 5.0rem; }
 .f-subheadline { font-size: 4.4rem; }
 .f1 { font-size: 4.4rem; }
 .f2 { font-size: 3.3rem; }
@@ -67,6 +67,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .measure-0-2 { letter-spacing: 0.2px; }
 .measure--0-2 { letter-spacing: -0.2px; }
 .measure--0-4 { letter-spacing: -0.4px; }
+.measure--1-0 { letter-spacing: -1.0px; }
 
 .lh-1-0 {
     line-height: 1em;

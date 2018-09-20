@@ -1,28 +1,23 @@
 import React from 'react'
 
 import Layout from '../../../components/layouts/default'
+import { SpiritStyles } from '../../../components/spirit-styles'
+import DummyContent from './dummy-post'
 
 const Page = () => (
     <Layout title="Home" headerDividerStyle="shadow">
-        <div className="center flex flex-start">
-            <nav className="mr5 miw50 mt10">
+        <div className="center flex flex-start mt10">
+            <nav className="mr5 miw50 mt12">
                 <ul className="ma0 pa0 list">
                     <li className="mb5">Navigation item 1</li>
                     <li className="mb5">Navigation item 2</li>
                 </ul>
             </nav>
             <div>
-                {/* <section className="flex-auto br4 shadow-1 pa12 pt8">
-                    <h1 className="f-headline fw6 mt0">Left sidebar</h1>
-                    <h2 className="f4 fw3 lh-1-4 ma0 pa0 mb10">A summary about what's on this page. Typewriter delectus cred Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher.</h2>
-                </section> */}
-                <section className="flex-auto bg-white br4 shadow-1 pa12 pt10">
-                    <span className="f7 fw5 measure-wide ttu dib mb5 midlightgrey">Breadcrumbs</span>
-                    <h1 className="f-headline fw6 mt0">Left sidebar</h1>
-                    <h2 className="f4 fw3 lh-1-4 ma0 pa0 mb10">A summary about what's on this page. Typewriter delectus cred Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher.</h2>
-                    <div className="post-content pb50 pt50">
-                        Custom content...
-                    </div>
+                <section className="flex-auto bg-white br4 shadow-1 pa15 pt12">
+                    <span className="f7 fw5 measure-wide ttu dib mb1 midlightgrey">Breadcrumbs</span>
+                    <h1 className={ SpiritStyles.h1 }>A post with left sidebar</h1>
+                    <DummyContent />
                 </section>
             </div>
         </div>
