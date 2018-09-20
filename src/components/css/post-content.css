@@ -4,6 +4,13 @@
 
 .post-content {
     line-height: var(--vr-3);
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    line-height: 1.75em;
 }
 
 .post-content audio,
@@ -115,10 +122,8 @@
     font-weight: normal;
 }
 
-.post-content {
-    position: relative;
-    margin: 0 auto;
-    line-height: 1.75em;
+.post-content div {
+    min-width: 100%;
 }
 
 .post-content h1,
@@ -618,13 +623,6 @@ Usage (In Ghost editor):
 
 /* 7.6. Koenig Styles
 /* ---------------------------------------------------------- */
-
-.post-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* max-width: 920px; */
-}
 
 .post-content .kg-image {
     max-width: 100%;

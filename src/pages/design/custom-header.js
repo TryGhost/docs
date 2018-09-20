@@ -2,8 +2,7 @@ import Layout from '../../components/layouts/default'
 import React from 'react'
 
 // 1. Import your own header component. Usuallyl this should be in components/partials
-import MyHeader from './my-header';
-
+import MyHeader from './my-header'
 
 // 2. Use header prop of Layout component to include custom header. If you don't set it then
 //    the default header will be used (components/partials/header.js)

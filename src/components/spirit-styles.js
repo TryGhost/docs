@@ -14,7 +14,7 @@ export const SpiritStyles = {
 
     // Sections
     sectionHeading: ` f-headline lh-h1 fw4 ma0 measure--1-0 `,
-    sectionSubHeading: ` f4 lh-h4 fw4 ma0 measure-0-2 `,
+    sectionSubHeading: ` f4 lh-h4 fw4 ma0 measure--0-2 `,
 
     // Links
     link: {
