@@ -35,7 +35,7 @@ const IndexPage = () => (
             <section className="grid gutter-2">
                 <h3 className={ SpiritStyles.h3 + `col-12 mt15 mb4 midgrey` }>More Resources</h3>
                 <div className="col-6">
-                    <Link to="/setup/" className="link midgrey"><div className="shadow-1 bg-white br4 pa4 pt20 pb20 tc">
+                    <Link to="/api/" className="link midgrey"><div className="shadow-1 bg-white br4 pa4 pt20 pb20 tc">
                         <h4 className={ SpiritStyles.h4 }>API Documentation</h4>
                     </div></Link>
                 </div>
