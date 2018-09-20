@@ -9,10 +9,22 @@ const Page = () => (
                 <h1 className="f-headline ma0 mb2">Post landing</h1>
                 <h2 className="f4 fw3 ma0">Here comes some additional text yo</h2>
             </div>
-            <div className="flex">
-                <div className="bg-white br4 shadow-1 w-third pa10 mr6 h50"></div>
-                <div className="bg-white br4 shadow-1 w-third pa10 mr6"></div>
-                <div className="bg-white br4 shadow-1 w-third"></div>
+            <div className="grid gutter-2">
+                <div className="col-8 mb5">
+                    <div className=" bg-white br4 shadow-1 h50"></div>
+                </div>
+                <div className="col-4">
+                    <div className=" bg-white br4 shadow-1 h50"></div>
+                </div>
+                <div className="col-4">
+                    <div className=" bg-white br4 shadow-1 h50"></div>
+                </div>
+                <div className="col-4">
+                    <div className=" bg-white br4 shadow-1 h50"></div>
+                </div>
+                <div className="col-4">
+                    <div className=" bg-white br4 shadow-1 h50"></div>
+                </div>
             </div>
         </div>
         <div className="bt b--whitegrey pa6 pt6 pb1 mt20">

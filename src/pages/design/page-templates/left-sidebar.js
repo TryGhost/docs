@@ -29,12 +29,11 @@ const Page = () => (
         <div className="bt b--whitegrey pa6 pt6 pb1 mt20">
             <h2 className="ma0 pa0 mb6 fw5">Usage</h2>
             <p>
-                Documentation posts without inner navigation.
+                Posts that have corresponding pages and are part of a bigger, related chunk of content. The links in the left sidebar always point to another page.
             </p>
             <ul className="ma0 ml4 pa0 lh-2-0">
                 <li>Setup docs</li>
                 <li>Core Concepts docs</li>
-                <li>API docs</li>
             </ul>
         </div>
     </Layout>

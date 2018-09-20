@@ -4,7 +4,7 @@ import MyHeader from '../my-header'
 import Layout from '../../../components/layouts/default'
 
 const Page = () => (
-    <Layout title="Home" headerDividerStyle="shadow" bodyClass="bg-white" header={ <MyHeader /> }>
+    <Layout title="Home" bodyClass="bg-white" header={ <MyHeader /> }>
         <div className="center">
             <div className="post-content">
                 Custom content...

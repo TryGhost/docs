@@ -19,9 +19,9 @@ const Page = () => (
                 <section className="flex-auto flex bg-white br4 shadow-1 pa12 pt10">
                     <nav className="ml5 miw40 w40 order-2 f7">
                         <ul className="ma0 pa0 list">
-                            <li className="mb5">Inner navigation 1</li>
-                            <li className="mb5">Inner navigation 2</li>
-                            <li className="mb5">Inner navigation 3</li>
+                            <li className="mb5">TOC item 1</li>
+                            <li className="mb5">TOC item 2</li>
+                            <li className="mb5">TOC item 3</li>
                         </ul>
                     </nav>
                     <div className="order-1">
@@ -38,12 +38,11 @@ const Page = () => (
         <div className="bt b--whitegrey pa6 pt6 pb1 mt20">
             <h2 className="ma0 pa0 mb6 fw5">Usage</h2>
             <p>
-                Documentation posts with inner navigation.
+                Posts that are part of a bigger chunk of content and need inner page jump navigation. 
             </p>
             <ul className="ma0 ml4 pa0 lh-2-0">
                 <li>Setup docs</li>
                 <li>Core Concepts docs</li>
-                <li>API docs</li>
             </ul>
         </div>
     </Layout>

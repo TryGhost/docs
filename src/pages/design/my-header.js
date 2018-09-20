@@ -6,7 +6,7 @@ import NavBar from '../../components/layouts/partials/navbar'
 class MyHeader extends React.Component {
     render() {
         return (
-            <div className="bg-blue mb10 shadow-2">
+            <div className="bg-blue mb10">
                 <header className="top-0 left-0 right-0 z-9999">
                     <NavBar theme="light" />
                 </header>
