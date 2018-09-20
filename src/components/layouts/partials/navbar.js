@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "gatsby"
-import { SpiritStyle } from '../../spirit-brand/spirit-styles'
+import { SpiritStyles } from '../../spirit-styles'
 import PropTypes from 'prop-types'
 
 import Logo from "../../global/logo"
@@ -8,13 +8,13 @@ import Logo from "../../global/logo"
 // Theme definitions
 const headerSkin = {
     dark: {
-        menuItem: SpiritStyle.link.middarkgrey,
+        menuItem: SpiritStyles.link.middarkgrey,
         logoTheme: `dark`,
         docsTitleClass: `blue`,
         searchBox: `bg-whitegrey-l1 middarkgrey dark-placeholder`,
     },
     light: {
-        menuItem: SpiritStyle.link.white,
+        menuItem: SpiritStyles.link.white,
         logoTheme: `light`,
         docsTitleClass: `white`,
         searchBox: `bg-white-20 white white-placeholder`,

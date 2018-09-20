@@ -2,11 +2,11 @@ import Layout from '../../components/layouts/default'
 import React from 'react'
 
 import { Link } from 'gatsby'
-import { SpiritStyle } from '../../components/spirit-brand/spirit-styles.js';
+import { SpiritStyles } from '../../components/spirit-styles.js';
 
 const SetupIndexPage = () => (
     <Layout title="Setup" headerDividerStyle="shadow">
-        <div className={ SpiritStyle.box.main + " content-max-width center"}>
+        <div className={ SpiritStyles.box.main + " content-max-width center"}>
             <h1><Link to="/setup/what-is-ghost/">What is Ghost?</Link></h1>
             <section>
                 <h1>I want to setup a site</h1>

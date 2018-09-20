@@ -3,12 +3,10 @@ import Layout from '../../../components/layouts/default'
 
 const Page = () => (
     <Layout title="Home" headerDividerStyle="hairline" bodyClass="bg-white">
-        <div className="center mw-l pt10">
-            <h1 className="f-headline fw6 mt0 mb6">Full width page demo</h1>
+        <div className="center mw-m pt10">
+            <h1 className="f-headline fw6 mt0 mb6">Standalone post demo</h1>
             <div className="post-content">
-                <h1>Kitsch retro Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher.</h1>
-
-                <h2>Typewriter delectus cred Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher.</h2>
+                <h2>Kitsch retro Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher.</h2>
 
                 <p>Bushwick Schlitz. Est Shoreditch small batch, dolor Schlitz sapiente twee stumptown ex. Duis Carles pickled, cornhole Thundercats minim PBR vegan Tumblr irony. Kogi eu Thundercats, sed scenester before they sold out et aesthetic. Elit cred Vice ethical pickled sartorial. Stumptown roof party freegan High Life vero, ea sed minim meggings.</p>
 

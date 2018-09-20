@@ -1,13 +1,9 @@
 
-.post-content hr {
-    position: relative;
-    display: block;
-    width: 100%;
-    margin: 3em 0;
-    padding: 0;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid var(--lightgrey);
+/* Normalize */
+/* ------------------------------------ */
+
+.post-content {
+    line-height: var(--vr-3);
 }
 
 .post-content audio,
@@ -34,7 +30,7 @@
 .post-content ol,
 .post-content dl,
 .post-content blockquote {
-    margin: 0 0 1.5em 0;
+    margin: var(--vr-2) 0 0;
 }
 
 .post-content ol,
@@ -47,7 +43,7 @@
 .post-content ul ul,
 .post-content ul ol,
 .post-content ol ul {
-    margin: 0.5em 0 1em;
+    margin: var(--vr-2) 0 0;
 }
 
 .post-content ul {
@@ -64,7 +60,7 @@
 }
 
 .post-content li {
-    margin: 0.5em 0;
+    margin: var(--vr-1) 0 0;
     padding-left: 0.3em;
     line-height: 1.6em;
 }
@@ -113,31 +109,11 @@
     font-weight: normal;
 }
 
-.post-content a {
-    color: color(var(--blue) l(-5%));
-    text-decoration: none;
-}
-
-.post-content a:hover {
-    text-decoration: underline;
-}
-
 .post-content {
     position: relative;
     margin: 0 auto;
     line-height: 1.75em;
 }
-
-/* @media (max-width: 1170px) {
-    .post-content {
-        padding: 5vw 7vw 0;
-    }
-}
-@media (max-width: 800px) {
-    .post-content {
-        font-size: 1.9rem;
-    }
-} */
 
 .post-content h1,
 .post-content h2,
@@ -164,14 +140,18 @@
     margin: 0;
 }
 
+/*TODO: use color-mod*/
 .post-content a {
-    color: #000;
+    color: #2FA1E0; /*should be blue-d2*/
     word-break: break-word;
-    box-shadow: var(--blue) 0 -1px 0 inset;
+    text-decoration: none;
+    box-shadow: rgba(62, 176, 239, 0.4) 0 -1px 0 inset; 
+    transition: all 0.2s ease;
 }
 
 .post-content a:hover {
-    color: var(--blue);
+    color: #2497D6;
+    box-shadow: var(--blue) 0 -1px 0 inset;
     text-decoration: none;
 }
 
@@ -196,12 +176,6 @@
     max-width: 1040px;
     height: auto;
 }
-/* @media (max-width: 1040px) {
-    .post-content img,
-    .post-content video {
-        width: 100%;
-    }
-} */
 
 
 /* Full bleed images (#full)
@@ -294,16 +268,14 @@ Usage (In Ghost editor):
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-    color: color(var(--darkgrey) l(-5%));
-    line-height: 1.3em;
+    color: inherit;
 }
 
 .post-content h1 {
-    margin: 0.5em 0;
-    padding: 0 0 0.5em;
-    font-size: var(--ts-1);
-    font-weight: 400;
-    border-bottom: 1px solid var(--lightgrey);
+    font-size: 4.4rem;
+    font-weight: 600;
+    line-height: var(--vr-8);
+    margin: var(--vr-8) 0 0;
 }
 
 @media (max-width: 500px) {
@@ -313,9 +285,10 @@ Usage (In Ghost editor):
 }
 
 .post-content h2 {
-    margin: 0.5em 0;
-    font-size: var(--ts-2);
-    font-weight: 400;
+    font-size: 3.3rem;
+    font-weight: 600;
+    line-height: var(--vr-6);
+    margin: var(--vr-7) 0 0;
 }
 @media (max-width: 500px) {
     .post-content h2 {
@@ -324,9 +297,10 @@ Usage (In Ghost editor):
 }
 
 .post-content h3 {
-    margin: 0.5em 0 0.4em 0;
-    font-size: var(--ts-3);
+    font-size: 2.5rem;
     font-weight: 500;
+    line-height: var(--vr-5);
+    margin: var(--vr-6) 0 0;
 }
 @media (max-width: 500px) {
     .post-content h3 {
@@ -335,9 +309,10 @@ Usage (In Ghost editor):
 }
 
 .post-content h4 {
-    margin: 0.5em 0 0.4em 0;
-    font-size: var(--ts-4);
+    font-size: 1.9rem;
     font-weight: 500;
+    line-height: var(--vr-4);
+    margin: var(--vr-6) 0 0;
 }
 @media (max-width: 500px) {
     .post-content h4 {
@@ -346,18 +321,12 @@ Usage (In Ghost editor):
 }
 
 .post-content h5 {
-    display: block;
-    margin: 0.5em 0 0.3em;
-    border: 0;
-    font-size: var(--ts-5);
-    line-height: 1.35em;
-    font-weight: 600;
-}
-@media (min-width: 1180px) {
-    .post-content h5 {
-        max-width: 1060px;
-        width: 100vw;
-    }
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: var(--vr-5);
+    margin: var(--vr-6) 0 0;
+    color: var(--blue);
 }
 @media (max-width: 500px) {
     .post-content h5 {
@@ -367,11 +336,11 @@ Usage (In Ghost editor):
 }
 
 .post-content h6 {
-    margin: 0.5em 0 0.2em 0;
-    font-size: var(--ts-7);
-    font-weight: 700;
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: var(--vr-3);
+    margin: var(--vr-6) 0 0;
     text-transform: uppercase;
-    letter-spacing: 0.4px;
 }
 @media (max-width: 500px) {
     .post-content h6 {
@@ -379,6 +348,160 @@ Usage (In Ghost editor):
     }
 }
 
+.post-content h3 + p,
+.post-content h4 + p,
+.post-content h6 + p
+ {
+    margin: var(--vr-1) 0 0;
+}
+
+.post-content h1 + h1,
+.post-content h1 + h2,
+.post-content h1 + h3,
+.post-content h1 + h4,
+.post-content h1 + h6 {
+    margin: var(--vr-6) 0 0;
+}
+
+.post-content h2 + h2,
+.post-content h2 + h3,
+.post-content h2 + h4,
+.post-content h2 + h6 {
+    margin: var(--vr-2) 0 0;
+}
+
+.post-content h3 + h3,
+.post-content h3 + h4,
+.post-content h3 + h6 {
+    margin: var(--vr-2) 0 0;
+}
+
+.post-content h4 + h4,
+.post-content h4 + h6 {
+    margin: var(--vr-1) 0 0;
+}
+
+.post-content h5 + p,
+.post-content h5 + ul,
+.post-content h5 + ol,
+.post-content h5 + blockquote,
+.post-content h5 + h1,
+.post-content h5 + h2,
+.post-content h5 + h3,
+.post-content h5 + h4,
+.post-content h5 + h5,
+.post-content h5 + h6 {
+    margin: var(--vr-6) 0 0;
+}
+
+
+.post-content hr {
+    position: relative;
+    display: block;
+    width: 30rem;
+    margin: var(--vr-8) 0 0;
+    padding: 0;
+    height: 1px;
+    border: none;
+    /* border-top: 1px solid var(--lightgrey); */
+}
+
+.post-content hr::before {
+    content: "•••";
+    text-align: center;
+    margin: 0 auto;
+    font-size: 15px;
+    font-family: monospace;
+    display: block;
+    color: var(--midgrey);
+    letter-spacing: 10px;
+    margin-top: -10px;
+}
+
+.post-content hr + p,
+.post-content hr + ul,
+.post-content hr + ol,
+.post-content hr + blockquote,
+.post-content hr + h1,
+.post-content hr + h2,
+.post-content hr + h3,
+.post-content hr + h4,
+.post-content hr + h5,
+.post-content hr + h6 {
+    margin: var(--vr-8) 0 0;
+}
+
+
+/* Non-text content */
+
+.post-content figure + p,
+.post-content figure + ul,
+.post-content figure + ol,
+.post-content figure + blockquote,
+.post-content figure + h1,
+.post-content figure + h2,
+.post-content figure + h3,
+.post-content figure + h4,
+.post-content figure + h5,
+.post-content figure + h6,
+.post-content p + figure,
+.post-content ul + figure,
+.post-content ol + figure,
+.post-content blockquote + figure,
+.post-content h1 + figure,
+.post-content h2 + figure,
+.post-content h3 + figure,
+.post-content h4 + figure,
+.post-content h5 + figure,
+.post-content h6 + figure,
+
+.post-content pre + p,
+.post-content pre + ul,
+.post-content pre + ol,
+.post-content pre + blockquote,
+.post-content pre + h1,
+.post-content pre + h2,
+.post-content pre + h3,
+.post-content pre + h4,
+.post-content pre + h5,
+.post-content pre + h6,
+.post-content p + pre,
+.post-content ul + pre,
+.post-content ol + pre,
+.post-content blockquote + pre,
+.post-content h1 + pre,
+.post-content h2 + pre,
+.post-content h3 + pre,
+.post-content h4 + pre,
+.post-content h5 + pre,
+.post-content h6 + pre,
+
+.post-content div + p,
+.post-content div + ul,
+.post-content div + ol,
+.post-content div + blockquote,
+.post-content div + h1,
+.post-content div + h2,
+.post-content div + h3,
+.post-content div + h4,
+.post-content div + h5,
+.post-content div + h6,
+.post-content p + div,
+.post-content ul + div,
+.post-content ol + div,
+.post-content blockquote + div,
+.post-content h1 + div,
+.post-content h2 + div,
+.post-content h3 + div,
+.post-content h4 + div,
+.post-content h5 + div,
+.post-content h6 + div
+{
+    margin: var(--vr-5) 0 0;
+}
+
+
+/* Footnotes */
 .footnotes-sep {
     margin-bottom: 30px;
 }
@@ -506,7 +629,7 @@ Usage (In Ghost editor):
 }
 
 .post-content figure {
-    margin: 1.5em 0 3em;
+    margin: var(--vr-2) 0 0;
 }
 
 .post-content figure img {
@@ -514,9 +637,9 @@ Usage (In Ghost editor):
 }
 
 .post-content figcaption {
-    margin: 1.0em 0 0;
+    margin: var(--vr-2) 0 0;
     font-size: 80%;
-    line-height: 1.6em;
+    line-height: var(--vr-2);
     text-align: center;
 }
 

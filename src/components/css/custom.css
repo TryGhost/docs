@@ -34,8 +34,32 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     max-width: calc(114rem - 24vw);
 }
 
+/* Custom typography for UI */
+/* -------------------------------------------------- */
+.lh-h1 { line-height: var(--vr-8); }
+.lh-h2 { line-height: var(--vr-6); }
+.lh-h3 { line-height: var(--vr-5); }
+.lh-h4 { line-height: var(--vr-4); }
+.lh-h5 { line-height: var(--vr-3); }
+.lh-h6 { line-height: var(--vr-3); }
+.lh-p  { line-height: var(--vr-3); }
+
+
 /* Stuff that needs to be in Spirit/Brand */
 /* -------------------------------------------------- */
+
+/* Overriding Spirit/Brand font sizes */
+.f-headline { font-size: 5.2rem; }
+.f-subheadline { font-size: 4.4rem; }
+.f1 { font-size: 4.4rem; }
+.f2 { font-size: 3.3rem; }
+.f3 { font-size: 2.5rem; }
+.f4 { font-size: 1.9rem; }
+.f5 { font-size: 1.45rem; }
+.f6 { font-size: 1.45rem; }
+.f7 { font-size: 1.45rem; }
+.f8 { font-size: 1.3rem; }
+.f-supersmall { font-size: 1.1rem; }
 
 .lh-1-0 {
     line-height: 1em;

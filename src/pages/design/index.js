@@ -22,7 +22,7 @@ const DesignIndex = () => (
                         </ul>
                         <ul className="col-6 flex-auto list lh-2-0">
                             <li><h2>Posts</h2></li>
-                            <li><Link className="link blue" to="/design/page-templates/full-width/">Full width page</Link></li>
+                            <li><Link className="link blue" to="/design/page-templates/standalone/">Standalone post</Link></li>
                             <li><Link className="link blue" to="/design/page-templates/left-sidebar/">Left sidebar only</Link></li>
                             <li><Link className="link blue" to="/design/page-templates/toc-only/">TOC only</Link></li>
                             <li><Link className="link blue" to="/design/page-templates/left-sidebar-toc/">Left sidebar + TOC</Link></li>
@@ -31,7 +31,8 @@ const DesignIndex = () => (
 
                     <h1 className="bb b--whitegrey pa0 ma0 pb4 mt15">Typography</h1>
                     <ul className="flex-auto ma0 pa0 list mr6 mt4 lh-2-0">
-                        <li><Link className="link blue" to="/design/typography/">Type scale and vertical rhythm</Link></li>
+                        <li><Link className="link blue" to="/design/typography/">Post typography</Link></li>
+                        <li><Link className="link blue" to="/design/typography/ui">UI typography</Link></li>
                     </ul>
                     
                     <h1 className="bb b--whitegrey pa0 ma0 pb4 mt15">Components</h1>

@@ -12,8 +12,7 @@ import 'ghost-spirit/public/spirit-brand.css'
 import '../css/custom.css'
 
 // Additional styles
-// TODO: create custom Prism style
-import 'prismjs/themes/prism.css'
+import 'prismjs/themes/prism-okaidia.css'
 
 class DefaultLayout extends React.Component {
     componentDidMount() {
@@ -32,7 +31,7 @@ class DefaultLayout extends React.Component {
                     <title>{ title }</title>
                     <meta name="description" content="Ghost Docs" />
                     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6076934/7558352/css/fonts.css" />
-                    <body className={ this.props.bodyClass + " flex flex-column whitney f7 fw4 middarkgrey readability"} />
+                    <body className={ this.props.bodyClass + ` flex flex-column whitney f7 fw4 middarkgrey readability`} />
                 </Helmet>
                 
                 { header }
@@ -48,8 +47,8 @@ class DefaultLayout extends React.Component {
 }
 
 DefaultLayout.defaultProps = {
-    headerDividerStyle: 'shadow',
-    bodyClass: 'bg-whitegrey-l2'
+    headerDividerStyle: `shadow`,
+    bodyClass: `bg-whitegrey-l2`,
 }
 
 DefaultLayout.propTypes = {
@@ -57,7 +56,7 @@ DefaultLayout.propTypes = {
     title: PropTypes.string,
     bodyClass: PropTypes.string,
     header: PropTypes.element,
-    headerDividerStyle: PropTypes.oneOf(['hairline', 'shadow']),
+    headerDividerStyle: PropTypes.oneOf([`hairline`, `shadow`]),
 }
 
 export default DefaultLayout
