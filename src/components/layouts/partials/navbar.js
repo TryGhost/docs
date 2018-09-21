@@ -36,7 +36,7 @@ class NavBar extends React.Component {
         }
 
         return (
-            <nav className="flex flex-auto flex-nowrap items-center justify-between mw-xl center pt2 pb2">
+            <nav className="flex flex-auto flex-nowrap items-center justify-between mw-xl center pt2 pb2 pl10 pr10">
                 <div className="flex flex-auto flex-nowrap items-center f8">
                     <div className="flex items-center pt3 pb3 mr12 nudge-bottom--2">
                         <a href="https://ghost.org" className="nudge-top--3"><Logo theme={ this.props.theme } /></a>

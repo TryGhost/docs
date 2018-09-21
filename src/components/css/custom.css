@@ -69,6 +69,9 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .measure--0-4 { letter-spacing: -0.4px; }
 .measure--1-0 { letter-spacing: -1.0px; }
 
+/* Overriding max page width */
+.mw-xl { max-width: 120.0rem; }
+
 .lh-1-0 {
     line-height: 1em;
 }

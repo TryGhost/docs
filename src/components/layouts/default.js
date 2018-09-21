@@ -36,9 +36,9 @@ class DefaultLayout extends React.Component {
                 
                 { header }
 
-                <div className="center">
+                <main>
                     { children }
-                </div>
+                </main>
 
                 <Footer />
             </>
