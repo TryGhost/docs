@@ -164,3 +164,13 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .shadow-3-on-white  { box-shadow: 0 0 3px rgba(0,0,0,.065), 0 10px 32px -5px rgba(0,0,0,0.075); }
 
 .header-shadow      { box-shadow: 0 0 3px rgba(0,0,0,.03), 0 3px 46px rgba(0,0,0,.07); }
+
+/* Test hover box */
+.box-hover-test {
+    transition: all 0.3s ease;
+}
+
+.box-hover-test:hover {
+    box-shadow: 0 0 1px rgba(0,0,0,.03), 0 10px 32px -5px rgba(0,0,0,.1);
+    transform: scale(1.0065);
+}
