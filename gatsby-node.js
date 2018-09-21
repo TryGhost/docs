@@ -98,26 +98,35 @@ exports.createPages = ({ graphql, actions }) => {
         })
     })
 
+    // Querying only non API pages
     const createMDPages = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`
-      {
-        allMarkdownRemark {
-          edges {
-            node {
-              fields {
-                slug
-              }
+        {
+            allMarkdownRemark(
+                filter: {
+                    fields: {
+                    slug: {
+                    regex: "/^((?!\/api\/).)*$/"
+                    }
+                }
+                }
+            ) {
+                edges {
+                node {
+                    fields {
+                    slug
+                    }
+                }
+                }
             }
-          }
         }
-      }
-    `).then((result) => {
+        `).then((result) => {
             result.data.allMarkdownRemark.edges.forEach(({ node }) => {
                 // Exclude the default README.md pages from the api docs repo
                 if (!node.fields.slug.match(/readme\/$/i)) {
                     createPage({
                         path: node.fields.slug,
-                        component: path.resolve(`./src/templates/doc.js`),
+                        component: path.resolve(`./src/templates/doc-navigation-toc.js`),
                         context: {
                             // Data passed to context is available
                             // in page queries as GraphQL variables.
@@ -132,6 +141,47 @@ exports.createPages = ({ graphql, actions }) => {
         })
     })
 
-    return Promise.all([loadFAQPosts, loadTutorialPosts, loadIntegrations, createMDPages])
+    // Querying API pages
+    const createAPIPages = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+        graphql(`
+        {
+            allMarkdownRemark(
+                filter: {
+                    fields: {
+                    slug: {
+                    regex: "/\/api\//"
+                    }
+                }
+                }
+            ) {
+                edges {
+                node {
+                    fields {
+                    slug
+                    }
+                }
+                }
+            }
+        }
+        `).then((result) => {
+            result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+                // Exclude the default README.md pages from the api docs repo
+                if (!node.fields.slug.match(/readme\/$/i)) {
+                    createPage({
+                        path: node.fields.slug,
+                        component: path.resolve(`./src/templates/doc-toc.js`),
+                        context: {
+                            slug: node.fields.slug,
+                        },
+                    })
+                }
+            })
+            resolve()
+        }).catch(() => {
+            resolve()
+        })
+    })
+
+    return Promise.all([loadFAQPosts, loadTutorialPosts, loadIntegrations, createMDPages, createAPIPages])
 }
 
