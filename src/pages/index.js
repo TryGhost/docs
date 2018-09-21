@@ -12,7 +12,7 @@ const IndexPage = () => (
             <input id="search" className="input-reset form-text pa4 pl5 pr5 mt8 w-100 mw-s f4 br-pill ba b--transparent bg-white shadow-3" type="text" placeholder="Search documentation..." name="query" autoComplete="off" />
         </SectionHeading>
         
-        <div className="center mw-l">
+        <div className={ SpiritStyles.page.l }>
             <section className="grid gutter-2">
                 <h3 className={ SpiritStyles.h3 + `col-12 mb4` }>Setup</h3>
                 <div className="col-4">

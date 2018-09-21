@@ -4,12 +4,13 @@ import { graphql } from 'gatsby'
 
 import Layout from '../../components/layouts/default'
 import PostCard from '../../components/postcard'
+import { SpiritStyles } from '../../components/spirit-styles'
 
 const TutorialsPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
-      <Layout title="Tutorials" headerDividerStyle="shadow">
-            <div className="center">
+        <Layout title="Tutorials" headerDividerStyle="shadow">
+            <div className={ SpiritStyles.page.xl }>
                 <h1>Tutorials</h1>
                 {posts.map(({ node }) => (
                     <PostCard key={node.id} post={node} />

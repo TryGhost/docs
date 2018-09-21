@@ -7,7 +7,7 @@ import { SpiritStyles } from '../../components/spirit-styles.js'
 const SetupIndexPage = () => (
     <Layout title="Home" headerDividerStyle="shadow">
 
-        <div className="center mw-l">
+        <div className={ SpiritStyles.page.l }>
 
             <section className="br4 pt8 mt15 grid">
                 <h2 className={ SpiritStyles.h1 + `col-12` }>What is Ghost?</h2>

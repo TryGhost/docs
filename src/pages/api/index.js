@@ -2,10 +2,11 @@ import Layout from '../../components/layouts/default'
 import React from 'react'
 
 import { Link } from 'gatsby'
+import { SpiritStyles } from '../../components/spirit-styles'
 
 const APIPage = () => (
     <Layout title="API">
-        <div className="mw-xl center">
+        <div className={ SpiritStyles.page.l }>
             <div className="pa-vw4 tc">
                 <h1 className="ma0 pa0 f-headline">API Reference</h1>
                 <p className="ma0 mt2 f4 midgrey">Clients, tools and libraries for working with Ghost</p>

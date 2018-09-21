@@ -59,7 +59,7 @@ exports.createPages = ({ graphql, actions }) => {
             result.data.allGhostPost.edges.forEach(({ node }) => {
                 createPage({
                     path: `/tutorials/${node.slug}/`,
-                    component: path.resolve(`./src/templates/tutorial.js`),
+                    component: path.resolve(`./src/templates/standalone-post.js`),
                     context: {
                         slug: node.slug,
                     },

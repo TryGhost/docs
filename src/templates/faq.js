@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 
 import Layout from '../components/layouts/default'
+import { SpiritStyles } from '../components/spirit-styles'
 
 const getBreadCrumb = function getBreadCrumb(post) {
     // Get rid of internal tags
@@ -24,7 +25,7 @@ const FAQ = ({ data }) => {
 
     return (
         <Layout>
-            <div className="flex flex-column mw-xl center pa12 pt10 bg-white br4">
+            <div className={ SpiritStyles.page.l + `flex flex-column pa12 pt10 bg-white br4` }>
 
                 <div className="mb8 f8">
                     <Link className="link midgrey" to="/faq/">FAQ</Link>

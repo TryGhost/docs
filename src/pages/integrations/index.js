@@ -4,12 +4,13 @@ import { graphql } from 'gatsby'
 
 import Layout from '../../components/layouts/default'
 import Integration from '../../components/integration'
+import { SpiritStyles } from '../../components/spirit-styles'
 
 const IntegrationsPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
         <Layout title="Integrations" headerDividerStyle="shadow">
-            <div className="mw-xl center">
+            <div className={ SpiritStyles.page.xl }>
                 <div className="pa-vw4 tc">
                     <h1 className="ma0 pa0 f-headline">Ghost Integrations</h1>
                     <p className="ma0 mt2 f4 midgrey">All your favourite apps and tools, integrated with Ghost</p>

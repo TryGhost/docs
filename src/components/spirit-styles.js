@@ -1,5 +1,13 @@
 export const SpiritStyles = {
 
+    // Page template widths
+    page: {
+        s: ` center mw-s `,
+        m: ` center mw-m `,
+        l: ` center mw-l `,
+        xl: ` center mw-xl `,
+    },
+
     // Generic typography
     headline: ` f-headline lh-h1 fw6 ma0 measure--1-0 `,
     thinheadline: ` f-headline lh-h1 fw3 ma0 measure--1-0 `,

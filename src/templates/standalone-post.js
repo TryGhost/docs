@@ -4,13 +4,13 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layouts/default'
 import Authors from '../components/authors'
-import { SpiritStyles } from '../components/spirit-styles';
+import { SpiritStyles } from '../components/spirit-styles'
 
 const Tutorial = ({ data }) => {
     const post = data.ghostPost
     return (
         <Layout title="Home" headerDividerStyle="hairline" bodyClass="bg-white">
-            <div className="center mw-m pt20">
+            <div className={ SpiritStyles.page.m + `pt20`}>
                 <time dateTime={ post.publishedAt } className="db mb2 midgrey">{ post.publishedAt }</time>
                 <h1 className={ SpiritStyles.thinheadline }>{ post.title }</h1>
                 <section className="post-content" dangerouslySetInnerHTML={ { __html: post.html } } />

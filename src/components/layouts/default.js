@@ -36,7 +36,7 @@ class DefaultLayout extends React.Component {
                 
                 { header }
 
-                <div className="mw-xl center">
+                <div className="center">
                     { children }
                 </div>
 
