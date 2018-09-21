@@ -46,6 +46,12 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .lh-tiny  { line-height: var(--vr-2); }
 
 
+/* Needed for tutorials */
+.flex-third {
+    flex: 1 1 calc(100% / 3 - 40px);
+}
+
+
 /* Stuff that needs to be in Spirit/Brand */
 /* -------------------------------------------------- */
 
@@ -71,6 +77,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 /* Overriding max page width */
 .mw-xl { max-width: 120.0rem; }
+.mw-m { max-width: 80.0rem; }
 
 .lh-1-0 {
     line-height: 1em;
@@ -82,4 +89,9 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 .dark-placeholder::placeholder { /* Most modern browsers support this now. */
    color: rgba(52, 63, 68, 0.3);
+}
+
+/* Text styles */
+.tdn {
+    text-decoration: none;
 }

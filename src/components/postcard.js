@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
 import Authors from './authors'
+import { SpiritStyles } from './spirit-styles'
 
 const getExcerpt = (post) => {
     if (post.custom_excerpt) {
@@ -30,17 +31,19 @@ const PostCard = ({ post }) => {
     const excerpt = getExcerpt(post)
 
     return (
-        <article className="post-card mt7 mb7">
-            <Link to={url}>
+        <article className="bg-white br4 shadow-1 pa10 pt8 pb8 ml5 mr5 mb10 flex flex-column justify-between flex-third relative">
+            <Link to={ url } className="tdn">
                 <header>
-                    {tag ? <span>{tag}</span> : null}
-                    <h2>{post.title}</h2>
+                    { post.featured ? <span className="purple f8 fw5 dib mr2">Featured</span> : null }
+                    { tag ? <span className="midgrey f8">{ tag }</span> : null } 
+                    <h2 className={ SpiritStyles.h3 + `darkgrey mt2` }>{ post.title }</h2>
                 </header>
-                {excerpt ? <section>{excerpt}</section> : null}
+                { excerpt ? <section className={ SpiritStyles.p + `darkgrey mt2` }>{ excerpt }</section> : null }
             </Link>
-            <footer>
-                <Authors authors={post.authors} />
-                <span>{post.publishedAt}</span>
+            
+            <footer className="flex pt2 mt5 content-end">
+                {/* <Authors authors={ post.authors } /> */}
+                <span className="f8 dib">{ post.publishedAt }</span>
             </footer>
         </article>
     )
