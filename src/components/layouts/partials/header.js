@@ -12,7 +12,7 @@ class Header extends React.Component {
             break
 
         case `shadow`:
-            headerShadow = `shadow-2`
+            headerShadow = `header-shadow`
             break
 
         case `none`:
