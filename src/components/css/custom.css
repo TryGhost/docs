@@ -34,8 +34,25 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     max-width: calc(114rem - 24vw);
 }
 
-/* Custom typography for UI -- maybe should be in Spirit... */
-/* -------------------------------------------------- */
+/* Integrations
+/* ---------------------------------------------------------- */
+
+.gh-integration-sidebar a:hover {
+    color: #3eb0ef !important;
+    /*TODO: color: var(--blue);*/
+}
+
+.gh-integration-card {
+    transition: all 0.5s ease !important;
+}
+
+.gh-integration-card:hover {
+    transform: scale(1.1);
+    transition: all 0.2s ease !important;
+}
+
+/* Custom typography for UI -- maybe should be in Spirit...
+/* ---------------------------------------------------------- */
 .lh-h1 { line-height: var(--vr-8); }
 .lh-h2 { line-height: var(--vr-6); }
 .lh-h3 { line-height: var(--vr-5); }
@@ -53,7 +70,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 
 /* Stuff that needs to be in Spirit/Brand */
-/* -------------------------------------------------- */
+/* ---------------------------------------------------------- */
 
 /* Overriding Spirit/Brand font sizes */
 .f-headline { font-size: 5.0rem; }
@@ -81,6 +98,32 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 .lh-1-0 {
     line-height: 1em;
+}
+
+/* _links.css */
+.link {
+  text-decoration: none;
+  transition: color .3s ease;
+}
+
+.link:link,
+.link:visited {
+  transition: color .15s ease;
+}
+.link:hover   {
+  transition: color .15s ease;
+}
+.link:active  {
+  transition: color .15s ease;
+}
+.link:focus   {
+  transition: color .15s ease;
+  outline: 1px dotted currentColor;
+}
+
+
+.br5 {
+    border-radius: 10%;
 }
 
 .white-placeholder::placeholder { /* Most modern browsers support this now. */

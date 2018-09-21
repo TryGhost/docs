@@ -17,7 +17,7 @@ const IntegrationsPage = ({ data }) => {
                     <input id="search" className="input-reset form-text pa4 pl5 pr5 mt8 w-100 mw-s f6 br4 ba b--transparent bg-white shadow-3" type="text" placeholder="Search integrations..." name="query" autoComplete="off" />
                 </div>
                 <div className="flex pa12 bg-white br4">
-                    <div className="flex-shrink-0 w50 mr5">
+                    <div className="gh-integration-sidebar flex-shrink-0 w50 mr5">
                         <div className="flex flex-column mb6">
                             <h3 className="ma0 mb2">Sort by</h3>
                             <a className="link pa2 pl0 blue fw6" href="#">Most popular</a>
@@ -36,7 +36,7 @@ const IntegrationsPage = ({ data }) => {
                             <a className="link pa2 pl0 midgrey" href="#">Utilities</a>
                         </div>
                     </div>
-                    <div className="flex flex-wrap">
+                    <div className="flex flex-wrap nt5">
                         {posts.map(({ node }) => (
                             <Integration key={node.id} post={node} />
                         ))}
