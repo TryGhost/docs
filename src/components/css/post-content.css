@@ -236,39 +236,6 @@ Usage (In Ghost editor):
     margin-bottom: 0;
 }
 
-.post-content code {
-    padding: 0 5px 2px;
-    font-size: 0.8em;
-    line-height: 1em;
-    font-weight: 400!important;
-    background: var(--whitegrey);
-    border-radius: 3px;
-}
-
-.post-content pre {
-    overflow-x: auto;
-    margin: 1.5em 0 3em;
-    padding: 20px;
-    max-width: 100%;
-    border: color(var(--darkgrey) l(-10%)) 1px solid;
-    color: var(--whitegrey);
-    font-size: 1.4rem;
-    line-height: 1.5em;
-    background: color(var(--darkgrey) l(-3%));
-    border-radius: 5px;
-}
-
-.post-content pre code {
-    padding: 0;
-    font-size: inherit;
-    line-height: inherit;
-    background: transparent;
-}
-
-.post-content pre code * {
-    color: inherit;
-}
-
 .post-content .fluid-width-video-wrapper {
     margin: 1.5em 0 3em;
 }
