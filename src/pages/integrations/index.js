@@ -5,17 +5,13 @@ import { graphql } from 'gatsby'
 import Layout from '../../components/layouts/default'
 import Integration from '../../components/integration'
 import { SpiritStyles } from '../../components/spirit-styles'
+import IntegrationsHeader from '../../components/layouts/partials/integrations-header'
 
 const IntegrationsPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
-        <Layout title="Integrations" headerDividerStyle="shadow">
+        <Layout title="Integrations" headerDividerStyle="shadow" header={ <IntegrationsHeader /> } bodyClass="bg-white">
             <div className={ SpiritStyles.page.xl }>
-                <div className="pa-vw4 tc">
-                    <h1 className="ma0 pa0 f-headline">Ghost Integrations</h1>
-                    <p className="ma0 mt2 f4 midgrey">All your favourite apps and tools, integrated with Ghost</p>
-                    <input id="search" className="input-reset form-text pa4 pl5 pr5 mt8 w-100 mw-s f6 br4 ba b--transparent bg-white shadow-3" type="text" placeholder="Search integrations..." name="query" autoComplete="off" />
-                </div>
                 <div className="flex pa12 bg-white br4">
                     <div className="gh-integration-sidebar flex-shrink-0 w50 mr5">
                         <div className="flex flex-column mb6">

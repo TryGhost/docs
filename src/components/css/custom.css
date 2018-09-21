@@ -51,6 +51,20 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     transition: all 0.2s ease !important;
 }
 
+.bg-integrations-header-image {
+    background: url("https://source.unsplash.com/user/johnonolan");
+    background-size: cover;
+    background-position: 0 35%;
+}
+
+.bg-integrations-header-cover {
+    background: linear-gradient(45deg, rgba(125,185,232,0.95) 1%,rgba(0,179,184,0.95) 100%);
+}
+
+.gh-integration-header-shadow {
+    text-shadow: 0px 5px 18px rgba(0, 0, 0, 0.07); 
+}
+
 /* Custom typography for UI -- maybe should be in Spirit...
 /* ---------------------------------------------------------- */
 .lh-h1 { line-height: var(--vr-8); }
