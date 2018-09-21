@@ -12,7 +12,7 @@ const Tutorial = ({ data }) => {
         <Layout title="Home" headerDividerStyle="hairline" bodyClass="bg-white">
             <div className="center mw-m pt20">
                 <time dateTime={ post.publishedAt } className="db mb2 midgrey">{ post.publishedAt }</time>
-                <h1 className={ SpiritStyles.headline }>{ post.title }</h1>
+                <h1 className={ SpiritStyles.thinheadline }>{ post.title }</h1>
                 <section className="post-content" dangerouslySetInnerHTML={ { __html: post.html } } />
                 <Authors authors={ post.authors } />
             </div>

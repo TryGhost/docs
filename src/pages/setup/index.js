@@ -10,9 +10,9 @@ const SetupIndexPage = () => (
         <div className="center mw-l">
 
             <section className="br4 pt8 mt15 grid">
-                <h2 className={ SpiritStyles.h3 + `col-12` }>What is Ghost?</h2>
-                <p className={ SpiritStyles.excerpt + `col-8 mt5` }>Sunt duis ad aliqua aute do ex excepteur enim eiusmod nostrud occaecat dolor nisi. Qui nulla exercitation est minim commodo mollit quis incididunt. Est excepteur sit deserunt quis magna do irure quis. Fugiat id qui aliquip ullamco sunt. </p>
-                <p className="col-12 mt8"><Link to="/setup/what-is-ghost/" className={ SpiritStyles.excerpt + `blue link`}>Learn more</Link></p>
+                <h2 className={ SpiritStyles.h1 + `col-12` }>What is Ghost?</h2>
+                <p className={ SpiritStyles.excerpt + `col-8 mt2` }>Sunt duis ad aliqua aute do ex excepteur enim eiusmod nostrud occaecat dolor nisi. Qui nulla exercitation est minim commodo mollit quis incididunt. Est excepteur sit deserunt quis magna do irure quis. Fugiat id qui aliquip ullamco sunt. </p>
+                <p className="col-12 mt5"><Link to="/setup/what-is-ghost/" className={ SpiritStyles.excerpt + `blue link`}>Learn more</Link></p>
             </section>
 
             <section className="grid gutter-2">

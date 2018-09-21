@@ -14,7 +14,7 @@ const IndexPage = () => (
         
         <div className="center mw-l">
             <section className="grid gutter-2">
-                <h3 className={ SpiritStyles.h3 + `col-12 mb4 midgrey` }>Setup</h3>
+                <h3 className={ SpiritStyles.h3 + `col-12 mb4` }>Setup</h3>
                 <div className="col-4">
                     <Link to="/setup/" className="link midgrey"><div className="shadow-1 bg-white br4 pa4 pt20 pb20 tc">
                         <h4 className={ SpiritStyles.h4 }>Getting Started</h4>
@@ -33,7 +33,7 @@ const IndexPage = () => (
             </section>
 
             <section className="grid gutter-2">
-                <h3 className={ SpiritStyles.h3 + `col-12 mt15 mb4 midgrey` }>More Resources</h3>
+                <h3 className={ SpiritStyles.h3 + `col-12 mt15 mb4` }>More Resources</h3>
                 <div className="col-6">
                     <Link to="/api/" className="link midgrey"><div className="shadow-1 bg-white br4 pa4 pt20 pb20 tc">
                         <h4 className={ SpiritStyles.h4 }>API Documentation</h4>

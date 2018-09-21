@@ -293,7 +293,7 @@ Usage (In Ghost editor):
 
 .post-content h1 {
     font-size: 4.4rem;
-    font-weight: 400;
+    font-weight: 300;
     line-height: var(--vr-8);
     letter-spacing: -0.2px;
     margin: var(--vr-8) 0 0;
@@ -307,7 +307,7 @@ Usage (In Ghost editor):
 
 .post-content h2 {
     font-size: 3.3rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: var(--vr-6);
     margin: var(--vr-7) 0 0;
 }
