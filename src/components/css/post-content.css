@@ -4,7 +4,7 @@
 
 .post-content {
     line-height: var(--vr-3);
-    min-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,7 +156,7 @@
     color: #2FA1E0; /*should be blue-d2*/
     word-break: break-word;
     text-decoration: none;
-    box-shadow: rgba(62, 176, 239, 0.4) 0 -1px 0 inset; 
+    box-shadow: rgba(62, 176, 239, 0.4) 0 -1px 0 inset;
     transition: all 0.2s ease;
 }
 

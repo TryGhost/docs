@@ -24,7 +24,7 @@ const Integration = ({ data }) => {
                 </div>
             </div>
             <div className="flex mw-70 center">
-                <div className="pa15 pt13 bg-white br4">
+                <div className="w-100 pa15 pt13 bg-white br4">
                     <div className="mb5 f8">
                         <Link className="link midgrey" to="/integrations/">Integrations</Link>
                         <span className="mr1 ml1 f8 midgrey">/</span>
