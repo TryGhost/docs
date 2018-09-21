@@ -12,7 +12,7 @@ import 'ghost-spirit/public/spirit-brand.css'
 import '../css/custom.css'
 
 // Additional styles
-import 'prismjs/themes/prism-okaidia.css'
+import '../css/prism.css'
 
 class DefaultLayout extends React.Component {
     componentDidMount() {

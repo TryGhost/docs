@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
-import Authors from './authors'
+// import Authors from './authors'
 import { SpiritStyles } from './spirit-styles'
 
 const getExcerpt = (post) => {
