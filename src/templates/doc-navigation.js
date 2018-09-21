@@ -15,7 +15,7 @@ const DocTemplate = ({ data }) => {
             <div className={ SpiritStyles.page.xl + `flex flex-start mt12` }>
                 <NavSidebar />
                 <div>
-                    <section className="flex-auto flex bg-white br4 shadow-1 pa15 pt12">
+                    <section className="bg-white br4 shadow-1 pa15 pt12">
                         <span className="f7 fw4 measure-wide dib mb1 midlightgrey">Setup / Ghost(Pro)</span>
                         <h1 className={ SpiritStyles.h1 }>{ post.frontmatter.title }</h1>
                         <section className="post-content" dangerouslySetInnerHTML={ { __html: post.html } } />
@@ -32,13 +32,13 @@ DocTemplate.propTypes = {
 
 export default DocTemplate
 
-// export const articleQuery = graphql`
-//     query MDNavDocsQuery($slug: String!) {
-//         markdownRemark(fields: { slug: { eq: $slug } }) {
-//             frontmatter {
-//                 title
-//             }
-//             html
-//         }
-//     }
-// `
+export const articleQuery = graphql`
+    query MDNavDocsQuery($slug: String!) {
+        markdownRemark(fields: { slug: { eq: $slug } }) {
+            frontmatter {
+                title
+            }
+            html
+        }
+    }
+`

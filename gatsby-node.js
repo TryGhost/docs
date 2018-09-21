@@ -102,21 +102,13 @@ exports.createPages = ({ graphql, actions }) => {
     const createMDPages = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`
         {
-            allMarkdownRemark(
-                filter: {
-                    fields: {
-                    slug: {
-                    regex: "/^((?!\/api\/).)*$/"
-                    }
-                }
-                }
-            ) {
+            allMarkdownRemark {
                 edges {
-                node {
-                    fields {
-                    slug
+                    node {
+                        fields {
+                            slug
+                        }
                     }
-                }
                 }
             }
         }
@@ -124,9 +116,22 @@ exports.createPages = ({ graphql, actions }) => {
             result.data.allMarkdownRemark.edges.forEach(({ node }) => {
                 // Exclude the default README.md pages from the api docs repo
                 if (!node.fields.slug.match(/readme\/$/i)) {
+                    var pathSrc = `./src/templates/doc-navigation-toc.js`
+
+                    // Filtering for different templates
+                    // API pages
+                    if (node.fields.slug.match(/\/api\//)) {
+                        pathSrc = `./src/templates/doc-toc.js`
+                    }
+
+                    // Setup pagaes
+                    if (node.fields.slug.match(/\/setup\//)) {
+                        pathSrc = `./src/templates/doc-navigation.js`
+                    }
+
                     createPage({
                         path: node.fields.slug,
-                        component: path.resolve(`./src/templates/doc-navigation-toc.js`),
+                        component: path.resolve(pathSrc),
                         context: {
                             // Data passed to context is available
                             // in page queries as GraphQL variables.
@@ -141,47 +146,6 @@ exports.createPages = ({ graphql, actions }) => {
         })
     })
 
-    // Querying API pages
-    const createAPIPages = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
-        graphql(`
-        {
-            allMarkdownRemark(
-                filter: {
-                    fields: {
-                    slug: {
-                    regex: "/\/api\//"
-                    }
-                }
-                }
-            ) {
-                edges {
-                node {
-                    fields {
-                    slug
-                    }
-                }
-                }
-            }
-        }
-        `).then((result) => {
-            result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-                // Exclude the default README.md pages from the api docs repo
-                if (!node.fields.slug.match(/readme\/$/i)) {
-                    createPage({
-                        path: node.fields.slug,
-                        component: path.resolve(`./src/templates/doc-toc.js`),
-                        context: {
-                            slug: node.fields.slug,
-                        },
-                    })
-                }
-            })
-            resolve()
-        }).catch(() => {
-            resolve()
-        })
-    })
-
-    return Promise.all([loadFAQPosts, loadTutorialPosts, loadIntegrations, createMDPages, createAPIPages])
+    return Promise.all([loadFAQPosts, loadTutorialPosts, loadIntegrations, createMDPages])
 }
 
