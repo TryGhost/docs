@@ -40,7 +40,7 @@ class NavBar extends React.Component {
                 <div className="flex flex-auto flex-nowrap items-center f8">
                     <div className="flex items-center pt3 pb3 mr12 nudge-bottom--2">
                         <a href="https://ghost.org" className="nudge-top--3"><Logo theme={ this.props.theme } /></a>
-                        <Link className={ theme.docsTitleClass + ` relative ma0 ml4 pa0 pl4 f6 lh-1-5 fw4 link gh-nav-logo-suffix` } to="/">Docs</Link>
+                        <Link className={theme.docsTitleClass + ` gh-nav-logo-suffix relative ma0 ml4 pa0 pl4 f6 lh-1-5 fw4 link nudge-top--1` } to="/">Docs</Link>
                     </div>
                     <Link className={ theme.menuItem + ` mr7` } to="/setup/">Setup</Link>
                     <Link className={ theme.menuItem + ` mr7` } to="/concepts/introduction/">Core Concepts</Link>
