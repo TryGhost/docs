@@ -12,7 +12,7 @@ const IntegrationsPage = ({ data }) => {
     return (
         <Layout title="Integrations" headerDividerStyle="shadow" header={ <IntegrationsHeader /> }>
             <div className={ SpiritStyles.page.xl }>
-                <div className="flex pa12 br4">
+                <div className="flex br4">
                     <div className="gh-integration-sidebar flex-shrink-0 w50 mr5">
                         <div className="flex flex-column mb6">
                             <h3 className="ma0 mb2">Sort by</h3>
@@ -32,7 +32,7 @@ const IntegrationsPage = ({ data }) => {
                             <a className="link pa2 pl0 midgrey" href="#">Utilities</a>
                         </div>
                     </div>
-                    <div className="flex flex-wrap nt5">
+                    <div className="gh-integrations w-100">
                         {posts.map(({ node }) => (
                             <Integration key={node.id} post={node} />
                         ))}
