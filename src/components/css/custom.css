@@ -179,16 +179,55 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 }
 
 /* Fixing those shadows */
-.shadow-1           { box-shadow: 0 0 1px rgba(0,0,0,.06), 0 2px 6px rgba(0,0,0,.03); }
-.shadow-1-strong    { box-shadow: 0 0 1px rgba(0,0,0,.15), 0 2px 4px rgba(0,0,0,.03); }
+.box-shadow-hover { 
+    transition: all 0.3s ease; 
+}
 
-.shadow-2           { box-shadow: 0 0 5px rgba(0,0,0,.02), 0 5px 22px -6px rgba(0,0,0,.1); }
-.shadow-2-on-white  { box-shadow: 0 0 5px rgba(0,0,0,.05), 0 5px 22px -6px rgba(0,0,0,.08); }
+.shadow-1 { 
+    box-shadow: 0 0 1px rgba(0,0,0,.06), 0 2px 6px rgba(0,0,0,.03); 
+}
+.shadow-1.on-white { 
+    box-shadow: 0 0 1px rgba(0,0,0,.1), 0 2px 4px rgba(0,0,0,.03); 
+}
+.shadow-1-hover:hover { 
+    box-shadow: 0 0 5px rgba(0,0,0,.02), 0 5px 22px -6px rgba(0,0,0,.1); 
+    transform: scale(1.025);
+}
+.shadow-1-hover.on-white:hover { 
+    box-shadow: 0 0 1px rgba(0,0,0,.1), 0 5px 22px -6px rgba(0,0,0,.1); 
+}
 
-.shadow-3           { box-shadow: 0 0 1px rgba(0,0,0,.03), 0 10px 32px -5px rgba(0,0,0,.1); }
-.shadow-3-on-white  { box-shadow: 0 0 3px rgba(0,0,0,.065), 0 10px 32px -5px rgba(0,0,0,0.075); }
+.shadow-2 { 
+    box-shadow: 0 0 5px rgba(0,0,0,.02), 0 5px 22px -6px rgba(0,0,0,.1); 
+}
+.shadow-2.on-white { 
+    box-shadow: 0 0 3px rgba(0,0,0,.08), 0 5px 22px -6px rgba(0,0,0,.08); 
+}
+.shadow-2-hover:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 1px rgba(0,0,0,.03), 0 8px 26px -4px rgba(0,0,0,.1);
+}
+.shadow-2-hover.on-white:hover {
+    box-shadow: 0 0 3px rgba(0,0,0,.08), 0 8px 26px -4px rgba(0,0,0,.1);
+}
 
-.header-shadow      { box-shadow: 0 0 3px rgba(0,0,0,.03), 0 3px 46px rgba(0,0,0,.07); }
+.shadow-3 { 
+    box-shadow: 0 0 1px rgba(0,0,0,.03), 0 10px 32px -5px rgba(0,0,0,.1); 
+}
+.shadow-3.on-white { 
+    box-shadow: 0 0 4px rgba(0,0,0,.065), 0 10px 32px -5px rgba(0,0,0,0.075); 
+}
+.shadow-3-hover:hover {
+    box-shadow: 0 0 3px rgba(0,0,0,.03), 0 17px 40px -8px rgba(0,0,0,.09);
+    transform: scale(1.05);
+}
+.shadow-3-hover.on-white:hover {
+    box-shadow: 0 0 4px rgba(0,0,0,.065), 0 17px 40px -8px rgba(0,0,0,.09);
+}
+
+.header-shadow { 
+    box-shadow: 0 0 3px rgba(0,0,0,.03), 0 3px 46px rgba(0,0,0,.07); 
+}
 
 /* Test hover box */
 .box-hover-test {
@@ -200,4 +239,9 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     transform: scale(1.0065);
 }
 
+
+/* Border radius */
+.br5 {
+    border-radius: 1.2rem;
+}
 
