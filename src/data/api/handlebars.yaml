@@ -1,0 +1,10 @@
+- title: Handlebars
+  items:
+    - title: Index
+      link: /api/handlebars/index/
+    - title: Home
+      link: /api/handlebars/home/
+    - title: Post
+      link: /api/handlebars/post/
+    - title: Page
+      link: /api/handlebars/page/
