@@ -135,7 +135,7 @@
 .post-content pre,
 .post-content blockquote,
 .post-content .gatsby-highlight,
-.post-full-comments,
+.post-comments,
 .footnotes {
     min-width: 100%;
 }
@@ -513,14 +513,14 @@ Usage (In Ghost editor):
 
 /* Some grouped styles for smaller viewports */
 @media (max-width: 500px) {
-    .post-full-meta {
+    .post-meta {
         font-size: 1.2rem;
         line-height: 1.3em;
     }
-    .post-full-title {
+    .post-title {
         font-size: 2.9rem;
     }
-    .post-full-image {
+    .post-image {
         margin-bottom: 4vw;
         height: 350px;
     }
@@ -538,23 +538,20 @@ Usage (In Ghost editor):
     display: inline-block;
     overflow-x: auto;
     margin: 0.5em 0 2.5em;
-    max-width: 100%;
-    width: auto;
+    width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 1.6rem;
     white-space: nowrap;
     vertical-align: top;
-}
-
-.post-content table {
     -webkit-overflow-scrolling: touch;
     background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
     background-attachment: scroll, scroll;
     background-size: 10px 100%, 10px 100%;
     background-repeat: no-repeat;
 }
+
 
 .post-content table td:first-child {
     background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
@@ -593,7 +590,7 @@ Usage (In Ghost editor):
 }
 
 /* Preventing full-width image overlap with post image.  */
-.post-full-image + .post-content .kg-content *:first-child .kg-image {
+.post-image + .post-content .kg-content *:first-child .kg-image {
     width: 100%;
 }
 
@@ -707,4 +704,55 @@ Usage (In Ghost editor):
     position: absolute;
     left: 0;
     top: 2px;
+}
+
+/* Code Boxes
+/* ---------------------------------------------------------- */
+
+.gatsby-highlight {
+    max-width: 100%;
+}
+
+code,
+pre {
+	font-family: Menlo, Courier, monospace;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	tab-size: 4;
+	hyphens: none;
+}
+
+.post-content code {
+    padding: 0 5px 2px;
+    font-size: 0.8em;
+    line-height: 1em;
+    font-weight: 400!important;
+    background: var(--whitegrey);
+    border-radius: 3px;
+}
+
+.post-content pre {
+    overflow-x: auto;
+    margin: 1.5em 0 3em;
+    padding: 20px;
+    max-width: 100%;
+    border: color(var(--darkgrey) l(-10%)) 1px solid;
+    color: var(--whitegrey);
+    font-size: 1.3rem;
+    line-height: 1.7em;
+    background: color(var(--darkgrey) l(-3%));
+    border-radius: 5px;
+}
+
+.post-content pre code {
+    padding: 0;
+    font-size: inherit;
+    line-height: inherit;
+    background: transparent;
+}
+
+.post-content pre code * {
+    color: inherit;
 }

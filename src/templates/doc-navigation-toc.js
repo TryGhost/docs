@@ -51,7 +51,7 @@ const DocTemplate = ({ data }) => {
                                 <span className="mb8 f8">Setup / Ghost(Pro)</span>
                                 <h1 className={Spirit.h1}>{post.frontmatter.title}</h1>
                                 <section className="post-content" dangerouslySetInnerHTML={{
-                                    __html: post.html
+                                    __html: post.html,
                                 }} />
                             </article>
                         </section>

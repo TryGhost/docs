@@ -1,43 +1,14 @@
-/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-	color: #f8f8f2;
-	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
+	padding: 2.4rem 3.2rem;
 	margin: .5em 0;
 	overflow: auto;
-	border-radius: 0.3em;
+	border-radius: 8px;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #272822;
+	background: #2a3644;
 }
 
 /* Inline code */
@@ -48,6 +19,7 @@ pre[class*="language-"] {
 	background: var(--whitegrey);
 	text-shadow: none;
 	color: var(--darkgrey);
+    font-size: 0.9em;
 }
 
 a > code[class*="language-"] {
@@ -62,7 +34,7 @@ a > code[class*="language-"] {
 }
 
 .token.punctuation {
-	color: #f8f8f2;
+	color: #fff;
 }
 
 .namespace {
@@ -75,6 +47,7 @@ a > code[class*="language-"] {
 .token.symbol,
 .token.deleted {
 	color: #f92672;
+    /*f92672*/
 }
 
 .token.boolean,
@@ -88,7 +61,7 @@ a > code[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #a6e22e;
+	color: #e6db74;
 }
 
 .token.operator,
@@ -97,14 +70,14 @@ a > code[class*="language-"] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-	color: #f8f8f2;
+	color: #fff;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.function,
 .token.class-name {
-	color: #e6db74;
+	color: #a6e22e;
 }
 
 .token.keyword {
