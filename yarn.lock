@@ -1323,6 +1323,17 @@ autoprefixer@^8.6.5:
     postcss "^6.0.23"
     postcss-value-parser "^3.2.3"
 
+autoprefixer@^9.1.5:
+  version "9.1.5"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.1.5.tgz#8675fd8d1c0d43069f3b19a2c316f3524e4f6671"
+  dependencies:
+    browserslist "^4.1.0"
+    caniuse-lite "^1.0.30000884"
+    normalize-range "^0.1.2"
+    num2fraction "^1.2.2"
+    postcss "^7.0.2"
+    postcss-value-parser "^3.2.3"
+
 aws-sign2@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -2195,6 +2206,10 @@ caniuse-lite@^1.0.30000817:
   version "1.0.30000885"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000885.tgz#e889e9f8e7e50e769f2a49634c932b8aee622984"
 
+caniuse-lite@^1.0.30000884:
+  version "1.0.30000887"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000887.tgz#1769458c27bbdcf61b0cb6b5072bb6cd11fd9c23"
+
 capture-stack-trace@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.0.tgz#4a6fa07399c26bba47f0b2496b4d0fb408c5550d"
@@ -2885,6 +2900,41 @@ cssnano-preset-default@^4.0.0:
     postcss-svgo "^4.0.0"
     postcss-unique-selectors "^4.0.0"
 
+cssnano-preset-default@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/cssnano-preset-default/-/cssnano-preset-default-4.0.1.tgz#063c874bc82afe49d4a8790688348dce3f59e672"
+  dependencies:
+    css-declaration-sorter "^3.0.0"
+    cssnano-util-raw-cache "^4.0.0"
+    postcss "^7.0.0"
+    postcss-calc "^6.0.0"
+    postcss-colormin "^4.0.0"
+    postcss-convert-values "^4.0.0"
+    postcss-discard-comments "^4.0.0"
+    postcss-discard-duplicates "^4.0.0"
+    postcss-discard-empty "^4.0.0"
+    postcss-discard-overridden "^4.0.0"
+    postcss-merge-longhand "^4.0.0"
+    postcss-merge-rules "^4.0.0"
+    postcss-minify-font-values "^4.0.0"
+    postcss-minify-gradients "^4.0.0"
+    postcss-minify-params "^4.0.0"
+    postcss-minify-selectors "^4.0.0"
+    postcss-normalize-charset "^4.0.0"
+    postcss-normalize-display-values "^4.0.0"
+    postcss-normalize-positions "^4.0.0"
+    postcss-normalize-repeat-style "^4.0.0"
+    postcss-normalize-string "^4.0.0"
+    postcss-normalize-timing-functions "^4.0.0"
+    postcss-normalize-unicode "^4.0.0"
+    postcss-normalize-url "^4.0.0"
+    postcss-normalize-whitespace "^4.0.0"
+    postcss-ordered-values "^4.0.0"
+    postcss-reduce-initial "^4.0.0"
+    postcss-reduce-transforms "^4.0.0"
+    postcss-svgo "^4.0.0"
+    postcss-unique-selectors "^4.0.0"
+
 cssnano-util-get-arguments@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/cssnano-util-get-arguments/-/cssnano-util-get-arguments-4.0.0.tgz#ed3a08299f21d75741b20f3b81f194ed49cc150f"
@@ -2911,6 +2961,15 @@ cssnano@^4.0.0-rc.2, cssnano@^4.1.0:
     cssnano-preset-default "^4.0.0"
     is-resolvable "^1.0.0"
     postcss "^6.0.0"
+
+cssnano@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-4.1.1.tgz#46e97285ca709b8f7e1ceafb352699d0ac15102a"
+  dependencies:
+    cosmiconfig "^5.0.0"
+    cssnano-preset-default "^4.0.1"
+    is-resolvable "^1.0.0"
+    postcss "^7.0.0"
 
 csso@^3.5.0:
   version "3.5.1"
@@ -4333,7 +4392,7 @@ gatsby-plugin-page-creator@^2.0.0:
     parse-filepath "^1.0.1"
     slash "^1.0.0"
 
-gatsby-plugin-postcss@2.0.0:
+gatsby-plugin-postcss@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-2.0.0.tgz#ca2e7f4c1d05e88ea33c63a5fcf7980a2a83f907"
   dependencies:
@@ -7357,6 +7416,14 @@ postcss-color-mod-function@2.4.2:
     postcss "^6.0.19"
     postcss-values-parser "^1.3.2"
 
+postcss-color-mod-function@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/postcss-color-mod-function/-/postcss-color-mod-function-3.0.3.tgz#816ba145ac11cc3cb6baa905a75a49f903e4d31d"
+  dependencies:
+    "@csstools/convert-colors" "^1.4.0"
+    postcss "^7.0.2"
+    postcss-values-parser "^2.0.0"
+
 postcss-colormin@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/postcss-colormin/-/postcss-colormin-4.0.1.tgz#6f1c18a0155bc69613f2ff13843e2e4ae8ff0bbe"
@@ -7380,12 +7447,25 @@ postcss-custom-media@6.0.0:
   dependencies:
     postcss "^6.0.1"
 
+postcss-custom-media@^7.0.4:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/postcss-custom-media/-/postcss-custom-media-7.0.4.tgz#98e593c4a9a38fefee848434131fa16d316ee165"
+  dependencies:
+    postcss "^7.0.2"
+
 postcss-custom-properties@7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-7.0.0.tgz#24dc4fbe6d6ed550ea4fd3b11204660e9ffa3b33"
   dependencies:
     balanced-match "^1.0.0"
     postcss "^6.0.18"
+
+postcss-custom-properties@^8.0.5:
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-8.0.5.tgz#e78a7bd813196332db9dface66a528ae5da8b98f"
+  dependencies:
+    postcss "^7.0.2"
+    postcss-values-parser "^2.0.0"
 
 postcss-discard-comments@^4.0.0:
   version "4.0.0"
@@ -7411,7 +7491,7 @@ postcss-discard-overridden@^4.0.0:
   dependencies:
     postcss "^6.0.0"
 
-postcss-easy-import@3.0.0:
+postcss-easy-import@3.0.0, postcss-easy-import@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/postcss-easy-import/-/postcss-easy-import-3.0.0.tgz#8eaaf5ae59566083d0cae98735dfd803e3ab194d"
   dependencies:
@@ -7718,6 +7798,14 @@ postcss-values-parser@^1.3.2:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
+postcss-values-parser@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-values-parser/-/postcss-values-parser-2.0.0.tgz#1ba42cae31367c44f96721cb5eb99462bfb39705"
+  dependencies:
+    flatten "^1.0.2"
+    indexes-of "^1.0.1"
+    uniq "^1.0.1"
+
 postcss@^5.0.8:
   version "5.2.18"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.18.tgz#badfa1497d46244f6390f58b319830d9107853c5"
@@ -7735,7 +7823,7 @@ postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.14, postcss@^6.0.1
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^7.0.0:
+postcss@^7.0.0, postcss@^7.0.2:
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.2.tgz#7b5a109de356804e27f95a960bef0e4d5bc9bb18"
   dependencies:

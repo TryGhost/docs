@@ -76,5 +76,18 @@ module.exports = {
                 clientSecret: `${process.env.GH_CLIENT_SECRET}`,
             },
         },
+        {
+            resolve: `gatsby-plugin-postcss`,
+            options: {
+                postCssPlugins: [
+                    require(`autoprefixer`)({ browsers: [`last 2 versions`] }),
+                    require(`postcss-color-mod-function`)(),
+                    require(`cssnano`)({ zindex: false }),
+                    require(`postcss-custom-properties`)({ preserve: false }),
+                    require(`postcss-easy-import`)(),
+                    require(`postcss-custom-media`)(),
+                ],
+            },
+        },
     ],
 }
