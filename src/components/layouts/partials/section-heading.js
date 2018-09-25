@@ -1,5 +1,5 @@
 import React from 'react'
-import { SpiritStyles } from '../../spirit-styles'
+import { Spirit } from '../../spirit-styles'
 import PropTypes from 'prop-types'
 
 class SectionHeading extends React.Component {
@@ -10,8 +10,8 @@ class SectionHeading extends React.Component {
 
         return (
             <div className={ containerClass }>
-                <h1 className={ SpiritStyles.sectionHeading + (this.props.theme === `light` ? ` white` : ``) }>{ this.props.title }</h1>
-                <h2 className={ SpiritStyles.sectionSubHeading + (this.props.theme === `light` ? ` white` : `midgrey`) }>{ this.props.subtitle }</h2>
+                <h1 className={ Spirit.sectionHeading + (this.props.theme === `light` ? ` white` : ``) }>{ this.props.title }</h1>
+                <h2 className={ Spirit.sectionSubHeading + (this.props.theme === `light` ? ` white` : `midgrey`) }>{ this.props.subtitle }</h2>
                 { children }
             </div>
         )

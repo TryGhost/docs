@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-// import { SpiritStyles } from '../../spirit-styles'
+// import { Spirit } from '../../spirit-styles'
 
 const TOC = () => (
     <>

@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 
 import Layout from '../components/layouts/default'
-import { SpiritStyles } from '../components/spirit-styles'
+import { Spirit } from '../components/spirit-styles'
 import Tags from '../components/helpers/tags'
 
 const FAQ = ({ data }) => {
@@ -12,7 +12,7 @@ const FAQ = ({ data }) => {
 
     return (
         <Layout>
-            <div className={ SpiritStyles.page.l + `flex flex-column pa12 pt10 bg-white br4` }>
+            <div className={ Spirit.page.l + `flex flex-column pa12 pt10 bg-white br4` }>
 
                 <div className="mb8 f8">
                     <Link className="link midgrey" to="/faq/">FAQ</Link>

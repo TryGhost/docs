@@ -4,14 +4,14 @@ import { graphql } from 'gatsby'
 
 import Layout from '../../components/layouts/default'
 import Integration from '../../components/integration'
-import { SpiritStyles } from '../../components/spirit-styles'
+import { Spirit } from '../../components/spirit-styles'
 import IntegrationsHeader from '../../components/layouts/partials/integrations-header'
 
 const IntegrationsPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
         <Layout title="Integrations" headerDividerStyle="shadow" header={ <IntegrationsHeader /> }>
-            <div className={ SpiritStyles.page.xl }>
+            <div className={ Spirit.page.xl }>
                 <div className="flex br4">
                     <div className="gh-integration-sidebar flex-shrink-0 w50 mr5">
                         <div className="flex flex-column mb6">

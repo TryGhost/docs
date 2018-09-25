@@ -1,17 +1,17 @@
 import React from 'react'
 import Layout from '../../../components/layouts/default'
-import { SpiritStyles } from '../../../components/spirit-styles';
+import { Spirit } from '../../../components/spirit-styles';
 import DummyContent from './dummy-post';
 
 const Page = () => (
     <Layout title="Home" headerDividerStyle="hairline" bodyClass="bg-white">
 
-        <div className={ SpiritStyles.page.m + `pt20` }>
-            <h1 className={ SpiritStyles.thinheadline }>Standalone post demo</h1>
+        <div className={ Spirit.page.m + `pt20` }>
+            <h1 className={ Spirit.thinheadline }>Standalone post demo</h1>
             <DummyContent />
         </div>
 
-        <div className={ SpiritStyles.page.m }>
+        <div className={ Spirit.page.m }>
             <div className="bt b--lightgrey-l2 pt6 pb1 mt20">
                 <h2 className="ma0 pa0 mb6 fw5">Usage</h2>
                 <p>

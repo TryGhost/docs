@@ -4,14 +4,14 @@ import { graphql } from 'gatsby'
 
 import Layout from '../../components/layouts/default'
 import PostCard from '../../components/postcard'
-import { SpiritStyles } from '../../components/spirit-styles'
+import { Spirit } from '../../components/spirit-styles'
 import SectionHeading from '../../components/layouts/partials/section-heading'
 
 const TutorialsPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
         <Layout title="Tutorials" headerDividerStyle="shadow">
-            <div className={ SpiritStyles.page.xl }>
+            <div className={ Spirit.page.xl }>
                 <SectionHeading title="Tutorials" subtitle="Here comes your subtitle" type="blog" />
 
                 <section className="flex space-between nl5 nr5 flex-wrap">

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layouts/default'
-import { SpiritStyles } from '../components/spirit-styles'
+import { Spirit } from '../components/spirit-styles'
 import NavSidebar from '../components/layouts/partials/navigation-sidebar'
 import DesignNavSidebar from '../components/layouts/partials/design-nav-sidebar'
 
@@ -23,12 +23,12 @@ const DocTemplate = ({ data }) => {
     return (
         <Layout title={ post.frontmatter.title }>
 
-            <div className={ SpiritStyles.page.xl + `flex flex-start mt12` }>
+            <div className={ Spirit.page.xl + `flex flex-start mt12` }>
                 { navBar }
                 <div className="flex-auto">
                     <section className="bg-white br4 shadow-1 pa15 pt12">
                         {/* <span className="f7 fw4 measure-wide dib mb1 midlightgrey">Setup / Ghost(Pro)</span> */}
-                        <h1 className={ SpiritStyles.h1 }>{ post.frontmatter.title }</h1>
+                        <h1 className={ Spirit.h1 }>{ post.frontmatter.title }</h1>
                         <section className="post-content" dangerouslySetInnerHTML={ { __html: post.html } } />
                     </section>
                 </div>

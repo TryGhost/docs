@@ -1,4 +1,4 @@
-export const SpiritStyles = {
+export const Spirit = {
 
     // Page template widths
     page: {

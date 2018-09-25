@@ -2,12 +2,12 @@ import React from 'react'
 import SectionHeading from '../../../components/layouts/partials/section-heading';
 
 import Layout from '../../../components/layouts/default'
-import { SpiritStyles } from '../../../components/spirit-styles'
+import { Spirit } from '../../../components/spirit-styles'
 import { Link } from 'gatsby'
 
 const Page = () => (
     <Layout title="Home" headerDividerStyle="shadow">
-        <div className={ SpiritStyles.page.xl }>
+        <div className={ Spirit.page.xl }>
             <SectionHeading title="Section landing page" subtitle="You can have subtitles" />
             <div className="bg-white br4 shadow-1 pa15 pt50 pb50">
                 <div className="post-content lightgrey f3 fw3">

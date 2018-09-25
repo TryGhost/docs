@@ -6,7 +6,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layouts/default'
 
 import integrationIcon from '../images/integration-icon.png'
-import { SpiritStyles } from '../components/spirit-styles'
+import { Spirit } from '../components/spirit-styles'
 
 const Integration = ({ data }) => {
     const post = data.ghostPost
@@ -24,7 +24,7 @@ const Integration = ({ data }) => {
                     </div>
                 </div>
             </div>
-            <div className={ SpiritStyles.page.l + `flex` }>
+            <div className={ Spirit.page.l + `flex` }>
                 <div className="w-100 pa15 pt13 bg-white br4 shadow-1">
                     <div className="mb5 f8">
                         <Link className="link midgrey" to="/integrations/">Integrations</Link>

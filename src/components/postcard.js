@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
 // import Authors from './authors'
-import { SpiritStyles } from './spirit-styles'
+import { Spirit } from './spirit-styles'
 
 const getExcerpt = (post) => {
     if (post.custom_excerpt) {
@@ -36,9 +36,9 @@ const PostCard = ({ post }) => {
                 <header>
                     { post.featured ? <span className="purple f8 fw5 dib mr2">Featured</span> : null }
                     { tag ? <span className="midgrey f8">{ tag }</span> : null } 
-                    <h2 className={ SpiritStyles.h3 + `darkgrey mt2` }>{ post.title }</h2>
+                    <h2 className={ Spirit.h3 + `darkgrey mt2` }>{ post.title }</h2>
                 </header>
-                { excerpt ? <section className={ SpiritStyles.p + `darkgrey mt2` }>{ excerpt }</section> : null }
+                { excerpt ? <section className={ Spirit.p + `darkgrey mt2` }>{ excerpt }</section> : null }
             </Link>
             
             <footer className="flex pt2 mt5 content-end">
