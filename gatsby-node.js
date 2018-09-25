@@ -135,12 +135,12 @@ exports.createPages = ({ graphql, actions }) => {
 
                     // Filtering for different templates
                     // API pages
-                    if (node.fields.slug.match(/\/api\//)) {
-                        pathSrc = `./src/templates/doc-toc.js`
-                    }
+                    // if (node.fields.slug.match(/\/api\//)) {
+                    //     pathSrc = `./src/templates/doc-toc.js`
+                    // }
 
                     // Setup pagaes
-                    if (node.fields.slug.match(/\/setup\/|\/design\//)) {
+                    if (node.fields.slug.match(/\/setup\/|\/design\/|\/api\//)) {
                         pathSrc = `./src/templates/doc-navigation.js`
                     }
 
