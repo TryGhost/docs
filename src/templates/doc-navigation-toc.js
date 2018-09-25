@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from "react-helmet"
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
@@ -7,28 +8,57 @@ import { Spirit } from '../components/spirit-styles'
 import NavSidebar from '../components/layouts/partials/navigation-sidebar'
 import TOC from '../components/layouts/partials/toc'
 
+import pageNavData from "../data/api/handlebars.yaml"
+
 const DocTemplate = ({ data }) => {
     const post = data.markdownRemark
 
     return (
-        <Layout title={ post.frontmatter.title }>
-            
-            <div className={ Spirit.page.xl + `flex flex-start mt12` }>
-                <NavSidebar />
-                <div className="flex-auto">
-                    <section className="flex-auto flex bg-white br4 shadow-1 pa15 pt12">
-                        <div className="order-2">
-                            <TOC />
-                        </div>
-                        <div className="order-1">
-                            <span className="f7 fw4 measure-wide dib mb1 midlightgrey">Setup / Ghost(Pro)</span>
-                            <h1 className={ Spirit.h1 }>{ post.frontmatter.title }</h1>
-                            <section className="post-content" dangerouslySetInnerHTML={ { __html: post.html } } />
-                        </div>
-                    </section>
+        <>
+            <Helmet>
+                <title>{post.frontmatter.title}</title>
+                <meta name="description" content={post.excerpt} />
+                <link rel="canonical" href="TODO: Real Data - URL" />
+
+                <meta name="og:type" content="article" />
+                <meta name="og:title" content={post.frontmatter.title} />
+                <meta name="og:description" content={post.excerpt} />
+                <meta property="og:url" content="TODO: Real Data - URL" />
+                <meta property="article:published_time" content="TODO: Real Data - published_at" />
+                <meta property="article:modified_time" content="TODO: Real Data - updated_at" />
+                <meta property="article:tag" content="TODO: Real Data - primary_tag" />
+                <meta property="article:author" content="https://www.facebook.com/ghost" />
+
+                <meta name="twitter:title" content={post.frontmatter.title} />
+                <meta name="twitter:description" content={post.excerpt} />
+                <meta name="twitter:url" content="TODO: Real Data - URL" />
+                <meta name="twitter.label1" content="Reading time" />
+                <meta name="twitter:data1" content={`${post.timeToRead} min read`} />
+                <meta name="twitter:label2" content="Filed under" />
+                <meta name="twitter:data2" content="TODO: Real Data - primary_tag" />
+                <meta name="twitter:creator" content="@tryghost" />
+            </Helmet>
+            <Layout>
+
+                <div className={Spirit.page.xl + `flex flex-start mt12`}>
+                    <NavSidebar />
+                    <div className="flex-auto">
+                        <section className="flex-auto flex bg-white br4 shadow-1 pa15 pt12">
+                            <div className="order-2">
+                                <TOC />
+                            </div>
+                            <article className="order-1">
+                                <span className="mb8 f8">Setup / Ghost(Pro)</span>
+                                <h1 className={Spirit.h1}>{post.frontmatter.title}</h1>
+                                <section className="post-content" dangerouslySetInnerHTML={{
+                                    __html: post.html
+                                }} />
+                            </article>
+                        </section>
+                    </div>
                 </div>
-            </div>
-        </Layout>
+            </Layout>
+        </>
     )
 }
 
@@ -39,12 +69,17 @@ DocTemplate.propTypes = {
 export default DocTemplate
 
 export const articleQuery = graphql`
-    query MDTDocsQuery($slug: String!) {
-        markdownRemark(fields: { slug: { eq: $slug } }) {
-            frontmatter {
-                title
-            }
-            html
-        }
+  query($path: String!) {
+    markdownRemark(fields: { slug: { eq: $path } }) {
+      html
+      excerpt
+      timeToRead
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+      }
     }
+  }
 `
