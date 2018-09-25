@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 
 class SectionHeading extends React.Component {
     render() {
-
         const containerClass = (this.props.type === `block` ? `pa-vw4 tc` : `pt20 pb10`)
         const children = this.props.children
 

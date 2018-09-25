@@ -78,7 +78,7 @@ const Page = () => (
                     <span className="midgrey">Click me</span>
                 </Box>
 
-                <Box elevation="3" radius="4" className="pa10 pt17 pb17 mb4 blue tc tdn flex-auto mr10" href="/">
+                <Box elevation="3" radius="4" className="pa10 pt17 pb17 mb4 blue tc tdn flex-auto" href="/">
                     <span className="midgrey">Click me</span>
                 </Box>
             </div>
@@ -102,7 +102,7 @@ const Page = () => (
                         <span className="midgrey">Click me</span>
                     </Box>
 
-                    <Box elevation="3" radius="4" onWhite="true" className="pa10 pt17 pb17 mb4 blue tc tdn flex-auto mr10" href="/">
+                    <Box elevation="3" radius="4" onWhite="true" className="pa10 pt17 pb17 mb4 blue tc tdn flex-auto" href="/">
                         <span className="midgrey">Click me</span>
                     </Box>
                 </div>

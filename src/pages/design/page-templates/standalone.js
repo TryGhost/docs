@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../../../components/layouts/default'
-import { Spirit } from '../../../components/spirit-styles';
-import DummyContent from './dummy-post';
+import { Spirit } from '../../../components/spirit-styles'
+import DummyContent from './dummy-post'
 
 const Page = () => (
     <Layout title="Home" headerDividerStyle="hairline" bodyClass="bg-white">

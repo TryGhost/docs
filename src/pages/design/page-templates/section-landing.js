@@ -1,5 +1,5 @@
 import React from 'react'
-import SectionHeading from '../../../components/layouts/partials/section-heading';
+import SectionHeading from '../../../components/layouts/partials/section-heading'
 
 import Layout from '../../../components/layouts/default'
 import { Spirit } from '../../../components/spirit-styles'

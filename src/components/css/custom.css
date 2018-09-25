@@ -9,6 +9,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 @import "colors.css";
 @import "typography.css";
 @import "post-content.css";
+@import "_css-grid.css";
 
 .gh-nav-logo-suffix:before {
     content: "";

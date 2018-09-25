@@ -7,6 +7,7 @@ tags:
     - design
 ---
 
+
 ## Landing page templates
 
 - [Section landing page](/design/page-templates/section-landing/)
@@ -20,3 +21,8 @@ tags:
 - [Navigation sidebar only post](/design/page-templates/left-sidebar/)
 - [TOC only post](/design/page-templates/toc-only/)
 - [Navigation sidebar + TOC post](/design/page-templates/left-sidebar-toc/)
+
+
+## Grid
+
+- [Grid demo page](/design/page-templates/grid/)

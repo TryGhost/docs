@@ -4,7 +4,7 @@ import Layout from '../../../components/layouts/default'
 import { Spirit } from '../../../components/spirit-styles'
 import DummyContent from './dummy-post'
 import NavSidebar from '../../../components/layouts/partials/navigation-sidebar'
-import { Link } from '@reach/router';
+import { Link } from 'gatsby'
 
 const Page = () => (
     <Layout title="Home" headerDividerStyle="shadow">
