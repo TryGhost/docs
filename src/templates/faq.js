@@ -5,23 +5,10 @@ import Link from 'gatsby-link'
 
 import Layout from '../components/layouts/default'
 import { SpiritStyles } from '../components/spirit-styles'
-
-const getBreadCrumb = function getBreadCrumb(post) {
-    // Get rid of internal tags
-    let tags = post.tags.filter(tag => !tag.name.match(/^#/)) || []
-
-    // If any tags left, use the first tag name and fallback to `General`
-    if (!tags.length) {
-        return `General`
-    } else {
-        const [{ name }] = tags
-        return name
-    }
-}
+import Tags from '../components/helpers/tags'
 
 const FAQ = ({ data }) => {
     const post = data.ghostPost
-    const primaryTag = getBreadCrumb(post)
 
     return (
         <Layout>
@@ -30,7 +17,11 @@ const FAQ = ({ data }) => {
                 <div className="mb8 f8">
                     <Link className="link midgrey" to="/faq/">FAQ</Link>
                     <span className="mr1 ml1 f8 midgrey">/</span>
-                    <span className="darkgrey fw5">{primaryTag}</span>
+                    <Tags
+                        post={post}
+                        separator=" / "
+                        html="span"
+                    />
                 </div>
 
                 <div className="flex">
