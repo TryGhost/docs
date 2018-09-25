@@ -7,7 +7,7 @@ const Page = () => (
         <div className="center mw-m mt10">
             <div>
 
-                <h1 className={ SpiritStyles.h1 }>UI typography</h1>
+                <h1 className={ SpiritStyles.h1 }>UI typography demo</h1>
                 <h2 className={ SpiritStyles.h2 }>Heading two</h2>
                 <h3 className={ SpiritStyles.h3 }>Heading three</h3>
                 <h4 className={ SpiritStyles.h4 }>Heading four</h4>

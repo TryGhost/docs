@@ -5,10 +5,14 @@ import DummyContent from './dummy-post';
 
 const Page = () => (
     <Layout title="Home" headerDividerStyle="hairline" bodyClass="bg-white">
-        <div className="center mw-m pt20">
-            <h1 className={ SpiritStyles.headline }>Standalone post demo</h1>
+
+        <div className={ SpiritStyles.page.m + `pt20` }>
+            <h1 className={ SpiritStyles.thinheadline }>Standalone post demo</h1>
             <DummyContent />
-            <div className="bt b--lightgrey pa6 pt6 pb1 mt20">
+        </div>
+
+        <div className={ SpiritStyles.page.m }>
+            <div className="bt b--lightgrey-l2 pt6 pb1 mt20">
                 <h2 className="ma0 pa0 mb6 fw5">Usage</h2>
                 <p>
                     For individual doc posts which are not part of a story so they don't need a sidebar, like Tutorials.

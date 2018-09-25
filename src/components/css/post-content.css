@@ -134,6 +134,7 @@
 .post-content dl,
 .post-content pre,
 .post-content blockquote,
+.post-content .gatsby-highlight,
 .post-full-comments,
 .footnotes {
     min-width: 100%;
@@ -152,7 +153,7 @@
     color: #2FA1E0; /*should be blue-d2*/
     word-break: break-word;
     text-decoration: none;
-    box-shadow: rgba(62, 176, 239, 0.4) 0 -1px 0 inset;
+    /* box-shadow: rgba(62, 176, 239, 0.4) 0 -1px 0 inset; */
     transition: all 0.2s ease;
 }
 
@@ -295,7 +296,7 @@ Usage (In Ghost editor):
 
 .post-content h4 {
     font-size: 1.9rem;
-    font-weight: 600;
+    font-weight: 400;
     line-height: var(--vr-4);
     margin: var(--vr-6) 0 0;
 }
@@ -485,7 +486,7 @@ Usage (In Ghost editor):
 .post-content h5 + div,
 .post-content h6 + div
 {
-    margin: var(--vr-5) 0 0;
+    margin: var(--vr-4) 0 0;
 }
 
 

@@ -15,7 +15,7 @@ const DocTemplate = ({ data }) => {
             
             <div className={ SpiritStyles.page.xl + `flex flex-start mt12` }>
                 <NavSidebar />
-                <div>
+                <div className="flex-auto">
                     <section className="flex-auto flex bg-white br4 shadow-1 pa15 pt12">
                         <div className="order-2">
                             <TOC />

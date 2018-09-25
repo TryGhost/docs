@@ -18,7 +18,7 @@ const DocTemplate = ({ data }) => {
                         <div className="order-2">
                             <TOC />
                         </div>
-                        <div className="order-1">
+                        <div className="order-1 flex-auto">
                             <span className="f7 fw4 measure-wide dib mb1 midlightgrey">Setup / Ghost(Pro)</span>
                             <h1 className={ SpiritStyles.h1 }>{ post.frontmatter.title }</h1>
                             <section className="post-content" dangerouslySetInnerHTML={ { __html: post.html } } />

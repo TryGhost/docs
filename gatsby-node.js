@@ -16,6 +16,21 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
+    const { createRedirect } = actions
+
+    createRedirect({
+        fromPath: `/design/`,
+        isPermanent: true,
+        redirectInBrowser: true,
+        toPath: `/design/styling/`,
+    })
+
+    createRedirect({
+        fromPath: `/design`,
+        isPermanent: true,
+        redirectInBrowser: true,
+        toPath: `/design/styling/`,
+    })
 
     const loadFAQPosts = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`
@@ -125,7 +140,7 @@ exports.createPages = ({ graphql, actions }) => {
                     }
 
                     // Setup pagaes
-                    if (node.fields.slug.match(/\/setup\//)) {
+                    if (node.fields.slug.match(/\/setup\/|\/design\//)) {
                         pathSrc = `./src/templates/doc-navigation.js`
                     }
 

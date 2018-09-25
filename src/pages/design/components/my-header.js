@@ -1,6 +1,6 @@
 import React from 'react'
-import NavBar from '../../components/layouts/partials/navbar'
-import SectionHeading from '../../components/layouts/partials/section-heading'
+import NavBar from '../../../components/layouts/partials/navbar'
+import SectionHeading from '../../../components/layouts/partials/section-heading'
 
 // Custom headings must be react components. You should include the <NavBar /> component
 // somewhere in it. You can optionally set the theme of the navbar to `dark` or `light`.

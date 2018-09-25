@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Layout from '../../components/layouts/default'
-import { SpiritStyles } from '../../components/spirit-styles';
-import SectionHeading from '../../components/layouts/partials/section-heading';
+import { SpiritStyles } from '../../components/spirit-styles'
+import SectionHeading from '../../components/layouts/partials/section-heading'
 
 const DesignIndex = () => (
     <Layout title="Home" headerDividerStyle="shadow">

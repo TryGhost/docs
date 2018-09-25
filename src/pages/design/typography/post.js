@@ -1,9 +1,10 @@
 import React from 'react'
 import Layout from '../../../components/layouts/default'
+import { SpiritStyles } from '../../../components/spirit-styles'
 
 const Page = () => (
     <Layout title="Home" headerDividerStyle="hairline" bodyClass="bg-white">
-        <div className="center mw-m">
+        <div className={ SpiritStyles.page.m + `pt10` }>
             <div className="post-content">
                
                 <h1>Post typography and vertical rhythm demo with a really long title</h1>
