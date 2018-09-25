@@ -10,7 +10,6 @@
     align-items: center;
     position: relative;
     margin: 0 auto;
-    line-height: 1.75em;
 }
 
 .post-content audio,
@@ -38,6 +37,7 @@
 .post-content dl,
 .post-content blockquote {
     margin: var(--vr-3) 0 0;
+    font-size: 1.45rem;
 }
 
 .post-content>p:first-child {
