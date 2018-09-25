@@ -10,15 +10,15 @@ class Box extends React.Component {
         // Setting shadows
         switch (this.props.elevation) {
         case `1`:
-            boxStyle = boxStyle + ` shadow-1 ` + (this.props.onWhite != `false` ? ` on-white ` : ` `) + (this.props.href ? ` box-shadow-hover shadow-1-hover ` : ` `)
+            boxStyle = boxStyle + ` shadow-1 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href ? ` box-shadow-hover shadow-1-hover ` : ` `)
             break
         
         case `2`:
-            boxStyle = boxStyle + ` shadow-2 ` + (this.props.onWhite != `false` ? ` on-white ` : ` `) + (this.props.href ? ` box-shadow-hover shadow-2-hover  ` : ` `)
+            boxStyle = boxStyle + ` shadow-2 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href ? ` box-shadow-hover shadow-2-hover  ` : ` `)
             break
         
         case `3`:
-            boxStyle = boxStyle + ` shadow-3 ` + (this.props.onWhite != `false` ? ` on-white ` : ` `) + (this.props.href ? ` box-shadow-hover shadow-3-hover ` : ` `)
+            boxStyle = boxStyle + ` shadow-3 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href ? ` box-shadow-hover shadow-3-hover ` : ` `)
             break
         }
 
