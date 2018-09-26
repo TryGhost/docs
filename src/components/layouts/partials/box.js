@@ -10,15 +10,15 @@ class Box extends React.Component {
         // Setting shadows
         switch (this.props.elevation) {
         case `1`:
-            boxStyle = boxStyle + ` shadow-1 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href ? ` box-shadow-hover shadow-1-hover ` : ` `)
+            boxStyle = boxStyle + ` shadow-1 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-1-hover ` : ` `)
             break
         
         case `2`:
-            boxStyle = boxStyle + ` shadow-2 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href ? ` box-shadow-hover shadow-2-hover  ` : ` `)
+                boxStyle = boxStyle + ` shadow-2 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-2-hover  ` : ` `)
             break
         
         case `3`:
-            boxStyle = boxStyle + ` shadow-3 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href ? ` box-shadow-hover shadow-3-hover ` : ` `)
+                boxStyle = boxStyle + ` shadow-3 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-3-hover ` : ` `)
             break
         }
 
@@ -45,13 +45,21 @@ class Box extends React.Component {
             break
         }
 
-        if (this.props.href) {
+        if (this.props.to) {
+            boxStyle = boxStyle + ` db `
+            
+            return (
+                <Link to={ this.props.to } className={ boxStyle + this.props.className }>
+                    { children }
+                </Link>
+            )
+        } else if (this.props.href) {
             boxStyle = boxStyle + ` db `
 
             return (
-                <Link to={ this.props.href } className={ boxStyle + this.props.className }>
+                <a href={ this.props.href } className={ boxStyle + this.props.className }>
                     { children }
-                </Link>
+                </a>
             )
         } else {
             return (
@@ -66,6 +74,7 @@ class Box extends React.Component {
 }
 
 Box.defaultProps = {
+    to: ``,
     href: ``,
     elevation: `2`,
     radius: `3`,
@@ -74,6 +83,7 @@ Box.defaultProps = {
 }
 
 Box.propTypes = {
+    to: PropTypes.string,
     href: PropTypes.string,
     elevation: PropTypes.string,
     radius: PropTypes.string,

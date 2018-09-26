@@ -27,9 +27,10 @@ import Box from 'src/components/layouts/partials/box'
 ```
 
 ###### Parameters
+- `to="[url]"` - sets up the box as a link to the specified route. Default: none
+- `href="[url]"` - sets up the box as a link to the specified URL. Default: none. If both `to` and `href` parameters are set then `href` is dismissed.
 - `elevation="1|2|3"` - sets the shadow of the box. The higher the number, the higher the box is from the background. Default value: `2`
 - `radius="0|1|2|3|4|5"` - sets the border radius property of the box. The higher the bigger the radius is. Default value: `4`
-- `href="[url]"` - sets up the box as a link to the specified URL. Default: none
 - `onWhite="true|false"` - sets up the box shadows for a white background. Default: `false`
 - `className` - additional CSS classes
 
