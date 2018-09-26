@@ -9,12 +9,13 @@ import DesignNavSidebar from '../components/layouts/partials/design-nav-sidebar'
 
 const DocTemplate = ({ data }) => {
     const post = data.markdownRemark
+    post.frontmatter.tags = post.frontmatter.tags || []
 
     //TODO: this is hardcoded now, should be changed
     var navBar
     console.log(post.frontmatter.tags)
-    
-    if (post.frontmatter.tags[0] === `design`) {
+
+    if (post.frontmatter.tags.length && post.frontmatter.tags[0] === `design`) {
         navBar = <DesignNavSidebar />
     } else {
         navBar = <NavSidebar />
