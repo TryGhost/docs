@@ -20,7 +20,7 @@ const FAQ = ({ data }) => {
                     <Tags
                         post={post}
                         separator=" / "
-                        html="span"
+                        html={true}
                     />
                 </div>
 

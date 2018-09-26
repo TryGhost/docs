@@ -74,6 +74,54 @@ const Container = styled.div.attrs({
     margin: 10px;
 `
 ```
+## Helpers
+### Tags
+Returns tags for a post as HTML or simple string. Will fallback to generate a tag `General` if no tag applicable is found.
+
+**Options:**
+  - post                [required, the post object]
+  - internal            [optional, bool, default false, returns internal tags if set to true]
+  - limit               [optional, number, default 1, limits the number of tags to be returned]
+  - separator           [optional, string, default ", ", sets the separator to concat the tags]
+  - html                [optional, bool, default false, returns tags and separators in `span` elements when set to true]
+  - classes             [optional when html is used, string, default "darkgrey fw5", classNames used for the html tags]
+  - separatorClasses    [optional when html is used, string, default "mr1 ml1 f8 midgrey", classNames used for the html separator tags]
+
+**Example usage**:
+
+```jsx
+<Tags
+    post={post}
+    separator=" / "
+    html={true}
+/>
+```
+
+will render:
+
+```html
+<span class="darkgrey fw5">Billing</span>
+```
+
+---
+
+```jsx
+<Tags
+    post={post}
+    separator=" / "
+    html={true}
+    internal={true}
+    limit={5}
+/>
+```
+
+will render:
+
+```html
+<span class="darkgrey fw5">#faq</span>
+<span class="mr1 ml1 f8 midgrey"> / </span>
+<span class="darkgrey fw5">Billing</span>
+```
 
 ## Ghost Content
 
