@@ -79,49 +79,75 @@ const Container = styled.div.attrs({
 Returns tags for a post as HTML or simple string. Will fallback to generate a tag `General` if no tag applicable is found.
 
 **Options:**
-  - post                [required, the post object]
-  - internal            [optional, bool, default false, returns internal tags if set to true]
-  - limit               [optional, number, default 1, limits the number of tags to be returned]
-  - separator           [optional, string, default ", ", sets the separator to concat the tags]
-  - html                [optional, bool, default false, returns tags and separators in `span` elements when set to true]
-  - classes             [optional when html is used, string, default "darkgrey fw5", classNames used for the html tags]
-  - separatorClasses    [optional when html is used, string, default "mr1 ml1 f8 midgrey", classNames used for the html separator tags]
+  - `post`                [required, the post object]
+  - `internal`            [optional, bool, default false, returns internal tags if set to true]
+  - `limit`               [optional, number, default 1, limits the number of tags to be returned]
+  - `separator`           [optional, string, default ", ", sets the separator to concat the tags]
+  - `html`                [optional, bool, default false, returns tags and separators in `span` elements when set to true]
+  - `classes`             [optional when html is used, string, default "darkgrey fw5", classNames used for the html tags]
+  - `separatorClasses`    [optional when html is used, string, default "mr1 ml1 f8 midgrey", classNames used for the html separator tags]
 
-**Example usage**:
+**Example usage HTML**:
 
 ```jsx
-<Tags
-    post={post}
-    separator=" / "
-    html={true}
-/>
+<div>
+    <Tags
+        post={post}
+        separator=" / "
+        html={true}
+    />
+</div>
 ```
 
 will render:
 
 ```html
-<span class="darkgrey fw5">Billing</span>
+<div>
+    <span class="darkgrey fw5">Tag</span>
+</div>
 ```
 
 ---
 
 ```jsx
-<Tags
-    post={post}
-    separator=" / "
-    html={true}
-    internal={true}
-    limit={5}
-/>
+<div>
+    <Tags
+        post={post}
+        separator=" / "
+        html={true}
+        internal={true}
+        limit={5}
+    />
+</div>
 ```
 
 will render:
 
 ```html
-<span class="darkgrey fw5">#faq</span>
-<span class="mr1 ml1 f8 midgrey"> / </span>
-<span class="darkgrey fw5">Billing</span>
+<div>
+    <span class="darkgrey fw5">#internal</span>
+    <span class="mr1 ml1 f8 midgrey"> / </span>
+    <span class="darkgrey fw5">Tag</span>
+</div>
 ```
+
+**Example usage string**:
+
+```jsx
+<span>
+    <Tags
+        post={post}
+        limit={5}
+    />
+</span>
+```
+
+will render:
+
+```html
+<span>Tag, Tag2, Tag3, Tag4, Tag5</span>
+```
+
 
 ## Ghost Content
 
