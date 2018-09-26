@@ -396,14 +396,14 @@ Usage (In Ghost editor):
 }
 
 .post-content hr::before {
-    content: "•••";
+    content: "\00B7 \00B7 \00B7";
     text-align: center;
     margin: 0 auto;
-    font-size: 15px;
+    font-size: 27px;
     font-family: monospace;
     display: block;
     color: var(--midgrey);
-    letter-spacing: 10px;
+    letter-spacing: -2px;
     margin-top: -10px;
 }
 

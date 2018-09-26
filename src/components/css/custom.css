@@ -35,6 +35,17 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     max-width: calc(114rem - 24vw);
 }
 
+/* Home */
+/* ---------------------------------------------------------- */
+.gh-bg-home {
+    background: url(../../images/home-bg.svg) no-repeat, radial-gradient(ellipse at top, rgba(252,253,255,1) 0%,rgba(228,233,245,1) 100%);
+    background-size: cover;
+}
+
+.gh-home-api-container {
+    grid-auto-rows: minmax(12rem, auto);
+}
+
 /* Integrations
 /* ---------------------------------------------------------- */
 
@@ -148,17 +159,17 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 .link:link,
 .link:visited {
-  transition: color .15s ease;
+    transition: all .15s ease;
 }
 .link:hover   {
-  transition: color .15s ease;
+    transition: all .15s ease;
 }
 .link:active  {
-  transition: color .15s ease;
+    transition: all .15s ease;
 }
 .link:focus   {
-  transition: color .15s ease;
-  outline: 1px dotted currentColor;
+    transition: all .15s ease;
+    outline: 1px dotted currentColor;
 }
 
 
@@ -188,14 +199,14 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     box-shadow: 0 0 1px rgba(0,0,0,.06), 0 2px 6px rgba(0,0,0,.03); 
 }
 .shadow-1.on-white { 
-    box-shadow: 0 0 1px rgba(0,0,0,.1), 0 2px 4px rgba(0,0,0,.03); 
+    box-shadow: 0 0 1px rgba(0,0,0,.15), 0 2px 4px rgba(0,0,0,.04); 
 }
 .shadow-1-hover:hover { 
     box-shadow: 0 0 5px rgba(0,0,0,.02), 0 5px 22px -6px rgba(0,0,0,.1); 
     transform: scale(1.025);
 }
 .shadow-1-hover.on-white:hover { 
-    box-shadow: 0 0 1px rgba(0,0,0,.1), 0 5px 22px -6px rgba(0,0,0,.1); 
+    box-shadow: 0 0 1px rgba(0,0,0,.15), 0 5px 22px -6px rgba(0,0,0,.1); 
 }
 
 .shadow-2 { 

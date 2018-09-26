@@ -14,11 +14,11 @@ class Box extends React.Component {
             break
         
         case `2`:
-                boxStyle = boxStyle + ` shadow-2 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-2-hover  ` : ` `)
+            boxStyle = boxStyle + ` shadow-2 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-2-hover  ` : ` `)
             break
         
         case `3`:
-                boxStyle = boxStyle + ` shadow-3 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-3-hover ` : ` `)
+            boxStyle = boxStyle + ` shadow-3 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-3-hover ` : ` `)
             break
         }
 
