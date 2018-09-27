@@ -93,20 +93,26 @@
 }
 
 .post-content blockquote {
-    margin: 1.5em 0;
-    padding: 0 1.6em 0 1.6em;
-    border-left: var(--whitegrey) 0.5em solid;
+    padding: 0 0 0 1.5em;
+    border-left: #3eb0ef 2px solid;
+}
+
+.post-content blockquote p:last-child {
+    margin-bottom: 0;
 }
 
 .post-content blockquote p {
-    margin: 0.8em 0;
+    margin: 0;
     font-size: 1.2em;
-    font-weight: 300;
+    font-weight: 400;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-style: italic;
 }
 
 .post-content blockquote small {
     display: inline-block;
-    margin: 0.8em 0 0.8em 1.5em;
     font-size: 0.9em;
     opacity: 0.8;
 }
@@ -213,24 +219,6 @@ Usage (In Ghost editor):
 /* Override third party iframe styles */
 .post-content iframe {
     margin: 0 auto !important;
-}
-
-.post-content blockquote {
-    margin: 0 0 1.5em;
-    padding: 0 1.5em;
-    border-left: #3eb0ef 3px solid;
-}
-
-.post-content blockquote p {
-    margin: 0 0 1em 0;
-    color: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    font-style: italic;
-}
-
-.post-content blockquote p:last-child {
-    margin-bottom: 0;
 }
 
 .post-content .fluid-width-video-wrapper {

@@ -12,7 +12,7 @@ import pageNavData from "../data/api/handlebars.yaml"
 
 const DocTemplate = ({ data }) => {
     const post = data.markdownRemark
-
+    
     return (
         <>
             <Helmet>
@@ -45,7 +45,7 @@ const DocTemplate = ({ data }) => {
                     <div className="flex-auto">
                         <section className="flex-auto flex bg-white br4 shadow-1 pa15 pt12">
                             <div className="order-2">
-                                <TOC />
+                                <TOC>{ post.tableOfContents }</TOC>
                             </div>
                             <article className="order-1">
                                 <span className="mb8 f8">Setup / Ghost(Pro)</span>
@@ -80,6 +80,7 @@ export const articleQuery = graphql`
       frontmatter {
         title
       }
+      tableOfContents
     }
   }
 `

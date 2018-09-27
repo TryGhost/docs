@@ -259,3 +259,37 @@ Before adding custom CSS, think about if it rather should be in Spirit...
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
+
+
+/* Table of Contents */
+/* ----------------------------------------------------------------------- */
+.toc-list-container ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 1.3rem;
+}
+
+.toc-list-container ul li {
+    line-height: 1.65em;
+    margin-bottom: 1.6rem;
+}
+
+.toc-list-container ul a {
+    color: var(--midgrey);
+    text-decoration: none;
+}
+
+.toc-list-container ul a:hover {
+    color: var(--darkgrey);
+    text-decoration: none;
+}
+
+.toc-list-container ul li > ul {
+    margin-left: 2.4rem;
+}
+
+/* Hide all TOC levels deeper than 2 */
+.toc-list-container ul li > ul li ul {
+    display: none;
+}
