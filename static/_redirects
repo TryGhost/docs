@@ -6,5 +6,5 @@ https://tryghost.netlify.com/*      https://newdocs.ghost.org/:splat     301!
 /tutorials/*/edit                   https://docs-2.ghost.io/:splat/edit  302!
 /faq/*/edit                         https://docs-2.ghost.io/:splat/edit  302!
 /api/v2/*/edit                      https://github.com/tryghost/docs-api/tree/master/:splat.md  302!
-/concepts/*/edit                    https://github.com/TryGhost/docs/tree/master/content/concepts:splat.md  302!
-/setup/*/edit                       https://github.com/TryGhost/docs/tree/master/content/setup:splat.md  302!
+/concepts/*/edit                    https://github.com/TryGhost/docs/tree/master/content/concepts/:splat.md  302!
+/setup/*/edit                       https://github.com/TryGhost/docs/tree/master/content/setup/:splat.md  302!
