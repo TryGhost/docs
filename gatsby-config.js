@@ -2,6 +2,58 @@ require(`dotenv`).config({
     path: `.env.${process.env.NODE_ENV}`,
 })
 
+let algoliaFields = `
+objectID:id,
+slug,
+title,
+html,
+tags {
+    slug
+    name
+}
+`
+
+let integrationQuery = `{
+  allGhostPost(filter: {tags: {elemMatch: {slug: {eq: "hash-integration"}}}}) {
+    edges {
+      node {
+        ${algoliaFields}
+      }
+    }
+  }
+}`
+
+let tutorialQuery = `{
+  allGhostPost(filter: {tags: {elemMatch: {slug: {eq: "hash-tutorial"}}}}) {
+    edges {
+      node {
+        ${algoliaFields}
+      }
+    }
+  }
+}`
+
+let queries = [
+    {
+        query: integrationQuery,
+        transformer: ({ data }) => {
+            return data.allGhostPost.edges.map(({ node }) => {
+                node.collection = `Integration`
+                return node
+            })
+        },
+    },
+    {
+        query: tutorialQuery,
+        transformer: ({ data }) => {
+            return data.allGhostPost.edges.map(({ node }) => {
+                node.collection = `FAQ`
+                return node
+            })
+        },
+    },
+]
+
 module.exports = {
     siteMetadata: {
         title: `Ghost Docs`,
@@ -9,6 +61,9 @@ module.exports = {
         description: `Find all the docs you want`,
     },
     plugins: [
+        /**
+         *  Utility Plugins
+         */
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-plugin-manifest`,
@@ -30,6 +85,9 @@ module.exports = {
                 name: `markdown-pages`,
             },
         },
+        /**
+         *  Content Plugins
+         */
         {
             resolve: `gatsby-transformer-remark`,
             options: {
@@ -77,6 +135,19 @@ module.exports = {
                 clientSecret: `${process.env.GH_CLIENT_SECRET}`,
             },
         },
+        {
+            resolve: `gatsby-plugin-algolia`,
+            options: {
+                appId: `6RCFK5TOI5`,
+                apiKey: `${process.env.ALGOLIA_ADMIN_KEY}`,
+                indexName: `docs`, // for all queries
+                queries,
+                chunkSize: 10000, // default: 1000
+            },
+        },
+        /**
+         *  Display Plugins
+         */
         {
             resolve: `gatsby-plugin-postcss`,
             options: {
