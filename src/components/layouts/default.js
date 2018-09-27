@@ -33,7 +33,7 @@ class DefaultLayout extends React.Component {
 
                 { header }
 
-                <main>
+                <main className={ this.props.mainClass ? this.props.mainClass : `pb-vw4` }>
                     { children }
                 </main>
 
@@ -52,6 +52,7 @@ DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
     title: PropTypes.string,
     bodyClass: PropTypes.string,
+    mainClass: PropTypes.string,
     header: PropTypes.element,
     headerDividerStyle: PropTypes.oneOf([`hairline`, `shadow`]),
 }

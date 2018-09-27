@@ -9,7 +9,7 @@ import bghome from '../images/home-bg.svg' // eslint-disable-line no-unused-vars
 import homeIllustration from '../images/home-illustration.svg'
 
 const IndexPage = () => (
-    <Layout title="Home" headerDividerStyle="shadow">
+    <Layout title="Home" headerDividerStyle="shadow" bodyClass="bg-white" mainClass="bg-whitegrey-l2 pb-vw3">
 
         <div className="gh-bg-home pb-vw3 bb b--whitegrey">
             
@@ -58,11 +58,10 @@ const IndexPage = () => (
                     </span>
                 </Box>
             </section>
-
         </div>
 
-        <div className={ Spirit.page.xl + `pt-vw3` }>
-            <section className="grid-12 gutter-36">
+        <div className="bg-whitegrey-l2 pt-vw3">
+            <section className={ Spirit.page.xl + `grid-12 gutter-36` }>
                 <div className="col-8 grid-12 gutter-36">
                     <div className="col-12 nb4">
                         <Link to="/api/" className={ Spirit.h3 + `link middarkgrey dim` }>API</Link>

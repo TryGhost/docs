@@ -7,7 +7,7 @@ const listItemClass = `mb2 lh-1-65` // Probably should go to spirit-styles.js
 
 // Empty for now...
 const Footer = () => (
-    <footer className="mt-vw4 pt-vw2 pb-vw3 bt b--whitegrey">
+    <footer className="pt-vw2 pb-vw3 bt b--whitegrey">
         <section className={ Spirit.page.xl + `grid-12 gutter-32`}>
 
             <div className="col-3">
