@@ -65,6 +65,7 @@ module.exports = {
                             showLineNumbers: false,
                         },
                     },
+                    `gatsby-remark-autolink-headers`,
                 ],
             },
         },

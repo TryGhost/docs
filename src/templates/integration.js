@@ -7,6 +7,7 @@ import Layout from '../components/layouts/default'
 
 import integrationIcon from '../images/integration-icon.png'
 import { Spirit } from '../components/spirit-styles'
+import TOC from '../components/layouts/partials/toc'
 
 const Integration = ({ data }) => {
     const post = data.ghostPost
@@ -25,13 +26,18 @@ const Integration = ({ data }) => {
                 </div>
             </div>
             <div className={ Spirit.page.l + `flex` }>
-                <div className="w-100 pa15 pt13 bg-white br4 shadow-1">
-                    <div className="mb5 f8">
-                        <Link className="link midgrey" to="/integrations/">Integrations</Link>
-                        <span className="mr1 ml1 f8 midgrey">/</span>
-                        <span className="darkgrey fw5">{post.title}</span>
+                <div className="w-100 pa15 pt13 bg-white br4 shadow-1 flex flex-start">
+                    <div className="order-2">
+                        <TOC headingsOffset="-400" />
                     </div>
-                    <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+                    <article className="order-1">
+                        <div className="mb5 f8">
+                            <Link className="link midgrey" to="/integrations/">Integrations</Link>
+                            <span className="mr1 ml1 f8 midgrey">/</span>
+                            <span className="darkgrey fw5">{post.title}</span>
+                        </div>
+                        <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+                    </article>
                 </div>
             </div>
         </Layout>
