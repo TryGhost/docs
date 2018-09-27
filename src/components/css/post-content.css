@@ -239,6 +239,25 @@ Usage (In Ghost editor):
     outline: none;
 }
 
+.post-content h1 .anchor,
+.post-content h2 .anchor,
+.post-content h3 .anchor,
+.post-content h4 .anchor,
+.post-content h5 .anchor,
+.post-content h6 .anchor {
+    margin: -2px 0 0 -32px;
+    padding: 0 8px;
+}
+
+.post-content h1 .anchor svg path,
+.post-content h2 .anchor svg path,
+.post-content h3 .anchor svg path,
+.post-content h4 .anchor svg path,
+.post-content h5 .anchor svg path,
+.post-content h6 .anchor svg path {
+    fill: var(--midgrey);
+}
+
 .post-content > h1:first-child,
 .post-content > h2:first-child,
 .post-content > h3:first-child,
