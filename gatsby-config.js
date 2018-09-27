@@ -2,35 +2,54 @@ require(`dotenv`).config({
     path: `.env.${process.env.NODE_ENV}`,
 })
 
+let algoliaFields = `
+objectID:id,
+slug,
+title,
+html,
+tags {
+    slug
+    name
+}
+`
+
 let integrationQuery = `{
-    allSitePage {
-      edges {
-        node {
-          # try to find a unique id for each node
-          # if this field is absent, it's going to
-          # be inserted by Algolia automatically
-          # and will be less simple to update etc.
-          objectID: id
-          component
-          path
-          componentChunkName
-          jsonName
-          internal {
-            type
-            contentDigest
-            owner
-          }
-        }
+  allGhostPost(filter: {tags: {elemMatch: {slug: {eq: "hash-integration"}}}}) {
+    edges {
+      node {
+        ${algoliaFields}
       }
     }
-  }`
+  }
+}`
+
+let tutorialQuery = `{
+  allGhostPost(filter: {tags: {elemMatch: {slug: {eq: "hash-tutorial"}}}}) {
+    edges {
+      node {
+        ${algoliaFields}
+      }
+    }
+  }
+}`
 
 let queries = [
     {
         query: integrationQuery,
         transformer: ({ data }) => {
-            console.log(`data`, arguments[0])
-            return data.allSitePage.edges.map(({ node }) => node)
+            return data.allGhostPost.edges.map(({ node }) => {
+                node.collection = `Integration`
+                return node
+            })
+        },
+    },
+    {
+        query: tutorialQuery,
+        transformer: ({ data }) => {
+            return data.allGhostPost.edges.map(({ node }) => {
+                node.collection = `FAQ`
+                return node
+            })
         },
     },
 ]
