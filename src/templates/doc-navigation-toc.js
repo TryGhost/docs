@@ -45,7 +45,7 @@ const DocTemplate = ({ data }) => {
                     <div className="flex-auto">
                         <section className="flex-auto flex bg-white br4 shadow-1 pa15 pt12">
                             <div className="order-2">
-                                <TOC>{ post.tableOfContents }</TOC>
+                                <TOC />
                             </div>
                             <article className="order-1">
                                 <span className="mb8 f8">Setup / Ghost(Pro)</span>

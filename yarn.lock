@@ -9626,6 +9626,10 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
+tocbot@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/tocbot/-/tocbot-4.4.0.tgz#92707614c228c0d84a0ee641741e3835ea3b3920"
+
 toidentifier@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
