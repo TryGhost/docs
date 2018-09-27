@@ -1,20 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Icon from '../components/global/icon'
 
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import Box from '../components/layouts/partials/box'
 import bghome from '../images/home-bg.svg' // eslint-disable-line no-unused-vars
 import homeIllustration from '../images/home-illustration.svg'
-import gettingStartedIcon from '../images/icons/rocket.svg'
-import conceptsIcon from '../images/icons/blocks.svg'
-import tutorialsIcon from '../images/icons/typing.svg'
-import searchIcon from '../images/icons/search.svg'
-import moreIcon from '../images/icons/more.svg'
-import restApiIcon from '../images/icons/rest-api.svg'
-import clientLibIcon from '../images/icons/client-lib.svg'
-import sdksIcon from '../images/icons/sdks.svg'
-import toolsIcon from '../images/icons/tools.svg'
 
 const IndexPage = () => (
     <Layout title="Home" headerDividerStyle="shadow">
@@ -25,7 +17,7 @@ const IndexPage = () => (
                 <span className="db lightgrey"><img src={ homeIllustration } /></span>
                 <h1 className="ma0 pa0 f-headline middarkgrey mt4">Ghost Documentation</h1>
                 <div className="pa4 pl5 pr5 mt6 w-100 mw-s f4 br-pill bg-white shadow-3 center flex items-center justify-between">
-                    <img src={ searchIcon } className="o-20" />
+                    <Icon name="search" className="fill-lightgrey-d2 h6" />
                     <input id="search" className="input-reset form-text ba b--transparent flex-auto ml2" type="text" placeholder="Search documentation..." name="query" autoComplete="off" />
                     {/* <button className="bn bg-blue white flex items-center br-pill br--right pa4 nt4 nb4 nr5 pl7 pr7">Search</button> */}
                 </div>
@@ -34,7 +26,7 @@ const IndexPage = () => (
             <section className={ Spirit.page.xl + `grid-12 gutter-36`}>
                 <Box className="col-4 pa10 flex flex-column justify-between tdn" to="/setup/" radius="5">
                     <div className="">
-                        <span className="db lightgrey"><img src={ gettingStartedIcon } /></span>
+                        <span className="db lightgrey"><Icon name="rocket" /></span>
                         <h2 className={ Spirit.h4 + `mt2 darkgrey-l2` }>Getting started</h2>
                         <p className={ Spirit.p + `mt2 darkgrey-l2` }>Setting up a Ghost site on a server or locally.</p>
                     </div>
@@ -42,7 +34,7 @@ const IndexPage = () => (
                 </Box>
                 <Box className="col-4 pa10 flex flex-column justify-between tdn" to="/concepts/introduction/" radius="5">
                     <div className="">
-                        <span className="db lightgrey"><img src={ conceptsIcon } /></span>
+                        <span className="db lightgrey"><Icon name="blocks" /></span>
                         <h2 className={ Spirit.h4 + `mt2 darkgrey-l2` }>Core Concepts</h2>
                         <p className={ Spirit.p + `mt2 darkgrey-l2` }>Understand the fundamentals of Ghost development.</p>
                     </div>
@@ -50,7 +42,7 @@ const IndexPage = () => (
                 </Box>
                 <Box className="col-4 pa10 flex flex-column justify-between tdn" to="/tutorials/" radius="5">
                     <div className="">
-                        <span className="db lightgrey"><img src={ tutorialsIcon } /></span>
+                        <span className="db lightgrey"><Icon name="typing" /></span>
                         <h2 className={ Spirit.h4 + `mt2 darkgrey-l2` }>Tutorials</h2>
                         <p className={ Spirit.p + `mt2 darkgrey-l2` }>Browse tutorials for most common setup and development use-cases </p>
                     </div>
@@ -68,28 +60,28 @@ const IndexPage = () => (
                     </div>
                     <div className="col-12 grid-12 gutter-36 gh-home-api-container">
                         <Box className="col-6 pa5 flex items-start justify-start tdn" onWhite="false" elevation="1" to="/api/">
-                            <span className="dib mr4 mt1 miw10 tc"><img src={ sdksIcon } className="o-60" /></span>
+                            <span className="dib mr4 mt1 miw10 tc"><Icon name="sdks" className="stroke-lightgrey-d2" /></span>
                             <div>
                                 <h4 className={ Spirit.h5 + `middarkgrey` }>Frontend SDKs</h4>
                                 <p className={ Spirit.small + `midgrey mt2` }>Frameworks for working with the Ghost API to build a publication website</p>
                             </div>
                         </Box>
                         <Box className="col-6 pa5 flex items-start justify-start tdn" onWhite="false" elevation="1" to="/api/">
-                            <span className="dib mr4 mt1 miw10 tc"><img src={ clientLibIcon } className="o-60" /></span>
+                            <span className="dib mr4 mt1 miw10 tc"><Icon name="client-lib" className="stroke-lightgrey-d2" /></span>
                             <div>
                                 <h4 className={ Spirit.h5 + `middarkgrey` }>Client Libraries</h4>
                                 <p className={ Spirit.small + `midgrey mt2` }>Specific libraries for interacting with the Ghost API directly</p>
                             </div>
                         </Box>
                         <Box className="col-6 pa5 flex items-start justify-start tdn" onWhite="false" elevation="1" to="/api/">
-                            <span className="dib mr4 mt1 miw10 tc"><img src={ restApiIcon } className="o-60" /></span>
+                            <span className="dib mr4 mt1 miw10 tc"><Icon name="rest-api" className="stroke-lightgrey-d2" /></span>
                             <div>
                                 <h4 className={ Spirit.h5 + `middarkgrey` }>Rest API</h4>
                                 <p className={ Spirit.small + `midgrey mt2` }>A full reference of API Endpoints</p>
                             </div>
                         </Box>
                         <Box className="col-6 pa5 flex items-start justify-start tdn" onWhite="false" elevation="1" to="/api/">
-                            <span className="dib mr4 mt1 miw10 tc"><img src={ toolsIcon } className="o-60" /></span>
+                            <span className="dib mr4 mt1 miw10 tc"><Icon name="tools" className="stroke-lightgrey-d2" /></span>
                             <div>
                                 <h4 className={ Spirit.h5 + `middarkgrey` }>Tools</h4>
                                 <p className={ Spirit.small + `midgrey mt2` }>Utilities to help build and manage Ghost</p>
@@ -145,7 +137,7 @@ const IndexPage = () => (
                         Discourse
                     </Box>
                     <Box to="/integrations/" className="col-2 br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn" onWhite="false" elevation="2">
-                        <img src={ moreIcon } className="w8 nudge-top--6" />
+                        <Icon name="more" className="w8 nudge-top--6" />
                         More
                     </Box>
                 </div>

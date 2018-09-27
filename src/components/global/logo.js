@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 class Logo extends React.Component {
     render() {
         var fillColor = `#2D3134`
-        if (this.props.theme == `light`) { 
+        if (this.props.theme === `light`) { 
             fillColor = `#FFFFFF` 
         }
 
