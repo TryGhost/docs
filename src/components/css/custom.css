@@ -278,6 +278,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .toc-list-container ul a {
     color: var(--midgrey);
     text-decoration: none;
+    display: inline-block;
 }
 
 .toc-list-container ul a:hover {
