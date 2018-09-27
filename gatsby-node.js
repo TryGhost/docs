@@ -50,6 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
                     component: path.resolve(`./src/templates/faq.js`),
                     context: {
                         slug: node.slug,
+                        category: `faq`,
                     },
                 })
             })
@@ -77,6 +78,7 @@ exports.createPages = ({ graphql, actions }) => {
                     component: path.resolve(`./src/templates/standalone-post.js`),
                     context: {
                         slug: node.slug,
+                        category: `tutorial`,
                     },
                 })
             })
@@ -104,6 +106,7 @@ exports.createPages = ({ graphql, actions }) => {
                     component: path.resolve(`./src/templates/integration.js`),
                     context: {
                         slug: node.slug,
+                        category: `integration`,
                     },
                 })
             })
@@ -151,6 +154,7 @@ exports.createPages = ({ graphql, actions }) => {
                             // Data passed to context is available
                             // in page queries as GraphQL variables.
                             slug: node.fields.slug,
+                            category: `api`,
                         },
                     })
                 }

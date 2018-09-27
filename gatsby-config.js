@@ -2,6 +2,39 @@ require(`dotenv`).config({
     path: `.env.${process.env.NODE_ENV}`,
 })
 
+let integrationQuery = `{
+    allSitePage {
+      edges {
+        node {
+          # try to find a unique id for each node
+          # if this field is absent, it's going to
+          # be inserted by Algolia automatically
+          # and will be less simple to update etc.
+          objectID: id
+          component
+          path
+          componentChunkName
+          jsonName
+          internal {
+            type
+            contentDigest
+            owner
+          }
+        }
+      }
+    }
+  }`
+
+let queries = [
+    {
+        integrationQuery,
+        transformer: ({ data }) => {
+            console.log(`data`, arguments[0])
+            return data.allSitePage.edges.map(({ node }) => node)
+        },
+    },
+]
+
 module.exports = {
     siteMetadata: {
         title: `Ghost Docs`,
@@ -9,6 +42,9 @@ module.exports = {
         description: `Find all the docs you want`,
     },
     plugins: [
+        /**
+         *  Utility Plugins
+         */
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-plugin-manifest`,
@@ -30,6 +66,9 @@ module.exports = {
                 name: `markdown-pages`,
             },
         },
+        /**
+         *  Content Plugins
+         */
         {
             resolve: `gatsby-transformer-remark`,
             options: {
@@ -76,6 +115,19 @@ module.exports = {
                 clientSecret: `${process.env.GH_CLIENT_SECRET}`,
             },
         },
+        {
+            resolve: `gatsby-plugin-algolia`,
+            options: {
+                appId: `6RCFK5TOI5`,
+                apiKey: `${process.env.ALGOLIA_ADMIN_KEY}`,
+                indexName: `docs`, // for all queries
+                queries,
+                chunkSize: 10000, // default: 1000
+            },
+        },
+        /**
+         *  Display Plugins
+         */
         {
             resolve: `gatsby-plugin-postcss`,
             options: {
