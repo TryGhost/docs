@@ -27,7 +27,7 @@ let integrationQuery = `{
 
 let queries = [
     {
-        integrationQuery,
+        query: integrationQuery,
         transformer: ({ data }) => {
             console.log(`data`, arguments[0])
             return data.allSitePage.edges.map(({ node }) => node)
