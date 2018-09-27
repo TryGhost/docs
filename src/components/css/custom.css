@@ -11,94 +11,11 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 @import "post-content.css";
 @import "_css-grid.css";
 
-.gh-nav-logo-suffix:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 1px;
-    display: block;
-    width: 1px;
-    height: 23px;
-    background: #d3e4ee;
-    transform: rotate(25deg);
-}
 
-.gh-nav-logo-suffix-light:before {
-    color: #FFFFFF!important;
-}
+/* Stuff that needs to be in Spirit/Brand */
+/* ----------------------------------------------------------------------- */
 
-.sidebar-min-width {
-    min-width: 12vw;
-}
-
-.content-max-width {
-    max-width: calc(114rem - 24vw);
-}
-
-/* Home */
-/* ---------------------------------------------------------- */
-.gh-bg-home {
-    background: url(../../images/home-bg.svg) no-repeat, radial-gradient(ellipse at top, rgba(252,253,255,1) 0%,rgba(228,233,245,1) 100%);
-    background-size: cover;
-}
-
-.gh-home-api-container {
-    grid-auto-rows: minmax(12rem, auto);
-}
-
-/* Integrations
-/* ---------------------------------------------------------- */
-
-.gh-integration-sidebar a:hover {
-    color: #3eb0ef !important;
-    /*TODO: color: var(--blue);*/
-}
-
-.gh-integration-card {
-    transition: all 0.5s ease !important;
-}
-
-.gh-integration-card:hover {
-    transform: scale(1.1);
-    transition: all 0.2s ease !important;
-}
-
-.bg-integrations-header-image {
-    background: url("https://source.unsplash.com/user/johnonolan");
-    background-size: cover;
-    background-position: 0 35%;
-}
-
-.bg-integrations-header-cover {
-    background: linear-gradient(45deg, rgba(125,185,232,0.95) 1%,rgba(0,179,184,0.95) 100%);
-}
-
-.gh-integration-header-shadow {
-    text-shadow: 0px 5px 18px rgba(0, 0, 0, 0.07);
-}
-
-.gh-integrations {
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 3vw;
-}
-
-@media (max-width: 1000px) {
-    .gh-integrations {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}
-
-@media (max-width: 860px) {
-    .gh-integrations {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-
-/* Custom typography for UI -- maybe should be in Spirit...
-/* ---------------------------------------------------------- */
+/* Custom typography for UI -- maybe should be in Spirit... */
 .lh-h1 { line-height: var(--vr-8); }
 .lh-h2 { line-height: var(--vr-6); }
 .lh-h3 { line-height: var(--vr-5); }
@@ -113,10 +30,6 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .flex-third {
     flex: 1 1 calc(100% / 3 - 40px);
 }
-
-
-/* Stuff that needs to be in Spirit/Brand */
-/* ---------------------------------------------------------- */
 
 /* Overriding Spirit/Brand font sizes */
 .f-headline { font-size: 5.0rem; }
@@ -216,7 +129,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     box-shadow: 0 0 3px rgba(0,0,0,.08), 0 5px 22px -6px rgba(0,0,0,.08); 
 }
 .shadow-2-hover:hover {
-    transform: scale(1.04);
+    transform: scale(1.05);
     box-shadow: 0 0 1px rgba(0,0,0,.03), 0 8px 26px -4px rgba(0,0,0,.1);
 }
 .shadow-2-hover.on-white:hover {
@@ -257,3 +170,92 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     border-radius: 1.2rem;
 }
 
+
+
+/* Custom styles */
+/* ----------------------------------------------------------------------- */
+
+.gh-nav-logo-suffix:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1px;
+    display: block;
+    width: 1px;
+    height: 23px;
+    background: #d3e4ee;
+    transform: rotate(25deg);
+}
+
+.gh-nav-logo-suffix-light:before {
+    color: #FFFFFF!important;
+}
+
+.sidebar-min-width {
+    min-width: 12vw;
+}
+
+.content-max-width {
+    max-width: calc(114rem - 24vw);
+}
+
+/* Home */
+/* ----------------------------------------------------------------------- */
+.gh-bg-home {
+    background: url(../../images/home-bg.svg) no-repeat, radial-gradient(ellipse at top, rgba(252,253,255,1) 0%,rgba(228,233,245,1) 100%);
+    background-size: cover;
+}
+
+.gh-home-api-container {
+    grid-auto-rows: minmax(12rem, auto);
+}
+
+/* Integrations
+/* ----------------------------------------------------------------------- */
+
+.gh-integration-sidebar a:hover {
+    color: #3eb0ef !important;
+    /*TODO: color: var(--blue);*/
+}
+
+.gh-integration-card {
+    transition: all 0.5s ease !important;
+}
+
+.gh-integration-card:hover {
+    transform: scale(1.1);
+    transition: all 0.2s ease !important;
+}
+
+.bg-integrations-header-image {
+    background: url("https://source.unsplash.com/user/johnonolan");
+    background-size: cover;
+    background-position: 0 35%;
+}
+
+.bg-integrations-header-cover {
+    background: linear-gradient(45deg, rgba(125,185,232,0.95) 1%,rgba(0,179,184,0.95) 100%);
+}
+
+.gh-integration-header-shadow {
+    text-shadow: 0px 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+.gh-integrations {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 3vw;
+}
+
+@media (max-width: 1000px) {
+    .gh-integrations {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 860px) {
+    .gh-integrations {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

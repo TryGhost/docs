@@ -5,66 +5,67 @@ import { Link } from 'gatsby'
 class Box extends React.Component {
     render() {
         const children = this.props.children
-        var boxStyle = ` bg-white `
+        var boxClass = ` bg-white `
+        var boxStyle = {}
 
         // Setting shadows
         switch (this.props.elevation) {
         case `1`:
-            boxStyle = boxStyle + ` shadow-1 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-1-hover ` : ` `)
+            boxClass = boxClass + ` shadow-1 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-1-hover ` : ` `)
             break
         
         case `2`:
-            boxStyle = boxStyle + ` shadow-2 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-2-hover  ` : ` `)
+            boxClass = boxClass + ` shadow-2 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-2-hover  ` : ` `)
             break
         
         case `3`:
-            boxStyle = boxStyle + ` shadow-3 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-3-hover ` : ` `)
+            boxClass = boxClass + ` shadow-3 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-3-hover ` : ` `)
             break
         }
 
         // Border radius
         switch (this.props.radius) {
         case `1`:
-            boxStyle = boxStyle + ` br1 `
+            boxClass = boxClass + ` br1 `
             break
 
         case `2`:
-            boxStyle = boxStyle + ` br2 `
+            boxClass = boxClass + ` br2 `
             break
 
         case `3`:
-            boxStyle = boxStyle + ` br3 `
+            boxClass = boxClass + ` br3 `
             break
 
         case `4`:
-            boxStyle = boxStyle + ` br4 `
+            boxClass = boxClass + ` br4 `
             break
 
         case `5`:
-            boxStyle = boxStyle + ` br5 `
+            boxClass = boxClass + ` br5 `
             break
         }
 
         if (this.props.to) {
-            boxStyle = boxStyle + ` db `
+            boxClass = boxClass + ` db `
             
             return (
-                <Link to={ this.props.to } className={ boxStyle + this.props.className }>
+                <Link to={ this.props.to } className={ boxClass + this.props.className } style={ boxStyle }>
                     { children }
                 </Link>
             )
         } else if (this.props.href) {
-            boxStyle = boxStyle + ` db `
+            boxClass = boxClass + ` db `
 
             return (
-                <a href={ this.props.href } className={ boxStyle + this.props.className }>
+                <a href={ this.props.href } className={ boxClass + this.props.className } style={ boxStyle }>
                     { children }
                 </a>
             )
         } else {
             return (
                 <>
-                    <div className={ boxStyle + this.props.className }>
+                    <div className={ boxClass + this.props.className }>
                         { children }
                     </div>
                 </>
