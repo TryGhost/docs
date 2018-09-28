@@ -44,6 +44,11 @@ FirstLevelItems.propTypes = {
 
 const NavSidebar = (props) => {
     const sidebar = props.sidebar
+
+    if (!sidebar) {
+        return null
+    }
+
     const [sidebarfile] = require(`../../data/sidebars/${sidebar}.yaml`)
 
     if (!sidebarfile) {
