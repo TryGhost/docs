@@ -30,6 +30,7 @@ module.exports = {
                 name: `markdown-pages`,
             },
         },
+        `gatsby-transformer-yaml`,
         {
             resolve: `gatsby-transformer-remark`,
             options: {
