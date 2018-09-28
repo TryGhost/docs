@@ -1,0 +1,31 @@
+- title: Setup
+  items:
+    - title: What is Ghost?
+      link: /setup/what-is-ghost/
+    - title: Setting up a site
+      items:
+        - title: Setup Options
+          link: /setup/options/
+        - title: Ghost(Pro)
+          link: /setup/ghost-pro/
+        - title: 1-click install
+          link: /setup/1-click-install/
+        - title: Install from CLI
+          link: /setup/install-from-cli/
+        - title: Look in the forum
+          link: https://forum.ghost.org
+    - title: Community Packages
+      link: /setup/community-packages/
+      items:
+        - title: Community packages overview
+          link: /setup/community-packages/
+        - title: Docker
+          link: /setup/community-packages/docker/
+        - title: Setup Options
+          link: /setup/options/
+        - title: Ghost(Pro)
+          link: /setup/ghost-pro/
+        - title: 1-click install
+          link: /setup/1-click-install/
+        - title: Install from CLI
+          link: /setup/install-from-cli/

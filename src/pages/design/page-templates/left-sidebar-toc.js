@@ -3,7 +3,7 @@ import { Spirit } from '../../../components/spirit-styles'
 import DummyContent from './dummy-post'
 
 import Layout from '../../../components/layouts/default'
-import NavSidebar from '../../../components/layouts/partials/navigation-sidebar'
+import NavSidebar from '../../../components/global/navigation-sidebar'
 import TOC from '../../../components/layouts/partials/toc'
 import { Link } from 'gatsby'
 

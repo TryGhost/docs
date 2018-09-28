@@ -5,14 +5,12 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
-import NavSidebar from '../components/layouts/partials/navigation-sidebar'
+import NavSidebar from '../components/global/navigation-sidebar'
 import TOC from '../components/layouts/partials/toc'
-
-import pageNavData from "../data/api/handlebars.yaml"
 
 const DocTemplate = ({ data }) => {
     const post = data.markdownRemark
-    
+
     return (
         <>
             <Helmet>
