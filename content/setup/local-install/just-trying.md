@@ -1,8 +1,9 @@
 ---
 title: "Just trying it out"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-next: "/setup/local-install/"
-tags:
+next:
+    url: "/setup/local-install/"
+keywords:
     - setup
     - local-install
 ---

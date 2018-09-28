@@ -1,8 +1,9 @@
 ---
 title: "Install from CLI"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-next: "/setup/ubuntu/"
-tags:
+next:
+    url: "/setup/ubuntu/"
+keywords:
     - setup
     - ubuntu
 ---

@@ -1,9 +1,10 @@
 ---
 title: "Front Ends"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-next: "/setup/"
+next:
+    url: "/setup/"
 template:
-tags:
+keywords:
     - concepts
 ---
 

@@ -4,28 +4,38 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
-import NavSidebar from '../components/layouts/partials/navigation-sidebar'
+import NavSidebar from '../components/global/navigation-sidebar'
 import DesignNavSidebar from '../components/layouts/partials/design-nav-sidebar'
+
+function NavBar(props) {
+    const isDesign = props.isDesign
+    const hasNavSidebar = props.sidebar
+
+    if (isDesign) {
+        return <DesignNavSidebar />
+    } else if (hasNavSidebar) {
+        return <NavSidebar sidebar={ props.sidebar }/>
+    } else {
+        return null
+    }
+}
 
 const DocTemplate = ({ data }) => {
     const post = data.markdownRemark
-    post.frontmatter.tags = post.frontmatter.tags || []
+    post.frontmatter.keywords = post.frontmatter.keywords || []
+    post.frontmatter.sidebar = post.frontmatter.sidebar || ``
 
     //TODO: this is hardcoded now, should be changed
-    var navBar
-    console.log(post.frontmatter.tags)
-
-    if (post.frontmatter.tags.length && post.frontmatter.tags[0] === `design`) {
-        navBar = <DesignNavSidebar />
-    } else {
-        navBar = <NavSidebar />
-    }
+    const isDesignNavbar = (post.frontmatter.keywords.length && post.frontmatter.keywords[0] === `design`)
 
     return (
         <Layout title={ post.frontmatter.title }>
 
             <div className={ Spirit.page.xl + `flex flex-start mt12` }>
-                { navBar }
+                <NavBar
+                    isDesign={isDesignNavbar}
+                    sidebar={ post.frontmatter.sidebar }
+                />
                 <div className="flex-auto">
                     <section className="bg-white br4 shadow-1 pa15 pt12">
                         {/* <span className="f7 fw4 measure-wide dib mb1 midlightgrey">Setup / Ghost(Pro)</span> */}
@@ -49,7 +59,18 @@ export const articleQuery = graphql`
         markdownRemark(fields: { slug: { eq: $slug } }) {
             frontmatter {
                 title
-                tags
+                date
+                path
+                meta_title
+                meta_description
+                image
+                next {
+                    url
+                    title
+                    description
+                }
+                sidebar
+                keywords
             }
             html
         }

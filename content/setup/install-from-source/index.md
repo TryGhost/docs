@@ -1,8 +1,9 @@
 ---
 title: "Install from source"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-next: "/setup/install-from-source/"
-tags:
+next:
+    url: "/setup/install-from-source/"
+keywords:
     - setup
     - install-from-source
 ---

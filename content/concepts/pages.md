@@ -1,9 +1,10 @@
 ---
 title: "Pages"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-next: "/concepts/authors/"
+next:
+    url: "/concepts/authors/"
 template:
-tags:
+keywords:
     - concepts
 ---
 

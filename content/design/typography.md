@@ -1,9 +1,10 @@
 ---
 title: "Typography"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-next: "/concepts/posts/"
+next:
+    url: "/concepts/posts/"
 template:
-tags:
+keywords:
     - design
 ---
 

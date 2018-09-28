@@ -1,9 +1,10 @@
 ---
 title: "Authors"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-next: "/concepts/dynamic-routing/"
+next:
+    url: "/concepts/dynamic-routing/"
 template:
-tags:
+keywords:
     - concepts
 ---
 

@@ -1,9 +1,10 @@
 ---
 title: "Styling"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-next: "/concepts/posts/"
+next:
+    url: "/concepts/posts/"
 template:
-tags:
+keywords:
     - design
 ---
 
@@ -15,16 +16,16 @@ Use Spirit for styling the overall UI of Ghost Docs. If you need a new style dec
 
 For most common styles you can retrieve Spirit class combinations from the `Spirit` object in [`spirit-styles.js`](https://github.com/TryGhost/docs/blob/master/src/components/spirit-styles.js).
 ```html
-<h1 class={ Spirit.h1 }>This is a heading</h1> 
+<h1 class={ Spirit.h1 }>This is a heading</h1>
 
 // Renders:
 <h1 class="f1 lh-h1 fw3 ma0 pa0 measure--0-2">This is a heading</h1>
 ```
 
-If you need further styles you can simply concatenate them to the style helpers. 
+If you need further styles you can simply concatenate them to the style helpers.
 
 ```html
-<h1 class={ Spirit.h1 + `pt2` }>This is a heading</h1> 
+<h1 class={ Spirit.h1 + `pt2` }>This is a heading</h1>
 
 // Renders:
 <h1 class="f1 lh-h1 fw3 ma0 pa0 measure--0-2 pt2">This is a heading</h1>

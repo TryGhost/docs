@@ -1,8 +1,9 @@
 ---
 title: "Docker"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-next: "/setup/"
-tags:
+next:
+    url: "/setup/"
+keywords:
     - setup
 ---
 

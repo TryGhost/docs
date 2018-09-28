@@ -1,9 +1,12 @@
 ---
 title: "What is Ghost"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-next: "/setup/ghost-pro/"
-tags:
+next:
+    url: "/setup/ghost-pro/"
+keywords:
     - setup
+date: "2018-10-01 15:00:00"
+sidebar: "setup"
 ---
 
 ## This is the second heading
