@@ -17,7 +17,7 @@ const IndexPage = () => (
         <div className="gh-bg-home pb-vw3 bb b--whitegrey">
 
             <div className="pa-vw3 tc">
-                <span className="db lightgrey"><img src={ homeIllustration } /></span>
+                <span className="db lightgrey"><img src={ homeIllustration } alt="bg" /></span>
                 <h1 className="ma0 pa0 f-headline middarkgrey mt4">Ghost Documentation</h1>
                 <div className="pa4 pl5 pr5 mt6 w-100 mw-s f4 br-pill bg-white shadow-3 center flex items-center justify-between">
                     <Icon name="search" className="fill-lightgrey-d2 h6" />
