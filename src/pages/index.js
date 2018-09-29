@@ -15,7 +15,7 @@ const IndexPage = () => (
     <Layout title="Home" headerDividerStyle="shadow" bodyClass="bg-white" mainClass="bg-whitegrey-l2 pb-vw3">
 
         <div className="gh-bg-home pb-vw3 bb b--whitegrey">
-            
+
             <div className="pa-vw3 tc">
                 <span className="db lightgrey"><img src={ homeIllustration } /></span>
                 <h1 className="ma0 pa0 f-headline middarkgrey mt4">Ghost Documentation</h1>
@@ -126,27 +126,27 @@ const IndexPage = () => (
                 </div>
                 <div className="col-12 grid-auto gutter-36 mt1">
                     <Box to="/integrations/" className="col-2 br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                        <img src="https://docs-2.ghost.io/content/images/2018/09/feedly.png" className="w10 mb3" />
+                        <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/feedly.png" alt="Feedly" />
                         Feedly
                     </Box>
                     <Box to="/integrations/" className="col-2 br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                        <img src="https://docs-2.ghost.io/content/images/2018/09/zapier.png" className="w10 mb3" />
+                        <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/zapier.png" alt="Zapier" />
                         Zapier
                     </Box>
                     <Box to="/integrations/" className="col-2 br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                        <img src="https://docs-2.ghost.io/content/images/2018/09/slack.png" className="w10 mb3" />
+                        <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/slack.png" alt="Slack" />
                         Slack
                     </Box>
                     <Box to="/integrations/" className="col-2 br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                        <img src="https://docs-2.ghost.io/content/images/2018/09/Tumblr_Logos_2018.03.06_iOS-Icon-Blue.png" className="w10 mb3" />
+                        <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/Tumblr_Logos_2018.03.06_iOS-Icon-Blue.png" alt="Tumblr" />
                         Tumblr
                     </Box>
                     <Box to="/integrations/" className="col-2 br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                        <img src="https://docs-2.ghost.io/content/images/2018/09/medium.png" className="w10 mb3" />
+                        <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/medium.png" alt="Medium" />
                         Medium
                     </Box>
                     <Box to="/integrations/" className="col-2 br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                        <img src="https://docs-2.ghost.io/content/images/2018/09/discourse.png" className="w10 mb3" />
+                        <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/discourse.png" alt="Discourse" />
                         Discourse
                     </Box>
                     <Box to="/integrations/" className="col-2 br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
@@ -156,7 +156,7 @@ const IndexPage = () => (
                 </div>
             </section>
         </div>
-        
+
     </Layout>
 )
 
