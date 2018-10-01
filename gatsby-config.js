@@ -2,6 +2,14 @@ require(`dotenv`).config({
     path: `.env.${process.env.NODE_ENV}`,
 })
 
+const postcssCustomMedia = require(`postcss-custom-media`)
+const autoprefixer = require(`autoprefixer`)
+const cssVariables = require(`postcss-css-variables`)
+const colorModFunction = require(`postcss-color-mod-function`)
+const cssNano = require(`cssnano`)
+const customProperties = require(`postcss-custom-properties`)
+const easyImport = require(`postcss-easy-import`)
+
 module.exports = {
     siteMetadata: {
         title: `Ghost Docs`,
@@ -82,12 +90,13 @@ module.exports = {
             resolve: `gatsby-plugin-postcss`,
             options: {
                 postCssPlugins: [
-                    require(`autoprefixer`)({ browsers: [`last 2 versions`] }),
-                    require(`postcss-color-mod-function`)(),
-                    require(`cssnano`)({ zindex: false }),
-                    require(`postcss-custom-properties`)({ preserve: false }),
-                    require(`postcss-easy-import`)(),
-                    require(`postcss-custom-media`)(),
+                    autoprefixer({ browsers: [`last 2 versions`] }),
+                    easyImport(),
+                    cssVariables(),
+                    colorModFunction(),
+                    customProperties({ preserve: false }),
+                    postcssCustomMedia(),
+                    cssNano({ zindex: false }),
                 ],
             },
         },
