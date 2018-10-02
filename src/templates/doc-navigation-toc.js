@@ -10,6 +10,7 @@ import TOC from '../components/layouts/partials/toc'
 
 const DocTemplate = ({ data }) => {
     const post = data.markdownRemark
+    const sidebar = post.frontmatter.sidebar || ``
 
     return (
         <>
@@ -39,7 +40,7 @@ const DocTemplate = ({ data }) => {
             <Layout>
 
                 <div className={Spirit.page.xl + `flex flex-start mt12`}>
-                    <NavSidebar />
+                    <NavSidebar sidebar={ sidebar }/>
                     <div className="flex-auto">
                         <section className="flex-auto flex bg-white br4 shadow-1 pa15 pt12">
                             <div className="order-2">
@@ -77,6 +78,7 @@ export const articleQuery = graphql`
       }
       frontmatter {
         title
+        sidebar
       }
       tableOfContents
     }

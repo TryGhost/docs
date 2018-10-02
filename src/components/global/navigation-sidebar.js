@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 function LinkElement(props) {
-    const link = props.link
-    const title = props.title
+    const { link, title } = props
+    //
+    const linkClasses = window.location.pathname === link ? `blue fw6` : `midgrey`
 
     if (link.match(/^\s?http(s?)/gi)) {
         return (
@@ -12,7 +13,7 @@ function LinkElement(props) {
         )
     } else {
         return (
-            <Link to={link} className="link midgrey">{title}</Link>
+            <Link to={link} className={`link ` + linkClasses}>{title}</Link>
         )
     }
 }
@@ -22,29 +23,31 @@ LinkElement.propTypes = {
     title: PropTypes.string,
 }
 
-function SecondLevelItems(props) {
-    const item = props.item
+function ItemList(props) {
+    const { item } = props
 
     return (
         <li className="mb3 lh-1-4"><LinkElement link={item.link} title={item.title} /></li>
     )
 }
 
-SecondLevelItems.propTypes = {
+ItemList.propTypes = {
     item: PropTypes.object,
 }
 
-function FirstLevelItems(props) {
-    const item = props.item
+function Sections(props) {
+    const { item } = props
 
     if (item.items && item.items.length) {
-        const titleLink = item.link || item.items[0].link
+        // CASE: the section title does not have a link, but it has child items, so we take the
+        // first link we find from the child item
+        const sectionLink = item.link || item.items[0].link
 
         return (
             <li className="mb6">
-                <h4 className="fw4"><LinkElement link={titleLink} title={item.title} /></h4>
+                <h4 className="fw4"><LinkElement link={sectionLink} title={item.title} /></h4>
                 <ul className="list ma0 pa0 ml6">
-                    {item.items.map((secondLink, i) => <SecondLevelItems key={i} item={secondLink} />)}
+                    {item.items.map((secondLink, i) => <ItemList key={i} item={secondLink} />)}
                 </ul>
             </li>
         )
@@ -55,22 +58,17 @@ function FirstLevelItems(props) {
     }
 }
 
-FirstLevelItems.propTypes = {
+Sections.propTypes = {
     item: PropTypes.object,
 }
 
-// TODO: active link classNames=`blue fw6`
 // TODO: show only first level links by default, expand on click
+// TODO: create special treatment options for titles that have a `*`
 
 const NavSidebar = (props) => {
-    const sidebar = props.sidebar
+    const { sidebar } = props
 
-    // TODO: this is horrible and only temporary
-    if (!sidebar) {
-        return null
-    }
-
-    const [sidebarfile] = require(`../../data/sidebars/${sidebar}.yaml`)
+    const [sidebarfile] = sidebar ? require(`../../data/sidebars/${sidebar}.yaml`) : []
 
     if (!sidebarfile) {
         return null
@@ -81,7 +79,7 @@ const NavSidebar = (props) => {
             <nav className="mr5 miw50">
                 <h3 className="f8 ttu fw6 pa0 ma0 measure-0-4 pb2">{sidebarfile.title}</h3>
                 <ul className="ma0 pa0 list mt4 f8">
-                    {sidebarfile.items.map((item, i) => <FirstLevelItems key={i} item={item} />)}
+                    {sidebarfile.items.map((item, i) => <Sections key={i} item={item} />)}
                 </ul>
             </nav>
         </>

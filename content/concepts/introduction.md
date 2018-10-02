@@ -1,7 +1,7 @@
 ---
 title: "Introduction"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
-template:
+sidebar: "setup"
 next:
     url: "/concepts/posts/"
 keywords:
