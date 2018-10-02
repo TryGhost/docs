@@ -82,11 +82,11 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 }
 
 .white-placeholder::placeholder { /* Most modern browsers support this now. */
-   color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .dark-placeholder::placeholder { /* Most modern browsers support this now. */
-   color: rgba(52, 63, 68, 0.3);
+    color: rgba(52, 63, 68, 0.3);
 }
 
 /* Text styles */
@@ -165,6 +165,16 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 /* Custom styles */
 /* ----------------------------------------------------------------------- */
+
+.grid-icon-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(124px, auto));
+    grid-auto-rows: '124px';
+    grid-gap: 20px;
+    grid-gap: auto;
+}
+
+
 
 .gh-nav-logo-suffix:before {
     content: "";
@@ -251,6 +261,13 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     }
 }
 
+
+/* API */
+/* ----------------------------------------------------------------------- */
+.bg-api-reference {
+    background: url(../../images/api-bg.svg) bottom center no-repeat, linear-gradient(60deg, #29323c 0%, #485563 100%);
+    /* background-size: ; */
+}
 
 /* Table of Contents */
 /* ----------------------------------------------------------------------- */

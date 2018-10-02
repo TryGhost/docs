@@ -1,106 +1,208 @@
 import Layout from '../../components/layouts/default'
 import React from 'react'
-
-import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
 import { Spirit } from '../../components/spirit-styles'
+import Box from '../../components/layouts/partials/box'
+import Icon from '../../components/global/icon'
+
+import bgapi from '../../images/api-bg.svg' // eslint-disable-line no-unused-vars
+
+import GoLogo from '../../images/go-logo.png'
+
+const sectionStyles = {
+    container: `grid-12 mt-vw4 mt-vw4-ns`,
+    headingContainer: `col-12 col-4-ns mr10-ns`,
+    cardContainer: `col-12 col-8-ns mt-vw4 mt0-ns grid-icon-boxes`,
+}
+
+class APISection extends React.Component {
+    render() {
+        const style = (this.props.first === true ? `grid-12` : sectionStyles.container)
+
+        return (
+            <div className={ style }>
+                { this.props.children }
+            </div>
+        )
+    }
+}
+
+APISection.propTypes = {
+    first: PropTypes.bool,
+}
+
+class Card extends React.Component {
+    render() {
+        return (
+            <Box to={ this.props.to } className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt8 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                { this.props.icon ? <div className="w10 h10 flex justify-center items-center"><Icon name={ this.props.icon } className="w10 h10 mb4"></Icon></div> : null }
+                { this.props.img ? <div className="w10 h10 flex justify-center items-center"><img src={ this.props.img } className="nudge-bottom--4" /></div> : null }
+                { this.props.children }
+            </Box>
+        )
+    }
+}
+
+Card.propTypes = {
+    to: PropTypes.string,
+    icon: PropTypes.string,
+    img: PropTypes.string,
+}
 
 const APIPage = () => (
-    <Layout title="API">
-        <div className={ Spirit.page.l }>
-            <div className="pa-vw4 tc">
-                <h1 className="ma0 pa0 f-headline">API Reference</h1>
-                <p className="ma0 mt2 f4 midgrey">Clients, tools and libraries for working with Ghost</p>
+    <Layout title="API" mainClass="bg-whitegrey-l2" bodyClass="bg-white">
+
+        <section className="bg-api-reference">
+            <div className={ Spirit.page.xl + `tc-ns pt-vw7 pt-vw5-ns pb-vw5 white` }>
+                <h1 className={ Spirit.sectionHeading + `gh-integration-header-shadow`}>API Reference</h1>
+                <p className={ Spirit.sectionSubHeading }>Clients, tools and libraries for working with Ghost</p>
             </div>
+        </section>
+
+        <div className={ Spirit.page.xl + `pb-vw4 pb-vw3-ns pt-vw4 pt-vw3-ns` }>
+            <APISection first={ true }>
+                <div className={ sectionStyles.headingContainer }>
+                    <h2 className={ Spirit.h3 }>Frontend SDKs</h2>
+                    <p className={ Spirit.p + `midgrey-l2` }>Frameworks for working with the Ghost API to build a publication website</p>
+                </div>
+                <div className={ sectionStyles.cardContainer }>
+                    <Card to="/" icon="handlebars-logo">Handlebars</Card>
+                    <Card to="/" icon="gatsby-logo">Gatsby</Card>
+                    <Card to="/" icon="hugo-logo">Hugo</Card>
+                </div>
+            </APISection>
+
+            <APISection>
+                <div className={ sectionStyles.headingContainer }>
+                    <h2 className={ Spirit.h3 }>Client Libraries</h2>
+                    <p className={ Spirit.p + `midgrey-l2` }>Specific libraries for interacting with the Ghost API directly</p>
+                </div>
+                <div className={ sectionStyles.cardContainer }>
+                    <Card to="/" icon="javascript-logo">JavaScript</Card>
+                    <Card to="/" icon="ruby-logo">Ruby</Card>
+                    <Card to="/" icon="php-logo">PHP</Card>
+                    <Card to="/" icon="python-logo">Python</Card>
+                    <Card to="/" img={ GoLogo }>Go</Card>
+                    <Card to="/" icon="apple-logo">iOS</Card>
+                    <Card to="/" icon="android-logo">Android</Card>
+                </div>
+            </APISection>
+
+            <APISection>
+                <div className={ sectionStyles.headingContainer }>
+                    <h2 className={ Spirit.h3 }>REST API</h2>
+                    <p className={ Spirit.p + `midgrey-l2` }>A full reference of API Endpoints</p>
+                </div>
+                <div className={ sectionStyles.cardContainer }>
+                    <Card to="/" icon="content-api-logo">Content API</Card>
+                    <Card to="/" icon="admin-api-logo">Admin API</Card>
+                    <Card to="/" icon="webhooks-logo">Webhooks</Card>
+                </div>
+            </APISection>
+
+            <APISection>
+                <div className={ sectionStyles.headingContainer }>
+                    <h2 className={ Spirit.h3 }>Tools</h2>
+                    <p className={ Spirit.p + `midgrey-l2` }>Utilities to help build and manage Ghost</p>
+                </div>
+                <div className={ sectionStyles.cardContainer }>
+                    <Card to="/" icon="ghost-cli-logo">Ghost-CLI</Card>
+                    <Card to="/" icon="gscan-logo">Gscan</Card>
+                </div>
+            </APISection>
+        </div>
+
+        { /*
+        <div className={ Spirit.page.l }>
             <div className="pa12 bg-white br4 shadow-1">
                 <div className="mb8">
-                    <h2 className="ma0">Frontend SDKs</h2>
-                    <p className="ma0 lh-copy">Frameworks for working with the Ghost API to build a publication website</p>
+                    
                     <div className="flex flex-wrap mt4 mb4 nl4 nr4">
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="/api/v2/handlebars-themes/">
                             <div className="flex-grow-1 flex justify-center items-center">
                                 <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
                             </div>
-                            <div>Handlebars</div>
+                            <div></div>
                         </Link>
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="/api/v2/hugo/">
                             <div className="flex-grow-1 flex justify-center items-center">
                                 <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
                             </div>
-                            <div>Gatsby</div>
+                            <div></div>
                         </Link>
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="/api/v2/gatsby/">
                             <div className="flex-grow-1 flex justify-center items-center">
                                 <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
                             </div>
-                            <div>Hugo</div>
+                            <div></div>
                         </Link>
                     </div>
                 </div>
 
                 <div className="bt b--whitegrey pt10 mb8">
-                    <h2 className="ma0">Client Libraries</h2>
-                    <p className="ma0 lh-copy">Specific libraries for interacting with the Ghost API directly</p>
+                    <h2 className="ma0"></h2>
+                    <p className="ma0 lh-copy"></p>
                     <div className="flex flex-wrap mt4 mb4 nl4 nr4">
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="/api/v2/javascript/">
                             <div className="flex-grow-1 flex justify-center items-center">
                                 <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
                             </div>
-                            <div>JavaScript</div>
+                            <div></div>
                         </Link>
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
                             <div className="flex-grow-1 flex justify-center items-center">
                                 <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
                             </div>
-                            <div>Ruby</div>
+                            <div></div>
                         </Link>
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
                             <div className="flex-grow-1 flex justify-center items-center">
                                 <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
                             </div>
-                            <div>PHP</div>
+                            <div></div>
                         </Link>
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
                             <div className="flex-grow-1 flex justify-center items-center">
                                 <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
                             </div>
-                            <div>Python</div>
+                            <div></div>
                         </Link>
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
                             <div className="flex-grow-1 flex justify-center items-center">
                                 <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
                             </div>
-                            <div>Go</div>
+                            <div></div>
                         </Link>
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
                             <div className="flex-grow-1 flex justify-center items-center">
                                 <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
                             </div>
-                            <div>iOS</div>
+                            <div></div>
                         </Link>
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
                             <div className="flex-grow-1 flex justify-center items-center">
                                 <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
                             </div>
-                            <div>Android</div>
+                            <div></div>
                         </Link>
                     </div>
                 </div>
 
                 <div className="bt b--whitegrey pt10 mb8">
-                    <h2 className="ma0">REST API</h2>
-                    <p className="ma0 lh-copy">A full reference of API Endpoints</p>
+                    <h2 className="ma0"></h2>
+                    <p className="ma0 lh-copy"></p>
                     <div className="flex mt4 mb4 nl4 nr4">
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
                             <div className="flex-grow-1 flex justify-center items-center">
                                 <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
                             </div>
-                            <div>Content</div>
+                            <div></div>
                         </Link>
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
                             <div className="flex-grow-1 flex justify-center items-center">
                                 <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
                             </div>
-                            <div>Admin</div>
+                            <div></div>
                         </Link>
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
                             <div className="flex-grow-1 flex justify-center items-center">
@@ -112,26 +214,27 @@ const APIPage = () => (
                 </div>
 
                 <div className="bt b--whitegrey pt10 mb8">
-                    <h2 className="ma0">Tools</h2>
-                    <p className="ma0 lh-copy">Utilities to help build and manage Ghost</p>
+                    <h2 className="ma0"></h2>
+                    <p className="ma0 lh-copy"></p>
                     <div className="flex mt4 mb4 nl4 nr4">
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
                             <div className="flex-grow-1 flex justify-center items-center">
                                 <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
                             </div>
-                            <div>Ghost-CLI</div>
+                            <div></div>
                         </Link>
                         <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
                             <div className="flex-grow-1 flex justify-center items-center">
                                 <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
                             </div>
-                            <div>Gscan</div>
+                            <div></div>
                         </Link>
                     </div>
                 </div>
 
             </div>
         </div>
+        */ }
     </Layout>
 )
 
