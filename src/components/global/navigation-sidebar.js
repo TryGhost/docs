@@ -2,11 +2,31 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
+function LinkElement(props) {
+    const link = props.link
+    const title = props.title
+
+    if (link.match(/^\s?http(s?)/gi)) {
+        return (
+            <a href={link} className="link midgrey" target="_blank" rel="noopener noreferrer">{title}</a>
+        )
+    } else {
+        return (
+            <Link to={link} className="link midgrey">{title}</Link>
+        )
+    }
+}
+
+LinkElement.propTypes = {
+    link: PropTypes.string,
+    title: PropTypes.string,
+}
+
 function SecondLevelItems(props) {
     const item = props.item
 
     return (
-        <li className="mb3 lh-1-4"><Link to={item.link} className="link midgrey">{item.title}</Link></li>
+        <li className="mb3 lh-1-4"><LinkElement link={item.link} title={item.title} /></li>
     )
 }
 
@@ -22,7 +42,7 @@ function FirstLevelItems(props) {
 
         return (
             <li className="mb6">
-                <h4 className="fw4"><Link to={titleLink} className="link midgrey">{item.title}</Link></h4>
+                <h4 className="fw4"><LinkElement link={titleLink} title={item.title} /></h4>
                 <ul className="list ma0 pa0 ml6">
                     {item.items.map((secondLink, i) => <SecondLevelItems key={i} item={secondLink} />)}
                 </ul>
@@ -30,7 +50,7 @@ function FirstLevelItems(props) {
         )
     } else {
         return (
-            <li className="mb4"><Link to={item.link} className="link midgrey">{item.title}</Link></li>
+            <li className="mb4"><LinkElement link={item.link} title={item.title} /></li>
         )
     }
 }
@@ -45,6 +65,7 @@ FirstLevelItems.propTypes = {
 const NavSidebar = (props) => {
     const sidebar = props.sidebar
 
+    // TODO: this is horrible and only temporary
     if (!sidebar) {
         return null
     }
