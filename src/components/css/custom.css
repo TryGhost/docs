@@ -266,8 +266,15 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 /* ----------------------------------------------------------------------- */
 .bg-api-reference {
     background: url(../../images/api-bg.svg) bottom center no-repeat, linear-gradient(60deg, #29323c 0%, #485563 100%);
-    /* background-size: ; */
 }
+
+/* Setup */
+/* ----------------------------------------------------------------------- */
+
+.bg-setup {
+    background-image: linear-gradient(60deg, #3EB0EF 0%, #008BD6 100%);
+}
+
 
 /* Table of Contents */
 /* ----------------------------------------------------------------------- */

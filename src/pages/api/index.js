@@ -51,7 +51,6 @@ Card.propTypes = {
 
 const APIPage = () => (
     <Layout title="API" mainClass="bg-whitegrey-l2" bodyClass="bg-white">
-
         <section className="bg-api-reference">
             <div className={ Spirit.page.xl + `tc-ns pt-vw7 pt-vw5-ns pb-vw5 white` }>
                 <h1 className={ Spirit.sectionHeading + `gh-integration-header-shadow`}>API Reference</h1>
@@ -111,130 +110,6 @@ const APIPage = () => (
                 </div>
             </APISection>
         </div>
-
-        { /*
-        <div className={ Spirit.page.l }>
-            <div className="pa12 bg-white br4 shadow-1">
-                <div className="mb8">
-                    
-                    <div className="flex flex-wrap mt4 mb4 nl4 nr4">
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="/api/v2/handlebars-themes/">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div></div>
-                        </Link>
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="/api/v2/hugo/">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div></div>
-                        </Link>
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="/api/v2/gatsby/">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div></div>
-                        </Link>
-                    </div>
-                </div>
-
-                <div className="bt b--whitegrey pt10 mb8">
-                    <h2 className="ma0"></h2>
-                    <p className="ma0 lh-copy"></p>
-                    <div className="flex flex-wrap mt4 mb4 nl4 nr4">
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="/api/v2/javascript/">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div></div>
-                        </Link>
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div></div>
-                        </Link>
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div></div>
-                        </Link>
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div></div>
-                        </Link>
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div></div>
-                        </Link>
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div></div>
-                        </Link>
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div></div>
-                        </Link>
-                    </div>
-                </div>
-
-                <div className="bt b--whitegrey pt10 mb8">
-                    <h2 className="ma0"></h2>
-                    <p className="ma0 lh-copy"></p>
-                    <div className="flex mt4 mb4 nl4 nr4">
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div></div>
-                        </Link>
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div></div>
-                        </Link>
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div>Webhooks</div>
-                        </Link>
-                    </div>
-                </div>
-
-                <div className="bt b--whitegrey pt10 mb8">
-                    <h2 className="ma0"></h2>
-                    <p className="ma0 lh-copy"></p>
-                    <div className="flex mt4 mb4 nl4 nr4">
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div></div>
-                        </Link>
-                        <Link className="flex-shrink-0 flex flex-column justify-between items-center ma4 pa5 w30 h30 f8 tc link darkgrey fw5 br4 shadow-3-on-white code" to="#">
-                            <div className="flex-grow-1 flex justify-center items-center">
-                                <div className="flex justify-center items-center tc h11 w11 mb1 midgrey bg-whitegrey br-100">Icon</div>
-                            </div>
-                            <div></div>
-                        </Link>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        */ }
     </Layout>
 )
 
