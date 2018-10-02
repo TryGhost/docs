@@ -370,38 +370,41 @@ Usage (In Ghost editor):
 .post-content h1 + h3,
 .post-content h1 + h4,
 .post-content h1 + h6 {
-    margin: var(--vr-6) 0 0;
+    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;;
 }
 
 .post-content h2 + h2,
 .post-content h2 + h3,
 .post-content h2 + h4,
 .post-content h2 + h6 {
-    margin: var(--vr-2) 0 0;
+    margin: calc(var(--vr-2) - var(--navbar-size)) 0 0;;
 }
 
 .post-content h3 + h3,
 .post-content h3 + h4,
 .post-content h3 + h6 {
-    margin: var(--vr-2) 0 0;
+    margin: calc(var(--vr-2) - var(--navbar-size)) 0 0;;
 }
 
 .post-content h4 + h4,
 .post-content h4 + h6 {
-    margin: var(--vr-1) 0 0;
+    margin: calc(var(--vr-1) - var(--navbar-size)) 0 0;;
 }
 
 .post-content h5 + p,
 .post-content h5 + ul,
 .post-content h5 + ol,
-.post-content h5 + blockquote,
+.post-content h5 + blockquote {
+    margin: var(--vr-6) 0 0;
+}
+
 .post-content h5 + h1,
 .post-content h5 + h2,
 .post-content h5 + h3,
 .post-content h5 + h4,
 .post-content h5 + h5,
 .post-content h5 + h6 {
-    margin: var(--vr-6) 0 0;
+    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
 }
 
 
@@ -431,14 +434,17 @@ Usage (In Ghost editor):
 .post-content hr + p,
 .post-content hr + ul,
 .post-content hr + ol,
-.post-content hr + blockquote,
+.post-content hr + blockquote {
+    margin: var(--vr-8) 0 0;
+}
+
 .post-content hr + h1,
 .post-content hr + h2,
 .post-content hr + h3,
 .post-content hr + h4,
 .post-content hr + h5,
 .post-content hr + h6 {
-    margin: var(--vr-8) 0 0;
+    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
 }
 
 
@@ -448,12 +454,6 @@ Usage (In Ghost editor):
 .post-content figure + ul,
 .post-content figure + ol,
 .post-content figure + blockquote,
-.post-content figure + h1,
-.post-content figure + h2,
-.post-content figure + h3,
-.post-content figure + h4,
-.post-content figure + h5,
-.post-content figure + h6,
 .post-content p + figure,
 .post-content ul + figure,
 .post-content ol + figure,
@@ -464,12 +464,6 @@ Usage (In Ghost editor):
 .post-content pre + ul,
 .post-content pre + ol,
 .post-content pre + blockquote,
-.post-content pre + h1,
-.post-content pre + h2,
-.post-content pre + h3,
-.post-content pre + h4,
-.post-content pre + h5,
-.post-content pre + h6,
 .post-content p + pre,
 .post-content ul + pre,
 .post-content ol + pre,
@@ -480,12 +474,6 @@ Usage (In Ghost editor):
 .post-content div + ul,
 .post-content div + ol,
 .post-content div + blockquote,
-.post-content div + h1,
-.post-content div + h2,
-.post-content div + h3,
-.post-content div + h4,
-.post-content div + h5,
-.post-content div + h6,
 .post-content p + div,
 .post-content ul + div,
 .post-content ol + div,
@@ -493,6 +481,28 @@ Usage (In Ghost editor):
 .post-content h6 + div
 {
     margin: var(--vr-4) 0 0;
+}
+
+.post-content figure + h1,
+.post-content figure + h2,
+.post-content figure + h3,
+.post-content figure + h4,
+.post-content figure + h5,
+.post-content figure + h6,
+.post-content pre + h1,
+.post-content pre + h2,
+.post-content pre + h3,
+.post-content pre + h4,
+.post-content pre + h5,
+.post-content pre + h6,
+.post-content div + h1,
+.post-content div + h2,
+.post-content div + h3,
+.post-content div + h4,
+.post-content div + h5,
+.post-content div + h6 
+{
+    margin: calc(var(--vr-4) - var(--navbar-size)) 0 0;
 }
 
 
