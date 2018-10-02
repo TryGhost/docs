@@ -4,8 +4,9 @@ import { Link } from 'gatsby'
 
 function LinkElement(props) {
     const { link, title } = props
-    //
-    const linkClasses = window.location.pathname === link ? `blue fw6` : `midgrey`
+    // TODO: get the location here somehow from the router (why does this.props.location not work?)
+    // const linkClasses = window.location.pathname === link ? `blue fw6` : `midgrey`
+    const linkClasses = `midgrey`
 
     if (link.match(/^\s?http(s?)/gi)) {
         return (
