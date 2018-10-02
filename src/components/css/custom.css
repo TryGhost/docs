@@ -10,9 +10,11 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 @import "typography.css";
 @import "post-content.css";
 
-
 /* Stuff that needs to be in Spirit/Brand */
 /* ----------------------------------------------------------------------- */
+
+@import "_media-queries.css";
+@import "_type-scale.css";
 
 /* Custom typography for UI -- maybe should be in Spirit... */
 .lh-h1 { line-height: var(--vr-8); }
@@ -32,19 +34,6 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .flex-third {
     flex: 1 1 calc(100% / 3 - 40px);
 }
-
-/* Overriding Spirit/Brand font sizes */
-.f-headline { font-size: 5.0rem; }
-.f-subheadline { font-size: 4.4rem; }
-.f1 { font-size: 4.4rem; }
-.f2 { font-size: 3.3rem; }
-.f3 { font-size: 2.5rem; }
-.f4 { font-size: 1.9rem; }
-.f5 { font-size: 1.45rem; }
-.f6 { font-size: 1.40rem; }
-.f7 { font-size: 1.35rem; }
-.f8 { font-size: 1.3rem; }
-.f-supersmall { font-size: 1.1rem; }
 
 /* _measure.css */
 .measure-0-4 { letter-spacing: 0.4px; }
@@ -68,8 +57,8 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 /* _links.css */
 .link {
-  text-decoration: none;
-  transition: color .3s ease;
+    text-decoration: none;
+    transition: color .3s ease;
 }
 
 .link:link,
