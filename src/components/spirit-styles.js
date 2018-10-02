@@ -2,10 +2,10 @@ export const Spirit = {
 
     // Page template widths
     page: {
-        s: ` center mw-s pl10 pr10 `,
-        m: ` center mw-m pl10 pr10 `,
-        l: ` center mw-l pl10 pr10 `,
-        xl: ` center mw-xl pl10 pr10 `,
+        s: ` center mw-s pl5 pr5 pl10-l pr10-l `,
+        m: ` center mw-m pl5 pr5 pl10-l pr10-l `,
+        l: ` center mw-l pl5 pr5 pl10-l pr10-l `,
+        xl: ` center mw-xl pl5 pr5 pl10-ns pr10-ns `,
     },
 
     // Generic typography

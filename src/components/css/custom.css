@@ -9,7 +9,6 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 @import "colors.css";
 @import "typography.css";
 @import "post-content.css";
-@import "_css-grid.css";
 
 
 /* Stuff that needs to be in Spirit/Brand */
@@ -25,6 +24,9 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .lh-p  { line-height: var(--vr-3); }
 .lh-tiny  { line-height: var(--vr-2); }
 
+.word-normal { word-break: normal; }
+.word-wrap { word-break: break-all; }
+.word-nowrap { word-break: keep-all; }
 
 /* Needed for tutorials */
 .flex-third {

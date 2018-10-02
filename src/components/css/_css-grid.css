@@ -25,6 +25,28 @@
 .grid-auto.gutter-36, .grid-12.gutter-36, .grid-16.gutter-36 { grid-gap: 3.6rem; }
 .grid-auto.gutter-40, .grid-12.gutter-40, .grid-16.gutter-40 { grid-gap: 4.0rem; }
 
+.grid-auto.gutter-row-0,  .grid-12.gutter-row-0,  .grid-16.gutter-row-0  { grid-row-gap: 0rem; }
+.grid-auto.gutter-row-8,  .grid-12.gutter-row-8,  .grid-16.gutter-row-8  { grid-row-gap: 0.8rem; }
+.grid-auto.gutter-row-12, .grid-12.gutter-row-12, .grid-16.gutter-row-12 { grid-row-gap: 1.2rem; }
+.grid-auto.gutter-row-16, .grid-12.gutter-row-16, .grid-16.gutter-row-16 { grid-row-gap: 1.6rem; }
+.grid-auto.gutter-row-20, .grid-12.gutter-row-20, .grid-16.gutter-row-20 { grid-row-gap: 2.0rem; }
+.grid-auto.gutter-row-24, .grid-12.gutter-row-24, .grid-16.gutter-row-24 { grid-row-gap: 2.4rem; }
+.grid-auto.gutter-row-28, .grid-12.gutter-row-28, .grid-16.gutter-row-28 { grid-row-gap: 2.8rem; }
+.grid-auto.gutter-row-32, .grid-12.gutter-row-32, .grid-16.gutter-row-32 { grid-row-gap: 3.2rem; }
+.grid-auto.gutter-row-36, .grid-12.gutter-row-36, .grid-16.gutter-row-36 { grid-row-gap: 3.6rem; }
+.grid-auto.gutter-row-40, .grid-12.gutter-row-40, .grid-16.gutter-row-40 { grid-row-gap: 4.0rem; }
+
+.grid-auto.gutter-col-0,  .grid-12.gutter-col-0,  .grid-16.gutter-col-0  { grid-column-gap: 0rem; }
+.grid-auto.gutter-col-8,  .grid-12.gutter-col-8,  .grid-16.gutter-col-8  { grid-column-gap: 0.8rem; }
+.grid-auto.gutter-col-12, .grid-12.gutter-col-12, .grid-16.gutter-col-12 { grid-column-gap: 1.2rem; }
+.grid-auto.gutter-col-16, .grid-12.gutter-col-16, .grid-16.gutter-col-16 { grid-column-gap: 1.6rem; }
+.grid-auto.gutter-col-20, .grid-12.gutter-col-20, .grid-16.gutter-col-20 { grid-column-gap: 2.0rem; }
+.grid-auto.gutter-col-24, .grid-12.gutter-col-24, .grid-16.gutter-col-24 { grid-column-gap: 2.4rem; }
+.grid-auto.gutter-col-28, .grid-12.gutter-col-28, .grid-16.gutter-col-28 { grid-column-gap: 2.8rem; }
+.grid-auto.gutter-col-32, .grid-12.gutter-col-32, .grid-16.gutter-col-32 { grid-column-gap: 3.2rem; }
+.grid-auto.gutter-col-36, .grid-12.gutter-col-36, .grid-16.gutter-col-36 { grid-column-gap: 3.6rem; }
+.grid-auto.gutter-col-40, .grid-12.gutter-col-40, .grid-16.gutter-col-40 { grid-column-gap: 4.0rem; }
+
 .grid-auto .col-2,  .grid-12 .col-2,  .grid-16 .col-2  { grid-column: span 2; }
 .grid-auto .col-3,  .grid-12 .col-3,  .grid-16 .col-3  { grid-column: span 3; }
 .grid-auto .col-4,  .grid-12 .col-4,  .grid-16 .col-4  { grid-column: span 4; }
@@ -68,3 +90,240 @@
 .grid-auto .self-baseline, .grid-12 .self-baseline, .grid-16 .self-baseline { align-self: baseline; }
 .grid-auto .self-first-baseline, .grid-12 .self-first-baseline, .grid-16 .self-first-baseline { align-self: first baseline; }
 .grid-auto .self-last-baseline, .grid-12 .self-last-baseline, .grid-16 .self-last-baseline { align-self: last baseline; }
+
+@media (--breakpoint-not-small){
+    .grid-auto.gutter-0-ns,  .grid-12.gutter-0-ns,  .grid-16.gutter-0-ns { grid-gap: 0rem; }
+    .grid-auto.gutter-8-ns,  .grid-12.gutter-8-ns,  .grid-16.gutter-8-ns { grid-gap: 0.8rem; }
+    .grid-auto.gutter-12-ns, .grid-12.gutter-12-ns, .grid-16.gutter-12-ns { grid-gap: 1.2rem; }
+    .grid-auto.gutter-16-ns, .grid-12.gutter-16-ns, .grid-16.gutter-16-ns { grid-gap: 1.6rem; }
+    .grid-auto.gutter-20-ns, .grid-12.gutter-20-ns, .grid-16.gutter-20-ns { grid-gap: 2.0rem; }
+    .grid-auto.gutter-24-ns, .grid-12.gutter-24-ns, .grid-16.gutter-24-ns { grid-gap: 2.4rem; }
+    .grid-auto.gutter-28-ns, .grid-12.gutter-28-ns, .grid-16.gutter-28-ns { grid-gap: 2.8rem; }
+    .grid-auto.gutter-32-ns, .grid-12.gutter-32-ns, .grid-16.gutter-32-ns { grid-gap: 3.2rem; }
+    .grid-auto.gutter-36-ns, .grid-12.gutter-36-ns, .grid-16.gutter-36-ns { grid-gap: 3.6rem; }
+    .grid-auto.gutter-40-ns, .grid-12.gutter-40-ns, .grid-16.gutter-40-ns { grid-gap: 4.0rem; }
+
+    .grid-auto.gutter-row-0-ns,  .grid-12.gutter-row-0-ns,  .grid-16.gutter-row-0-ns { grid-row-gap: 0rem; }
+    .grid-auto.gutter-row-8-ns,  .grid-12.gutter-row-8-ns,  .grid-16.gutter-row-8-ns { grid-row-gap: 0.8rem; }
+    .grid-auto.gutter-row-12-ns, .grid-12.gutter-row-12-ns, .grid-16.gutter-row-12-ns { grid-row-gap: 1.2rem; }
+    .grid-auto.gutter-row-16-ns, .grid-12.gutter-row-16-ns, .grid-16.gutter-row-16-ns { grid-row-gap: 1.6rem; }
+    .grid-auto.gutter-row-20-ns, .grid-12.gutter-row-20-ns, .grid-16.gutter-row-20-ns { grid-row-gap: 2.0rem; }
+    .grid-auto.gutter-row-24-ns, .grid-12.gutter-row-24-ns, .grid-16.gutter-row-24-ns { grid-row-gap: 2.4rem; }
+    .grid-auto.gutter-row-28-ns, .grid-12.gutter-row-28-ns, .grid-16.gutter-row-28-ns { grid-row-gap: 2.8rem; }
+    .grid-auto.gutter-row-32-ns, .grid-12.gutter-row-32-ns, .grid-16.gutter-row-32-ns { grid-row-gap: 3.2rem; }
+    .grid-auto.gutter-row-36-ns, .grid-12.gutter-row-36-ns, .grid-16.gutter-row-36-ns { grid-row-gap: 3.6rem; }
+    .grid-auto.gutter-row-40-ns, .grid-12.gutter-row-40-ns, .grid-16.gutter-row-40-ns { grid-row-gap: 4.0rem; }
+
+    .grid-auto.gutter-col-0-ns,  .grid-12.gutter-col-0-ns,  .grid-16.gutter-col-0-ns { grid-column-gap: 0rem; }
+    .grid-auto.gutter-col-8-ns,  .grid-12.gutter-col-8-ns,  .grid-16.gutter-col-8-ns { grid-column-gap: 0.8rem; }
+    .grid-auto.gutter-col-12-ns, .grid-12.gutter-col-12-ns, .grid-16.gutter-col-12-ns { grid-column-gap: 1.2rem; }
+    .grid-auto.gutter-col-16-ns, .grid-12.gutter-col-16-ns, .grid-16.gutter-col-16-ns { grid-column-gap: 1.6rem; }
+    .grid-auto.gutter-col-20-ns, .grid-12.gutter-col-20-ns, .grid-16.gutter-col-20-ns { grid-column-gap: 2.0rem; }
+    .grid-auto.gutter-col-24-ns, .grid-12.gutter-col-24-ns, .grid-16.gutter-col-24-ns { grid-column-gap: 2.4rem; }
+    .grid-auto.gutter-col-28-ns, .grid-12.gutter-col-28-ns, .grid-16.gutter-col-28-ns { grid-column-gap: 2.8rem; }
+    .grid-auto.gutter-col-32-ns, .grid-12.gutter-col-32-ns, .grid-16.gutter-col-32-ns { grid-column-gap: 3.2rem; }
+    .grid-auto.gutter-col-36-ns, .grid-12.gutter-col-36-ns, .grid-16.gutter-col-36-ns { grid-column-gap: 3.6rem; }
+    .grid-auto.gutter-col-40-ns, .grid-12.gutter-col-40-ns, .grid-16.gutter-col-40-ns { grid-column-gap: 4.0rem; }
+
+    .grid-auto .col-2-ns,  .grid-12 .col-2-ns,  .grid-16 .col-2-ns { grid-column: span 2; }
+    .grid-auto .col-3-ns,  .grid-12 .col-3-ns,  .grid-16 .col-3-ns { grid-column: span 3; }
+    .grid-auto .col-4-ns,  .grid-12 .col-4-ns,  .grid-16 .col-4-ns { grid-column: span 4; }
+    .grid-auto .col-5-ns,  .grid-12 .col-5-ns,  .grid-16 .col-5-ns { grid-column: span 5; }
+    .grid-auto .col-6-ns,  .grid-12 .col-6-ns,  .grid-16 .col-6-ns { grid-column: span 6; }
+    .grid-auto .col-7-ns,  .grid-12 .col-7-ns,  .grid-16 .col-7-ns { grid-column: span 7; }
+    .grid-auto .col-8-ns,  .grid-12 .col-8-ns,  .grid-16 .col-8-ns { grid-column: span 8; }
+    .grid-auto .col-9-ns,  .grid-12 .col-9-ns,  .grid-16 .col-9-ns { grid-column: span 9; }
+    .grid-auto .col-10-ns, .grid-12 .col-10-ns, .grid-16 .col-10-ns { grid-column: span 10; }
+    .grid-auto .col-11-ns, .grid-12 .col-11-ns, .grid-16 .col-11-ns { grid-column: span 11; }
+    .grid-auto .col-12-ns, .grid-12 .col-12-ns, .grid-16 .col-12-ns { grid-column: span 12; }
+    .grid-auto .col-13-ns, .grid-12 .col-13-ns, .grid-16 .col-13-ns { grid-column: span 13; }
+    .grid-auto .col-14-ns, .grid-12 .col-14-ns, .grid-16 .col-14-ns { grid-column: span 14; }
+    .grid-auto .col-15-ns, .grid-12 .col-15-ns, .grid-16 .col-15-ns { grid-column: span 15; }
+    .grid-auto .col-16-ns, .grid-12 .col-16-ns, .grid-16 .col-16-ns { grid-column: span 16; }
+
+    .grid-auto .row-2-ns,  .grid-12 .row-2-ns,  .grid-16 .row-2-ns { grid-row: span 2; }
+    .grid-auto .row-3-ns,  .grid-12 .row-3-ns,  .grid-16 .row-3-ns { grid-row: span 3; }
+    .grid-auto .row-4-ns,  .grid-12 .row-4-ns,  .grid-16 .row-4-ns { grid-row: span 4; }
+    .grid-auto .row-5-ns,  .grid-12 .row-5-ns,  .grid-16 .row-5-ns { grid-row: span 5; }
+    .grid-auto .row-6-ns,  .grid-12 .row-6-ns,  .grid-16 .row-6-ns { grid-row: span 6; }
+    .grid-auto .row-7-ns,  .grid-12 .row-7-ns,  .grid-16 .row-7-ns { grid-row: span 7; }
+    .grid-auto .row-8-ns,  .grid-12 .row-8-ns,  .grid-16 .row-8-ns { grid-row: span 8; }
+    .grid-auto .row-9-ns,  .grid-12 .row-9-ns,  .grid-16 .row-9-ns { grid-row: span 9; }
+    .grid-auto .row-10-ns, .grid-12 .row-10-ns, .grid-16 .row-10-ns { grid-row: span 10; }
+    .grid-auto .row-11-ns, .grid-12 .row-11-ns, .grid-16 .row-11-ns { grid-row: span 11; }
+    .grid-auto .row-12-ns, .grid-12 .row-12-ns, .grid-16 .row-12-ns { grid-row: span 12; }
+    .grid-auto .row-13-ns, .grid-12 .row-13-ns, .grid-16 .row-13-ns { grid-row: span 13; }
+    .grid-auto .row-14-ns, .grid-12 .row-14-ns, .grid-16 .row-14-ns { grid-row: span 14; }
+    .grid-auto .row-15-ns, .grid-12 .row-15-ns, .grid-16 .row-15-ns { grid-row: span 15; }
+    .grid-auto .row-16-ns, .grid-12 .row-16-ns, .grid-16 .row-16-ns { grid-row: span 16; }
+    .grid-auto .row-17-ns, .grid-12 .row-17-ns, .grid-16 .row-17-ns { grid-row: span 17; }
+    .grid-auto .row-18-ns, .grid-12 .row-18-ns, .grid-16 .row-18-ns { grid-row: span 18; }
+    .grid-auto .row-19-ns, .grid-12 .row-19-ns, .grid-16 .row-19-ns { grid-row: span 19; }
+    .grid-auto .row-20-ns, .grid-12 .row-20-ns, .grid-16 .row-20-ns { grid-row: span 20; }
+
+    .grid-auto .self-start-ns, .grid-12 .self-start-ns, .grid-16 .self-start-ns { align-self: start; }
+    .grid-auto .self-end-ns, .grid-12 .self-end-ns, .grid-16 .self-end-ns { align-self: end; }
+    .grid-auto .self-center-ns, .grid-12 .self-center-ns, .grid-16 .self-center-ns { align-self: center; }
+    .grid-auto .self-stretch-ns, .grid-12 .self-stretch-ns, .grid-16 .self-stretch-ns { align-self: stretch; }
+    .grid-auto .self-baseline-ns, .grid-12 .self-baseline-ns, .grid-16 .self-baseline-ns { align-self: baseline; }
+    .grid-auto .self-first-baseline-ns, .grid-12 .self-first-baseline-ns, .grid-16 .self-first-baseline-ns { align-self: first baseline; }
+    .grid-auto .self-last-baseline-ns, .grid-12 .self-last-baseline-ns, .grid-16 .self-last-baseline-ns { align-self: last baseline; }
+}
+
+@media (--breakpoint-medium) {
+    .grid-auto.gutter-0-m,  .grid-12.gutter-0-m,  .grid-16.gutter-0-m { grid-gap: 0rem; }
+    .grid-auto.gutter-8-m,  .grid-12.gutter-8-m,  .grid-16.gutter-8-m { grid-gap: 0.8rem; }
+    .grid-auto.gutter-12-m, .grid-12.gutter-12-m, .grid-16.gutter-12-m { grid-gap: 1.2rem; }
+    .grid-auto.gutter-16-m, .grid-12.gutter-16-m, .grid-16.gutter-16-m { grid-gap: 1.6rem; }
+    .grid-auto.gutter-20-m, .grid-12.gutter-20-m, .grid-16.gutter-20-m { grid-gap: 2.0rem; }
+    .grid-auto.gutter-24-m, .grid-12.gutter-24-m, .grid-16.gutter-24-m { grid-gap: 2.4rem; }
+    .grid-auto.gutter-28-m, .grid-12.gutter-28-m, .grid-16.gutter-28-m { grid-gap: 2.8rem; }
+    .grid-auto.gutter-32-m, .grid-12.gutter-32-m, .grid-16.gutter-32-m { grid-gap: 3.2rem; }
+    .grid-auto.gutter-36-m, .grid-12.gutter-36-m, .grid-16.gutter-36-m { grid-gap: 3.6rem; }
+    .grid-auto.gutter-40-m, .grid-12.gutter-40-m, .grid-16.gutter-40-m { grid-gap: 4.0rem; }
+
+    .grid-auto.gutter-row-0-m,  .grid-12.gutter-row-0-m,  .grid-16.gutter-row-0-m { grid-row-gap: 0rem; }
+    .grid-auto.gutter-row-8-m,  .grid-12.gutter-row-8-m,  .grid-16.gutter-row-8-m { grid-row-gap: 0.8rem; }
+    .grid-auto.gutter-row-12-m, .grid-12.gutter-row-12-m, .grid-16.gutter-row-12-m { grid-row-gap: 1.2rem; }
+    .grid-auto.gutter-row-16-m, .grid-12.gutter-row-16-m, .grid-16.gutter-row-16-m { grid-row-gap: 1.6rem; }
+    .grid-auto.gutter-row-20-m, .grid-12.gutter-row-20-m, .grid-16.gutter-row-20-m { grid-row-gap: 2.0rem; }
+    .grid-auto.gutter-row-24-m, .grid-12.gutter-row-24-m, .grid-16.gutter-row-24-m { grid-row-gap: 2.4rem; }
+    .grid-auto.gutter-row-28-m, .grid-12.gutter-row-28-m, .grid-16.gutter-row-28-m { grid-row-gap: 2.8rem; }
+    .grid-auto.gutter-row-32-m, .grid-12.gutter-row-32-m, .grid-16.gutter-row-32-m { grid-row-gap: 3.2rem; }
+    .grid-auto.gutter-row-36-m, .grid-12.gutter-row-36-m, .grid-16.gutter-row-36-m { grid-row-gap: 3.6rem; }
+    .grid-auto.gutter-row-40-m, .grid-12.gutter-row-40-m, .grid-16.gutter-row-40-m { grid-row-gap: 4.0rem; }
+
+    .grid-auto.gutter-col-0-m,  .grid-12.gutter-col-0-m,  .grid-16.gutter-col-0-m { grid-column-gap: 0rem; }
+    .grid-auto.gutter-col-8-m,  .grid-12.gutter-col-8-m,  .grid-16.gutter-col-8-m { grid-column-gap: 0.8rem; }
+    .grid-auto.gutter-col-12-m, .grid-12.gutter-col-12-m, .grid-16.gutter-col-12-m { grid-column-gap: 1.2rem; }
+    .grid-auto.gutter-col-16-m, .grid-12.gutter-col-16-m, .grid-16.gutter-col-16-m { grid-column-gap: 1.6rem; }
+    .grid-auto.gutter-col-20-m, .grid-12.gutter-col-20-m, .grid-16.gutter-col-20-m { grid-column-gap: 2.0rem; }
+    .grid-auto.gutter-col-24-m, .grid-12.gutter-col-24-m, .grid-16.gutter-col-24-m { grid-column-gap: 2.4rem; }
+    .grid-auto.gutter-col-28-m, .grid-12.gutter-col-28-m, .grid-16.gutter-col-28-m { grid-column-gap: 2.8rem; }
+    .grid-auto.gutter-col-32-m, .grid-12.gutter-col-32-m, .grid-16.gutter-col-32-m { grid-column-gap: 3.2rem; }
+    .grid-auto.gutter-col-36-m, .grid-12.gutter-col-36-m, .grid-16.gutter-col-36-m { grid-column-gap: 3.6rem; }
+    .grid-auto.gutter-col-40-m, .grid-12.gutter-col-40-m, .grid-16.gutter-col-40-m { grid-column-gap: 4.0rem; }
+
+    .grid-auto .col-2-m,  .grid-12 .col-2-m,  .grid-16 .col-2-m { grid-column: span 2; }
+    .grid-auto .col-3-m,  .grid-12 .col-3-m,  .grid-16 .col-3-m { grid-column: span 3; }
+    .grid-auto .col-4-m,  .grid-12 .col-4-m,  .grid-16 .col-4-m { grid-column: span 4; }
+    .grid-auto .col-5-m,  .grid-12 .col-5-m,  .grid-16 .col-5-m { grid-column: span 5; }
+    .grid-auto .col-6-m,  .grid-12 .col-6-m,  .grid-16 .col-6-m { grid-column: span 6; }
+    .grid-auto .col-7-m,  .grid-12 .col-7-m,  .grid-16 .col-7-m { grid-column: span 7; }
+    .grid-auto .col-8-m,  .grid-12 .col-8-m,  .grid-16 .col-8-m { grid-column: span 8; }
+    .grid-auto .col-9-m,  .grid-12 .col-9-m,  .grid-16 .col-9-m { grid-column: span 9; }
+    .grid-auto .col-10-m, .grid-12 .col-10-m, .grid-16 .col-10-m { grid-column: span 10; }
+    .grid-auto .col-11-m, .grid-12 .col-11-m, .grid-16 .col-11-m { grid-column: span 11; }
+    .grid-auto .col-12-m, .grid-12 .col-12-m, .grid-16 .col-12-m { grid-column: span 12; }
+    .grid-auto .col-13-m, .grid-12 .col-13-m, .grid-16 .col-13-m { grid-column: span 13; }
+    .grid-auto .col-14-m, .grid-12 .col-14-m, .grid-16 .col-14-m { grid-column: span 14; }
+    .grid-auto .col-15-m, .grid-12 .col-15-m, .grid-16 .col-15-m { grid-column: span 15; }
+    .grid-auto .col-16-m, .grid-12 .col-16-m, .grid-16 .col-16-m { grid-column: span 16; }
+
+    .grid-auto .row-2-m,  .grid-12 .row-2-m,  .grid-16 .row-2-m { grid-row: span 2; }
+    .grid-auto .row-3-m,  .grid-12 .row-3-m,  .grid-16 .row-3-m { grid-row: span 3; }
+    .grid-auto .row-4-m,  .grid-12 .row-4-m,  .grid-16 .row-4-m { grid-row: span 4; }
+    .grid-auto .row-5-m,  .grid-12 .row-5-m,  .grid-16 .row-5-m { grid-row: span 5; }
+    .grid-auto .row-6-m,  .grid-12 .row-6-m,  .grid-16 .row-6-m { grid-row: span 6; }
+    .grid-auto .row-7-m,  .grid-12 .row-7-m,  .grid-16 .row-7-m { grid-row: span 7; }
+    .grid-auto .row-8-m,  .grid-12 .row-8-m,  .grid-16 .row-8-m { grid-row: span 8; }
+    .grid-auto .row-9-m,  .grid-12 .row-9-m,  .grid-16 .row-9-m { grid-row: span 9; }
+    .grid-auto .row-10-m, .grid-12 .row-10-m, .grid-16 .row-10-m { grid-row: span 10; }
+    .grid-auto .row-11-m, .grid-12 .row-11-m, .grid-16 .row-11-m { grid-row: span 11; }
+    .grid-auto .row-12-m, .grid-12 .row-12-m, .grid-16 .row-12-m { grid-row: span 12; }
+    .grid-auto .row-13-m, .grid-12 .row-13-m, .grid-16 .row-13-m { grid-row: span 13; }
+    .grid-auto .row-14-m, .grid-12 .row-14-m, .grid-16 .row-14-m { grid-row: span 14; }
+    .grid-auto .row-15-m, .grid-12 .row-15-m, .grid-16 .row-15-m { grid-row: span 15; }
+    .grid-auto .row-16-m, .grid-12 .row-16-m, .grid-16 .row-16-m { grid-row: span 16; }
+    .grid-auto .row-17-m, .grid-12 .row-17-m, .grid-16 .row-17-m { grid-row: span 17; }
+    .grid-auto .row-18-m, .grid-12 .row-18-m, .grid-16 .row-18-m { grid-row: span 18; }
+    .grid-auto .row-19-m, .grid-12 .row-19-m, .grid-16 .row-19-m { grid-row: span 19; }
+    .grid-auto .row-20-m, .grid-12 .row-20-m, .grid-16 .row-20-m { grid-row: span 20; }
+
+    .grid-auto .self-start-m, .grid-12 .self-start-m, .grid-16 .self-start-m { align-self: start; }
+    .grid-auto .self-end-m, .grid-12 .self-end-m, .grid-16 .self-end-m { align-self: end; }
+    .grid-auto .self-center-m, .grid-12 .self-center-m, .grid-16 .self-center-m { align-self: center; }
+    .grid-auto .self-stretch-m, .grid-12 .self-stretch-m, .grid-16 .self-stretch-m { align-self: stretch; }
+    .grid-auto .self-baseline-m, .grid-12 .self-baseline-m, .grid-16 .self-baseline-m { align-self: baseline; }
+    .grid-auto .self-first-baseline-m, .grid-12 .self-first-baseline-m, .grid-16 .self-first-baseline-m { align-self: first baseline; }
+    .grid-auto .self-last-baseline-m, .grid-12 .self-last-baseline-m, .grid-16 .self-last-baseline-m { align-self: last baseline; }
+}
+
+@media (--breakpoint-large) {
+    .grid-auto.gutter-0-l,  .grid-12.gutter-0-l,  .grid-16.gutter-0-l { grid-gap: 0rem; }
+    .grid-auto.gutter-8-l,  .grid-12.gutter-8-l,  .grid-16.gutter-8-l { grid-gap: 0.8rem; }
+    .grid-auto.gutter-12-l, .grid-12.gutter-12-l, .grid-16.gutter-12-l { grid-gap: 1.2rem; }
+    .grid-auto.gutter-16-l, .grid-12.gutter-16-l, .grid-16.gutter-16-l { grid-gap: 1.6rem; }
+    .grid-auto.gutter-20-l, .grid-12.gutter-20-l, .grid-16.gutter-20-l { grid-gap: 2.0rem; }
+    .grid-auto.gutter-24-l, .grid-12.gutter-24-l, .grid-16.gutter-24-l { grid-gap: 2.4rem; }
+    .grid-auto.gutter-28-l, .grid-12.gutter-28-l, .grid-16.gutter-28-l { grid-gap: 2.8rem; }
+    .grid-auto.gutter-32-l, .grid-12.gutter-32-l, .grid-16.gutter-32-l { grid-gap: 3.2rem; }
+    .grid-auto.gutter-36-l, .grid-12.gutter-36-l, .grid-16.gutter-36-l { grid-gap: 3.6rem; }
+    .grid-auto.gutter-40-l, .grid-12.gutter-40-l, .grid-16.gutter-40-l { grid-gap: 4.0rem; }
+
+    .grid-auto.gutter-row-0-l,  .grid-12.gutter-row-0-l,  .grid-16.gutter-row-0-l { grid-row-gap: 0rem; }
+    .grid-auto.gutter-row-8-l,  .grid-12.gutter-row-8-l,  .grid-16.gutter-row-8-l { grid-row-gap: 0.8rem; }
+    .grid-auto.gutter-row-12-l, .grid-12.gutter-row-12-l, .grid-16.gutter-row-12-l { grid-row-gap: 1.2rem; }
+    .grid-auto.gutter-row-16-l, .grid-12.gutter-row-16-l, .grid-16.gutter-row-16-l { grid-row-gap: 1.6rem; }
+    .grid-auto.gutter-row-20-l, .grid-12.gutter-row-20-l, .grid-16.gutter-row-20-l { grid-row-gap: 2.0rem; }
+    .grid-auto.gutter-row-24-l, .grid-12.gutter-row-24-l, .grid-16.gutter-row-24-l { grid-row-gap: 2.4rem; }
+    .grid-auto.gutter-row-28-l, .grid-12.gutter-row-28-l, .grid-16.gutter-row-28-l { grid-row-gap: 2.8rem; }
+    .grid-auto.gutter-row-32-l, .grid-12.gutter-row-32-l, .grid-16.gutter-row-32-l { grid-row-gap: 3.2rem; }
+    .grid-auto.gutter-row-36-l, .grid-12.gutter-row-36-l, .grid-16.gutter-row-36-l { grid-row-gap: 3.6rem; }
+    .grid-auto.gutter-row-40-l, .grid-12.gutter-row-40-l, .grid-16.gutter-row-40-l { grid-row-gap: 4.0rem; }
+
+    .grid-auto.gutter-col-0-l,  .grid-12.gutter-col-0-l,  .grid-16.gutter-col-0-l { grid-column-gap: 0rem; }
+    .grid-auto.gutter-col-8-l,  .grid-12.gutter-col-8-l,  .grid-16.gutter-col-8-l { grid-column-gap: 0.8rem; }
+    .grid-auto.gutter-col-12-l, .grid-12.gutter-col-12-l, .grid-16.gutter-col-12-l { grid-column-gap: 1.2rem; }
+    .grid-auto.gutter-col-16-l, .grid-12.gutter-col-16-l, .grid-16.gutter-col-16-l { grid-column-gap: 1.6rem; }
+    .grid-auto.gutter-col-20-l, .grid-12.gutter-col-20-l, .grid-16.gutter-col-20-l { grid-column-gap: 2.0rem; }
+    .grid-auto.gutter-col-24-l, .grid-12.gutter-col-24-l, .grid-16.gutter-col-24-l { grid-column-gap: 2.4rem; }
+    .grid-auto.gutter-col-28-l, .grid-12.gutter-col-28-l, .grid-16.gutter-col-28-l { grid-column-gap: 2.8rem; }
+    .grid-auto.gutter-col-32-l, .grid-12.gutter-col-32-l, .grid-16.gutter-col-32-l { grid-column-gap: 3.2rem; }
+    .grid-auto.gutter-col-36-l, .grid-12.gutter-col-36-l, .grid-16.gutter-col-36-l { grid-column-gap: 3.6rem; }
+    .grid-auto.gutter-col-40-l, .grid-12.gutter-col-40-l, .grid-16.gutter-col-40-l { grid-column-gap: 4.0rem; }
+
+    .grid-auto .col-2-l,  .grid-12 .col-2-l,  .grid-16 .col-2-l { grid-column: span 2; }
+    .grid-auto .col-3-l,  .grid-12 .col-3-l,  .grid-16 .col-3-l { grid-column: span 3; }
+    .grid-auto .col-4-l,  .grid-12 .col-4-l,  .grid-16 .col-4-l { grid-column: span 4; }
+    .grid-auto .col-5-l,  .grid-12 .col-5-l,  .grid-16 .col-5-l { grid-column: span 5; }
+    .grid-auto .col-6-l,  .grid-12 .col-6-l,  .grid-16 .col-6-l { grid-column: span 6; }
+    .grid-auto .col-7-l,  .grid-12 .col-7-l,  .grid-16 .col-7-l { grid-column: span 7; }
+    .grid-auto .col-8-l,  .grid-12 .col-8-l,  .grid-16 .col-8-l { grid-column: span 8; }
+    .grid-auto .col-9-l,  .grid-12 .col-9-l,  .grid-16 .col-9-l { grid-column: span 9; }
+    .grid-auto .col-10-l, .grid-12 .col-10-l, .grid-16 .col-10-l { grid-column: span 10; }
+    .grid-auto .col-11-l, .grid-12 .col-11-l, .grid-16 .col-11-l { grid-column: span 11; }
+    .grid-auto .col-12-l, .grid-12 .col-12-l, .grid-16 .col-12-l { grid-column: span 12; }
+    .grid-auto .col-13-l, .grid-12 .col-13-l, .grid-16 .col-13-l { grid-column: span 13; }
+    .grid-auto .col-14-l, .grid-12 .col-14-l, .grid-16 .col-14-l { grid-column: span 14; }
+    .grid-auto .col-15-l, .grid-12 .col-15-l, .grid-16 .col-15-l { grid-column: span 15; }
+    .grid-auto .col-16-l, .grid-12 .col-16-l, .grid-16 .col-16-l { grid-column: span 16; }
+
+    .grid-auto .row-2-l,  .grid-12 .row-2-l,  .grid-16 .row-2-l { grid-row: span 2; }
+    .grid-auto .row-3-l,  .grid-12 .row-3-l,  .grid-16 .row-3-l { grid-row: span 3; }
+    .grid-auto .row-4-l,  .grid-12 .row-4-l,  .grid-16 .row-4-l { grid-row: span 4; }
+    .grid-auto .row-5-l,  .grid-12 .row-5-l,  .grid-16 .row-5-l { grid-row: span 5; }
+    .grid-auto .row-6-l,  .grid-12 .row-6-l,  .grid-16 .row-6-l { grid-row: span 6; }
+    .grid-auto .row-7-l,  .grid-12 .row-7-l,  .grid-16 .row-7-l { grid-row: span 7; }
+    .grid-auto .row-8-l,  .grid-12 .row-8-l,  .grid-16 .row-8-l { grid-row: span 8; }
+    .grid-auto .row-9-l,  .grid-12 .row-9-l,  .grid-16 .row-9-l { grid-row: span 9; }
+    .grid-auto .row-10-l, .grid-12 .row-10-l, .grid-16 .row-10-l { grid-row: span 10; }
+    .grid-auto .row-11-l, .grid-12 .row-11-l, .grid-16 .row-11-l { grid-row: span 11; }
+    .grid-auto .row-12-l, .grid-12 .row-12-l, .grid-16 .row-12-l { grid-row: span 12; }
+    .grid-auto .row-13-l, .grid-12 .row-13-l, .grid-16 .row-13-l { grid-row: span 13; }
+    .grid-auto .row-14-l, .grid-12 .row-14-l, .grid-16 .row-14-l { grid-row: span 14; }
+    .grid-auto .row-15-l, .grid-12 .row-15-l, .grid-16 .row-15-l { grid-row: span 15; }
+    .grid-auto .row-16-l, .grid-12 .row-16-l, .grid-16 .row-16-l { grid-row: span 16; }
+    .grid-auto .row-17-l, .grid-12 .row-17-l, .grid-16 .row-17-l { grid-row: span 17; }
+    .grid-auto .row-18-l, .grid-12 .row-18-l, .grid-16 .row-18-l { grid-row: span 18; }
+    .grid-auto .row-19-l, .grid-12 .row-19-l, .grid-16 .row-19-l { grid-row: span 19; }
+    .grid-auto .row-20-l, .grid-12 .row-20-l, .grid-16 .row-20-l { grid-row: span 20; }
+
+    .grid-auto .self-start-l, .grid-12 .self-start-l, .grid-16 .self-start-l { align-self: start; }
+    .grid-auto .self-end-l, .grid-12 .self-end-l, .grid-16 .self-end-l { align-self: end; }
+    .grid-auto .self-center-l, .grid-12 .self-center-l, .grid-16 .self-center-l { align-self: center; }
+    .grid-auto .self-stretch-l, .grid-12 .self-stretch-l, .grid-16 .self-stretch-l { align-self: stretch; }
+    .grid-auto .self-baseline-l, .grid-12 .self-baseline-l, .grid-16 .self-baseline-l { align-self: baseline; }
+    .grid-auto .self-first-baseline-l, .grid-12 .self-first-baseline-l, .grid-16 .self-first-baseline-l { align-self: first baseline; }
+    .grid-auto .self-last-baseline-l, .grid-12 .self-last-baseline-l, .grid-16 .self-last-baseline-l { align-self: last baseline; }
+}

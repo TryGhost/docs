@@ -7,15 +7,15 @@ const listItemClass = `mb2 lh-1-65` // Probably should go to spirit-styles.js
 
 // Empty for now...
 const Footer = () => (
-    <footer className="pt-vw2 pb-vw3 bt b--whitegrey">
-        <section className={ Spirit.page.xl + `grid-12 gutter-32`}>
+    <footer className="pt-vw6 pt-vw2-l pb-vw3 bt b--whitegrey">
+        <section className={ Spirit.page.xl + `grid-12 gutter-row-20 gutter-32-l`}>
 
-            <div className="col-3">
+            <div className="col-12 col-3-l">
                 <a href="https://ghost.org"><Logo /></a>
                 <p className={ Spirit.tiny + `mt1 midgrey` }>Ghost Foundation &copy; 2008 - 2018</p>
             </div>
 
-            <div className="col-3">
+            <div className="col-12 col-3-l">
                 <h3 className={ Spirit.h5 + `col-8` }>Setup</h3>
                 <div>
                     <ul className="f7 list pa0 ma0 mt3 mr20">
@@ -28,7 +28,7 @@ const Footer = () => (
                 </div>
             </div>
 
-            <div className="col-3">
+            <div className="col-12 col-3-l">
                 <h3 className={ Spirit.h5 + `col-8` }>API</h3>
                 <div>
                     <ul className="f7 list pa0 ma0 mt3 mr20">
@@ -40,7 +40,7 @@ const Footer = () => (
                 </div>
             </div>
 
-            <div className="col-3">
+            <div className="col-12 col-3-l">
                 <h3 className={ Spirit.h5 + `col-8` }>Contact</h3>
                 <ul className="f7 list pa0 ma0 mt3">
                     <li className={ listItemClass }><a href="https://forum.ghost.org" className="link midgrey dim">Forum</a></li>
