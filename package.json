@@ -22,7 +22,7 @@
     "eslint-plugin-ghost": "0.0.27",
     "eslint-plugin-react": "^7.11.1",
     "gatsby-plugin-postcss": "^2.0.0",
-    "ghost-spirit": "0.0.46",
+    "ghost-spirit": "0.0.47",
     "mocha": "^5.2.0",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-custom-media": "^7.0.4",
