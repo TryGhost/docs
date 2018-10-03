@@ -3,10 +3,11 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 function SidebarLink(props) {
-    const { link, title } = props
-    // TODO: get the location here somehow from the router (why does this.props.location not work?)
-    // const linkClasses = window.location.pathname === link ? `blue fw6` : `midgrey`
-    const linkClasses = `midgrey`
+    const { link, title, location } = props
+    if (!location) {
+        location = {pathname: `/`}
+    }
+    const linkClasses = location.pathname === link ? `blue fw6` : `midgrey`
 
     if (link.match(/^\s?http(s?)/gi)) {
         return (
@@ -25,7 +26,7 @@ SidebarLink.propTypes = {
 }
 
 function SidebarList(props) {
-    const { item } = props
+    const { item, location } = props
 
     if (item.items && item.items.length) {
         // CASE: the section title does not have a link, but it has child items, so we take the
@@ -34,15 +35,15 @@ function SidebarList(props) {
 
         return (
             <li className="mb6">
-                <h4 className="fw4"><SidebarLink link={autoLink} title={item.title} /></h4>
+                <h4 className="fw4"><SidebarLink link={autoLink} title={item.title} location={location} /></h4>
                 <ul className="list ma0 pa0 ml6">
-                    {item.items.map((nestedLink, i) => <SidebarList key={i} item={nestedLink} />)}
+                    {item.items.map((nestedLink, i) => <SidebarList key={i} item={nestedLink} location={location} />)}
                 </ul>
             </li>
         )
     } else {
         return (
-            <li className="mb4"><SidebarLink link={item.link} title={item.title} /></li>
+            <li className="mb4"><SidebarLink link={item.link} title={item.title} location={location} /></li>
         )
     }
 }
@@ -54,28 +55,26 @@ SidebarList.propTypes = {
 // TODO: show only first level links by default, expand on click
 // TODO: create special treatment options for titles that have a `*`
 
-const SidebarNav = (props) => {
-    const { sidebar } = props
-    const [sidebarfile] = sidebar ? require(`../../data/sidebars/${sidebar}.yaml`) : []
+class SidebarNav extends React.Component {
+    render() {
+        const { sidebar, location } = this.props
+        const [sidebarfile] = sidebar ? require(`../../data/sidebars/${sidebar}.yaml`) : []
 
-    if (!sidebarfile) {
-        return null
+        if (!sidebarfile) {
+            return null
+        }
+
+        return (
+            <>
+                <nav className="mr5 miw50">
+                    <h3 className="f8 ttu fw6 pa0 ma0 measure-0-4 pb2">{sidebarfile.title}</h3>
+                    <ul className="ma0 pa0 list mt4 f8">
+                        {sidebarfile.items.map((item, i) => <SidebarList key={i} item={item} location={location} />)}
+                    </ul>
+                </nav>
+            </>
+        )
     }
-
-    return (
-        <>
-            <nav className="mr5 miw50">
-                <h3 className="f8 ttu fw6 pa0 ma0 measure-0-4 pb2">{sidebarfile.title}</h3>
-                <ul className="ma0 pa0 list mt4 f8">
-                    {sidebarfile.items.map((item, i) => <SidebarList key={i} item={item} />)}
-                </ul>
-            </nav>
-        </>
-    )
-}
-
-SidebarNav.propTypes = {
-    sidebar: PropTypes.string,
 }
 
 export default SidebarNav
