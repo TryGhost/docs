@@ -2,13 +2,13 @@ require(`dotenv`).config({
     path: `.env.${process.env.NODE_ENV}`,
 })
 
-const postcssCustomMedia = require(`postcss-custom-media`)
-const autoprefixer = require(`autoprefixer`)
-const cssVariables = require(`postcss-css-variables`)
-const colorModFunction = require(`postcss-color-mod-function`)
-// const cssNano = require(`cssnano`)
-const customProperties = require(`postcss-custom-properties`)
-const easyImport = require(`postcss-easy-import`)
+// const postcssCustomMedia = require(`postcss-custom-media`)
+// const autoprefixer = require(`autoprefixer`)
+// const cssVariables = require(`postcss-css-variables`)
+// const colorModFunction = require(`postcss-color-mod-function`)
+// // const cssNano = require(`cssnano`)
+// const customProperties = require(`postcss-custom-properties`)
+// const easyImport = require(`postcss-easy-import`)
 
 module.exports = {
     siteMetadata: {
@@ -86,20 +86,20 @@ module.exports = {
                 clientSecret: `${process.env.GH_CLIENT_SECRET}`,
             },
         },
-        {
-            resolve: `gatsby-plugin-postcss`,
-            options: {
-                postCssPlugins: [
-                    autoprefixer({ browsers: [`last 2 versions`] }),
-                    easyImport(),
-                    cssVariables(),
-                    colorModFunction(),
-                    customProperties({ preserve: false }),
-                    postcssCustomMedia(),
-                    // cssNano({ zindex: false }),
-                ],
-            },
-        },
+        // {
+        //     resolve: `gatsby-plugin-postcss`,
+        //     options: {
+        //         postCssPlugins: [
+        //             autoprefixer({ browsers: [`last 2 versions`] }),
+        //             easyImport(),
+        //             cssVariables(),
+        //             colorModFunction(),
+        //             customProperties({ preserve: false }),
+        //             postcssCustomMedia(),
+        //             // cssNano({ zindex: false }),
+        //         ],
+        //     },
+        // },
         {
             resolve: `gatsby-plugin-react-svg`,
             options: {
