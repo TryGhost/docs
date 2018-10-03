@@ -43,7 +43,8 @@ const IndexPage = () => (
                 <h1 className="ma0 pa0 f-headline middarkgrey mt4">Ghost Documentation</h1>
                 <div className="pa4 pl5 pr5 mt6 w-100 mw-s f4 br-pill bg-white shadow-3 center flex items-center justify-between">
                     <Icon name="search" className="fill-lightgrey-d2 h6" />
-                    <input id="search" className="input-reset form-text ba b--transparent flex-auto ml2" type="text" placeholder="Search documentation..." name="query" autoComplete="off" />
+                    <label htmlFor="homesearch" className="dn">Search</label>
+                    <input id="homesearch" name="homesearch" className="input-reset form-text ba b--transparent flex-auto ml2" type="text" placeholder="Search documentation..." autoComplete="off" />
                 </div>
             </div>
 

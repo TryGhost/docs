@@ -53,7 +53,8 @@ class NavBar extends React.Component {
                 </div>
                 <div className="flex flex-auto flex-nowrap justify-end items-center">
                     <div className="relative">
-                        <input name="foo" type="text" className={ theme.searchBox + ` f8 pa2 pl4 pr4 ba f8 fw4 br3 whitney form-text bn br-pill sidebar-min-width dn db-l` } placeholder="Search Ghost docs..." />
+                        <label htmlFor="globalnavsearch" className="dn">Search</label>
+                        <input id="globalnavsearch" name="globalnavsearch" type="text" className={ theme.searchBox + ` f8 pa2 pl4 pr4 ba f8 fw4 br3 whitney form-text bn br-pill sidebar-min-width dn db-l` } placeholder="Search Ghost docs..." />
                     </div>
                 </div>
             </nav>
