@@ -26,7 +26,7 @@ function FAQQuestion(props) {
 
 var mainBoxStyles = {
     box: `col-12 col-4-ns pa5 pa10-l pt6-l flex flex-column justify-between tdn`,
-    title: Spirit.h4 + `mt0 mt2-ns darkgrey - l2`,
+    title: Spirit.h4 + `mt0 mt2-ns darkgrey-l2`,
 }
 
 var apiBoxStyles = {

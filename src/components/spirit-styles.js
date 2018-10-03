@@ -11,15 +11,15 @@ export const Spirit = {
     // Generic typography
     headline: ` f-headline lh-h1 fw6 ma0 measure--1-0 `,
     thinheadline: ` f-headline lh-h1 fw3 ma0 measure--1-0 `,
-    h1: ` f2 f1-ns lh-h1 fw3 ma0 pa0 measure--0-2 `,
-    h2: ` f3 f2-ns lh-h2 fw6 ma0 pa0 `,
-    h3: ` f4 f3-ns lh-h3 fw5 ma0 pa0 measure--0-2 `,
-    h4: ` f5 f4-ns lh-h4 fw5 ma0 pa0 `,
-    h5: ` f6 f5-ns lh-h5 fw6 ma0 pa0 `,
-    h6: ` f7 f6-ns lh-h6 fw6 ttu ma0 pa0 measure-0-2 `,
+    h1: ` f1 lh-h1 fw3 ma0 pa0 measure--0-2 `,
+    h2: ` f2 lh-h2 fw6 ma0 pa0 `,
+    h3: ` f3 lh-h3 fw5 ma0 pa0 measure--0-2 `,
+    h4: ` f4 lh-h4 fw5 ma0 pa0 `,
+    h5: ` f5 lh-h5 fw6 ma0 pa0 `,
+    h6: ` f6 lh-h6 fw6 ttu ma0 pa0 measure-0-2 `,
     excerpt: ` f4 lh-h4 ma0 pa0 fw3 `,
-    p: ` f6 f5-ns lh-p ma0 pa0 `,
-    small: ` f-supersmall f8-ns lh-p ma0 pa0 `,
+    p: ` f5 lh-p ma0 pa0 `,
+    small: ` f8 lh-p ma0 pa0 `,
     tiny: ` f-supersmall lh-tiny ma0 pa0 `,
 
     // Sections
