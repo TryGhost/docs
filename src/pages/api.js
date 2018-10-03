@@ -1,13 +1,13 @@
-import Layout from '../../components/layouts/default'
+import Layout from '../components/layouts/default'
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Spirit } from '../../components/spirit-styles'
-import Box from '../../components/layouts/partials/box'
-import Icon from '../../components/global/icon'
+import { Spirit } from '../components/spirit-styles'
+import Box from '../components/layouts/partials/box'
+import Icon from '../components/global/icon'
 
-import bgapi from '../../images/api-bg.svg' // eslint-disable-line no-unused-vars
+import bgapi from '../images/api-bg.svg' // eslint-disable-line no-unused-vars
 
-import GoLogo from '../../images/go-logo.png'
+import GoLogo from '../images/go-logo.png'
 
 const sectionStyles = {
     container: `grid-12 mt-vw4 mt-vw4-ns`,

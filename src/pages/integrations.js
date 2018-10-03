@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Layout from '../../components/layouts/default'
-import Integration from '../../components/integration'
-import { Spirit } from '../../components/spirit-styles'
-import IntegrationsHeader from '../../components/layouts/partials/integrations-header'
+import Layout from '../components/layouts/default'
+import Integration from '../components/integration'
+import { Spirit } from '../components/spirit-styles'
+import IntegrationsHeader from '../components/layouts/partials/integrations-header'
 
 const IntegrationsPage = ({ data }) => {
     const posts = data.allGhostPost.edges

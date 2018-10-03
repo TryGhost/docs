@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Layout from '../../components/layouts/default'
-import PostCard from '../../components/postcard'
-import { Spirit } from '../../components/spirit-styles'
-import SectionHeading from '../../components/layouts/partials/section-heading'
+import Layout from '../components/layouts/default'
+import PostCard from '../components/postcard'
+import { Spirit } from '../components/spirit-styles'
+import SectionHeading from '../components/layouts/partials/section-heading'
 
 const TutorialsPage = ({ data }) => {
     const posts = data.allGhostPost.edges

@@ -1,9 +1,9 @@
-import Layout from '../../components/layouts/default'
+import Layout from '../components/layouts/default'
 import React from 'react'
-import Icon from '../../components/global/icon'
+import Icon from '../components/global/icon'
 
 import { Link } from 'gatsby'
-import { Spirit } from '../../components/spirit-styles.js'
+import { Spirit } from '../components/spirit-styles'
 
 const SetupIndexPage = () => (
     <Layout title="API" mainClass="bg-whitegrey-l2 pb-vw3" bodyClass="bg-white">

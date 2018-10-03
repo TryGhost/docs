@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Layout from '../../components/layouts/default'
-import FAQ from '../../components/faq'
-import { Spirit } from '../../components/spirit-styles'
+import Layout from '../components/layouts/default'
+import FAQ from '../components/faq'
+import { Spirit } from '../components/spirit-styles'
 
 const FAQPage = ({ data }) => {
     const posts = data.allGhostPost.edges
