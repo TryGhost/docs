@@ -6,7 +6,7 @@
       link: /api/v2/handlebars-themes/context/
       items:
         - title: Index
-          link: /api/v2/handlebars-themes/context/the-index/
+          link: /api/v2/handlebars-themes/context/index/
         - title: Post
           link: /api/v2/handlebars-themes/context/post/
         - title: Page

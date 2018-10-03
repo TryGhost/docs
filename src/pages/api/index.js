@@ -65,7 +65,7 @@ const APIPage = () => (
                     <p className={ Spirit.p + `midgrey-l2` }>Frameworks for working with the Ghost API to build a publication website</p>
                 </div>
                 <div className={ sectionStyles.cardContainer }>
-                    <Card to="/" icon="handlebars-logo">Handlebars</Card>
+                    <Card to="/api/v2/handlebars-themes/" icon="handlebars-logo">Handlebars</Card>
                     <Card to="/" icon="gatsby-logo">Gatsby</Card>
                     <Card to="/" icon="hugo-logo">Hugo</Card>
                 </div>
