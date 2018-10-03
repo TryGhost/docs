@@ -1,9 +1,8 @@
 import React from 'react'
-import SectionHeading from '../../../components/layouts/partials/section-heading';
+import SectionHeading from '../../../components/layouts/partials/section-heading'
 
 import Layout from '../../../components/layouts/default'
 import { Spirit } from '../../../components/spirit-styles'
-import { Link } from 'gatsby'
 import Box from '../../../components/layouts/partials/box'
 
 const Page = () => (
@@ -53,7 +52,7 @@ const Page = () => (
                     <Box elevation="1" radius="3" className="pa10 pt20 pb20 mb4"></Box>
                     <code className="language-text">{ `<Box radius="3">...</Box>` }</code>
                 </div>
-                
+
                 <div className="flex-auto mr10">
                     <Box elevation="1" radius="4" className="pa10 pt20 pb20 mb4"></Box>
                     <code className="language-text">{ `<Box radius="4">...</Box>` }</code>
@@ -92,7 +91,7 @@ const Page = () => (
                 <h1 className={ Spirit.h3 }>Property: onWhite</h1>
 
                 <p className={ Spirit.p + `mt4` }>Usage: <code className="language-text">{ `<Box onWhite="true">...</Box>` }</code>. Boxes have slighly different shadow properties on white backgrounds.</p>
-            
+
                 <div className="flex justify-between mt8">
                     <Box elevation="1" radius="4" onWhite="true" className="pa10 pt17 pb17 mb4 blue tc tdn flex-auto mr10" href="/">
                         <span className="midgrey">Click me</span>

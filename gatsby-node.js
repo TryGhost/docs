@@ -129,6 +129,10 @@ exports.createPages = ({ graphql, actions }) => {
         }
         `).then((result) => {
             result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+                if (node.fields.slug.match(/readme\/$/i)) {
+                    return resolve()
+                }
+
                 // Exclude the default README.md pages from the api docs repo
                 if (!node.fields.slug.match(/readme\/$/i)) {
                     var pathSrc = `./src/templates/doc-navigation-toc.js`
@@ -154,13 +158,10 @@ exports.createPages = ({ graphql, actions }) => {
                         },
                     })
                 }
+                return resolve()
             })
-            resolve()
-        }).catch(() => {
-            resolve()
-        })
+        }).catch(() => resolve())
     })
 
     return Promise.all([loadFAQPosts, loadTutorialPosts, loadIntegrations, createMDPages])
 }
-
