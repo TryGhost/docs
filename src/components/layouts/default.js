@@ -8,8 +8,8 @@ import Header from './partials/header'
 import Footer from './partials/footer'
 
 // Spirit
-import 'ghost-spirit/public/spirit-brand.css'
-import '../css/custom.css'
+// import 'ghost-spirit/public/spirit-brand.css'
+import '../css/app.css'
 
 // Additional styles
 import '../css/prism.css'

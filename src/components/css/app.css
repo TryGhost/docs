@@ -1,0 +1,14 @@
+/* TODO: these variables is copied from Spirit. Have to fix redundancy! */
+/* TODO: apply postcss */
+@import "ghost-spirit/public/spirit-brand.css";
+
+@import "colors.css";
+@import "typography.css";
+@import "post-content.css";
+
+/* Stuff that needs to be in Spirit/Brand */
+/* ----------------------------------------------------------------------- */
+
+@import "_media-queries.css";
+@import "_type-scale.css";
+@import "custom.css";
