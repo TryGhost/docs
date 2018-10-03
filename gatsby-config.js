@@ -6,7 +6,7 @@ const postcssCustomMedia = require(`postcss-custom-media`)
 const autoprefixer = require(`autoprefixer`)
 const cssVariables = require(`postcss-css-variables`)
 const colorModFunction = require(`postcss-color-mod-function`)
-const cssNano = require(`cssnano`)
+// const cssNano = require(`cssnano`)
 const customProperties = require(`postcss-custom-properties`)
 const easyImport = require(`postcss-easy-import`)
 
@@ -96,7 +96,7 @@ module.exports = {
                     colorModFunction(),
                     customProperties({ preserve: false }),
                     postcssCustomMedia(),
-                    cssNano({ zindex: false }),
+                    // cssNano({ zindex: false }),
                 ],
             },
         },
