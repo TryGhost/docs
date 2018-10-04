@@ -2,54 +2,94 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-function SidebarLink(props) {
-    const { link, title, location } = props
-    if (!location) {
-        location = {pathname: `/`}
+// TODO: find a way to prevent duplicated active links. Propably passing states to the
+// parent component.
+class SidebarLink extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            isActive: null,
+            linkClasses: `midgrey`
+        }
+        this.setActiveLink = this.setActiveLink.bind(this)
     }
-    const linkClasses = location.pathname === link ? `blue fw6` : `midgrey`
 
-    if (link.match(/^\s?http(s?)/gi)) {
-        return (
-            <a href={link} className="link midgrey" target="_blank" rel="noopener noreferrer">{title}</a>
-        )
-    } else {
-        return (
-            <Link to={link} className={`link ` + linkClasses}>{title}</Link>
-        )
+    setActiveLink() {
+        console.log('Set active link: ', this.props.link);
+        this.setState({ isActive: this.props.link, linkClasses: `blue fw6` })
+    }
+
+    render() {
+        if (this.props.link.match(/^\s?http(s?)/gi)) {
+            return (
+                <a href={this.props.link} className="link midgrey" target="_blank" rel="noopener noreferrer">{this.props.title}</a>
+            )
+        } else {
+            return (
+                <Link to={this.props.link} className={`link ` + this.state.linkClasses}>{this.props.title}</Link>
+            )
+        }
+    }
+
+    componentDidMount() {
+        if (this.props.location.pathname === this.props.link) {
+            this.setActiveLink(this.props.link)
+        }
     }
 }
 
 SidebarLink.propTypes = {
-    link: PropTypes.string,
-    title: PropTypes.string,
+    link: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    location: PropTypes.object.isRequired,
 }
 
-function SidebarList(props) {
-    const { item, location } = props
+SidebarLink.defaultProps = {
+    location: {path: `/`}
+}
 
-    if (item.items && item.items.length) {
-        // CASE: the section title does not have a link, but it has child items, so we take the
-        // first link we find from the child item
-        const autoLink = item.link || item.items[0].link
-
-        return (
-            <li className="mb6">
-                <h4 className="fw4"><SidebarLink link={autoLink} title={item.title} location={location} /></h4>
-                <ul className="list ma0 pa0 ml6">
-                    {item.items.map((nestedLink, i) => <SidebarList key={i} item={nestedLink} location={location} />)}
-                </ul>
-            </li>
-        )
-    } else {
-        return (
-            <li className="mb4"><SidebarLink link={item.link} title={item.title} location={location} /></li>
-        )
+class SidebarList extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            expandedSidebarList: false,
+        }
+        this.toggleExpandedSidebarList = this.toggleExpandedSidebarList.bind(this)
     }
-}
+    toggleExpandedSidebarList() {
+        this.setState({ expandedSidebarList: !this.state.expandedSidebarList, })
+    }
 
-SidebarList.propTypes = {
-    item: PropTypes.object,
+    render() {
+        const { item, location } = this.props
+        const level = this.props.level || 0
+        // console.log('TCL: SidebarList -> render -> level', level);
+
+        if (item.items && item.items.length) {
+            // CASE: the section title does not have a link, but it has child items, so we take the
+            // first link we find from the child item
+            const autoLink = item.link || item.items[0].link
+            // const isFirstLevel = level >= 1 ? true : false
+
+
+            return (
+                <li className="mb6">
+                    <h4 className="fw4"
+                        // onClick={`${isFirstLevel} ? '' : ${this.toggleExpandedSidebarList}`}
+                    >
+                        <SidebarLink link={autoLink} title={item.title} location={location} />
+                    </h4>
+                    <ul className={`list ma0 pa0 ml6 ${!this.state.expandedSidebarList ? '' : ''}`}>
+                        {item.items.map((nestedLink, i) => <SidebarList key={i} item={nestedLink} location={location} level={level + 1} />)}
+                    </ul>
+                </li>
+            )
+        } else {
+            return (
+                <li className="mb4"><SidebarLink link={item.link} title={item.title} location={location} /></li>
+            )
+        }
+    }
 }
 
 // TODO: show only first level links by default, expand on click
