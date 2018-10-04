@@ -8,14 +8,15 @@ _[Note: This project is in active early development and is not suitable for publ
 
 ## Installation
 1. `git clone` this repo & `cd` into it as usual
-1. Run `npm i -g gatsby@2.0.0`
-1. Run `yarn` to install top-level dependencies.
-1. Copy the existing `.env.example` file as `.env.development` and insert your API key (`client_secret`)
+1. `npm install --global gatsby-cli` to install Gatsby
+1. `yarn` to install top-level dependencies.
+1. Copy `.env.example` to `.env.development` and insert Ghost API key
+
 
 ## Run
-- Use: `yarn dev`
+- `yarn dev`
 - View: [http://localhost:8000](http://localhost:8000)
-- GraphiQL in-browser GraphQL IDE: [http://localhost:8000/___graphql](http://localhost:8000/___graphql)
+
 
 ## Markdown content
 
