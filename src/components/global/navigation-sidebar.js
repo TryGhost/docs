@@ -5,19 +5,6 @@ import { Link } from 'gatsby'
 // TODO: find a way to prevent duplicated active links. Propably passing states to the
 // parent component.
 class SidebarLink extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            isActive: null,
-            linkClasses: `midgrey`,
-        }
-        this.setActiveLink = this.setActiveLink.bind(this)
-    }
-
-    setActiveLink() {
-        this.setState({ isActive: this.props.link, linkClasses: `blue fw6` })
-    }
-
     render() {
         if (this.props.link.match(/^\s?http(s?)/gi)) {
             return (
@@ -25,14 +12,8 @@ class SidebarLink extends React.Component {
             )
         } else {
             return (
-                <Link to={this.props.link} className={`link ` + this.state.linkClasses}>{this.props.title}</Link>
+                <Link to={this.props.link} className={`link ` + this.props.linkClasses}>{this.props.title}</Link>
             )
-        }
-    }
-
-    componentDidMount() {
-        if (this.props.location.pathname === this.props.link) {
-            this.setActiveLink(this.props.link)
         }
     }
 }
@@ -40,50 +21,101 @@ class SidebarLink extends React.Component {
 SidebarLink.propTypes = {
     link: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    location: PropTypes.object.isRequired,
+    linkClasses: PropTypes.string.isRequired,
 }
 
 class SidebarList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            expandedSidebarList: false,
+            sidebarListClasses: `dn`,
+            activeLinkId: ``,
+            linkClasses: `midgrey`,
         }
-        this.toggleExpandedSidebarList = this.toggleExpandedSidebarList.bind(this)
+        this.extendSidebar = this.extendSidebar.bind(this)
+        this.setActiveLink = this.setActiveLink.bind(this)
     }
-    toggleExpandedSidebarList() {
-        this.setState({ expandedSidebarList: !this.state.expandedSidebarList })
+
+    setActiveLink() {
+        this.setState((state, props) => {
+            return { activeLinkId: props.id, linkClasses: `blue fw6` }
+        })
+    }
+
+    extendSidebar() {
+        this.setState({ sidebarListClasses: `db` })
     }
 
     render() {
-        const { item, location } = this.props
-        const level = this.props.level || 0
-        // console.log('TCL: SidebarList -> render -> level', level);
+        let level = this.props.newLevel || 1
+        const hasChildren = this.props.item.items && this.props.item.items.length
 
-        if (item.items && item.items.length) {
+        if (hasChildren) {
             // CASE: the section title does not have a link, but it has child items, so we take the
             // first link we find from the child item
-            const autoLink = item.link || item.items[0].link
-            // const isFirstLevel = level >= 1 ? true : false
+            const autoLink = this.props.item.link || this.props.item.items[0].link
+            const childrenLevel = level += 1
+            const sideBarClass = this.props.expandSidebar || this.state.sidebarListClasses
 
             return (
-                <li className="mb6">
-                    <h4 className="fw4"
-                        // onClick={`${isFirstLevel} ? '' : ${this.toggleExpandedSidebarList}`}
-                    >
-                        <SidebarLink link={autoLink} title={item.title} location={location} />
+                <li className="mb6" onClick={this.extendSidebar}>
+                    <h4 className="fw4">
+                        <SidebarLink
+                            link={autoLink}
+                            title={this.props.item.title}
+                            linkClasses={this.state.linkClasses}
+                        />
                     </h4>
-                    <ul className={`list ma0 pa0 ml6 ${!this.state.expandedSidebarList ? `` : ``}`}>
-                        {item.items.map((nestedLink, i) => <SidebarList key={i} item={nestedLink} location={location} level={level + 1} />)}
+                    <ul id={this.props.id} className={`list ma0 pa0 ml6 ${this.state.activeLinkId === this.props.id ? `db` : sideBarClass}`}>
+                        {this.props.item.items.map((nestedLink, i) => (
+                            <SidebarList
+                                key={i}
+                                id={`${this.props.id}-${i}-${nestedLink.title.toLowerCase()}`}
+                                item={nestedLink}
+                                location={this.props.location}
+                                newLevel={childrenLevel}
+                                expandSidebar={`db`}
+                            />
+                        ))}
                     </ul>
                 </li>
             )
         } else {
             return (
-                <li className="mb4"><SidebarLink link={item.link} title={item.title} location={location} /></li>
+                <li className="mb4">
+                    <SidebarLink
+                        link={this.props.item.link}
+                        title={this.props.item.title}
+                        linkClasses={this.state.linkClasses}
+                    />
+                </li>
             )
         }
     }
+
+    componentDidMount() {
+        let activeLinkRegex
+        // Someone will probably kill me for this, but the state will
+        // not get updated immediately, so need this temp helper here
+        // TODO: make this pretty and React.js conform
+        let activeLinkTemp
+
+        // First, find the currently active link
+        if (this.props.location.pathname === this.props.item.link) {
+            activeLinkTemp = this.props.id
+            activeLinkRegex = new RegExp(`^${this.props.id}`)
+            this.setActiveLink()
+        }
+
+        if (activeLinkTemp && activeLinkTemp.match(activeLinkRegex)) {
+            this.extendSidebar()
+        }
+    }
+}
+
+SidebarList.propTypes = {
+    item: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
 }
 
 SidebarList.propTypes = {
@@ -109,7 +141,7 @@ class SidebarNav extends React.Component {
                 <nav className="mr5 miw50">
                     <h3 className="f8 ttu fw6 pa0 ma0 measure-0-4 pb2">{sidebarfile.title}</h3>
                     <ul className="ma0 pa0 list mt4 f8">
-                        {sidebarfile.items.map((item, i) => <SidebarList key={i} item={item} location={location} />)}
+                        {sidebarfile.items.map((item, i) => <SidebarList key={i} id={`${i}-${item.title.toLowerCase()}`} item={item} location={location} />)}
                     </ul>
                 </nav>
             </>
@@ -120,8 +152,8 @@ class SidebarNav extends React.Component {
 export default SidebarNav
 
 SidebarNav.propTypes = {
-    location: PropTypes.object.isRequired,
     sidebar: PropTypes.string.isRequired,
+    location: PropTypes.object.isRequired,
 }
 
 SidebarNav.defaultProps = {
