@@ -30,7 +30,7 @@ var mainBoxStyles = {
 }
 
 var apiBoxStyles = {
-    box: `col-12 col-4-ns pa5 flex items-start justify-start tdn nt3`,
+    box: `col-12 col-4-ns pa5 flex flex-column flex-row-ls items-start justify-start tdn nt0 nt3-ns`,
 }
 
 const IndexPage = () => (
@@ -89,7 +89,7 @@ const IndexPage = () => (
         </div>
 
         <div className="bg-whitegrey-l2 pt-vw4 pt-vw3-ns pb-vw2">
-            <section className={ Spirit.page.xl + `grid-12 gutter-row-20 gutter-36-l` }>
+            <section className={ Spirit.page.xl + `grid-12 gutter-row-20 gutter-36-ns` }>
 
                 <div className="col-12">
                     <Link to="/api/" className={ Spirit.h3 + `link middarkgrey dim` }>API</Link>
@@ -101,7 +101,7 @@ const IndexPage = () => (
                 <Box className={ apiBoxStyles.box } onWhite="false" elevation="1" to="/api/">
                     <span className="dib mr4 mt1 miw10 tc"><Icon name="sdks" className="stroke-midgrey-l2" /></span>
                     <div>
-                        <h4 className={ Spirit.h5 + `middarkgrey` }>Frontend SDKs</h4>
+                        <h4 className={ Spirit.h5 + `middarkgrey mt2 mt0-l` }>Frontend SDKs</h4>
                         <p className={ Spirit.small + `midgrey mt2` }>Frameworks for working with the Ghost API to build a publication website</p>
                     </div>
                 </Box>
@@ -117,14 +117,14 @@ const IndexPage = () => (
                 <Box className={ apiBoxStyles.box } onWhite="false" elevation="1" to="/api/">
                     <span className="dib mr4 mt1 miw10 tc"><Icon name="rest-api" className="stroke-midgrey-l2" /></span>
                     <div>
-                        <h4 className={ Spirit.h5 + `middarkgrey` }>Rest API</h4>
+                        <h4 className={ Spirit.h5 + `middarkgrey mt2 mt0-l` }>Rest API</h4>
                         <p className={ Spirit.small + `midgrey mt2` }>A full reference of API Endpoints</p>
                     </div>
                 </Box>
                 <Box className={ apiBoxStyles.box } onWhite="false" elevation="1" to="/api/">
                     <span className="dib mr4 mt1 miw10 tc"><Icon name="tools" className="stroke-midgrey-l2" /></span>
                     <div>
-                        <h4 className={ Spirit.h5 + `middarkgrey` }>Tools</h4>
+                        <h4 className={ Spirit.h5 + `middarkgrey mt2 mt0-l` }>Tools</h4>
                         <p className={ Spirit.small + `midgrey mt2` }>Utilities to help build and manage Ghost</p>
                     </div>
                 </Box>
