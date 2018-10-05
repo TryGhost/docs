@@ -118,9 +118,10 @@ class SidebarList extends React.Component {
         }
 
         this.props.expandedSidebarLists.forEach((pathRegex) => {
+            const link = this.props.item.link || this.props.item.items[0].link
             // Test against our list of positive urls. When the current link
             // matches any item from the list, the nested list items should be visible
-            if (this.props.item.link.match(pathRegex)) {
+            if (link.match(pathRegex)) {
                 this.extendSidebar()
             }
         })
@@ -132,6 +133,11 @@ SidebarList.propTypes = {
     location: PropTypes.object.isRequired,
     expandedSidebarLists: PropTypes.array.isRequired,
     level: PropTypes.number,
+    autolink: PropTypes.string,
+}
+
+SidebarList.defaultProps = {
+    autolink: ``,
 }
 
 // TODO: create special treatment options for titles that have a `*`
