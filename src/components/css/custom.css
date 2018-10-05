@@ -281,11 +281,11 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 .toc-list-container ol li {
     line-height: 1.65em;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.0rem;
 }
 
 .toc-list-container ol li > ol:first-of-type{
-    margin-top: 1.6rem;
+    margin-top: 1.0rem;
 }
 
 .toc-list-container ol a {
@@ -300,7 +300,8 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 }
 
 .toc-list-container ol li > ol {
-    margin-left: 2.4rem;
+    padding-left: 2.4rem;
+    border-left: 1px solid color-mod(var(--lightgrey-l2) l(+6%));
 }
 
 .toc-list-container .is-active-link {

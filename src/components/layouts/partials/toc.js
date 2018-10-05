@@ -20,9 +20,9 @@ class TOC extends React.Component {
     render() {
         return (
             <>
-                <nav className="pl10 miw50 nr5 sticky top-25">
-                    <h3 className="f8 fw4 measure-0-4 ma0 pa0 ttu pb2 fw6">On this page</h3>
-                    <div className="toc-list-container"></div>
+                <nav className="pl6 miw50 nr5 sticky top-25">
+                    <h3 className="f4 midlightgrey measure-0-2 ma0 pa0 pb2 fw4 mt8 nudge-bottom--2">On this page</h3>
+                    <div className="toc-list-container mt3"></div>
                 </nav>
             </>
         )

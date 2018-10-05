@@ -726,7 +726,7 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 
 .gatsby-highlight {
-    max-width: 100%;
+    max-width: 0;
 }
 
 code,

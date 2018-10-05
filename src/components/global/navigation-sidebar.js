@@ -38,7 +38,7 @@ class SidebarLink extends React.Component {
 
         if (this.props.link.match(/^\s?http(s?)/gi)) {
             return (
-                <a href={this.props.link} className="link midgrey" target="_blank" rel="noopener noreferrer">{title}</a>
+                <a href={this.props.link} className="link middarkgrey" target="_blank" rel="noopener noreferrer">{title}</a>
             )
         } else {
             return (
@@ -59,7 +59,7 @@ class SidebarList extends React.Component {
         super(props)
         this.state = {
             sidebarListClasses: `dn`,
-            linkClasses: `midgrey`,
+            linkClasses: `middarkgrey-l1`,
         }
         this.extendSidebar = this.extendSidebar.bind(this)
         this.setActiveLink = this.setActiveLink.bind(this)
@@ -84,7 +84,7 @@ class SidebarList extends React.Component {
         const hideNestedItems = isSecondLevel
 
         // Update the classes here for first level items
-        const firstLevelClasses = `f4 lh-h2 fw4 ma0 pa0`
+        const firstLevelClasses = `f4 lh-h4 fw4 ma0 pa0`
 
         if (hasNestedItems) {
             // A section can not have a link on its own. In this case, we grab the
@@ -93,7 +93,7 @@ class SidebarList extends React.Component {
             const childrenLevel = level += 1
 
             return (
-                <li className="mb6">
+                <li className="mt4">
                     <h4 className={`${isFirstLevel ? firstLevelClasses : `fw4`}`}>
                         <SidebarLink
                             link={autoLink}
@@ -101,7 +101,7 @@ class SidebarList extends React.Component {
                             linkClasses={this.state.linkClasses}
                         />
                     </h4>
-                    <ul className={`list ma0 pa0 ml6 ${hideNestedItems ? this.state.sidebarListClasses : `db`}`}>
+                    <ul className={`list ma0 pa0 ${!isFirstLevel ? `pl6 bl b--whitegrey` : `nt1 mb8`} ${hideNestedItems ? this.state.sidebarListClasses : `db`}`}>
                         {this.props.item.items.map((nestedLink, i) => (
                             <SidebarList
                                 key={i}
@@ -116,7 +116,7 @@ class SidebarList extends React.Component {
             )
         } else {
             return (
-                <li className={`${isFirstLevel ? firstLevelClasses + ` mb6` : isSecondLevel ? `mb6` : `mb4`}`}>
+                <li className={`${isFirstLevel ? firstLevelClasses + ` mt4` : isSecondLevel ? `mt4` : `mt4`}`}>
                     <SidebarLink
                         link={this.props.item.link}
                         title={this.props.item.title}
@@ -169,7 +169,7 @@ class SidebarNav extends React.Component {
         return (
             <nav className="mr5 miw50">
                 {/* <h3 className="f8 ttu fw6 pa0 ma0 measure-0-4 pb2">{sidebarfile.title}</h3> */}
-                <ul className="ma0 pa0 list mt4 f8">
+                <ul className="ma0 pa0 list nt4 f8">
                     {sidebarfile.items.map((item, i) => (
                         <SidebarList
                             key={i}

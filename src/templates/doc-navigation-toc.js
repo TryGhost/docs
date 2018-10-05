@@ -58,10 +58,10 @@ class DocTemplate extends React.Component {
                             sidebar={post.frontmatter.sidebar}
                         />
                         <div className="flex-auto">
-                            <section className="flex-auto flex bg-white br4 shadow-1 pa15 pt12">
+                            <section className="flex-auto flex bg-white br4 shadow-1 pa15 pt12 pr12">
                                 { post.frontmatter.toc ? <div className="order-2"><TOC headingsOffset="-200" /></div> : null }
-                                <article className="order-1">
-                                    <span className="mb8 f8">Setup / Ghost(Pro)</span>
+                                <article className="order-1 flex-grow-1">
+                                    {/* <span className="mb8 f8">Setup / Ghost(Pro)</span> */}
                                     <h1 className={Spirit.h1}>{post.frontmatter.title}</h1>
                                     <section className="post-content" dangerouslySetInnerHTML={{
                                         __html: post.html,
