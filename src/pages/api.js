@@ -107,7 +107,7 @@ const APIPage = () => (
                     <p className={ Spirit.p + `midgrey-l2` }>Utilities to help build and manage Ghost</p>
                 </div>
                 <div className={ sectionStyles.cardContainer }>
-                    <Card to="/" icon="ghost-cli-logo">Ghost-CLI</Card>
+                    <Card to="/api/v2/ghost-cli/" icon="ghost-cli-logo">Ghost-CLI</Card>
                     <Card to="/" icon="gscan-logo">Gscan</Card>
                 </div>
             </APISection>

@@ -1,0 +1,39 @@
+- title: Ghost CLI
+  items:
+    - title: Overview
+      link: /api/v2/ghost-cli/
+    - title: Commands
+      link: /api/v2/ghost-cli/commands/
+      items:
+        - title: Config
+          link: /api/v2/ghost-cli/commands/config/
+        - title: Install
+          link: /api/v2/ghost-cli/commands/install/
+        - title: Setup
+          link: /api/v2/ghost-cli/commands/setup/
+        - title: Start
+          link: /api/v2/ghost-cli/commands/start/
+        - title: Stop
+          link: /api/v2/ghost-cli/commands/stop/
+        - title: Restart
+          link: /api/v2/ghost-cli/commands/restart/
+        - title: Update
+          link: /api/v2/ghost-cli/commands/update/
+        - title: Doctor
+          link: /api/v2/ghost-cli/commands/doctor/
+        - title: Uninstall
+          link: /api/v2/ghost-cli/commands/uninstall/
+        - title: Help
+          link: /api/v2/ghost-cli/commands/help/
+    - title: Utility
+      link: /api/v2/ghost-cli/utility/
+      items:
+        - title: ls
+          link: /api/v2/ghost-cli/utility/ls/
+        - title: run
+          link: /api/v2/ghost-cli/utility/run/
+        - title: log
+          link: /api/v2/ghost-cli/utility/log/
+    - title: Knowledgebase
+      link: /api/v2/ghost-cli/knowledgebase/
+
