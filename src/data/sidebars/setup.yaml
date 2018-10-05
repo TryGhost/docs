@@ -2,7 +2,7 @@
   items:
     - title: What is Ghost?
       link: /setup/what-is-ghost/
-    - title: Ghost(Pro)
+    - title: Ghost(Pro)*
       link: /setup/ghost-pro/
     - title: Install from Source
       link: /setup/install-from-source/

@@ -29,13 +29,20 @@ function getSidebarListRegex(path) {
 // TODO: find a way to prevent duplicated active links.
 class SidebarLink extends React.Component {
     render() {
+        const isStarred = this.props.title.slice(-1) === `*`
+        const title = isStarred ? this.props.title.slice(0, -1) : this.props.title
+
+        // Give special classes to starred items
+        // TODO: Needs more logic, once the usage of `*` is clear
+        const starredClasses = ``
+
         if (this.props.link.match(/^\s?http(s?)/gi)) {
             return (
-                <a href={this.props.link} className="link midgrey" target="_blank" rel="noopener noreferrer">{this.props.title}</a>
+                <a href={this.props.link} className="link midgrey" target="_blank" rel="noopener noreferrer">{title}</a>
             )
         } else {
             return (
-                <Link to={this.props.link} className={`link ` + this.props.linkClasses}>{this.props.title}</Link>
+                <Link to={this.props.link} className={`link ${this.props.linkClasses} ${isStarred ? starredClasses : ` `}`}>{title}</Link>
             )
         }
     }
@@ -149,7 +156,6 @@ SidebarList.defaultProps = {
     autolink: ``,
 }
 
-// TODO: create special treatment options for titles that have a `*`
 class SidebarNav extends React.Component {
     render() {
         const { sidebar, location } = this.props
