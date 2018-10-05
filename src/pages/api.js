@@ -7,7 +7,7 @@ import Icon from '../components/global/icon'
 
 import bgapi from '../images/api-bg.svg' // eslint-disable-line no-unused-vars
 
-import GoLogo from '../images/go-logo.png'
+import GoLogo from '../images/go-logo.png' // eslint-disable-line no-unused-vars
 
 const sectionStyles = {
     container: `grid-12 mt-vw4 mt-vw4-ns`,
@@ -67,10 +67,11 @@ const APIPage = () => (
                 <div className={ sectionStyles.cardContainer }>
                     <Card to="/api/v2/handlebars-themes/" icon="handlebars-logo">Handlebars</Card>
                     <Card to="/" icon="gatsby-logo">Gatsby</Card>
-                    <Card to="/" icon="hugo-logo">Hugo</Card>
+                    {/*<Card to="/" icon="hugo-logo">Hugo</Card>*/}
                 </div>
             </APISection>
 
+            {/*
             <APISection>
                 <div className={ sectionStyles.headingContainer }>
                     <h2 className={ Spirit.h3 }>Client Libraries</h2>
@@ -86,6 +87,7 @@ const APIPage = () => (
                     <Card to="/" icon="android-logo">Android</Card>
                 </div>
             </APISection>
+            */}
 
             <APISection>
                 <div className={ sectionStyles.headingContainer }>
