@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from "react-helmet"
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
@@ -20,18 +20,19 @@ function NavBar(props) {
 }
 
 function PageTitle(props) {    
-    var title = ``
-    var subtitle = ``
+    var title, subtitle, mainLink, subLink
     if (props.location.pathname.match(/\/api\//i)) {
         title = `API Reference`
+        mainLink = `/api/`
         if (props.location.pathname.match(/\/handlebars-themes\//i)) {
             subtitle = `Handlebars`
+            subLink = `/api/v2/handlebars-themes/`
         }
     }
     return (
         <>
-            <span className="white-80 fw3">{ title }</span>
-            <span className="titleslash-white pl4 ml4 relative">{ subtitle }</span>
+            <Link to={ mainLink } className="link fw3 white-80 dim">{ title }</Link>
+            <Link to={ subLink } className="link white dim titleslash-white pl4 ml4 relative">{ subtitle }</Link>
         </>
     )
 }
