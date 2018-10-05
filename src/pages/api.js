@@ -67,7 +67,7 @@ const APIPage = () => (
                 </div>
                 <div className={ sectionStyles.cardContainer }>
                     <Card to="/api/v2/handlebars-themes/" icon="handlebars-logo">Handlebars</Card>
-                    <Card to="/" icon="gatsby-logo">Gatsby</Card>
+                    <Card to="/api/v2/gatsby/" icon="gatsby-logo">Gatsby</Card>
                     {/*<Card to="/" icon="hugo-logo">Hugo</Card>*/}
                 </div>
             </APISection>
@@ -96,9 +96,9 @@ const APIPage = () => (
                     <p className={ Spirit.p + `midgrey-l2` }>A full reference of API Endpoints</p>
                 </div>
                 <div className={ sectionStyles.cardContainer }>
-                    <Card to="/" icon="content-api-logo">Content API</Card>
-                    <Card to="/" icon="admin-api-logo">Admin API</Card>
-                    <Card to="/" icon="webhooks-logo">Webhooks</Card>
+                    <Card to="/api/v2/content/" icon="content-api-logo">Content API</Card>
+                    <Card to="/api/v2/admin/" icon="admin-api-logo">Admin API</Card>
+                    <Card to="/api/v2/webhooks/" icon="webhooks-logo">Webhooks</Card>
                 </div>
             </APISection>
 
