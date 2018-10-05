@@ -34,7 +34,7 @@ APISection.propTypes = {
 class Card extends React.Component {
     render() {
         return (
-            <Box to={ this.props.to } className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt8 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+            <Box to={ this.props.to } href={ this.props.href } className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt8 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
                 { this.props.icon ? <div className="w10 h10 flex justify-center items-center"><Icon name={ this.props.icon } className="w10 h10 mb4"></Icon></div> : null }
                 { this.props.img ? <div className="w10 h10 flex justify-center items-center"><img src={ this.props.img } className="nudge-bottom--4" /></div> : null }
                 { this.props.children }
@@ -45,6 +45,7 @@ class Card extends React.Component {
 
 Card.propTypes = {
     to: PropTypes.string,
+    href: PropTypes.string,
     icon: PropTypes.string,
     img: PropTypes.string,
 }
@@ -108,7 +109,7 @@ const APIPage = () => (
                 </div>
                 <div className={ sectionStyles.cardContainer }>
                     <Card to="/api/v2/ghost-cli/" icon="ghost-cli-logo">Ghost-CLI</Card>
-                    <Card to="/" icon="gscan-logo">Gscan</Card>
+                    <Card href="https://gscan.ghost.org" icon="gscan-logo">GScan</Card>
                 </div>
             </APISection>
         </div>
