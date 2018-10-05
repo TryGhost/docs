@@ -95,7 +95,7 @@ exports.createPages = ({ graphql, actions }) => {
     queryPromises.push(new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`
         {
-            allMarkdownRemark {
+            allMarkdownRemark(filter: {fields: {slug: {ne: "/data-schema/"}}}) {
                 edges {
                     node {
                         fields {
