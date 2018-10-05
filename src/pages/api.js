@@ -10,7 +10,7 @@ import GoLogo from '../images/go-logo.png' // eslint-disable-line no-unused-vars
 
 const sectionStyles = {
     headingContainer: `col-12 col-4-ns mt5 mt0-l`,
-    cardContainer: `col-12 col-4-ns grid-icon-boxes nt1 nt5-l`,
+    cardContainer: `col-12 col-4-ns grid-icon-boxes nt1 nt5-l pr4-ns`,
 }
 
 class APISection extends React.Component {
@@ -57,19 +57,19 @@ const APIPage = () => (
         <div className={ Spirit.page.xl + `pb-vw4 pb-vw3-ns pt-vw4 pt-vw3-ns grid-12 gutter-20 gutter-40-l` }>
             
             <div className={ sectionStyles.headingContainer + ` order-1` }>
-                <span className="dn dib-ns miw10"><Icon name="sdks" className="stroke-midgrey-l2 w6 h6" /></span>
+                {/* <span className="dn dib-ns miw10"><Icon name="sdks" className="stroke-midgrey-l2 w6 h6" /></span> */}
                 <h2 className={ Spirit.h3 + `m12`}>Frontend SDKs</h2>
                 <p className={ Spirit.p + `midgrey-l2` }>Frameworks for building a publication website</p>
             </div>
 
             <div className={ sectionStyles.headingContainer + ` order-3 order-2-ns` }>
-                <span className="dn dib-ns miw10"><Icon name="rest-api" className="stroke-midgrey-l2 w6 h6" /></span>
+                {/* <span className="dn dib-ns miw10"><Icon name="rest-api" className="stroke-midgrey-l2 w6 h6" /></span> */}
                 <h2 className={ Spirit.h3 + `mt1` }>REST API</h2>
                 <p className={ Spirit.p + `midgrey-l2` }>A full reference of API Endpoints</p>
             </div>
 
             <div className={ sectionStyles.headingContainer + ` order-5 order-3-ns` }>
-                <span className="dn dib-ns miw10"><Icon name="tools" className="stroke-midgrey-l2 w6 h6" /></span>
+                {/* <span className="dn dib-ns miw10"><Icon name="tools" className="stroke-midgrey-l2 w6 h6" /></span> */}
                 <h2 className={ Spirit.h3 + `mt1` }>Tools</h2>
                 <p className={ Spirit.p + `midgrey-l2` }>Utilities to help build and manage Ghost</p>
             </div>

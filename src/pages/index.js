@@ -30,7 +30,7 @@ var mainBoxStyles = {
 }
 
 var apiBoxStyles = {
-    box: `col-12 col-6-ns pa5 flex items-start justify-start tdn`,
+    box: `col-12 col-4-ns pa5 flex items-start justify-start tdn nt3`,
 }
 
 const IndexPage = () => (
@@ -39,7 +39,7 @@ const IndexPage = () => (
         <div className="gh-bg-home pb-vw5 pb-vw3-ns bb b--whitegrey">
 
             <div className="pa5 pt8 pb8 pa-vw3-ns tc">
-                <span className="db lightgrey"><img src={ homeIllustration } alt="bg" /></span>
+                {/* <span className="db lightgrey"><img src={ homeIllustration } alt="bg" /></span> */}
                 <h1 className="ma0 pa0 f2 f-headline-l middarkgrey mt4">Ghost Documentation</h1>
                 <div className="pa4 pl5 pr5 mt6 w-100 mw-s f4 br-pill bg-white shadow-3 center flex items-center justify-between">
                     <Icon name="search" className="fill-lightgrey-d2 h6" />
@@ -88,96 +88,104 @@ const IndexPage = () => (
             </section>
         </div>
 
-        <div className="bg-whitegrey-l2 pt-vw4 pt-vw3-ns">
+        <div className="bg-whitegrey-l2 pt-vw4 pt-vw3-ns pb-vw2">
             <section className={ Spirit.page.xl + `grid-12 gutter-row-20 gutter-36-l` }>
-                <div className="col-12 col-8-l grid-12 gutter-row-20 gutter-36-l">
-                    <div className="col-12 nb4">
-                        <Link to="/api/" className={ Spirit.h3 + `link middarkgrey dim` }>API</Link>
-                    </div>
-                    <div className="col-12 grid-12 gutter-row-20 gutter-36-ns gh-home-api-container mt3 mt0-ns mr0-l">
-                        <Box className={ apiBoxStyles.box } onWhite="false" elevation="1" to="/api/">
-                            <span className="dib mr4 mt1 miw10 tc"><Icon name="sdks" className="stroke-lightgrey-d2" /></span>
-                            <div>
-                                <h4 className={ Spirit.h5 + `middarkgrey` }>Frontend SDKs</h4>
-                                <p className={ Spirit.small + `midgrey mt2` }>Frameworks for working with the Ghost API to build a publication website</p>
-                            </div>
-                        </Box>
-                        <Box className={ apiBoxStyles.box } onWhite="false" elevation="1" to="/api/">
-                            <span className="dib mr4 mt1 miw10 tc"><Icon name="client-lib" className="stroke-lightgrey-d2" /></span>
-                            <div>
-                                <h4 className={ Spirit.h5 + `middarkgrey` }>Client Libraries</h4>
-                                <p className={ Spirit.small + `midgrey mt2` }>Specific libraries for interacting with the Ghost API directly</p>
-                            </div>
-                        </Box>
-                        <Box className={ apiBoxStyles.box } onWhite="false" elevation="1" to="/api/">
-                            <span className="dib mr4 mt1 miw10 tc"><Icon name="rest-api" className="stroke-lightgrey-d2" /></span>
-                            <div>
-                                <h4 className={ Spirit.h5 + `middarkgrey` }>Rest API</h4>
-                                <p className={ Spirit.small + `midgrey mt2` }>A full reference of API Endpoints</p>
-                            </div>
-                        </Box>
-                        <Box className={ apiBoxStyles.box } onWhite="false" elevation="1" to="/api/">
-                            <span className="dib mr4 mt1 miw10 tc"><Icon name="tools" className="stroke-lightgrey-d2" /></span>
-                            <div>
-                                <h4 className={ Spirit.h5 + `middarkgrey` }>Tools</h4>
-                                <p className={ Spirit.small + `midgrey mt2` }>Utilities to help build and manage Ghost</p>
-                            </div>
-                        </Box>
-                    </div>
-                    {/* <div className="col-8">
-                        <Link to="/api/" className="dib midlightgrey-d1 pa2 pl5 pr5 br3 ba b--midlightgrey-l2 link fw5 f6 dim">API Home</Link>
-                    </div> */}
+
+                <div className="col-12">
+                    <Link to="/api/" className={ Spirit.h3 + `link middarkgrey dim` }>API</Link>
+                    <p className={ Spirit.p + `mt2` }>
+                        Clients, tools and libraries for working with Ghost
+                    </p>
                 </div>
-                <div className="col-12 col-4-l flex flex-column justify-between items-start mt4 mt0-l">
+
+                <Box className={ apiBoxStyles.box } onWhite="false" elevation="1" to="/api/">
+                    <span className="dib mr4 mt1 miw10 tc"><Icon name="sdks" className="stroke-midgrey-l2" /></span>
                     <div>
-                        <Link to="/faq/" className={ Spirit.h3 + `link middarkgrey dim` }>FAQ</Link>
-                        <ul className="list pa0 ma0 mt6 f6 flex-auto flex flex-column">
-                            <li className="mb3 lh-1-65"><FAQQuestion to="/faq/">Can I use Ghost(Pro) in a subdirectory ?</FAQQuestion></li>
-                            <li className="mb3 lh-1-65"><FAQQuestion to="/faq/">How can I track site views?</FAQQuestion></li>
-                            <li className="mb3 lh-1-65"><FAQQuestion to="/faq/">How do I reactivate my Ghost(Pro) account?</FAQQuestion></li>
-                            <li className="mb3 lh-1-65"><FAQQuestion to="/faq/">How do I upgrade/downgrade my subscription?</FAQQuestion></li>
-                            <li className="mb5 lh-1-65"><FAQQuestion to="/faq/">How do I change my Ghost.org account email</FAQQuestion></li>
-                            <li className="lh-1-65"><Link to="/faq/" className="dib blue link fw5 f7 dim pl6">
-                                <span className="flex items-center">More FAQ <Icon name="arrow-right" className="w3 h3 ml1 fill-blue nudge-bottom--1" /></span>
-                            </Link></li>
-                        </ul>
+                        <h4 className={ Spirit.h5 + `middarkgrey` }>Frontend SDKs</h4>
+                        <p className={ Spirit.small + `midgrey mt2` }>Frameworks for working with the Ghost API to build a publication website</p>
                     </div>
-                </div>
-                <div className="col-12 nb4 mt-vw6 mt-vw3-ns">
+                </Box>
+                {/* 
+                <Box className={ apiBoxStyles.box } onWhite="false" elevation="1" to="/api/">
+                    <span className="dib mr4 mt1 miw10 tc"><Icon name="client-lib" className="stroke-lightgrey-d2" /></span>
+                    <div>
+                        <h4 className={ Spirit.h5 + `middarkgrey` }>Client Libraries</h4>
+                        <p className={ Spirit.small + `midgrey mt2` }>Specific libraries for interacting with the Ghost API directly</p>
+                    </div>
+                </Box> 
+                */}
+                <Box className={ apiBoxStyles.box } onWhite="false" elevation="1" to="/api/">
+                    <span className="dib mr4 mt1 miw10 tc"><Icon name="rest-api" className="stroke-midgrey-l2" /></span>
+                    <div>
+                        <h4 className={ Spirit.h5 + `middarkgrey` }>Rest API</h4>
+                        <p className={ Spirit.small + `midgrey mt2` }>A full reference of API Endpoints</p>
+                    </div>
+                </Box>
+                <Box className={ apiBoxStyles.box } onWhite="false" elevation="1" to="/api/">
+                    <span className="dib mr4 mt1 miw10 tc"><Icon name="tools" className="stroke-midgrey-l2" /></span>
+                    <div>
+                        <h4 className={ Spirit.h5 + `middarkgrey` }>Tools</h4>
+                        <p className={ Spirit.small + `midgrey mt2` }>Utilities to help build and manage Ghost</p>
+                    </div>
+                </Box>
+
+                <div className="col-12 col-8-ns mt4 mt8-ns">
                     <Link to="/integrations/" className={ Spirit.h3 + `link middarkgrey dim` }>Integrations</Link>
                     <p className={ Spirit.p + `mt2` }>
                         All your favourite apps and tools, integrated with Ghost. <Link to="/integrations/" className="blue link dim">Browse all integrations...</Link>
                     </p>
+                    <div className="grid-icon-boxes mt4 mt6-l">
+                        <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                            <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/feedly.png" alt="Feedly" />
+                            Feedly
+                        </Box>
+                        <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                            <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/zapier.png" alt="Zapier" />
+                            Zapier
+                        </Box>
+                        <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                            <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/slack.png" alt="Slack" />
+                            Slack
+                        </Box>
+                        <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                            <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/Tumblr_Logos_2018.03.06_iOS-Icon-Blue.png" alt="Tumblr" />
+                            Tumblr
+                        </Box>
+                        <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                            <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/medium.png" alt="Medium" />
+                            Medium
+                        </Box>
+                        <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                            <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/discourse.png" alt="Discourse" />
+                            Discourse
+                        </Box>
+                        <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                            <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/Goldie_Sabaeus_RGB.svg" alt="Discourse" />
+                            SurveyMonkey
+                        </Box>
+                        <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                            <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/rss.png" alt="Discourse" />
+                            Custom RSS
+                        </Box>
+                        <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                            <Icon name="more" className="w8 nudge-top--6" />
+                            See More
+                        </Box>
+                    </div>
                 </div>
-                <div className="col-12 grid-icon-boxes mt4 mt1-l">
-                    <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                        <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/feedly.png" alt="Feedly" />
-                        Feedly
-                    </Box>
-                    <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                        <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/zapier.png" alt="Zapier" />
-                        Zapier
-                    </Box>
-                    <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                        <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/slack.png" alt="Slack" />
-                        Slack
-                    </Box>
-                    <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                        <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/Tumblr_Logos_2018.03.06_iOS-Icon-Blue.png" alt="Tumblr" />
-                        Tumblr
-                    </Box>
-                    <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                        <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/medium.png" alt="Medium" />
-                        Medium
-                    </Box>
-                    <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                        <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/discourse.png" alt="Discourse" />
-                        Discourse
-                    </Box>
-                    <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                        <Icon name="more" className="w8 nudge-top--6" />
-                        See More
-                    </Box>
+
+                <div className="col-12 col-4-ns mt4 mt8-ns">
+                    <Link to="/faq/" className={ Spirit.h3 + `link middarkgrey dim` }>FAQ</Link>
+                    <ul className="list pa0 ma0 mt2 f6 flex-auto flex flex-column">
+                        <li className="mb3 lh-1-65"><FAQQuestion to="/faq/">Can I use Ghost(Pro) in a subdirectory ?</FAQQuestion></li>
+                        <li className="mb3 lh-1-65"><FAQQuestion to="/faq/">How can I track site views?</FAQQuestion></li>
+                        <li className="mb3 lh-1-65"><FAQQuestion to="/faq/">How do I reactivate my Ghost(Pro) account?</FAQQuestion></li>
+                        <li className="mb3 lh-1-65"><FAQQuestion to="/faq/">How do I upgrade/downgrade my subscription?</FAQQuestion></li>
+                        <li className="mb5 lh-1-65"><FAQQuestion to="/faq/">How do I change my Ghost.org account email</FAQQuestion></li>
+                        <li className="lh-1-65"><Link to="/faq/" className="dib blue link fw5 f7 dim pl6">
+                            <span className="flex items-center">More FAQ <Icon name="arrow-right" className="w3 h3 ml1 fill-blue nudge-bottom--1" /></span>
+                        </Link></li>
+                    </ul>
                 </div>
             </section>
         </div>
