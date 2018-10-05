@@ -84,7 +84,7 @@ class SidebarList extends React.Component {
         const hideNestedItems = isSecondLevel
 
         // Update the classes here for first level items
-        const firstLevelClasses = `f4 lh-h4 fw4 ma0 pa0`
+        const firstLevelClasses = `f-nav-first-level lh-h4 fw4 ma0 pa0 measure--0-2`
 
         if (hasNestedItems) {
             // A section can not have a link on its own. In this case, we grab the
@@ -167,7 +167,7 @@ class SidebarNav extends React.Component {
         }
 
         return (
-            <nav className="mr5 miw50">
+            <nav className="mr10 miw50">
                 {/* <h3 className="f8 ttu fw6 pa0 ma0 measure-0-4 pb2">{sidebarfile.title}</h3> */}
                 <ul className="ma0 pa0 list nt4 f8">
                     {sidebarfile.items.map((item, i) => (

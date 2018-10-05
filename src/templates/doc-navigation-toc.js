@@ -19,8 +19,10 @@ function NavBar(props) {
     }
 }
 
-function PageTitle(props) {    
-    var title, subtitle, mainLink, subLink
+function PageHeader(props) {    
+    var title, subtitle, mainLink, subLink, bgClass = `bg-api-reference`
+    
+    // API
     if (props.location.pathname.match(/\/api\//i)) {
         title = `API Reference`
         mainLink = `/api/`
@@ -29,12 +31,35 @@ function PageTitle(props) {
             subLink = `/api/v2/handlebars-themes/`
         }
     }
-    return (
-        <>
-            <Link to={ mainLink } className="link fw3 white-80 dim">{ title }</Link>
-            <Link to={ subLink } className="link white dim titleslash-white pl4 ml4 relative">{ subtitle }</Link>
-        </>
-    )
+
+    // Setup
+    if (props.location.pathname.match(/\/setup\//i)) {
+        title = `Setup`
+        mainLink = `/setup/`
+        bgClass = `bg-setup`
+    }
+
+    // Core Concepts
+    if (props.location.pathname.match(/\/concepts\//i)) {
+        title = `Core Concepts`
+        mainLink = `/concepts/introduction/`
+        bgClass = `bg-concepts`
+    }
+
+    if (title) {
+        return (
+            <div className={ bgClass }>
+                <div className={ Spirit.page.xl + `pt-vw7 pt-vw2-ns pb-vw2 white` }>
+                    <h1 className={ Spirit.h3 + `gh-integration-header-shadow` }>
+                        <Link to={ mainLink } className={ `link dim ${subtitle ? `white-80 fw3` : `white`}` }>{ title }</Link>
+                        { subtitle ? <Link to={ subLink } className="link white dim titleslash-white pl4 ml4 relative">{ subtitle }</Link> : null }
+                    </h1>
+                </div>
+            </div>
+        )
+    } else {
+        return <></>
+    }
 }
 
 class DocTemplate extends React.Component {
@@ -70,14 +95,7 @@ class DocTemplate extends React.Component {
                     <meta name="twitter:creator" content="@tryghost" />
                 </Helmet>
                 <Layout>
-                    <section className="bg-api-reference">
-                        <div className={ Spirit.page.xl + `pt-vw7 pt-vw2-ns pb-vw2 white` }>
-                            <h1 className={ Spirit.h3 + `gh-integration-header-shadow` }>
-                                <PageTitle location={this.props.location} />
-                            </h1>
-                        </div>
-                    </section>
-
+                    <PageHeader location={ this.props.location } />
                     <div className={Spirit.page.xl + `flex flex-start mt12`}>
                         <NavBar
                             location={this.props.location}

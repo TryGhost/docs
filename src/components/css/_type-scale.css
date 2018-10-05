@@ -10,6 +10,7 @@
 .f7 { font-size: 1.35rem; }
 .f8 { font-size: 1.3rem; }
 .f-supersmall { font-size: 1.1rem; }
+.f-nav-first-level {font-size: 1.65rem;}
 
 @media (--breakpoint-not-small) {
     .f-headline-ns { font-size: 5.0rem; }
@@ -23,6 +24,7 @@
     .f7-ns { font-size: 1.35rem; }
     .f8-ns { font-size: 1.3rem; }
     .f-supersmall-ns { font-size: 1.1rem; }
+    .f-nav-first-level-ns {font-size: 1.65rem;}
 }
 
 @media (--breakpoint-medium) {
@@ -37,6 +39,7 @@
     .f7-m { font-size: 1.35rem; }
     .f8-m { font-size: 1.3rem; }
     .f-supersmall-m { font-size: 1.1rem; }
+    .f-nav-first-level-m {font-size: 1.65rem;}
 }
 
 @media (--breakpoint-large) {
@@ -51,4 +54,5 @@
     .f7-l { font-size: 1.35rem; }
     .f8-l { font-size: 1.3rem; }
     .f-supersmall-l { font-size: 1.1rem; }
+    .f-nav-first-level-l {font-size: 1.65rem;}
 }
