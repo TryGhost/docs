@@ -129,35 +129,21 @@ exports.createPages = ({ graphql, actions }) => {
         }
         `).then((result) => {
             result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+                const DocTemplate = path.resolve(`./src/templates/doc-navigation-toc.js`)
+                // Exclude the default README.md pages from the api docs repo
                 if (node.fields.slug.match(/readme\/$/i)) {
                     return resolve()
                 }
 
-                // Exclude the default README.md pages from the api docs repo
-                if (!node.fields.slug.match(/readme\/$/i)) {
-                    var pathSrc = `./src/templates/doc-navigation-toc.js`
-
-                    // Filtering for different templates
-                    // API pages
-                    // if (node.fields.slug.match(/\/api\//)) {
-                    //     pathSrc = `./src/templates/doc-toc.js`
-                    // }
-
-                    // Setup pagaes
-                    if (node.fields.slug.match(/\/setup\/|\/design\/|\/api\//)) {
-                        pathSrc = `./src/templates/doc-navigation.js`
-                    }
-
-                    createPage({
-                        path: node.fields.slug,
-                        component: path.resolve(pathSrc),
-                        context: {
-                            // Data passed to context is available
-                            // in page queries as GraphQL variables.
-                            slug: node.fields.slug,
-                        },
-                    })
-                }
+                createPage({
+                    path: node.fields.slug,
+                    component: DocTemplate,
+                    context: {
+                        // Data passed to context is available
+                        // in page queries as GraphQL variables.
+                        slug: node.fields.slug,
+                    },
+                })
                 return resolve()
             })
         }).catch(() => resolve())

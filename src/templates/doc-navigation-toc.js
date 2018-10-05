@@ -6,12 +6,25 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import NavSidebar from '../components/global/navigation-sidebar'
+import DesignNavSidebar from '../components/layouts/partials/design-nav-sidebar'
 import TOC from '../components/layouts/partials/toc'
 
-class DocTocTemplate extends React.Component {
+function NavBar(props) {
+    if (props.location.pathname.match(/\S\/design\//i)) {
+        return <DesignNavSidebar />
+    } else if (props.sidebar) {
+        return <NavSidebar sidebar={props.sidebar} location={props.location} />
+    } else {
+        return null
+    }
+}
+
+class DocTemplate extends React.Component {
     render() {
         const post = this.props.data.markdownRemark
-        const sidebar = post.frontmatter.sidebar || ``
+        post.frontmatter.keywords = post.frontmatter.keywords || []
+        post.frontmatter.sidebar = post.frontmatter.sidebar || ``
+        post.frontmatter.toc = post.frontmatter.toc === false ? false : true
 
         return (
             <>
@@ -39,14 +52,14 @@ class DocTocTemplate extends React.Component {
                     <meta name="twitter:creator" content="@tryghost" />
                 </Helmet>
                 <Layout>
-
                     <div className={Spirit.page.xl + `flex flex-start mt12`}>
-                        <NavSidebar sidebar={ sidebar } location={ this.props.location } />
+                        <NavBar
+                            location={this.props.location}
+                            sidebar={post.frontmatter.sidebar}
+                        />
                         <div className="flex-auto">
                             <section className="flex-auto flex bg-white br4 shadow-1 pa15 pt12">
-                                <div className="order-2">
-                                    <TOC headingsOffset="-200" />
-                                </div>
+                                { post.frontmatter.toc ? <div className="order-2"><TOC headingsOffset="-200" /></div> : null }
                                 <article className="order-1">
                                     <span className="mb8 f8">Setup / Ghost(Pro)</span>
                                     <h1 className={Spirit.h1}>{post.frontmatter.title}</h1>
@@ -63,27 +76,33 @@ class DocTocTemplate extends React.Component {
     }
 }
 
-DocTocTemplate.propTypes = {
+DocTemplate.propTypes = {
     data: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
 }
 
-export default DocTocTemplate
+export default DocTemplate
 
 export const articleQuery = graphql`
-  query($path: String!) {
-    markdownRemark(fields: { slug: { eq: $path } }) {
-      html
-      excerpt
-      timeToRead
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-        sidebar
-      }
-      tableOfContents
+    query MDDocsQuery($slug: String!) {
+        markdownRemark(fields: { slug: { eq: $slug } }) {
+            frontmatter {
+                title
+                date
+                path
+                meta_title
+                meta_description
+                image
+                next {
+                    url
+                    title
+                    description
+                }
+                sidebar
+                toc
+                keywords
+            }
+            html
+        }
     }
-  }
 `

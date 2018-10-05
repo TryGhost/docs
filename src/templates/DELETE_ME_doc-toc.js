@@ -11,7 +11,6 @@ const DocTemplate = ({ data }) => {
 
     return (
         <Layout title={ post.frontmatter.title }>
-
             <div className={ Spirit.page.xl + `flex flex-start mt12` }>
                 <div>
                     <section className="flex-auto flex bg-white br4 shadow-1 pa15 pt12">
@@ -37,7 +36,7 @@ DocTemplate.propTypes = {
 export default DocTemplate
 
 export const articleQuery = graphql`
-    query MDDocsQuery($slug: String!) {
+    query MDTOCDocsQuery($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
             frontmatter {
                 title

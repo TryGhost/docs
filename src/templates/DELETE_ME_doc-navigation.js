@@ -24,6 +24,8 @@ class DocTemplate extends React.Component {
         post.frontmatter.keywords = post.frontmatter.keywords || []
         post.frontmatter.sidebar = post.frontmatter.sidebar || ``
 
+        post.frontmatter.toc = post.frontmatter.toc === false ? false : true
+
         //TODO: this is hardcoded now, should be changed
         const isDesignNavbar = (post.frontmatter.keywords.length && post.frontmatter.keywords[0] === `design`)
 
@@ -96,6 +98,7 @@ export const articleQuery = graphql`
                     description
                 }
                 sidebar
+                toc
                 keywords
             }
             html
