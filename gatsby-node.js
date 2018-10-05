@@ -1,9 +1,12 @@
+const Promise = require(`bluebird`)
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions
+
     if (node.internal.type === `MarkdownRemark`) {
+        // TODO: use slug of `path` property in frontmatter if given
         const slug = createFilePath({ node, getNode, basePath: `pages` })
 
         createNodeField({
@@ -18,6 +21,43 @@ exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
     const { createRedirect } = actions
 
+    // TODO: move this to shared query builder tool, where we hold all our queries
+    function ghostPostQuery(tag) {
+        return (`
+          {
+            allGhostPost(filter: {tags: {elemMatch: {slug: {eq: "${tag}"}}}}) {
+              edges {
+                node {
+                  slug
+                }
+              }
+            }
+          }
+        `)
+    }
+
+    const ghostPostToQuery = [
+        {
+            tag: `hash-faq`,
+            prefix: `/faq/`,
+            template: `./src/templates/standalone-post.js`,
+        },
+        {
+            tag: `hash-tutorial`,
+            prefix: `/tutorials/`,
+            template: `./src/templates/standalone-post.js`,
+        },
+        {
+            tag: `hash-integration`,
+            prefix: `/integrations/`,
+            template: `./src/templates/integration.js`,
+        },
+    ]
+
+    const queryPromises = []
+
+    // TODO: create redirect for `/api/*` to `/api/v2/:splat` BUT not `/api/v*`
+    // look into using the https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/ plugin
     createRedirect({
         fromPath: `/design/`,
         isPermanent: true,
@@ -32,89 +72,27 @@ exports.createPages = ({ graphql, actions }) => {
         toPath: `/design/styling/`,
     })
 
-    const loadFAQPosts = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
-        graphql(`
-          {
-            allGhostPost(filter: {tags: {elemMatch: {slug: {eq: "hash-faq"}}}}) {
-              edges {
-                node {
-                  slug
-                }
-              }
-            }
-          }
-        `).then((result) => {
-            result.data.allGhostPost.edges.forEach(({ node }) => {
-                createPage({
-                    path: `/faq/${node.slug}/`,
-                    component: path.resolve(`./src/templates/faq.js`),
-                    context: {
-                        slug: node.slug,
-                    },
+    // Query for each of the tags that we defined above
+    ghostPostToQuery.forEach((ghostPostQueryData) => {
+        queryPromises.push(new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+            graphql(ghostPostQuery(ghostPostQueryData.tag)).then((result) => {
+                result.data.allGhostPost.edges.forEach(({ node }) => {
+                    createPage({
+                        path: `${ghostPostQueryData.prefix}${node.slug}/`,
+                        component: path.resolve(ghostPostQueryData.template),
+                        context: {
+                            slug: node.slug,
+                        },
+                    })
                 })
+                resolve()
+            }).catch(() => {
+                resolve()
             })
-            resolve()
-        }).catch(() => {
-            resolve()
-        })
+        }))
     })
 
-    const loadTutorialPosts = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
-        graphql(`
-          {
-            allGhostPost(filter: {tags: {elemMatch: {slug: {eq: "hash-tutorial"}}}}) {
-              edges {
-                node {
-                  slug
-                }
-              }
-            }
-          }
-        `).then((result) => {
-            result.data.allGhostPost.edges.forEach(({ node }) => {
-                createPage({
-                    path: `/tutorials/${node.slug}/`,
-                    component: path.resolve(`./src/templates/standalone-post.js`),
-                    context: {
-                        slug: node.slug,
-                    },
-                })
-            })
-            resolve()
-        }).catch(() => {
-            resolve()
-        })
-    })
-
-    const loadIntegrations = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
-        graphql(`
-          {
-            allGhostPost(filter: {tags: {elemMatch: {slug: {eq: "hash-integration"}}}}) {
-              edges {
-                node {
-                  slug
-                }
-              }
-            }
-          }
-        `).then((result) => {
-            result.data.allGhostPost.edges.forEach(({ node }) => {
-                createPage({
-                    path: `/integrations/${node.slug}/`,
-                    component: path.resolve(`./src/templates/integration.js`),
-                    context: {
-                        slug: node.slug,
-                    },
-                })
-            })
-            resolve()
-        }).catch(() => {
-            resolve()
-        })
-    })
-
-    // Querying only non API pages
-    const createMDPages = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+    queryPromises.push(new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`
         {
             allMarkdownRemark {
@@ -147,7 +125,7 @@ exports.createPages = ({ graphql, actions }) => {
                 return resolve()
             })
         }).catch(() => resolve())
-    })
+    }))
 
-    return Promise.all([loadFAQPosts, loadTutorialPosts, loadIntegrations, createMDPages])
+    return Promise.all(queryPromises)
 }

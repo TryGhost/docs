@@ -1,7 +1,3 @@
-require(`dotenv`).config({
-    path: `.env.${process.env.NODE_ENV}`,
-})
-
 const postcssCustomMedia = require(`postcss-custom-media`)
 const autoprefixer = require(`autoprefixer`)
 const cssVariables = require(`postcss-css-variables`)
@@ -10,6 +6,16 @@ const cssNano = require(`cssnano`)
 const customProperties = require(`postcss-custom-properties`)
 const easyImport = require(`postcss-easy-import`)
 
+require(`dotenv`).config({
+    path: `.env.${process.env.NODE_ENV}`,
+})
+
+if (!process.env.GH_CLIENT_SECRET) {
+    throw new Error(
+        `GH_CLIENT_SECRET is required to build. Check the README.`
+    )
+}
+
 module.exports = {
     siteMetadata: {
         title: `Ghost Docs`,
@@ -17,6 +23,9 @@ module.exports = {
         description: `Find all the docs you want`,
     },
     plugins: [
+        /**
+         *  Utility Plugins
+         */
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-plugin-manifest`,
@@ -38,6 +47,9 @@ module.exports = {
                 name: `markdown-pages`,
             },
         },
+        /**
+         *  Content Plugins
+         */
         `gatsby-transformer-yaml`,
         {
             resolve: `gatsby-transformer-remark`,
@@ -86,6 +98,9 @@ module.exports = {
                 clientSecret: `${process.env.GH_CLIENT_SECRET}`,
             },
         },
+        /**
+         *  Display Plugins
+         */
         {
             resolve: `gatsby-plugin-postcss`,
             options: {
