@@ -19,6 +19,23 @@ function NavBar(props) {
     }
 }
 
+function PageTitle(props) {    
+    var title = ``
+    var subtitle = ``
+    if (props.location.pathname.match(/\/api\//i)) {
+        title = `API Reference`
+        if (props.location.pathname.match(/\/handlebars-themes\//i)) {
+            subtitle = `Handlebars`
+        }
+    }
+    return (
+        <>
+            <span className="white-80 fw3">{ title }</span>
+            <span className="titleslash-white pl4 ml4 relative">{ subtitle }</span>
+        </>
+    )
+}
+
 class DocTemplate extends React.Component {
     render() {
         const post = this.props.data.markdownRemark
@@ -52,6 +69,14 @@ class DocTemplate extends React.Component {
                     <meta name="twitter:creator" content="@tryghost" />
                 </Helmet>
                 <Layout>
+                    <section className="bg-api-reference">
+                        <div className={ Spirit.page.xl + `pt-vw7 pt-vw2-ns pb-vw2 white` }>
+                            <h1 className={ Spirit.h3 + `gh-integration-header-shadow` }>
+                                <PageTitle location={this.props.location} />
+                            </h1>
+                        </div>
+                    </section>
+
                     <div className={Spirit.page.xl + `flex flex-start mt12`}>
                         <NavBar
                             location={this.props.location}

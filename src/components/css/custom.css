@@ -168,8 +168,6 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     grid-gap: auto;
 }
 
-
-
 .gh-nav-logo-suffix:before {
     content: "";
     position: absolute;
@@ -192,6 +190,18 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 .content-max-width {
     max-width: calc(114rem - 24vw);
+}
+
+.titleslash-white:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1px;
+    display: block;
+    width: 1px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(25deg);
 }
 
 /* Home */
