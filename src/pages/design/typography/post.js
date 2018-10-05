@@ -6,20 +6,20 @@ const Page = () => (
     <Layout title="Home" headerDividerStyle="hairline" bodyClass="bg-white">
         <div className={ Spirit.page.m + `pt10` }>
             <div className="post-content">
-               
+
                 <h1>Post typography and vertical rhythm demo with a really long title</h1>
-                
+
                 <h2>Typewriter delectus cred Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher</h2>
-                <p>Bushwick Schlitz. Est Shoreditch small batch, dolor Schlitz sapiente twee stumptown ex. Duis Carles pickled, cornhole Thundercats McSweeney's minim PBR vegan Tumblr irony. Kogi eu Thundercats, sed scenester before they sold out et aesthetic. Elit cred Vice ethical pickled sartorial. Stumptown roof party freegan High Life vero, ea sed minim meggings.</p>
+                <p>Bushwick Schlitz. Est Shoreditch small batch, dolor Schlitz sapiente twee stumptown ex. Duis Carles pickled, cornhole Thundercats McSweeney&apos;s minim PBR vegan Tumblr irony. Kogi eu Thundercats, sed scenester before they sold out et aesthetic. Elit cred Vice ethical pickled sartorial. Stumptown roof party freegan High Life vero, ea sed minim meggings.</p>
                 <h2>Single heading two</h2>
-                <p>Bushwick Schlitz. Est Shoreditch small batch, dolor Schlitz sapiente twee stumptown ex. Duis Carles pickled, cornhole Thundercats McSweeney's minim PBR vegan Tumblr irony. <a href="#">Kogi eu Thundercats, sed scenester before they sold</a> out et aesthetic. Elit cred Vice ethical pickled sartorial. Stumptown roof party freegan High Life vero, ea sed minim meggings.</p>
-                <p>McSweeney's minim PBR vegan Tumblr irony. Kogi eu Thundercats, sed scenester before they sold out et aesthetic. Elit cred Vice ethical pickled sartorial. Stumptown roof party freegan High Life vero, ea sed minim meggings.</p>
-                
+                <p>Bushwick Schlitz. Est Shoreditch small batch, dolor Schlitz sapiente twee stumptown ex. Duis Carles pickled, cornhole Thundercats McSweeney&apos;s minim PBR vegan Tumblr irony. <a href="#">Kogi eu Thundercats, sed scenester before they sold</a> out et aesthetic. Elit cred Vice ethical pickled sartorial. Stumptown roof party freegan High Life vero, ea sed minim meggings.</p>
+                <p>McSweeney&apos;s minim PBR vegan Tumblr irony. Kogi eu Thundercats, sed scenester before they sold out et aesthetic. Elit cred Vice ethical pickled sartorial. Stumptown roof party freegan High Life vero, ea sed minim meggings.</p>
+
                 <h3>Truffaut disrupt sartorial deserunt Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher. Truffaut disrupt sartorial deserunt Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher</h3>
-                <p>Cosby sweater plaid shabby chic kitsch pour-over ex. Try-hard fanny pack mumblecore cornhole cray scenester. Assumenda narwhal occupy, Blue Bottle nihil culpa fingerstache. Meggings kogi vinyl meh, food truck banh mi Etsy magna 90's duis typewriter banjo organic leggings Vice.</p>
+                <p>Cosby sweater plaid shabby chic kitsch pour-over ex. Try-hard fanny pack mumblecore cornhole cray scenester. Assumenda narwhal occupy, Blue Bottle nihil culpa fingerstache. Meggings kogi vinyl meh, food truck banh mi Etsy magna 90&apos;s duis typewriter banjo organic leggings Vice.</p>
                 <h3>Single heading three</h3>
-                <p>Bushwick Schlitz. Est Shoreditch small batch, dolor Schlitz sapiente twee stumptown ex. Duis Carles pickled, cornhole Thundercats McSweeney's minim PBR vegan Tumblr irony. Kogi eu Thundercats, sed scenester before they sold out et aesthetic. Elit cred Vice ethical pickled sartorial. Stumptown roof party freegan High Life vero, ea sed minim meggings.</p>
-                
+                <p>Bushwick Schlitz. Est Shoreditch small batch, dolor Schlitz sapiente twee stumptown ex. Duis Carles pickled, cornhole Thundercats McSweeney&apos;s minim PBR vegan Tumblr irony. Kogi eu Thundercats, sed scenester before they sold out et aesthetic. Elit cred Vice ethical pickled sartorial. Stumptown roof party freegan High Life vero, ea sed minim meggings.</p>
+
                 <h4>Fingerstache nesciunt lomo nostrud hoodie Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher. Truffaut disrupt sartorial deserunt Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mi justo, tempus vel pellentesque vel, iaculis sit amet ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Vestibulum accumsan bibendum ultrices. Duis in quam quam. </p>
                 <p>Fusce non nisl ac libero porta cursus. Morbi dignissim ante ac congue aliquam. Suspendisse potenti. Suspendisse vehicula dui velit, vitae malesuada mi facilisis a. Aenean suscipit mi sed sagittis dignissim. Nullam in fermentum turpis. Aliquam semper in nisl a faucibus. In hac habitasse platea dictumst. Donec malesuada, mauris eu sodales congue, enim risus tempor metus, at pellentesque nunc sapien lacinia quam. Mauris est tellus, iaculis in mi at, sollicitudin fringilla libero. Proin id dignissim purus.</p>
@@ -37,12 +37,11 @@ const Page = () => (
                     <li>Scenester High Life Banksy, proident master cleanse tousled squid sriracha ad chillwave post-ironic retro.</li>
                 </ul>
                 <p>Nunc venenatis eros ac enim congue fermentum. Donec faucibus libero ex, at vehicula leo porttitor id. Phasellus consequat eros et odio egestas, vel rutrum massa tempor. Sed vel felis quis orci semper iaculis. Vestibulum nibh libero, ullamcorper vitae ex at, laoreet interdum velit. Nam vel molestie est. Duis a placerat velit. Vivamus placerat pellentesque lorem nec blandit. Nunc ultricies mi eget arcu posuere, ut feugiat massa semper.</p>
-                
+
                 <h5>Fingerstache nesciunt lomo nostrud hoodie Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher. Truffaut disrupt sartorial deserunt Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher</h5>
-                
+
                 <h6>Fingerstache nesciunt lomo nostrud hoodie Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher. Truffaut disrupt sartorial deserunt Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher</h6>
                 <p>Laboris selfies occaecat umami, forage Tumblr American Apparel. Retro Terry Richardson culpa id swag polaroid Intelligentsia American Apparel eu, esse non post-ironic fugiat master cleanse. Direct trade gluten-free blog, fanny pack cray labore skateboard before they sold out adipisicing non magna id Helvetica freegan. Disrupt aliqua Brooklyn church-key lo-fi dreamcatcher.</p>
-
 
                 <hr />
 

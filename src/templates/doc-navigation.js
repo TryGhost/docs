@@ -75,6 +75,7 @@ class DocTemplate extends React.Component {
 
 DocTemplate.propTypes = {
     data: PropTypes.object.isRequired,
+    location: PropTypes.object,
 }
 
 export default DocTemplate

@@ -9,13 +9,12 @@ class SidebarLink extends React.Component {
         super(props)
         this.state = {
             isActive: null,
-            linkClasses: `midgrey`
+            linkClasses: `midgrey`,
         }
         this.setActiveLink = this.setActiveLink.bind(this)
     }
 
     setActiveLink() {
-        console.log('Set active link: ', this.props.link);
         this.setState({ isActive: this.props.link, linkClasses: `blue fw6` })
     }
 
@@ -44,10 +43,6 @@ SidebarLink.propTypes = {
     location: PropTypes.object.isRequired,
 }
 
-SidebarLink.defaultProps = {
-    location: {path: `/`}
-}
-
 class SidebarList extends React.Component {
     constructor(props) {
         super(props)
@@ -57,7 +52,7 @@ class SidebarList extends React.Component {
         this.toggleExpandedSidebarList = this.toggleExpandedSidebarList.bind(this)
     }
     toggleExpandedSidebarList() {
-        this.setState({ expandedSidebarList: !this.state.expandedSidebarList, })
+        this.setState({ expandedSidebarList: !this.state.expandedSidebarList })
     }
 
     render() {
@@ -71,7 +66,6 @@ class SidebarList extends React.Component {
             const autoLink = item.link || item.items[0].link
             // const isFirstLevel = level >= 1 ? true : false
 
-
             return (
                 <li className="mb6">
                     <h4 className="fw4"
@@ -79,7 +73,7 @@ class SidebarList extends React.Component {
                     >
                         <SidebarLink link={autoLink} title={item.title} location={location} />
                     </h4>
-                    <ul className={`list ma0 pa0 ml6 ${!this.state.expandedSidebarList ? '' : ''}`}>
+                    <ul className={`list ma0 pa0 ml6 ${!this.state.expandedSidebarList ? `` : ``}`}>
                         {item.items.map((nestedLink, i) => <SidebarList key={i} item={nestedLink} location={location} level={level + 1} />)}
                     </ul>
                 </li>
@@ -90,6 +84,12 @@ class SidebarList extends React.Component {
             )
         }
     }
+}
+
+SidebarList.propTypes = {
+    item: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    level: PropTypes.string,
 }
 
 // TODO: show only first level links by default, expand on click
@@ -118,3 +118,12 @@ class SidebarNav extends React.Component {
 }
 
 export default SidebarNav
+
+SidebarNav.propTypes = {
+    location: PropTypes.object.isRequired,
+    sidebar: PropTypes.string.isRequired,
+}
+
+SidebarNav.defaultProps = {
+    location: { path: `/` },
+}

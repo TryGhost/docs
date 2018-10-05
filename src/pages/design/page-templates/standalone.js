@@ -15,7 +15,7 @@ const Page = () => (
             <div className="bt b--lightgrey-l2 pt6 pb1 mt20">
                 <h2 className="ma0 pa0 mb6 fw5">Usage</h2>
                 <p>
-                    For individual doc posts which are not part of a story so they don't need a sidebar, like Tutorials.
+                    For individual doc posts which are not part of a story so they don&apos;t need a sidebar, like Tutorials.
                 </p>
                 <ul className="ma0 ml4 pa0 lh-2-0">
                     <li>Tutorial posts</li>
