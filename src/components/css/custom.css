@@ -84,7 +84,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 /* Fixing those shadows */
 .box-shadow-hover { 
-    transition: all 0.3s ease; 
+    transition: all 0.8s ease; 
 }
 
 .shadow-1 { 
@@ -96,9 +96,11 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .shadow-1-hover:hover { 
     box-shadow: 0 0 5px rgba(0,0,0,.02), 0 5px 22px -6px rgba(0,0,0,.1); 
     transform: scale(1.025);
+    transition: all 0.3s ease; 
 }
 .shadow-1-hover.on-white:hover { 
     box-shadow: 0 0 1px rgba(0,0,0,.15), 0 5px 22px -6px rgba(0,0,0,.1); 
+    transition: all 0.3s ease; 
 }
 
 .shadow-2 { 
@@ -110,9 +112,11 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .shadow-2-hover:hover {
     transform: scale(1.05);
     box-shadow: 0 0 1px rgba(0,0,0,.03), 0 8px 26px -4px rgba(0,0,0,.1);
+    transition: all 0.3s ease; 
 }
 .shadow-2-hover.on-white:hover {
     box-shadow: 0 0 3px rgba(0,0,0,.08), 0 8px 26px -4px rgba(0,0,0,.1);
+    transition: all 0.3s ease; 
 }
 
 .shadow-3 { 
@@ -124,9 +128,11 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .shadow-3-hover:hover {
     box-shadow: 0 0 3px rgba(0,0,0,.03), 0 17px 40px -8px rgba(0,0,0,.09);
     transform: scale(1.05);
+    transition: all 0.3s ease; 
 }
 .shadow-3-hover.on-white:hover {
     box-shadow: 0 0 4px rgba(0,0,0,.065), 0 17px 40px -8px rgba(0,0,0,.09);
+    transition: all 0.3s ease; 
 }
 
 .header-shadow { 
@@ -157,7 +163,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .grid-icon-boxes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(124px, auto));
-    grid-auto-rows: '124px';
+    grid-auto-rows: 124px;
     grid-gap: 20px;
     grid-gap: auto;
 }
