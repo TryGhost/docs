@@ -25,47 +25,39 @@ const SetupIndexPage = () => (
             <section className="grid gutter-2">
                 <h3 className={ Spirit.h4 + `col-12 mt15 mb2` }>I want to setup a site</h3>
                 <div className="col-4">
-                    <Link to="/setup/ghost-pro/" className="link midgrey"><div className="shadow-2 bg-white br4 pa4 pt20 pb20 tc">
-                        <h4 className={ Spirit.h5 + `lightgrey`}>Ghost(Pro)</h4>
-                    </div></Link>
+                    <Link to="/setup/ghost-pro/" className="link midgrey">
+                        <div className="shadow-2 bg-white br4 pa4 pt20 pb20 tc mb5">
+                            <h4 className={ Spirit.h5 + `lightgrey`}>Ghost(Pro)</h4>
+                        </div>
+                    </Link>
                 </div>
                 <div className="col-4">
-                    <Link to="/setup/ubuntu/" className="link midgrey"><div className="shadow-2 bg-white br4 pa4 pt20 pb20 tc">
-                        <h4 className={ Spirit.h5 + `lightgrey` }>1-click Images</h4>
-                    </div></Link>
+                    <Link to="/install/ubuntu/" className="link midgrey">
+                        <div className="shadow-2 bg-white br4 pa4 pt20 pb20 tc mb5">
+                            <h4 className={ Spirit.h5 + `lightgrey` }>Ubuntu</h4>
+                        </div>
+                    </Link>
                 </div>
                 <div className="col-4">
-                    <Link to="/setup/ubuntu/" className="link midgrey"><div className="shadow-2 bg-white br4 pa4 pt20 pb20 tc">
-                        <h4 className={ Spirit.h5 + `lightgrey` }>Install from Ghost CLI</h4>
-                    </div></Link>
-                </div>
-            </section>
-
-            <section className="grid gutter-2">
-                <h3 className={ Spirit.h4 + `col-12 mt15 mb2` }>Community Packages</h3>
-                <div className="col-4">
-                    <Link to="/setup/docker/" className="link midgrey"><div className="shadow-2 bg-white br4 pa4 pt20 pb20 tc">
-                        <h4 className={ Spirit.h5 + `lightgrey` }>Docker</h4>
-                    </div></Link>
-                </div>
-            </section>
-
-            <section className="grid gutter-2">
-                <h3 className={ Spirit.h4 + `col-12 mt15 mb2` }>Locally</h3>
-                <div className="col-4">
-                    <Link to="/setup/local-install/just-trying" className="link midgrey"><div className="shadow-2 bg-white br4 pa4 pt20 pb20 tc">
-                        <h4 className={ Spirit.h5 + `lightgrey` }>Trying out</h4>
-                    </div></Link>
+                    <Link to="/install/docker/" className="link midgrey">
+                        <div className="shadow-2 bg-white br4 pa4 pt20 pb20 tc mb5">
+                            <h4 className={Spirit.h5 + `lightgrey`}>Docker</h4>
+                        </div>
+                    </Link>
                 </div>
                 <div className="col-4">
-                    <Link to="/setup/local-install/theme-development" className="link midgrey"><div className="shadow-2 bg-white br4 pa4 pt20 pb20 tc">
-                        <h4 className={ Spirit.h5 + `lightgrey` }>Theme development</h4>
-                    </div></Link>
+                    <Link to="/install/local/" className="link midgrey">
+                        <div className="shadow-2 bg-white br4 pa4 pt20 pb20 tc mb5">
+                            <h4 className={Spirit.h5 + `lightgrey`}>Local Install</h4>
+                        </div>
+                    </Link>
                 </div>
                 <div className="col-4">
-                    <Link to="/setup/install-from-source/" className="link midgrey"><div className="shadow-2 bg-white br4 pa4 pt20 pb20 tc">
-                        <h4 className={ Spirit.h5 + `lightgrey` }>Contribution</h4>
-                    </div></Link>
+                    <Link to="/install/source/" className="link midgrey">
+                        <div className="shadow-2 bg-white br4 pa4 pt20 pb20 tc mb5">
+                            <h4 className={Spirit.h5 + `lightgrey`}>Install from Source</h4>
+                        </div>
+                    </Link>
                 </div>
             </section>
 

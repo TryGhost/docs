@@ -1,12 +1,13 @@
 ---
-title: "Just trying it out"
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-sidebar: "setup"
-next:
-    url: "/setup/local-install/"
+title: "Local Install"
+date: "2018-10-01"
+meta_title: "Ghost handlebars themes"
+meta_description: "Check out these handlebars themes"
+image: "https://unsplash.it/400/300/?random?BoldMage"
 keywords:
-    - setup
-    - local-install
+    - local install
+    - theme development
+sidebar: handlebars
 ---
 
 ## This is the second heading
