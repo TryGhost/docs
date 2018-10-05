@@ -58,19 +58,19 @@ const APIPage = () => (
             
             <div className={ sectionStyles.headingContainer + ` order-1` }>
                 {/* <span className="dn dib-ns miw10"><Icon name="sdks" className="stroke-midgrey-l2 w6 h6" /></span> */}
-                <h2 className={ Spirit.h3 + `m12`}>Frontend SDKs</h2>
+                <h2 className={ Spirit.h3 + `m12 midgrey-d2`}>Frontend SDKs</h2>
                 <p className={ Spirit.p + `midgrey-l2` }>Frameworks for building a publication website</p>
             </div>
 
             <div className={ sectionStyles.headingContainer + ` order-3 order-2-ns` }>
                 {/* <span className="dn dib-ns miw10"><Icon name="rest-api" className="stroke-midgrey-l2 w6 h6" /></span> */}
-                <h2 className={ Spirit.h3 + `mt1` }>REST API</h2>
+                <h2 className={ Spirit.h3 + `mt1 midgrey-d2` }>REST API</h2>
                 <p className={ Spirit.p + `midgrey-l2` }>A full reference of API Endpoints</p>
             </div>
 
             <div className={ sectionStyles.headingContainer + ` order-5 order-3-ns` }>
                 {/* <span className="dn dib-ns miw10"><Icon name="tools" className="stroke-midgrey-l2 w6 h6" /></span> */}
-                <h2 className={ Spirit.h3 + `mt1` }>Tools</h2>
+                <h2 className={ Spirit.h3 + `mt1 midgrey-d2` }>Tools</h2>
                 <p className={ Spirit.p + `midgrey-l2` }>Utilities to help build and manage Ghost</p>
             </div>
 
