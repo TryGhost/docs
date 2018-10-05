@@ -1,9 +1,9 @@
 ---
 title: "Components"
 date: "2018-10-01"
-cover: "https://unsplash.it/400/300/?random?BoldMage"
+image: "https://unsplash.it/400/300/?random?BoldMage"
 next:
-    url: "/concepts/posts/"
+    - url: "/concepts/posts/"
 template:
 keywords:
     - design

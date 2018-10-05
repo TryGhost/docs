@@ -1,8 +1,8 @@
 ---
 title: "Dynamic Routing"
-cover: "https://unsplash.it/400/300/?random?BoldMage"
+image: "https://unsplash.it/400/300/?random?BoldMage"
 next:
-    url: "/concepts/front-ends/"
+    - url: "/concepts/front-ends/"
 template:
 keywords:
     - concepts

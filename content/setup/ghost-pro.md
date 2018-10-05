@@ -1,9 +1,9 @@
 ---
 title: "Ghost (Pro)"
-cover: "https://unsplash.it/400/300/?random?BoldMage"
+image: "https://unsplash.it/400/300/?random?BoldMage"
 sidebar: "setup"
 next:
-    url: "/setup/"
+    - url: "/setup/"
 keywords:
     - setup
 ---

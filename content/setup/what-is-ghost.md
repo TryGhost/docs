@@ -1,10 +1,10 @@
 ---
 title: "What is Ghost"
-cover: "https://unsplash.it/400/300/?random?BoldMage"
+image: "https://unsplash.it/400/300/?random?BoldMage"
 next:
-    url: "/setup/ghost-pro/"
-    title: "Setup Ghost(Pro)"
-    description: "Setup Ghost(Pro)"
+    - url: "/setup/ghost-pro/"
+    - title: "Setup Ghost(Pro)"
+    - description: "Setup Ghost(Pro)"
 keywords:
     - setup
 date: "2018-10-01 15:00:00"

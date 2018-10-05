@@ -1,8 +1,8 @@
 ---
 title: "Authors"
-cover: "https://unsplash.it/400/300/?random?BoldMage"
+image: "https://unsplash.it/400/300/?random?BoldMage"
 next:
-    url: "/concepts/dynamic-routing/"
+    - url: "/concepts/dynamic-routing/"
 template:
 keywords:
     - concepts

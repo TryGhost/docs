@@ -1,9 +1,9 @@
 ---
 title: "Introduction"
-cover: "https://unsplash.it/400/300/?random?BoldMage"
+image: "https://unsplash.it/400/300/?random?BoldMage"
 sidebar: "concepts"
 next:
-    url: "/concepts/posts/"
+    - url: "/concepts/posts/"
 keywords:
     - concepts
 ---
