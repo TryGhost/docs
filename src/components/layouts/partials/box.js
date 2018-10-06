@@ -58,7 +58,7 @@ class Box extends React.Component {
             boxClass = boxClass + ` db `
 
             return (
-                <a href={ this.props.href } className={ boxClass + this.props.className } style={ boxStyle }>
+                <a href={ this.props.href } className={ boxClass + this.props.className } style={ boxStyle } target="_blank" rel="noopener noreferrer">
                     { children }
                 </a>
             )

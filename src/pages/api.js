@@ -6,17 +6,21 @@ import Box from '../components/layouts/partials/box'
 import Icon from '../components/global/icon'
 
 import bgapi from '../images/api-bg.svg' // eslint-disable-line no-unused-vars
+
 import GoLogo from '../images/go-logo.png' // eslint-disable-line no-unused-vars
 
 const sectionStyles = {
-    headingContainer: `col-12 col-4-ns mt5 mt0-l`,
-    cardContainer: `col-12 col-4-ns grid-icon-boxes nt1 nt5-l pr4-ns`,
+    container: `grid-12 mt-vw4 mt-vw4-ns`,
+    headingContainer: `col-12 col-4-ns mr10-ns`,
+    cardContainer: `col-12 col-8-ns mt-vw4 mt0-ns grid-icon-boxes`,
 }
 
 class APISection extends React.Component {
     render() {
+        const style = (this.props.first === true ? `grid-12` : sectionStyles.container)
+
         return (
-            <div className="col-4 flex flex-column">
+            <div className={ style }>
                 { this.props.children }
             </div>
         )
@@ -30,7 +34,7 @@ APISection.propTypes = {
 class Card extends React.Component {
     render() {
         return (
-            <Box to={ this.props.to } className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt8 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+            <Box to={ this.props.to } href={ this.props.href } className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt8 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
                 { this.props.icon ? <div className="w10 h10 flex justify-center items-center"><Icon name={ this.props.icon } className="w10 h10 mb4"></Icon></div> : null }
                 { this.props.img ? <div className="w10 h10 flex justify-center items-center"><img src={ this.props.img } className="nudge-bottom--4" /></div> : null }
                 { this.props.children }
@@ -41,6 +45,7 @@ class Card extends React.Component {
 
 Card.propTypes = {
     to: PropTypes.string,
+    href: PropTypes.string,
     icon: PropTypes.string,
     img: PropTypes.string,
 }
@@ -54,44 +59,18 @@ const APIPage = () => (
             </div>
         </section>
 
-        <div className={ Spirit.page.xl + `pb-vw4 pb-vw3-ns pt-vw4 pt-vw3-ns grid-12 gutter-20 gutter-40-l` }>
-            
-            <div className={ sectionStyles.headingContainer + ` order-1` }>
-                {/* <span className="dn dib-ns miw10"><Icon name="sdks" className="stroke-midgrey-l2 w6 h6" /></span> */}
-                <h2 className={ Spirit.h3 + `m12 midgrey-d2`}>Frontend SDKs</h2>
-                <p className={ Spirit.p + `midgrey-l2` }>Frameworks for building a publication website</p>
-            </div>
-
-            <div className={ sectionStyles.headingContainer + ` order-3 order-2-ns` }>
-                {/* <span className="dn dib-ns miw10"><Icon name="rest-api" className="stroke-midgrey-l2 w6 h6" /></span> */}
-                <h2 className={ Spirit.h3 + `mt1 midgrey-d2` }>REST API</h2>
-                <p className={ Spirit.p + `midgrey-l2` }>A full reference of API Endpoints</p>
-            </div>
-
-            <div className={ sectionStyles.headingContainer + ` order-5 order-3-ns` }>
-                {/* <span className="dn dib-ns miw10"><Icon name="tools" className="stroke-midgrey-l2 w6 h6" /></span> */}
-                <h2 className={ Spirit.h3 + `mt1 midgrey-d2` }>Tools</h2>
-                <p className={ Spirit.p + `midgrey-l2` }>Utilities to help build and manage Ghost</p>
-            </div>
-
-            {/* --- */}
-
-            <div className={ sectionStyles.cardContainer + ` order-2 order-4-ns` }>
-                <Card to="/api/v2/handlebars-themes/" icon="handlebars-logo">Handlebars</Card>
-                <Card to="/" icon="gatsby-logo">Gatsby</Card>
-                {/*<Card to="/" icon="hugo-logo">Hugo</Card>*/ }
-            </div>
-
-            <div className={ sectionStyles.cardContainer + ` order-4 order-5-ns` }>
-                <Card to="/" icon="content-api-logo">Content API</Card>
-                <Card to="/" icon="admin-api-logo">Admin API</Card>
-                <Card to="/" icon="webhooks-logo">Webhooks</Card>
-            </div>
-
-            <div className={ sectionStyles.cardContainer + ` order-6` }>
-                <Card to="/" icon="ghost-cli-logo">Ghost-CLI</Card>
-                <Card to="/" icon="gscan-logo">Gscan</Card>
-            </div>
+        <div className={ Spirit.page.xl + `pb-vw4 pb-vw3-ns pt-vw4 pt-vw3-ns` }>
+            <APISection first={ true }>
+                <div className={ sectionStyles.headingContainer }>
+                    <h2 className={ Spirit.h3 }>Frontend SDKs</h2>
+                    <p className={ Spirit.p + `midgrey-l2` }>Frameworks for working with the Ghost API to build a publication website</p>
+                </div>
+                <div className={ sectionStyles.cardContainer }>
+                    <Card to="/api/v2/handlebars-themes/" icon="handlebars-logo">Handlebars</Card>
+                    <Card to="/api/v2/gatsby/" icon="gatsby-logo">Gatsby</Card>
+                    {/*<Card to="/" icon="hugo-logo">Hugo</Card>*/}
+                </div>
+            </APISection>
 
             {/*
             <APISection>
@@ -111,6 +90,28 @@ const APIPage = () => (
             </APISection>
             */}
 
+            <APISection>
+                <div className={ sectionStyles.headingContainer }>
+                    <h2 className={ Spirit.h3 }>REST API</h2>
+                    <p className={ Spirit.p + `midgrey-l2` }>A full reference of API Endpoints</p>
+                </div>
+                <div className={ sectionStyles.cardContainer }>
+                    <Card to="/api/v2/content/" icon="content-api-logo">Content API</Card>
+                    <Card to="/api/v2/admin/" icon="admin-api-logo">Admin API</Card>
+                    <Card to="/api/v2/webhooks/" icon="webhooks-logo">Webhooks</Card>
+                </div>
+            </APISection>
+
+            <APISection>
+                <div className={ sectionStyles.headingContainer }>
+                    <h2 className={ Spirit.h3 }>Tools</h2>
+                    <p className={ Spirit.p + `midgrey-l2` }>Utilities to help build and manage Ghost</p>
+                </div>
+                <div className={ sectionStyles.cardContainer }>
+                    <Card to="/api/v2/ghost-cli/" icon="ghost-cli-logo">Ghost-CLI</Card>
+                    <Card href="https://gscan.ghost.org" icon="gscan-logo">GScan</Card>
+                </div>
+            </APISection>
         </div>
     </Layout>
 )

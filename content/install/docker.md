@@ -1,11 +1,8 @@
 ---
 title: "Docker"
-image: "https://unsplash.it/400/300/?random?BoldMage"
-sidebar: "setup"
-next:
-    - url: "/setup/"
 keywords:
-    - setup
+    - Docker
+    - Container
 ---
 
 ## This is the second heading

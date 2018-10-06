@@ -1,12 +1,9 @@
 ---
-title: "Install from CLI"
-image: "https://unsplash.it/400/300/?random?BoldMage"
-sidebar: "setup"
-next:
-    - url: "/setup/local-install/"
+title: "Install from Source"
 keywords:
-    - setup
-    - local-install
+    - Developer install
+    - Contribution
+    - Contribute to Ghost
 ---
 
 ## This is the second heading

@@ -1,12 +1,9 @@
 ---
-title: "Install from source"
-image: "https://unsplash.it/400/300/?random?BoldMage"
-sidebar: "setup"
-next:
-    - url: "/setup/install-from-source/"
+title: "What is Ghost"
+date: "2018-10-01"
 keywords:
-    - setup
-    - install-from-source
+    - what is ghost
+sidebar: "concepts"
 ---
 
 ## This is the second heading
@@ -34,5 +31,4 @@ Spare ribs aute fugiat, pariatur andouille labore nulla exercitation. Aliqua pic
 
 Hamburger ham shank est, officia qui capicola proident. Ribeye dolore prosciutto sirloin alcatra. Rump short ribs quis ex fugiat proident incididunt irure t-bone meatball veniam sirloin meatloaf. Tongue anim sint pancetta bresaola sirloin.
 Does your lorem ipsum text long for something a little meatier? Give our generator a try…
-
 

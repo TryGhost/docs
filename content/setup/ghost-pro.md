@@ -1,11 +1,10 @@
 ---
-title: "Ghost (Pro)"
-image: "https://unsplash.it/400/300/?random?BoldMage"
-sidebar: "setup"
-next:
-    - url: "/setup/"
+title: "Ghost(Pro)"
 keywords:
-    - setup
+    - Ghost(Pro)
+    - Pro
+    - Managed Hosting
+    - PaaS
 ---
 
 ## This is the second heading
