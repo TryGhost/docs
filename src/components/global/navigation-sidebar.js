@@ -84,10 +84,11 @@ class SidebarList extends React.Component {
         const hasNestedItems = this.props.item.items && this.props.item.items.length
         const isFirstLevel = level === 1
         const isSecondLevel = level === 2
+        const isFirstLevelHeading = (isFirstLevel && hasNestedItems && !this.props.item.link)
 
         // All nested items are going to be hidden starting with
         // all children of level 2 items
-        const hideNestedItems = isSecondLevel
+        const hideNestedItems = isSecondLevel || !isFirstLevelHeading
 
         // Update the classes here for first level items
         const firstLevelClasses = (this.props.item.link && isFirstLevel ? `ma0 pa0` : `f-nav-first-level lh-h4 fw3 ma0 pa0 measure--0-2 midgrey-l2 bb b--whitegrey mb4`)
@@ -99,7 +100,7 @@ class SidebarList extends React.Component {
             const childrenLevel = level += 1
 
             return (
-                <li className={isFirstLevel ? `mt10` : `mt4`}>
+                <li className={isFirstLevelHeading && !this.props.first ? `mt10` : `mt4`}>
                     <h4 className={`${isFirstLevel ? firstLevelClasses : `fw4`}`}>
                         <SidebarLink
                             link={this.props.item.link}
@@ -107,7 +108,7 @@ class SidebarList extends React.Component {
                             linkClasses={this.state.linkClasses}
                         />
                     </h4>
-                    <ul className={`list ma0 pa0 ${!isFirstLevel ? `pl6 bl b--whitegrey` : `mb10`} ${hideNestedItems ? this.state.sidebarListClasses : `db`}`}>
+                    <ul className={`list ma0 pa0 ${!isFirstLevelHeading ? `pl6 bl b--whitegrey` : ``} ${hideNestedItems ? this.state.sidebarListClasses : `db`}`}>
                         {this.props.item.items.map((nestedLink, i) => (
                             <SidebarList
                                 key={i}
@@ -156,6 +157,7 @@ SidebarList.propTypes = {
     expandedSidebarLists: PropTypes.array.isRequired,
     level: PropTypes.number,
     autolink: PropTypes.string,
+    first: PropTypes.bool,
 }
 
 SidebarList.defaultProps = {
@@ -179,6 +181,7 @@ class SidebarNav extends React.Component {
                     {sidebarfile.items.map((item, i) => (
                         <SidebarList
                             key={i}
+                            first={i === 0}
                             item={item}
                             location={location}
                             expandedSidebarLists={sidebarlistsRegexToExpand}
