@@ -21,7 +21,7 @@ class TOC extends React.Component {
         return (
             <>
                 <nav className={ this.props.className + ` nr3 sticky top-25` }>
-                    <h3 className="f-nav-first-level measure--0-2  midgrey-l2 ma0 pa0 fw3 mt8 bb b--whitegrey pb2">On this page</h3>
+                    <h3 className="f-nav-first-level measure--0-2 middarkgrey ma0 pa0 fw6 mt8">On this page</h3>
                     <div className="toc-list-container mt3"></div>
                 </nav>
             </>

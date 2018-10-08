@@ -15,10 +15,11 @@ function FAQQuestion(props) {
     return (
         <>
             <Link to={ props.to } className="middarkgrey link dim flex justify-start items-start">
-                <span className="dib br-pill ba b---blue blue f-supersmall fw6 flex justify-center items-center nudge-top--3 mr2 flex-shrink-0" style={{
+                {/* <span className="dib br-pill ba b---blue blue f-supersmall fw6 flex justify-center items-center nudge-top--3 mr2 flex-shrink-0" style={{
                     width: `14px`,
                     height: `14px`,
-                }}>?</span> <span className="dib">{ props.children }</span>
+                }}>?</span>  */}
+                <span className="dib">{ props.children }</span>
             </Link>
         </>
     )
@@ -182,7 +183,7 @@ const IndexPage = () => (
                         <li className="mb3 lh-1-65"><FAQQuestion to="/faq/">How do I reactivate my Ghost(Pro) account?</FAQQuestion></li>
                         <li className="mb3 lh-1-65"><FAQQuestion to="/faq/">How do I upgrade/downgrade my subscription?</FAQQuestion></li>
                         <li className="mb5 lh-1-65"><FAQQuestion to="/faq/">How do I change my Ghost.org account email</FAQQuestion></li>
-                        <li className="lh-1-65"><Link to="/faq/" className="dib blue link fw5 f7 dim pl6">
+                        <li className="lh-1-65"><Link to="/faq/" className="dib blue link fw5 f7 dim">
                             <span className="flex items-center">More FAQ <Icon name="arrow-right" className="w3 h3 ml1 fill-blue nudge-bottom--1" /></span>
                         </Link></li>
                     </ul>

@@ -91,7 +91,7 @@ class SidebarList extends React.Component {
         const hideNestedItems = isSecondLevel || !isFirstLevelHeading
 
         // Update the classes here for first level items
-        const firstLevelClasses = (this.props.item.link && isFirstLevel ? `ma0 pa0` : `f-nav-first-level lh-h4 fw3 ma0 pa0 measure--0-2 midgrey-l2 bb b--whitegrey mb4`)
+        const firstLevelClasses = (this.props.item.link && isFirstLevel ? `ma0 pa0` : `f-nav-first-level lh-h4 fw6 ma0 pa0 measure--0-2 middarkgrey nb1`)
 
         if (hasNestedItems) {
             // A section can not have a link on its own. In this case, we grab the
