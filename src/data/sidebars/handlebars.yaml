@@ -3,8 +3,10 @@
     - title: Overview
       link: /api/v2/handlebars-themes/
     - title: Contexts
-      link: /api/v2/handlebars-themes/context/
+      link: ''
       items:
+        - title: Context Overview
+          link: /api/v2/handlebars-themes/context/
         - title: Index
           link: /api/v2/handlebars-themes/context/index/
         - title: Post
@@ -16,8 +18,10 @@
         - title: Tag
           link: /api/v2/handlebars-themes/context/tag/
     - title: Helpers
-      link: /api/v2/handlebars-themes/helpers/
+      link: ''
       items:
+        - title: Helpers Overview
+          link: /api/v2/handlebars-themes/helpers/
         - title: Functional
           link: /api/v2/handlebars-themes/helpers/functional/
           items:

@@ -38,12 +38,18 @@ class SidebarLink extends React.Component {
 
         if (this.props.link.match(/^\s?http(s?)/gi)) {
             return (
-                <a href={this.props.link} className="link middarkgrey" target="_blank" rel="noopener noreferrer">{title}</a>
+                <a href={ this.props.link } className={ `link ` + this.props.linkClasses } target="_blank" rel="noopener noreferrer">{title}</a>
             )
         } else {
-            return (
-                <Link to={this.props.link} className={`link ${this.props.linkClasses} ${isStarred ? starredClasses : ` `}`}>{title}</Link>
-            )
+            if (this.props.link) {
+                return (
+                    <Link to={ this.props.link } className={ `link ${this.props.linkClasses} ${isStarred ? starredClasses : ` `}` }>{ title }</Link>
+                )
+            } else {
+                return (
+                    <>{ title }</>
+                )
+            }
         }
     }
 }
@@ -59,14 +65,14 @@ class SidebarList extends React.Component {
         super(props)
         this.state = {
             sidebarListClasses: `dn`,
-            linkClasses: `middarkgrey-l1`,
+            linkClasses: `middarkgrey fw4 hover-blue-l2`,
         }
         this.extendSidebar = this.extendSidebar.bind(this)
         this.setActiveLink = this.setActiveLink.bind(this)
     }
 
     setActiveLink() {
-        this.setState({ linkClasses: `blue fw5` })
+        this.setState({ linkClasses: `blue fw6` })
     }
 
     extendSidebar() {
@@ -84,24 +90,24 @@ class SidebarList extends React.Component {
         const hideNestedItems = isSecondLevel
 
         // Update the classes here for first level items
-        const firstLevelClasses = `f-nav-first-level lh-h4 fw4 ma0 pa0 measure--0-2`
+        const firstLevelClasses = (this.props.item.link && isFirstLevel ? `ma0 pa0` : `f-nav-first-level lh-h4 fw3 ma0 pa0 measure--0-2 midgrey-l2 bb b--whitegrey mb4`)
 
         if (hasNestedItems) {
             // A section can not have a link on its own. In this case, we grab the
             // link of the first nested item
-            const autoLink = this.props.item.link || this.props.item.items[0].link
+            // const autoLink = this.props.item.link || this.props.item.items[0].link
             const childrenLevel = level += 1
 
             return (
-                <li className="mt4">
+                <li className={isFirstLevel ? `mt10` : `mt4`}>
                     <h4 className={`${isFirstLevel ? firstLevelClasses : `fw4`}`}>
                         <SidebarLink
-                            link={autoLink}
+                            link={this.props.item.link}
                             title={this.props.item.title}
                             linkClasses={this.state.linkClasses}
                         />
                     </h4>
-                    <ul className={`list ma0 pa0 ${!isFirstLevel ? `pl6 bl b--whitegrey` : `nt1 mb8`} ${hideNestedItems ? this.state.sidebarListClasses : `db`}`}>
+                    <ul className={`list ma0 pa0 ${!isFirstLevel ? `pl6 bl b--whitegrey` : `mb10`} ${hideNestedItems ? this.state.sidebarListClasses : `db`}`}>
                         {this.props.item.items.map((nestedLink, i) => (
                             <SidebarList
                                 key={i}

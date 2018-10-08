@@ -307,10 +307,11 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     color: var(--midgrey);
     text-decoration: none;
     display: inline-block;
+    transition: all 0.3s ease;
 }
 
 .toc-list-container ol a:hover {
-    color: var(--darkgrey);
+    color: var(--blue-l2);
     text-decoration: none;
 }
 
@@ -321,5 +322,5 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 .toc-list-container .is-active-link {
     color: var(--blue);
-    font-weight: 500;
+    font-weight: 600;
 }
