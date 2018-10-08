@@ -49,8 +49,8 @@ function PageHeader(props) {
     if (title) {
         return (
             <div className={ bgClass }>
-                <div className={ Spirit.page.xl + `pt-vw7 pt-vw2-ns pb-vw2 white` }>
-                    <h1 className={ Spirit.h3 + `gh-integration-header-shadow` }>
+                <div className={ Spirit.page.xl + `pt-vw5 pt-vw1-ns pb-vw1 white` }>
+                    <h1 className={ Spirit.h4 + `gh-integration-header-shadow` }>
                         <Link to={ mainLink } className={ `link dim ${subtitle ? `white-80 fw3` : `white`}` }>{ title }</Link>
                         { subtitle ? <Link to={ subLink } className="link white dim titleslash-white pl4 ml4 relative">{ subtitle }</Link> : null }
                     </h1>
@@ -94,24 +94,28 @@ class DocTemplate extends React.Component {
                     <meta name="twitter:data2" content="TODO: Real Data - primary_tag" />
                     <meta name="twitter:creator" content="@tryghost" />
                 </Helmet>
-                <Layout>
+                <Layout mainClass={ post.frontmatter.sidebar ? `` : `bg-white pb20`}>
                     <PageHeader location={ this.props.location } />
-                    <div className={Spirit.page.xl + `flex flex-start mt12`}>
-                        <NavBar
-                            location={this.props.location}
-                            sidebar={post.frontmatter.sidebar}
-                        />
-                        <div className="flex-auto">
-                            <section className="flex-auto flex bg-white br4 shadow-1 pa15 pt12 pr12">
-                                { post.frontmatter.toc ? <div className="order-2"><TOC headingsOffset="-290" /></div> : null }
-                                <article className="order-1 flex-grow-1">
-                                    {/* <span className="mb8 f8">Setup / Ghost(Pro)</span> */}
-                                    <h1 className={Spirit.h1}>{post.frontmatter.title}</h1>
-                                    <section className="post-content" dangerouslySetInnerHTML={{
+
+                    <div className={ Spirit.page.xl + `pt-vw4 pt-vw2-ns`}>
+                        <div className={ post.frontmatter.sidebar ? `grid-navbar` : `grid-auto` }>
+                            { post.frontmatter.sidebar ? 
+                                <NavBar
+                                    location={ this.props.location }
+                                    sidebar={ post.frontmatter.sidebar }
+                                />
+                                : null }
+                            <div className={ (post.frontmatter.sidebar ? `flex bg-white pa12 pt10 br4 shadow-1` : `flex`) }>
+                                <article className={ `flex-auto ${post.frontmatter.sidebar ? `pr10` : `pr20`}` }>
+                                    <h1 className={ Spirit.h1 }>{ post.frontmatter.title }</h1>
+                                    <section className="post-content" dangerouslySetInnerHTML={ {
                                         __html: post.html,
-                                    }} />
+                                    } } />
                                 </article>
-                            </section>
+                                { post.frontmatter.toc ? 
+                                    <div><TOC className={ post.frontmatter.sidebar ? `miw50` : `miw70` } headingsOffset="-290" /></div>
+                                    : null }
+                            </div>
                         </div>
                     </div>
                 </Layout>

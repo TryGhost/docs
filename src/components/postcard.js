@@ -36,9 +36,9 @@ const PostCard = ({ post, className }) => {
                 <header>
                     { post.featured ? <span className="bg-green-l2 pa1 f-supersmall fw5 dib measure-0-2 mr2 white br-pill pl2 pr2 nl2">Featured</span> : null }
                     <span className="midgrey f8">{ tag }</span>
-                    <h2 className={ Spirit.h3 + `darkgrey` + (post.featured ? ` mt2` : ` mt4`) }>{ post.title }</h2>
+                    <h2 className={ Spirit.h3 + `middarkgrey-d1` + (post.featured ? ` mt2` : ` mt4`) }>{ post.title }</h2>
                 </header>
-                { excerpt ? <section className={ Spirit.p + `darkgrey mt4` }>{ excerpt }</section> : null }
+                { excerpt ? <section className={ Spirit.p + `middarkgrey-l2 mt4` }>{ excerpt }</section> : null }
             </Link>
             
             <footer className="flex pt2 mt6 content-end">

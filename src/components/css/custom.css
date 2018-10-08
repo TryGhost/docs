@@ -267,6 +267,11 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     }
 }
 
+.grid-navbar {
+    display: grid;
+    grid-template-columns: 220px auto;
+}
+
 
 /* API */
 /* ----------------------------------------------------------------------- */
@@ -289,7 +294,13 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 /* Tutorials */
 /* ----------------------------------------------------------------------- */
 .bg-tutorials {
-    background: url(../../images/api-bg.svg) bottom center no-repeat, linear-gradient(60deg, #8AB818 0%, #BDE851 100%);
+    background: url(../../images/api-bg.svg) bottom center no-repeat, linear-gradient(60deg, #7AA803 0%, #BDE851 100%);
+}
+
+/* FAQ */
+/* ----------------------------------------------------------------------- */
+.faq-content {
+    margin-top: -12px;
 }
 
 

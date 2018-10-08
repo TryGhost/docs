@@ -28,9 +28,9 @@ const Integration = ({ data }) => {
             <div className={ Spirit.page.l + `flex` }>
                 <div className="w-100 pa15 pt13 bg-white br4 shadow-1 flex flex-start">
                     <div className="order-2">
-                        <TOC headingsOffset="-400" />
+                        <TOC className="miw50" headingsOffset="-400" />
                     </div>
-                    <article className="order-1">
+                    <article className="order-1 pr10">
                         <div className="mb5 f8">
                             <Link className="link midgrey" to="/integrations/">Integrations</Link>
                             <span className="mr1 ml1 f8 midgrey">/</span>

@@ -26,7 +26,7 @@ exports.createPages = ({ graphql, actions }) => {
         {
             tag: `hash-faq`,
             prefix: `/faq/`,
-            template: `./src/templates/standalone-post.js`,
+            template: `./src/templates/faq.js`,
         },
         {
             tag: `hash-tutorial`,

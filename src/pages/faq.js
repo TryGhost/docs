@@ -9,10 +9,14 @@ import { Spirit } from '../components/spirit-styles'
 const FAQPage = ({ data }) => {
     const posts = data.allGhostPost.edges
     return (
-        <Layout title="FAQ" headerDividerStyle="shadow">
-            <div className={ Spirit.page.l }>
-                <div className="flex flex-column pa12 pt10 bg-white br4">
-                    <h1 className="ma0 mb6 f4">Frequently Asked Questions</h1>
+        <Layout title="FAQ" headerDividerStyle="shadow" bodyClass="bg-white">
+            <div className="gh-bg-home bb b--whitegrey">
+                <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1` }>
+                    <h1 className={ Spirit.h4 + ``}>Frequently Asked Questions</h1>
+                </div>
+            </div>
+            <div className={ Spirit.page.xl + `mt-vw6 mt-vw2-ns`}>
+                <div className="grid-12 gutter-40">
                     {posts.map(({ node }) => (
                         <FAQ key={node.id} post={node} />
                     ))}

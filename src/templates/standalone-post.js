@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layouts/default'
-import Authors from '../components/authors'
+// import Authors from '../components/authors'
 import { Spirit } from '../components/spirit-styles'
 
 const Tutorial = ({ data }) => {
@@ -11,10 +11,13 @@ const Tutorial = ({ data }) => {
     return (
         <Layout title="Home" headerDividerStyle="hairline" bodyClass="bg-white">
             <div className={ Spirit.page.m + `pt20`}>
-                <time dateTime={ post.publishedAt } className="db mb2 midgrey">{ post.publishedAt }</time>
                 <h1 className={ Spirit.thinheadline }>{ post.title }</h1>
                 <section className="post-content" dangerouslySetInnerHTML={ { __html: post.html } } />
-                <Authors authors={ post.authors } />
+                {/* <Authors authors={ post.authors } /> */}
+                
+                <footer className="pt5 bt b--whitegrey midgrey f8 pb8">
+                    Updated: <time dateTime={ post.publishedAt }>{ post.publishedAt }</time>
+                </footer>
             </div>
         </Layout>
     )

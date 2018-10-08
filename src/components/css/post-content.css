@@ -193,7 +193,7 @@
 .post-content video {
     display: block;
     margin: 1.5em auto;
-    max-width: 1040px;
+    max-width: 100%;
     height: auto;
 }
 
@@ -423,11 +423,11 @@ Usage (In Ghost editor):
     content: "\00B7 \00B7 \00B7";
     text-align: center;
     margin: 0 auto;
-    font-size: 27px;
+    font-size: 22px;
     font-family: monospace;
     display: block;
-    color: var(--midgrey);
-    letter-spacing: -2px;
+    color: var(--lightgrey);
+    letter-spacing: -6px;
     margin-top: -10px;
 }
 
