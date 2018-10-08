@@ -133,7 +133,7 @@ class DocTemplate extends React.Component {
                                     } } />
                                 </article>
                                 { post.frontmatter.toc ? 
-                                    <div><TOC className={ post.frontmatter.sidebar ? `miw50` : `miw70` } headingsOffset="-290" /></div>
+                                    <div><TOC className={ post.frontmatter.sidebar ? `miw50` : `miw70` } headingsOffset="-200" /></div>
                                     : null }
                             </div>
                         </div>

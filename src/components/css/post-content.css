@@ -288,7 +288,7 @@ Usage (In Ghost editor):
 .post-content h2 {
     font-size: 3.3rem;
     font-weight: 600;
-    line-height: var(--vr-6);
+    line-height: var(--vr-5);
     padding-top: var(--navbar-size);
     margin: calc(var(--vr-7) - var(--navbar-size)) 0 0;
 }
@@ -411,15 +411,15 @@ Usage (In Ghost editor):
 .post-content hr {
     position: relative;
     display: block;
-    width: 30rem;
+    width: 100%;
     margin: var(--vr-8) 0 0;
     padding: 0;
     height: 1px;
     border: none;
-    /* border-top: 1px solid var(--lightgrey); */
+    border-top: 1px solid var(--whitegrey-d2);
 }
 
-.post-content hr::before {
+/* .post-content hr::before {
     content: "\00B7 \00B7 \00B7";
     text-align: center;
     margin: 0 auto;
@@ -429,7 +429,7 @@ Usage (In Ghost editor):
     color: var(--lightgrey);
     letter-spacing: -6px;
     margin-top: -10px;
-}
+} */
 
 .post-content hr + p,
 .post-content hr + ul,
@@ -484,27 +484,50 @@ Usage (In Ghost editor):
 }
 
 .post-content figure + h1,
-.post-content figure + h2,
 .post-content figure + h3,
 .post-content figure + h4,
 .post-content figure + h5,
 .post-content figure + h6,
 .post-content pre + h1,
-.post-content pre + h2,
 .post-content pre + h3,
 .post-content pre + h4,
 .post-content pre + h5,
 .post-content pre + h6,
 .post-content div + h1,
-.post-content div + h2,
 .post-content div + h3,
 .post-content div + h4,
 .post-content div + h5,
 .post-content div + h6 
 {
-    margin: calc(var(--vr-4) - var(--navbar-size)) 0 0;
+    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
 }
 
+.post-content figure + h2,
+.post-content pre + h2,
+.post-content div + h2 {
+    margin: calc(var(--vr-10) - var(--navbar-size)) 0 0;
+}
+
+.post-content h1 + figure,
+.post-content h2 + figure,
+.post-content h3 + figure,
+.post-content h4 + figure,
+.post-content h5 + figure,
+.post-content h6 + figure,
+.post-content h1 + pre,
+.post-content h2 + pre,
+.post-content h3 + pre,
+.post-content h4 + pre,
+.post-content h5 + pre,
+.post-content h6 + pre,
+.post-content h1 + div,
+.post-content h2 + div,
+.post-content h3 + div,
+.post-content h4 + div,
+.post-content h5 + div,
+.post-content h6 + div {
+    margin: var(--vr-2);
+}
 
 /* Footnotes */
 .footnotes-sep {
@@ -551,23 +574,27 @@ Usage (In Ghost editor):
 
 /* Tables */
 .post-content table {
-    display: inline-block;
+    /* display: inline-block; */
     overflow-x: auto;
-    margin: 0.5em 0 2.5em;
+    margin: var(--vr-4) 0 2.5em;
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 1.6rem;
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
+    font-size: 1.3rem;
     white-space: nowrap;
     vertical-align: top;
     -webkit-overflow-scrolling: touch;
-    background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
+    /* background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center; */
     background-attachment: scroll, scroll;
     background-size: 10px 100%, 10px 100%;
     background-repeat: no-repeat;
 }
 
+.post-content thead, 
+.post-content tbody {
+    width: 100%;
+}
 
 .post-content table td:first-child {
     background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
@@ -590,11 +617,12 @@ Usage (In Ghost editor):
     text-align: left;
     text-transform: uppercase;
     background-color: color(var(--whitegrey) l(+4%));
+    border-bottom: 1px solid var(--lightgrey);
 }
 
 .post-content table th,
 .post-content table td {
-    padding: 6px 12px;
+    padding: 6px 12px 6px 0;
     border: color(var(--whitegrey) l(-1%) s(-5%)) 1px solid;
 }
 
