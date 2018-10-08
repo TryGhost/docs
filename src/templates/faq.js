@@ -5,7 +5,7 @@ import Link from 'gatsby-link'
 
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
-import Tags from '../components/helpers/tags'
+import Tags from '@tryghost/react-helpers/tags'
 import GhostMetaData from '../components/layouts/partials/ghost-head'
 
 class FAQ extends React.Component {
@@ -30,7 +30,8 @@ class FAQ extends React.Component {
                                 <Tags
                                     post={post}
                                     separator=" / "
-                                    html={true}
+                                    classes="darkgrey fw5"
+                                    separatorClasses="mr1 ml1 f8 midgrey"
                                 />
                             </div>
 
