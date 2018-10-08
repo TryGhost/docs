@@ -60,7 +60,7 @@ const APIPage = () => (
             </div>
         </section>
 
-        <div className={ Spirit.page.l + `pb-vw4 pb-vw3-ns pt-vw4 pt-vw3-ns` }>
+        <div className={ Spirit.page.xl + `pb-vw4 pb-vw3-ns pt-vw4 pt-vw3-ns` }>
             <APISection first={ true }>
                 <div className={ sectionStyles.headingContainer }>
                     <h2 className={ Spirit.h3 }>Frontend SDKs</h2>
