@@ -1,22 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-function filterTags(tags, internal) {
-    // Get rid of internal tags
-    return internal ? tags : tags.filter(tag => !tag.name.match(/^#/))
-}
-
-function getPrimaryTag(tags) {
-    // If any tags left, use the first tag name and fallback to `General`
-    if (!tags.length) {
-        return {
-            name: `General`,
-            slug: `general`,
-        }
-    } else {
-        return tags[0]
-    }
-}
+import tagsHelper from '@tryghost/helpers/tags'
+import _ from 'lodash'
 
 /*
 * Tags helper
@@ -31,50 +16,30 @@ function getPrimaryTag(tags) {
 *   - separatorClasses [optional when html, default "mr1 ml1 f8 midgrey", classNames used for the html separator tags]
 */
 const Tags = (props) => {
-    const post = props.post
-    let tags = post.tags || []
-    const output = []
+    let post = props.post
+    let opts = _.pick(props, [`separator`, `prefix`, `suffix`, `limit`, `from`, `to`])
 
-    // remove internal tags if not wanted
-    tags = filterTags(tags, props.internal)
+    opts.visibility = props.internal ? `public,internal` : `public`
 
-    // If the limit is one, only one tag left, or no tag left after filtering we only want the primary tag
-    if (props.limit === 1 || !tags.length || tags.length === 1) {
-        tags = getPrimaryTag(tags)
+    opts.fn = function process(tag) {
+        return props.html ? <span className={props.classes} key={tag.slug}>{tag.name}</span> : tag.name
     }
 
     if (props.html) {
-        // We have more than one tag left
-        if (tags.length > 1) {
-            tags = tags.map((tag, i) => {
-                output.push(<span className={props.classes} key={tag.slug}>{tag.name}</span>)
-
-                {
-                    if (props.separator && i < tags.length - 1) {
-                        output.push(<span className={props.separatorClasses}>{props.separator}</span>)
-                    }
-                }
-            })
-        } else { // only one tag left
-            output.push(<span className={props.classes} key={tags.slug}>{tags.name}</span>)
-        }
-
-        return (
-            output
-        )
-    } else {
-        // We have more than one tag left
-        if (tags.length > 1) {
-            tags = tags.map(tag => tag.name)
-            output.push(tags.join(`${props.separator}`))
-        } else {
-            output.push(tags.name)
-        }
-
-        return (
-            output
-        )
+        opts.separator = <span className={props.separatorClasses}>{props.separator}</span>
     }
+
+    opts.fallback = {
+        name: `General`,
+        slug: `general`,
+        visibility: `public`,
+    }
+
+    let output = tagsHelper(post, opts)
+
+    return (
+        output
+    )
 }
 
 Tags.defaultProps = {
@@ -88,9 +53,15 @@ Tags.defaultProps = {
 
 Tags.propTypes = {
     post: PropTypes.object.isRequired,
-    internal: PropTypes.bool,
     limit: PropTypes.number,
+    from: PropTypes.number,
+    to: PropTypes.number,
     separator: PropTypes.string,
+    prefix: PropTypes.string,
+    suffix: PropTypes.string,
+    visibility: PropTypes.string,
+    // @TODO: get rid of internal flag?
+    internal: PropTypes.bool,
     html: PropTypes.bool,
     classes: PropTypes.string,
 }
