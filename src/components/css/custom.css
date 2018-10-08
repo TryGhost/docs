@@ -199,7 +199,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     left: 1px;
     display: block;
     width: 1px;
-    height: 32px;
+    height: 24px;
     background: rgba(255, 255, 255, 0.3);
     transform: rotate(25deg);
 }
