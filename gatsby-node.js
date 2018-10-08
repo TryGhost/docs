@@ -25,7 +25,10 @@ exports.createPages = ({ graphql, actions }) => {
     function ghostPostQuery(tag) {
         return (`
           {
-            allGhostPost(filter: {tags: {elemMatch: {slug: {eq: "${tag}"}}}}) {
+            allGhostPost(
+                filter: {tags: {elemMatch: {slug: {eq: "${tag}"}}},
+                slug: {ne: "data-schema"}}
+            ) {
               edges {
                 node {
                   slug
@@ -95,7 +98,10 @@ exports.createPages = ({ graphql, actions }) => {
     queryPromises.push(new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         graphql(`
         {
-            allMarkdownRemark(filter: {fields: {slug: {ne: "/data-schema/"}}}) {
+            allMarkdownRemark(
+                sort: {order: ASC, fields: [frontmatter___date]},
+                filter: {fields: {slug: {ne: "/data-schema/"}}}
+            ) {
                 edges {
                     node {
                         fields {
