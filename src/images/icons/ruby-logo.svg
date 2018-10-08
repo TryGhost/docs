@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52 (66869) - http://www.bohemiancoding.com/sketch -->
-    <title>Group 8</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Logos" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group-8">
-            <polygon id="Stroke-1" stroke-opacity="0.00784313771" stroke="#000000" stroke-width="1.33333335e-11" points="0 0 100 0 100 100 0 100"></polygon>
-            <g id="Group-7" transform="translate(1.904762, 1.904762)" stroke="#FF003D" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
-                <path d="M46.4660694,95.1785623 C46.8699902,95.7420485 47.4186031,96.0237876 48.1119043,96.0237876 C48.8052055,96.0237876 49.3538188,95.7420485 49.7577396,95.1785623 L95.4327323,31.2202353 C96.3237105,29.9622178 96.3126001,28.712217 95.3994014,27.4702371 L75.8202305,1.01190454 C75.4035622,0.456349045 74.8479993,0.178571304 74.1535577,0.178571304 L22.0785702,0.178571304 C21.3841264,0.178570804 20.8285694,0.456348299 20.4119032,1.01190379 L0.824404723,27.4535697 C-0.0887999679,28.6955516 -0.0999110214,29.9455523 0.791071575,31.2035698 L46.4660694,95.1785623 Z" id="Stroke-6" fill-opacity="0.181414176" fill="#FF003D"></path>
-                <path d="M96.0243997,29.3452362 L0.195238003,29.3452362" id="Stroke-2"></path>
-                <polyline id="Stroke-3" points="29.2702357 29.3494026 48.1119005 0.178571304 66.9535631 29.3494026"></polyline>
-                <path d="M21.099403,0.424404685 L48.1119005,96.0118989" id="Stroke-4"></path>
-                <path d="M75.1243981,0.424404685 L48.1119005,96.0118989" id="Stroke-5"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path stroke-opacity=".008" stroke="#000" stroke-width="0" d="M0 0h100v100H0z"/><g stroke="#FF003D" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path d="M48.37 97.083c.405.564.953.846 1.647.846.693 0 1.242-.282 1.646-.846l45.674-63.958c.891-1.258.88-2.508-.033-3.75L77.725 2.917c-.417-.556-.972-.834-1.667-.834H23.983c-.694 0-1.25.278-1.666.834L2.729 29.358c-.913 1.242-.924 2.492-.033 3.75L48.37 97.083z" fill-opacity=".181" fill="#FF003D"/><path d="M97.93 31.25H2.1M31.175 31.254l18.842-29.17 18.841 29.17M23.004 2.33l27.013 95.587M77.03 2.33L50.016 97.916"/></g></g></svg>
