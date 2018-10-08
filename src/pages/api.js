@@ -34,10 +34,10 @@ APISection.propTypes = {
 class Card extends React.Component {
     render() {
         return (
-            <Box to={ this.props.to } href={ this.props.href } className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt8 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                { this.props.icon ? <div className="w10 h10 flex justify-center items-center"><Icon name={ this.props.icon } className="w10 h10 mb4"></Icon></div> : null }
+            <Box to={ this.props.to || null } href={ this.props.href } className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt8 pb5 tdn" onWhite="false" elevation="2">
+                { this.props.icon ? <div className="w10 h10 flex justify-center items-center"><Icon name={ this.props.icon } className={ `w10 h10 mb4` + (!this.props.to && !this.props.href ? ` fill-lightgrey o-50` : ``) }></Icon></div> : null }
                 { this.props.img ? <div className="w10 h10 flex justify-center items-center"><img src={ this.props.img } className="nudge-bottom--4" /></div> : null }
-                { this.props.children }
+                <span className={ (!this.props.to && !this.props.href ? `o-50` : ``)}>{ this.props.children }</span>
             </Box>
         )
     }
@@ -48,6 +48,7 @@ Card.propTypes = {
     href: PropTypes.string,
     icon: PropTypes.string,
     img: PropTypes.string,
+    className: PropTypes.string,
 }
 
 const APIPage = () => (
@@ -59,7 +60,7 @@ const APIPage = () => (
             </div>
         </section>
 
-        <div className={ Spirit.page.xl + `pb-vw4 pb-vw3-ns pt-vw4 pt-vw3-ns` }>
+        <div className={ Spirit.page.l + `pb-vw4 pb-vw3-ns pt-vw4 pt-vw3-ns` }>
             <APISection first={ true }>
                 <div className={ sectionStyles.headingContainer }>
                     <h2 className={ Spirit.h3 }>Frontend SDKs</h2>
@@ -68,27 +69,9 @@ const APIPage = () => (
                 <div className={ sectionStyles.cardContainer }>
                     <Card to="/api/v2/handlebars-themes/" icon="handlebars-logo">Handlebars</Card>
                     <Card to="/api/v2/gatsby/" icon="gatsby-logo">Gatsby</Card>
-                    {/*<Card to="/" icon="hugo-logo">Hugo</Card>*/}
+                    {/* <Card icon="hugo-logo" className="o-50">Hugo</Card> */}
                 </div>
             </APISection>
-
-            {/*
-            <APISection>
-                <div className={ sectionStyles.headingContainer }>
-                    <h2 className={ Spirit.h3 }>Client Libraries</h2>
-                    <p className={ Spirit.p + `midgrey-l2` }>Specific libraries for interacting with the Ghost API directly</p>
-                </div>
-                <div className={ sectionStyles.cardContainer }>
-                    <Card to="/" icon="javascript-logo">JavaScript</Card>
-                    <Card to="/" icon="ruby-logo">Ruby</Card>
-                    <Card to="/" icon="php-logo">PHP</Card>
-                    <Card to="/" icon="python-logo">Python</Card>
-                    <Card to="/" img={ GoLogo }>Go</Card>
-                    <Card to="/" icon="apple-logo">iOS</Card>
-                    <Card to="/" icon="android-logo">Android</Card>
-                </div>
-            </APISection>
-            */}
 
             <APISection>
                 <div className={ sectionStyles.headingContainer }>
@@ -110,6 +93,23 @@ const APIPage = () => (
                 <div className={ sectionStyles.cardContainer }>
                     <Card to="/api/v2/ghost-cli/" icon="ghost-cli-logo">Ghost-CLI</Card>
                     <Card href="https://gscan.ghost.org" icon="gscan-logo">GScan</Card>
+                </div>
+            </APISection>
+
+            <APISection>
+                <div className={ sectionStyles.headingContainer }>
+                    <h4 className="dib ma0 pa0 bg-purple pa1 br-pill pl3 pr3 tc white">Coming soon</h4>
+                    <h2 className={ Spirit.h3 + `mt2`}>Client Libraries</h2>
+                    <p className={ Spirit.p + `midgrey-l2` }>Specific libraries for interacting with the Ghost API directly</p>
+                </div>
+                <div className={ sectionStyles.cardContainer }>
+                    <Card icon="javascript-logo-inv">JavaScript</Card>
+                    <Card icon="ruby-logo-fill">Ruby</Card>
+                    <Card icon="php-logo">PHP</Card>
+                    <Card icon="python-logo">Python</Card>
+                    {/* <Card to="/" img={ GoLogo }>Go</Card> */ }
+                    <Card icon="apple-logo">iOS</Card>
+                    <Card icon="android-logo">Android</Card>
                 </div>
             </APISection>
         </div>
