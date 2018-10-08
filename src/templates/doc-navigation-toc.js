@@ -19,16 +19,36 @@ function NavBar(props) {
     }
 }
 
-function PageHeader(props) {    
+function PageHeader(props) {
     var title, subtitle, mainLink, subLink, bgClass = `bg-api-reference`
-    
-    // API
+
+    // Handlebars
     if (props.location.pathname.match(/\/api\//i)) {
         title = `API Reference`
         mainLink = `/api/`
         if (props.location.pathname.match(/\/handlebars-themes\//i)) {
             subtitle = `Handlebars`
             subLink = `/api/v2/handlebars-themes/`
+        }
+        if (props.location.pathname.match(/\/gatsby\//i)) {
+            subtitle = `Gatsby`
+            subLink = `/api/v2/gatsby/`
+        }
+        if (props.location.pathname.match(/\/content\//i)) {
+            subtitle = `Content`
+            subLink = `/api/v2/content/`
+        }
+        if (props.location.pathname.match(/\/admin\//i)) {
+            subtitle = `Admin`
+            subLink = `/api/v2/admin/`
+        }
+        if (props.location.pathname.match(/\/webhooks\//i)) {
+            subtitle = `Webhooks`
+            subLink = `/api/v2/webhooks/`
+        }
+        if (props.location.pathname.match(/\/ghost-cli\//i)) {
+            subtitle = `Ghost CLI`
+            subLink = `/api/v2/ghost-cli/`
         }
     }
 
