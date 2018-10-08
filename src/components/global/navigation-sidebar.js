@@ -36,20 +36,20 @@ class SidebarLink extends React.Component {
         // TODO: Needs more logic, once the usage of `*` is clear
         const starredClasses = ``
 
-        if (this.props.link.match(/^\s?http(s?)/gi)) {
-            return (
-                <a href={ this.props.link } className={ `link ` + this.props.linkClasses } target="_blank" rel="noopener noreferrer">{title}</a>
-            )
-        } else {
-            if (this.props.link) {
+        if (this.props.link) {
+            if (this.props.link.match(/^\s?http(s?)/gi)) {
                 return (
-                    <Link to={ this.props.link } className={ `link ${this.props.linkClasses} ${isStarred ? starredClasses : ` `}` }>{ title }</Link>
+                    <a href={ this.props.link } className={ `link ` + this.props.linkClasses } target="_blank" rel="noopener noreferrer">{title}</a>
                 )
             } else {
                 return (
-                    <>{ title }</>
+                    <Link to={ this.props.link } className={ `link ${this.props.linkClasses} ${isStarred ? starredClasses : ` `}` }>{ title }</Link>
                 )
             }
+        } else {
+            return (
+                <>{ title }</>
+            )
         }
     }
 }
