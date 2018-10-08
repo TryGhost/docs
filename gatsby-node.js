@@ -20,24 +20,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
     const { createRedirect } = actions
-
-    // TODO: move this to shared query builder tool, where we hold all our queries
-    function ghostPostQuery(tag) {
-        return (`
-          {
-            allGhostPost(
-                filter: {tags: {elemMatch: {slug: {eq: "${tag}"}}},
-                slug: {ne: "data-schema"}}
-            ) {
-              edges {
-                node {
-                  slug
-                }
-              }
-            }
-          }
-        `)
-    }
+    const queries = require(`./src/utils/queries`)
 
     const ghostPostToQuery = [
         {
@@ -78,7 +61,7 @@ exports.createPages = ({ graphql, actions }) => {
     // Query for each of the tags that we defined above
     ghostPostToQuery.forEach((ghostPostQueryData) => {
         queryPromises.push(new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
-            graphql(ghostPostQuery(ghostPostQueryData.tag)).then((result) => {
+            graphql(queries.allGhostPosts(ghostPostQueryData.tag)).then((result) => {
                 result.data.allGhostPost.edges.forEach(({ node }) => {
                     createPage({
                         path: `${ghostPostQueryData.prefix}${node.slug}/`,
@@ -96,22 +79,7 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     queryPromises.push(new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
-        graphql(`
-        {
-            allMarkdownRemark(
-                sort: {order: ASC, fields: [frontmatter___date]},
-                filter: {fields: {slug: {ne: "/data-schema/"}}}
-            ) {
-                edges {
-                    node {
-                        fields {
-                            slug
-                        }
-                    }
-                }
-            }
-        }
-        `).then((result) => {
+        graphql(queries.allMarkdownPosts()).then((result) => {
             result.data.allMarkdownRemark.edges.forEach(({ node }) => {
                 const DocTemplate = path.resolve(`./src/templates/doc-navigation-toc.js`)
                 // Exclude the default README.md pages from the api docs repo
