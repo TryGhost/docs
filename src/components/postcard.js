@@ -25,25 +25,25 @@ const getExcerpt = (post) => {
     return post
 }
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post, className }) => {
     const tag = post.primaryTag ? post.primaryTag.name : (post.tags ? post.tags[0].name : `Untagged`)
     const url = `/tutorials/${post.slug}/`
     const excerpt = getExcerpt(post)
 
     return (
-        <article className="bg-white br4 shadow-2 pa10 pt8 pb8 ml5 mr5 mb10 flex flex-column justify-between flex-third relative box-hover-test">
+        <article className={ className + ` bg-white br4 shadow-2 pa10 pa8 flex flex-column justify-between flex-third relative box-hover-test` }>
             <Link to={ url } className="tdn">
                 <header>
-                    { post.featured ? <span className="purple f8 fw5 dib mr2">Featured</span> : null }
-                    { tag ? <span className="midgrey f8">{ tag }</span> : null } 
-                    <h2 className={ Spirit.h3 + `darkgrey mt2` }>{ post.title }</h2>
+                    { post.featured ? <span className="bg-green-l2 pa1 f-supersmall fw5 dib measure-0-2 mr2 white br-pill pl2 pr2 nl2">Featured</span> : null }
+                    <span className="midgrey f8">{ tag }</span>
+                    <h2 className={ Spirit.h3 + `darkgrey` + (post.featured ? ` mt2` : ` mt4`) }>{ post.title }</h2>
                 </header>
-                { excerpt ? <section className={ Spirit.p + `darkgrey mt2` }>{ excerpt }</section> : null }
+                { excerpt ? <section className={ Spirit.p + `darkgrey mt4` }>{ excerpt }</section> : null }
             </Link>
             
-            <footer className="flex pt2 mt5 content-end">
+            <footer className="flex pt2 mt6 content-end">
                 {/* <Authors authors={ post.authors } /> */}
-                <span className="f8 dib">{ post.publishedAt }</span>
+                <span className="f8 dib measure-0-2 lightgrey">{ post.publishedAt }</span>
             </footer>
         </article>
     )
@@ -51,6 +51,7 @@ const PostCard = ({ post }) => {
 
 PostCard.propTypes = {
     post: PropTypes.object.isRequired,
+    className: PropTypes.string,
 }
 
 export default PostCard

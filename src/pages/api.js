@@ -54,7 +54,7 @@ Card.propTypes = {
 const APIPage = () => (
     <Layout title="API" mainClass="bg-whitegrey-l2" bodyClass="bg-white">
         <section className="bg-api-reference">
-            <div className={ Spirit.page.xl + `tc-ns pt-vw7 pt-vw5-ns pb-vw5 white` }>
+            <div className={ Spirit.page.xl + `tc-ns pt-vw7 pt-vw4-ns pb-vw4 white` }>
                 <h1 className={ Spirit.sectionHeading + `gh-integration-header-shadow`}>API Reference</h1>
                 <p className={ Spirit.sectionSubHeading }>Clients, tools and libraries for working with Ghost</p>
             </div>
