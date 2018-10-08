@@ -1,31 +1,65 @@
 - title: Concepts
   items:
-    - title: What is Ghost?
-      link: /setup/what-is-ghost/
-    - title: Setting up a site
+    - title: Getting Started
+      link: /concepts/introduction/
       items:
-        - title: Setup Options
-          link: /setup/options/
-        - title: Ghost(Pro)
-          link: /setup/ghost-pro/
-        - title: 1-click install
-          link: /setup/1-click-install/
-        - title: Install from CLI
-          link: /setup/install-from-cli/
-        - title: Look in the forum
-          link: https://forum.ghost.org
-    - title: Community Packages
-      link: /setup/community-packages/
+        - title: What is Ghost?
+          link: /#/
+        - title: Features
+          link: /#/
+        - title: Ecosystem overview
+          link: /#/
+    - title: Data Model
+      link: /#/
       items:
-        - title: Community packages overview
-          link: /setup/community-packages/
-        - title: Docker
-          link: /setup/community-packages/docker/
-        - title: Setup Options
-          link: /setup/options/
-        - title: Ghost(Pro)
-          link: /setup/ghost-pro/
-        - title: 1-click install
-          link: /setup/1-click-install/
-        - title: Install from CLI
-          link: /setup/install-from-cli/
+        - title: Posts
+          link: /#/
+        - title: Pages
+          link: /#/
+        - title: Tags
+          link: /#/
+        - title: Authors
+          link: /#/
+    - title: Front-ends
+      link: /#/
+      items:
+        - title: What is Ghost?
+          link: /#/
+        - title: Ecosystem overview
+          link: /#/
+    - title: Configuration
+      link: /#/
+      items:
+        - title: Main config
+          link: /#/
+        - title: Custom storage modules
+          link: /#/
+        - title: Custom schedulers
+          link: /#/
+    - title: Hosting
+      link: /#/
+      items:
+        - title: Hosting overview
+          link: /#/
+        - title: Recommendations
+          link: /#/
+        - title: Troubleshooting
+          link: /#/
+    - title: Security
+      link: /#/
+      items:
+        - title: Overview
+          link: /#/
+        - title: Best practices
+          link: /#/
+        - title: Reporting vulnerabilities
+          link: /#/
+    - title: Roadmap
+      link: /#/
+      items:
+        - title: Governance
+          link: /#/
+        - title: Development principles
+          link: /#/
+        - title: Contributing
+          link: /#/
