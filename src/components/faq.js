@@ -1,31 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-
-const getExcerpt = (post) => {
-    if (post.custom_excerpt) {
-        return post.custom_excerpt
-    }
-
-    if (post.excerpt) {
-        return post.excerpt
-    }
-
-    if (post.plaintext) {
-        return post.plaintext.substring(0, 200) + `...`
-    }
-
-    if (post.body) {
-        return post.body.body.substring(0, 200) + `...`
-    }
-
-    return post
-}
+import getPostExcerpt from '../utils/post-excerpt'
 
 const FAQ = (props) => {
     const post = props.post
     const url = `/faq/${post.slug}/`
-    const excerpt = getExcerpt(post)
+    const excerpt = getPostExcerpt(post)
 
     return (
         <article className="flex flex-column items-start col-6">

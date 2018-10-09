@@ -4,31 +4,12 @@ import Link from 'gatsby-link'
 
 // import Authors from './authors'
 import { Spirit } from './spirit-styles'
-
-const getExcerpt = (post) => {
-    if (post.custom_excerpt) {
-        return post.custom_excerpt
-    }
-
-    if (post.excerpt) {
-        return post.excerpt
-    }
-
-    if (post.plaintext) {
-        return post.plaintext.substring(0, 200)
-    }
-
-    if (post.body) {
-        return post.body.substring(0, 200)
-    }
-
-    return post
-}
+import getPostExcerpt from '../utils/post-excerpt'
 
 const PostCard = ({ post, className }) => {
     const tag = post.primaryTag ? post.primaryTag.name : (post.tags ? post.tags[0].name : `Untagged`)
     const url = `/tutorials/${post.slug}/`
-    const excerpt = getExcerpt(post)
+    const excerpt = getPostExcerpt(post)
 
     return (
         <article className={ className + ` bg-white br4 shadow-2 pa10 pa8 flex flex-column justify-between flex-third relative box-hover-test` }>
@@ -40,7 +21,7 @@ const PostCard = ({ post, className }) => {
                 </header>
                 { excerpt ? <section className={ Spirit.p + `middarkgrey-l2 mt4` }>{ excerpt }</section> : null }
             </Link>
-            
+
             <footer className="flex pt2 mt6 content-end">
                 {/* <Authors authors={ post.authors } /> */}
                 <span className="f8 dib measure-0-2 lightgrey">{ post.publishedAt }</span>
