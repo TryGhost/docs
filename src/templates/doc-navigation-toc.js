@@ -53,10 +53,30 @@ function PageHeader(props) {
     }
 
     // Setup
-    if (props.location.pathname.match(/\/setup\//i)) {
+    if (props.location.pathname.match(/\/setup\//i) || props.location.pathname.match(/\/install\//i)) {
         title = `Setup`
         mainLink = `/setup/`
         bgClass = `bg-setup`
+        if (props.location.pathname.match(/\/ghost-pro\//i)) {
+            subtitle = `Ghost(Pro)`
+            subLink = `/setup/ghost-pro/`
+        }
+        if (props.location.pathname.match(/\/ubuntu\//i)) {
+            subtitle = `Ubuntu`
+            subLink = `/install/ubuntu/`
+        }
+        if (props.location.pathname.match(/\/docker\//i)) {
+            subtitle = `Docker`
+            subLink = `/install/docker/`
+        }
+        if (props.location.pathname.match(/\/local\//i)) {
+            subtitle = `Local`
+            subLink = `/install/local/`
+        }
+        if (props.location.pathname.match(/\/source\//i)) {
+            subtitle = `From Source`
+            subLink = `/install/source/`
+        }
     }
 
     // Core Concepts
