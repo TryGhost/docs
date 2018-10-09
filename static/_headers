@@ -5,3 +5,4 @@
   X-Frame-Options: SAMEORIGIN
   X-Xss-Protection:	1; mode=block
   Feature-Policy: accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'
+  Access-Control-Allow-Origin: https://cloud.typography.com
