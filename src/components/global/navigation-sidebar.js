@@ -7,8 +7,6 @@ function groupExpanded(items, pathname) {
 
     try {
         items.forEach((item) => {
-            console.log(JSON.stringify(item))
-            console.log(pathname)
             if (item.link === pathname) {
                 throw breakException
             }
