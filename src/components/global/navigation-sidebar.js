@@ -39,11 +39,11 @@ class SidebarLink extends React.Component {
         if (this.props.link) {
             if (this.props.link.match(/^\s?http(s?)/gi)) {
                 return (
-                    <a href={ this.props.link } className={ `link ` + this.props.linkClasses } target="_blank" rel="noopener noreferrer">{title}</a>
+                    <a href={ this.props.link } className={ `link db pa2 pl0 ` + this.props.linkClasses } target="_blank" rel="noopener noreferrer">{title}</a>
                 )
             } else {
                 return (
-                    <Link to={ this.props.link } className={ `link ${this.props.linkClasses} ${isStarred ? starredClasses : ` `}` }>{ title }</Link>
+                    <Link to={this.props.link} className={ `link db pa2 pl0 ${this.props.linkClasses} ${isStarred ? starredClasses : ` `}` }>{ title }</Link>
                 )
             }
         } else {
@@ -100,7 +100,7 @@ class SidebarList extends React.Component {
             const childrenLevel = level += 1
 
             return (
-                <li className={isFirstLevelHeading && !this.props.first ? `mt10` : `mt4`}>
+                <li className={isFirstLevelHeading && !this.props.first ? `mt10` : `mt2`}>
                     <h4 className={`${isFirstLevel ? firstLevelClasses : `fw4`}`}>
                         <SidebarLink
                             link={this.props.item.link}
@@ -108,7 +108,7 @@ class SidebarList extends React.Component {
                             linkClasses={this.state.linkClasses}
                         />
                     </h4>
-                    <ul className={`list ma0 pa0 ${!isFirstLevelHeading ? `pl6 bl b--whitegrey` : ``} ${hideNestedItems ? this.state.sidebarListClasses : `db`}`}>
+                    <ul className={`list ma0 pa0 ${!isFirstLevelHeading ? `pl6 mb6 bl b--whitegrey` : ``} ${hideNestedItems ? this.state.sidebarListClasses : `db`}`}>
                         {this.props.item.items.map((nestedLink, i) => (
                             <SidebarList
                                 key={i}
@@ -123,7 +123,7 @@ class SidebarList extends React.Component {
             )
         } else {
             return (
-                <li className={`${isFirstLevel ? firstLevelClasses + ` mt4` : isSecondLevel ? `mt4` : `mt4`}`}>
+                <li className={`${isFirstLevel ? firstLevelClasses + ` mt2` : isSecondLevel ? `mt2` : `mt2`}`}>
                     <SidebarLink
                         link={this.props.item.link}
                         title={this.props.item.title}
