@@ -6,7 +6,7 @@ const allGhostPosts = function allGhostPosts(tag) {
     return (`
           {
             allGhostPost(
-                sort: {order: ASC, fields: date},
+                sort: {order: ASC, fields: published_at},
                 filter: {tags: {elemMatch: {slug: {eq: "${tag}"}}},
                 slug: {ne: "data-schema"}}
             ) {
