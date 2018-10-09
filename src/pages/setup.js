@@ -10,7 +10,7 @@ class SetupBox extends React.Component {
     render() {
         return (
             <Box className="col-12 col-4-ns pa8 tdn middarkgrey" radius="4" to={ this.props.to }>
-                <Icon name={ this.props.icon } className="fill-whitegrey w5 h5" />
+                <Icon name={ this.props.icon } className="w6 h6" />
                 <h4 className={ Spirit.h5 + `middarkgrey mt2` }>{ this.props.title }</h4>
                 <p className={ Spirit.small + `mt1 midgrey-l2` }>{ this.props.children }</p>
             </Box>
@@ -42,7 +42,7 @@ const SetupIndexPage = () => (
                     Reprehenderit duis cupidatat enim irure laboris lorem voluptate amet ut sit qui eiusmod
                 </SetupBox>
                 
-                <SetupBox to="/install/ubuntu/" title="Ubuntu" icon="icon">
+                <SetupBox to="/install/ubuntu/" title="Ubuntu" icon="ubuntu-logo">
                     Occaecat id officia nostrud labore sint id. Exercitation excepteur et aute exercitation incididunt ea ea excepteur 
                 </SetupBox>
                 

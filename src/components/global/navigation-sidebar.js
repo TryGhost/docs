@@ -83,14 +83,14 @@ class SidebarNav extends React.Component {
             <nav className="nt2">
                 { sidebarfile.groups.map((group, i) => (
                     <div key={ i } className="mt2">
-                        <h4 className="f5 fw5 middarkgrey-l2 link pa0 ma0">{ (group.items[0].link ? <SidebarLink link={ group.items[0].link } title={ group.group } linkClasses="middarkgrey hover-blue-l2 link" /> : group.group) }</h4>
                         { groupExpanded(group.items, this.props.location.pathname) ?
-                            <SidebarList
-                                key={ i }
-                                items={ group.items }
-                                location={ location }
-                            />
-                            : null }
+                            <>
+                                <h4 className="f5 fw5 middarkgrey-l2 link pa0 ma0">{ (group.items[0].link ? <SidebarLink link={ group.items[0].link } title={ group.group } linkClasses="middarkgrey link" /> : group.group) }</h4>
+                                <SidebarList
+                                    key={ i }
+                                    items={ group.items }
+                                    location={ location }
+                                /></> : <h4 className="f5 fw5 middarkgrey-l2 link pa0 ma0">{ (group.items[0].link ? <SidebarLink link={ group.items[0].link } title={ group.group } linkClasses="middarkgrey hover-blue-l2 link" /> : group.group) }</h4> }
                     </div>
                 )) }
             </nav>
