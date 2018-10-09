@@ -247,17 +247,25 @@ Usage (In Ghost editor):
 .post-content h4 .anchor,
 .post-content h5 .anchor,
 .post-content h6 .anchor {
-    margin: -2px 0 0 -32px;
-    padding: 0 8px;
+    margin: -2px 0 0 -40px;
+    padding: 0 12px;
 }
 
-.post-content h1 .anchor svg path,
-.post-content h2 .anchor svg path,
-.post-content h3 .anchor svg path,
-.post-content h4 .anchor svg path,
-.post-content h5 .anchor svg path,
-.post-content h6 .anchor svg path {
+.post-content h1 .anchor svg,
+.post-content h2 .anchor svg,
+.post-content h3 .anchor svg,
+.post-content h4 .anchor svg,
+.post-content h5 .anchor svg,
+.post-content h6 .anchor svg {
+    height: 16px;
+    width: 16px;
     fill: var(--midgrey);
+}
+
+.post-content .anchor:hover {
+    border: none;
+    text-decoration: none;
+    box-shadow: none;
 }
 
 .post-content > h1:first-child,
@@ -497,7 +505,7 @@ Usage (In Ghost editor):
 .post-content div + h3,
 .post-content div + h4,
 .post-content div + h5,
-.post-content div + h6 
+.post-content div + h6
 {
     margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
 }
@@ -591,7 +599,7 @@ Usage (In Ghost editor):
     background-repeat: no-repeat;
 }
 
-.post-content thead, 
+.post-content thead,
 .post-content tbody {
     width: 100%;
 }
