@@ -145,15 +145,15 @@ class DocTemplate extends React.Component {
                                     sidebar={ post.frontmatter.sidebar }
                                 />
                                 : null }
-                            <div className={ (post.frontmatter.sidebar ? `flex bg-white pa12 pt10 br4 shadow-1` : `flex`) }>
-                                <article className={ `flex-auto ${post.frontmatter.sidebar ? `pr10` : `pr20`}` }>
+                            <div className={ (post.frontmatter.sidebar ? `flex bg-white pa12 pt10 br4 shadow-1` : `flex justify-between`) }>
+                                <article className={ `flex-auto ${post.frontmatter.sidebar ? `pr10` : `mw-content`}` }>
                                     <h1 className={ Spirit.h1 + `middarkgrey` }>{ post.frontmatter.title }</h1>
                                     <section className="post-content" dangerouslySetInnerHTML={ {
                                         __html: post.html,
                                     } } />
                                 </article>
                                 { post.frontmatter.toc ?
-                                    <div><TOC className={ post.frontmatter.sidebar ? `miw-toc` : `miw70` } headingsOffset="-200" /></div>
+                                    <div className={ post.frontmatter.sidebar ? `miw-toc` : `searchfield-width` }><TOC headingsOffset="-200" /></div>
                                     : null }
                             </div>
                         </div>

@@ -293,7 +293,7 @@ Usage (In Ghost editor):
 
 .post-content h2 {
     font-size: 3.3rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: var(--vr-5);
     padding-top: var(--navbar-size);
     margin: calc(var(--vr-7) - var(--navbar-size)) 0 0;

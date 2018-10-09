@@ -75,7 +75,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 }
 
 .dark-placeholder::placeholder { /* Most modern browsers support this now. */
-    color: rgba(52, 63, 68, 0.3);
+    color: #B4C5CF;
 }
 
 /* Text styles */
@@ -185,8 +185,8 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     color: #FFFFFF!important;
 }
 
-.sidebar-min-width {
-    min-width: 12vw;
+.searchfield-width {
+    min-width: 16vw;
 }
 
 .content-max-width {
@@ -303,6 +303,10 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 .miw-toc {
     min-width: 18rem;
+}
+
+.mw-content {
+    max-width: 72rem;
 }
 
 /* ul .sidebarlink-active:after {

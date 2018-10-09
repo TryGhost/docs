@@ -11,8 +11,8 @@ export const Spirit = {
     // Generic typography
     headline: ` f2 f-headline-l lh-h1 fw6 ma0 measure--1-0 `,
     thinheadline: ` f2 f-headline-l lh-h1 fw3 ma0 measure--1-0 `,
-    h1: ` f2 f1-l lh-h1 fw3 ma0 pa0 measure--0-2 `,
-    h2: ` f3 f2-l lh-h2 fw6 ma0 pa0 `,
+    h1: ` f2 f1-l lh-h1 fw3 ma0 pa0 measure--1-0 `,
+    h2: ` f3 f2-l lh-h2 fw5 ma0 pa0 `,
     h3: ` f4 f3-l lh-h3 fw5 ma0 pa0 measure--0-2 `,
     h4: ` f5 f4-l lh-h4 fw5 ma0 pa0 `,
     h5: ` f6 f5-l lh-h5 fw6 ma0 pa0 `,
