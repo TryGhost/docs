@@ -1,6 +1,5 @@
 ---
 title: "Install Ghost on your server"
-path: /setup/install-ghost-on-your-server/
 date: "2018-10-01"
 meta_title: "Install Ghost On Your Server (Ubuntu)"
 meta_description: "Ghost is a completely open-source professional publishing platform. Find out how to spin up an instance of Ghost on your own production server!"
@@ -10,7 +9,7 @@ keywords:
     - production
     - server
     - ubuntu
-sidebar: handlebars
+
 
 ---
 
@@ -22,7 +21,7 @@ Welcome to Ghost! We’re glad you’re here. The purpose of this article is to 
 
 This tutorial walks you through server setup and Ghost CLI installation. You’ll then use the Ghost CLI to install and configure Ghost to production.
 
-> If you’re looking to install Ghost on a local machine to test it out or develop a theme, use the local install guide. If you want to contribute to the open source project, skip to the contribution guide.
+> If you’re looking to install Ghost on a local machine to test it out or develop a theme, use the [local install](https://docs.ghost.org/install/local/) guide. If you want to contribute to the open source project, skip to the [contribution guide](https://docs.ghost.org/source/).
 
 
 ## Prerequisites
@@ -93,9 +92,7 @@ At this point, we recommend following the [DigitalOcean tutorial](https://www.di
 
 ### Update packages
 
-Ensure package lists and installed packages are up to date.
-
-Package lists: 
+Ensure package lists and installed packages are up to date. Package lists: 
 
 ```
 sudo apt-get update
@@ -110,9 +107,7 @@ Follow any prompts to enter the password you just created in the previous step.
 
 ### Install NGINX
 
-Ghost uses an NGINX server and the SSL configuration requires NGINX 1.9.5 or higher. 
-
-Install NGINX on your server:
+Ghost uses an NGINX server and the SSL configuration requires NGINX 1.9.5 or higher. Install NGINX on your server:
 
 ```
 sudo apt-get install nginx
@@ -127,17 +122,13 @@ sudo ufw allow 'Nginx Full'
 
 ### Install MySQL
 
-The Ghost CLI installs Ghost with MySQL by default and we recommend this database. 
-
-Install MySQL:
+The Ghost CLI installs Ghost with MySQL by default and we recommend this database. Install MySQL:
 ```
 sudo apt-get install mysql-server
 ```
 
 #### MySQL on Ubuntu 18.04
-If you’re running Ubuntu 18.04, a password is required to ensure MySQL is compatible with `Ghost-CLI`. This requires a few extra steps!
-
-To set a password, run: 
+If you’re running Ubuntu 18.04, a password is required to ensure MySQL is compatible with `Ghost-CLI`. This requires a few extra steps! To set a password, run: 
 
 ```
 sudo mysql
@@ -182,8 +173,6 @@ The Ghost CLI is a fully loaded tool to help you get Ghost installed and configu
 ```
 sudo npm install -g ghost-cli@latest
 ```
-
-or
 
 ```
 sudo yarn global add ghost-cli@latest
@@ -237,11 +226,10 @@ cd /var/www/ghost
 Make sure this directory is empty with `ls` before proceeding to install.
 
 
-### Install Ghost (using Ghost CLI)
+### Run the install
 
-Now you've made it this far, it's time to install Ghost 😀 
+Now you've made it this far, it's time to install Ghost with a single command 😀 
 
-Install Ghost with a single command:
 ```
 ghost install
 ```
@@ -313,13 +301,12 @@ If an install goes horribly wrong, use `ghost uninstall` to remove it and try ag
 
 If an install is interrupted or the connection lost, use `ghost setup` to restart the configuration process.
 
-Use the troubleshooting guide to find solutions to common issues.
+For troubleshooting and errors, use the site search and [FAQ section](https://docs.ghost.org/faq/) to find information about common error messages. 
 
 
-## Whats next
+## What's next?
 
 To summarise, in this section you:
-
 
 * Setup your server with the required prerequisites
 * Installed NGINX, MySQL and Node.js
@@ -327,133 +314,4 @@ To summarise, in this section you:
 * Generated a new Ghost site using the Ghost CLI tool
 * Configured your site and started Ghost
 
-Congrats! Now you can get to know the building blocks of Ghost concepts.
-
----
-
-## Troubleshooting
-
-Find solutions to common issues when installing Ghost to your production server right here. If you can’t find an answer using this guide, there is lots of information that can be found by using the site search function. 
-
-#### General
-
-If an error occurs when trying to run `ghost start` or `ghost restart`, try using `ghost run` first to check that Ghost can start successfully. The `start` and `restart` commands are talking to your process manager (e.g. systemd) which can hide underlying errors from Ghost.
-
-Find your Ghost log files in `/content/logs/` to identify if the problem exists with Ghost itself, or the process manager. 
-
-
-#### Cloudflare
-
-If you’ve added CloudFlare to your site and find that Ghost Admin doesn’t load after updates you may run into some errors in the JavaScript console:
-TypeError: n.item is not a function` or `Uncaught SyntaxError: Unexpected string`. 
-
-To resolve this add a page rule to turn off RocketLoader, mirage2 and autominify for the path `/ghost*.` 
-
-#### Supported Ubuntu versions
-
-Ubuntu 16.04 and Ubuntu 18.04 are the only officially supported OSes. Other operating systems may work, but we are unable to assist with debugging or optimising for them. 
-
-
-#### Supported Node versions
-
-Ghost supports Node versions 8.9+ and 6.9+ only. The recommended version of Node is Node v8 LTS. 
-
-| Version                        | Support Level |
-| ------------------------------ | ------------- |
-| <6.9                           | Unsupported   |
-| >=6.9 <7.* (Node v6 boron LTS) | Supported     |
-| 7.*                            | Unsupported   |
-| >=8.0 <8.9                     | Unsupported   |
-| >=8.9 (Node v8 carbon LTS)     | Recommended   |
-| 9.*                            | Unsupported   |
-| 10.*                           | Unsupported   |
-
-
-We use the recommended version of Node in production on Ghost(Pro) which means it’s heavily tested and issues are actively fixed by the Ghost core team. Running Ghost on the latest version of node is not guaranteed to work, and we’re unable to offer support for any issues. Ghost is a small team so we keep node versioning to a minimum to give us time to build new features 🏃‍♀️
-
-Compatible versions of Node.js can be downloaded from the Node.js releases page. It’s also possible to install multiple node versions using nave or nvm.
-
-#### Node with nvm
-
-We recommend uninstalling nvm to avoid permission problems. 
-
-If `nvm` is installed locally in `/root` or `/home` then you’ll run into permission problems. Ghost requires a system wide installation. We recommend uninstalling nvm to avoid permission problems. A symlink from the local installation to `usr/bin/node` will not work. 
-
-Uninstall `nvm`: 
-```
-rm -rf $NVM_DIR ~/.npm ~/.bower
-unset NVM_DIR;
-which node;
-rm -rf {path_to_node_version}
-```
-
-Open  `~/.bash_profile` or `~/.bashrc` and remove any `nvm` lines.
-
-#### Minimum NGINX Version
-
-The SSL configuration pulls in a dependency on HTTP/2 (preferred protocol). Default setup without modifications requires NGINX 1.9.5. 
-
-#### What if I want to use something different?
-
-That’s fine! The two main differences between using our recommended stack and something else are: 
-
-1. If you use other technologies, you’ll need to do some of the work yourself. Using our stack and the Ghost CLI reduces your workload.
-2. When finding issues using other technologies, you’ll need to resolve them or speak to the community. 
-
-The recommended stack is the most common setup used for running Ghost, and what the Ghost CLI tool is built around. Ghost only address issues using this stack. 
-
-#### Unsupported providers 
-
-We recommend using DigitalOcean who provide a stable option on which Ghost can be installed and have a very active community. Most other VPS providers offer servers that are suitable for installing Ghost with a few exceptions: 
-
-* Auto-installers such as Softaculous
-* Shared/cPanel hosting designed for PHP applications
-
-#### Adding swap memory
-
-1GB of memory or more is a prerequisite of installing Ghost to production. If this space isn’t available, configure a larger amount of swap memory. 
-```
-dd if=/dev/zero of=/var/swap bs=1k count=1024k
-mkswap /var/swap
-swapon /var/swap
-echo '/var/swap swap swap defaults 0 0' >> /etc/fstab
-```
-
-If the last command fails with "Permission denied" (e.g. on a fresh Amazon EC2 instance), try this instead:
-```
-echo '/var/swap swap swap defaults 0 0' | sudo tee -a /etc/fstab
-```
-
-#### Error messages
-
-**ERROR: Your content path does not exist!**
-This occurs when Ghost is unable to read or write to the content path. 
-
-Check that the path is correct and the user you’re running Ghost with has the correct permissions (read and write). This error also occurs if any of the expected subfolders are not writable: 
-`adapters`, `data`, `images` and `themes`. 
-
-
-**ERROR: URL in config must be provided with protocol**
-After installing Ghost a  `url` for your site is set. This is the URL people will use to access your publication.
-
-When using SSL protocol, set this URL with HTTPS. Use `ghost setup ssl` in the `ghost-cli` to setup an SSL certificate. 
-
-**Error: connect ECONNREFUSED 127.0.0.1:3306**
-Ghost wasn’t able to connect to your MySQL server. 
-Ensure the server is running using `mysql` or run the server with:
-```
-sudo service mysql start
-```
-
-If this error occurs during a `ghost install`, rerun the setup phase using `ghost setup`. 
-
-**ER_WRONG_FIELD_WITH_GROUP**
-Error message:
-```
-...which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by...
-```
-
-This occurs when your MySQL database is misconfigured. Open
-`my.cnf` (`sudo find / -name my.cnf`) and remove `only_full_group_by` from `sql_mode`.
-
-For a full list of CLI error messages read the Ghost CLI guide.
+Congrats! Now you can start customising your brand new Publication – check out the [tutorials](https://docs.ghost.org/tutorials/) and the [API documentation](https://docs.ghost.org/api/).

@@ -35,15 +35,15 @@ With Ghost(Pro), you have access to the flexible professional publishing platfor
 
 To put Ghost(Pro) through it's paces - [signup for the 14 day trial](https://ghost.org/signup/). It's completely free, no obligations!
 
-### Looking for self-hosted? 
-The rest of the setup section of the Ghost documentation covers: 
+### Customise your Ghost(Pro) Publication
+
+Already created a Ghost(Pro) publication and looking for tutorials on how to customise your site? Head over to the [Core Concepts](https://docs.ghost.org/concepts/introduction/) guides to get started. 
+
+**Looking for self-hosted?**
+If you're happy to manage your own hosting and site maintenance, there are several install guides available to help you: 
 
 * [Installing on your own server](https://docs.ghost.org/setup/ubuntu/)
 * [Installing locally](https://docs.ghost.org/setup/local/)
 * [Contributing to Ghost core](https://docs.ghost.org/setup/source/) and installing from source
 
-
-### Customise your Ghost(Pro) Publication
-
-Already created a Ghost(Pro) publication and looking for tutorials on how to customise your site? Head over to the [Core Concepts](https://docs.ghost.org/concepts/introduction/) guides to get started. 
 

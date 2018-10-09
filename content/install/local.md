@@ -1,7 +1,7 @@
 ---
 title: "Installing Ghost Locally"
 date: "2018-10-01"
-meta_title: "Installing Ghost Locally"
+meta_title: "Installing Ghost Locally: Theme Development"
 meta_description: "Want to give Ghost a try? With local installs you can test the platform or develop a Ghost theme. Read the full guide here 👻"
 image: "https://unsplash.it/400/300/?random?BoldMage"
 keywords:
@@ -48,14 +48,11 @@ The Ghost CLI is a fully loaded tool to help you get Ghost installed. With a loc
 
 `ghost-cli` is an npm module that can be installed with `npm` or `yarn` on a local machine. There is no requirement to use a non-root user for a local install. Installing on the root user removes the need to use `sudo`.
 
-Use:
 ```
 npm i -g ghost-cli@latest
 ```
 
-`@latest` ensures the latest version of the  `ghost-cli` is installed.
-
-Using yarn, adjust this to:  
+`@latest` ensures the latest version of the  `ghost-cli` is installed. Using yarn, adjust this to:  
 ```
 yarn global add ghost-cli@latest
 ```
@@ -100,6 +97,9 @@ Useful commands:
 * Use `ghost start` to start Ghost (cd into the directory first)
 * `ghost log` views logs
 * Run `ghost ls` from anywhere – lists all running Ghost blogs
+
+### Debugging
+For troubleshooting and errors, use the site search and [FAQ section](https://docs.ghost.org/faq/) to find information about common error messages.
 
 ---
 
@@ -165,64 +165,11 @@ gscan -z /path/to/downloads/theme.zip
 
 GScan can also be accessed at [gscan.ghost.org](https://gscan.ghost.org/), where you can sign up for the latest updates as a Ghost theme developer. 
 
-## Whats next 👉
+## What's next 👉
 
 To summarise, in this section you installed the Ghost CLI and installed Ghost locally — congrats! You can now put Ghost through it’s paces and see what it’s all about, or jump right into developing a custom Ghost theme. 
 
 Remember, local installs are not suitable for production. If you decide to deploy to production, [follow this guide](https://docs.ghost.org/install/ubuntu/).
 
----
-
-## Troubleshooting
-
-Find solutions to common issues when installing Ghost locally. If you can’t find a solution using this guide, plenty more solutions can be found in the docs by using the search function at the top of the page.
-
-
-#### Supported Node versions
-
-Ghost supports Node versions 8.9+ and 6.9+ only. The recommended version of Node is Node v8 LTS. 
-
-| Version                        | Support Level |
-| ------------------------------ | ------------- |
-| <6.9                           | Unsupported   |
-| >=6.9 <7.* (Node v6 boron LTS) | Supported     |
-| 7.*                            | Unsupported   |
-| >=8.0 <8.9                     | Unsupported   |
-| >=8.9 (Node v8 carbon LTS)     | Recommended   |
-| 9.*                            | Unsupported   |
-| 10.*                           | Unsupported   |
-
-
-We use the recommended version of Node in production on Ghost(Pro) which means it’s heavily tested and issues are actively fixed by the Ghost core team. Running Ghost on the latest version of node is not guaranteed to work, and we’re unable to offer support for any issues. Ghost is a small team so we keep node versioning to a minimum to give us time to build new features 🏃‍♀️
-
-Compatible versions of Node.js can be downloaded from the Node.js releases page. It’s also possible to install multiple node versions using nave or nvm.
-
-
-#### Using nvm
-
-If you run into problems during a local install, it could be due to your installation of nvm (Node Version Manager).
-
-**Ensure nvm is installed correctly**
-
-☑️ Ensure that nvm is not installed in the root folder `/root/.nvm`. If nvm is installed in the root folder, uninstall nvm, and reinstall it using a non-root user. 
-
-
-☑️ Set your nvm default version to the one you will use for Ghost before installing `ghost-cli`. If your default is different, you should switch to the correct version each time you start a new session and run any `ghost` commands.
-
-
-**Ensure `ghost-cli` is installed in the correct environment**
-
-On a machine with nvm configured correctly, you should see:
-```
-which ghost -> /Users/[username]/.nvm/versions/node/[node version]/bin/ghost
-npm root -g -> /Users/[username]/.nvm/versions/node/[node version]/lib/node_modules
-```
-
-If these paths aren’t in the same `[node version]`, it means you've installed `ghost-cli` in a different environment than the active node environment.  `ghost-cli` needs to be installed and run in the same environment. 
-
-To resolve this choose one of the following:
-
-1. Run `npm install ghost-cli -g` in the current environment to get the right sqlite3 node module into the environment and go through `ghost setup` process again.
-
-2. If you remember which nvm node environment you've installed `ghost-cli` under, run `nvm use <node version>`.
+For more information about theme development, read the [Handlebars theme documentation](https://docs.ghost.org/api/v2/handlebars-themes/) and check out the [tutorials](https://docs.ghost.org/tutorials/). 
 
