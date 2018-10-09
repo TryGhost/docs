@@ -6,8 +6,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions
 
     if (node.internal.type === `MarkdownRemark`) {
-        // TODO: use slug of `path` property in frontmatter if given
-        const slug = createFilePath({ node, getNode, basePath: `pages` })
+        // Passing a `path` property in frontmatter will overwrite the
+        // slug that we build from the folder structure
+        const slug = node.frontmatter.path ? node.frontmatter.path : createFilePath({ node, getNode, basePath: `pages` })
 
         createNodeField({
             node,
@@ -21,7 +22,7 @@ exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
     const { createRedirect } = actions
     const { allGhostPosts, allMarkdownPosts } = require(`./src/utils/node-queries`)
-
+    const queryPromises = []
     const ghostPostToQuery = [
         {
             tag: `hash-faq`,
@@ -40,8 +41,6 @@ exports.createPages = ({ graphql, actions }) => {
         },
     ]
 
-    const queryPromises = []
-
     // TODO: create redirect for `/api/*` to `/api/v2/:splat` BUT not `/api/v*`
     // look into using the https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/ plugin
     createRedirect({
@@ -59,46 +58,56 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     // Query for each of the tags that we defined above
-    ghostPostToQuery.forEach((ghostPostQueryData) => {
-        queryPromises.push(new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
-            graphql(allGhostPosts(ghostPostQueryData.tag)).then((result) => {
-                result.data.allGhostPost.edges.forEach(({ node }) => {
-                    createPage({
-                        path: `${ghostPostQueryData.prefix}${node.slug}/`,
-                        component: path.resolve(ghostPostQueryData.template),
-                        context: {
-                            slug: node.slug,
-                        },
+    ghostPostToQuery.forEach(({ tag, prefix, template }) => {
+        queryPromises.push(new Promise((resolve, reject) => {
+            graphql(allGhostPosts(tag))
+                .then((result) => {
+                    if (result.errors) {
+                        return reject(result.errors)
+                    }
+
+                    return result.data.allGhostPost.edges.forEach(({ node }) => {
+                        createPage({
+                            path: `${prefix}${node.slug}/`,
+                            component: path.resolve(template),
+                            context: {
+                                // Data passed to context is available
+                                // in page queries as GraphQL variables.
+                                slug: node.slug,
+                            },
+                        })
+                        return resolve()
                     })
                 })
-                resolve()
-            }).catch(() => {
-                resolve()
-            })
         }))
     })
 
-    queryPromises.push(new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
-        graphql(allMarkdownPosts()).then((result) => {
-            result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-                const DocTemplate = path.resolve(`./src/templates/doc-navigation-toc.js`)
-                // Exclude the default README.md pages from the api docs repo
-                if (node.fields.slug.match(/readme\/$/i)) {
-                    return resolve()
+    queryPromises.push(new Promise((resolve, reject) => {
+        graphql(allMarkdownPosts())
+            .then((result) => {
+                if (result.errors) {
+                    return reject(result.errors)
                 }
 
-                createPage({
-                    path: node.fields.slug,
-                    component: DocTemplate,
-                    context: {
-                        // Data passed to context is available
-                        // in page queries as GraphQL variables.
-                        slug: node.fields.slug,
-                    },
+                return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+                    const DocTemplate = path.resolve(`./src/templates/doc-navigation-toc.js`)
+                    // Exclude the default README.md pages from the api docs repo
+                    if (node.fields.slug.match(/readme\/$/i)) {
+                        return resolve()
+                    }
+
+                    createPage({
+                        path: node.fields.slug,
+                        component: DocTemplate,
+                        context: {
+                            // Data passed to context is available
+                            // in page queries as GraphQL variables.
+                            slug: node.fields.slug,
+                        },
+                    })
+                    return resolve()
                 })
-                return resolve()
             })
-        }).catch(() => resolve())
     }))
 
     return Promise.all(queryPromises)

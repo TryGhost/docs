@@ -1,7 +1,7 @@
 ---
 title: "Data schema stub"
 date: "2000-01-01"
-path: "/does/not/exist/"
+path: "/data-schema/"
 meta_title: "Data schema stub"
 meta_description: "This is a data schema stub for Gatsby.js and is not used. It must exist for builds to function"
 toc: false
