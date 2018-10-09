@@ -9,6 +9,19 @@
           link: /#/
         - title: Ecosystem overview
           link: /#/
+    - title: Architecture
+      link: /#/
+      items:
+        - title: Core API
+          link: /#/
+        - title: Admin client
+          link: /#/
+        - title: Front-end
+          link: /#/
+        - title: Database
+          link: /#/
+        - title: File storage
+          link: /#/
     - title: Data Model
       link: /#/
       items:
@@ -19,13 +32,6 @@
         - title: Tags
           link: /#/
         - title: Authors
-          link: /#/
-    - title: Front-ends
-      link: /#/
-      items:
-        - title: What is Ghost?
-          link: /#/
-        - title: Ecosystem overview
           link: /#/
     - title: Configuration
       link: /#/
