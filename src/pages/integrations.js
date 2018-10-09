@@ -53,26 +53,12 @@ export const pageQuery = graphql`
   query GhostIntegrationsQuery {
     allGhostPost(
         sort: { order: DESC, fields: [published_at] },
-        limit: 70,
+        limit: 50,
         filter: {tags: {elemMatch: {slug: {eq: "hash-integration"}}}}
     ) {
       edges {
         node {
-          id
-          slug
-          title
-          feature_image
-          custom_excerpt
-          plaintext
-          publishedAt: published_at(formatString: "DD MMMM, YYYY"),
-          tags {
-            name
-            slug
-          }
-          authors {
-            name
-            slug
-          }
+          ...GhostPostListFields
         }
       }
     }

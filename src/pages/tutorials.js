@@ -42,20 +42,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          id
-          slug
-          title
-          custom_excerpt
-          plaintext
-          featured
-          publishedAt: published_at(formatString: "DD MMMM, YYYY"),
-          tags {
-            name
-            slug
-          }
-          authors {
-            name slug
-          }
+          ...GhostPostListFields
         }
       }
     }
