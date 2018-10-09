@@ -1,73 +1,65 @@
-- title: Concepts
-  items:
-    - title: Getting Started
-      link: /concepts/introduction/
-      items:
-        - title: What is Ghost?
-          link: /concepts/introduction/
-        - title: Features
-          link: /concepts/features/
-        - title: Ecosystem overview
-          link: /concepts/ecosystem/
-    - title: Architecture
-      link: /concepts/core/
-      items:
-        - title: Core API
-          link: /concepts/core/
-        - title: Admin client
-          link: /concepts/admin/
-        - title: Front-end
-          link: /concepts/front-end/
-        - title: Database
-          link: /concepts/database/
-        - title: File storage
-          link: /concepts/storage/
-    - title: Data Model
-      link: /concepts/posts/
-      items:
-        - title: Posts
-          link: /concepts/posts/
-        - title: Pages
-          link: /concepts/pages/
-        - title: Tags
-          link: /concepts/tags/
-        - title: Authors
-          link: /concepts/authors/
-    - title: Configuration
-      link: /concepts/config/
-      items:
-        - title: Config options
-          link: /concepts/config/
-        - title: Dynamic routing
-          link: /concepts/routing/
-        - title: Redirects
-          link: /concepts/redirects/
-        - title: Custom storage adapters
-          link: /concepts/storage-adapters/
-        - title: Custom schedulers
-          link: /concepts/custom-schedulers/
-    - title: Hosting
-      link: /concepts/hosting/
-      items:
-        - title: Hosting overview
-          link: /concepts/hosting/
-        - title: Server recommendations
-          link: /concepts/server-recommendations/
-        - title: Troubleshooting
-          link: /concepts/hosting-problems/
-    - title: Security
-      link: /concepts/security/
-      items:
-        - title: Overview
-          link: /concepts/security/
-        - title: Reporting vulnerabilities
-          link: /concepts/vulnerabilities/
-    - title: Roadmap
-      link: /concepts/governance/
-      items:
-        - title: Governance
-          link: /concepts/governance/
-        - title: Development principles
-          link: /concepts/principles/
-        - title: Contributing
-          link: /concepts/contributing/
+- groups:
+  - group: Getting Started
+    items:
+      - title: What is Ghost?
+        link: /concepts/introduction/
+      - title: Features
+        link: /concepts/features/
+      - title: Ecosystem overview
+        link: /concepts/ecosystem/
+  - group: Architecture
+    items:
+      - title: Core API
+        link: /concepts/core/
+      - title: Admin client
+        link: /concepts/admin/
+      - title: Front-end
+        link: /concepts/front-end/
+      - title: Database
+        link: /concepts/database/
+      - title: File storage
+        link: /concepts/storage/
+  - group: Data Model
+    items:
+      - title: Posts
+        link: /concepts/posts/
+      - title: Pages
+        link: /concepts/pages/
+      - title: Tags
+        link: /concepts/tags/
+      - title: Authors
+        link: /concepts/authors/
+  - group: Configuration
+    items:
+      - title: Config options
+        link: /concepts/config/
+      - title: Dynamic routing
+        link: /concepts/routing/
+      - title: Redirects
+        link: /concepts/redirects/
+      - title: Custom storage adapters
+        link: /concepts/storage-adapters/
+      - title: Custom schedulers
+        link: /concepts/custom-schedulers/
+  - group: Hosting
+    items:
+      - title: Hosting overview
+        link: /concepts/hosting/
+      - title: Server recommendations
+        link: /concepts/server-recommendations/
+      - title: Troubleshooting
+        link: /concepts/hosting-problems/
+  - group: Security
+    items:
+      - title: Overview
+        link: /concepts/security/
+      - title: Reporting vulnerabilities
+        link: /concepts/vulnerabilities/
+  - group: Roadmap
+    items:
+      - title: Governance
+        link: /concepts/governance/
+      - title: Development principles
+        link: /concepts/principles/
+      - title: Contributing
+        link: /concepts/contributing/
