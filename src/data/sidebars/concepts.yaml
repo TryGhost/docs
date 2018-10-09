@@ -4,68 +4,72 @@
       link: /concepts/introduction/
       items:
         - title: What is Ghost?
-          link: /#/
+          link: /concepts/introduction/
         - title: Features
-          link: /#/
+          link: /concepts/features/
         - title: Ecosystem overview
-          link: /#/
+          link: /concepts/ecosystem/
     - title: Architecture
-      link: /#/
+      link: /concepts/architecture/
       items:
         - title: Core API
-          link: /#/
+          link: /concepts/core/
         - title: Admin client
-          link: /#/
+          link: /concepts/admin/
         - title: Front-end
-          link: /#/
+          link: /concepts/front-end/
         - title: Database
-          link: /#/
+          link: /concepts/database/
         - title: File storage
-          link: /#/
+          link: /concepts/storage/
     - title: Data Model
-      link: /#/
+      link: /concepts/data/
       items:
         - title: Posts
-          link: /#/
+          link: /concepts/posts/
         - title: Pages
-          link: /#/
+          link: /concepts/pages/
         - title: Tags
-          link: /#/
+          link: /concepts/tags/
         - title: Authors
-          link: /#/
+          link: /concepts/authors/
     - title: Configuration
-      link: /#/
+      link: /concepts/configuration/
       items:
         - title: Main config
-          link: /#/
-        - title: Custom storage modules
-          link: /#/
+          link: /concepts/main-config/
+        - title: Dynamic routing
+          link: /concepts/dynamic-routing/
+        - title: Redirects
+          link: /concepts/redirects/
+        - title: Custom storage adapters
+          link: /concepts/storage-adapters/
         - title: Custom schedulers
-          link: /#/
+          link: /concepts/custom-schedulers/
     - title: Hosting
-      link: /#/
+      link: /concepts/hosting/
       items:
         - title: Hosting overview
-          link: /#/
+          link: /concepts/hosting/
         - title: Recommendations
-          link: /#/
+          link: /concepts/hosting-recommendations/
         - title: Troubleshooting
-          link: /#/
+          link: /concepts/hosting-problems/
     - title: Security
-      link: /#/
+      link: /concepts/security/
       items:
         - title: Overview
-          link: /#/
+          link: /concepts/security/
         - title: Best practices
-          link: /#/
+          link: /concepts/#/
         - title: Reporting vulnerabilities
-          link: /#/
+          link: /concepts/#/
     - title: Roadmap
-      link: /#/
+      link: /concepts/#/
       items:
         - title: Governance
-          link: /#/
+          link: /concepts/#/
         - title: Development principles
-          link: /#/
+          link: /concepts/#/
         - title: Contributing
-          link: /#/
+          link: /concepts/#/

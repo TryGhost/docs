@@ -1,11 +1,5 @@
 ---
 title: "Authors"
-image: "https://unsplash.it/400/300/?random?BoldMage"
-next:
-    - url: "/concepts/dynamic-routing/"
-template:
-keywords:
-    - concepts
 ---
 
 ## This is the second heading
