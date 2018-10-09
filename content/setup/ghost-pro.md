@@ -1,37 +1,49 @@
 ---
 title: "Ghost(Pro)"
+path: /setup/ghost-pro/
+date: "2018-10-01"
+meta_title: "A premium hosted service for your Ghost publication"
+meta_description: "Automate installs, updates, maintenance, backups and uptime management so that you can focus on customising your Ghost publication. Try Ghost(Pro)!"
 keywords:
     - Ghost(Pro)
     - Pro
     - Managed Hosting
     - PaaS
+next:
 ---
 
-Filet mignon officia quis kevin pork, swine strip steak excepteur hamburger chicken pork chop boudin shankle. Velit chicken pig in cupim kielbasa jerky. Bresaola excepteur veniam, andouille magna brisket aliquip nostrud jerky.
+Ghost’s premium hosted service delivers a seamless experience, giving you time to focus on what really matters. 
 
-## This is the second heading
+The fully [hosted Ghost(Pro)](https://ghost.org/pricing/) service powers thousands of publications with a fully automated install, updates, maintenance, backups and uptime management.
 
-Spicy jalapeno cupidatat chicken ut filet mignon sausage ut boudin nulla reprehenderit strip steak proident cillum incididunt short loin cow. Pig in pastrami, leberkas eiusmod enim bresaola do. Filet mignon officia quis kevin pork, swine strip steak excepteur hamburger chicken pork chop boudin shankle. Velit chicken pig in cupim kielbasa jerky. Bresaola excepteur veniam, andouille magna brisket aliquip nostrud jerky.
+## Sustainable open source
 
-```javascript
-makeArray() {
-    // Hey hey what can I do
-    const foo = []
-    bar.split('').forEach(letter => {
-      foo.push(letter)
-    })
-    return foo
-}
-```
+The Ghost Foundation is a non-profit organisation with a mission to create the best open source tools for the future of online publishing. It is a free core application, funded by a premium platform as a service to run it on. 
 
-### This is the third heading
+If you prefer to save time on deploying, managing and updating Ghost — or even if you just want to try it out — the hosted service allows you to creates a new publication in a few clicks and has a free 14 day trial.
 
-Pork chop ribeye ut chicken buffalo proident minim leberkas cupim adipisicing burgdoggen incididunt pastrami cupidatat. Prosciutto kevin dolore labore ham, cupidatat pork loin fatback picanha irure ad short ribs duis. Cupidatat excepteur jerky doner, incididunt consectetur turkey pariatur. Culpa consectetur cillum shank ham hock anim pastrami ex tempor eu. Fatback strip steak pig, bacon salami drumstick ut capicola short loin flank.
+### Features
 
-Jowl dolor duis, cupidatat pork tempor nostrud incididunt short loin laborum. Duis nostrud fatback ribeye consequat ad. Proident pancetta ut tempor. Short loin officia eiusmod beef. Sunt tongue pig venison, sint mollit ad excepteur velit adipisicing flank pancetta pariatur. Dolor t-bone swine alcatra fatback ribeye, mollit dolore incididunt ullamco.
+With Ghost(Pro), you have access to the flexible professional publishing platform, user admin client and full functionality and features, as well as a fully managed premium hosting service including:
 
-Spare ribs aute fugiat, pariatur andouille labore nulla exercitation. Aliqua picanha sirloin consequat drumstick sint exercitation pork nisi et. Dolore swine fugiat pork salami proident. Bacon excepteur filet mignon labore pariatur in in nulla magna fugiat prosciutto. Laboris sint ground round, pancetta ipsum in pariatur voluptate fatback andouille velit shoulder flank quis sausage.
+* Custom domain support
+* Managed install, setup and upgrades
+* Server maintenance and backups
+* Uptime management
+* SSL and enterprise-grade security
+* Worldwide CDN
 
-Hamburger ham shank est, officia qui capicola proident. Ribeye dolore prosciutto sirloin alcatra. Rump short ribs quis ex fugiat proident incididunt irure t-bone meatball veniam sirloin meatloaf. Tongue anim sint pancetta bresaola sirloin.
-Does your lorem ipsum text long for something a little meatier? Give our generator a try…
+To put Ghost(Pro) through it's paces - [signup for the 14 day trial](https://ghost.org/signup/). It's completely free, no obligations!
+
+### Looking for self-hosted? 
+The rest of the setup section of the Ghost documentation covers: 
+
+* [Installing on your own server](https://docs.ghost.org/setup/ubuntu/)
+* [Installing locally](https://docs.ghost.org/setup/local/)
+* [Contributing to Ghost core](https://docs.ghost.org/setup/source/) and installing from source
+
+
+### Customise your Ghost(Pro) Publication
+
+Already created a Ghost(Pro) publication and looking for tutorials on how to customise your site? Head over to the [Core Concepts](https://docs.ghost.org/concepts/introduction/) guides to get started. 
 

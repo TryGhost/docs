@@ -14,7 +14,7 @@ sidebar: handlebars
 
 ---
 
-A full guide for installing Ghost on your production server using Ubuntu
+A full guide for installing Ghost on your Ubuntu production server
 
 ## Overview
 
