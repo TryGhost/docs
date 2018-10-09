@@ -51,23 +51,9 @@ Integration.propTypes = {
 export default Integration
 
 export const articleQuery = graphql`
-    query IntegrationQuery($slug: String!) {
+    query($slug: String!) {
         ghostPost(slug: { eq: $slug }) {
-          title
-          custom_excerpt
-          feature_image
-          plaintext
-          html
-          publishedAt: published_at(formatString: "DD MMMM, YYYY")
-          tags {
-            name
-            slug
-          }
-          authors {
-             name
-             slug
-
-          }
+            ...GhostPostFields
         }
     }
 `

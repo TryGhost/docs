@@ -119,7 +119,7 @@ class DocTemplate extends React.Component {
 
                     <div className={ Spirit.page.xl + `pt-vw4 pt-vw2-ns`}>
                         <div className={ post.frontmatter.sidebar ? `grid-navbar` : `grid-auto` }>
-                            { post.frontmatter.sidebar ? 
+                            { post.frontmatter.sidebar ?
                                 <NavBar
                                     location={ this.props.location }
                                     sidebar={ post.frontmatter.sidebar }
@@ -132,7 +132,7 @@ class DocTemplate extends React.Component {
                                         __html: post.html,
                                     } } />
                                 </article>
-                                { post.frontmatter.toc ? 
+                                { post.frontmatter.toc ?
                                     <div><TOC className={ post.frontmatter.sidebar ? `miw50` : `miw70` } headingsOffset="-200" /></div>
                                     : null }
                             </div>
@@ -152,25 +152,9 @@ DocTemplate.propTypes = {
 export default DocTemplate
 
 export const articleQuery = graphql`
-    query MDDocsQuery($slug: String!) {
-        markdownRemark(fields: { slug: { eq: $slug } }) {
-            frontmatter {
-                title
-                date
-                path
-                meta_title
-                meta_description
-                image
-                next {
-                    url
-                    title
-                    description
-                }
-                sidebar
-                toc
-                keywords
-            }
-            html
+    query($slug: String!) {
+        markdownRemark(fields: { slug: {eq: $slug}}) {
+            ...MarkdownFields
         }
     }
 `

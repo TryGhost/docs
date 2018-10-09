@@ -1,5 +1,3 @@
-// import { graphql } from 'gatsby'
-
 const allGhostPosts = function allGhostPosts(tag) {
     if (!tag) {
         throw new Error(`Please provide a tag property`)
@@ -8,6 +6,7 @@ const allGhostPosts = function allGhostPosts(tag) {
     return (`
           {
             allGhostPost(
+                sort: {order: ASC, fields: date},
                 filter: {tags: {elemMatch: {slug: {eq: "${tag}"}}},
                 slug: {ne: "data-schema"}}
             ) {

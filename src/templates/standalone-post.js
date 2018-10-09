@@ -14,7 +14,7 @@ const Tutorial = ({ data }) => {
                 <h1 className={ Spirit.thinheadline }>{ post.title }</h1>
                 <section className="post-content" dangerouslySetInnerHTML={ { __html: post.html } } />
                 {/* <Authors authors={ post.authors } /> */}
-                
+
                 <footer className="pt5 bt b--whitegrey midgrey f8 pb8">
                     Updated: <time dateTime={ post.publishedAt }>{ post.publishedAt }</time>
                 </footer>
@@ -30,22 +30,9 @@ Tutorial.propTypes = {
 export default Tutorial
 
 export const articleQuery = graphql`
-    query TutorialQuery($slug: String!) {
+    query($slug: String!) {
         ghostPost(slug: { eq: $slug }) {
-          title
-          custom_excerpt
-          plaintext
-          html
-          publishedAt: published_at(formatString: "DD MMMM, YYYY")
-          tags {
-            name
-            slug
-          }
-          authors {
-             name
-             slug
-
-          }
+            ...GhostPostFields
         }
     }
 `

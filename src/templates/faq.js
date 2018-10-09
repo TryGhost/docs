@@ -75,22 +75,9 @@ FAQ.propTypes = {
 export default FAQ
 
 export const articleQuery = graphql`
-    query FAQQuery($slug: String!) {
+    query($slug: String!) {
         ghostPost(slug: { eq: $slug }) {
-          title
-          custom_excerpt
-          plaintext
-          html
-          updatedAt: updated_at(formatString: "MMMM, YYYY")
-          tags {
-            name
-            slug
-          }
-          authors {
-             name
-             slug
-
-          }
+            ...GhostPostFields
         }
     }
 `
