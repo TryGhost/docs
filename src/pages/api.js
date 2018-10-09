@@ -61,11 +61,11 @@ const APIPage = () => (
             </div>
         </section>
 
-        <div className={ Spirit.page.xl + `pb-vw4 pb-vw3-ns pt-vw4 pt-vw3-ns` }>
+        <div className={ Spirit.page.l + `pb-vw4 pb-vw3-ns pt-vw4 pt-vw3-ns` }>
             <APISection first={ true }>
                 <div className={ sectionStyles.headingContainer }>
                     <h2 className={ Spirit.h3 }>Frontend SDKs</h2>
-                    <p className={ Spirit.p + `midgrey-l2` }>Frameworks for working with the Ghost API to build a publication website</p>
+                    <p className={ Spirit.small + `midgrey-l2 mt2` }>Frameworks for working with the Ghost API to build a publication website</p>
                 </div>
                 <div className={ sectionStyles.cardContainer }>
                     <Card to="/api/v2/handlebars-themes/" icon="handlebars-logo">Handlebars</Card>
@@ -77,7 +77,7 @@ const APIPage = () => (
             <APISection>
                 <div className={ sectionStyles.headingContainer }>
                     <h2 className={ Spirit.h3 }>REST API</h2>
-                    <p className={ Spirit.p + `midgrey-l2` }>A full reference of API Endpoints</p>
+                    <p className={ Spirit.small + `midgrey-l2 mt2` }>A full reference of API Endpoints</p>
                 </div>
                 <div className={ sectionStyles.cardContainer }>
                     <Card to="/api/v2/content/" icon="content-api-logo">Content API</Card>
@@ -89,7 +89,7 @@ const APIPage = () => (
             <APISection>
                 <div className={ sectionStyles.headingContainer }>
                     <h2 className={ Spirit.h3 }>Tools</h2>
-                    <p className={ Spirit.p + `midgrey-l2` }>Utilities to help build and manage Ghost</p>
+                    <p className={ Spirit.small + `midgrey-l2 mt2` }>Utilities to help build and manage Ghost</p>
                 </div>
                 <div className={ sectionStyles.cardContainer }>
                     <Card to="/api/v2/ghost-cli/" icon="ghost-cli-logo">Ghost-CLI</Card>
@@ -99,9 +99,9 @@ const APIPage = () => (
 
             <APISection>
                 <div className={ sectionStyles.headingContainer }>
-                    <h4 className="dib ma0 pa0 bg-purple pa1 br-pill pl3 pr3 tc white">Coming soon</h4>
                     <h2 className={ Spirit.h3 + `mt2`}>Client Libraries</h2>
-                    <p className={ Spirit.p + `midgrey-l2` }>Specific libraries for interacting with the Ghost API directly</p>
+                    <p className={ Spirit.small + `midgrey-l2 mt2` }>Specific libraries for interacting with the Ghost API directly</p>
+                    <h4 className="f-supersmall dib ma0 pa0 bg-green pa1 br-pill pl3 pr3 tc white mt2 nudge-top--2">Coming soon</h4>
                 </div>
                 <div className={ sectionStyles.cardContainer }>
                     <Card icon="javascript-logo-inv">JavaScript</Card>
