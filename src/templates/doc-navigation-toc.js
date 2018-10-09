@@ -6,15 +6,12 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import NavSidebar from '../components/global/navigation-sidebar'
-import NewNavSidebar from '../components/global/new-sidebar'
 import DesignNavSidebar from '../components/layouts/partials/design-nav-sidebar'
 import TOC from '../components/layouts/partials/toc'
 
 function NavBar(props) {
     if (props.location.pathname.match(/\S\/design\//i)) {
         return <DesignNavSidebar />
-    } else if (props.sidebar === `test`) {
-        return <NewNavSidebar sidebar={ props.sidebar } location={ props.location } />
     } else if (props.sidebar) {
         return <NavSidebar sidebar={props.sidebar} location={props.location} />
     } else {
