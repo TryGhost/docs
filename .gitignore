@@ -66,6 +66,7 @@ typings/
 
 # OSX
 .DS_Store
+.vscode
 
 # Docs Custom
 .cache/
