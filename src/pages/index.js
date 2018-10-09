@@ -51,18 +51,6 @@ const IndexPage = () => (
             </div>
 
             <section className={ Spirit.page.xl + `grid-12 gutter-row-20 gutter-36-ns`}>
-                <Box className={ mainBoxStyles.box } to="/setup/" radius="5">
-                    <div className="flex flex-row flex-column-ns">
-                        <span className="db lightgrey mr4"><Icon name="rocket" className="h9 h14-l" /></span>
-                        <div>
-                            <h2 className={ mainBoxStyles.title }>Getting started</h2>
-                            <p className={ Spirit.p + `mt2 darkgrey-l2` }>Setting up a Ghost site on a server or locally.</p>
-                            <span className="dib mt5 blue link fw5 f5 flex items-center">
-                                Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-blue" />
-                            </span>
-                        </div>
-                    </div>
-                </Box>
                 <Box className={ mainBoxStyles.box } to="/concepts/introduction/" radius="5">
                     <div className="flex flex-row flex-column-ns">
                         <span className="db lightgrey mr4"><Icon name="blocks" className="h8 h14-l" /></span>
@@ -71,6 +59,18 @@ const IndexPage = () => (
                             <p className={ Spirit.p + `mt2 darkgrey-l2` }>Understand the fundamentals of Ghost development.</p>
                             <span className="dib mt5 purple link fw5 f5 flex items-center">
                                 Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-purple" />
+                            </span>
+                        </div>
+                    </div>
+                </Box>
+                <Box className={ mainBoxStyles.box } to="/setup/" radius="5">
+                    <div className="flex flex-row flex-column-ns">
+                        <span className="db lightgrey mr4"><Icon name="rocket" className="h9 h14-l" /></span>
+                        <div>
+                            <h2 className={ mainBoxStyles.title }>Getting started</h2>
+                            <p className={ Spirit.p + `mt2 darkgrey-l2` }>Setting up a Ghost site on a server or locally.</p>
+                            <span className="dib mt5 blue link fw5 f5 flex items-center">
+                                Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-blue" />
                             </span>
                         </div>
                     </div>
