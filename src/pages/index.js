@@ -67,7 +67,7 @@ const IndexPage = () => (
                     <div className="flex flex-row flex-column-ns">
                         <span className="db lightgrey mr4"><Icon name="rocket" className="h9 h14-l" /></span>
                         <div>
-                            <h2 className={ mainBoxStyles.title }>Getting started</h2>
+                            <h2 className={ mainBoxStyles.title }>Setup Guide</h2>
                             <p className={ Spirit.p + `mt2 darkgrey-l2` }>Setting up a Ghost site on a server or locally.</p>
                             <span className="dib mt5 blue link fw5 f5 flex items-center">
                                 Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-blue" />

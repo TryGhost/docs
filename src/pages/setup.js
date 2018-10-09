@@ -31,7 +31,7 @@ const SetupIndexPage = () => (
     <Layout title="API" mainClass="bg-whitegrey-l2 pb-vw3" bodyClass="bg-white">
         <section className="bg-setup">
             <div className={ Spirit.page.xl + `tc-ns pt-vw6 pt-vw4-ns pb-vw4 white` }>
-                <h1 className={ Spirit.sectionHeading + `gh-integration-header-shadow` }>Setup</h1>
+                <h1 className={ Spirit.sectionHeading + `gh-integration-header-shadow` }>Setup Guide</h1>
                 <p className={ Spirit.sectionSubHeading }>All the tools to get started with Ghost</p>
             </div>
         </section>
