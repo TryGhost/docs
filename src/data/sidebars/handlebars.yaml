@@ -1,99 +1,99 @@
-- title: Handlebars
-  items:
-    - title: Overview
-      link: /api/v2/handlebars-themes/
-    - title: Contexts
-      link: ''
-      items:
-        - title: Context Overview
-          link: /api/v2/handlebars-themes/context/
-        - title: Index
-          link: /api/v2/handlebars-themes/context/index/
-        - title: Post
-          link: /api/v2/handlebars-themes/context/post/
-        - title: Page
-          link: /api/v2/handlebars-themes/context/page/
-        - title: Author
-          link: /api/v2/handlebars-themes/context/author/
-        - title: Tag
-          link: /api/v2/handlebars-themes/context/tag/
-    - title: Helpers
-      link: ''
-      items:
-        - title: Helpers Overview
-          link: /api/v2/handlebars-themes/helpers/
-        - title: Functional
-          link: /api/v2/handlebars-themes/helpers/functional/
-          items:
-            - title: is
-              link: /api/v2/handlebars-themes/helpers/functional/is/
-            - title: foreach
-              link: /api/v2/handlebars-themes/helpers/functional/foreach/
-            - title: has
-              link: /api/v2/handlebars-themes/helpers/functional/has/
-            - title: if
-              link: /api/v2/handlebars-themes/helpers/functional/if/
-            - title: unless
-              link: /api/v2/handlebars-themes/helpers/functional/unless/
-            - title: get
-              link: /api/v2/handlebars-themes/helpers/functional/get/
-        - title: Data
-          link: /api/v2/handlebars-themes/helpers/data/
-          items:
-            - title: '@config'
-              link: /api/v2/handlebars-themes/helpers/data/config/
-            - title: '@blog'
-              link: /api/v2/handlebars-themes/helpers/data/blog/
-            - title: navigation
-              link: /api/v2/handlebars-themes/helpers/data/navigation/
-            - title: post
-              link: /api/v2/handlebars-themes/helpers/data/post/
-            - title: url
-              link: /api/v2/handlebars-themes/helpers/data/url/
-            - title: title
-              link: /api/v2/handlebars-themes/helpers/data/title/
-            - title: img_url
-              link: /api/v2/handlebars-themes/helpers/data/img_url/
-            - title: excerpt
-              link: /api/v2/handlebars-themes/helpers/data/excerpt/
-            - title: content
-              link: /api/v2/handlebars-themes/helpers/data/content/
-            - title: date
-              link: /api/v2/handlebars-themes/helpers/data/date/
-            - title: tags
-              link: /api/v2/handlebars-themes/helpers/data/tags/
-            - title: authors
-              link: /api/v2/handlebars-themes/helpers/data/authors/
-            - title: twitter
-              link: /api/v2/handlebars-themes/helpers/data/twitter/
-            - title: facebook
-              link: /api/v2/handlebars-themes/helpers/data/facebook/
-        - title: Utility
-          link: /api/v2/handlebars-themes/helpers/utility/
-          items:
-            - title: asset
-              link: /api/v2/handlebars-themes/helpers/utility/asset/
-            - title: 'ghost_head/foot'
-              link: /api/v2/handlebars-themes/helpers/utility/ghost_head_foot/
-            - title: body_class
-              link: /api/v2/handlebars-themes/helpers/utility/body_class/
-            - title: post_class
-              link: /api/v2/handlebars-themes/helpers/utility/post_class/
-            - title: reading_time
-              link: /api/v2/handlebars-themes/helpers/utility/reading_time/
-            - title: pagination
-              link: /api/v2/handlebars-themes/helpers/utility/pagination/
-            - title: 'prev/next_post'
-              link: /api/v2/handlebars-themes/helpers/utility/prev_next_post/
-            - title: plural
-              link: /api/v2/handlebars-themes/helpers/utility/plural/
-            - title: lang
-              link: /api/v2/handlebars-themes/helpers/utility/lang/
-            - title: translate
-              link: /api/v2/handlebars-themes/helpers/utility/translate/
-            - title: encode
-              link: /api/v2/handlebars-themes/helpers/utility/encode/
-            - title: log
-              link: /api/v2/handlebars-themes/helpers/utility/log/
-            - title: '@labs'
-              link: /api/v2/handlebars-themes/helpers/utility/labs/
+- groups:
+  - group: Handlebars Themes
+    items:
+      - title: Overview
+        link: /api/v2/handlebars-themes/
+      - title: A second link
+        link: /#/
+  - group: Contexts
+    items:
+      - title: Context Overview
+        link: /api/v2/handlebars-themes/context/
+      - title: Index
+        link: /api/v2/handlebars-themes/context/index/
+      - title: Post
+        link: /api/v2/handlebars-themes/context/post/
+      - title: Page
+        link: /api/v2/handlebars-themes/context/page/
+      - title: Author
+        link: /api/v2/handlebars-themes/context/author/
+      - title: Tag
+        link: /api/v2/handlebars-themes/context/tag/
+  - group: Functional Helpers
+    items:
+      - title: Overview
+        link: /api/v2/handlebars-themes/helpers/functional/
+      - title: is
+        link: /api/v2/handlebars-themes/helpers/functional/is/
+      - title: foreach
+        link: /api/v2/handlebars-themes/helpers/functional/foreach/
+      - title: has
+        link: /api/v2/handlebars-themes/helpers/functional/has/
+      - title: if
+        link: /api/v2/handlebars-themes/helpers/functional/if/
+      - title: unless
+        link: /api/v2/handlebars-themes/helpers/functional/unless/
+      - title: get
+        link: /api/v2/handlebars-themes/helpers/functional/get/
+  - group: Data Helpers
+    items: 
+      - title: Overview
+        link: /api/v2/handlebars-themes/helpers/data/
+      - title: '@config'
+        link: /api/v2/handlebars-themes/helpers/data/config/
+      - title: '@blog'
+        link: /api/v2/handlebars-themes/helpers/data/blog/
+      - title: navigation
+        link: /api/v2/handlebars-themes/helpers/data/navigation/
+      - title: post
+        link: /api/v2/handlebars-themes/helpers/data/post/
+      - title: url
+        link: /api/v2/handlebars-themes/helpers/data/url/
+      - title: title
+        link: /api/v2/handlebars-themes/helpers/data/title/
+      - title: img_url
+        link: /api/v2/handlebars-themes/helpers/data/img_url/
+      - title: excerpt
+        link: /api/v2/handlebars-themes/helpers/data/excerpt/
+      - title: content
+        link: /api/v2/handlebars-themes/helpers/data/content/
+      - title: date
+        link: /api/v2/handlebars-themes/helpers/data/date/
+      - title: tags
+        link: /api/v2/handlebars-themes/helpers/data/tags/
+      - title: authors
+        link: /api/v2/handlebars-themes/helpers/data/authors/
+      - title: twitter
+        link: /api/v2/handlebars-themes/helpers/data/twitter/
+      - title: facebook
+        link: /api/v2/handlebars-themes/helpers/data/facebook/
+  - group: Utility Helpers
+    items: 
+      - title: Overview
+        link: /api/v2/handlebars-themes/helpers/utility/
+      - title: asset
+        link: /api/v2/handlebars-themes/helpers/utility/asset/
+      - title: 'ghost_head/foot'
+        link: /api/v2/handlebars-themes/helpers/utility/ghost_head_foot/
+      - title: body_class
+        link: /api/v2/handlebars-themes/helpers/utility/body_class/
+      - title: post_class
+        link: /api/v2/handlebars-themes/helpers/utility/post_class/
+      - title: reading_time
+        link: /api/v2/handlebars-themes/helpers/utility/reading_time/
+      - title: pagination
+        link: /api/v2/handlebars-themes/helpers/utility/pagination/
+      - title: 'prev/next_post'
+        link: /api/v2/handlebars-themes/helpers/utility/prev_next_post/
+      - title: plural
+        link: /api/v2/handlebars-themes/helpers/utility/plural/
+      - title: lang
+        link: /api/v2/handlebars-themes/helpers/utility/lang/
+      - title: translate
+        link: /api/v2/handlebars-themes/helpers/utility/translate/
+      - title: encode
+        link: /api/v2/handlebars-themes/helpers/utility/encode/
+      - title: log
+        link: /api/v2/handlebars-themes/helpers/utility/log/
+      - title: '@labs'
+        link: /api/v2/handlebars-themes/helpers/utility/labs/

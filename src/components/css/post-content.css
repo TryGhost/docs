@@ -806,31 +806,3 @@ pre {
 .post-content pre code * {
     color: inherit;
 }
-
-
-ul ul ul .sidebarlink-active {
-    position: relative;
-}
-
-ul ul ul .sidebarlink-active:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: calc(50% -3px);
-    left: -2.4rem;
-    width: 12px;
-    height: 4px;
-    background: var(--blue);
-    border-radius: 0 6px 6px 0;
-}
-
-ul ul ul .sidebarlink-active:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: calc(-2.4rem - 1px);
-    width: 1px;
-    height: 100%;
-    background: linear-gradient(to bottom, var(--whitegrey) 0%, var(--blue) 50%,var(--whitegrey) 100%);
-}
