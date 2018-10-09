@@ -329,6 +329,10 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     background: url(../../images/api-bg.svg) bottom center no-repeat, linear-gradient(60deg, #008BD6 0%, #3ECFE6 100%);
 }
 
+.setup-box-min-height {
+    min-height: 20rem;
+}
+
 /* Core Concepts */
 /* ----------------------------------------------------------------------- */
 .bg-concepts {
