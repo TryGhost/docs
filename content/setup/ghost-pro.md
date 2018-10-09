@@ -9,7 +9,6 @@ keywords:
     - Pro
     - Managed Hosting
     - PaaS
-next:
 ---
 
 Ghost’s premium hosted service delivers a seamless experience, giving you time to focus on what really matters. 
@@ -44,6 +43,6 @@ If you're happy to manage your own hosting and site maintenance, there are sever
 
 * [Installing on your own server](https://docs.ghost.org/setup/ubuntu/)
 * [Installing locally](https://docs.ghost.org/setup/local/)
-* [Contributing to Ghost core](https://docs.ghost.org/setup/source/) and installing from source
+* [Contributing to Ghost core](https://docs.ghost.org/setup/source/) and installing from source.
 
 
