@@ -12,6 +12,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .lh-h5 { line-height: var(--vr-3); }
 .lh-h6 { line-height: var(--vr-3); }
 .lh-p  { line-height: var(--vr-3); }
+.lh-small  { line-height: var(--vr-3); }
 .lh-tiny  { line-height: var(--vr-2); }
 
 .word-normal { word-break: normal; }
