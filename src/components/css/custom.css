@@ -293,12 +293,12 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     content: '';
     display: block;
     position: absolute;
-    top: calc(50% -8px);
+    top: 0.7rem;
     left: -2.4rem;
+    bottom: 0.8rem;
     width: 4px;
-    height: 16px;
     background: var(--blue);
-    /* border-radius: 0 6px 6px 0; */
+    border-radius: 0 2px 2px 0;
 }
 
 .miw-toc {
