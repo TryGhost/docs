@@ -1,5 +1,5 @@
 ---
-title: "Authors"
+title: "Governance"
 sidebar: "concepts"
 ---
 

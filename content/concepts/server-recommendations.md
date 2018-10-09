@@ -1,5 +1,5 @@
 ---
-title: "Authors"
+title: "Server Recommendations"
 sidebar: "concepts"
 ---
 

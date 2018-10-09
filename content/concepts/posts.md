@@ -1,5 +1,6 @@
 ---
 title: "Posts"
+sidebar: "concepts"
 ---
 
 ## This is the second heading

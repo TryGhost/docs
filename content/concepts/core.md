@@ -1,5 +1,5 @@
 ---
-title: "Authors"
+title: "Core API"
 sidebar: "concepts"
 ---
 

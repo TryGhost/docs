@@ -1,5 +1,6 @@
 ---
 title: "Introduction"
+sidebar: "concepts"
 ---
 
 ## This is the second heading

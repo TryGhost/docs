@@ -1,5 +1,6 @@
 ---
 title: "Pages"
+sidebar: "concepts"
 ---
 
 ## This is the second heading

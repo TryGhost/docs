@@ -1,5 +1,5 @@
 ---
-title: "Authors"
+title: "Storage Adapters"
 sidebar: "concepts"
 ---
 

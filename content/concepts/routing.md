@@ -1,5 +1,5 @@
 ---
-title: "Authors"
+title: "Dynamic Routing"
 sidebar: "concepts"
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Authors"
+title: "Contributing"
 sidebar: "concepts"
 ---
 

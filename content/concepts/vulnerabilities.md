@@ -1,5 +1,5 @@
 ---
-title: "Authors"
+title: "Reporting Vulnerabilities"
 sidebar: "concepts"
 ---
 

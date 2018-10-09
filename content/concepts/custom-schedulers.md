@@ -1,5 +1,5 @@
 ---
-title: "Authors"
+title: "Custom Schedulers"
 sidebar: "concepts"
 ---
 

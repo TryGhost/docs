@@ -10,7 +10,7 @@
         - title: Ecosystem overview
           link: /concepts/ecosystem/
     - title: Architecture
-      link: /concepts/architecture/
+      link: /concepts/core/
       items:
         - title: Core API
           link: /concepts/core/
@@ -23,7 +23,7 @@
         - title: File storage
           link: /concepts/storage/
     - title: Data Model
-      link: /concepts/data/
+      link: /concepts/posts/
       items:
         - title: Posts
           link: /concepts/posts/
@@ -34,12 +34,12 @@
         - title: Authors
           link: /concepts/authors/
     - title: Configuration
-      link: /concepts/configuration/
+      link: /concepts/config/
       items:
-        - title: Main config
-          link: /concepts/main-config/
+        - title: Config options
+          link: /concepts/config/
         - title: Dynamic routing
-          link: /concepts/dynamic-routing/
+          link: /concepts/routing/
         - title: Redirects
           link: /concepts/redirects/
         - title: Custom storage adapters
@@ -51,8 +51,8 @@
       items:
         - title: Hosting overview
           link: /concepts/hosting/
-        - title: Recommendations
-          link: /concepts/hosting-recommendations/
+        - title: Server recommendations
+          link: /concepts/server-recommendations/
         - title: Troubleshooting
           link: /concepts/hosting-problems/
     - title: Security
@@ -60,16 +60,14 @@
       items:
         - title: Overview
           link: /concepts/security/
-        - title: Best practices
-          link: /concepts/#/
         - title: Reporting vulnerabilities
-          link: /concepts/#/
+          link: /concepts/vulnerabilities/
     - title: Roadmap
-      link: /concepts/#/
+      link: /concepts/governance/
       items:
         - title: Governance
-          link: /concepts/#/
+          link: /concepts/governance/
         - title: Development principles
-          link: /concepts/#/
+          link: /concepts/principles/
         - title: Contributing
-          link: /concepts/#/
+          link: /concepts/contributing/
