@@ -72,7 +72,7 @@ class SidebarList extends React.Component {
     }
 
     setActiveLink() {
-        this.setState({ linkClasses: `blue fw6` })
+        this.setState({ linkClasses: `sidebarlink-active blue fw6` })
     }
 
     extendSidebar() {
