@@ -9,6 +9,7 @@ import { Spirit } from '../components/spirit-styles'
 
 const TutorialsPage = ({ data }) => {
     const posts = data.allGhostPost.edges
+    // TODO: structured data
     return (
         <Layout title="Tutorials" headerDividerStyle="shadow">
             <div className="bg-tutorials">

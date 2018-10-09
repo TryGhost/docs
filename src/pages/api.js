@@ -51,6 +51,7 @@ Card.propTypes = {
     className: PropTypes.string,
 }
 
+// TODO: structured data
 const APIPage = () => (
     <Layout title="API" mainClass="bg-whitegrey-l2" bodyClass="bg-white">
         <section className="bg-api-reference">

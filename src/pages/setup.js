@@ -5,6 +5,7 @@ import Icon from '../components/global/icon'
 import { Link } from 'gatsby'
 import { Spirit } from '../components/spirit-styles'
 
+// TODO: structured data
 const SetupIndexPage = () => (
     <Layout title="API" mainClass="bg-whitegrey-l2 pb-vw3" bodyClass="bg-white">
         <section className="bg-setup">

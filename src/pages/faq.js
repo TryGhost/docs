@@ -8,6 +8,7 @@ import { Spirit } from '../components/spirit-styles'
 
 const FAQPage = ({ data }) => {
     const posts = data.allGhostPost.edges
+    // TODO: structured data
     return (
         <Layout title="FAQ" headerDividerStyle="shadow" bodyClass="bg-white">
             <div className="gh-bg-home bb b--whitegrey">

@@ -34,6 +34,7 @@ var apiBoxStyles = {
     box: `col-12 col-4-ns pa5 flex flex-column flex-row-l items-start justify-start tdn nt0 nt3-ns`,
 }
 
+// TODO: structured data
 const IndexPage = () => (
     <Layout title="Home" headerDividerStyle="shadow" bodyClass="bg-white" mainClass="bg-whitegrey-l2 pb-vw6 pb-vw3-ns">
 
@@ -106,14 +107,14 @@ const IndexPage = () => (
                         <p className={ Spirit.small + `midgrey mt2` }>Frameworks for working with the Ghost API to build a publication website</p>
                     </div>
                 </Box>
-                {/* 
+                {/*
                 <Box className={ apiBoxStyles.box } onWhite="false" elevation="1" to="/api/">
                     <span className="dib mr4 mt1 miw10 tc"><Icon name="client-lib" className="stroke-lightgrey-d2" /></span>
                     <div>
                         <h4 className={ Spirit.h5 + `middarkgrey` }>Client Libraries</h4>
                         <p className={ Spirit.small + `midgrey mt2` }>Specific libraries for interacting with the Ghost API directly</p>
                     </div>
-                </Box> 
+                </Box>
                 */}
                 <Box className={ apiBoxStyles.box } onWhite="false" elevation="1" to="/api/">
                     <span className="dib mr4 mt1 miw10 tc"><Icon name="rest-api" className="stroke-midgrey-l2" /></span>

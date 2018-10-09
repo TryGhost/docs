@@ -8,7 +8,7 @@ import Layout from '../components/layouts/default'
 import integrationIcon from '../images/integration-icon.png'
 import { Spirit } from '../components/spirit-styles'
 import TOC from '../components/layouts/partials/toc'
-import GhostHead from '../components/layouts/partials/ghost-head'
+import GhostMetaData from '../components/layouts/partials/ghost-head'
 
 class Integration extends React.Component {
     render() {
@@ -16,7 +16,7 @@ class Integration extends React.Component {
 
         return (
             <>
-                <GhostHead data={this.props.data} />
+                <GhostMetaData data={this.props.data} location={this.props.location} />
                 <Layout>
                     <div className="pa-vw4 tc">
                         <h1 className="ma0 pa0 f-headline">{post.title} + Ghost</h1>
@@ -53,6 +53,7 @@ class Integration extends React.Component {
 
 Integration.propTypes = {
     data: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
 }
 
 export default Integration

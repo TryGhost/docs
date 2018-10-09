@@ -9,6 +9,7 @@ import IntegrationsHeader from '../components/layouts/partials/integrations-head
 
 const IntegrationsPage = ({ data }) => {
     const posts = data.allGhostPost.edges
+    // TODO: structured data
     return (
         <Layout title="Integrations" headerDividerStyle="shadow" header={ <IntegrationsHeader /> }>
             <div className={ Spirit.page.xl }>
