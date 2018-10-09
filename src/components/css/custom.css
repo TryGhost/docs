@@ -273,6 +273,48 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     grid-template-columns: 220px auto;
 }
 
+.sidebar-list:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 0px;
+    bottom: 7px;
+    width: 1px;
+    background: var(--whitegrey);
+}
+
+.sidebar-list .sidebarlink-active {
+    position: relative;
+}
+
+.sidebar-list .sidebarlink-active:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(50% -8px);
+    left: -2.4rem;
+    width: 4px;
+    height: 16px;
+    background: var(--blue);
+    /* border-radius: 0 6px 6px 0; */
+}
+
+.miw-toc {
+    min-width: 18rem;
+}
+
+/* ul .sidebarlink-active:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: calc(-2.4rem - 1px);
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--whitegrey) 0%, var(--blue) 50%,var(--whitegrey) 100%);
+} */
+
 
 /* API */
 /* ----------------------------------------------------------------------- */

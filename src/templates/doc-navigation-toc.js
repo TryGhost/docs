@@ -6,12 +6,15 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import NavSidebar from '../components/global/navigation-sidebar'
+import NewNavSidebar from '../components/global/new-sidebar'
 import DesignNavSidebar from '../components/layouts/partials/design-nav-sidebar'
 import TOC from '../components/layouts/partials/toc'
 
 function NavBar(props) {
     if (props.location.pathname.match(/\S\/design\//i)) {
         return <DesignNavSidebar />
+    } else if (props.sidebar === `test`) {
+        return <NewNavSidebar sidebar={ props.sidebar } location={ props.location } />
     } else if (props.sidebar) {
         return <NavSidebar sidebar={props.sidebar} location={props.location} />
     } else {
@@ -127,13 +130,13 @@ class DocTemplate extends React.Component {
                                 : null }
                             <div className={ (post.frontmatter.sidebar ? `flex bg-white pa12 pt10 br4 shadow-1` : `flex`) }>
                                 <article className={ `flex-auto ${post.frontmatter.sidebar ? `pr10` : `pr20`}` }>
-                                    <h1 className={ Spirit.h1 }>{ post.frontmatter.title }</h1>
+                                    <h1 className={ Spirit.h1 + `middarkgrey` }>{ post.frontmatter.title }</h1>
                                     <section className="post-content" dangerouslySetInnerHTML={ {
                                         __html: post.html,
                                     } } />
                                 </article>
                                 { post.frontmatter.toc ?
-                                    <div><TOC className={ post.frontmatter.sidebar ? `miw50` : `miw70` } headingsOffset="-200" /></div>
+                                    <div><TOC className={ post.frontmatter.sidebar ? `miw-toc` : `miw70` } headingsOffset="-200" /></div>
                                     : null }
                             </div>
                         </div>
