@@ -816,12 +816,12 @@ ul ul ul .sidebarlink-active:before {
     content: '';
     display: block;
     position: absolute;
-    top: calc(50% -2px);
+    top: calc(50% -3px);
     left: -2.4rem;
-    width: 10px;
-    height: 3px;
+    width: 12px;
+    height: 4px;
     background: var(--blue);
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 6px 6px 0;
 }
 
 ul ul ul .sidebarlink-active:after {

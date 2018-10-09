@@ -83,60 +83,60 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 }
 
 /* Fixing those shadows */
-.box-shadow-hover { 
-    transition: all 0.8s ease; 
+.box-shadow-hover {
+    transition: all 0.8s ease;
 }
 
-.shadow-1 { 
-    box-shadow: 0 0 1px rgba(0,0,0,.06), 0 2px 6px rgba(0,0,0,.03); 
+.shadow-1 {
+    box-shadow: 0 0 1px rgba(0,0,0,.06), 0 2px 6px rgba(0,0,0,.03);
 }
-.shadow-1.on-white { 
-    box-shadow: 0 0 1px rgba(0,0,0,.15), 0 2px 4px rgba(0,0,0,.04); 
+.shadow-1.on-white {
+    box-shadow: 0 0 1px rgba(0,0,0,.15), 0 2px 4px rgba(0,0,0,.04);
 }
-.shadow-1-hover:hover { 
-    box-shadow: 0 0 5px rgba(0,0,0,.02), 0 5px 22px -6px rgba(0,0,0,.1); 
+.shadow-1-hover:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,.02), 0 5px 22px -6px rgba(0,0,0,.1);
     transform: scale(1.025);
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 }
-.shadow-1-hover.on-white:hover { 
-    box-shadow: 0 0 1px rgba(0,0,0,.15), 0 5px 22px -6px rgba(0,0,0,.1); 
-    transition: all 0.3s ease; 
+.shadow-1-hover.on-white:hover {
+    box-shadow: 0 0 1px rgba(0,0,0,.15), 0 5px 22px -6px rgba(0,0,0,.1);
+    transition: all 0.3s ease;
 }
 
-.shadow-2 { 
-    box-shadow: 0 0 5px rgba(0,0,0,.02), 0 5px 22px -6px rgba(0,0,0,.1); 
+.shadow-2 {
+    box-shadow: 0 0 5px rgba(0,0,0,.02), 0 5px 22px -6px rgba(0,0,0,.1);
 }
-.shadow-2.on-white { 
-    box-shadow: 0 0 3px rgba(0,0,0,.08), 0 5px 22px -6px rgba(0,0,0,.08); 
+.shadow-2.on-white {
+    box-shadow: 0 0 3px rgba(0,0,0,.08), 0 5px 22px -6px rgba(0,0,0,.08);
 }
 .shadow-2-hover:hover {
     transform: scale(1.05);
     box-shadow: 0 0 1px rgba(0,0,0,.03), 0 8px 26px -4px rgba(0,0,0,.1);
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 }
 .shadow-2-hover.on-white:hover {
     box-shadow: 0 0 3px rgba(0,0,0,.08), 0 8px 26px -4px rgba(0,0,0,.1);
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 }
 
-.shadow-3 { 
-    box-shadow: 0 0 1px rgba(0,0,0,.03), 0 10px 32px -5px rgba(0,0,0,.1); 
+.shadow-3 {
+    box-shadow: 0 0 1px rgba(0,0,0,.03), 0 10px 32px -5px rgba(0,0,0,.1);
 }
-.shadow-3.on-white { 
-    box-shadow: 0 0 4px rgba(0,0,0,.065), 0 10px 32px -5px rgba(0,0,0,0.075); 
+.shadow-3.on-white {
+    box-shadow: 0 0 4px rgba(0,0,0,.065), 0 10px 32px -5px rgba(0,0,0,0.075);
 }
 .shadow-3-hover:hover {
     box-shadow: 0 0 3px rgba(0,0,0,.03), 0 17px 40px -8px rgba(0,0,0,.09);
     transform: scale(1.05);
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 }
 .shadow-3-hover.on-white:hover {
     box-shadow: 0 0 4px rgba(0,0,0,.065), 0 17px 40px -8px rgba(0,0,0,.09);
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 }
 
-.header-shadow { 
-    box-shadow: 0 0 3px rgba(0,0,0,.03), 0 3px 46px rgba(0,0,0,.07); 
+.header-shadow {
+    box-shadow: 0 0 3px rgba(0,0,0,.03), 0 3px 46px rgba(0,0,0,.07);
 }
 
 /* Test hover box */
@@ -171,7 +171,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .gh-nav-logo-suffix:before {
     content: "";
     position: absolute;
-    top: 0;
+    top: -1px;
     left: 1px;
     display: block;
     width: 1px;
@@ -233,11 +233,12 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 }
 
 .bg-integrations-header-image {
-    /* background: url("https://source.unsplash.com/user/johnonolan");
-    background-size: cover;
-    background-position: 0 35%; */
     background: url(../../images/api-bg.svg) bottom center no-repeat, linear-gradient(60deg, #FA3973 0%, #FEE140 100%);
     background-size: cover;
+}
+
+.bg-integrations-header-image .gh-nav-logo-suffix:before {
+    background: rgba(255,255,255,0.3);
 }
 
 /* .bg-integrations-header-cover {
