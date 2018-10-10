@@ -8,7 +8,7 @@ import Layout from '../components/layouts/default'
 import integrationIcon from '../images/integration-icon.png'
 import { Spirit } from '../components/spirit-styles'
 import TOC from '../components/layouts/partials/toc'
-import GhostMetaData from '../components/layouts/partials/ghost-head'
+import MetaData from '../components/layouts/partials/meta-data'
 
 class Integration extends React.Component {
     render() {
@@ -16,7 +16,7 @@ class Integration extends React.Component {
 
         return (
             <>
-                <GhostMetaData data={this.props.data} location={this.props.location} />
+                <MetaData data={this.props.data} location={this.props.location} type="article" />
                 <Layout>
                     <div className="pa-vw4 tc">
                         <h1 className="ma0 pa0 f-headline">{post.title} + Ghost</h1>
@@ -61,9 +61,7 @@ export default Integration
 export const articleQuery = graphql`
     query($slug: String!) {
         site {
-            siteMetadata {
-                siteUrl
-            }
+            ...SiteMetaFields
         }
         ghostPost(slug: { eq: $slug }) {
             ...GhostPostFields

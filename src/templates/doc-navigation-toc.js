@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from "react-helmet"
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 
@@ -8,6 +7,7 @@ import { Spirit } from '../components/spirit-styles'
 import NavSidebar from '../components/global/navigation-sidebar'
 import DesignNavSidebar from '../components/layouts/partials/design-nav-sidebar'
 import TOC from '../components/layouts/partials/toc'
+import MetaData from '../components/layouts/partials/meta-data'
 
 function NavBar(props) {
     if (props.location.pathname.match(/\S\/design\//i)) {
@@ -20,7 +20,11 @@ function NavBar(props) {
 }
 
 function PageHeader(props) {
-    var title, subtitle, mainLink, subLink, bgClass = `bg-api-reference`
+    let title
+    let subtitle
+    let mainLink
+    let subLink
+    let bgClass = `bg-api-reference`
 
     // Handlebars
     if (props.location.pathname.match(/\/api\//i)) {
@@ -98,7 +102,7 @@ function PageHeader(props) {
             </div>
         )
     } else {
-        return <></>
+        return null
     }
 }
 
@@ -111,29 +115,7 @@ class DocTemplate extends React.Component {
 
         return (
             <>
-                <Helmet>
-                    <title>{post.frontmatter.title}</title>
-                    <meta name="description" content={post.excerpt} />
-                    <link rel="canonical" href="TODO: Real Data - URL" />
-
-                    <meta name="og:type" content="article" />
-                    <meta name="og:title" content={post.frontmatter.title} />
-                    <meta name="og:description" content={post.excerpt} />
-                    <meta property="og:url" content="TODO: Real Data - URL" />
-                    <meta property="article:published_time" content="TODO: Real Data - published_at" />
-                    <meta property="article:modified_time" content="TODO: Real Data - updated_at" />
-                    <meta property="article:tag" content="TODO: Real Data - primary_tag" />
-                    <meta property="article:author" content="https://www.facebook.com/ghost" />
-
-                    <meta name="twitter:title" content={post.frontmatter.title} />
-                    <meta name="twitter:description" content={post.excerpt} />
-                    <meta name="twitter:url" content="TODO: Real Data - URL" />
-                    <meta name="twitter.label1" content="Reading time" />
-                    <meta name="twitter:data1" content={`${post.timeToRead} min read`} />
-                    <meta name="twitter:label2" content="Filed under" />
-                    <meta name="twitter:data2" content="TODO: Real Data - primary_tag" />
-                    <meta name="twitter:creator" content="@tryghost" />
-                </Helmet>
+                <MetaData data={this.props.data} location={this.props.location} type="article" />
                 <Layout mainClass={ post.frontmatter.sidebar ? `` : `bg-white pb20`}>
                     <PageHeader location={ this.props.location } />
 
@@ -173,6 +155,9 @@ export default DocTemplate
 
 export const articleQuery = graphql`
     query($slug: String!) {
+        site {
+            ...SiteMetaFields
+        }
         markdownRemark(fields: { slug: {eq: $slug}}) {
             ...MarkdownFields
         }

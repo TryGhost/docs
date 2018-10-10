@@ -27,8 +27,6 @@ class DefaultLayout extends React.Component {
             <>
                 <Helmet>
                     <html lang="en" className="fs-base" />
-                    <title>Ghost</title> /* TODO: This should be dynamic */
-                    <meta name="description" content="Ghost documentation" />  /* TODO: This should be dynamic */
                     <link type="text/css" href="https://cloud.typography.com/6076934/6704592/css/fonts.css" rel="stylesheet" />
                     <body className={ this.props.bodyClass + ` flex flex-column whitney f7 fw4 middarkgrey readability`} />
                 </Helmet>

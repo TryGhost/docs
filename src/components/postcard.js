@@ -24,7 +24,7 @@ const PostCard = ({ post, className }) => {
 
             <footer className="flex pt2 mt6 content-end">
                 {/* <Authors authors={ post.authors } /> */}
-                <span className="f8 dib measure-0-2 lightgrey">{ post.publishedAt }</span>
+                <span className="f8 dib measure-0-2 lightgrey">{ post.published_at_pretty }</span>
             </footer>
         </article>
     )

@@ -6,7 +6,7 @@ import Link from 'gatsby-link'
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import Tags from '../components/helpers/tags'
-import GhostMetaData from '../components/layouts/partials/ghost-head'
+import MetaData from '../components/layouts/partials/meta-data'
 
 class FAQ extends React.Component {
     render() {
@@ -14,7 +14,7 @@ class FAQ extends React.Component {
 
         return (
             <>
-                <GhostMetaData data={this.props.data} location={this.props.location} />
+                <MetaData data={this.props.data} location={this.props.location} type="article" />
                 <Layout bodyClass="bg-white">
                     <div className="gh-bg-home bb b--whitegrey">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1` }>
@@ -50,7 +50,7 @@ class FAQ extends React.Component {
                                     </div>
 
                                     <footer className="mt8 pt5 bt b--whitegrey midgrey f8 pb8">
-                                        Updated: <time dateTime={post.updatedAt}>{post.updatedAt}</time>
+                                        Updated: <time dateTime={post.updated_at_pretty}>{post.updated_at_pretty}</time>
                                     </footer>
 
                                 </div>
@@ -84,9 +84,7 @@ export default FAQ
 export const articleQuery = graphql`
     query($slug: String!) {
         site {
-            siteMetadata {
-                siteUrl
-            }
+            ...SiteMetaFields
         }
         ghostPost(slug: { eq: $slug }) {
             ...GhostPostFields

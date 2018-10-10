@@ -1,10 +1,21 @@
 import { graphql } from 'gatsby'
 
+export const siteMetaFields = graphql`
+    fragment SiteMetaFields on Site {
+        siteMetadata {
+            siteUrl
+            title
+            description
+        }
+    }
+`
+
 export const markdownFields = graphql`
     fragment MarkdownFields on MarkdownRemark {
         frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date
+            date_pretty: date(formatString: "DD MMMM, YYYY")
             path
             meta_title
             meta_description
@@ -22,6 +33,8 @@ export const markdownFields = graphql`
         fields {
             slug
         }
+        timeToRead
+        excerpt
     }
 `
 
@@ -34,10 +47,15 @@ export const ghostPostFields = graphql`
         featured
         feature_image
 
-        # Dates
-        createdAt: created_at(formatString: "DD MMMM, YYYY")
-        publishedAt: published_at(formatString: "DD MMMM, YYYY")
-        updatedAt: updated_at(formatString: "DD MMMM, YYYY")
+        # Dates formatted
+        created_at_pretty: created_at(formatString: "DD MMMM, YYYY")
+        published_at_pretty: published_at(formatString: "DD MMMM, YYYY")
+        updated_at_pretty: updated_at(formatString: "DD MMMM, YYYY")
+
+        # Dates unformatted
+        created_at
+        published_at
+        updated_at
 
         # SEO
         custom_excerpt
@@ -121,7 +139,17 @@ export const ghostPostListFields = graphql`
         feature_image
         plaintext
         featured
-        publishedAt: published_at(formatString: "DD MMMM, YYYY"),
+
+        # Dates formatted
+        created_at_pretty: created_at(formatString: "DD MMMM, YYYY")
+        published_at_pretty: published_at(formatString: "DD MMMM, YYYY")
+        updated_at_pretty: updated_at(formatString: "DD MMMM, YYYY")
+
+        # Dates unformatted
+        created_at
+        published_at
+        updated_at
+
         tags {
           name
           slug
