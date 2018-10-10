@@ -97,3 +97,12 @@
         link: /api/v2/handlebars-themes/helpers/log/
       - title: '@labs'
         link: /api/v2/handlebars-themes/helpers/labs/
+  - group: Features
+    items:
+      - title: Content
+        link: /api/v2/handlebars-themes/content/
+      - title: Google AMP
+        link: /api/v2/handlebars-themes/google-amp/
+      - title: Subscribers
+        link: /api/v2/handlebars-themes/subscribers/
+
