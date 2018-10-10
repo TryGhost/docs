@@ -116,28 +116,27 @@ class DocTemplate extends React.Component {
         return (
             <>
                 <MetaData data={this.props.data} location={this.props.location} type="article" />
-                <Layout mainClass={ post.frontmatter.sidebar ? `` : `bg-white pb20`}>
+                <Layout mainClass={ post.frontmatter.sidebar ? `` : ``}>
                     <PageHeader location={ this.props.location } />
-
-                    <div className={ Spirit.page.xl + `pt-vw4 pt-vw2-ns`}>
-                        <div className={ post.frontmatter.sidebar ? `grid-navbar` : `grid-auto` }>
+                    <div className={ Spirit.page.xl + `bg-white flex justify-between pt10 pb20 shadow-1 br4 br--bottom` }>
+                        <div className={ (post.frontmatter.sidebar ? `order-1` : `order-1`) + ` w-sidebar` }>
                             { post.frontmatter.sidebar ?
                                 <NavBar
                                     location={ this.props.location }
                                     sidebar={ post.frontmatter.sidebar }
                                 />
+                                : `` }
+                        </div>
+                        <article className="pl10 pr10 mw-content flex-auto order-2">
+                            <h1 className={ Spirit.h1 + `middarkgrey` }>{ post.frontmatter.title }</h1>
+                            <section className="post-content" dangerouslySetInnerHTML={ {
+                                __html: post.html,
+                            } } />
+                        </article>
+                        <div className={ (post.frontmatter.sidebar ? `order-3` : `order-3`) + ` w-sidebar` }>
+                            { post.frontmatter.toc ?
+                                <TOC headingsOffset="-200" />
                                 : null }
-                            <div className={ (post.frontmatter.sidebar ? `flex bg-white pa12 pt10 br4 shadow-1` : `flex justify-between`) }>
-                                <article className={ `flex-auto ${post.frontmatter.sidebar ? `pr10` : `mw-content`}` }>
-                                    <h1 className={ Spirit.h1 + `middarkgrey` }>{ post.frontmatter.title }</h1>
-                                    <section className="post-content" dangerouslySetInnerHTML={ {
-                                        __html: post.html,
-                                    } } />
-                                </article>
-                                { post.frontmatter.toc ?
-                                    <div className={ post.frontmatter.sidebar ? `miw-toc` : `searchfield-width` }><TOC headingsOffset="-200" /></div>
-                                    : null }
-                            </div>
                         </div>
                     </div>
                 </Layout>

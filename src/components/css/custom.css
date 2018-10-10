@@ -32,8 +32,24 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .measure--1-0 { letter-spacing: -1.0px; }
 
 /* Overriding max page width */
-.mw-xl { max-width: 120.0rem; }
+.mw-xl { max-width: 134.0rem; }
 .mw-m { max-width: 80.0rem; }
+
+.miw-toc {
+    min-width: 18rem;
+}
+
+.miw-sidebar {
+    min-width: 24rem;
+}
+
+.w-sidebar {
+    width: 24rem;
+}
+
+.mw-content {
+    max-width: 72rem;
+}
 
 /* margins */
 .ma-auto {
@@ -155,6 +171,8 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .br5 {
     border-radius: 1.2rem;
 }
+
+
 
 
 
@@ -301,14 +319,6 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     border-radius: 0 2px 2px 0;
 }
 
-.miw-toc {
-    min-width: 18rem;
-}
-
-.mw-content {
-    max-width: 72rem;
-}
-
 /* ul .sidebarlink-active:after {
     content: '';
     display: block;
@@ -375,7 +385,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 }
 
 .toc-list-container ol a {
-    color: var(--midgrey);
+    color: var(--midgrey-l1);
     text-decoration: none;
     display: inline-block;
     transition: all 0.3s ease;

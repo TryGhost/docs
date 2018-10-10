@@ -45,7 +45,7 @@
 }
 
 .post-content>p:first-child {
-    margin: var(--vr-1) 0 0;
+    margin: var(--vr-2) 0 0;
     font-size: 1.9rem;
     line-height: var(--vr-4);
 }
@@ -323,7 +323,7 @@ Usage (In Ghost editor):
     font-weight: 500;
     line-height: var(--vr-4);
     padding-top: var(--navbar-size);
-    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
+    margin: calc(var(--vr-4) - var(--navbar-size)) 0 0;
 }
 @media (max-width: 500px) {
     .post-content h4 {
@@ -352,7 +352,7 @@ Usage (In Ghost editor):
     font-weight: 600;
     line-height: var(--vr-3);
     padding-top: var(--navbar-size);
-    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
+    margin: calc(var(--vr-4) - var(--navbar-size)) 0 0;
     text-transform: uppercase;
     letter-spacing: 0.2px;
     word-spacing: 3px;
@@ -580,21 +580,18 @@ Usage (In Ghost editor):
 
 /* Tables */
 .post-content table {
-    /* display: inline-block; */
     overflow-x: auto;
-    margin: var(--vr-4) 0 2.5em;
+    margin: var(--vr-4) 0 0;
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
-    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
     font-size: 1.3rem;
     white-space: nowrap;
     vertical-align: top;
     -webkit-overflow-scrolling: touch;
-    /* background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center; */
-    background-attachment: scroll, scroll;
-    background-size: 10px 100%, 10px 100%;
-    background-repeat: no-repeat;
+    margin-left: -24px;
+    margin-right: -24px;
+    overflow: hidden;
 }
 
 .post-content thead,
@@ -602,34 +599,36 @@ Usage (In Ghost editor):
     width: 100%;
 }
 
-.post-content table td:first-child {
-    background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-    background-size: 20px 100%;
-    background-repeat: no-repeat;
+.post-content table tr:first-child td:first-child {
+    border-top-left-radius: 4px;
 }
 
-.post-content table td:last-child {
-    background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-    background-position: 100% 0;
-    background-size: 20px 100%;
-    background-repeat: no-repeat;
+.post-content table tr:last-child td {
+    border-bottom: 2px solid var(--whitegrey-l1);
 }
 
 .post-content table th {
     color: var(--darkgrey);
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 1.0em;
+    font-weight: 600;
     letter-spacing: 0.2px;
     text-align: left;
-    text-transform: uppercase;
-    background-color: color(var(--whitegrey) l(+4%));
-    border-bottom: 1px solid var(--lightgrey);
+    padding: 12px;
+    border-bottom: 2px solid var(--whitegrey-l1);    
 }
 
-.post-content table th,
 .post-content table td {
-    padding: 6px 12px 6px 0;
-    border: color(var(--whitegrey) l(-1%) s(-5%)) 1px solid;
+    padding: 4px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--whitegrey-l1);
+    border-right: 1px solid var(--whitegrey-l1);
+}
+
+.post-content table tr th:first-child,
+.post-content table tr td:first-child {
+    text-align: left;
+    padding-left: 0;
 }
 
 /* 7.6. Koenig Styles
