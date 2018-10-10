@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import Icon from '../components/global/icon'
 
+import Icon from '../components/global/icon'
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import Box from '../components/layouts/partials/box'
@@ -38,15 +38,18 @@ const apiBoxStyles = {
 
 class IndexPage extends React.Component {
     render() {
+        // TODO: Replace with real title and description for IndexPage
+        const title = ``
+        const description = ``
+
         return (
             <>
                 <MetaData
                     data={ this.props.data }
                     location={ this.props.location }
                     type="website"
-                    // TODO: Replace with real title and description for IncexPage
-                    title={ this.props.data.site.siteMetadata.title }
-                    description={ this.props.data.site.siteMetadata.description }
+                    title={ title || this.props.data.site.siteMetadata.title }
+                    description={ description || this.props.data.site.siteMetadata.description }
                 />
                 <Layout title="Home" headerDividerStyle="shadow" bodyClass="bg-white" mainClass="bg-whitegrey-l2 pb-vw6 pb-vw3-ns">
                     <div className="gh-bg-home pb-vw5 pb-vw3-ns bb b--whitegrey">
@@ -225,7 +228,7 @@ IndexPage.propTypes = {
 
 export default IndexPage
 
-export const articleQuery = graphql`
+export const pageQuery = graphql`
     query {
         site {
             ...SiteMetaFields

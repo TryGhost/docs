@@ -1,9 +1,12 @@
-import Layout from '../components/layouts/default'
 import React from 'react'
+import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
+
+import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import Box from '../components/layouts/partials/box'
 import Icon from '../components/global/icon'
+import MetaData from '../components/layouts/partials/meta-data'
 
 // import bgapi from '../images/bg-api.svg' // eslint-disable-line no-unused-vars
 
@@ -51,70 +54,109 @@ Card.propTypes = {
     className: PropTypes.string,
 }
 
-// TODO: structured data
-const APIPage = () => (
-    <Layout title="API" mainClass="bg-whitegrey-l2" bodyClass="bg-white">
-        <section className="bg-api-reference">
-            <div className={ Spirit.page.xl + `tc-ns pt-vw6 pt-vw5-ns pb-vw5 white` }>
-                <h1 className={ Spirit.sectionHeading + `gh-integration-header-shadow`}>API Reference</h1>
-                <p className={ Spirit.sectionSubHeading }>Clients, tools and libraries for working with Ghost</p>
-            </div>
-        </section>
+class APIPage extends React.Component {
+    render() {
+        // TODO: Replace with real title and description for APIPage
+        const title = `API Reference`
+        const description = `Clients, tools and libraries for working with Ghost`
 
-        <div className={ Spirit.page.l + `pb-vw4 pb-vw3-ns pt-vw4 pt-vw3-ns` }>
-            <APISection first={ true }>
-                <div className={ sectionStyles.headingContainer }>
-                    <h2 className={ Spirit.h3 }>Frontend SDKs</h2>
-                    <p className={ Spirit.small + `midgrey-l2 mt2` }>Frameworks for working with the Ghost API to build a publication website</p>
-                </div>
-                <div className={ sectionStyles.cardContainer }>
-                    <Card to="/api/v2/handlebars-themes/" icon="handlebars-logo">Handlebars</Card>
-                    <Card to="/api/v2/gatsby/" icon="gatsby-logo">Gatsby</Card>
-                    {/* <Card icon="hugo-logo" className="o-50">Hugo</Card> */}
-                </div>
-            </APISection>
+        return (
+            <>
+                <MetaData
+                    data={ this.props.data }
+                    location={ this.props.location }
+                    type="website"
+                    title={ title || this.props.data.site.siteMetadata.title }
+                    description={ description || this.props.data.site.siteMetadata.description }
+                />
+                <Layout title="API" mainClass="bg-whitegrey-l2" bodyClass="bg-white">
+                    <section className="bg-api-reference">
+                        <div className={ Spirit.page.xl + `tc-ns pt-vw6 pt-vw5-ns pb-vw5 white` }>
+                            <h1 className={ Spirit.sectionHeading + `gh-integration-header-shadow`}>API Reference</h1>
+                            <p className={ Spirit.sectionSubHeading }>Clients, tools and libraries for working with Ghost</p>
+                        </div>
+                    </section>
 
-            <APISection>
-                <div className={ sectionStyles.headingContainer }>
-                    <h2 className={ Spirit.h3 }>REST API</h2>
-                    <p className={ Spirit.small + `midgrey-l2 mt2` }>A full reference of API Endpoints</p>
-                </div>
-                <div className={ sectionStyles.cardContainer }>
-                    <Card to="/api/v2/content/" icon="content-api-logo">Content API</Card>
-                    <Card to="/api/v2/admin/" icon="admin-api-logo">Admin API</Card>
-                    <Card to="/api/v2/webhooks/" icon="webhooks-logo">Webhooks</Card>
-                </div>
-            </APISection>
+                    <div className={ Spirit.page.l + `pb-vw4 pb-vw3-ns pt-vw4 pt-vw3-ns` }>
+                        <APISection first={ true }>
+                            <div className={ sectionStyles.headingContainer }>
+                                <h2 className={ Spirit.h3 }>Frontend SDKs</h2>
+                                <p className={ Spirit.small + `midgrey-l2 mt2` }>Frameworks for working with the Ghost API to build a publication website</p>
+                            </div>
+                            <div className={ sectionStyles.cardContainer }>
+                                <Card to="/api/v2/handlebars-themes/" icon="handlebars-logo">Handlebars</Card>
+                                <Card to="/api/v2/gatsby/" icon="gatsby-logo">Gatsby</Card>
+                                {/* <Card icon="hugo-logo" className="o-50">Hugo</Card> */}
+                            </div>
+                        </APISection>
 
-            <APISection>
-                <div className={ sectionStyles.headingContainer }>
-                    <h2 className={ Spirit.h3 }>Tools</h2>
-                    <p className={ Spirit.small + `midgrey-l2 mt2` }>Utilities to help build and manage Ghost</p>
-                </div>
-                <div className={ sectionStyles.cardContainer }>
-                    <Card to="/api/v2/ghost-cli/" icon="ghost-cli-logo">Ghost-CLI</Card>
-                    <Card href="https://gscan.ghost.org" icon="gscan-logo">GScan</Card>
-                </div>
-            </APISection>
+                        <APISection>
+                            <div className={ sectionStyles.headingContainer }>
+                                <h2 className={ Spirit.h3 }>REST API</h2>
+                                <p className={ Spirit.small + `midgrey-l2 mt2` }>A full reference of API Endpoints</p>
+                            </div>
+                            <div className={ sectionStyles.cardContainer }>
+                                <Card to="/api/v2/content/" icon="content-api-logo">Content API</Card>
+                                <Card to="/api/v2/admin/" icon="admin-api-logo">Admin API</Card>
+                                <Card to="/api/v2/webhooks/" icon="webhooks-logo">Webhooks</Card>
+                            </div>
+                        </APISection>
 
-            <APISection>
-                <div className={ sectionStyles.headingContainer }>
-                    <h2 className={ Spirit.h3 + `mt2`}>Client Libraries</h2>
-                    <p className={ Spirit.small + `midgrey-l2 mt2` }>Specific libraries for interacting with the Ghost API directly</p>
-                    <h4 className="f-supersmall dib ma0 pa0 bg-green pa1 br-pill pl3 pr3 tc white mt2 nudge-top--2">Coming soon</h4>
-                </div>
-                <div className={ sectionStyles.cardContainer }>
-                    <Card icon="javascript-logo-inv">JavaScript</Card>
-                    <Card icon="ruby-logo-fill">Ruby</Card>
-                    <Card icon="php-logo">PHP</Card>
-                    <Card icon="python-logo">Python</Card>
-                    {/* <Card to="/" img={ GoLogo }>Go</Card> */ }
-                    <Card icon="apple-logo">iOS</Card>
-                    <Card icon="android-logo">Android</Card>
-                </div>
-            </APISection>
-        </div>
-    </Layout>
-)
+                        <APISection>
+                            <div className={ sectionStyles.headingContainer }>
+                                <h2 className={ Spirit.h3 }>Tools</h2>
+                                <p className={ Spirit.small + `midgrey-l2 mt2` }>Utilities to help build and manage Ghost</p>
+                            </div>
+                            <div className={ sectionStyles.cardContainer }>
+                                <Card to="/api/v2/ghost-cli/" icon="ghost-cli-logo">Ghost-CLI</Card>
+                                <Card href="https://gscan.ghost.org" icon="gscan-logo">GScan</Card>
+                            </div>
+                        </APISection>
+
+                        <APISection>
+                            <div className={ sectionStyles.headingContainer }>
+                                <h2 className={ Spirit.h3 + `mt2`}>Client Libraries</h2>
+                                <p className={ Spirit.small + `midgrey-l2 mt2` }>Specific libraries for interacting with the Ghost API directly</p>
+                                <h4 className="f-supersmall dib ma0 pa0 bg-green pa1 br-pill pl3 pr3 tc white mt2 nudge-top--2">Coming soon</h4>
+                            </div>
+                            <div className={ sectionStyles.cardContainer }>
+                                <Card icon="javascript-logo-inv">JavaScript</Card>
+                                <Card icon="ruby-logo-fill">Ruby</Card>
+                                <Card icon="php-logo">PHP</Card>
+                                <Card icon="python-logo">Python</Card>
+                                {/* <Card to="/" img={ GoLogo }>Go</Card> */ }
+                                <Card icon="apple-logo">iOS</Card>
+                                <Card icon="android-logo">Android</Card>
+                            </div>
+                        </APISection>
+                    </div>
+                </Layout>
+            </>
+        )
+    }
+}
+
+APIPage.propTypes = {
+    data: PropTypes.shape({
+        site: PropTypes.shape({
+            siteMetadata: PropTypes.shape({
+                siteUrl: PropTypes.string.isRequired,
+                title: PropTypes.string.isRequired,
+                description: PropTypes.string.isRequired,
+            }).isRequired,
+        }).isRequired,
+    }).isRequired,
+    location: PropTypes.shape({
+        pathname: PropTypes.string.isRequired,
+    }).isRequired,
+}
 
 export default APIPage
+
+export const pageQuery = graphql`
+    query {
+        site {
+            ...SiteMetaFields
+        }
+    }
+`

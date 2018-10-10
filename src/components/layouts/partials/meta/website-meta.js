@@ -12,7 +12,7 @@ class WebsiteMeta extends React.Component {
         return (
             <>
                 <Helmet>
-                    <title>{ title }</title>
+                    <title>{ `${title} - Ghost` }</title>
                     <meta name="description" content={ description } />
                     <link rel="canonical" href={ canonical } />
 
