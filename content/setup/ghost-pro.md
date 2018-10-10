@@ -1,6 +1,7 @@
 ---
 title: "Ghost(Pro)"
 path: /setup/ghost-pro/
+toc: false
 date: "2018-10-01"
 meta_title: "A premium hosted service for your Ghost publication"
 meta_description: "Automate installs, updates, maintenance, backups and uptime management so that you can focus on customising your Ghost publication. Try Ghost(Pro)!"
