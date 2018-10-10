@@ -117,7 +117,7 @@ Still after a more detailed comparison? We've got some in-depth articles compari
 
 ## Background
 
-Ghost was created by John O'Nolan and Hannah Wolfe in 2013 following a runaway Kickstarter campaign to create a new, modern publishing platform to serve professional publishers.
+Ghost was created by [John O'Nolan](https://twitter.com/johnonolan) and [Hannah Wolfe](https://twitter.com/erisds) in 2013 following a runaway Kickstarter campaign to create a new, modern publishing platform to serve professional publishers.
 
 Previously, John was a core contributor of WordPress and watched as the platform grew more complicated and less focused over time. Ghost started out as a little idea to be the antidote to that pain, and quickly grew in popularity as the demand for a modern open source solution became evident.
 
@@ -128,7 +128,7 @@ More than anything, we approach building Ghost to create the product we've alway
 So, we do things a little differently to most others:
 
 #### Independent Structure
-Ghost is structured as a [non-profit organisation](https://ghost.org/about) to ensure it can legally never be sold and will always remain independent, building products based on the needs of its users - rather than the whims of investors.
+Ghost is structured as a [non-profit organisation](https://ghost.org/about) to ensure it can legally never be sold and will always remain independent, building products based on the needs of its users - _not_ the whims of investors looking for 💰 returns.
 
 #### Sustainable Business
 
