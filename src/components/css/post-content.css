@@ -603,10 +603,6 @@ Usage (In Ghost editor):
     border-top-left-radius: 4px;
 }
 
-.post-content table tr:last-child td {
-    border-bottom: 2px solid var(--whitegrey-l1);
-}
-
 .post-content table th {
     color: var(--darkgrey);
     font-size: 1.3rem;
@@ -615,7 +611,7 @@ Usage (In Ghost editor):
     letter-spacing: 0.2px;
     text-align: left;
     padding: 12px;
-    border-bottom: 2px solid var(--whitegrey-l1);    
+    border-bottom: 3px solid var(--whitegrey-l1);
 }
 
 .post-content table td {
@@ -623,6 +619,10 @@ Usage (In Ghost editor):
     text-align: left;
     border-bottom: 1px solid var(--whitegrey-l1);
     border-right: 1px solid var(--whitegrey-l1);
+}
+
+.post-content table td:last-child {
+    border-right: none;
 }
 
 .post-content table tr th:first-child,
