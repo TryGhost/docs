@@ -223,6 +223,11 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     transform: rotate(25deg);
 }
 
+.stroke-w--1-5 > g,
+.stroke-w--1-5 > path {
+    stroke-width: 1.35;
+}
+
 /* Home */
 /* ----------------------------------------------------------------------- */
 .gh-bg-home {

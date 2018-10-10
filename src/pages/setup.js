@@ -55,11 +55,11 @@ class SetupIndexPage extends React.Component {
                     <div className={ Spirit.page.xl + `mt-vw3`}>
                         <section className="grid-12 gutter-row-20 gutter-36-l">
                             {/* <h3 className={ Spirit.h4 + `col-12 middarkgrey` }>I want to setup a site...</h3> */}
-                            <SetupBox to="/setup/ghost-pro/" title="Ghost(Pro)" icon="ghost-pro-logo" iconClass="w10 h10" headingClass="mt1">
+                            <SetupBox to="/setup/ghost-pro/" title="Ghost(Pro)" icon="ghost-pro-logo" iconClass="w9 h9 stroke-w--1-5" headingClass="mt2">
                                 Ghost’s premium hosted service delivers a seamless experience, giving you time to focus on what really matters
                             </SetupBox>
 
-                            <SetupBox to="/install/ubuntu/" title="Ubuntu" icon="ubuntu-logo" iconClass="w8 h8" headingClass="mt2">
+                            <SetupBox to="/install/ubuntu/" title="Ubuntu" icon="ubuntu-logo" iconClass="w8 h8 stroke-w--1-5" headingClass="mt2">
                                 A full guide for installing Ghost on your Ubuntu production server
                             </SetupBox>
 
@@ -67,7 +67,7 @@ class SetupIndexPage extends React.Component {
                                 Dolore sunt ad quis cillum nostrud irure et ad veniam ex exercitation mollit. Pariatur reprehenderit.
                             </SetupBox>
 
-                            <SetupBox to="/install/local/" title="Local install" icon="terminal" iconClass="fill-midgrey w8 h8" headingClass="mt2">
+                            <SetupBox to="/install/local/" title="Local install" icon="terminal" iconClass="fill-midlightgrey w8 h8" headingClass="mt2">
                                 A complete guide to install an instance of Ghost locally for development
                             </SetupBox>
 

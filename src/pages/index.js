@@ -72,7 +72,7 @@ class IndexPage extends React.Component {
                                         <h2 className={ mainBoxStyles.title }>Core Concepts</h2>
                                         <p className={ Spirit.p + `mt2 darkgrey-l2` }>Understand the fundamentals of Ghost development.</p>
                                         <span className="dib mt5 purple link fw5 f5 flex items-center">
-                                    Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-purple" />
+                                    Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-purple stroke-w--1-5" />
                                         </span>
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@ class IndexPage extends React.Component {
                                         <h2 className={ mainBoxStyles.title }>Setup Guide</h2>
                                         <p className={ Spirit.p + `mt2 darkgrey-l2` }>Setting up a Ghost site on a server or locally.</p>
                                         <span className="dib mt5 blue link fw5 f5 flex items-center">
-                                    Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-blue" />
+                                            Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-blue stroke-w--1-5" />
                                         </span>
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@ class IndexPage extends React.Component {
                                         <h2 className={ mainBoxStyles.title }>Tutorials</h2>
                                         <p className={ Spirit.p + `mt2 darkgrey-l2` }>Browse tutorials for most common setup and development use-cases </p>
                                         <span className="dib mt5 green link fw5 f5 flex items-center">
-                                    Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-green" />
+                                            Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-green stroke-w--1-5" />
                                         </span>
                                     </div>
                                 </div>
