@@ -2,29 +2,41 @@
 title: "Redirects"
 sidebar: "concepts"
 ---
+Redirects can be created and edited within a single, accessible file.
 
-## This is the second heading
+## Accessing the redirects file
 
-Spicy jalapeno cupidatat chicken ut filet mignon sausage ut boudin nulla reprehenderit strip steak proident cillum incididunt short loin cow. Pig in pastrami, leberkas eiusmod enim bresaola do. Filet mignon officia quis kevin pork, swine strip steak excepteur hamburger chicken pork chop boudin shankle. Velit chicken pig in cupim kielbasa jerky. Bresaola excepteur veniam, andouille magna brisket aliquip nostrud jerky.
+The redirects.json file is located in `content/data/redirects.json` and can also be downloaded and uploaded in the settings in Ghost admin.
 
-```javascript
-makeArray() {
-    // Hey hey what can I do
-    const foo = []
-    bar.split('').forEach(letter => {
-      foo.push(letter)
-    })
-    return foo
+## File structure
+
+This file always starts with a `[` and ends with a `]`. A new ghost publication will have an empty redirect file containing `[]`. It can be edited in any source code editor.
+
+Entries to the redirects file follow this structure: 
+```
+{
+  "from": "/url/" ,
+  "to":  "/url/",
+  "permanent": true | false
 }
 ```
 
-### This is the third heading
+* The from field you defines the incoming URL or pattern (regex)
+* The to field defines where the incoming traffic should be redirected to, which can be a static URL, or a dynamic value using regex (example: "to": "/$1/").
+* The permanent field can be defined with true for a permanent 301 redirect, or false for a temporary 302 redirect. 
 
-Pork chop ribeye ut chicken buffalo proident minim leberkas cupim adipisicing burgdoggen incididunt pastrami cupidatat. Prosciutto kevin dolore labore ham, cupidatat pork loin fatback picanha irure ad short ribs duis. Cupidatat excepteur jerky doner, incididunt consectetur turkey pariatur. Culpa consectetur cillum shank ham hock anim pastrami ex tempor eu. Fatback strip steak pig, bacon salami drumstick ut capicola short loin flank.
+Multiple entries are separated by `,` and the last entry does not have the `,`. Regular expressions can be used to implement redirect patterns. 
 
-Jowl dolor duis, cupidatat pork tempor nostrud incididunt short loin laborum. Duis nostrud fatback ribeye consequat ad. Proident pancetta ut tempor. Short loin officia eiusmod beef. Sunt tongue pig venison, sint mollit ad excepteur velit adipisicing flank pancetta pariatur. Dolor t-bone swine alcatra fatback ribeye, mollit dolore incididunt ullamco.
+## Implementation
 
-Spare ribs aute fugiat, pariatur andouille labore nulla exercitation. Aliqua picanha sirloin consequat drumstick sint exercitation pork nisi et. Dolore swine fugiat pork salami proident. Bacon excepteur filet mignon labore pariatur in in nulla magna fugiat prosciutto. Laboris sint ground round, pancetta ipsum in pariatur voluptate fatback andouille velit shoulder flank quis sausage.
+Upload your new `redirects.json` file in Ghost admin in the settings. This is the recommended method. 
 
-Hamburger ham shank est, officia qui capicola proident. Ribeye dolore prosciutto sirloin alcatra. Rump short ribs quis ex fugiat proident incididunt irure t-bone meatball veniam sirloin meatloaf. Tongue anim sint pancetta bresaola sirloin.
-Does your lorem ipsum text long for something a little meatier? Give our generator a try…
+To replace the JSON file on the server, ensure it exists in `content/data/redirects.json` and run ghost restart for your changes to take effect.
+
+## When not to use `redirects.json` 
+
+There are some instances where it is not recommended to use the `redirects.json` file: 
+
+* Page rules for www or HTTP/HTTPS redirection should always be implemented with your DNS provider.
+* Ghost automatically forces trailing slashes, so you do not need to write any page rules to accommodate for duplicate content caused by this.
+* If you're trying to change the URL structure of your publication, the recommended way to do this is with dynamic routing and the `routes.yaml` file. (However, you may still need to redirect existing content using `redirects.json`).
