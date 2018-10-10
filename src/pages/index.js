@@ -6,8 +6,7 @@ import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import Box from '../components/layouts/partials/box'
 
-// images/home-bg-svg needs to be imported so that it can be used in custom.css
-import bghome from '../images/home-bg.svg' // eslint-disable-line no-unused-vars
+// import bghome from '../images/home-bg.svg' // eslint-disable-line no-unused-vars
 
 import homeIllustration from '../images/home-illustration.svg' // eslint-disable-line no-unused-vars
 

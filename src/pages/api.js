@@ -5,7 +5,7 @@ import { Spirit } from '../components/spirit-styles'
 import Box from '../components/layouts/partials/box'
 import Icon from '../components/global/icon'
 
-import bgapi from '../images/api-bg.svg' // eslint-disable-line no-unused-vars
+// import bgapi from '../images/bg-api.svg' // eslint-disable-line no-unused-vars
 
 import GoLogo from '../images/go-logo.png' // eslint-disable-line no-unused-vars
 
