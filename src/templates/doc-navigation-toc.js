@@ -54,7 +54,7 @@ function PageHeader(props) {
 
     // Setup
     if (props.location.pathname.match(/\/setup\//i) || props.location.pathname.match(/\/install\//i)) {
-        title = `Setup`
+        title = `Setup Guide`
         mainLink = `/setup/`
         bgClass = `bg-setup`
         if (props.location.pathname.match(/\/ghost-pro\//i)) {
