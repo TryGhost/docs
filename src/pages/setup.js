@@ -12,8 +12,8 @@ class SetupBox extends React.Component {
     render() {
         return (
             <Box className="col-12 col-4-ns pa8 tdn middarkgrey setup-box-min-height" radius="4" to={ this.props.to }>
-                <Icon name={ this.props.icon } className={ (this.props.icon === `ghost-pro-logo` ? `w10 h10 ` : `w8 h8 `) + (this.props.iconClass || ``)} />
-                <h4 className={ Spirit.h4 + `middarkgrey` + (this.props.icon === `ghost-pro-logo` ? `` : ` mt2`) }>{ this.props.title }</h4>
+                <Icon name={ this.props.icon } className={ this.props.iconClass } />
+                <h4 className={ Spirit.h4 + `middarkgrey ` + this.props.headingClass }>{ this.props.title }</h4>
                 <p className={ Spirit.small + `mt1 midgrey-l2` }>{ this.props.children }</p>
             </Box>
         )
@@ -26,6 +26,7 @@ SetupBox.propTypes = {
     icon: PropTypes.string,
     title: PropTypes.string,
     iconClass: PropTypes.string,
+    headingClass: PropTypes.string,
 }
 
 class SetupIndexPage extends React.Component {
@@ -54,23 +55,23 @@ class SetupIndexPage extends React.Component {
                     <div className={ Spirit.page.xl + `mt-vw3`}>
                         <section className="grid-12 gutter-row-20 gutter-36-l">
                             {/* <h3 className={ Spirit.h4 + `col-12 middarkgrey` }>I want to setup a site...</h3> */}
-                            <SetupBox to="/setup/ghost-pro/" title="Ghost(Pro)" icon="ghost-pro-logo">
+                            <SetupBox to="/setup/ghost-pro/" title="Ghost(Pro)" icon="ghost-pro-logo" iconClass="w10 h10" headingClass="mt1">
                                 Ghost’s premium hosted service delivers a seamless experience, giving you time to focus on what really matters
                             </SetupBox>
 
-                            <SetupBox to="/install/ubuntu/" title="Ubuntu" icon="ubuntu-logo">
+                            <SetupBox to="/install/ubuntu/" title="Ubuntu" icon="ubuntu-logo" iconClass="w8 h8" headingClass="mt2">
                                 A full guide for installing Ghost on your Ubuntu production server
                             </SetupBox>
 
-                            <SetupBox to="/install/docker/" title="Docker" icon="docker-logo">
+                            <SetupBox to="/install/docker/" title="Docker" icon="docker-logo" iconClass="w10 h10" headingClass="mt1">
                                 Dolore sunt ad quis cillum nostrud irure et ad veniam ex exercitation mollit. Pariatur reprehenderit.
                             </SetupBox>
 
-                            <SetupBox to="/install/local/" title="Local install" icon="terminal" iconClass="fill-darkgrey">
+                            <SetupBox to="/install/local/" title="Local install" icon="terminal" iconClass="fill-midgrey w8 h8" headingClass="mt2">
                                 A complete guide to install an instance of Ghost locally for development
                             </SetupBox>
 
-                            <SetupBox to="/install/source/" title="Install from Source" icon="github" iconClass="fill-darkgrey">
+                            <SetupBox to="/install/source/" title="Install from Source" icon="github-outline" iconClass="fill-darkgrey w8 h8" headingClass="mt2">
                                 Eu laboris labore est nisi voluptate in duis ut. Exercitation irure id dolor est minim
                             </SetupBox>
                         </section>
