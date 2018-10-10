@@ -67,36 +67,36 @@ class IndexPage extends React.Component {
                         <section className={ Spirit.page.xl + `grid-12 gutter-row-20 gutter-36-ns`}>
                             <Box className={ mainBoxStyles.box } to="/concepts/introduction/" radius="5">
                                 <div className="flex flex-row flex-column-ns">
-                                    <span className="db lightgrey mr4"><Icon name="blocks" className="h8 h14-l" /></span>
+                                    <span className="db lightgrey mr4"><Icon name="blocks" className="h8 h14-l stroke-w--1-5" /></span>
                                     <div>
                                         <h2 className={ mainBoxStyles.title }>Core Concepts</h2>
                                         <p className={ Spirit.p + `mt2 darkgrey-l2` }>Understand the fundamentals of Ghost development.</p>
                                         <span className="dib mt5 purple link fw5 f5 flex items-center">
-                                    Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-purple stroke-w--1-5" />
+                                    Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-purple" />
                                         </span>
                                     </div>
                                 </div>
                             </Box>
                             <Box className={ mainBoxStyles.box } to="/setup/" radius="5">
                                 <div className="flex flex-row flex-column-ns">
-                                    <span className="db lightgrey mr4"><Icon name="rocket" className="h9 h14-l" /></span>
+                                    <span className="db lightgrey mr4"><Icon name="rocket" className="h9 h14-l stroke-w--1-5" /></span>
                                     <div>
                                         <h2 className={ mainBoxStyles.title }>Setup Guide</h2>
                                         <p className={ Spirit.p + `mt2 darkgrey-l2` }>Setting up a Ghost site on a server or locally.</p>
                                         <span className="dib mt5 blue link fw5 f5 flex items-center">
-                                            Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-blue stroke-w--1-5" />
+                                    Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-blue" />
                                         </span>
                                     </div>
                                 </div>
                             </Box>
                             <Box className={ mainBoxStyles.box } to="/tutorials/" radius="5">
                                 <div className="flex flex-row flex-column-ns">
-                                    <span className="db lightgrey mr4"><Icon name="typing" className="h8 h14-l" /></span>
+                                    <span className="db lightgrey mr4"><Icon name="typing" className="h8 h14-l stroke-w--1-5" /></span>
                                     <div>
                                         <h2 className={ mainBoxStyles.title }>Tutorials</h2>
                                         <p className={ Spirit.p + `mt2 darkgrey-l2` }>Browse tutorials for most common setup and development use-cases </p>
                                         <span className="dib mt5 green link fw5 f5 flex items-center">
-                                            Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-green stroke-w--1-5" />
+                                    Learn more <Icon name="arrow-right" className="w3 h3 ml2 fill-green" />
                                         </span>
                                     </div>
                                 </div>
