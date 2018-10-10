@@ -17,9 +17,9 @@ The first question most people have is, of course, how is Ghost different from e
     <thead>
         <tr>
             <th>Comparison</th>
-            <th>Ghost<br><span>(That's us)</span></th>
-            <th>Open platforms<br><span>(eg. WordPress)</span></th>
-            <th>Closed platforms<br><span>(eg. Medium)</span></th>
+            <th>Ghost<br><small style="text-transform:initial;color:#777;font-weight:400;">(That's us)</small></th>
+            <th>Open platforms<br><small style="text-transform:initial;color:#777;font-weight:400;">(eg. WordPress)</small></th>
+            <th>Closed platforms<br><small style="text-transform:initial;color:#777;font-weight:400;">(eg. Medium)</small></th>
         </tr>
     </thead>
     <tbody>
