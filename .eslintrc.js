@@ -10,6 +10,15 @@ module.exports = {
         'plugin:ghost/ember',
         'plugin:react/recommended'
     ],
+    "settings": {
+        "react": {
+            "createClass": "createReactClass",
+            "pragma": "React",
+            "version": "16.0",
+            "flowVersion": "0.53"
+        },
+        "propWrapperFunctions": [ "forbidExtraProps" ]
+    },
     "rules": {
         "ghost/sort-imports-es6-autofix/sort-imports-es6": "off",
         "no-console": "off",
