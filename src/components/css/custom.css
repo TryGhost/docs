@@ -234,7 +234,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 }
 
 .bg-integrations-header-image {
-    background: url(../../images/bg-api.svg) bottom center no-repeat, linear-gradient(60deg, #FA3973 0%, #FEE140 100%);
+    background: url(../../images/bg-integrations.svg) bottom center no-repeat, linear-gradient(60deg, #FA3973 0%, #FEE140 100%);
     background-size: cover;
 }
 
@@ -330,7 +330,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 /* Setup */
 /* ----------------------------------------------------------------------- */
 .bg-setup {
-    background: url(../../images/bg-setup.svg) center center no-repeat, linear-gradient(60deg, #008BD6 0%, #3ECFE6 100%);
+    background: url(../../images/bg-setup.svg) bottom center no-repeat, linear-gradient(60deg, #008BD6 0%, #3ECFE6 100%);
 }
 
 .setup-box-min-height {
@@ -340,13 +340,13 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 /* Core Concepts */
 /* ----------------------------------------------------------------------- */
 .bg-concepts {
-    background: url(../../images/bg-api.svg) bottom center no-repeat, linear-gradient(60deg, #6B23AE 0%, #C86DD7 100%);
+    background: url(../../images/bg-concepts.svg) bottom center no-repeat, linear-gradient(60deg, #6B23AE 0%, #C86DD7 100%);
 }
 
 /* Tutorials */
 /* ----------------------------------------------------------------------- */
 .bg-tutorials {
-    background: url(../../images/bg-api.svg) bottom center no-repeat, linear-gradient(60deg, #7AA803 0%, #BDE851 100%);
+    background: url(../../images/bg-concepts.svg) center center no-repeat, linear-gradient(60deg, #7AA803 0%, #BDE851 100%);
 }
 
 /* FAQ */
