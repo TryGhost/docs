@@ -87,8 +87,8 @@ class APIPage extends React.Component {
                                 <p className={ Spirit.small + `midgrey-l2 mt2` }>Frameworks for working with the Ghost API to build a publication website</p>
                             </div>
                             <div className={ sectionStyles.cardContainer }>
-                                <Card to="/api/v2/handlebars-themes/" icon="handlebars-logo" iconClass="stroke-w--1-5">Handlebars</Card>
-                                <Card to="/api/v2/gatsby/" icon="gatsby-logo" iconClass="stroke-w--1-5">Gatsby</Card>
+                                <Card to="/api/handlebars-themes/" icon="handlebars-logo" iconClass="stroke-w--1-5">Handlebars</Card>
+                                <Card to="/api/gatsby/" icon="gatsby-logo" iconClass="stroke-w--1-5">Gatsby</Card>
                                 {/* <Card icon="hugo-logo" className="o-50">Hugo</Card> */}
                             </div>
                         </APISection>
@@ -99,9 +99,9 @@ class APIPage extends React.Component {
                                 <p className={ Spirit.small + `midgrey-l2 mt2` }>A full reference of API Endpoints</p>
                             </div>
                             <div className={ sectionStyles.cardContainer }>
-                                <Card to="/api/v2/content/" icon="content-api-logo" iconClass="stroke-w--1-5">Content API</Card>
-                                <Card to="/api/v2/admin/" icon="admin-api-logo" iconClass="stroke-w--1-5">Admin API</Card>
-                                <Card to="/api/v2/webhooks/" icon="webhooks-logo" iconClass="stroke-w--1-5">Webhooks</Card>
+                                <Card to="/api/content/" icon="content-api-logo" iconClass="stroke-w--1-5">Content API</Card>
+                                <Card to="/api/admin/" icon="admin-api-logo" iconClass="stroke-w--1-5">Admin API</Card>
+                                <Card to="/api/webhooks/" icon="webhooks-logo" iconClass="stroke-w--1-5">Webhooks</Card>
                             </div>
                         </APISection>
 
@@ -111,7 +111,8 @@ class APIPage extends React.Component {
                                 <p className={ Spirit.small + `midgrey-l2 mt2` }>Utilities to help build and manage Ghost</p>
                             </div>
                             <div className={ sectionStyles.cardContainer }>
-                                <Card to="/api/v2/ghost-cli/" icon="ghost-cli-logo" iconClass="stroke-w--1-5">Ghost-CLI</Card>
+                                <Card to="/api/ghost-cli/" icon="ghost-cli-logo" iconClass="stroke-w--1-5">Ghost-CLI</Card>
+                                <Card to="/api/migration/" icon="gscan-logo" iconClass="stroke-w--1-5">Migration</Card>
                                 <Card href="https://gscan.ghost.org" icon="gscan-logo" iconClass="stroke-w--1-5">GScan</Card>
                             </div>
                         </APISection>
