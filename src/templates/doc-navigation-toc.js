@@ -186,7 +186,7 @@ class DocTemplate extends React.Component {
                                     } } />
                                 </article>
                                 <div className={ `order-3 w-sidebar` }>
-                                    <TOC headingsOffset="-200" />
+                                    <TOC headingsOffset="-200" className="pr10" listClasses="mt3" />
                                 </div>
                             </div>
                         </div>
@@ -206,7 +206,7 @@ class DocTemplate extends React.Component {
                                         location={ this.props.location }
                                         sidebar={ post.frontmatter.sidebar }
                                     /> :
-                                    <TOC headingsOffset="-200" showHeading={ false } />
+                                    <TOC headingsOffset="-200" listClasses="lefty" showHeading={ false } />
                                 }
                             </div>
                             <article className={ `${styles.articleContainer} ${styles.mainContainer} flex-auto bg-white` }>

@@ -41,7 +41,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 }
 
 .miw-sidebar {
-    min-width: 24rem;
+    min-width: 22rem;
 }
 
 .w-sidebar {
@@ -50,6 +50,11 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 .mw-content {
     max-width: 72rem;
+}
+
+.pv6px {
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
 /* margins */
@@ -383,18 +388,24 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 .toc-list-container ol li {
     line-height: 1.65em;
-    margin-bottom: 1.0rem;
+    margin-top: 1.0rem;
 }
 
-.toc-list-container ol li > ol:first-of-type{
-    margin-top: 1.0rem;
+.toc-list-container ol > ol:first-of-type{
+    margin-top: 1.2rem;
 }
 
 .toc-list-container ol a {
     color: var(--midgrey);
     text-decoration: none;
-    display: inline-block;
+    display: block;
     transition: all 0.3s ease;
+    line-height: 1.5em;
+    font-weight: 500;
+}
+
+.toc-list-container ol ol a {
+    font-weight: 400;
 }
 
 .toc-list-container ol a:hover {
@@ -402,12 +413,73 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     text-decoration: none;
 }
 
-.toc-list-container ol li > ol {
+.toc-list-container ol ol {
     padding-left: 2.4rem;
-    border-left: 1px solid color-mod(var(--lightgrey-l2) l(+6%));
+    position: relative;
+}
+
+.toc-list-container ol ol:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 0;
+    bottom: 7px;
+    width: 1px;
+    background: #e5eff5;
 }
 
 .toc-list-container .is-active-link {
     color: var(--blue);
     font-weight: 600;
+}
+
+.toc-list-container ol ol li {
+    margin-bottom: 0rem;
+    margin-top: 0.2rem;
+}
+
+.toc-list-container.lefty ol ol {
+    margin-bottom: 2.0rem;
+}
+
+.toc-list-container ol li > ol:first-of-type{
+    margin-top: 0.6rem;
+}
+
+.toc-list-container > ol > li {
+    margin-top: 0.2rem;
+    margin-bottom: 0rem;
+}
+
+.toc-list-container.lefty > ol > li {
+    font-size: 1.45rem;
+    font-weight: 500;
+    margin-top: 0.6rem;
+    margin-bottom: 0rem;
+}
+
+.toc-list-container > ol > li a {
+    display: inline-block;
+    padding: 0.6rem 0;
+}
+
+.toc-list-container ol li a.is-active-link {
+    position: relative;
+}
+
+.toc-list-container.lefty .is-collapsed {
+    display: none;
+}
+
+.toc-list-container.lefty ol ol li a.is-active-link:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: .7rem;
+    left: -2.4rem;
+    bottom: .8rem;
+    width: 4px;
+    background: #3eb0ef;
+    border-radius: 0 2px 2px 0;
 }

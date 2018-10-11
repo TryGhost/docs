@@ -26,11 +26,11 @@ class SidebarLink extends React.Component {
         if (this.props.link) {
             if (this.props.link.match(/^\s?http(s?)/gi)) {
                 return (
-                    <a href={ this.props.link } className={ `link db pa2 pl0 ` + this.props.linkClasses } target="_blank" rel="noopener noreferrer">{ this.props.title }</a>
+                    <a href={ this.props.link } className={ `link db pv6px pr2 lh-1-5 pl0 ` + this.props.linkClasses } target="_blank" rel="noopener noreferrer">{ this.props.title }</a>
                 )
             } else {
                 return (
-                    <Link to={ this.props.link } className={ `link db pa2 pl0 ${this.props.linkClasses}` }>{ this.props.title }</Link>
+                    <Link to={ this.props.link } className={ `link db pv6px pr2 lh-1-5 pl0 ${this.props.linkClasses}` }>{ this.props.title }</Link>
                 )
             }
         } else {
@@ -48,7 +48,7 @@ class SidebarList extends React.Component {
 
         return (
             <>
-                <ul className="relative sidebar-list ma0 pa0 list mt2 mb5 pl6">
+                <ul className="relative sidebar-list ma0 pa0 list mb5 pl6 mt1">
                     { this.props.items.map((item, j) => (
                         <li key={ j }>
                             <SidebarLink
@@ -82,7 +82,7 @@ class SidebarNav extends React.Component {
         return (
             <nav className="nt1">
                 { sidebarfile.groups.map((group, i) => (
-                    <div key={ i } className="mt2">
+                    <div key={ i } className="mt1">
                         { groupExpanded(group.items, this.props.location.pathname) ?
                             <>
                                 <h4 className="f5 fw5 link pa0 ma0">{ (group.items[0].link ? <SidebarLink link={ group.items[0].link } title={ group.group } linkClasses="midgrey link" /> : group.group) }</h4>
