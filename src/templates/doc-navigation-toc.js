@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
+import _ from 'lodash'
 
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import NavSidebar from '../components/global/navigation-sidebar'
+import PrevNext from '../components/global/prev-next'
 import DesignNavSidebar from '../components/layouts/partials/design-nav-sidebar'
 import TOC from '../components/layouts/partials/toc'
 import MetaData from '../components/layouts/partials/meta-data'
@@ -14,6 +16,51 @@ function NavBar(props) {
         return <DesignNavSidebar />
     } else if (props.sidebar) {
         return <NavSidebar sidebar={props.sidebar} location={props.location} />
+    } else {
+        return null
+    }
+}
+
+function PrevNextSection(props) {
+    // Cover two cases:
+    // 1. concepts page that walks through the associated sidebar file
+    // 2. other pages, where we set a `next` property in frontmatter
+    // We're using this code here to serialize the data and pass it to a more
+    // generic component
+
+    if (props.sidebar === `concepts`) {
+        const [sidebarfile] = props.sidebar ? require(`../data/sidebars/${props.sidebar}.yaml`) : {}
+
+        if (!sidebarfile) {
+            return null
+        }
+
+        const { groups } = sidebarfile
+        const flatSidebar = []
+
+        // Get all nested items and link and make a flat array
+        _.forEach(groups, (group) => {
+            _.forEach(group.items, (items) => {
+                flatSidebar.push(items)
+            })
+        })
+
+        const currentIndex = _.findIndex(flatSidebar, item => item.link === props.location.pathname)
+        const prev = flatSidebar[currentIndex - 1] || {}
+        const next = flatSidebar[currentIndex + 1] || {}
+
+        return (
+            <PrevNext prev={prev} next={next} />
+        )
+    } else if (props.fm.next) {
+        const next = {
+            title: props.fm.next.title || ``,
+            link: props.fm.next.url || ``,
+        }
+
+        return (
+            <PrevNext next={next} />
+        )
     } else {
         return null
     }
@@ -119,21 +166,24 @@ class DocTemplate extends React.Component {
                 <Layout mainClass={ post.frontmatter.sidebar ? `` : ``}>
                     <PageHeader location={ this.props.location } />
                     <div className={ Spirit.page.xl + `bg-white flex justify-between pt10 pb20 shadow-1 br4 br--bottom` }>
-                        <div className={ (post.frontmatter.sidebar ? `order-1` : `order-1`) + ` w-sidebar` }>
-                            { post.frontmatter.sidebar ?
-                                <NavBar
-                                    location={ this.props.location }
-                                    sidebar={ post.frontmatter.sidebar }
-                                />
-                                : `` }
+                        <div className={(post.frontmatter.sidebar ? `order-1 w-sidebar` : `order-1`)}>
+                            <NavBar
+                                location={ this.props.location }
+                                sidebar={ post.frontmatter.sidebar }
+                            />
                         </div>
                         <article className="pl10 pr10 mw-content flex-auto order-2">
                             <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
                             <section className="post-content" dangerouslySetInnerHTML={ {
                                 __html: post.html,
                             } } />
+                            <PrevNextSection
+                                location={this.props.location}
+                                sidebar={post.frontmatter.sidebar}
+                                fm={post.frontmatter}
+                            />
                         </article>
-                        <div className={ (post.frontmatter.sidebar ? `order-3` : `order-3`) + ` w-sidebar` }>
+                        <div className={(post.frontmatter.sidebar ? `order-3 w-sidebar` : `order-3`)}>
                             { post.frontmatter.toc ?
                                 <TOC headingsOffset="-200" />
                                 : null }
