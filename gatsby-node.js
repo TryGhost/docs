@@ -4,6 +4,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions
+    const { createRedirect } = actions
 
     if (node.internal.type === `MarkdownRemark`) {
         // Passing a `path` property in frontmatter will overwrite the
@@ -15,6 +16,16 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
             name: `slug`,
             value: slug,
         })
+
+        // Temporary redirect api URLs to v2, when the version is not included in link
+        // TODO: use env config to add latest API version
+        if (slug.match(/\/api\/v2\/\S*/i)) {
+            createRedirect({
+                fromPath: slug.replace(/\/v2/, ``),
+                redirectInBrowser: true,
+                toPath: slug,
+            })
+        }
     }
 }
 
@@ -41,17 +52,8 @@ exports.createPages = ({ graphql, actions }) => {
         },
     ]
 
-    // TODO: create redirect for `/api/*` to `/api/v2/:splat` BUT not `/api/v*`
-    // look into using the https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/ plugin
     createRedirect({
         fromPath: `/design/`,
-        isPermanent: true,
-        redirectInBrowser: true,
-        toPath: `/design/styling/`,
-    })
-
-    createRedirect({
-        fromPath: `/design`,
         isPermanent: true,
         redirectInBrowser: true,
         toPath: `/design/styling/`,
