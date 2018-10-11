@@ -60,6 +60,7 @@ class APIPage extends React.Component {
         // TODO: Replace with real title and description for APIPage
         const title = `API Reference`
         const description = `Clients, tools and libraries for working with Ghost`
+        const imageUrl = ``
 
         return (
             <>
@@ -69,6 +70,7 @@ class APIPage extends React.Component {
                     type="website"
                     title={ title || this.props.data.site.siteMetadata.title }
                     description={ description || this.props.data.site.siteMetadata.description }
+                    image={ imageUrl }
                 />
                 <Layout title="API" mainClass="bg-whitegrey-l2" bodyClass="bg-white">
                     <section className="bg-api-reference">

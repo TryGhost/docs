@@ -41,6 +41,7 @@ class IndexPage extends React.Component {
         // TODO: Replace with real title and description for IndexPage
         const title = ``
         const description = ``
+        const imageUrl = ``
 
         return (
             <>
@@ -50,6 +51,7 @@ class IndexPage extends React.Component {
                     type="website"
                     title={ title || this.props.data.site.siteMetadata.title }
                     description={ description || this.props.data.site.siteMetadata.description }
+                    image={imageUrl}
                 />
                 <Layout title="Home" headerDividerStyle="shadow" bodyClass="bg-white" mainClass="bg-whitegrey-l2 pb-vw6 pb-vw3-ns">
                     <div className="gh-bg-home pb-vw5 pb-vw3-ns bb b--whitegrey">

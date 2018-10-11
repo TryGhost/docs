@@ -34,6 +34,7 @@ class SetupIndexPage extends React.Component {
         // TODO: Replace with real title and description for FAQPage
         const title = `Setup Guide`
         const description = `All the tools to get started with Ghost`
+        const imageUrl = ``
 
         return (
             <>
@@ -43,6 +44,7 @@ class SetupIndexPage extends React.Component {
                     type="website"
                     title={title || this.props.data.site.siteMetadata.title}
                     description={description || this.props.data.site.siteMetadata.description}
+                    image={imageUrl}
                 />
                 <Layout title="API" mainClass="bg-whitegrey-l2 pb-vw3" bodyClass="bg-white">
                     <section className="bg-setup">

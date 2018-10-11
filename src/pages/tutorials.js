@@ -13,6 +13,7 @@ class TutorialsPage extends React.Component {
         // TODO: Replace with real title and description for FAQPage
         const title = `Tutorials`
         const description = ``
+        const imageUrl = ``
 
         const posts = this.props.data.allGhostPost.edges
 
@@ -24,6 +25,7 @@ class TutorialsPage extends React.Component {
                     type="website"
                     title={title || this.props.data.site.siteMetadata.title}
                     description={description || this.props.data.site.siteMetadata.description}
+                    image={imageUrl}
                 />
                 <Layout title="Tutorials" headerDividerStyle="shadow">
                     <div className="bg-tutorials">

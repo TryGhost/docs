@@ -12,6 +12,7 @@ class FAQPage extends React.Component {
         // TODO: Replace with real title and description for FAQPage
         const title = `FAQ - Frequently Asked Questions`
         const description = ``
+        const imageUrl = `https://unsplash.it/400/300/?random?BoldMage`
 
         const posts = this.props.data.allGhostPost.edges
 
@@ -23,6 +24,7 @@ class FAQPage extends React.Component {
                     type="website"
                     title={ title || this.props.data.site.siteMetadata.title }
                     description={ description || this.props.data.site.siteMetadata.description }
+                    image={ imageUrl }
                 />
                 <Layout title="FAQ" headerDividerStyle="shadow" bodyClass="bg-white">
                     <div className="gh-bg-home bb b--whitegrey">

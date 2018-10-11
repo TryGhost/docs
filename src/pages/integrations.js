@@ -13,6 +13,7 @@ class IntegrationsPage extends React.Component {
         // TODO: Replace with real title and description for IntegrationsPage
         const title = `Integrations`
         const description = `All your favourite apps and tools, integrated with Ghost`
+        const imageUrl = ``
 
         const posts = this.props.data.allGhostPost.edges
 
@@ -24,6 +25,7 @@ class IntegrationsPage extends React.Component {
                     type="website"
                     title={title || this.props.data.site.siteMetadata.title}
                     description={description || this.props.data.site.siteMetadata.description}
+                    image={imageUrl}
                 />
                 <Layout title="Integrations" headerDividerStyle="shadow" header={ <IntegrationsHeader /> }>
                     <div className={ Spirit.page.xl }>

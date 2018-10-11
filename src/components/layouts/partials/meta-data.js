@@ -31,6 +31,7 @@ class MetaData extends React.Component {
                     canonical={ canonical }
                     title={ this.props.title }
                     description={ this.props.description }
+                    image={ this.props.image }
                 />
             )
         }
@@ -57,6 +58,7 @@ MetaData.propTypes = {
     type: PropTypes.string.isRequired,
     title: PropTypes.string,
     description: PropTypes.string,
+    image: PropTypes.string,
 }
 
 export default MetaData
