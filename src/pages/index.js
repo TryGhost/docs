@@ -16,7 +16,7 @@ import homeIllustration from '../images/home-illustration.svg' // eslint-disable
 class MainBox extends React.Component {
     render() {
         return (
-            <Box className="col-12 col-4-ns pa5 pa10-l pt6-l flex flex-column tdn content-stretch" to="/concepts/introduction/" radius="5">
+            <Box className="col-12 col-4-ns pa5 pa10-l pt6-l flex flex-column tdn content-stretch" to={ this.props.to } radius="5">
                 <Icon name={ this.props.icon } className="w10 h10 w12-ns h12-ns stroke-w--1-5 mr2 mb2" />
                 <div className="flex flex-column justify-between flex-auto">
                     <div>
@@ -93,7 +93,7 @@ class IndexPage extends React.Component {
                         <section className={ Spirit.page.xl + `grid-12 gutter-row-20 gutter-36-ns`}>
 
                             <MainBox 
-                                to="/concepts/introduction" 
+                                to="/concepts/introduction/" 
                                 title="Core Concepts" 
                                 icon="blocks" 
                                 color="purple">
@@ -101,7 +101,7 @@ class IndexPage extends React.Component {
                             </MainBox>
                             
                             <MainBox 
-                                to="/concepts/introduction" 
+                                to="/setup/" 
                                 title="Setup Guide" 
                                 icon="rocket" 
                                 color="blue">
@@ -109,7 +109,7 @@ class IndexPage extends React.Component {
                             </MainBox>
                             
                             <MainBox 
-                                to="/concepts/introduction" 
+                                to="/tutorials/" 
                                 title="Tutorials" 
                                 icon="typing" 
                                 color="green">
