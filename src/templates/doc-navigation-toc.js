@@ -237,22 +237,10 @@ class DocTemplate extends React.Component {
                                 fm={post.frontmatter}
                             />
                         </article>
-<<<<<<< HEAD
-                        <div className={(post.frontmatter.sidebar ? `order-3 w-sidebar` : `order-3`)}>
-                            { post.frontmatter.toc ?
-                                <TOC headingsOffset="-200" />
-                                : null }
-                        </div>
-                    </div>
-                </Layout>
-            </>
-        )
-=======
                     </Layout>
                 </>
             )
         }
->>>>>>> Reworking sidebars
     }
 }
 
