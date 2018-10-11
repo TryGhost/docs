@@ -165,82 +165,56 @@ class DocTemplate extends React.Component {
         post.frontmatter.sidebar = post.frontmatter.sidebar || ``
         post.frontmatter.toc = post.frontmatter.toc === false ? false : true
 
+        var leftSidebar, rightSidebar, justification
+
         if (post.frontmatter.sidebar && post.frontmatter.toc) { // Layout #1: sidebar and TOC
-            return (
-                <>
-                    <MetaData data={ this.props.data } location={ this.props.location } type="article" />
-                    <Layout>
-                        <PageHeader location={ this.props.location } />
-                        <div className={ `${Spirit.page.xl} flex justify-between` }>
-                            <div className={ `w-sidebar pt10 pr10` }>
-                                <NavBar
-                                    location={ this.props.location }
-                                    sidebar={ post.frontmatter.sidebar }
-                                />
-                            </div>
-                            <div className={ `${styles.mainContainer} flex` }>
-                                <article className={ `${styles.articleContainer} flex-auto order-2` }>
-                                    <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
-                                    <section className="post-content" dangerouslySetInnerHTML={ {
-                                        __html: post.html,
-                                    } } />
-                                </article>
-                                <div className={ `order-3 w-sidebar` }>
-                                    <TOC headingsOffset="-200" className="pr10" listClasses="mt3" />
-                                </div>
-                            </div>
-                        </div>
-                    </Layout>
-                </>
-            )
+            leftSidebar = <NavBar location={ this.props.location } sidebar={ post.frontmatter.sidebar }/>
+            rightSidebar = <TOC headingsOffset="-200" className="pr10" listClasses="mt3" />
+            justification = `justify-between`
         } else if (post.frontmatter.sidebar || post.frontmatter.toc) { // Layout #2: sidebar only
-            return (
-                <>
-                    <MetaData data={ this.props.data } location={ this.props.location } type="article" />
-                    <Layout mainClass={ post.frontmatter.sidebar ? `` : `` }>
-                        <PageHeader location={ this.props.location } />
-                        <div className={ `${Spirit.page.xl} flex justify-between` }>
-                            <div className="w-sidebar pt10 pr10">
-                                { post.frontmatter.sidebar ?
-                                    <NavBar
-                                        location={ this.props.location }
-                                        sidebar={ post.frontmatter.sidebar }
-                                    /> :
-                                    <TOC headingsOffset="-200" listClasses="lefty" showHeading={ false } />
-                                }
+            if (post.frontmatter.sidebar) {
+                leftSidebar = <NavBar location={ this.props.location } sidebar={ post.frontmatter.sidebar } />
+            } else {
+                leftSidebar = <TOC headingsOffset="-200" listClasses="lefty" showHeading={ false } />
+            }
+            justification = `justify-start`
+        } else {
+            justification = `justify-center`
+        }
+
+        return (
+            <>
+                <MetaData data={ this.props.data } location={ this.props.location } type="article" />
+                <Layout>
+                    <PageHeader location={ this.props.location } />
+                    <div className={ `${Spirit.page.xl} flex ${justification}` }>
+                        { leftSidebar ? 
+                            <div className={ `w-sidebar pt10 pr10` }>
+                                { leftSidebar } 
                             </div>
-                            <article className={ `${styles.articleContainer} ${styles.mainContainer} flex-auto bg-white` }>
+                            : null }
+                        <div className={ `${styles.mainContainer} flex` }>
+                            <article className={ `${styles.articleContainer} flex-auto order-2` }>
                                 <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
                                 <section className="post-content" dangerouslySetInnerHTML={ {
                                     __html: post.html,
                                 } } />
+                                <PrevNextSection
+                                    location={this.props.location}
+                                    sidebar={post.frontmatter.sidebar}
+                                    fm={post.frontmatter}
+                                />
                             </article>
-                            <div className="w-sidebar"></div>
+                            { rightSidebar ?
+                                <div className={ `order-3 w-sidebar` }>
+                                    { rightSidebar }
+                                </div>
+                                : null }
                         </div>
-                    </Layout>
-                </>
-            )
-        } else { // Layout #4: no sidebar && no TOC
-            return (
-                <>
-                    <MetaData data={ this.props.data } location={ this.props.location } type="article" />
-                    <Layout>
-                        <PageHeader location={ this.props.location } />
-                        <article className={ `${styles.articleContainer} ${styles.mainContainer} mw-content center` }>
-                            <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
-                            <section className="post-content" dangerouslySetInnerHTML={ {
-                                __html: post.html,
-                            } } />
-                            <PrevNextSection
-                                location={this.props.location}
-                                sidebar={post.frontmatter.sidebar}
-                                fm={post.frontmatter}
-                            />
-                        </article>
-                    </Layout>
-                </>
-            )
-        }
+                    </div>
+                </Layout>
+            </>
+        )
     }
 }
 
