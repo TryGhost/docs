@@ -20,12 +20,12 @@ class DefaultLayout extends React.Component {
     }
 
     render() {
-        const children = this.props.children
+        const { children } = this.props
         const header = this.props.header ? this.props.header : <Header dividerStyle={ this.props.headerDividerStyle }/>
 
         return (
             <>
-                <Helmet>
+                <Helmet defaultTitle={`Ghost Docs - Ghost`} >
                     <html lang="en" className="fs-base" />
                     <link type="text/css" href="https://cloud.typography.com/6076934/6704592/css/fonts.css" rel="stylesheet" />
                     <body className={ this.props.bodyClass + ` flex flex-column whitney f7 fw4 darkgrey readability`} />

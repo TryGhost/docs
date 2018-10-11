@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import _ from 'lodash'
 
 import getPostExcerpt from '../../../../utils/post-excerpt'
+import ImageMeta from './image-meta'
 
 class ArticleMetaGhost extends React.Component {
     render() {
@@ -38,7 +39,6 @@ class ArticleMetaGhost extends React.Component {
                         }
                     />
                     <meta property="og:url" content={ canonical } />
-                    {/* <meta property="og:image" content="TODO: feature image" /> */}
                     <meta property="article:published_time" content={ ghostPost.published_at } />
                     <meta property="article:modified_time" content={ghostPost.updated_at } />
                     { primaryTag ? <meta property="article:tag" content={ primaryTag.name } /> : null }
@@ -59,8 +59,6 @@ class ArticleMetaGhost extends React.Component {
                         }
                     />
                     <meta name="twitter:url" content={ canonical } />
-                    {/* <meta name="twitter:card" content="summary_large_image" /> */}
-                    {/* <meta name="twitter:image" content="TODO: feature image" /> */}
                     {/* <meta name="twitter.label1" content="Reading time" /> */}
                     {/* <meta name="twitter:data1" content="TODO: Reading time helper" /> */}
                     { primaryTag ? <meta name="twitter:label2" content="Filed under" /> : null }
@@ -68,6 +66,7 @@ class ArticleMetaGhost extends React.Component {
                     <meta name="twitter:site" content="@tryghost" />
                     <meta name="twitter:creator" content="@tryghost" />
                 </Helmet>
+                <ImageMeta image={ghostPost.feature_image} />
             </>
         )
     }

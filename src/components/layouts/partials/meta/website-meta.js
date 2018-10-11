@@ -2,40 +2,12 @@ import React from 'react'
 import Helmet from "react-helmet"
 import PropTypes from 'prop-types'
 
-class ImageMeta extends React.Component {
-    render() {
-        const { image } = this.props
-        console.log(`TCL: ImageMeta -> render -> image`, image)
-
-        if (!image) {
-            return null
-        }
-
-        return (
-            <>
-                <Helmet>
-                    <meta property="og:image" content={ image } />
-                    <meta property="og:image:width" content="2000" />
-                    <meta property="og:image:height" content="666" />
-                    <meta name="twitter:card" content="summary_large_image" />
-                    <meta name="twitter:image" content={ image } />
-                </Helmet>
-            </>
-        )
-    }
-}
-
-ImageMeta.propTypes = {
-    image: PropTypes.string,
-}
+import ImageMeta from './image-meta'
 
 class WebsiteMeta extends React.Component {
     render() {
         const { siteMetadata } = this.props.data.site
-        const { canonical } = this.props
-        const { title } = this.props
-        const { description } = this.props
-        const { image } = this.props
+        const { canonical, title, description, image } = this.props
 
         return (
             <>
