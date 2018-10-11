@@ -21,7 +21,7 @@ class TOC extends React.Component {
         return (
             <>
                 <nav className={ this.props.className + ` nr3 sticky top-25` }>
-                    <h3 className="f4 measure--0-2 middarkgrey ma0 pa0 fw4 mt3 nudge-bottom--2">On this page</h3>
+                    { (this.props.showHeading ? <h3 className="f4 measure--0-2 middarkgrey ma0 pa0 fw4 mt3 nudge-bottom--2">On this page</h3> : null) }
                     <div className="toc-list-container mt3"></div>
                 </nav>
             </>
@@ -31,11 +31,13 @@ class TOC extends React.Component {
 
 TOC.defaultProps = {
     headingsOffset: `1`,
+    showHeading: true,
 }
 
 TOC.propTypes = {
     headingsOffset: PropTypes.string,
     className: PropTypes.string,
+    showHeading: PropTypes.bool,
 }
 
 export default TOC

@@ -153,6 +153,11 @@ function PageHeader(props) {
     }
 }
 
+const styles = {
+    mainContainer: `bg-white pt10 pb20 shadow-1 br4 br--bottom`,
+    articleContainer: `pl20 pr20 mw-content`,
+}
+
 class DocTemplate extends React.Component {
     render() {
         const post = this.props.data.markdownRemark
@@ -160,19 +165,68 @@ class DocTemplate extends React.Component {
         post.frontmatter.sidebar = post.frontmatter.sidebar || ``
         post.frontmatter.toc = post.frontmatter.toc === false ? false : true
 
-        return (
-            <>
-                <MetaData data={this.props.data} location={this.props.location} type="article" />
-                <Layout mainClass={ post.frontmatter.sidebar ? `` : ``}>
-                    <PageHeader location={ this.props.location } />
-                    <div className={ Spirit.page.xl + `bg-white flex justify-between pt10 pb20 shadow-1 br4 br--bottom` }>
-                        <div className={(post.frontmatter.sidebar ? `order-1 w-sidebar` : `order-1`)}>
-                            <NavBar
-                                location={ this.props.location }
-                                sidebar={ post.frontmatter.sidebar }
-                            />
+        if (post.frontmatter.sidebar && post.frontmatter.toc) { // Layout #1: sidebar and TOC
+            return (
+                <>
+                    <MetaData data={ this.props.data } location={ this.props.location } type="article" />
+                    <Layout>
+                        <PageHeader location={ this.props.location } />
+                        <div className={ `${Spirit.page.xl} flex justify-between` }>
+                            <div className={ `w-sidebar pt10 pr10` }>
+                                <NavBar
+                                    location={ this.props.location }
+                                    sidebar={ post.frontmatter.sidebar }
+                                />
+                            </div>
+                            <div className={ `${styles.mainContainer} flex` }>
+                                <article className={ `${styles.articleContainer} flex-auto order-2` }>
+                                    <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
+                                    <section className="post-content" dangerouslySetInnerHTML={ {
+                                        __html: post.html,
+                                    } } />
+                                </article>
+                                <div className={ `order-3 w-sidebar` }>
+                                    <TOC headingsOffset="-200" />
+                                </div>
+                            </div>
                         </div>
-                        <article className="pl10 pr10 mw-content flex-auto order-2">
+                    </Layout>
+                </>
+            )
+        } else if (post.frontmatter.sidebar || post.frontmatter.toc) { // Layout #2: sidebar only
+            return (
+                <>
+                    <MetaData data={ this.props.data } location={ this.props.location } type="article" />
+                    <Layout mainClass={ post.frontmatter.sidebar ? `` : `` }>
+                        <PageHeader location={ this.props.location } />
+                        <div className={ `${Spirit.page.xl} flex justify-between` }>
+                            <div className="w-sidebar pt10 pr10">
+                                { post.frontmatter.sidebar ? 
+                                    <NavBar
+                                        location={ this.props.location }
+                                        sidebar={ post.frontmatter.sidebar }
+                                    /> :
+                                    <TOC headingsOffset="-200" showHeading={ false } />
+                                }
+                            </div>
+                            <article className={ `${styles.articleContainer} ${styles.mainContainer} flex-auto bg-white` }>
+                                <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
+                                <section className="post-content" dangerouslySetInnerHTML={ {
+                                    __html: post.html,
+                                } } />
+                            </article>
+                            <div className="w-sidebar"></div>
+                        </div>
+                    </Layout>
+                </>
+            )
+        } else { // Layout #4: no sidebar && no TOC
+            return (
+                <>
+                    <MetaData data={ this.props.data } location={ this.props.location } type="article" />
+                    <Layout>
+                        <PageHeader location={ this.props.location } />
+                        <article className={ `${styles.articleContainer} ${styles.mainContainer} mw-content center` }>
                             <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
                             <section className="post-content" dangerouslySetInnerHTML={ {
                                 __html: post.html,
@@ -183,6 +237,7 @@ class DocTemplate extends React.Component {
                                 fm={post.frontmatter}
                             />
                         </article>
+<<<<<<< HEAD
                         <div className={(post.frontmatter.sidebar ? `order-3 w-sidebar` : `order-3`)}>
                             { post.frontmatter.toc ?
                                 <TOC headingsOffset="-200" />
@@ -192,6 +247,12 @@ class DocTemplate extends React.Component {
                 </Layout>
             </>
         )
+=======
+                    </Layout>
+                </>
+            )
+        }
+>>>>>>> Reworking sidebars
     }
 }
 
