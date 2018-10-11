@@ -14,6 +14,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 .lh-p  { line-height: var(--vr-3); }
 .lh-small  { line-height: var(--vr-3); }
 .lh-tiny  { line-height: var(--vr-2); }
+.lh-1-0 { line-height: 1em; }
 
 .word-normal { word-break: normal; }
 .word-wrap { word-break: break-all; }
@@ -54,10 +55,6 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 /* margins */
 .ma-auto {
     margin: auto;
-}
-
-.lh-1-0 {
-    line-height: 1em;
 }
 
 /* _links.css */
@@ -183,7 +180,7 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(124px, auto));
     grid-auto-rows: 115px;
-    grid-gap: 20px;
+    grid-gap: 24px;
     grid-gap: auto;
 }
 
@@ -237,6 +234,10 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 .gh-home-api-container {
     grid-auto-rows: minmax(12rem, auto);
+}
+
+.api-box-min-height {
+    min-height: 12rem;
 }
 
 /* Integrations
