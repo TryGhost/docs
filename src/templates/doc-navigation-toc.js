@@ -153,11 +153,6 @@ function PageHeader(props) {
     }
 }
 
-const styles = {
-    mainContainer: `bg-white pt10 pb20 shadow-1 br4 br--bottom`,
-    articleContainer: `pl20 pr20 mw-content`,
-}
-
 class DocTemplate extends React.Component {
     render() {
         const post = this.props.data.markdownRemark
@@ -179,7 +174,7 @@ class DocTemplate extends React.Component {
             }
             justification = `justify-start`
         } else {
-            justification = `justify-center`
+            justification = `justify-start`
         }
 
         return (
@@ -188,13 +183,11 @@ class DocTemplate extends React.Component {
                 <Layout>
                     <PageHeader location={ this.props.location } />
                     <div className={ `${Spirit.page.xl} flex ${justification}` }>
-                        { leftSidebar ? 
-                            <div className={ `w-sidebar pt10 pr10` }>
-                                { leftSidebar } 
-                            </div>
-                            : null }
-                        <div className={ `${styles.mainContainer} flex` }>
-                            <article className={ `${styles.articleContainer} flex-auto order-2` }>
+                        <div className="w-sidebar pt10 pr10 flex-shrink-0-l">
+                            { leftSidebar }
+                        </div>
+                        <div className="bg-white pt10 pb20 shadow-1 br4 br--bottom flex">
+                            <article className="flex-auto order-2 pl15 pr15 mw-content">
                                 <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
                                 <section className="post-content" dangerouslySetInnerHTML={ {
                                     __html: post.html,
@@ -206,7 +199,7 @@ class DocTemplate extends React.Component {
                                 />
                             </article>
                             { rightSidebar ?
-                                <div className={ `order-3 w-sidebar` }>
+                                <div className="order-3 w-sidebar flex-shrink-0 dn db-l">
                                     { rightSidebar }
                                 </div>
                                 : null }

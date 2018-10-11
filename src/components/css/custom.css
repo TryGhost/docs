@@ -45,11 +45,11 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 }
 
 .w-sidebar {
-    width: 24rem;
+    width: 22rem;
 }
 
 .mw-content {
-    max-width: 72rem;
+    max-width: 80rem;
 }
 
 .pv6px {
