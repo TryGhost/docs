@@ -80,7 +80,7 @@ class SidebarNav extends React.Component {
         }
 
         return (
-            <nav className="nt2">
+            <nav className="nt1">
                 { sidebarfile.groups.map((group, i) => (
                     <div key={ i } className="mt2">
                         { groupExpanded(group.items, this.props.location.pathname) ?

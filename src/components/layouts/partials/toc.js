@@ -5,7 +5,7 @@ import tocbot from 'tocbot'
 class TOC extends React.Component {
     componentDidMount() {
         const props = this.props
-        
+
         tocbot.init({
             // Where to render the table of contents.
             tocSelector: `.toc-list-container`,
@@ -21,7 +21,7 @@ class TOC extends React.Component {
         return (
             <>
                 <nav className={ this.props.className + ` nr3 sticky top-25` }>
-                    <h3 className="f4 measure--0-2 middarkgrey ma0 pa0 fw4 mt8 nudge-bottom--2">On this page</h3>
+                    <h3 className="f4 measure--0-2 middarkgrey ma0 pa0 fw4 mt3 nudge-bottom--2">On this page</h3>
                     <div className="toc-list-container mt3"></div>
                 </nav>
             </>
