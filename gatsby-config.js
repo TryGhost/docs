@@ -16,16 +16,10 @@ if (!process.env.GH_CLIENT_SECRET) {
     )
 }
 
-if (!process.env.SITE_URL) {
-    throw new Error(
-        `SITE_URL is required to build. Check the README.`
-    )
-}
-
 module.exports = {
     siteMetadata: {
         title: `Ghost Docs`,
-        siteUrl: process.env.SITE_URL,
+        siteUrl: process.env.SITE_URL || `https://newdocs.ghost.org`,
         description: `Find all the docs you want`,
     },
     plugins: [
