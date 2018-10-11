@@ -2,37 +2,37 @@
   - group: Commands
     items:
       - title: Overview
-        link: /api/v2/ghost-cli/
+        link: /api/ghost-cli/
       - title: Config
-        link: /api/v2/ghost-cli/config/
+        link: /api/ghost-cli/config/
       - title: Install
-        link: /api/v2/ghost-cli/install/
+        link: /api/ghost-cli/install/
       - title: Setup
-        link: /api/v2/ghost-cli/setup/
+        link: /api/ghost-cli/setup/
       - title: Start
-        link: /api/v2/ghost-cli/start/
+        link: /api/ghost-cli/start/
       - title: Stop
-        link: /api/v2/ghost-cli/stop/
+        link: /api/ghost-cli/stop/
       - title: Restart
-        link: /api/v2/ghost-cli/restart/
+        link: /api/ghost-cli/restart/
       - title: Update
-        link: /api/v2/ghost-cli/update/
+        link: /api/ghost-cli/update/
       - title: Doctor
-        link: /api/v2/ghost-cli/doctor/
+        link: /api/ghost-cli/doctor/
       - title: Uninstall
-        link: /api/v2/ghost-cli/uninstall/
+        link: /api/ghost-cli/uninstall/
       - title: Help
-        link: /api/v2/ghost-cli/help/
+        link: /api/ghost-cli/help/
   - group: Utilities
     items:
       - title: ls
-        link: /api/v2/ghost-cli/ls/
+        link: /api/ghost-cli/ls/
       - title: run
-        link: /api/v2/ghost-cli/run/
+        link: /api/ghost-cli/run/
       - title: log
-        link: /api/v2/ghost-cli/log/
+        link: /api/ghost-cli/log/
   - group: Advanced
     items:
       - title: Knowledgebase
-        link: /api/v2/ghost-cli/knowledgebase/
+        link: /api/ghost-cli/knowledgebase/
 

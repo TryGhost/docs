@@ -2,107 +2,107 @@
   - group: Handlebars Themes
     items:
       - title: Overview
-        link: /api/v2/handlebars-themes/
+        link: /api/handlebars-themes/
       - title: A second link
         link: /#/
   - group: Contexts
     items:
       - title: Context Overview
-        link: /api/v2/handlebars-themes/context/
+        link: /api/handlebars-themes/context/
       - title: Index
-        link: /api/v2/handlebars-themes/context/index/
+        link: /api/handlebars-themes/context/index/
       - title: Post
-        link: /api/v2/handlebars-themes/context/post/
+        link: /api/handlebars-themes/context/post/
       - title: Page
-        link: /api/v2/handlebars-themes/context/page/
+        link: /api/handlebars-themes/context/page/
       - title: Author
-        link: /api/v2/handlebars-themes/context/author/
+        link: /api/handlebars-themes/context/author/
       - title: Tag
-        link: /api/v2/handlebars-themes/context/tag/
+        link: /api/handlebars-themes/context/tag/
   - group: Functional Helpers
     items:
       - title: Overview
-        link: /api/v2/handlebars-themes/helpers/functional/
+        link: /api/handlebars-themes/helpers/functional/
       - title: is
-        link: /api/v2/handlebars-themes/helpers/is/
+        link: /api/handlebars-themes/helpers/is/
       - title: foreach
-        link: /api/v2/handlebars-themes/helpers/foreach/
+        link: /api/handlebars-themes/helpers/foreach/
       - title: has
-        link: /api/v2/handlebars-themes/helpers/has/
+        link: /api/handlebars-themes/helpers/has/
       - title: if
-        link: /api/v2/handlebars-themes/helpers/if/
+        link: /api/handlebars-themes/helpers/if/
       - title: unless
-        link: /api/v2/handlebars-themes/helpers/unless/
+        link: /api/handlebars-themes/helpers/unless/
       - title: get
-        link: /api/v2/handlebars-themes/helpers/get/
+        link: /api/handlebars-themes/helpers/get/
   - group: Data Helpers
     items:
       - title: Overview
-        link: /api/v2/handlebars-themes/helpers/data/
+        link: /api/handlebars-themes/helpers/data/
       - title: '@config'
-        link: /api/v2/handlebars-themes/helpers/config/
+        link: /api/handlebars-themes/helpers/config/
       - title: '@blog'
-        link: /api/v2/handlebars-themes/helpers/blog/
+        link: /api/handlebars-themes/helpers/blog/
       - title: navigation
-        link: /api/v2/handlebars-themes/helpers/navigation/
+        link: /api/handlebars-themes/helpers/navigation/
       - title: post
-        link: /api/v2/handlebars-themes/helpers/post/
+        link: /api/handlebars-themes/helpers/post/
       - title: url
-        link: /api/v2/handlebars-themes/helpers/url/
+        link: /api/handlebars-themes/helpers/url/
       - title: title
-        link: /api/v2/handlebars-themes/helpers/title/
+        link: /api/handlebars-themes/helpers/title/
       - title: img_url
-        link: /api/v2/handlebars-themes/helpers/img_url/
+        link: /api/handlebars-themes/helpers/img_url/
       - title: excerpt
-        link: /api/v2/handlebars-themes/helpers/excerpt/
+        link: /api/handlebars-themes/helpers/excerpt/
       - title: content
-        link: /api/v2/handlebars-themes/helpers/content/
+        link: /api/handlebars-themes/helpers/content/
       - title: date
-        link: /api/v2/handlebars-themes/helpers/date/
+        link: /api/handlebars-themes/helpers/date/
       - title: tags
-        link: /api/v2/handlebars-themes/helpers/tags/
+        link: /api/handlebars-themes/helpers/tags/
       - title: authors
-        link: /api/v2/handlebars-themes/helpers/authors/
+        link: /api/handlebars-themes/helpers/authors/
       - title: twitter
-        link: /api/v2/handlebars-themes/helpers/twitter/
+        link: /api/handlebars-themes/helpers/twitter/
       - title: facebook
-        link: /api/v2/handlebars-themes/helpers/facebook/
+        link: /api/handlebars-themes/helpers/facebook/
   - group: Utility Helpers
     items:
       - title: Overview
-        link: /api/v2/handlebars-themes/helpers/utility/
+        link: /api/handlebars-themes/helpers/utility/
       - title: asset
-        link: /api/v2/handlebars-themes/helpers/asset/
+        link: /api/handlebars-themes/helpers/asset/
       - title: 'ghost_head/foot'
-        link: /api/v2/handlebars-themes/helpers/ghost_head_foot/
+        link: /api/handlebars-themes/helpers/ghost_head_foot/
       - title: body_class
-        link: /api/v2/handlebars-themes/helpers/body_class/
+        link: /api/handlebars-themes/helpers/body_class/
       - title: post_class
-        link: /api/v2/handlebars-themes/helpers/post_class/
+        link: /api/handlebars-themes/helpers/post_class/
       - title: reading_time
-        link: /api/v2/handlebars-themes/helpers/reading_time/
+        link: /api/handlebars-themes/helpers/reading_time/
       - title: pagination
-        link: /api/v2/handlebars-themes/helpers/pagination/
+        link: /api/handlebars-themes/helpers/pagination/
       - title: 'prev/next_post'
-        link: /api/v2/handlebars-themes/helpers/prev_next_post/
+        link: /api/handlebars-themes/helpers/prev_next_post/
       - title: plural
-        link: /api/v2/handlebars-themes/helpers/plural/
+        link: /api/handlebars-themes/helpers/plural/
       - title: lang
-        link: /api/v2/handlebars-themes/helpers/lang/
+        link: /api/handlebars-themes/helpers/lang/
       - title: translate
-        link: /api/v2/handlebars-themes/helpers/translate/
+        link: /api/handlebars-themes/helpers/translate/
       - title: encode
-        link: /api/v2/handlebars-themes/helpers/encode/
+        link: /api/handlebars-themes/helpers/encode/
       - title: log
-        link: /api/v2/handlebars-themes/helpers/log/
+        link: /api/handlebars-themes/helpers/log/
       - title: '@labs'
-        link: /api/v2/handlebars-themes/helpers/labs/
+        link: /api/handlebars-themes/helpers/labs/
   - group: Features
     items:
       - title: Content
-        link: /api/v2/handlebars-themes/content/
+        link: /api/handlebars-themes/content/
       - title: Google AMP
-        link: /api/v2/handlebars-themes/google-amp/
+        link: /api/handlebars-themes/google-amp/
       - title: Subscribers
-        link: /api/v2/handlebars-themes/subscribers/
+        link: /api/handlebars-themes/subscribers/
 

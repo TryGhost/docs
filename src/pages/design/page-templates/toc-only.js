@@ -30,7 +30,7 @@ const Page = () => (
                     Documentation posts that need only inner page jump / navigation. Example:
                 </p>
                 <ul className="ma0 ml4 pa0 lh-2-0">
-                    <li><Link to="/api/v2/handlebars-themes/" className="blue link">API Docs</Link></li>
+                    <li><Link to="/api/handlebars-themes/" className="blue link">API Docs</Link></li>
                 </ul>
             </div>
         </div>
