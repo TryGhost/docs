@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
+import _ from 'lodash'
 
 import ImageMeta from './image-meta'
 
@@ -8,6 +9,9 @@ class ArticleMetaMD extends React.Component {
     render() {
         const post = this.props.data.markdownRemark
         const fm = post.frontmatter
+        // Convert the frontmatter date into ISO String but, and use a fixed
+        // date, if no date is set. The published date should not change once set.
+        const isoDate = fm.date ? new Date(fm.date).toISOString() : new Date(`2018-10-15`).toISOString()
         const { canonical } = this.props
         const { siteMetadata } = this.props.data.site
         const primaryTag = fm.keywords && fm.keywords.length ? fm.keywords[0] : null
@@ -24,8 +28,8 @@ class ArticleMetaMD extends React.Component {
                     <meta name="og:title" content={ fm.meta_title || fm.title } />
                     <meta name="og:description" content={ fm.meta_description || post.excerpt } />
                     <meta property="og:url" content={ canonical } />
-                    <meta property="article:published_time" content={ fm.date } />
-                    {primaryTag ? <meta property="article:tag" content={ primaryTag } /> : null}
+                    <meta property="article:published_time" content={ isoDate } />
+                    {fm.keywords.map((keyword, i) => (<meta property="article:tag" content={keyword} key={i} />))}
                     <meta property="article:author" content="https://www.facebook.com/ghost" />
 
                     <meta name="twitter:title" content={ fm.meta_title || fm.title } />
@@ -37,6 +41,39 @@ class ArticleMetaMD extends React.Component {
                     {primaryTag ? <meta name="twitter:data2" content={ primaryTag } /> : null}
                     <meta name="twitter:site" content="@tryghost" />
                     <meta name="twitter:creator" content="@tryghost" />
+                    <script type="application/ld+json">{`
+                        "@context": "https://schema.org",
+                        "@type": "Article",
+                        "publisher": {
+                            "@type": "Organization",
+                            "name":  "${siteMetadata.title}",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://blog.ghost.org/favicon.png",
+                                "width": 60,
+                                "height": 60,
+                            }
+                        },
+                        "author": {
+                            "@type": "Person",
+                            "name": "Ghost Foundation",
+                            "sameAs: [
+                                "https://ghost.org/",
+                                "https://www.facebook.com/ghost",
+                                "https://twitter.com/tryghost"
+                            ]
+                        },
+                        ${fm.keywords.length ? `"keywords": "${_.join(fm.keywords, `, `)}",` : ``}
+                        "headline": "${fm.meta_title || fm.title}",
+                        "url": "${canonical}",
+                        "datePublished": "${isoDate}",
+                        ${fm.image ? `"fm.image": "${fm.image}",` : ``}
+                        "description": "${fm.meta_description || post.excerpt}",
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": "${siteMetadata.siteUrl}"
+                        }
+                    `}</script>
                 </Helmet>
                 <ImageMeta image={fm.image} />
             </>

@@ -11,9 +11,19 @@ class ArticleMetaGhost extends React.Component {
         const { ghostPost } = this.props.data
         const { canonical } = this.props
         const { siteMetadata } = this.props.data.site
+
+        let authorProfiles = []
         const excerpt = getPostExcerpt(ghostPost)
-        const publicTags = _.filter(ghostPost.tags, { visibility: `public` })
-        const primaryTag = ghostPost.primaryTag || publicTags.length ? publicTags[0] : null
+        const publicTags = _.map(_.filter(ghostPost.tags, { visibility: `public` }), `name`)
+        const primaryTag = _.get(ghostPost.primaryTag, `name`, publicTags[0])
+
+        authorProfiles.push(
+            ghostPost.primary_author.website,
+            ghostPost.primary_author.twitter ? `https://twitter.com/${_.trimStart(ghostPost.primary_author.twitter, `@`)}/` : null,
+            ghostPost.primary_author.facebook ? `https://www.facebook.com/${ghostPost.primary_author.facebook}/` : null
+        )
+
+        authorProfiles = _.compact(authorProfiles)
 
         return (
             <>
@@ -41,7 +51,7 @@ class ArticleMetaGhost extends React.Component {
                     <meta property="og:url" content={ canonical } />
                     <meta property="article:published_time" content={ ghostPost.published_at } />
                     <meta property="article:modified_time" content={ghostPost.updated_at } />
-                    { primaryTag ? <meta property="article:tag" content={ primaryTag.name } /> : null }
+                    {publicTags.map((keyword, i) => (<meta property="article:tag" content={keyword} key={i} />))}
                     <meta property="article:author" content="https://www.facebook.com/ghost" />
 
                     <meta name="twitter:title"
@@ -60,11 +70,44 @@ class ArticleMetaGhost extends React.Component {
                     />
                     <meta name="twitter:url" content={ canonical } />
                     {/* <meta name="twitter.label1" content="Reading time" /> */}
-                    {/* <meta name="twitter:data1" content="TODO: Reading time helper" /> */}
+                    {/* <meta name="twitter:data1" content="TODO: Reading time helper and replace existing `label1` data" /> */}
+                    <meta name="twitter:label1" content="Written by" />
+                    <meta name="twitter:data1" content={ghostPost.primary_author.name} />
                     { primaryTag ? <meta name="twitter:label2" content="Filed under" /> : null }
-                    { primaryTag ? <meta name="twitter:data2" content={ primaryTag.name } /> : null }
+                    { primaryTag ? <meta name="twitter:data2" content={ primaryTag } /> : null }
                     <meta name="twitter:site" content="@tryghost" />
                     <meta name="twitter:creator" content="@tryghost" />
+                    <script type="application/ld+json">{`
+                        "@context": "https://schema.org",
+                        "@type": "Article",
+                        "publisher": {
+                            "@type": "Organization",
+                            "name":  "${siteMetadata.title}",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://blog.ghost.org/favicon.png",
+                                "width": 60,
+                                "height": 60,
+                            }
+                        },
+                        "author": {
+                            "@type": "Person",
+                            "name": "${ghostPost.primary_author.name}",
+                            ${ghostPost.primary_author.profile_image ? `"image": "${ghostPost.primary_author.profile_image}",` : ``}
+                            ${authorProfiles.length ? `"sameAs": [${_.join(authorProfiles, `, `)}]` : ``}
+                        },
+                        ${publicTags.length ? `"keywords": "${_.join(publicTags, `, `)}",` : ``}
+                        "headline": "${ghostPost.meta_title || ghostPost.title}",
+                        "url": "${canonical}",
+                        "datePublished": "${ghostPost.published_at}",
+                        "dateModified": "${ghostPost.updated_at}",
+                        ${ghostPost.feature_image ? `"image": "${ghostPost.feature_image}",` : ``}
+                        "description": "${ghostPost.meta_description || excerpt}",
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": "${siteMetadata.siteUrl}"
+                        }
+                    `}</script>
                 </Helmet>
                 <ImageMeta image={ghostPost.feature_image} />
             </>

@@ -11,7 +11,7 @@ class MetaData extends React.Component {
         const { ghostPost } = this.props.data || {}
         const { markdownRemark } = this.props.data || {}
         const { siteMetadata } = this.props.data.site
-        const { type } = this.props
+        const { type, title, description, image } = this.props
         const canonical = path.join(siteMetadata.siteUrl, this.props.location.pathname, `/`)
 
         if (type === `article`) {
@@ -21,7 +21,7 @@ class MetaData extends React.Component {
                 )
             } else if (markdownRemark) {
                 return (
-                    <ArticleMetaMD data={ this.props.data } canonical={canonical} />
+                    <ArticleMetaMD data={this.props.data} canonical={canonical} />
                 )
             }
         } else if (type === `website`) {
@@ -29,9 +29,9 @@ class MetaData extends React.Component {
                 <WebsiteMeta
                     data={ this.props.data }
                     canonical={ canonical }
-                    title={ this.props.title }
-                    description={ this.props.description }
-                    image={ this.props.image }
+                    title={ title }
+                    description={ description }
+                    image={ image }
                 />
             )
         }

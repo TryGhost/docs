@@ -25,6 +25,27 @@ class WebsiteMeta extends React.Component {
                     <meta name="twitter:description" content={ description } />
                     <meta name="twitter:url" content={canonical} />
                     <meta name="twitter:site" content="@tryghost" />
+                    <script type="application/ld+json">{`
+                        "@context": "https://schema.org",
+                        "@type": "WebSite",
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "${siteMetadata.title}",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://blog.ghost.org/favicon.png",
+                                "width": 60,
+                                "height": 60,
+                            }
+                        },
+                        "url": "${canonical}",
+                        ${image ? `"image": "${image}",` : ``}
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": "${siteMetadata.siteUrl}"
+                        },
+                        "description": "${description}"
+                    `}</script>
                 </Helmet>
                 <ImageMeta image={image} />
             </>
