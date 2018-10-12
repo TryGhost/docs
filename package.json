@@ -13,7 +13,8 @@
     "posttest": "yarn lint",
     "test": "NODE_ENV=testing mocha -- $(find test -name '*.test.js')",
     "preship": "yarn test",
-    "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi"
+    "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi",
+    "master": "git pull -r  --autostash && cd content/api/v2 && git pull -r  --autostash && cd ../../../ && yarn"
   },
   "devDependencies": {
     "autoprefixer": "^9.1.5",
