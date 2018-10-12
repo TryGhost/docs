@@ -10,6 +10,7 @@ import PrevNext from '../components/global/prev-next'
 import DesignNavSidebar from '../components/layouts/partials/design-nav-sidebar'
 import TOC from '../components/layouts/partials/toc'
 import MetaData from '../components/layouts/partials/meta-data'
+import Icon from '../components/global/icon'
 
 function NavBar(props) {
     if (props.location.pathname.match(/\S\/design\//i)) {
@@ -189,25 +190,54 @@ class DocTemplate extends React.Component {
                         <div className="w-sidebar pt10 pr10 flex-shrink-0-l">
                             { leftSidebar }
                         </div>
-                        <div className="w-100 bg-white pt10 pb20 shadow-1 br4 br--bottom flex">
-                            <article className="flex-auto order-2 pl15 pr15 mw-content">
-                                <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
-                                <section className="post-content" dangerouslySetInnerHTML={ {
-                                    __html: post.html,
-                                } } />
-                                <PrevNextSection
-                                    location={this.props.location}
-                                    sidebar={post.frontmatter.sidebar}
-                                    fm={post.frontmatter}
-                                />
-                            </article>
-                            { rightSidebar ?
-                                <div className="order-3 w-sidebar flex-shrink-0 dn db-l">
-                                    { rightSidebar }
+
+                        <div>
+                            <div className="bg-white pt10 pb15 shadow-1 br4 br--bottom flex flex-column">
+                                <div className="flex">
+                                    <article className="flex-auto order-2 pl15 pr15 mw-content">
+                                        <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
+                                        <section className="post-content" dangerouslySetInnerHTML={ {
+                                            __html: post.html,
+                                        } } />
+
+                                    </article>
+                                    { rightSidebar ?
+                                        <div className="order-3 w-sidebar flex-shrink-0 dn db-l">
+                                            { rightSidebar }
+                                        </div>
+                                        : null }
                                 </div>
-                                : null }
+                                <PrevNextSection
+                                    location={ this.props.location }
+                                    sidebar={ post.frontmatter.sidebar }
+                                    fm={ post.frontmatter }
+                                />
+                            </div>
+
+                            {/* <div className={ (!rightSidebar ? `mw-content ` : ``) + `bg-white mt10 shadow-1 br4 flex flex-column pt10 pb15 pl15 pr15`}>
+                                <div className="">
+                                    <Icon name="bubble-single-rect" className="stroke-blue w8 h8" />
+                                    <h1 className={ `${Spirit.h4} mt2` }>Did you find this page helpful?</h1>
+                                    <p className={ `${Spirit.p} mt2 midgrey measure-wide` }>
+                                        We're always looking for advice to help improve our documentation!<br />
+                                        Please let us know what's working (or what's not!). 
+                                        We're constantly iterating thanks to the feedback we receive.
+                                    </p>
+                                    <select name="feedback-type" className="db ba b--whitegrey whitney pa3 bg-whitegrey-l2 w-50 mt4">
+                                        <option>Feedback</option>
+                                        <option>Issue</option>
+                                        <option>Typo</option>
+                                        <option>Praise</option>
+                                        <option>Other</option>
+                                    </select>
+                                    <input id="globalnavsearch" name="email" type="text" className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-1-0 bg-whitegrey-l2 ba b--whitegrey mt4" placeholder="Email..." />
+                                    <textarea name="message" className="w-50 f8 pa3 h40 whitney db bg-whitegrey-l2 br3 ba b--whitegrey mt4"></textarea>
+                                </div>
+                            </div> */}
                         </div>
+
                     </div>
+
                 </Layout>
             </>
         )

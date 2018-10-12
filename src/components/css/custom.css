@@ -235,11 +235,11 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     transition: all 0.8s ease;
 }
 
-.prevnext-hover:hover {
+/* .prevnext-hover:hover {
     box-shadow: 0 5px 25px -5px rgba(0,0,0,.1);
     border-color: color-mod(var(--whitegrey) l(+1%));
     transition: all 0.2s ease;
-}
+} */
 
 .prevnext-hover:hover p {
     box-shadow: color-mod(var(--blue-l2) l(+10%) s(-10%)) 0 -1px 0 inset;
