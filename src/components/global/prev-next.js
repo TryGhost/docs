@@ -36,13 +36,13 @@ class PrevNext extends React.Component {
 
 PrevNext.propTypes = {
     prev: PropTypes.shape({
-        title: PropTypes.string,
-        link: PropTypes.string,
+        title: PropTypes.string.isRequired,
+        link: PropTypes.string.isRequired,
         group: PropTypes.string,
     }),
     next: PropTypes.shape({
-        title: PropTypes.string,
-        link: PropTypes.string,
+        title: PropTypes.string.isRequired,
+        link: PropTypes.string.isRequired,
         group: PropTypes.string,
         description: PropTypes.string,
     }),
