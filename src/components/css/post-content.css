@@ -422,7 +422,7 @@ Usage (In Ghost editor):
     padding: 0;
     height: 1px;
     border: none;
-    border-top: 1px solid var(--whitegrey-d2);
+    border-top: 1px solid var(--whitegrey);
 }
 
 /* .post-content hr::before {

@@ -43,7 +43,7 @@ class NavBar extends React.Component {
                         <Link className={theme.docsTitleClass + ` gh-nav-logo-suffix relative ma0 ml4 pa0 pl4 f6 lh-1-5 fw4 link nudge-top--2` } to="/">Docs</Link>
                     </div>
                     <div className="dn flex-ns items-center">
-                        <Link className={ theme.menuItem + ` f-supersmall-m f8-l pa3 pl0 mr3`} to="/concepts/introduction/">Concepts</Link>
+                        <Link className={ theme.menuItem + ` f-supersmall-m f8-l pa3 mr3 nl3`} to="/concepts/introduction/">Concepts</Link>
                         <Link className={ theme.menuItem + ` f-supersmall-m f8-l pa3 mr3` } to="/setup/">Setup</Link>
                         <Link className={ theme.menuItem + ` f-supersmall-m f8-l pa3 mr3` } to="/tutorials/">Tutorials</Link>
                         <Link className={ theme.menuItem + ` f-supersmall-m f8-l pa3 mr3` } to="/api/">API</Link>
