@@ -2,7 +2,7 @@
 title: "Page Templates"
 image: "https://unsplash.it/400/300/?random?BoldMage"
 next:
-    - url: "/concepts/posts/"
+    url: "/concepts/posts/"
 template:
 keywords:
     - design

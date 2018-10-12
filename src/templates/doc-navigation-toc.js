@@ -23,10 +23,9 @@ function NavBar(props) {
 
 function PrevNextSection(props) {
     // Cover two cases:
-    // 1. concepts page that walks through the associated sidebar file
+    // 1. `/concepts/` page that walks through the associated sidebar file
     // 2. other pages, where we set a `next` property in frontmatter
-    // We're using this code here to serialize the data and pass it to a more
-    // generic component
+    // The following code serializes the data and pass it to a generic component.
 
     if (props.sidebar === `concepts`) {
         const [sidebarfile] = props.sidebar ? require(`../data/sidebars/${props.sidebar}.yaml`) : {}
@@ -39,23 +38,27 @@ function PrevNextSection(props) {
         const flatSidebar = []
 
         // Get all nested items and link and make a flat array
-        _.forEach(groups, (group) => {
-            _.forEach(group.items, (items) => {
+        _.forEach(groups, (section) => {
+            _.forEach(section.items, (items) => {
+                // Remember the group our items belong to
+                items.group = section.group
                 flatSidebar.push(items)
             })
         })
 
         const currentIndex = _.findIndex(flatSidebar, item => item.link === props.location.pathname)
-        const prev = flatSidebar[currentIndex - 1] || {}
-        const next = flatSidebar[currentIndex + 1] || {}
+        const prev = flatSidebar[currentIndex - 1]
+        const next = flatSidebar[currentIndex + 1]
 
         return (
             <PrevNext prev={prev} next={next} />
         )
-    } else if (props.fm.next) {
+    } else if (props.fm.next && props.fm.next.title && props.fm.next.url) {
+        // We *must* have at least URL and title
         const next = {
-            title: props.fm.next.title || ``,
-            link: props.fm.next.url || ``,
+            title: props.fm.next.title,
+            link: props.fm.next.url,
+            description: props.fm.next.description || ``,
         }
 
         return (
