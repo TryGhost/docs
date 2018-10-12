@@ -7,10 +7,12 @@ import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import Tags from '../components/helpers/tags'
 import MetaData from '../components/layouts/partials/meta-data'
+import RelatedPosts from '../components/global/related-posts'
 
 class FAQ extends React.Component {
     render() {
         const post = this.props.data.ghostPost
+        const { relatedPosts } = this.props.pageContext
 
         return (
             <>
@@ -56,16 +58,16 @@ class FAQ extends React.Component {
                                 </div>
                             </div>
 
-                            <div className="col-4 w70 ml14">
-                                <h4 className="ma0 mt1 mb6 midgrey">Related Questions</h4>
-                                <ul className="pa0 ma0 mb8 list">
-                                    <li className="mb4 f8"><a className="link blue lh-title" href="#">This is a related post pulled from the same primary tag, kind of like Casper</a></li>
-                                    <li className="mb4 f8"><a className="link blue lh-title" href="#">This is a related post pulled from the same primary tag, kind of like Casper</a></li>
-                                    <li className="mb4 f8"><a className="link blue lh-title" href="#">This is a related post pulled from the same primary tag, kind of like Casper</a></li>
-                                    <li className="mb4 f8"><a className="link blue lh-title" href="#">This is a related post pulled from the same primary tag, kind of like Casper</a></li>
-                                    <li className="mb4 f8"><a className="link blue lh-title" href="#">This is a related post pulled from the same primary tag, kind of like Casper</a></li>
-                                </ul>
-                            </div>
+                            {relatedPosts.length ?
+                                <>
+                                    <div className="col-4 w70 ml14">
+                                        <h4 className="ma0 mt1 mb6 midgrey">Related Questions</h4>
+                                        <RelatedPosts relatedPosts={relatedPosts} />
+                                    </div>
+                                </> :
+                                null
+                            }
+
                         </div>
                     </div>
                 </Layout>
@@ -77,6 +79,9 @@ class FAQ extends React.Component {
 FAQ.propTypes = {
     data: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
+    pageContext: PropTypes.shape({
+        relatedPosts: PropTypes.array.isRequired,
+    }).isRequired,
 }
 
 export default FAQ
