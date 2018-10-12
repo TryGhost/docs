@@ -9,6 +9,8 @@
         link: /concepts/ecosystem/
   - group: Architecture
     items:
+      - title: Overview
+        link: /concepts/architecture/
       - title: Core API
         link: /concepts/core/
       - title: Admin client
@@ -37,7 +39,7 @@
         link: /concepts/routing/
       - title: Redirects
         link: /concepts/redirects/
-      - title: Custom storage adapters
+      - title: Storage adapters
         link: /concepts/storage-adapters/
       - title: Custom schedulers
         link: /concepts/custom-schedulers/
@@ -45,7 +47,7 @@
     items:
       - title: Hosting overview
         link: /concepts/hosting/
-      - title: Server recommendations
+      - title: Recommendations
         link: /concepts/server-recommendations/
       - title: Troubleshooting
         link: /concepts/hosting-problems/
