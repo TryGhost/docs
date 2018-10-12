@@ -193,7 +193,7 @@ class DocTemplate extends React.Component {
 
                         <div>
                             <div className="w-100 bg-white pt10 pb15 shadow-1 br4 br--bottom flex flex-column">
-                                <div className="flex">
+                                <div className="flex w-100">
                                     <article className="flex-auto order-2 pl15 pr15 mw-content">
                                         <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
                                         <section className="post-content" dangerouslySetInnerHTML={ {
