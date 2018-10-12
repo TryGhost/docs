@@ -4,28 +4,23 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions
-    const { createRedirect } = actions
 
     if (node.internal.type === `MarkdownRemark`) {
         // Passing a `path` property in frontmatter will overwrite the
         // slug that we build from the folder structure
-        const slug = node.frontmatter.path ? node.frontmatter.path : createFilePath({ node, getNode, basePath: `pages` })
+        let slug = node.frontmatter.path ? node.frontmatter.path : createFilePath({ node, getNode, basePath: `pages` })
+
+        // Remove the version slug from the latest API version docs
+        // TODO: use env config to add latest API version
+        if (slug.match(/\/api\/v2\/\S*/i)) {
+            slug = slug.replace(/\/v2/, ``)
+        }
 
         createNodeField({
             node,
             name: `slug`,
             value: slug,
         })
-
-        // Temporary redirect api URLs to v2, when the version is not included in link
-        // TODO: use env config to add latest API version
-        if (slug.match(/\/api\/v2\/\S*/i)) {
-            createRedirect({
-                fromPath: slug.replace(/\/v2/, ``),
-                redirectInBrowser: true,
-                toPath: slug,
-            })
-        }
     }
 }
 
