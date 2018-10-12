@@ -23,7 +23,7 @@ class PrevNext extends React.Component {
                     : <div className="col-6 nudge-left--1"></div>}
 
                 { next ?
-                    <Link to={ next.link } className={ (prev ? `br--right col-6` : `col-12`) + ` flex pa10 pl8 tdn justify-end items-center blue prevnext-hover ba b--transparent` }>
+                    <Link to={ next.link } className={ (prev ? `br--right col-6` : `col-12`) + ` flex pa10 pl15 pr15 tdn justify-end items-center blue prevnext-hover ba b--transparent` }>
                         <div className="tr mr4">
                             { next.group ? <h6 className="ma0 pa0 f-supersmall fw4 midgrey lh-1-5">{ next.group }</h6> : null }
                             <p className={ Spirit.excerpt + `nt1 di` }>{ next.title }</p>
