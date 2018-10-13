@@ -3,28 +3,22 @@ title: "Pages"
 sidebar: "concepts"
 ---
 
-## This is the second heading
+Pages are a subset of posts which are excluded from all feeds
 
-Spicy jalapeno cupidatat chicken ut filet mignon sausage ut boudin nulla reprehenderit strip steak proident cillum incididunt short loin cow. Pig in pastrami, leberkas eiusmod enim bresaola do. Filet mignon officia quis kevin pork, swine strip steak excepteur hamburger chicken pork chop boudin shankle. Velit chicken pig in cupim kielbasa jerky. Bresaola excepteur veniam, andouille magna brisket aliquip nostrud jerky.
+While posts are used for grouped content which is generally published regularly like blog posts or podcast episodes, pages serve as a separate entity for static and generally independent content like an `About` or `Contact` page.
 
-```javascript
-makeArray() {
-    // Hey hey what can I do
-    const foo = []
-    bar.split('').forEach(letter => {
-      foo.push(letter)
-    })
-    return foo
-}
-```
+Inside Ghost Admin, any post can be turned into a page by checking the relevant box at the bottom of the Post Settings Menu. Equally, within the Content API, a page is just a post with a parameter of `"page": true`.
 
-### This is the third heading
 
-Pork chop ribeye ut chicken buffalo proident minim leberkas cupim adipisicing burgdoggen incididunt pastrami cupidatat. Prosciutto kevin dolore labore ham, cupidatat pork loin fatback picanha irure ad short ribs duis. Cupidatat excepteur jerky doner, incididunt consectetur turkey pariatur. Culpa consectetur cillum shank ham hock anim pastrami ex tempor eu. Fatback strip steak pig, bacon salami drumstick ut capicola short loin flank.
+## What's different about pages?
 
-Jowl dolor duis, cupidatat pork tempor nostrud incididunt short loin laborum. Duis nostrud fatback ribeye consequat ad. Proident pancetta ut tempor. Short loin officia eiusmod beef. Sunt tongue pig venison, sint mollit ad excepteur velit adipisicing flank pancetta pariatur. Dolor t-bone swine alcatra fatback ribeye, mollit dolore incididunt ullamco.
+Pages are only ever published on the slug which is given to them, and do not automatatically appear anywhere on your site. While posts are displayed in the index collection, within RSS feeds, and in author and tag archives - pages are totally independent. The only way people find them is if you create manual links to them either in your content or your navigation.
 
-Spare ribs aute fugiat, pariatur andouille labore nulla exercitation. Aliqua picanha sirloin consequat drumstick sint exercitation pork nisi et. Dolore swine fugiat pork salami proident. Bacon excepteur filet mignon labore pariatur in in nulla magna fugiat prosciutto. Laboris sint ground round, pancetta ipsum in pariatur voluptate fatback andouille velit shoulder flank quis sausage.
 
-Hamburger ham shank est, officia qui capicola proident. Ribeye dolore prosciutto sirloin alcatra. Rump short ribs quis ex fugiat proident incididunt irure t-bone meatball veniam sirloin meatloaf. Tongue anim sint pancetta bresaola sirloin.
-Does your lorem ipsum text long for something a little meatier? Give our generator a try…
+## Custom Templates
+
+If using one of Ghost's default [Handlebars Themes](/api/handlebars-themes/), a common usecase for pages is to give them custom templates.
+
+As well as your a regular `page.hbs` default template, you can also create generic reusable custom templates like `page-wide.hbs` - or page-specific templates based on a particular slug, like `page-about.hbs` - so that you have fine-grained control over what markdup is used to render your data.
+
+Not much else to say about pages, let's move right along.
