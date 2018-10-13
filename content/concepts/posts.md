@@ -3,28 +3,48 @@ title: "Posts"
 sidebar: "concepts"
 ---
 
-## This is the second heading
+Posts are the primary entry-type within Ghost, and generally represent the majority of stored data.
 
-Spicy jalapeno cupidatat chicken ut filet mignon sausage ut boudin nulla reprehenderit strip steak proident cillum incididunt short loin cow. Pig in pastrami, leberkas eiusmod enim bresaola do. Filet mignon officia quis kevin pork, swine strip steak excepteur hamburger chicken pork chop boudin shankle. Velit chicken pig in cupim kielbasa jerky. Bresaola excepteur veniam, andouille magna brisket aliquip nostrud jerky.
+By default Ghost will return a reverse chronological feed of posts in the traditional format of a blog, however a great deal of customisation is available for this behaviour.
 
-```javascript
-makeArray() {
-    // Hey hey what can I do
-    const foo = []
-    bar.split('').forEach(letter => {
-      foo.push(letter)
-    })
-    return foo
+## Data
+
+Posts house content and associated data.
+
+```JSON
+{
+  "posts":[{
+    "id": "59711abc12d3ab0bd61c3abc",
+    "title": "Welcome to Ghost",
+    "slug": "welcome-to-ghost",
+    "mobiledoc": "{\"version\":\"0.3.1\",\"atoms\":[],\"cards\":[],\"markups\":[],\"sections\":[[1,\"p\",[[0,[],0,\"You're live, nice!\"]]]]}",,
+    "html": "<p>You're live! Nice.</p>",
+    "plaintext": "You're live! Nice.",
+    "feature_image": "/content/images/2014/12/my-image.png",
+    "featured": false,
+    "page": false,
+    "status": "published",
+    "locale": null,
+    "visibility": "public",
+    "meta_title": null,
+    "meta_description": null,
+    "author_id": "59711abc78f1ab0bd61c3efg",
+    "created_at": "2014-04-15T12:36:28.353Z",
+    "created_by": "59711abc78f1ab0bd61c3efg",
+    "updated_at": "2014-04-15T12:36:28.353Z",
+    "updated_by": "59711abc78f1ab0bd61c3efg",
+    "published_at": "2014-04-15T12:36:28.363Z",
+    "published_by": "59711abc78f1ab0bd61c3efg",
+    "custom_excerpt": null,
+    "codeinjection_head": null,
+    "codeinjection_foot": null,
+    "og_image": null,
+    "og_title": null,
+    "og_description": null,
+    "twitter_image": null,
+    "twitter_title": null,
+    "twitter_description": null
+    "comment_id": "59711abc12d3ab0bd61c3abc"
+  }
 }
 ```
-
-### This is the third heading
-
-Pork chop ribeye ut chicken buffalo proident minim leberkas cupim adipisicing burgdoggen incididunt pastrami cupidatat. Prosciutto kevin dolore labore ham, cupidatat pork loin fatback picanha irure ad short ribs duis. Cupidatat excepteur jerky doner, incididunt consectetur turkey pariatur. Culpa consectetur cillum shank ham hock anim pastrami ex tempor eu. Fatback strip steak pig, bacon salami drumstick ut capicola short loin flank.
-
-Jowl dolor duis, cupidatat pork tempor nostrud incididunt short loin laborum. Duis nostrud fatback ribeye consequat ad. Proident pancetta ut tempor. Short loin officia eiusmod beef. Sunt tongue pig venison, sint mollit ad excepteur velit adipisicing flank pancetta pariatur. Dolor t-bone swine alcatra fatback ribeye, mollit dolore incididunt ullamco.
-
-Spare ribs aute fugiat, pariatur andouille labore nulla exercitation. Aliqua picanha sirloin consequat drumstick sint exercitation pork nisi et. Dolore swine fugiat pork salami proident. Bacon excepteur filet mignon labore pariatur in in nulla magna fugiat prosciutto. Laboris sint ground round, pancetta ipsum in pariatur voluptate fatback andouille velit shoulder flank quis sausage.
-
-Hamburger ham shank est, officia qui capicola proident. Ribeye dolore prosciutto sirloin alcatra. Rump short ribs quis ex fugiat proident incididunt irure t-bone meatball veniam sirloin meatloaf. Tongue anim sint pancetta bresaola sirloin.
-Does your lorem ipsum text long for something a little meatier? Give our generator a try…

@@ -191,8 +191,8 @@ class DocTemplate extends React.Component {
                             { leftSidebar }
                         </div>
 
-                        <div>
-                            <div className="w-100 bg-white pt10 pb15 shadow-1 br4 br--bottom flex flex-column">
+                        <div className="w-100">
+                            <div className="bg-white pt10 pb15 shadow-1 br4 br--bottom flex flex-column">
                                 <div className="flex w-100">
                                     <article className="flex-auto order-2 pl15 pr15 mw-content">
                                         <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
@@ -220,7 +220,7 @@ class DocTemplate extends React.Component {
                                     <h1 className={ `${Spirit.h4} mt2` }>Did you find this page helpful?</h1>
                                     <p className={ `${Spirit.p} mt2 midgrey measure-wide` }>
                                         We're always looking for advice to help improve our documentation!<br />
-                                        Please let us know what's working (or what's not!). 
+                                        Please let us know what's working (or what's not!).
                                         We're constantly iterating thanks to the feedback we receive.
                                     </p>
                                     <select name="feedback-type" className="db ba b--whitegrey whitney pa3 bg-whitegrey-l2 w-50 mt4">
