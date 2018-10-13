@@ -13,6 +13,12 @@ const allGhostPosts = function allGhostPosts(tag) {
               edges {
                 node {
                   slug
+                  title
+                  url
+                  published_at
+                  tags {
+                      slug
+                  }
                 }
               }
             }

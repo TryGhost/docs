@@ -1,21 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { removeInternalTags, getPrimaryTag } from '../../utils/tag-utils'
+
 function filterTags(tags, internal) {
     // Get rid of internal tags
-    return internal ? tags : tags.filter(tag => !tag.name.match(/^#/))
-}
-
-function getPrimaryTag(tags) {
-    // If any tags left, use the first tag name and fallback to `General`
-    if (!tags.length) {
-        return {
-            name: `General`,
-            slug: `general`,
-        }
-    } else {
-        return tags[0]
-    }
+    return internal ? tags : removeInternalTags(tags)
 }
 
 /*
