@@ -57,7 +57,7 @@ Even the dynamic cards mentioned above are a part of MobileDoc! It's a fast grow
 
 ## Sample API Data
 
-Here's a sample post object from the Ghost Content API
+Here's a sample post object from the Ghost [Content API](/api/content/)
 
 ```JSON
 post: {
