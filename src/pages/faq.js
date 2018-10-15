@@ -6,7 +6,6 @@ import Layout from '../components/layouts/default'
 import FAQ from '../components/faq'
 import { Spirit } from '../components/spirit-styles'
 import MetaData from '../components/layouts/partials/meta-data'
-import Box from '../components/layouts/partials/box'
 
 class FAQPage extends React.Component {
     render() {

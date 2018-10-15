@@ -112,7 +112,7 @@ class APIPage extends React.Component {
                             </div>
                             <div className={ sectionStyles.cardContainer }>
                                 <Card to="/api/ghost-cli/" icon="ghost-cli-logo" iconClass="stroke-w--1-5">Ghost-CLI</Card>
-                                <Card to="/api/migration/" icon="gscan-logo" iconClass="stroke-w--1-5">Migration</Card>
+                                <Card to="/api/migration/" icon="migration-logo" iconClass="stroke-w--1-5">Migration</Card>
                                 <Card href="https://gscan.ghost.org" icon="gscan-logo" iconClass="stroke-w--1-5">GScan</Card>
                             </div>
                         </APISection>
