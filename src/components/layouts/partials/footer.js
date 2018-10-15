@@ -2,52 +2,45 @@ import React from 'react'
 import { Spirit } from '../../spirit-styles'
 import { Link } from 'gatsby'
 import Logo from '../../global/logo'
+import Icon from '../../global/icon'
 
 const listItemClass = `mb2 lh-1-65` // Probably should go to spirit-styles.js
-const linkClass = `link pa2 pl0 midgrey dim`
+const linkClass = `link pa2 midgrey hover-blue dib mr5`
 
 // Empty for now...
 const Footer = () => (
-    <footer className="pt-vw6 pt-vw2-l pb-vw3 bt b--whitegrey">
-        <section className={ Spirit.page.xl + `grid-12 gutter-row-20 gutter-32-l`}>
+    <footer className="pt-vw4 pt-vw1-l pb-vw3 bt b--whitegrey">
 
-            <div className="col-12 col-3-l">
-                <a href="https://ghost.org"><Logo /></a>
-                <p className={ Spirit.tiny + `mt1 midgrey` }>Ghost Foundation &copy; 2008 - 2018</p>
-            </div>
+        <section className={ Spirit.page.xl + `flex` }>
 
-            <div className="col-12 col-3-l">
-                <h3 className={ Spirit.h5 + `col-8` }>Setup</h3>
-                <div>
-                    <ul className="f7 list pa0 ma0 mt3 mr20">
-                        <li className={ listItemClass }><Link to="/" className={ linkClass }>On Ghost(Pro)</Link></li>
-                        <li className={ listItemClass }><Link to="/" className={ linkClass }>1-click Image</Link></li>
-                        <li className={ listItemClass }><Link to="/" className={ linkClass }>Install from CLI</Link></li>
-                        <li className={ listItemClass }><Link to="/" className={ linkClass }>Local development</Link></li>
-                        <li className={ listItemClass }><Link to="/" className={ linkClass }>Contribution</Link></li>
-                    </ul>
-                </div>
-            </div>
+            <a href="https://ghost.org/pricing" className="db w-50 pr20 pt7 pb7 pl30 relative tdn br b--whitegrey">
+                <Icon name="cloud-upload" className="absolute top-10 left-10 w13 h-auto fill-green" />
+                <h4 className={ Spirit.h4 + `darkgrey` }>Ready to upgrade to the best?</h4>
+                <p className={ Spirit.small + `midgrey mt1`}>Spend less time running your servers and more time running your site. <strong className="blue">Ghost(Pro)</strong> has got you covered.</p>
+            </a>
 
-            <div className="col-12 col-3-l">
-                <h3 className={ Spirit.h5 + `col-8` }>API</h3>
-                <div>
-                    <ul className="f7 list pa0 ma0 mt3 mr20">
-                        <li className={ listItemClass }><Link to="/" className={ linkClass }>Frontend SDKs</Link></li>
-                        <li className={ listItemClass }><Link to="/" className={ linkClass }>Client Libraries</Link></li>
-                        <li className={ listItemClass }><Link to="/" className={ linkClass }>Rest API</Link></li>
-                        <li className={ listItemClass }><Link to="/" className={ linkClass }>Tools</Link></li>
-                    </ul>
-                </div>
-            </div>
+            <a href="https://ghost.org/pricing" className="db w-50 pr20 pt7 pb7 pl30 relative tdn">
+                <Icon name="chat-double-bubble" className="absolute top-10 left-10 w13 h-auto fill-purple" />
+                <h4 className={ Spirit.h4 + `darkgrey` }>Looking for help or advice?</h4>
+                <p className={ Spirit.small + `midgrey mt1` }>Join the <strong>Ghost community</strong>  and meet thousands of other professional users and developers now</p>
+            </a>
 
-            <div className="col-12 col-3-l">
-                <h3 className={ Spirit.h5 + `col-8` }>Contact</h3>
-                <ul className="f7 list pa0 ma0 mt3">
-                    <li className={ listItemClass }><a href="https://forum.ghost.org" className={ linkClass }>Forum</a></li>
-                    <li className={ listItemClass }><a href="https://ghost.org/contact" className={ linkClass }>Contact</a></li>
-                </ul>
-            </div>
+        </section>
+
+        <section className={ `mw-xl center flex justify-between pt4 bt b--whitegrey mt-vw4 mt-vw1-l items-center`}>
+
+            <ul className="flex list pa0 ma0 items-center">
+                <li className={ listItemClass }><a href="https://ghost.org" className="dib pt2 mr6"><Logo /></a></li>
+                <li className={ listItemClass }><Link to="/" className={ linkClass }>Docs Home</Link></li>
+                <li className={ listItemClass }><a href="https://help.ghost.org" className={ linkClass }>Help Center</a></li>
+                <li className={ listItemClass }><a href="https://status.ghost.org" className={ linkClass }>Status</a></li>
+                <li className={ listItemClass }><a href="https://twitter.com/tryghost" className={ linkClass }>@TryGhost</a></li>
+            </ul>
+
+            <ul className="flex list pa0 ma0 items-center">
+                <li className={ listItemClass }><a href="http://ghost.org" className="link pa2 midgrey hover-blue dib mr0">Ghost.org</a></li>
+            </ul>
+
         </section>
     </footer>
 )

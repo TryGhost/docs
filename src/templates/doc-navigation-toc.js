@@ -191,7 +191,7 @@ class DocTemplate extends React.Component {
                             { leftSidebar }
                         </div>
 
-                        <div className="w-100">
+                        <div>
                             <div className="bg-white pt10 pb15 shadow-1 br4 br--bottom flex flex-column">
                                 <div className="flex w-100">
                                     <article className="flex-auto order-2 pl15 pr15 mw-content">
