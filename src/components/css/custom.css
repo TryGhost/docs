@@ -395,17 +395,25 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 /* Tutorials */
 /* ----------------------------------------------------------------------- */
 .bg-tutorials {
-    background: url(../../images/bg-concepts.svg) center center no-repeat, linear-gradient(60deg, #A4116E 0%, #E454C5 100%);
+    background: url(../../images/bg-concepts.svg) center center no-repeat, linear-gradient(60deg, #118CA4 0%, #54E4B6 100%);
+}
+
+.bg-tutorial-color {
+    background-color: #35BCAD;
 }
 
 /* FAQ */
 /* ----------------------------------------------------------------------- */
 .bg-faq {
-    background: url(../../images/bg-setup.svg) center center no-repeat, linear-gradient(60deg, #118CA4 0%, #54E4B6 100%);
+    background: url(../../images/bg-setup.svg) center center no-repeat, linear-gradient(60deg, #A4116E 0%, #E454C5 100%);
 }
 
 .faq-content {
     margin-top: -18px;
+}
+
+.faq-post-card-min-height {
+    min-height: 400px;
 }
 
 
