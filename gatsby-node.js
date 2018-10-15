@@ -197,10 +197,6 @@ exports.createPages = ({ graphql, actions }) => {
 
                 return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
                     const DocTemplate = path.resolve(`./src/templates/doc-navigation-toc.js`)
-                    // Exclude the default README.md pages from the api docs repo
-                    if (node.fields.slug.match(/readme\/$/i)) {
-                        return resolve()
-                    }
 
                     createPage({
                         path: node.fields.slug,

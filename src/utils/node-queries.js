@@ -35,11 +35,12 @@ const allGhostPosts = function allGhostPosts(tag, fields = defaultGhostFields) {
 }
 
 const allMarkdownPosts = function allMarkdownposts() {
+    /* eslint-disable no-useless-escape */
     return (`
         {
             allMarkdownRemark(
                 sort: {order: ASC, fields: [frontmatter___date]},
-                filter: {fields: {slug: {ne: "/data-schema/"}}}
+                filter: {fields: {slug: {regex: "/^(?!/data-schema\/).*(?<!README\/)$/"}}}
             ) {
                 edges {
                     node {
@@ -51,6 +52,7 @@ const allMarkdownPosts = function allMarkdownposts() {
             }
         }
         `)
+    /* eslint-enable no-useless-escape */
 }
 
 module.exports = {
