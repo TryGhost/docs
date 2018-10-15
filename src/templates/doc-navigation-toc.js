@@ -145,7 +145,7 @@ function PageHeader(props) {
         return (
             <div className={ bgClass }>
                 <div className={ Spirit.page.xl + `pt-vw5 pt-vw1-ns pb-vw1 white` }>
-                    <h1 className={ Spirit.h4 + `gh-integration-header-shadow` }>
+                    <h1 className={ Spirit.h4 + `gh-integration-header-shadow pl10` }>
                         <Link to={ mainLink } className={ `link dim ${subtitle ? `white-80 fw3` : `white`}` }>{ title }</Link>
                         { subtitle ? <Link to={ subLink } className="link white dim titleslash-white pl4 ml4 relative">{ subtitle }</Link> : null }
                     </h1>
@@ -184,56 +184,55 @@ class DocTemplate extends React.Component {
         return (
             <>
                 <MetaData data={ this.props.data } location={ this.props.location } type="article" />
-                <Layout bodyClass="bg-white" mainClass="bg-whitegrey-l2">
+                <Layout bodyClass="bg-whitegrey-l2" mainClass="bg-whitegrey-l2">
                     <PageHeader location={ this.props.location } />
                     
-                    <div className={ `${Spirit.page.xl} flex pb15 ${justification}` }>
-                        <div className="w-sidebar pt10 pr10 flex-shrink-0-l">
-                            { leftSidebar }
-                        </div>
-
-                        <div>
-                            <div className="bg-white pt10 pb15 shadow-1 br4 br--bottom flex flex-column">
-                                <div className="flex w-100">
-                                    <article className="flex-auto order-2 pl15 pr15 mw-content">
-                                        <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
-                                        <section className="post-content" dangerouslySetInnerHTML={ {
-                                            __html: post.html,
-                                        } } />
-
-                                    </article>
-                                    { rightSidebar ?
-                                        <div className="order-3 w-sidebar flex-shrink-0 dn db-l">
-                                            { rightSidebar }
-                                        </div>
-                                        : null }
+                    <div className={ `${Spirit.page.xl} ` }>
+                        <div className={`bg-white shadow-2 br4 br--bottom`}>
+                            <div className={ `flex ${justification} pb15`}>
+                                <div className="w-sidebar pt10 pl10 flex-shrink-0-l">
+                                    { leftSidebar }
                                 </div>
-                                <div className="mt15">
-                                    <div className="mw-content pl15 pr15">
-                                        <PrevNextSection
-                                            location={ this.props.location }
-                                            sidebar={ post.frontmatter.sidebar }
-                                            fm={ post.frontmatter }
-                                        />
-                                        <div className="pl10 relative bt b--whitegrey pt10">
-                                            <Icon name="bubble-single-rect" className="stroke-blue w5 h-auto absolute top-13 left-0" />
-                                            <h4 className={ Spirit.h4 + `mt1 nudge-top--2` }>Help us improve this page</h4>
-                                            <p className={ `${Spirit.small} mt1 midgrey` }>Please let us know what's working and what's not with this page.</p>
-                                            <div className="flex items-center">
-                                                <select name="feedback-type" className="db ba b--whitegrey whitney pa3 bg-white w-50 h10 mt4 mr4">
-                                                    <option>Feedback</option>
-                                                    <option>Issue</option>
-                                                    <option>Typo</option>
-                                                    <option>Praise</option>
-                                                    <option>Other</option>
-                                                </select>
-                                                <input id="globalnavsearch" name="email" type="text" className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-1-0 bg-white ba b--whitegrey mt4" placeholder="Email..." />
-                                            </div>
-                                            <textarea name="message" className="w-100 f8 pa3 h40 whitney db bg-white br3 ba b--whitegrey mt4 form-text" placeholder="Your message..."></textarea>
-                                            <button className="blue mt4 pa3 pl7 pr7 bg-lgr-blue white bn br3 whitney f8">Send</button>
-                                        </div>
+
+                                <article className="flex-auto order-2 pa15 mw-content pt10">
+                                    <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
+                                    <section className="post-content" dangerouslySetInnerHTML={ {
+                                        __html: post.html,
+                                    } } />
+
+                                </article>
+
+                                { rightSidebar ?
+                                    <div className="order-3 w-sidebar flex-shrink-0 dn db-l pt10">
+                                        { rightSidebar }
                                     </div>
+                                    : null }
+                            </div>
+                            <div className="bt b--whitegrey">
+                                <PrevNextSection
+                                    location={ this.props.location }
+                                    sidebar={ post.frontmatter.sidebar }
+                                    fm={ post.frontmatter }
+                                />
+                            </div>
+                        </div>
+                        <div className={ `bg-white shadow-2 br4 mt10 mb15` }>
+                            <div className="pa15 relative mw-content center">
+                                <Icon name="bubble-single-rect" className="stroke-blue w5 h-auto absolute top-18 left-6" />
+                                <h4 className={ Spirit.h4 + `mt1 nudge-top--2` }>Help us improve this page</h4>
+                                <p className={ `${Spirit.small} mt1 midgrey` }>Please let us know what's working and what's not with this page.</p>
+                                <div className="flex items-center">
+                                    <select name="feedback-type" className="db ba b--whitegrey whitney pa3 bg-white w-50 h10 mt4 mr4">
+                                        <option>Feedback</option>
+                                        <option>Issue</option>
+                                        <option>Typo</option>
+                                        <option>Praise</option>
+                                        <option>Other</option>
+                                    </select>
+                                    <input id="globalnavsearch" name="email" type="text" className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-1-0 bg-white ba b--whitegrey mt4" placeholder="Email..." />
                                 </div>
+                                <textarea name="message" className="w-100 f8 pa3 h40 whitney db bg-white br3 ba b--whitegrey mt4 form-text" placeholder="Your message..."></textarea>
+                                <button className="blue mt4 pa3 pl7 pr7 bg-lgr-blue white bn br3 whitney f8">Send</button>
                             </div>
                         </div>
                     </div>
