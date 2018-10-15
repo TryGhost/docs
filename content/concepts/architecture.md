@@ -10,7 +10,7 @@ Ghost is structured as a modern, decoupled web application with a sensible servi
 2. **A beautiful admin client app**
 3. **A simple, powerful front-end theme layer**
 
-These three areas work together to make every Ghost site function smoothely, but because they're decoupled there's plenty of room for customisation.
+These three areas work together to make every Ghost site function smoothly, but because they're decoupled there's plenty of room for customisation.
 
 
 ## How things fit together

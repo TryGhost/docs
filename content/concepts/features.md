@@ -5,19 +5,19 @@ sidebar: "concepts"
 
 Ghost comes with powerful features built directly into the core software which can be customised and configured based on the needs of each individual site.
 
-Here's a quick overview of the main features you'll probably be interested in as you're getting started. This isn't an exchaustive list, just some highlights:
+Here's a quick overview of the main features you'll probably be interested in as you're getting started. This isn't an exhaustive list, just some highlights:
 
 
 ## Developer-friendly API
 
 At its core Ghost is a self-consuming, RESTful JSON API with decoupled admin client and front-end. We provide lots of tooling to get a site running as quickly as possible, but at the end of the day it's **Just JSON** ™️, so if you want to use Ghost completely headless and write your own frontend or backend... you can!
 
-Equally, Ghost is heavily designed for performance. Generally 2-5 of the frontpage stories on HackerNews at any given time are served by Gh ost. It handles scale with ease and doesn't fall over as a result of traffic spikes.
+Equally, Ghost is heavily designed for performance. Generally 2-5 of the frontpage stories on HackerNews at any given time are served by Ghost. It handles scale with ease and doesn't fall over as a result of traffic spikes.
 
 
 ## A Serious Editor
 
-Ghost has the rich editor which every writer wants, but under the hood it delivers far more powerful than you would expect. All content is stored in a standardised JSON-based document storage format called MobileDoc, which includes support for extensible rich media objects called Cards.
+Ghost has the rich editor which every writer wants, but under the hood it delivers far more power than you would expect. All content is stored in a standardised JSON-based document storage format called MobileDoc, which includes support for extensible rich media objects called Cards.
 
 In simple terms you can think of it like having Slack integrations inside Medium's editor, stored sanely and fully accessible via API.
 
@@ -42,7 +42,7 @@ Set up your site with sensible user roles and permissions built-in from the star
 
 ## Custom Themes
 
-Ghost ships with a simple Handlebars.js-based front-end theme layer which is very straightforward to work with and surprisingly powerful. Many people stick with the default theme ([live demo](https://demo.ghost.io) / [source code](https://github.com/tryghost/casper)), which provides a clean magazine design - but this can be easily modified or entirely replaced. 
+Ghost ships with a simple Handlebars.js-based front-end theme layer which is very straightforward to work with and surprisingly powerful. Many people stick with the default theme ([live demo](https://demo.ghost.io) / [source code](https://github.com/tryghost/casper)), which provides a clean magazine design - but this can be easily modified or entirely replaced.
 
 The Ghost [Theme Marketplace](https://marketplace.ghost.org) provides a selection of pre-made third-party themes which can be installed with ease. Of course you can also build your own [Handlebars Theme](/api/handlebars-themes/) or use a [different front-end](/api/) altogether.
 
