@@ -215,9 +215,9 @@ class DocTemplate extends React.Component {
                                             sidebar={ post.frontmatter.sidebar }
                                             fm={ post.frontmatter }
                                         />
-                                        <div className="mt10 pl10 relative">
-                                            <Icon name="bubble-single-rect" className="stroke-blue w5 h-auto absolute top-2 left-0" />
-                                            <h4 className={ Spirit.h4 + `mt1` }>Help us improve this page</h4>
+                                        <div className="pl10 relative bt b--whitegrey pt10">
+                                            <Icon name="bubble-single-rect" className="stroke-blue w5 h-auto absolute top-13 left-0" />
+                                            <h4 className={ Spirit.h4 + `mt1 nudge-top--2` }>Help us improve this page</h4>
                                             <p className={ `${Spirit.small} mt1 midgrey` }>Please let us know what's working and what's not with this page.</p>
                                             <div className="flex items-center">
                                                 <select name="feedback-type" className="db ba b--whitegrey whitney pa3 bg-white w-50 h10 mt4 mr4">

@@ -10,7 +10,7 @@ class PrevNext extends React.Component {
         const { prev, next } = this.props
 
         return (
-            <div className="grid-12 bt bb b--whitegrey">
+            <div className="grid-12 bt b--whitegrey">
                 
                 {prev ? 
                     <Link to={ prev.link } className={ `col-6 flex pa10 pl0 tdn justify-start items-center blue nudge-left--1 prevnext-hover ba b--transparent` }>
