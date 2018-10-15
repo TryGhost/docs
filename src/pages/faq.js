@@ -6,6 +6,7 @@ import Layout from '../components/layouts/default'
 import FAQ from '../components/faq'
 import { Spirit } from '../components/spirit-styles'
 import MetaData from '../components/layouts/partials/meta-data'
+import Box from '../components/layouts/partials/box'
 
 class FAQPage extends React.Component {
     render() {
@@ -26,17 +27,26 @@ class FAQPage extends React.Component {
                     description={ description || this.props.data.site.siteMetadata.description }
                     image={ imageUrl }
                 />
-                <Layout title="FAQ" headerDividerStyle="shadow" bodyClass="bg-white">
-                    <div className="gh-bg-home bb b--whitegrey">
+                <Layout title="FAQ" headerDividerStyle="shadow">
+                    <div className="bg-faq bb b--whitegrey">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1` }>
-                            <h1 className={ Spirit.h4 + ``}>Frequently Asked Questions</h1>
+                            <h1 className={ Spirit.h4 + `pl10 white`}>Frequently Asked Questions</h1>
                         </div>
                     </div>
-                    <div className={ Spirit.page.xl + `mt-vw6 mt-vw2-ns`}>
-                        <div className="grid-12 gutter-40">
-                            {posts.map(({ node }) => (
-                                <FAQ key={node.id} post={node} />
-                            ))}
+                    <div className={ Spirit.page.xl }>
+                        <div className="br4 br--bottom shadow-1 bg-white pa10 center">
+                            <div className="mw-content pl15 pr15 center">
+                                <h4 className={ Spirit.h2 + `col-12 pb2 bb b--whitegrey mb5` }>Ghost(Pro)</h4>
+                                { posts.map(({ node }) => (
+                                    <FAQ key={ node.id } post={ node } />
+                                )) }
+                            </div>
+                            <div className="mw-content pl15 pr15 center mt20">
+                                <h4 className={ Spirit.h2 + `col-12 pb2 bb b--whitegrey mb5` }>Errors</h4>
+                                { posts.map(({ node }) => (
+                                    <FAQ key={ node.id } post={ node } />
+                                )) }
+                            </div>
                         </div>
                     </div>
                 </Layout>

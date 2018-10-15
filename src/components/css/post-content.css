@@ -740,7 +740,7 @@ Usage (In Ghost editor):
 .faq-content ol li::before {
     counter-increment: listitem;
     content: counter(listitem);
-    background: var(--lightgrey);
+    background: var(--blue);
     color: #fff;
     font-size: 12px;
     font-weight: 500;
@@ -753,6 +753,15 @@ Usage (In Ghost editor):
     position: absolute;
     left: 0;
     top: 2px;
+}
+
+.faq-content img {
+    border: 1px solid var(--whitegrey);
+}
+
+.faq-content > p:first-child {
+    border-bottom: 1px solid var(--whitegrey);
+    padding: 0 0 2.0rem;
 }
 
 /* Code Boxes

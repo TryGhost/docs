@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import getPostExcerpt from '../utils/post-excerpt'
+import { Spirit } from './spirit-styles'
 
 const FAQ = (props) => {
     const post = props.post
@@ -9,10 +10,10 @@ const FAQ = (props) => {
     const excerpt = getPostExcerpt(post)
 
     return (
-        <article className="flex flex-column items-start col-6">
-            <Link className="f5 pa2 pl0 pt0 link blue fw5" to={url}>{post.title} &raquo;</Link>
-            {excerpt ? <p className="ma0 f8 lh-copy measure-wide">{excerpt}</p> : null}
-        </article>
+        <Link to={url} className="f5 db tdn">
+            <h4 className={`${Spirit.p} link blue fw5`} to={url}>{post.title} &raquo;</h4>
+            {excerpt ? <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb10`}>{excerpt}</p> : null}
+        </Link>
     )
 }
 

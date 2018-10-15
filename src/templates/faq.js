@@ -19,43 +19,44 @@ class FAQ extends React.Component {
                 <MetaData data={this.props.data} location={this.props.location} type="article" />
                 <Layout bodyClass="bg-white" mainClass="bg-whitegrey-l2 pb15">
 
-                    <div className="gh-bg-home bb b--whitegrey">
+                    <div className="bg-faq bb b--whitegrey">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1` }>
-                            <h1 className={ Spirit.h4 }>
-                                <Link to="/faq/" className={ `link dim midgrey fw3` }>Frequently Asked Questions</Link>
-                                <span className="link white titleslash-grey pl4 ml4 relative"><Tags
+                            <h1 className={ Spirit.h4 + `pl10 white`}>
+                                <Link to="/faq/" className={ `link dim white fw3` }>Frequently Asked Questions</Link>
+                                <span className="white titleslash-white pl4 ml4 relative"><Tags
                                     post={ post }
                                     separator=" / "
                                     html={ true }
+                                    classes="white"
                                 /></span>
                             </h1>
                         </div>
                     </div>
 
                     <div className={ Spirit.page.xl }>
-                        <section className="bg-white br4 br--bottom shadow-1 flex">
+                        <section className="bg-white br4 br--bottom shadow-1">
                             
-                            <div className="flex flex-column mw-content pa20 pl10 pt15">
+                            <div className="mw-content pr20 pl6 pt15 pb15 center">
                                 <div className="flex items-start mb6">
-                                    <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 fw5 br-100 tc white bg-blue lh-1-0">?</div>
-                                    <h1 className="ma0 f4 nudge-top--2">{ post.title }</h1>
+                                    <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 fw5 br-100 tc white bg-darkgrey lh-1-0">?</div>
+                                    <h1 className={`${Spirit.h4} ma0 f4 nudge-bottom--2`}>{ post.title }</h1>
                                 </div>
 
                                 <div className="flex items-start">
-                                    <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 f8 fw5 br-100 tc blue ba b--blue">&raquo;</div>
+                                    <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 f8 fw5 br-100 tc darkgrey ba b--darkgrey">&raquo;</div>
                                     <section className="post-content faq-content" dangerouslySetInnerHTML={ { __html: post.html } } />
                                 </div>
                             </div>
                             
-                            <div className="pa15 pt0 pb3 pt15 pl12">
-                                { relatedPosts.length ?
-                                    <>
+                            { relatedPosts.length ?
+                                <div className="bt b--whitegrey">
+                                    <div className="mw-content pa15 center">
                                         <h4 className={ Spirit.h4 + `mb4` }>Related Questions</h4>
                                         <RelatedPosts relatedPosts={ relatedPosts } />
-                                    </> :
-                                    null
-                                }
-                            </div>
+                                    </div> 
+                                </div> :
+                                null
+                            }
                         </section>
                     </div>
 
