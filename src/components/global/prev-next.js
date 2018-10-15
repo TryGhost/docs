@@ -13,24 +13,24 @@ class PrevNext extends React.Component {
             <div className="grid-12 bt bb b--whitegrey">
                 
                 {prev ? 
-                    <Link to={ prev.link } className={ (next ? `br--left col-6` : `col-12`) + ` flex pa10 pl0 tdn justify-start items-center blue nudge-left--1 prevnext-hover ba b--transparent` }>
+                    <Link to={ prev.link } className={ `col-6 flex pa10 pl0 tdn justify-start items-center blue nudge-left--1 prevnext-hover ba b--transparent` }>
                         <Icon name="arrow-left" className="w5 h5 fill-blue" />
                         <div className="ml4">
                             { prev.group ? <h6 className="ma0 pa0 f-supersmall fw4 midgrey lh-1-5">{ prev.group }</h6> : null }
                             <p className={ Spirit.excerpt + `nt1 di` }>{ prev.title }</p>
                         </div>
                     </Link>
-                    : <div className="col-6 nudge-left--1"></div>}
+                    : <div className="col-6"></div>}
 
                 { next ?
-                    <Link to={ next.link } className={ (prev ? `br--right col-6` : `col-12`) + ` flex pr0 pa10 tdn justify-end items-center blue prevnext-hover ba b--transparent` }>
+                    <Link to={ next.link } className={ `col-6 flex pr0 pa10 tdn justify-end items-center blue prevnext-hover ba b--transparent` }>
                         <div className="tr mr4">
                             { next.group ? <h6 className="ma0 pa0 f-supersmall fw4 midgrey lh-1-5">{ next.group }</h6> : null }
                             <p className={ Spirit.excerpt + `nt1 di` }>{ next.title }</p>
                         </div>
                         <Icon name="arrow-right" className="w5 h5 fill-blue" />
                     </Link>
-                    : <div className="col-6 bl b--whitegrey"></div> }
+                    : <div className="col-6"></div> }
             </div>
         )
     }

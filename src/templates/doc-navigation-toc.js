@@ -215,27 +215,28 @@ class DocTemplate extends React.Component {
                                             sidebar={ post.frontmatter.sidebar }
                                             fm={ post.frontmatter }
                                         />
-                                        <h4 className={ Spirit.h4 + `mt15` }>Help us improve this page</h4>
-                                        <p className={ `${Spirit.small} mt1 midgrey` }>Please let us know what's working and what's not with this page.</p>
-                                        <div className="flex items-center">
-                                            <select name="feedback-type" className="db ba b--whitegrey whitney pa3 bg-white w-50 h10 mt4 mr4">
-                                                <option>Feedback</option>
-                                                <option>Issue</option>
-                                                <option>Typo</option>
-                                                <option>Praise</option>
-                                                <option>Other</option>
-                                            </select>
-                                            <input id="globalnavsearch" name="email" type="text" className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-1-0 bg-white ba b--whitegrey mt4" placeholder="Email..." />
+                                        <div className="mt10 pl10 relative">
+                                            <Icon name="bubble-single-rect" className="stroke-blue w5 h-auto absolute top-2 left-0" />
+                                            <h4 className={ Spirit.h4 + `mt1` }>Help us improve this page</h4>
+                                            <p className={ `${Spirit.small} mt1 midgrey` }>Please let us know what's working and what's not with this page.</p>
+                                            <div className="flex items-center">
+                                                <select name="feedback-type" className="db ba b--whitegrey whitney pa3 bg-white w-50 h10 mt4 mr4">
+                                                    <option>Feedback</option>
+                                                    <option>Issue</option>
+                                                    <option>Typo</option>
+                                                    <option>Praise</option>
+                                                    <option>Other</option>
+                                                </select>
+                                                <input id="globalnavsearch" name="email" type="text" className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-1-0 bg-white ba b--whitegrey mt4" placeholder="Email..." />
+                                            </div>
+                                            <textarea name="message" className="w-100 f8 pa3 h40 whitney db bg-white br3 ba b--whitegrey mt4 form-text" placeholder="Your message..."></textarea>
+                                            <button className="blue mt4 pa3 pl7 pr7 bg-lgr-blue white bn br3 whitney f8">Send</button>
                                         </div>
-                                        <textarea name="message" className="w-100 f8 pa3 h40 whitney db bg-white br3 ba b--whitegrey mt4 form-text" placeholder="Your message..."></textarea>
-                                        <button className="blue mt4 pa3 pl7 pr7 bg-lgr-blue white bn br3 whitney f8">Send</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    {/* <Icon name="bubble-single-rect" className="stroke-blue w11 h-auto" /> */ }
 
                 </Layout>
             </>
