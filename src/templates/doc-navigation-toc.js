@@ -184,9 +184,10 @@ class DocTemplate extends React.Component {
         return (
             <>
                 <MetaData data={ this.props.data } location={ this.props.location } type="article" />
-                <Layout>
+                <Layout bodyClass="bg-white" mainClass="bg-whitegrey-l2">
                     <PageHeader location={ this.props.location } />
-                    <div className={ `${Spirit.page.xl} flex ${justification}` }>
+                    
+                    <div className={ `${Spirit.page.xl} flex pb15 ${justification}` }>
                         <div className="w-sidebar pt10 pr10 flex-shrink-0-l">
                             { leftSidebar }
                         </div>
@@ -207,36 +208,34 @@ class DocTemplate extends React.Component {
                                         </div>
                                         : null }
                                 </div>
-                                <PrevNextSection
-                                    location={ this.props.location }
-                                    sidebar={ post.frontmatter.sidebar }
-                                    fm={ post.frontmatter }
-                                />
-                            </div>
-
-                            {/* <div className={ (!rightSidebar ? `mw-content ` : ``) + `bg-white mt10 shadow-1 br4 flex flex-column pt10 pb15 pl15 pr15`}>
-                                <div className="">
-                                    <Icon name="bubble-single-rect" className="stroke-blue w8 h8" />
-                                    <h1 className={ `${Spirit.h4} mt2` }>Did you find this page helpful?</h1>
-                                    <p className={ `${Spirit.p} mt2 midgrey measure-wide` }>
-                                        We're always looking for advice to help improve our documentation!<br />
-                                        Please let us know what's working (or what's not!).
-                                        We're constantly iterating thanks to the feedback we receive.
-                                    </p>
-                                    <select name="feedback-type" className="db ba b--whitegrey whitney pa3 bg-whitegrey-l2 w-50 mt4">
-                                        <option>Feedback</option>
-                                        <option>Issue</option>
-                                        <option>Typo</option>
-                                        <option>Praise</option>
-                                        <option>Other</option>
-                                    </select>
-                                    <input id="globalnavsearch" name="email" type="text" className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-1-0 bg-whitegrey-l2 ba b--whitegrey mt4" placeholder="Email..." />
-                                    <textarea name="message" className="w-50 f8 pa3 h40 whitney db bg-whitegrey-l2 br3 ba b--whitegrey mt4"></textarea>
+                                <div className="mt15">
+                                    <div className="mw-content pl15 pr15">
+                                        <PrevNextSection
+                                            location={ this.props.location }
+                                            sidebar={ post.frontmatter.sidebar }
+                                            fm={ post.frontmatter }
+                                        />
+                                        <h4 className={ Spirit.h4 + `mt15` }>Help us improve this page</h4>
+                                        <p className={ `${Spirit.small} mt1 midgrey` }>Please let us know what's working and what's not with this page.</p>
+                                        <div className="flex items-center">
+                                            <select name="feedback-type" className="db ba b--whitegrey whitney pa3 bg-white w-50 h10 mt4 mr4">
+                                                <option>Feedback</option>
+                                                <option>Issue</option>
+                                                <option>Typo</option>
+                                                <option>Praise</option>
+                                                <option>Other</option>
+                                            </select>
+                                            <input id="globalnavsearch" name="email" type="text" className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-1-0 bg-white ba b--whitegrey mt4" placeholder="Email..." />
+                                        </div>
+                                        <textarea name="message" className="w-100 f8 pa3 h40 whitney db bg-white br3 ba b--whitegrey mt4 form-text" placeholder="Your message..."></textarea>
+                                        <button className="blue mt4 pa3 pl7 pr7 bg-lgr-blue white bn br3 whitney f8">Send</button>
+                                    </div>
                                 </div>
-                            </div> */}
+                            </div>
                         </div>
-
                     </div>
+
+                    {/* <Icon name="bubble-single-rect" className="stroke-blue w11 h-auto" /> */ }
 
                 </Layout>
             </>
