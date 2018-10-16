@@ -1,30 +1,20 @@
 ---
-title: "Principles"
+title: "Development Principles"
 sidebar: "concepts"
 ---
 
-## This is the second heading
+## What makes it into core?
 
-Spicy jalapeno cupidatat chicken ut filet mignon sausage ut boudin nulla reprehenderit strip steak proident cillum incididunt short loin cow. Pig in pastrami, leberkas eiusmod enim bresaola do. Filet mignon officia quis kevin pork, swine strip steak excepteur hamburger chicken pork chop boudin shankle. Velit chicken pig in cupim kielbasa jerky. Bresaola excepteur veniam, andouille magna brisket aliquip nostrud jerky.
+If you're trying to determine whether or not a feature you're interested in will be implemented in Ghost core, there are 4 key principles:
 
-```javascript
-makeArray() {
-    // Hey hey what can I do
-    const foo = []
-    bar.split('').forEach(letter => {
-      foo.push(letter)
-    })
-    return foo
-}
-```
+Is it fundamentally core to publishing digital content? Would it likely be useful to the majority of our user base? If yes, then it will probably be in Ghost core. E.g I18n, post scheduling, etc.
 
-### This is the third heading
+Is it so large and complex that other companies have entire teams and infrastructures dedicated to it? Then it will probably be provided through 3rd party integrations. E.g. Comments, and media management.
 
-Pork chop ribeye ut chicken buffalo proident minim leberkas cupim adipisicing burgdoggen incididunt pastrami cupidatat. Prosciutto kevin dolore labore ham, cupidatat pork loin fatback picanha irure ad short ribs duis. Cupidatat excepteur jerky doner, incididunt consectetur turkey pariatur. Culpa consectetur cillum shank ham hock anim pastrami ex tempor eu. Fatback strip steak pig, bacon salami drumstick ut capicola short loin flank.
+Is it only relevant to a small group, or for a short time / one off use? If yes, it is probably app territory. E.g. XML-RPC, Import tools
 
-Jowl dolor duis, cupidatat pork tempor nostrud incididunt short loin laborum. Duis nostrud fatback ribeye consequat ad. Proident pancetta ut tempor. Short loin officia eiusmod beef. Sunt tongue pig venison, sint mollit ad excepteur velit adipisicing flank pancetta pariatur. Dolor t-bone swine alcatra fatback ribeye, mollit dolore incididunt ullamco.
+Is it only possible to achieve by adding to or modifying core? If yes, then it will be considered in terms of benefit vs complexity.
 
-Spare ribs aute fugiat, pariatur andouille labore nulla exercitation. Aliqua picanha sirloin consequat drumstick sint exercitation pork nisi et. Dolore swine fugiat pork salami proident. Bacon excepteur filet mignon labore pariatur in in nulla magna fugiat prosciutto. Laboris sint ground round, pancetta ipsum in pariatur voluptate fatback andouille velit shoulder flank quis sausage.
+These are the guiding principles, they are somewhat subjective but they provide a framework for anyone to use to interpret whether or not a feature might be considered for Ghost core. There will always be exceptions.
 
-Hamburger ham shank est, officia qui capicola proident. Ribeye dolore prosciutto sirloin alcatra. Rump short ribs quis ex fugiat proident incididunt irure t-bone meatball veniam sirloin meatloaf. Tongue anim sint pancetta bresaola sirloin.
-Does your lorem ipsum text long for something a little meatier? Give our generator a try…
+When making a feature request, keep in mind that Ghost is a publishing platform for the masses. It's aim is to be the go-to solution for publishing content to the web - we want to do one thing, REALLY well. The aim of the Ghost architecture is to provide for the most common use cases in Ghost core and provide for extensibility so that less common use cases can be catered for with apps and extensions.

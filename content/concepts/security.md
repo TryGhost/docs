@@ -44,3 +44,12 @@ Install admin / frontend on different domains
 ### Server Hardening
 
 Ensure proper user permissions, or just use Ghost-CLI
+
+
+## Privacy
+
+Ghost as an organisation is profitable, wholly independent, and only makes revenue directly from its customers. It has zero business interests of any kind predicated on selling private user data to third parties.
+
+In addition the Ghost software itself contains [a plainly written summary](https://github.com/TryGhost/Ghost/blob/master/PRIVACY.md) of every privacy-affecting feature within Ghost, along with detailed configuration options allowing any and all of them to be disabled at will.
+
+We take user privacy extremely seriously.
