@@ -7,7 +7,7 @@ import ImageMeta from './image-meta'
 class WebsiteMeta extends React.Component {
     render() {
         const { siteMetadata } = this.props.data.site
-        const { canonical, title, description, image } = this.props
+        const { canonical, title, description, image , type } = this.props
 
         return (
             <>
@@ -27,7 +27,7 @@ class WebsiteMeta extends React.Component {
                     <meta name="twitter:site" content="@tryghost" />
                     <script type="application/ld+json">{`
                         "@context": "https://schema.org",
-                        "@type": "WebSite",
+                        "@type": ${type && type === `series` ? `"Series"` : `"WebSite"`},
                         "publisher": {
                             "@type": "Organization",
                             "name": "${siteMetadata.title}",
@@ -67,6 +67,7 @@ WebsiteMeta.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     image: PropTypes.string,
+    type: PropTypes.string,
 }
 
 export default WebsiteMeta

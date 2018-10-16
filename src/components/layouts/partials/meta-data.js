@@ -24,7 +24,7 @@ class MetaData extends React.Component {
                     <ArticleMetaMD data={this.props.data} canonical={canonical} />
                 )
             }
-        } else if (type === `website`) {
+        } else if (type === `website` || type === `series`) {
             return (
                 <WebsiteMeta
                     data={ this.props.data }
@@ -32,6 +32,7 @@ class MetaData extends React.Component {
                     title={ title }
                     description={ description }
                     image={ image }
+                    type={ type }
                 />
             )
         }
