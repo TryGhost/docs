@@ -164,21 +164,17 @@ class DocTemplate extends React.Component {
         post.frontmatter.sidebar = post.frontmatter.sidebar || ``
         post.frontmatter.toc = post.frontmatter.toc === false ? false : true
 
-        var leftSidebar, rightSidebar, justification
+        var leftSidebar, rightSidebar
 
         if (post.frontmatter.sidebar && post.frontmatter.toc) { // Layout #1: sidebar and TOC
             leftSidebar = <NavBar location={ this.props.location } sidebar={ post.frontmatter.sidebar }/>
             rightSidebar = <TOC headingsOffset="-200" className="pr10" listClasses="mt3" />
-            justification = `justify-between`
         } else if (post.frontmatter.sidebar || post.frontmatter.toc) { // Layout #2: sidebar only
             if (post.frontmatter.sidebar) {
                 leftSidebar = <NavBar location={ this.props.location } sidebar={ post.frontmatter.sidebar } />
             } else {
                 leftSidebar = <TOC headingsOffset="-200" listClasses="lefty" showHeading={ false } />
             }
-            justification = `justify-start`
-        } else {
-            justification = `justify-start`
         }
 
         return (
@@ -189,7 +185,7 @@ class DocTemplate extends React.Component {
 
                     <div className={ `${Spirit.page.xl} ` }>
                         <div className={`bg-white shadow-2 br4 br--bottom`}>
-                            <div className={ `flex ${justification} pb15`}>
+                            <div className={ `flex pb15`}>
                                 <div className="w-sidebar pt10 pl10 flex-shrink-0-l">
                                     { leftSidebar }
                                 </div>
@@ -201,7 +197,6 @@ class DocTemplate extends React.Component {
                                     } } />
 
                                 </article>
-
                                 { rightSidebar ?
                                     <div className="order-3 w-sidebar flex-shrink-0 dn db-l pt10">
                                         { rightSidebar }
