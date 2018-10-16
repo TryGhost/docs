@@ -69,7 +69,7 @@ routes:
   ```
       
 
-For example, to set a custom home page on `/` as well as about pages at `about/careers` and `about/team` then use routes to define the URL routing. 
+For example, to set a custom home page on `/` as well as about pages at `about/careers` and `about/team` then use routes to define the URL routing. Read more about [custom pages](https://docs.ghost.org/tutorials/custom-home-page/). 
 ```
 routes:
   /: home
@@ -77,8 +77,6 @@ routes:
   /about/team/: about-team
   ```
     
-Read more about this example and more in the [custom routes tutorial](https://docs.ghost.org/tutorials/custom-home-page/). 
-
 ---
 
 ## Collections
@@ -87,11 +85,7 @@ Collections allow you to create groups of posts that match a filter. A collectio
 
 ### Content structure
 
-It's possible to have a single collection that contains all posts (like the default collection). Alternatively you can use multiple collections to split your site into distinct areas such as `/blog/` and `/podcast/`.
-
-> Follow the collections tutorial to create your own content collections
-
-Structure:
+It's possible to have a single collection that contains all posts (like the default collection). Alternatively you can use multiple collections to split your site into distinct areas such as `/blog/` and `/podcast/`. Structure:
 
 ```
 collections:
@@ -103,7 +97,7 @@ collections:
   template:  # template or list of templates to use (optional)
   ```
 
-Ordering collections in the `routes.yaml` file is important. Posts that match the filters of multiple collections appears within the first collection listed with a match, and not in other collections.
+Ordering collections in the `routes.yaml` file is important. Posts that match the filters of multiple collections appears within the first collection listed with a match, and not in other collections. Read more about [creating custom collections](https://docs.ghost.org/tutorials/creating-content-collections/). 
 
 ---
 
@@ -124,16 +118,13 @@ taxonomies:
 * the `/url/{slug}/` is the permalink for that taxonomy, 
 * and `{slug}` represents the URL value of the `tag` or the `author`.
 
-In the Ghost theme layer, template files can be used to specify how a particular tag or author’s posts are rendered at the permalink.
-
-
-> Use the custom taxonomies tutorial to set up your own
+In the Ghost theme layer, template files can be used to specify how a particular tag or author’s posts are rendered at the permalink. Find out more about changing. Read more about [custom taxonomies](https://docs.ghost.org/tutorials/change-url-for-tags-authors/). 
 
 ---
 
 ## Properties
 
-Now you have a concept of how routes, collections and taxonomies work at a high level, it’s time to dig into the properties that you can utilise in the routes.yaml file for ultimate flexibility in configuring your Ghost publication. 
+Now you have a concept of how routes, collections and taxonomies work at a high level, it’s time to dig into the properties that you can utilise in the `routes.yaml` file for ultimate flexibility in configuring your Ghost publication. 
 
 
 ### controller (channels)
@@ -236,29 +227,22 @@ routes:
 
 ### index URL
 
-The index URL property (or collection "key") determines where the archive pages for the collection appear. 
+The index URL property (or collection "key") determines where the archive pages for a collection appear. 
 
-For example, if the `url` config is equal to https://example.com/ and the following collection config is set:
+For example, in the following example, the index URL is `/blog/`:
 ```
 collections:
   /blog/:
     permalink: /blog/{slug}/
 ```
 
-then the archive URLs for the collection looks like this:
+The trailing slash is required, so `/blog/:` is valid, but `/blog:` is not. The index URL will also include archive URLs:
 
-* https://example.com/blog/ -> `index.hbs`
-* https://example.com/blog/page/2 -> `index.hbs`
+* https://example.com/blog/ 
+* https://example.com/blog/page/2
 
-The trailing slash is required, so `/blog/:` is valid but `/blog:` is not. If the trailing slash is missed you'll get an error when uploading the `routes.yaml` file.
+Ghost will use the default template to render these routes. For example, `index.hbs` for `/blog:/` and `home.hbs` for `/:` - unless specific templates are set using the [template](http://docs.ghost.org/concepts/routing/#template/) property. 
 
-**Root collections**
-When a root collection exists (`/:`) Ghost renders `home.hbs` for the first page, if the template is available. For example:
-```
-collections:
-  /:
-    permalink: /posts/{slug}/
-```
 
 ### permalink
 
@@ -294,6 +278,6 @@ collections:
 
 ## Further reading
 
-There are infinite ways to configure a Ghost publication, but some of the most popular examples have been documented with full [tutorials](https://docs.ghost.org/tutorials/). 
+There are infinite ways to configure a Ghost publication, but some of the most popular examples have been documented over at the [tutorials](https://docs.ghost.org/tutorials/) page. 
 
-Since Dynamic Routing with Ghost is so flexible, with endless configuration possibilities, errors can sometimes occur. Try searching this site or using the [FAQs](https://docs.ghost.org/faq/) if you encounter any issues.
+Since Dynamic Routing is so flexible with endless configuration possibilities, errors can sometimes occur. Try searching this site or using the [FAQs](https://docs.ghost.org/faq/) if you encounter any issues configuring your publication.
