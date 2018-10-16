@@ -9,7 +9,6 @@ keywords:
     - local
     - install
     - development
-sidebar: handlebars
 ---
 
 A complete guide to install an instance of Ghost locally for development
@@ -165,11 +164,10 @@ gscan -z /path/to/downloads/theme.zip
 
 GScan can also be accessed at [gscan.ghost.org](https://gscan.ghost.org/), where you can sign up for the latest updates as a Ghost theme developer.
 
-## What's next 👉
+## What's next
 
 To summarise, in this section you installed the Ghost CLI and installed Ghost locally — congrats! You can now put Ghost through it’s paces and see what it’s all about, or jump right into developing a custom Ghost theme.
 
-Remember, local installs are not suitable for production. If you decide to deploy to production, [follow this guide](https://docs.ghost.org/install/ubuntu/).
+👉 Remember, local installs are not suitable for production. If you decide to deploy to production, [follow this guide](https://docs.ghost.org/install/ubuntu/).
 
-For more information about theme development, read the [Handlebars theme documentation](https://docs.ghost.org/api/handlebars-themes/) and check out the [tutorials](https://docs.ghost.org/tutorials/).
-
+For more information about theme development read the [Handlebars theme documentation](https://docs.ghost.org/api/handlebars-themes/) and check out the [tutorials](https://docs.ghost.org/tutorials/).
