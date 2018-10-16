@@ -766,6 +766,57 @@ Usage (In Ghost editor):
     padding: 0 0 2.0rem;
 }
 
+/* Tutorials steps */
+/* ---------------------------------------------------------- */
+.tutorial-content {
+    counter-reset: headingitem;
+}
+
+.tutorial-content h2 {
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: var(--vr-5);
+    padding-top: var(--navbar-size);
+    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
+    letter-spacing: -0.4px;
+    color: #35BCAD;
+}
+
+.tutorial-content h2:before {
+    counter-increment: headingitem;
+    content: counter(headingitem);
+    position: absolute;
+    left: -36px;
+    width: 24px;
+    height: 24px;
+    font-size: 1.4rem;
+    border-radius: 100%;
+    background: #35BCAD;
+    color: #ffffff;
+    top: 96px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    line-height: 1.8em;
+}
+
+.tutorial-content h2:last-of-type {
+    color: var(--darkgrey);
+    padding-top: calc(var(--navbar-size) / 2);
+    margin: calc(var(--vr-6)) 0 0;
+}
+
+.tutorial-content h2:last-of-type:before {
+    content: "";
+    background: none;
+    top: 30px;
+    width: 100%;
+    left: 0;
+    border-top: 1px solid var(--whitegrey);
+    border-radius: 0;
+}
+
 /* Code Boxes
 /* ---------------------------------------------------------- */
 
