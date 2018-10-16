@@ -141,23 +141,32 @@ exports.createPages = ({ graphql, actions }) => {
 
                     const items = result.data.allGhostPost.edges
 
-                    // Create a tags archive page
+                    // Create a tags archive page per primary internal tag as defined per ghostPostToQuery
+                    // The URL of each tags archive page will contain the current internal tag slug and
+                    // the tag slug, e. g. `/faq/errors/` or `/tutorials/themes/`
                     if (tagsTemplate) {
-                        let primaryTags = []
+                        let tagArchives = []
 
                         _.forEach(items, ({ node }) => {
-                            primaryTags.push(node.tags.filter(tag => !tag.slug.match(/^hash-/))[0])
+                            // Remove all internal tags
+                            const filteredTags = node.tags.filter(tag => !tag.slug.match(/^hash-/))
+
+                            _.forEach(filteredTags, tag => tagArchives.push(tag))
                         })
 
-                        primaryTags = _.uniqBy(_.compact(primaryTags), `slug`)
+                        // Remove invalid values and duplicates
+                        tagArchives = _.uniqBy(_.compact(tagArchives), `slug`)
 
-                        _.forEach(primaryTags, (tag) => {
+                        _.forEach(tagArchives, (tag) => {
                             createPage({
                                 path: `${prefix}${tag.slug}/`,
                                 component: path.resolve(tagsTemplate),
                                 context: {
+                                    // Data passed to context is available
+                                    // in page queries as GraphQL variables.
                                     tagSlug: tag.slug,
                                     tagName: tag.name,
+                                    tagLink: path.join(prefix, tag.slug),
                                 },
                             })
                         })

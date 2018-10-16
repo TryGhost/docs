@@ -23,19 +23,21 @@ class FAQ extends React.Component {
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1` }>
                             <h1 className={ Spirit.h4 + `pl10 white`}>
                                 <Link to="/faq/" className={ `link dim white fw3` }>Frequently Asked Questions</Link>
-                                <span className="white titleslash-white pl4 ml4 relative"><Tags
+                                <Tags
                                     post={ post }
-                                    separator=" / "
+                                    separator="false"
                                     html={ true }
-                                    classes="white"
-                                /></span>
+                                    classes="white titleslash-white pl4 ml4 relative"
+                                    linkToPrefix="faq"
+                                    linkClasses="link dim white"
+                                />
                             </h1>
                         </div>
                     </div>
 
                     <div className={ Spirit.page.xl }>
                         <section className="bg-white br4 br--bottom shadow-1">
-                            
+
                             <div className="mw-content pr20 pl6 pt15 pb15 center">
                                 <div className="flex items-start mb6">
                                     <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 fw5 br-100 tc white bg-darkgrey lh-1-0">?</div>
@@ -47,13 +49,13 @@ class FAQ extends React.Component {
                                     <section className="post-content faq-content" dangerouslySetInnerHTML={ { __html: post.html } } />
                                 </div>
                             </div>
-                            
+
                             { relatedPosts.length ?
                                 <div className="bt b--whitegrey">
                                     <div className="mw-content pa15 center">
                                         <h4 className={ Spirit.h4 + `mb4` }>Related Questions</h4>
                                         <RelatedPosts relatedPosts={ relatedPosts } />
-                                    </div> 
+                                    </div>
                                 </div> :
                                 null
                             }

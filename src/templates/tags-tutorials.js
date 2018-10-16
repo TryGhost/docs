@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Link from 'gatsby-link'
 
 import Layout from '../components/layouts/default'
 import PostCard from '../components/postcard'
@@ -11,7 +12,7 @@ import MetaData from '../components/layouts/partials/meta-data'
 class TutorialsTags extends React.Component {
     render() {
         const posts = this.props.data.allGhostPost.edges
-        const { tagName } = this.props.pageContext
+        const { tagName, tagLink } = this.props.pageContext
 
         // TODO: Replace with real title and description for FAQPage
         const title = `Tutorials - ${tagName} - ${this.props.data.site.siteMetadata.title}`
@@ -31,7 +32,12 @@ class TutorialsTags extends React.Component {
                 <Layout title="Tutorials" headerDividerStyle="shadow">
                     <div className="bg-tutorials">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1 white` }>
-                            <h1 className={ Spirit.h4 + `gh-integration-header-shadow pl10` }>Tutorials - {tagName}</h1>
+                            <h1 className={Spirit.h4 + `gh-integration-header-shadow pl10`}>
+                                <Link to="/tutorials/" className={`link dim white fw3`}>Tutorials</Link>
+                                <span className="white titleslash-white pl4 ml4 relative">
+                                    <Link to={tagLink} className="link dim white">{tagName}</Link>
+                                </span>
+                            </h1>
                         </div>
                     </div>
                     <div className={ Spirit.page.xl + `mt-vw5 mt-vw2-ns` }>
@@ -63,6 +69,7 @@ TutorialsTags.propTypes = {
     }).isRequired,
     pageContext: PropTypes.shape({
         tagName: PropTypes.string.isRequired,
+        tagLink: PropTypes.string.isRequired,
     }).isRequired,
 }
 
