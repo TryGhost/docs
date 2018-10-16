@@ -13,8 +13,8 @@ class SetupBox extends React.Component {
         return (
             <Box className="col-12 col-4-ns pa8 tdn middarkgrey setup-box-min-height" radius="4" to={ this.props.to }>
                 <Icon name={ this.props.icon } className={ this.props.iconClass } />
-                <h4 className={ Spirit.h4 + `middarkgrey ` + this.props.headingClass }>{ this.props.title }</h4>
-                <p className={ Spirit.small + `mt1 midgrey-l2` }>{ this.props.children }</p>
+                <h4 className={ Spirit.h4 + `darkgrey ` + this.props.headingClass }>{ this.props.title }</h4>
+                <p className={ Spirit.small + `mt1 midgrey` }>{ this.props.children }</p>
             </Box>
         )
     }

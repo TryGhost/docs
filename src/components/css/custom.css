@@ -402,6 +402,32 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     background-color: #35BCAD;
 }
 
+.tutorial-featured-post {
+    border-top: 4px solid #35BCAD;
+}
+
+.tutorial-post-card {
+    min-height: 400px;
+}
+
+.tutorial-post-card h2 {
+    transition: all 0.4s ease;
+}
+
+.tutorial-post-card:hover h2 {
+    color: #35BCAD;
+}
+
+.tutorial-feature-image {
+    width: 24px;
+    height: auto;
+}
+
+.tutorial-feature-image g,
+.tutorial-feature-image path {
+    stroke: #35BCAD;
+}
+
 /* FAQ */
 /* ----------------------------------------------------------------------- */
 .bg-faq {
@@ -410,10 +436,6 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 .faq-content {
     margin-top: -18px;
-}
-
-.faq-post-card-min-height {
-    min-height: 400px;
 }
 
 
