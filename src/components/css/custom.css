@@ -358,6 +358,33 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     border-radius: 0 2px 2px 0;
 }
 
+.nav-sidebar:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--whitegrey-l2);
+    width: 10000px;
+    /* z-index: -999; */
+}
+
+.nav-sidebar:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, var(--whitegrey-l2) 0%, rgba(0, 0, 0, 0.015) 100%);
+    border-right: 1px solid var(--whitegrey-l1);
+    width: 8px;
+    /* z-index: -997; */
+}
+
+.z--999 {
+    z-index: -999;
+}
+
 /* ul .sidebarlink-active:after {
     content: '';
     display: block;

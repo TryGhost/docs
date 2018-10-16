@@ -145,7 +145,7 @@ function PageHeader(props) {
         return (
             <div className={ bgClass }>
                 <div className={ Spirit.page.xl + `pt-vw5 pt-vw1-ns pb-vw1 white` }>
-                    <h1 className={ Spirit.h4 + `gh-integration-header-shadow pl10` }>
+                    <h1 className={ Spirit.h4 + `gh-integration-header-shadow` }>
                         <Link to={ mainLink } className={ `link dim ${subtitle ? `white-80 fw3` : `white`}` }>{ title }</Link>
                         { subtitle ? <Link to={ subLink } className="link white dim titleslash-white pl4 ml4 relative">{ subtitle }</Link> : null }
                     </h1>
@@ -184,7 +184,7 @@ class DocTemplate extends React.Component {
         return (
             <>
                 <MetaData data={ this.props.data } location={ this.props.location } type="article" />
-                <Layout bodyClass="bg-whitegrey-l2" mainClass="bg-whitegrey-l2">
+                <Layout bodyClass="bg-whitegrey-l2" mainClass="bg-white z--999">
                     <PageHeader location={ this.props.location } />
 
                     <div className={ `${Spirit.page.xl} ` }>
