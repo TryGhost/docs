@@ -3,28 +3,52 @@ title: "Reporting Vulnerabilities"
 sidebar: "concepts"
 ---
 
-## This is the second heading
+How to take part in responsible disclosure to the Ghost Security team
 
-Spicy jalapeno cupidatat chicken ut filet mignon sausage ut boudin nulla reprehenderit strip steak proident cillum incididunt short loin cow. Pig in pastrami, leberkas eiusmod enim bresaola do. Filet mignon officia quis kevin pork, swine strip steak excepteur hamburger chicken pork chop boudin shankle. Velit chicken pig in cupim kielbasa jerky. Bresaola excepteur veniam, andouille magna brisket aliquip nostrud jerky.
+Potential security vulnerabilities can be reported directly us at `security@ghost.org`. The Ghost Security Team communicates privately and works in a secured, isolated repository for tracking, testing, and resolving security-related issues.
 
-```javascript
-makeArray() {
-    // Hey hey what can I do
-    const foo = []
-    bar.split('').forEach(letter => {
-      foo.push(letter)
-    })
-    return foo
-}
-```
 
-### This is the third heading
+## Responsible Disclosure Guidelines
 
-Pork chop ribeye ut chicken buffalo proident minim leberkas cupim adipisicing burgdoggen incididunt pastrami cupidatat. Prosciutto kevin dolore labore ham, cupidatat pork loin fatback picanha irure ad short ribs duis. Cupidatat excepteur jerky doner, incididunt consectetur turkey pariatur. Culpa consectetur cillum shank ham hock anim pastrami ex tempor eu. Fatback strip steak pig, bacon salami drumstick ut capicola short loin flank.
+The Ghost Security team is committed to working with security researchers to verify, reproduce and respond to legitimate reported vulnerabilities.
 
-Jowl dolor duis, cupidatat pork tempor nostrud incididunt short loin laborum. Duis nostrud fatback ribeye consequat ad. Proident pancetta ut tempor. Short loin officia eiusmod beef. Sunt tongue pig venison, sint mollit ad excepteur velit adipisicing flank pancetta pariatur. Dolor t-bone swine alcatra fatback ribeye, mollit dolore incididunt ullamco.
+- Provide details of the vulnerability, including information needed to reproduce and validate the vulnerability and a Proof of Concept
+- Make a good faith effort to avoid privacy violations, destruction and modification of data on live sites
+- Give reasonable time to correct the issue before making any information public
 
-Spare ribs aute fugiat, pariatur andouille labore nulla exercitation. Aliqua picanha sirloin consequat drumstick sint exercitation pork nisi et. Dolore swine fugiat pork salami proident. Bacon excepteur filet mignon labore pariatur in in nulla magna fugiat prosciutto. Laboris sint ground round, pancetta ipsum in pariatur voluptate fatback andouille velit shoulder flank quis sausage.
+Security issues always take precedence over bug fixes and feature work. We can and do mark releases as "urgent" if they contain serious security fixes.
 
-Hamburger ham shank est, officia qui capicola proident. Ribeye dolore prosciutto sirloin alcatra. Rump short ribs quis ex fugiat proident incididunt irure t-bone meatball veniam sirloin meatloaf. Tongue anim sint pancetta bresaola sirloin.
-Does your lorem ipsum text long for something a little meatier? Give our generator a try…
+We will publicly acknowledge any report that results in a security commit to https://github.com/TryGhost/Ghost
+  
+
+## Issue Triage
+
+We're always interested in hearing about any reproducible vulnerability that affects the security of Ghost users, including...
+
+- Cross Site Scripting (XSS)
+- Cross Site Request Forgery (CSRF)
+- Server Side Request Forgery (SSRF)
+- Remote Code Execution (RCE)
+- SQL Injection (SQLi)
+
+#### However, we're generally _not_ interested in...
+
+- [Privelige escalation](#xss--privilege-escalation-attacks) as result of trusted users publishing arbitrary JavaScript<sup><a href="#xss--privilege-escalation-attacks">1</a><sup>
+- HTTP sniffing or HTTP tampering exploits
+- Open API endpoints serving public data
+- Ghost version number disclosure
+- Brute force, DoS, DDoS, phishing, text injection, or social engineering attacks.
+- Output from automated scans
+- Clickjacking with minimal security implications
+
+#### Privilege escalation attacks
+
+Ghost is a content management system and all users are considered to be privileged/trusted. A user can only obtain an account and start creating content after they have been invited by the site owner or similar adminstrator-level user.
+
+A basic feature of Ghost as a CMS is to allow content creators to make use of scripts, SVGs, or embedded content that is required for the content to display as intended. Because of this there will always be the possibility of "XSS" attacks, albeit only from users that have been trusted to build the site's content.
+
+Ghost's admin application does a lot to ensure that unknown scripts are not run within the the admin application itself, however that only protects one side of a Ghost site. If the front-end (the rendered site that anonymous visitors see) shares the same domain as the admin application then browsers do not offer sufficient protections to prevent successful XSS attacks by trusted users.
+
+If you are concerned that trusted users you invite to create your site will act maliciously the best advice is to split your front-end and admin area onto different domains (e.g. https://mysite.com and https://mysiteadmin.com/ghost/). This way browsers offer greater built-in protection because credentials cannot be read across domains. Even in this case it should be understood that you are giving invited users completely free reign in content creation so absolute security guarantees do not exist.
+
+We take any attack vector where an untrusted user is able to inject malicious content very seriously and welcome any and all reports.

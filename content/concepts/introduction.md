@@ -25,6 +25,12 @@ The first question most people have is, of course, how is Ghost different from e
 .features-comparison td:not(:first-child) {
     text-align: center;
 }
+.features-comparison td:nth-child(1) {
+    font-weight: 500;
+}
+.features-comparison td:nth-child(2) {
+    background: #f7fcf3;
+}
 </style>
 
 <table class="features-comparison">

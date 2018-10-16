@@ -63,7 +63,7 @@ Even the dynamic cards mentioned above are a part of MobileDoc! It's a fast grow
 
 Here's a sample post object from the Ghost [Content API](/api/content/)
 
-```JSON
+```json
 post: {
     "id": "59711abc12d3ab0bd61c3abc",
     "uuid": "ec630e45-3342-4d7f-a24c-e448263c975b",
