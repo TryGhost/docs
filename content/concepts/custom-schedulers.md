@@ -3,28 +3,79 @@ title: "Custom Schedulers"
 sidebar: "concepts"
 ---
 
-## This is the second heading
+Ghost installs a default adapter for scheduling, or you can use a custom scheduling module instead.
 
-Spicy jalapeno cupidatat chicken ut filet mignon sausage ut boudin nulla reprehenderit strip steak proident cillum incididunt short loin cow. Pig in pastrami, leberkas eiusmod enim bresaola do. Filet mignon officia quis kevin pork, swine strip steak excepteur hamburger chicken pork chop boudin shankle. Velit chicken pig in cupim kielbasa jerky. Bresaola excepteur veniam, andouille magna brisket aliquip nostrud jerky.
+## Overview
 
-```javascript
-makeArray() {
-    // Hey hey what can I do
-    const foo = []
-    bar.split('').forEach(letter => {
-      foo.push(letter)
-    })
-    return foo
+The default scheduling adapter in Ghost is configured by default. Once you run Ghost, the scheduling feature is ready to use once you have installed Ghost on your server. Scheduling posts can be accessed within individual posts in the editor within Ghost admin.
+
+It's possible to use a custom scheduling module instead of the default adapter. This can be useful when: 
+
+* You have a cache in front of your site and the default adapter is not able to clear a cache entry
+
+* If you want to write custom adapters to communicate with external schedulers
+
+## Custom adapters
+
+The following guide explains how to write your own adapters, for example if you wanted to use the [Heroku Scheduler](https://elements.heroku.com/addons/scheduler/) or your own external logic. 
+
+#### Writing your adapter
+
+Use the file name `my-adapter.js`: 
+
+```
+var util = require('util');
+
+// If this require does not work, then your content folder structure is different
+// So change the require path so that your adapter can import the scheduling base.
+var SchedulingBase = require('../../core/server/adapters/scheduling/SchedulingBase');
+
+function MyAdapter(options) {
+    SchedulingBase.call(this, options);
+}
+
+util.inherits(MyAdapter, SchedulingBase);
+
+// required functions you need to implement
+MyAdapter.prototype.schedule = function(object) {
+    // when the job should be executed (time is a UTC timestamp)
+    var time = object.time;
+
+    // the url you need to execute when the time is reached
+    var url = object.url;
+
+    // the HTTP method you need to use
+    var httpMethod = object.extra.httpMethod;
+};
+
+MyAdapter.prototype.reschedule = function(object) {
+    // see MyAdapter.prototype.schedule
+
+    // the time when the url was scheduled before (oldTime is a UTC timestamp)
+    var oldTime = object.extra.oldTime;
+};
+
+MyAdapter.prototype.unschedule = function(object) {
+    // see MyAdapter.prototype.schedule
+};
+
+//this function is called on server bootstrap
+MyAdapter.prototype.run = function() {};
+
+module.exports = MyAdapter;
+```
+
+#### Implementing your adapter
+
+Copy your new adapter to `content/scheduling/` and edit your config file to identify your new adapter: 
+
+```
+"scheduling": {
+  "active": 'my-adapter'
 }
 ```
 
-### This is the third heading
 
-Pork chop ribeye ut chicken buffalo proident minim leberkas cupim adipisicing burgdoggen incididunt pastrami cupidatat. Prosciutto kevin dolore labore ham, cupidatat pork loin fatback picanha irure ad short ribs duis. Cupidatat excepteur jerky doner, incididunt consectetur turkey pariatur. Culpa consectetur cillum shank ham hock anim pastrami ex tempor eu. Fatback strip steak pig, bacon salami drumstick ut capicola short loin flank.
+## Summary
+You've found out how to implement a custom scheduling adapter to replace the default scheduler that is installed by Ghost. Utilise this method if you are using a cache in front of your site, or if you want to use external schedulers.
 
-Jowl dolor duis, cupidatat pork tempor nostrud incididunt short loin laborum. Duis nostrud fatback ribeye consequat ad. Proident pancetta ut tempor. Short loin officia eiusmod beef. Sunt tongue pig venison, sint mollit ad excepteur velit adipisicing flank pancetta pariatur. Dolor t-bone swine alcatra fatback ribeye, mollit dolore incididunt ullamco.
-
-Spare ribs aute fugiat, pariatur andouille labore nulla exercitation. Aliqua picanha sirloin consequat drumstick sint exercitation pork nisi et. Dolore swine fugiat pork salami proident. Bacon excepteur filet mignon labore pariatur in in nulla magna fugiat prosciutto. Laboris sint ground round, pancetta ipsum in pariatur voluptate fatback andouille velit shoulder flank quis sausage.
-
-Hamburger ham shank est, officia qui capicola proident. Ribeye dolore prosciutto sirloin alcatra. Rump short ribs quis ex fugiat proident incididunt irure t-bone meatball veniam sirloin meatloaf. Tongue anim sint pancetta bresaola sirloin.
-Does your lorem ipsum text long for something a little meatier? Give our generator a try…
