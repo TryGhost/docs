@@ -17,6 +17,10 @@ _[Note: This project is in active early development and is not suitable for publ
 - `yarn dev`
 - View: [http://localhost:8000](http://localhost:8000)
 
+## Production build (to test locally)
+- `yarn serve`
+- View: [http://localhost:9000](http://localhost:9000)
+
 
 ## Markdown content
 
