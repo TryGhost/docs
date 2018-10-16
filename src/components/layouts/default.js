@@ -37,8 +37,6 @@ class DefaultLayout extends React.Component {
                 <Helmet defaultTitle={`Ghost Docs - Ghost`} >
                     <html lang="en" className="fs-base" />
                     <link type="text/css" href="https://cloud.typography.com/6076934/6704592/css/fonts.css" rel="stylesheet" />
-                    <link type="text/css" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet" />
-
                     <body className={this.props.bodyClass + ` flex flex-column whitney f7 fw4 darkgrey readability`} />
                 </Helmet>
 
