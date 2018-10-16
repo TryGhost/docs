@@ -102,26 +102,8 @@ exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
     const { createRedirect } = actions
     const { allGhostPosts, allMarkdownPosts } = require(`./src/utils/node-queries`)
+    const { ghostQueryConfig } = require(`./src/utils/query-config`)
     const queryPromises = []
-    const ghostPostToQuery = [
-        {
-            tag: `hash-faq`,
-            prefix: `/faq/`,
-            template: `./src/templates/faq.js`,
-            tagsTemplate: `./src/templates/tags-faq.js`,
-        },
-        {
-            tag: `hash-tutorial`,
-            prefix: `/tutorials/`,
-            template: `./src/templates/standalone-post.js`,
-            tagsTemplate: `./src/templates/tags-tutorials.js`,
-        },
-        {
-            tag: `hash-integration`,
-            prefix: `/integrations/`,
-            template: `./src/templates/integration.js`,
-        },
-    ]
 
     createRedirect({
         fromPath: `/design/`,
@@ -131,7 +113,7 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     // Query for each of the tags that we defined above
-    ghostPostToQuery.forEach(({ tag, prefix, template, tagsTemplate }) => {
+    ghostQueryConfig.forEach(({ tag, prefix, template, tagsTemplate }) => {
         queryPromises.push(new Promise((resolve, reject) => {
             graphql(allGhostPosts(tag))
                 .then((result) => {

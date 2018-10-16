@@ -7,8 +7,10 @@ const allGhostPosts = function allGhostPosts(tag) {
           {
             allGhostPost(
                 sort: {order: ASC, fields: published_at},
-                filter: {tags: {elemMatch: {slug: {eq: "${tag}"}}},
-                slug: {ne: "data-schema"}}
+                filter: {
+                    tags: {elemMatch: {slug: {eq: "${tag}"}}},
+                    slug: {ne: "data-schema"}
+                }
             ) {
               edges {
                 node {
