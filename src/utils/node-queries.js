@@ -1,4 +1,16 @@
-const allGhostPosts = function allGhostPosts(tag) {
+// @TODO: use fragments?
+const defaultGhostFields = `
+slug
+title
+url
+published_at
+tags {
+    slug
+    name
+}
+`
+
+const allGhostPosts = function allGhostPosts(tag, fields = defaultGhostFields) {
     if (!tag) {
         throw new Error(`Please provide a tag property`)
     }
@@ -14,14 +26,7 @@ const allGhostPosts = function allGhostPosts(tag) {
             ) {
               edges {
                 node {
-                  slug
-                  title
-                  url
-                  published_at
-                  tags {
-                      slug
-                      name
-                  }
+                  ${fields}
                 }
               }
             }

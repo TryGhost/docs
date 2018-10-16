@@ -36,6 +36,7 @@
   "dependencies": {
     "bluebird": "3.5.2",
     "gatsby": "2.0.24",
+    "gatsby-plugin-algolia": "^0.2.0",
     "gatsby-plugin-manifest": "2.0.5",
     "gatsby-plugin-offline": "2.0.6",
     "gatsby-plugin-postcss": "^2.0.0",

@@ -5,6 +5,7 @@ const colorModFunction = require(`postcss-color-mod-function`)
 const cssNano = require(`cssnano`)
 const customProperties = require(`postcss-custom-properties`)
 const easyImport = require(`postcss-easy-import`)
+const algoliaQueries = require(`./src/utils/algolia-queries`)
 
 require(`dotenv`).config({
     path: `.env.${process.env.NODE_ENV}`,
@@ -96,6 +97,15 @@ module.exports = {
                 apiUrl: `https://docs-2.ghost.io`,
                 clientId: `ghost-frontend`,
                 clientSecret: `${process.env.GH_CLIENT_SECRET}`,
+            },
+        },
+        {
+            resolve: `gatsby-plugin-algolia`,
+            options: {
+                appId: `6RCFK5TOI5`,
+                apiKey: `${process.env.ALGOLIA_ADMIN_KEY}`,
+                queries: algoliaQueries,
+                chunkSize: 10000, // default: 1000
             },
         },
         /**
