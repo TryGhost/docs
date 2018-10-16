@@ -37,7 +37,7 @@ Set up your site with sensible user roles and permissions built-in from the star
 - **Authors:** Can create and publish new posts and tags.
 - **Editors:** Can invite, manage and edit authors and contributors.
 - **Administrators:** Have full permissions to edit all data and settings.
-- **Owner:** Admin who cannot be deleted + has access to billing details.
+- **Owner:** An admin who cannot be deleted + has access to billing details.
 
 
 ## Custom Themes

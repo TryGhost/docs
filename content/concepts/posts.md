@@ -15,6 +15,10 @@ Posts are created within Ghost Admin using the editor to determine your site's m
 Additionally, posts have **Code Injection** fields which mean you can register additional styles, scripts or other content to be injected just before `</head>` or `</body>` on any one particular URL where desired.
 
 
+Here's an example of a [post](https://demo.ghost.io/welcome/) in the default Ghost Theme:
+
+[![Post](/images/concepts/post.jpg)](https://demo.ghost.io/welcome/)
+
 
 ## Creating Content
 
@@ -68,7 +72,7 @@ post: {
     "mobiledoc": "{\"version\":\"0.3.1\",\"atoms\":[],\"cards\":[],\"markups\":[],\"sections\":[[1,\"p\",[[0,[],0,\"You're live, nice!\"]]]]}",
     "html": "<p>You're live! Nice.</p>",
     "plaintext": "You're live! Nice.",
-    "feature_image": "/content/images/2014/12/my-image.png",
+    "feature_image": "/content/images/2019/12/my-image.png",
     "featured": false,
     "page": false,
     "status": "published",
@@ -76,11 +80,11 @@ post: {
     "meta_title": null,
     "meta_description": null,
     "author_id": "59711abc78f1ab0bd61c3efg",
-    "created_at": "2014-04-15T12:36:28.353Z",
+    "created_at": "2019-04-15T12:36:28.353Z",
     "created_by": "59711abc78f1ab0bd61c3efg",
-    "updated_at": "2014-04-15T12:36:28.353Z",
+    "updated_at": "2019-04-15T12:36:28.353Z",
     "updated_by": "59711abc78f1ab0bd61c3efg",
-    "published_at": "2014-04-15T12:36:28.363Z",
+    "published_at": "2019-04-15T12:36:28.363Z",
     "published_by": "59711abc78f1ab0bd61c3efg",
     "custom_excerpt": null,
     "codeinjection_head": null,
