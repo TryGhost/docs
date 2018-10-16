@@ -194,8 +194,8 @@ class DocTemplate extends React.Component {
                                 { leftSidebar }
                             </div>
                             : null }
-                        <div className="w-100 bg-white shadow-2 br4 br--bottom">
-                            <article className="flex-auto mw-content pa15 pt10 pb10">
+                        <div className="w-100 mw-content bg-white shadow-2 br4 br--bottom">
+                            <article className="flex-auto pa15 pt10 pb10">
                                 <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
                                 <section className="post-content" dangerouslySetInnerHTML={ {
                                     __html: post.html,
