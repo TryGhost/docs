@@ -9,11 +9,41 @@ Right off the bat, probably the best way to think about tags in Ghost is like la
 
 ## Tag Types
 
-### Normal Tag
+Tags are much more than just simple keywords, so there are several different ways of using them to accomplish a variety of use-cases.
+
+### Regular Tag
+
+All tags come with their own data object and can have a title, description, image and meta data. Ghost Handlebars Themes will autoamtically generate tag archive pages for any tags which are assigned to active posts. For example all posts tagged with `News` will appear on `example.com/tag/news/`, as well as in the automatically generated XML sitemap.
 
 ### Primary Tag
 
+Ghost has a simple concept of `primary_tag` used simply to refer to the very first tag which a post has. This is useful for when you want to return a singular, most-important tag rather than a full array of all tags assigned to a post.
+
 ### Internal Tag
+
+Tags which are prefixed by a `#` character, otherwise known as hashtags, are internal tags within Ghost - which is to say that they aren't rendered publicly. This can be particularly useful when you want to drive particular functionality based on a tag, but you don't necessarily want to output the tag for readers to see. 
+
+## Example Usage
+
+As a quick example of how you might use tags, let's look at a quick example of a Hollywood news site which is publishing a post about Ryan Reynolds being announced as the lead in a new movie called "Son of Deadpool".
+
+![Tags](/images/concepts/tags.png)
+
+Here the post has 4 tags:
+
+- `Breaking news` - The **primary tag**
+- `Ryan Reynolds` - A regular tag
+- `New Releases` - A regular tag
+- `#feature` - An internal tag
+
+The front-end of the site has configured a rotating banner on the homepage to pull the latest 3 posts from the `Breaking News` category and highlight them right at the top of the page with a **Breaking News** label beside the byline.
+
+The `Ryan Reynolds` and `New Releases` tags generate archives so that readers can browse other stories in the same categories, as well as their own sitemaps.
+
+The `#feature` tag is used by the front-end or theme-layer as a conditional flag for activating specific formatting. In this instance the Deadpool PR team have supplied some marketing material including a giant wallpaper image which would make a great background, so the post is tagged with `#feature` to push the post image to be full bleed and take over the whole page.
+
+You can see this use-case in action on the main Ghost blog. Here's [a regular post](https://blog.ghost.org/image-galleries/), and here's a [#feature](https://blog.ghost.org/5/). The design of the post reacts to the tags. 
+
 
 ## Sample API Data
 
@@ -33,5 +63,5 @@ tag: {
     "created_by": "1239bbfe90a518a862677abc",
     "updated_at": "2014-11-17T19:02:27.147Z",
     "updated_by": "1239bbfe90a518a862677abc"
-  }
+}
 ```
