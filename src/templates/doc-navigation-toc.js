@@ -16,7 +16,7 @@ function NavBar(props) {
     if (props.location.pathname.match(/\S\/design\//i)) {
         return <DesignNavSidebar />
     } else if (props.sidebar) {
-        return <NavSidebar sidebar={props.sidebar} location={props.location} />
+        return <NavSidebar sidebar={ props.sidebar } location={ props.location } />
     } else {
         return null
     }
@@ -52,7 +52,7 @@ function PrevNextSection(props) {
         const next = flatSidebar[currentIndex + 1]
 
         return (
-            <PrevNext prev={prev} next={next} />
+            <PrevNext prev={ prev } next={ next } />
         )
     } else if (props.fm.next && props.fm.next.title && props.fm.next.url) {
         // We *must* have at least URL and title
@@ -63,7 +63,7 @@ function PrevNextSection(props) {
         }
 
         return (
-            <PrevNext next={next} />
+            <PrevNext next={ next } />
         )
     } else {
         return null
@@ -164,17 +164,21 @@ class DocTemplate extends React.Component {
         post.frontmatter.sidebar = post.frontmatter.sidebar || ``
         post.frontmatter.toc = post.frontmatter.toc === false ? false : true
 
-        var leftSidebar, rightSidebar
+        var leftSidebar, rightSidebar, justification
 
         if (post.frontmatter.sidebar && post.frontmatter.toc) { // Layout #1: sidebar and TOC
-            leftSidebar = <NavBar location={ this.props.location } sidebar={ post.frontmatter.sidebar }/>
+            leftSidebar = <NavBar location={ this.props.location } sidebar={ post.frontmatter.sidebar } />
             rightSidebar = <TOC headingsOffset="-200" className="pr10" listClasses="mt3" />
+            justification = `justify-between`
         } else if (post.frontmatter.sidebar || post.frontmatter.toc) { // Layout #2: sidebar only
             if (post.frontmatter.sidebar) {
                 leftSidebar = <NavBar location={ this.props.location } sidebar={ post.frontmatter.sidebar } />
             } else {
                 leftSidebar = <TOC headingsOffset="-200" listClasses="lefty" showHeading={ false } />
             }
+            justification = `justify-start`
+        } else {
+            justification = `justify-start`
         }
 
         return (
@@ -183,14 +187,14 @@ class DocTemplate extends React.Component {
                 <Layout bodyClass="bg-whitegrey-l2" mainClass="bg-white z--999">
                     <PageHeader location={ this.props.location } />
 
-                    <div className={ `${Spirit.page.xl} ` }>
-                        <div className={`bg-white shadow-2 br4 br--bottom`}>
-                            <div className={ `flex pb15`}>
-                                <div className="w-sidebar pt10 pl10 flex-shrink-0-l">
-                                    { leftSidebar }
-                                </div>
 
-                                <article className="flex-auto order-2 pa15 mw-content pt10">
+                    <div className={ Spirit.page.xl + `flex` }>
+                        <div className={ (leftSidebar ? `nav-sidebar ` : ``) + `w-sidebar pt10 pr10 flex-shrink-0-l relative` }>
+                            { leftSidebar }
+                        </div>
+                        <div>
+                            <div className="flex justify-between">
+                                <article className="flex-auto mw-content pa15 pt10 pb10">
                                     <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
                                     <section className="post-content" dangerouslySetInnerHTML={ {
                                         __html: post.html,
@@ -203,41 +207,37 @@ class DocTemplate extends React.Component {
                                     </div>
                                     : null }
                             </div>
-                            <div className="bt b--whitegrey">
+                            <div className="mw-content pa15 pt0">
                                 <PrevNextSection
                                     location={ this.props.location }
                                     sidebar={ post.frontmatter.sidebar }
                                     fm={ post.frontmatter }
                                 />
+                                {/* TODO: this goes into a component */ }
+                                {/* <--- Begin feedback form */ }
+                                <div className="relative mw-content center pa10 pt8 bg-whitegrey-l2 ba b--whitegrey-l1 br3 mt5">
+                                    <h4 className={ Spirit.h4 + `mt1 nudge-top--2` }>Help us improve this page</h4>
+                                    <p className={ `${Spirit.small} mt1 midgrey` }>Please let us know what&apos;s working and what&apos;s not with this page.</p>
+                                    <form name="feedback" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                                        <input type="hidden" name="form-name" value="contact" />
+                                        <div className="flex items-center">
+                                            <select name="feedback-type" className="db ba b--whitegrey whitney pa3 bg-white w-50 h10 mt4 mr4 middarkgrey">
+                                                <option>Feedback</option>
+                                                <option>Issue</option>
+                                                <option>Typo</option>
+                                                <option>Praise</option>
+                                                <option>Other</option>
+                                            </select>
+                                            <input id="globalnavsearch" name="email" type="email" className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-1-0 bg-white ba b--whitegrey mt4 middarkgrey" placeholder="Email..." autoCapitalize="none" autoComplete="off" autoCorrect="off" spellCheck="false" required="required" />
+                                        </div>
+                                        <textarea name="message" className="w-100 f8 pa3 h40 whitney db bg-white br3 ba b--whitegrey mt4 form-text middarkgrey" placeholder="Your message..." required="required"></textarea>
+                                        <button className="blue mt4 pa3 pl7 pr7 bg-lgr-blue white bn br3 whitney f8" type="submit">Send</button>
+                                    </form>
+                                </div>
+                                {/* <--- End feedback form */ }
                             </div>
                         </div>
-                        {/* TODO: this goes into a component */}
-                        {/* <--- Begin feedback form */}
-                        <div className={ `bg-white shadow-2 br4 mt10 mb15` }>
-                            <div className="pa15 relative mw-content center">
-                                <Icon name="bubble-single-rect" className="stroke-blue w5 h-auto absolute top-18 left-6" />
-                                <h4 className={ Spirit.h4 + `mt1 nudge-top--2` }>Help us improve this page</h4>
-                                <p className={ `${Spirit.small} mt1 midgrey` }>Please let us know what&apos;s working and what&apos;s not with this page.</p>
-                                <form name="feedback" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-                                    <input type="hidden" name="form-name" value="contact" />
-                                    <div className="flex items-center">
-                                        <select name="feedback-type" className="db ba b--whitegrey whitney pa3 bg-white w-50 h10 mt4 mr4">
-                                            <option>Feedback</option>
-                                            <option>Issue</option>
-                                            <option>Typo</option>
-                                            <option>Praise</option>
-                                            <option>Other</option>
-                                        </select>
-                                        <input id="globalnavsearch" name="email" type="email" className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-1-0 bg-white ba b--whitegrey mt4" placeholder="Email..." autoCapitalize="none" autoComplete="off" autoCorrect="off" spellCheck="false" required="required"/>
-                                    </div>
-                                    <textarea name="message" className="w-100 f8 pa3 h40 whitney db bg-white br3 ba b--whitegrey mt4 form-text" placeholder="Your message..." required="required"></textarea>
-                                    <button className="blue mt4 pa3 pl7 pr7 bg-lgr-blue white bn br3 whitney f8" type="submit">Send</button>
-                                </form>
-                            </div>
-                        </div>
-                        {/* <--- End feedback form */}
                     </div>
-
                 </Layout>
             </>
         )
