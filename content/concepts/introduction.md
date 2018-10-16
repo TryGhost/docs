@@ -20,11 +20,18 @@ Every day Ghost powers some of the most-read stories on the internet, serving hu
 
 The first question most people have is, of course, how is Ghost different from everything else out there? Here's a table to give you a quick summary:
 
-<table>
+<style>
+.features-comparison th:not(:first-child),
+.features-comparison td:not(:first-child) {
+    text-align: center;
+}
+</style>
+
+<table class="features-comparison">
     <thead>
         <tr>
-            <th>Comparison</th>
-            <th>Ghost<br><small style="text-transform:initial;color:#777;font-weight:400;">(That's us)</small></th>
+            <th></th>
+            <th>Ghost<br><small style="text-transform:initial;color:#777;font-weight:400;">(That's us!)</small></th>
             <th>Open platforms<br><small style="text-transform:initial;color:#777;font-weight:400;">(eg. WordPress)</small></th>
             <th>Closed platforms<br><small style="text-transform:initial;color:#777;font-weight:400;">(eg. Medium)</small></th>
         </tr>
