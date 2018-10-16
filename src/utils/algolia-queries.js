@@ -16,9 +16,6 @@ module.exports = ghostQueryConfig.map(({ tag, indexName }) => {
     return {
         query: allGhostPosts(tag, algoliaFields),
         indexName,
-        transformer: ({ data }) => data.allGhostPost.edges.map(({ node }) => {
-            console.log(`node`, tag, indexName, node)
-            return node
-        }),
+        transformer: ({ data }) => data.allGhostPost.edges.map(({ node }) => node),
     }
 })
