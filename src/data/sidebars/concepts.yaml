@@ -29,8 +29,8 @@
         link: /concepts/pages/
       - title: Tags
         link: /concepts/tags/
-      - title: Authors
-        link: /concepts/authors/
+      - title: Users
+        link: /concepts/users/
   - group: Configuration
     items:
       - title: Config options
