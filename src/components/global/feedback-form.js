@@ -39,7 +39,7 @@ class FeedbackForm extends React.Component {
 
     render() {
         return (
-            <div className="relative mw-content center pa10 pt8 bg-whitegrey-l2 ba b--whitegrey-l1 br3 mt5">
+            <div className="relative mw-content center pa15 pt10 bg-white shadow-2 mt10 mb10 br4">
                 <h4 className={Spirit.h4 + `mt1 nudge-top--2`}>Help us improve this page</h4>
                 <p className={`${Spirit.small} mt1 midgrey`}>Please let us know what&apos;s working and what&apos;s not with this page.</p>
                 <form
