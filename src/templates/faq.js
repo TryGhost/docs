@@ -21,7 +21,7 @@ class FAQ extends React.Component {
 
                     <div className="bg-faq bb b--whitegrey">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1` }>
-                            <h1 className={ Spirit.h4 + `pl10 white`}>
+                            <h1 className={ Spirit.h4 + `white`}>
                                 <Link to="/faq/" className={ `link dim white fw3` }>Frequently Asked Questions</Link>
                                 <Tags
                                     post={ post }

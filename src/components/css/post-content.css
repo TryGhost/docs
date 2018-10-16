@@ -766,13 +766,15 @@ Usage (In Ghost editor):
     padding: 0 0 2.0rem;
 }
 
-/* Tutorials steps */
+/* Tutorials and Integrations steps */
 /* ---------------------------------------------------------- */
-.tutorial-content {
+.tutorial-content,
+.integration-content {
     counter-reset: headingitem;
 }
 
-.tutorial-content h2 {
+.tutorial-content h2,
+.integration-content h2 {
     position: relative;
     font-size: 2.5rem;
     font-weight: 500;
@@ -780,10 +782,14 @@ Usage (In Ghost editor):
     padding-top: var(--navbar-size);
     margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
     letter-spacing: -0.4px;
-    color: #35BCAD;
 }
 
-.tutorial-content h2:before {
+.integration-content h2 {
+    color: var(--darkgrey);
+}
+
+.tutorial-content h2:before,
+.integration-content h2:before {
     counter-increment: headingitem;
     content: counter(headingitem);
     position: absolute;
@@ -799,6 +805,11 @@ Usage (In Ghost editor):
     padding: 0;
     margin: 0;
     line-height: 1.8em;
+}
+
+.integration-content h2:before {
+    background: var(--lightgrey-l2);
+    color: var(--darkgrey);
 }
 
 .tutorial-content h2:last-of-type {

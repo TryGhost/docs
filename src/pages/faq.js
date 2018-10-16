@@ -29,7 +29,7 @@ class FAQPage extends React.Component {
                 <Layout title="FAQ" headerDividerStyle="shadow">
                     <div className="bg-faq bb b--whitegrey">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1` }>
-                            <h1 className={ Spirit.h4 + `pl10 white`}>Frequently Asked Questions</h1>
+                            <h1 className={ Spirit.h4 + `white`}>Frequently Asked Questions</h1>
                         </div>
                     </div>
                     <div className={ Spirit.page.xl }>

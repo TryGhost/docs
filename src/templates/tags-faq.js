@@ -31,7 +31,7 @@ class FAQTags extends React.Component {
                 <Layout title="FAQ" headerDividerStyle="shadow">
                     <div className="bg-faq bb b--whitegrey">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1` }>
-                            <h1 className={Spirit.h4 + `pl10 white`}>
+                            <h1 className={Spirit.h4 + `white`}>
                                 <Link to="/faq/" className={`link dim white fw3`}>Frequently Asked Questions</Link>
                                 <span className="white titleslash-white pl4 ml4 relative">
                                     <Link to={tagLink} className="link dim white">{tagName}</Link>

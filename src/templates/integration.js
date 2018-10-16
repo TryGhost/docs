@@ -41,7 +41,7 @@ class Integration extends React.Component {
                                     <span className="mr1 ml1 f8 midgrey">/</span>
                                     <span className="darkgrey fw5">{post.title}</span>
                                 </div>
-                                <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+                                <section className="post-content integration-content" dangerouslySetInnerHTML={{ __html: post.html }} />
                             </article>
                         </div>
                     </div>
