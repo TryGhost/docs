@@ -585,7 +585,7 @@ Usage (In Ghost editor):
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     white-space: nowrap;
     vertical-align: top;
     -webkit-overflow-scrolling: touch;
@@ -599,13 +599,13 @@ Usage (In Ghost editor):
     width: 100%;
 }
 
-.post-content table tr:first-child td:first-child {
+.post-content tr:first-child td:first-child {
     border-top-left-radius: 4px;
 }
 
-.post-content table th {
+.post-content th {
     color: var(--darkgrey);
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     line-height: 1.0em;
     font-weight: 600;
     letter-spacing: 0.2px;
@@ -614,19 +614,21 @@ Usage (In Ghost editor):
     border-bottom: 3px solid var(--whitegrey-l1);
 }
 
-.post-content table td {
-    padding: 4px 12px;
+.post-content td {
+    padding: 14px 12px;
     text-align: left;
+    line-height: 1.4em;
+    vertical-align: middle;
     border-bottom: 1px solid var(--whitegrey-l1);
     border-right: 1px solid var(--whitegrey-l1);
 }
 
-.post-content table td:last-child {
+.post-content td:last-child {
     border-right: none;
 }
 
-.post-content table tr th:first-child,
-.post-content table tr td:first-child {
+.post-content th:first-child,
+.post-content td:first-child {
     text-align: left;
     padding-left: 0;
 }

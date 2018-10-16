@@ -108,11 +108,13 @@ exports.createPages = ({ graphql, actions }) => {
             tag: `hash-faq`,
             prefix: `/faq/`,
             template: `./src/templates/faq.js`,
+            tagsTemplate: `./src/templates/tags-faq.js`,
         },
         {
             tag: `hash-tutorial`,
             prefix: `/tutorials/`,
             template: `./src/templates/standalone-post.js`,
+            tagsTemplate: `./src/templates/tags-tutorials.js`,
         },
         {
             tag: `hash-integration`,
@@ -129,7 +131,7 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     // Query for each of the tags that we defined above
-    ghostPostToQuery.forEach(({ tag, prefix, template }) => {
+    ghostPostToQuery.forEach(({ tag, prefix, template, tagsTemplate }) => {
         queryPromises.push(new Promise((resolve, reject) => {
             graphql(allGhostPosts(tag))
                 .then((result) => {
@@ -137,10 +139,37 @@ exports.createPages = ({ graphql, actions }) => {
                         return reject(result.errors)
                     }
 
-                    return result.data.allGhostPost.edges.forEach(({ node }) => {
+                    const items = result.data.allGhostPost.edges
+
+                    // Create a tags archive page
+                    if (tagsTemplate) {
+                        let primaryTags = []
+
+                        _.forEach(items, ({ node }) => {
+                            primaryTags.push(node.tags.filter(tag => !tag.slug.match(/^hash-/))[0])
+                        })
+
+                        primaryTags = _.uniqBy(_.compact(primaryTags), `slug`)
+
+                        _.forEach(primaryTags, (tag) => {
+                            createPage({
+                                path: `${prefix}${tag.slug}/`,
+                                component: path.resolve(tagsTemplate),
+                                context: {
+                                    tagSlug: tag.slug,
+                                    tagName: tag.name,
+                                },
+                            })
+                        })
+                    }
+
+                    _.forEach(items, ({ node }) => {
                         // Update the existing URL field to reflect the URL in Gatsby and
                         // not in Ghost. Also needed to link to related posts.
                         node.url = `${prefix}${node.slug}/`
+
+                        // Create primary tags pages for each internal main tag
+                        // First, find all the tags
 
                         createPage({
                             path: `${prefix}${node.slug}/`,
@@ -152,8 +181,9 @@ exports.createPages = ({ graphql, actions }) => {
                                 relatedPosts: getRelatedPosts(node, result.data.allGhostPost.edges),
                             },
                         })
-                        return resolve()
                     })
+
+                    return resolve()
                 })
         }))
     })

@@ -7,6 +7,7 @@ Tags are the primary taxonomy within Ghost for filtering and organising the rela
 
 Right off the bat, probably the best way to think about tags in Ghost is like labels in GMail. Tags are a powerful, dynamic taxonomy which can be used to categorise content, control design, and drive automation within your site.
 
+
 ## Tag Types
 
 Tags are much more than just simple keywords, so there are several different ways of using them to accomplish a variety of use-cases.
@@ -22,6 +23,7 @@ Ghost has a simple concept of `primary_tag` used simply to refer to the very fir
 ### Internal Tag
 
 Tags which are prefixed by a `#` character, otherwise known as hashtags, are internal tags within Ghost - which is to say that they aren't rendered publicly. This can be particularly useful when you want to drive particular functionality based on a tag, but you don't necessarily want to output the tag for readers to see. 
+
 
 ## Example Usage
 
@@ -42,7 +44,18 @@ The `Ryan Reynolds` and `New Releases` tags generate archives so that readers ca
 
 The `#feature` tag is used by the front-end or theme-layer as a conditional flag for activating specific formatting. In this instance the Deadpool PR team have supplied some marketing material including a giant wallpaper image which would make a great background, so the post is tagged with `#feature` to push the post image to be full bleed and take over the whole page.
 
-You can see this use-case in action on the main Ghost blog. Here's [a regular post](https://blog.ghost.org/image-galleries/), and here's a [#feature](https://blog.ghost.org/5/). The design of the post reacts to the tags. 
+You can see this use-case in action on the main Ghost blog. Here's [a regular post](https://blog.ghost.org/image-galleries/), and here's a [#feature](https://blog.ghost.org/5/). The design of the post reacts to the tags.
+
+
+## Tag Archives
+
+All actively used public tags (so, those not prefixed with `#`) generate automatic tag archives within Ghost Handlebars Themes. Tag archives are automatically added to the Google XML Sitemap, and have their own pagination + RSS feeds.
+
+Here's an example of an [tag archive](https://demo.ghost.io/tag/getting-started/) in the default Ghost Theme:
+
+[![Author Archive](/images/concepts/tag-archive.jpg)](https://demo.ghost.io/tag/getting-started/)
+
+Tag archives are only generated for tags which are assigned to published posts, any other tags are not publicly visible.
 
 
 ## Sample API Data
@@ -59,9 +72,9 @@ tag: {
     "visibility": "public",
     "meta_title": null,
     "meta_description": null,
-    "created_at": "2014-11-17T19:02:27.147Z",
+    "created_at": "2019-11-17T19:02:27.147Z",
     "created_by": "1239bbfe90a518a862677abc",
-    "updated_at": "2014-11-17T19:02:27.147Z",
+    "updated_at": "2019-11-17T19:02:27.147Z",
     "updated_by": "1239bbfe90a518a862677abc"
 }
 ```

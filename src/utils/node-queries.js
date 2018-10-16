@@ -18,6 +18,7 @@ const allGhostPosts = function allGhostPosts(tag) {
                   published_at
                   tags {
                       slug
+                      name
                   }
                 }
               }
