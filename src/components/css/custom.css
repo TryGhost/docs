@@ -485,12 +485,16 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 }
 
 .toc-list-container ol a {
-    color: var(--midgrey);
+    color: var(--midlightgrey);
     text-decoration: none;
     display: block;
     transition: all 0.3s ease;
     line-height: 1.5em;
     font-weight: 500;
+}
+
+.toc-list-container.lefty ol a {
+    color: var(--midgrey);
 }
 
 .toc-list-container ol ol a {
@@ -519,8 +523,12 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 }
 
 .toc-list-container .is-active-link {
-    color: var(--blue);
+    color: var(--darkgrey);
     font-weight: 600;
+}
+
+.toc-list-container.lefty .is-active-link {
+    color: var(--blue);
 }
 
 .toc-list-container ol ol li {

@@ -10,7 +10,7 @@ import PrevNext from '../components/global/prev-next'
 import DesignNavSidebar from '../components/layouts/partials/design-nav-sidebar'
 import TOC from '../components/layouts/partials/toc'
 import MetaData from '../components/layouts/partials/meta-data'
-import Icon from '../components/global/icon'
+// import Icon from '../components/global/icon'
 
 function NavBar(props) {
     if (props.location.pathname.match(/\S\/design\//i)) {
@@ -168,7 +168,7 @@ class DocTemplate extends React.Component {
 
         if (post.frontmatter.sidebar && post.frontmatter.toc) { // Layout #1: sidebar and TOC
             leftSidebar = <NavBar location={ this.props.location } sidebar={ post.frontmatter.sidebar } />
-            rightSidebar = <TOC headingsOffset="-200" className="pr10" listClasses="mt3" />
+            rightSidebar = <TOC headingsOffset="-200" className="pr4" listClasses="mt3" />
             justification = `justify-between`
         } else if (post.frontmatter.sidebar || post.frontmatter.toc) { // Layout #2: sidebar only
             if (post.frontmatter.sidebar) {
@@ -178,66 +178,65 @@ class DocTemplate extends React.Component {
             }
             justification = `justify-start`
         } else {
-            justification = `justify-start`
+            justification = `justify-center`
         }
 
         return (
             <>
                 <MetaData data={ this.props.data } location={ this.props.location } type="article" />
-                <Layout bodyClass="bg-whitegrey-l2" mainClass="bg-white z--999">
+                <Layout mainClass="pb0">
                     <PageHeader location={ this.props.location } />
 
-
-                    <div className={ Spirit.page.xl + `flex` }>
-                        <div className={ (leftSidebar ? `nav-sidebar ` : ``) + `w-sidebar pt10 pr10 flex-shrink-0-l relative` }>
-                            { leftSidebar }
-                        </div>
-                        <div>
-                            <div className="flex justify-between">
-                                <article className="flex-auto mw-content pa15 pt10 pb10">
-                                    <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
-                                    <section className="post-content" dangerouslySetInnerHTML={ {
-                                        __html: post.html,
-                                    } } />
-
-                                </article>
-                                { rightSidebar ?
-                                    <div className="order-3 w-sidebar flex-shrink-0 dn db-l pt10">
-                                        { rightSidebar }
-                                    </div>
-                                    : null }
+                    <div className={ Spirit.page.xl + `flex ${justification}` }>
+                        { leftSidebar ? 
+                            <div className={ `w-sidebar pt10 pr10 flex-shrink-0-l relative` }>
+                                { leftSidebar }
                             </div>
-                            <div className="mw-content pa15 pt0">
+                            : null }
+                        <div className="bg-white shadow-2 br4 br--bottom">
+                            <article className="flex-auto mw-content pa15 pt10 pb10">
+                                <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
+                                <section className="post-content" dangerouslySetInnerHTML={ {
+                                    __html: post.html,
+                                } } />
+
+                            </article>
+                            <div className="mw-content pa15 pb0 pt0 bt b--whitegrey">
                                 <PrevNextSection
                                     location={ this.props.location }
                                     sidebar={ post.frontmatter.sidebar }
                                     fm={ post.frontmatter }
                                 />
-                                {/* TODO: this goes into a component */ }
-                                {/* <--- Begin feedback form */ }
-                                <div className="relative mw-content center pa10 pt8 bg-whitegrey-l2 ba b--whitegrey-l1 br3 mt5">
-                                    <h4 className={ Spirit.h4 + `mt1 nudge-top--2` }>Help us improve this page</h4>
-                                    <p className={ `${Spirit.small} mt1 midgrey` }>Please let us know what&apos;s working and what&apos;s not with this page.</p>
-                                    <form name="feedback" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-                                        <input type="hidden" name="form-name" value="contact" />
-                                        <div className="flex items-center">
-                                            <select name="feedback-type" className="db ba b--whitegrey whitney pa3 bg-white w-50 h10 mt4 mr4 middarkgrey">
-                                                <option>Feedback</option>
-                                                <option>Issue</option>
-                                                <option>Typo</option>
-                                                <option>Praise</option>
-                                                <option>Other</option>
-                                            </select>
-                                            <input id="globalnavsearch" name="email" type="email" className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-1-0 bg-white ba b--whitegrey mt4 middarkgrey" placeholder="Email..." autoCapitalize="none" autoComplete="off" autoCorrect="off" spellCheck="false" required="required" />
-                                        </div>
-                                        <textarea name="message" className="w-100 f8 pa3 h40 whitney db bg-white br3 ba b--whitegrey mt4 form-text middarkgrey" placeholder="Your message..." required="required"></textarea>
-                                        <button className="blue mt4 pa3 pl7 pr7 bg-lgr-blue white bn br3 whitney f8" type="submit">Send</button>
-                                    </form>
-                                </div>
-                                {/* <--- End feedback form */ }
                             </div>
                         </div>
+                        { rightSidebar ?
+                            <div className="order-3 w-sidebar flex-shrink-0 dn db-l pt10 pl7">
+                                { rightSidebar }
+                            </div>
+                            : null }
                     </div>
+                    {/* TODO: this goes into a component */ }
+                    {/* <--- Begin feedback form */ }
+                    <div className="relative mw-content center pa10 pt8 br4 mt5 bg-white shadow-2 mt10 mb10">
+                        <h4 className={ Spirit.h4 + `mt1 nudge-top--2` }>Help us improve this page</h4>
+                        <p className={ `${Spirit.small} mt1 midgrey` }>Please let us know what&apos;s working and what&apos;s not with this page.</p>
+                        <form name="feedback" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="contact" />
+                            <div className="flex items-center">
+                                <select name="feedback-type" className="db ba b--whitegrey whitney pa3 bg-white w-50 h10 mt4 mr4 middarkgrey">
+                                    <option>Feedback</option>
+                                    <option>Issue</option>
+                                    <option>Typo</option>
+                                    <option>Praise</option>
+                                    <option>Other</option>
+                                </select>
+                                <input id="globalnavsearch" name="email" type="email" className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-1-0 bg-white ba b--whitegrey mt4 middarkgrey" placeholder="Email..." autoCapitalize="none" autoComplete="off" autoCorrect="off" spellCheck="false" required="required" />
+                            </div>
+                            <textarea name="message" className="w-100 f8 pa3 h40 whitney db bg-white br3 ba b--whitegrey mt4 form-text middarkgrey" placeholder="Your message..." required="required"></textarea>
+                            <button className="blue mt4 pa3 pl7 pr7 bg-lgr-blue white bn br3 whitney f8" type="submit">Send</button>
+                        </form>
+                    </div>
+                    {/* <--- End feedback form */ }
                 </Layout>
             </>
         )

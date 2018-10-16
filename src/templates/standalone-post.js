@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/layouts/default'
 // import Authors from '../components/authors'
@@ -14,15 +14,22 @@ class Tutorial extends React.Component {
         return (
             <>
                 <MetaData data={this.props.data} location={this.props.location} type="article" />
-                <Layout title="Home" headerDividerStyle="hairline" bodyClass="bg-white">
-                    <div className={ Spirit.page.m + `pt20`}>
-                        <h1 className={ Spirit.thinheadline }>{ post.title }</h1>
-                        <section className="post-content" dangerouslySetInnerHTML={ { __html: post.html } } />
-                        {/* <Authors authors={ post.authors } /> */}
+                <Layout title="Home" headerDividerStyle="shadow" mainClass="bg-white">
+                    <div className="bg-tutorials">
+                        <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1 white` }>
+                            <Link to="/tutorials/" className={ Spirit.h4 + `gh-integration-header-shadow white dim link` }>Tutorials</Link>
+                        </div>
+                    </div>
+                    <div className={ Spirit.page.xl + `pb15` }>
+                        <article className="mw-content center pa15 pb10">
+                            <h1 className={ Spirit.h1 }>{ post.title }</h1>
+                            <section className="post-content" dangerouslySetInnerHTML={ { __html: post.html } } />
+                            {/* <Authors authors={ post.authors } /> */}
+                        </article>
 
-                        <footer className="pt5 bt b--whitegrey midgrey f8 pb8">
+                        {/* <footer className="pt5 bt b--whitegrey midgrey f8 pb8 mw-content center pl15 pr15">
                             Updated: <time dateTime={ post.published_at_pretty }>{ post.published_at_pretty }</time>
-                        </footer>
+                        </footer> */}
                     </div>
                 </Layout>
             </>

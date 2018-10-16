@@ -30,7 +30,7 @@ class TutorialsPage extends React.Component {
                 <Layout title="Tutorials" headerDividerStyle="shadow">
                     <div className="bg-tutorials">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1 white` }>
-                            <h1 className={ Spirit.h4 + `gh-integration-header-shadow pl10` }>Tutorials</h1>
+                            <h1 className={ Spirit.h4 + `gh-integration-header-shadow` }>Tutorials</h1>
                         </div>
                     </div>
                     <div className={ Spirit.page.xl + `mt-vw5 mt-vw2-ns` }>
