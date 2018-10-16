@@ -223,7 +223,8 @@ class DocTemplate extends React.Component {
                                 <Icon name="bubble-single-rect" className="stroke-blue w5 h-auto absolute top-18 left-6" />
                                 <h4 className={ Spirit.h4 + `mt1 nudge-top--2` }>Help us improve this page</h4>
                                 <p className={ `${Spirit.small} mt1 midgrey` }>Please let us know what&apos;s working and what&apos;s not with this page.</p>
-                                <form name="feedback" method="POST" netlify>
+                                <form name="feedback" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                                    <input type="hidden" name="form-name" value="contact" />
                                     <div className="flex items-center">
                                         <select name="feedback-type" className="db ba b--whitegrey whitney pa3 bg-white w-50 h10 mt4 mr4">
                                             <option>Feedback</option>
