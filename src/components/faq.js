@@ -9,10 +9,12 @@ const FAQ = (props) => {
     const url = `/faq/${post.slug}/`
     const excerpt = getPostExcerpt(post)
 
+    console.log(JSON.stringify(post))
+
     return (
-        <Link to={url} className="f5 db tdn">
-            <h4 className={`${Spirit.p} link blue fw5`} to={url}>{post.title} &raquo;</h4>
-            {excerpt ? <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb10`}>{excerpt}</p> : null}
+        <Link to={url} className="f5 db tdn bb b--whitegrey mb6 faq-question">
+            <h4 className={`${Spirit.excerpt} link darkgrey fw5`} to={url}>{post.title} &raquo;</h4>
+            {excerpt ? <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>{excerpt}</p> : null}
         </Link>
     )
 }

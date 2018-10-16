@@ -35,21 +35,22 @@ class FAQ extends React.Component {
                         </div>
                     </div>
 
-                    <div className={ Spirit.page.xl }>
-                        <section className="bg-white br4 br--bottom shadow-1">
-
-                            <div className="mw-content pr20 pl6 pt15 pb15 center">
+                    <div className={ Spirit.page.xl + `grid-12` }>
+                        <section className="bg-white br4 shadow-1 col-8 mt10 pa15 pt10 pl8">
+                            <div className="mw-content">
                                 <div className="flex items-start mb6">
-                                    <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 fw5 br-100 tc white bg-darkgrey lh-1-0">?</div>
+                                    <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 fw5 br-100 tc white bg-faq-color lh-1-0">?</div>
                                     <h1 className={`${Spirit.h4} ma0 f4 nudge-bottom--2`}>{ post.title }</h1>
                                 </div>
 
                                 <div className="flex items-start">
-                                    <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 f8 fw5 br-100 tc darkgrey ba b--darkgrey">&raquo;</div>
+                                    <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 f8 fw5 br-100 tc faq-color ba b--faq-color">&raquo;</div>
                                     <section className="post-content faq-content" dangerouslySetInnerHTML={ { __html: post.html } } />
                                 </div>
                             </div>
+                        </section>
 
+                        <div className="col-4">
                             { relatedPosts.length ?
                                 <div className="bt b--whitegrey">
                                     <div className="mw-content pa15 center">
@@ -59,7 +60,7 @@ class FAQ extends React.Component {
                                 </div> :
                                 null
                             }
-                        </section>
+                        </div>
                     </div>
 
                     {/* <div className={ Spirit.page.xl }>

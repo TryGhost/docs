@@ -465,6 +465,26 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     margin-top: -18px;
 }
 
+.bg-faq-color {
+    background: #CC3AA2;
+}
+
+.b--faq-color {
+    border-color: #CC3AA2;
+}
+
+.faq-color {
+    color: #CC3AA2;
+}
+
+.faq-question h4 {
+    transition: all 0.4s ease;
+}
+
+.faq-question:hover h4 {
+    color: #CC3AA2;
+}
+
 
 /* Table of Contents */
 /* ----------------------------------------------------------------------- */

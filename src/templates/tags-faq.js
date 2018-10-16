@@ -31,22 +31,27 @@ class FAQTags extends React.Component {
                 <Layout title="FAQ" headerDividerStyle="shadow">
                     <div className="bg-faq bb b--whitegrey">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1` }>
-                            <h1 className={Spirit.h4 + `white`}>
-                                <Link to="/faq/" className={`link dim white fw3`}>Frequently Asked Questions</Link>
+                            <h1 className={ Spirit.h4 + `white` }>
+                                <Link to="/faq/" className={ `link dim white fw3` }>Frequently Asked Questions</Link>
                                 <span className="white titleslash-white pl4 ml4 relative">
-                                    <Link to={tagLink} className="link dim white">{tagName}</Link>
+                                    <Link to={ tagLink } className="link dim white">{ tagName }</Link>
                                 </span>
                             </h1>
                         </div>
                     </div>
-                    <div className={ Spirit.page.xl }>
-                        <div className="br4 br--bottom shadow-1 bg-white pa10 center">
-                            <div className="mw-content pl15 pr15 center">
-                                <h4 className={Spirit.h2 + `col-12 pb2 bb b--whitegrey mb5`}>{tagName}</h4>
-                                { posts.map(({ node }) => (
-                                    <FAQ key={ node.id } post={ node } />
-                                )) }
-                            </div>
+                    <div className={ Spirit.page.xl + `grid-12` }>
+                        <div className="bg-white shadow-2 br4 mt10 pa15 pt10 pb12 col-8">
+                            <h4 className={ Spirit.h2 + `col-12 pb2 bb b--whitegrey mb5` }>{ tagName }</h4>
+                            { posts.map(({ node }) => (
+                                <FAQ key={ node.id } post={ node } />
+                            )) }
+                        </div>
+                        <div className="col-4 pa15 pt10 mt10">
+                            {/* <h4 className={ Spirit.h4 + `mb4` }>Filter</h4> */ }
+                            <span className="dib ba bg-faq-color white pa1 pl2 pr2 br3 mr2 mb2">Errors</span>
+                            <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Ghost(Pro)</span>
+                            <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Self-hosted</span>
+                            <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Themes</span>
                         </div>
                     </div>
                 </Layout>
