@@ -17,6 +17,12 @@ These three areas work together to make every Ghost site function smoothly, but 
 
 [TODO: Diagram]
 
+Physically, the Ghost codebase is structured in two main directories:
+
+- `core` - Contains the core files which make up Ghost
+- `content` - Contains the files which may be added or changed by the user such as themes and images
+
+
 ### Data & Storage
 
 Additionally, the database and file storage layers can be easily customised to suit individual preferences and environments.

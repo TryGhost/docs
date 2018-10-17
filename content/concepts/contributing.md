@@ -1,17 +1,60 @@
 ---
-title: "Contributing"
+title: "Contributing to Ghost"
 sidebar: "concepts"
 ---
 
+Ghost is completely open source software built almost entirely by volunteer contributors who use it every day
+
+The best part about structuring a software project this was is that not only does everyone get to own the source code without restriction, but as people all over the world help to improve it: Everyone benefits.
 
 
-## Contributor License Agreement
+## Development Guide
 
-By contributing your code to Ghost you grant Ghost Foundation a non-exclusive, irrevocable, worldwide, royalty-free, sublicenseable, transferable license under all of Your relevant intellectual property rights (including copyright, patent, and any other rights), to use, copy, prepare derivative works of, distribute and publicly perform and display the Contributions on any licensing terms, including without limitation:
-(a) open source licenses like the MIT license; and (b) binary, proprietary, or commercial licenses. Except for the licenses granted herein, You reserve all right, title, and interest in and to the Contribution.
+If you're a developer looking to help, but you're not sure where to begin: Check out the [good first issue](https://github.com/TryGhost/Ghost/labels/good%20first%20issue) label on Github, which contains small piece of work that have been specifically flagged as being friendly to new contributors.
 
-You confirm that you are able to grant us these rights. You represent that You are legally entitled to grant the above license. If Your employer has rights to intellectual property that You create, You represent that You have received permission to make the Contributions on behalf of that employer, or that Your employer has waived such rights for the Contributions.
+Or, if you're looking for something a little more challenging to sink your teeth into, there's a broader [help wanted](https://github.com/TryGhost/Ghost/labels/help%20wanted) label encompassing issues which need some love.
 
-You represent that the Contributions are Your original works of authorship, and to Your knowledge, no other person claims, or has the right to claim, any right in any invention or patent related to the Contributions. You also represent that You are not legally obligated, whether by entering into an agreement or otherwise, in any way that conflicts with the terms of this license.
+When you're ready, check out the full **[Ghost Contributing Guide](https://github.com/TryGhost/Ghost/blob/master/.github/CONTRIBUTING.md)** for detailed instructions about how to hack on Ghost Core and send changes upstream.
 
-Ghost Foundation acknowledges that, except as explicitly described in this Agreement, any Contribution which you provide is on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
+
+## Other Ways to Help
+
+The primary way to contribute to Ghost is by writing code, but if you're not a developer there are still ways you can help. We always need help with:
+
+- Helping our Ghost users on [the forum](https://forum.ghost.org)
+- Creating [tutorials](/tutorials/) and [integration guides](/integrations/)
+- Improving our [documentation](https://github.com/tryghost/docs/) _(what you're reading now!)_
+- Testing and quality assurance
+- Hosting local events or meetups
+- Promoting Ghost to others
+
+There are lots of ways to make discovering and using Ghost a better experience.
+
+
+## Donations
+
+As a non-profit organisation we're always grateful to receive any and all donations to help our work, and allow us to employ more people to work on Ghost directly.
+
+
+#### Partnerships
+
+We're very [happy to partner](https://ghost.org/partners/) with startups and companies who are able to provide Ghost with credit, goods and services which help us build free, open software for everyone. Please reach out to us `hello@ghost.org` if you're interested in partnering with us to help Ghost.
+
+
+<h4>Open Collective <a style="display:inline-block;" href="https://opencollective.com/ghost"><img style="margin:0 0 -3px 5px;" src="https://opencollective.com/ghost/backers/badge.svg" alt="OpenCollective" /></a></h4>
+
+**New:** We have a number of ongoing donation and sponsorship opportunities for individuals or companies looking to make ongoing contributions to the open source software which they use on [Open Collective](https://opencollective.com/ghost).
+
+
+#### Bitcoin
+
+For those who prefer to make a one time donation, we're very happy to accept BTC. Unless you explicitly want your donation to be anonymous, please send us a tweet or an email and let us know who you are! We'd love to say thank you.
+
+
+<div style="text-align:center">
+<img src="/images/concepts/btc-wallet.png" style="max-height:170px" alt="Ghost BTC Address" />
+
+**Ghost BTC Address:**<br>
+`3CrQfpWaZPFfD4kAT7kh6avbW7bGBHiBq9`
+
+</div>

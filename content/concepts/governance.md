@@ -6,13 +6,6 @@ sidebar: "concepts"
 Ghost is stewarded by an independent non-profit organisation called the Ghost Foundation, which is fully remote company
 
 
-## Community Guidelines
-
-All participation in the Ghost community is subject to our incredibly straightforward [code of conduct](http://ghost.org/conduct) and wider [community guidelines](https://forum.ghost.org/t/faq-guidelines/5).
-
-We've been doing this since 2012, and have absolutely zero tolerance or patience remaining for people who are rude, spammy, entitled or egotistical. We welcome everyone who is friendly and participates constructively, and we outright ban anyone who is behaving in a poisonous manner.
-
-
 ## Core Team
 
 In addition to [full time product team](https://ghost.org/about/) working for Ghost Foundation, there are a number of community members who have contributed to the project for a lengthy period of time and are considered part of the core team. They are:
@@ -30,6 +23,13 @@ People typically invited to join the Core Team officially after an extended peri
 When we believe a core contributor would make a great ambassador for Ghost and feel able to trust them to make good decisions about its future - that's generally when we'll ask them to become a member of the formal Core Team.
 
 Core Team members are granted commit rights to Ghost projects, access to the Ghost Foundation private Slack, and occasionally join our international team retreats.
+
+
+## Community Guidelines
+
+All participation in the Ghost community is subject to our incredibly straightforward [code of conduct](http://ghost.org/conduct) and wider [community guidelines](https://forum.ghost.org/t/faq-guidelines/5).
+
+The vast majority of the Ghost community is incredible, and we work hard to make sure it stays that way. We always welcome people who are friendly and participate constructively, but we outright ban anyone who is behaving in a poisonous manner.
 
 
 ## Ghost Trademark
