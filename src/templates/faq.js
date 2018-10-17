@@ -36,15 +36,15 @@ class FAQ extends React.Component {
                     </div>
 
                     <div className={ Spirit.page.xl + `grid-12` }>
-                        <section className="bg-white br4 shadow-1 col-8 mt10 pa15 pt10 pl8">
+                        <section className="bg-white br4 shadow-1 col-8 mt10 pa15 pt10 pl7">
                             <div className="mw-content">
                                 <div className="flex items-start mb6">
                                     <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 fw5 br-100 tc white bg-faq-color lh-1-0">?</div>
-                                    <h1 className={`${Spirit.h4} ma0 f4 nudge-bottom--2`}>{ post.title }</h1>
+                                    <h1 className={`${Spirit.h3} ma0 f4 nudge-bottom--4`}>{ post.title }</h1>
                                 </div>
 
                                 <div className="flex items-start">
-                                    <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 f8 fw5 br-100 tc faq-color ba b--faq-color">&raquo;</div>
+                                    <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 f8 fw5 br-100 tc faq-color ba b--faq-color nudge-bottom--4">&raquo;</div>
                                     <section className="post-content faq-content" dangerouslySetInnerHTML={ { __html: post.html } } />
                                 </div>
                             </div>
@@ -52,53 +52,14 @@ class FAQ extends React.Component {
 
                         <div className="col-4">
                             { relatedPosts.length ?
-                                <div className="bt b--whitegrey">
-                                    <div className="mw-content pa15 center">
-                                        <h4 className={ Spirit.h4 + `mb4` }>Related Questions</h4>
-                                        <RelatedPosts relatedPosts={ relatedPosts } />
-                                    </div>
+                                <div className="mw-content pa15 center mt6">
+                                    <h4 className={ Spirit.h5 + `mb4` }>Related Questions</h4>
+                                    <RelatedPosts relatedPosts={ relatedPosts } />
                                 </div> :
                                 null
                             }
                         </div>
                     </div>
-
-                    {/* <div className={ Spirit.page.xl }>
-                        <div className="grid-12 gutter-40 mt-vw5 mt-vw2-ns">
-                            <div className="col-8 flex">
-                                <div className="flex flex-column justify-between">
-
-                                    <div className="flex flex-column">
-                                        <div className="flex items-start mb8">
-                                            <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 fw5 br-100 tc white bg-midgrey">?</div>
-                                            <h1 className="ma0 f4 nudge-top--2">{post.title}</h1>
-                                        </div>
-
-                                        <div className="flex items-start">
-                                            <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 f8 fw5 br-100 tc midgrey ba b--midgrey">&raquo;</div>
-                                            <section className="post-content faq-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-                                        </div>
-                                    </div>
-
-                                    <footer className="mt8 pt5 bt b--whitegrey midgrey f8 pb8">
-                                        Updated: <time dateTime={post.updated_at_pretty}>{post.updated_at_pretty}</time>
-                                    </footer>
-
-                                </div>
-                            </div>
-
-                            {relatedPosts.length ?
-                                <>
-                                    <div className="col-4 w70 ml14">
-                                        <h4 className="ma0 mt1 mb6 midgrey">Related Questions</h4>
-                                        <RelatedPosts relatedPosts={relatedPosts} />
-                                    </div>
-                                </> :
-                                null
-                            }
-
-                        </div>
-                    </div> */}
                 </Layout>
             </>
         )

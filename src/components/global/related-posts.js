@@ -10,7 +10,7 @@ class RelatedPosts extends React.Component {
             <ul className="pa0 ma0 mb8 list">
                 {relatedPosts.map(({ node }, i) => (
                     <li className="mb4 f8" key={i}>
-                        <Link to={node.url} className="link midgrey hover-blue lh-title" >{node.title}</Link>
+                        <Link to={ node.url } className="link blue hover-underline-blue lh-title" >{node.title}</Link>
                     </li>
                 ))}
             </ul>

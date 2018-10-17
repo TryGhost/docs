@@ -292,7 +292,7 @@ Usage (In Ghost editor):
 }
 
 .post-content h2 {
-    font-size: 3.3rem;
+    font-size: 2.85rem;
     font-weight: 500;
     line-height: var(--vr-5);
     padding-top: var(--navbar-size);
@@ -305,7 +305,7 @@ Usage (In Ghost editor):
 }
 
 .post-content h3 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 500;
     line-height: var(--vr-5);
     padding-top: var(--navbar-size);
@@ -319,7 +319,7 @@ Usage (In Ghost editor):
 }
 
 .post-content h4 {
-    font-size: 1.9rem;
+    font-size: 1.75rem;
     font-weight: 500;
     line-height: var(--vr-4);
     padding-top: var(--navbar-size);
@@ -332,7 +332,7 @@ Usage (In Ghost editor):
 }
 
 .post-content h5 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 300;
     font-style: italic;
     line-height: var(--vr-5);
@@ -762,8 +762,46 @@ Usage (In Ghost editor):
 }
 
 .faq-content > p:first-child {
-    border-bottom: 1px solid var(--whitegrey);
-    padding: 0 0 2.0rem;
+    font-size: 1.45rem;
+    line-height: inherit;
+}
+
+.faq-content h3 {
+    font-size: 1.9rem;
+    font-weight: 500;
+    line-height: var(--vr-4);
+    padding-top: var(--navbar-size);
+    margin: calc(var(--vr-5) - var(--navbar-size)) 0 0;
+}
+
+.faq-content h4 {
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: var(--vr-4);
+}
+
+.faq-content h2 {
+    font-size: 2.25rem;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    line-height: var(--vr-4);
+}
+
+.faq-content hr,
+.faq-content hr + p,
+.faq-content hr + ul,
+.faq-content hr + ol,
+.faq-content hr + blockquote {
+    margin: var(--vr-5) 0 0;
+}
+
+.faq-content hr + h1,
+.faq-content hr + h2,
+.faq-content hr + h3,
+.faq-content hr + h4,
+.faq-content hr + h5,
+.faq-content hr + h6 {
+    margin: calc(var(--vr-4) - var(--navbar-size)) 0 0;
 }
 
 /* Tutorials and Integrations steps */

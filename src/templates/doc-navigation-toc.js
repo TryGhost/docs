@@ -202,7 +202,7 @@ class DocTemplate extends React.Component {
                                 } } />
 
                             </article>
-                            <div className="mw-content pa15 pb0 pt0 bt b--whitegrey">
+                            <div className="mw-content pa15 pb0 pt0 bt b--whitegrey mt5">
                                 <PrevNextSection
                                     location={ this.props.location }
                                     sidebar={ post.frontmatter.sidebar }
