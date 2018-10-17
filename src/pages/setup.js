@@ -11,7 +11,7 @@ import MetaData from '../components/layouts/partials/meta-data'
 class SetupBox extends React.Component {
     render() {
         return (
-            <Box className="col-12 col-4-ns pa8 tdn middarkgrey setup-box-min-height" radius="4" to={ this.props.to }>
+            <Box className="col-12 col-4-ns pa8 tdn middarkgrey setup-box-min-height" radius="4" to={ this.props.to } href={ this.props.href }>
                 <Icon name={ this.props.icon } className={ this.props.iconClass } />
                 <h4 className={ Spirit.h4 + `darkgrey ` + this.props.headingClass }>{ this.props.title }</h4>
                 <p className={ Spirit.small + `mt1 midgrey` }>{ this.props.children }</p>
@@ -23,6 +23,7 @@ class SetupBox extends React.Component {
 SetupBox.propTypes = {
     children: PropTypes.any,
     to: PropTypes.string,
+    href: PropTypes.string,
     icon: PropTypes.string,
     title: PropTypes.string,
     iconClass: PropTypes.string,
@@ -57,7 +58,7 @@ class SetupIndexPage extends React.Component {
                     <div className={ Spirit.page.xl + `mt-vw3`}>
                         <section className="grid-12 gutter-row-20 gutter-36-l">
                             {/* <h3 className={ Spirit.h4 + `col-12 middarkgrey` }>I want to setup a site...</h3> */}
-                            <SetupBox to="/setup/ghost-pro/" title="Ghost(Pro)" icon="ghost-pro-logo" iconClass="w9 h9 stroke-w--1-5" headingClass="mt2">
+                            <SetupBox href="https://ghost.org/pricing/" title="Ghost(Pro)" icon="ghost-pro-logo" iconClass="w9 h9 stroke-w--1-5" headingClass="mt2">
                                 Ghost’s premium hosted service delivers a seamless experience, giving you time to focus on what really matters
                             </SetupBox>
 
