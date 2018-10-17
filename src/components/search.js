@@ -1,8 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link'
-import { Highlight, Index , connectAutoComplete } from 'react-instantsearch-dom'
+import { Highlight, Snippet, Index , connectAutoComplete } from 'react-instantsearch-dom'
 import Autosuggest from 'react-autosuggest'
+
+const renderSectionSuggestion = (hit) => {
+    return <Link to={hit.url}>
+        <span>{hit.section}</span>
+        <Highlight attribute="title" hit={hit} tagName="mark" />
+        <Snippet attribute="html" hit={hit} />
+    </Link>;
+}
+
+const renderFaqSectionSuggestion = (hit) => {
+    return <Link to={hit.url}>
+        <Highlight attribute="title" hit={hit} tagName="mark" />
+    </Link>;
+}
 
 class Results extends React.Component {
     constructor(props) {
@@ -31,8 +45,11 @@ class Results extends React.Component {
     }
 
     renderSuggestion(hit) {
-        console.log('hit', hit);
-        return <Link to={hit.url}><Highlight attribute="title" hit={hit} tagName="mark" /></Link>;
+        if (hit.section === 'faq') {
+            return renderFaqSectionSuggestion(hit)
+        } else {
+            return renderSectionSuggestion(hit)
+        }
     }
 
     renderSectionTitle(section) {

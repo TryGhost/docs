@@ -1,6 +1,7 @@
 import React from "react"
 import {
     InstantSearch,
+    Configure,
 } from 'react-instantsearch-dom'
 
 const SearchWrapper = ({ children }) => (
@@ -9,6 +10,8 @@ const SearchWrapper = ({ children }) => (
         apiKey="521c444a09acd62368618fce7f15dafa"
         indexName="faq"
     >
+        <Configure attributesToSnippet="html" />
+        <Configure hitsPerPage="8" />
         {children}
     </InstantSearch>
 )
