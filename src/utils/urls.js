@@ -14,5 +14,5 @@ module.exports.urlForMarkdown = (node, fallback) => {
 }
 
 // Create a Gatsby-style URL for resources in Ghost. These are currently the same but they might not always be
-module.exports.urlForGhostPost = (postNode, prefix) => `${prefix}${postNode.slug}/`
-module.exports.urlForGhostTag = (tagNode, prefix) => `${prefix}${tagNode.slug}/`
+module.exports.urlForGhostPost = (postNode, section) => `/${section}/${postNode.slug}/`
+module.exports.urlForGhostTag = (tagNode, section) => `/${section}/${tagNode.slug}/`

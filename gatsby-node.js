@@ -115,7 +115,7 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     // Query for each of the tags that we defined above
-    ghostQueryConfig.forEach(({ tag, prefix, template, tagsTemplate }) => {
+    ghostQueryConfig.forEach(({ tag, section, template, tagsTemplate }) => {
         queryPromises.push(new Promise((resolve, reject) => {
             graphql(allGhostPosts(tag))
                 .then((result) => {
@@ -142,7 +142,7 @@ exports.createPages = ({ graphql, actions }) => {
                         tagArchives = _.uniqBy(_.compact(tagArchives), `slug`)
 
                         _.forEach(tagArchives, (tag) => {
-                            tag.url = urlUtils.urlForGhostTag(tag, prefix)
+                            tag.url = urlUtils.urlForGhostTag(tag, section)
 
                             createPage({
                                 path: tag.url,
@@ -161,7 +161,7 @@ exports.createPages = ({ graphql, actions }) => {
                     _.forEach(items, ({ node }) => {
                         // Update the existing URL field to reflect the URL in Gatsby and
                         // not in Ghost. Also needed to link to related posts.
-                        node.url = urlUtils.urlForGhostPost(node, prefix)
+                        node.url = urlUtils.urlForGhostPost(node, section)
 
                         createPage({
                             path: node.url,
