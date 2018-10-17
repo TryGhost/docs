@@ -3,8 +3,10 @@
     items:
       - title: Overview
         link: /api/handlebars-themes/
-      - title: A second link
-        link: /#/
+      - title: Structure
+        link: /api/handlebars-themes/structure/
+      - title: Package.json
+        link: /api/handlebars-themes/packagejson/
   - group: Contexts
     items:
       - title: Context Overview
