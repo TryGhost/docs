@@ -4,6 +4,12 @@ Before adding custom CSS, think about if it rather should be in Spirit...
 
 */
 
+/* Globals - should definitely be in spirit */
+
+mark {
+    background-color: #fdffb6;
+}
+
 /* Custom typography for UI -- maybe should be in Spirit... */
 .lh-h1 { line-height: var(--vr-8); }
 .lh-h2 { line-height: var(--vr-6); }

@@ -94,7 +94,7 @@ For self-hosting Ghost in production our officially recommended stack is:
 - MySQL 5.5, 5.6, or 5.7 (*not* >= 8.0)
 - NGINX
 - Systemd
-- [Recommended Node version](/faq/node-version/) installed via NodeSource
+- [Recommended Node version](/faq/node-versions/) installed via NodeSource
 - A server with at least 1GB memory
 - A non-root user for running `ghost` commands
 

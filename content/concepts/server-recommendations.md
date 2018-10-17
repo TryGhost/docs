@@ -3,28 +3,36 @@ title: "Server Recommendations"
 sidebar: "concepts"
 ---
 
-## This is the second heading
+When self-hosting there are a few other steps you might want to take to take for security and performance
 
-Spicy jalapeno cupidatat chicken ut filet mignon sausage ut boudin nulla reprehenderit strip steak proident cillum incididunt short loin cow. Pig in pastrami, leberkas eiusmod enim bresaola do. Filet mignon officia quis kevin pork, swine strip steak excepteur hamburger chicken pork chop boudin shankle. Velit chicken pig in cupim kielbasa jerky. Bresaola excepteur veniam, andouille magna brisket aliquip nostrud jerky.
+## Server Hardening
 
-```javascript
-makeArray() {
-    // Hey hey what can I do
-    const foo = []
-    bar.split('').forEach(letter => {
-      foo.push(letter)
-    })
-    return foo
-}
-```
+After setting up a fresh Ubuntu install in production, it's worth taking a few more steps to make your new environment extra secure and resilient.
 
-### This is the third heading
+### Securing MySQL
 
-Pork chop ribeye ut chicken buffalo proident minim leberkas cupim adipisicing burgdoggen incididunt pastrami cupidatat. Prosciutto kevin dolore labore ham, cupidatat pork loin fatback picanha irure ad short ribs duis. Cupidatat excepteur jerky doner, incididunt consectetur turkey pariatur. Culpa consectetur cillum shank ham hock anim pastrami ex tempor eu. Fatback strip steak pig, bacon salami drumstick ut capicola short loin flank.
+We strongly recommend running `mysql_secure_installation` after successful setup to significantly improve the security of your database.
 
-Jowl dolor duis, cupidatat pork tempor nostrud incididunt short loin laborum. Duis nostrud fatback ribeye consequat ad. Proident pancetta ut tempor. Short loin officia eiusmod beef. Sunt tongue pig venison, sint mollit ad excepteur velit adipisicing flank pancetta pariatur. Dolor t-bone swine alcatra fatback ribeye, mollit dolore incididunt ullamco.
+### Setting up a Firewall
 
-Spare ribs aute fugiat, pariatur andouille labore nulla exercitation. Aliqua picanha sirloin consequat drumstick sint exercitation pork nisi et. Dolore swine fugiat pork salami proident. Bacon excepteur filet mignon labore pariatur in in nulla magna fugiat prosciutto. Laboris sint ground round, pancetta ipsum in pariatur voluptate fatback andouille velit shoulder flank quis sausage.
+Ubuntu 18.04 servers can use the UFW firewall to make sure only connections to certain services are allowed. We recommend setting up UFW rules for `ssh`, `nginx`, `http`, and `https`. If you do use UFW, make sure you don't use any other firewalls.
 
-Hamburger ham shank est, officia qui capicola proident. Ribeye dolore prosciutto sirloin alcatra. Rump short ribs quis ex fugiat proident incididunt irure t-bone meatball veniam sirloin meatloaf. Tongue anim sint pancetta bresaola sirloin.
-Does your lorem ipsum text long for something a little meatier? Give our generator a try…
+### Disable SSH Root & Password Logins
+
+It's a very good idea to disable SSH password based login and *only* connect to your server via proper SSH keys. It's also a good idea to disable the root user. 
+
+
+## Optimising for Scale
+
+The correct way to scale Ghost is by adding a CDN and/or caching layer in front of your Ghost instance. **Clustering or sharding is not supported in any way.** 
+
+Every day 2-5 of the top stories on Hacker News are published with Ghost, and to the best of our knowledge no Ghost site has ever fallen over as a result of a traffic spike. Minimal, sensible caching is more than enough.
+
+
+## Staying up to Date
+
+Whenever running a public-facing production web server it's **critically important** to keep all software up to date. If you don't keep everything up to date, you place your site and your server at risk of numerous potential exploits and hacks.
+
+If you can't manage these things yourself, ensure that a systems administrator on your team is able to keep everything updated on your behalf.
+
+If you don't have somsone to manage your server and don't want to deal with any of the things on this page, consider using **[Ghost(Pro)](https://ghost.org/pricing)**, where all of this is handled on your behalf. It will save a significant amount of time.
