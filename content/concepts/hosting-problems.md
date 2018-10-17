@@ -3,28 +3,28 @@ title: "Troubleshooting"
 sidebar: "concepts"
 ---
 
-## This is the second heading
+If you're having trouble with running Ghost, here's a quick guide to resolving almost any problem
 
-Spicy jalapeno cupidatat chicken ut filet mignon sausage ut boudin nulla reprehenderit strip steak proident cillum incididunt short loin cow. Pig in pastrami, leberkas eiusmod enim bresaola do. Filet mignon officia quis kevin pork, swine strip steak excepteur hamburger chicken pork chop boudin shankle. Velit chicken pig in cupim kielbasa jerky. Bresaola excepteur veniam, andouille magna brisket aliquip nostrud jerky.
 
-```javascript
-makeArray() {
-    // Hey hey what can I do
-    const foo = []
-    bar.split('').forEach(letter => {
-      foo.push(letter)
-    })
-    return foo
-}
-```
+## Search The Docs
 
-### This is the third heading
+We heavily document all of the most common problems which people have running Ghost, so chances are if you search these docs for your error message or keyphrase then you'll find a page about it! Our search spans a massive archive of content to try and find exactly what you're looking for.
 
-Pork chop ribeye ut chicken buffalo proident minim leberkas cupim adipisicing burgdoggen incididunt pastrami cupidatat. Prosciutto kevin dolore labore ham, cupidatat pork loin fatback picanha irure ad short ribs duis. Cupidatat excepteur jerky doner, incididunt consectetur turkey pariatur. Culpa consectetur cillum shank ham hock anim pastrami ex tempor eu. Fatback strip steak pig, bacon salami drumstick ut capicola short loin flank.
 
-Jowl dolor duis, cupidatat pork tempor nostrud incididunt short loin laborum. Duis nostrud fatback ribeye consequat ad. Proident pancetta ut tempor. Short loin officia eiusmod beef. Sunt tongue pig venison, sint mollit ad excepteur velit adipisicing flank pancetta pariatur. Dolor t-bone swine alcatra fatback ribeye, mollit dolore incididunt ullamco.
+## Ghost(Pro) Email Support
 
-Spare ribs aute fugiat, pariatur andouille labore nulla exercitation. Aliqua picanha sirloin consequat drumstick sint exercitation pork nisi et. Dolore swine fugiat pork salami proident. Bacon excepteur filet mignon labore pariatur in in nulla magna fugiat prosciutto. Laboris sint ground round, pancetta ipsum in pariatur voluptate fatback andouille velit shoulder flank quis sausage.
+If you're having trouble with a **Ghost(Pro)** site, just drop us an email on `support@ghost.org` and we'll be more than happy to help. Direct email support from the creators of Ghost is one of the benefits of our fully managed platform.
 
-Hamburger ham shank est, officia qui capicola proident. Ribeye dolore prosciutto sirloin alcatra. Rump short ribs quis ex fugiat proident incididunt irure t-bone meatball veniam sirloin meatloaf. Tongue anim sint pancetta bresaola sirloin.
-Does your lorem ipsum text long for something a little meatier? Give our generator a try…
+If you're not a **Ghost(Pro)** customer, there are still plenty of ways to get help:
+
+
+## The Ghost Forum
+
+You'll find a large community of developers and users on [the Ghost Forum](https://forum.ghost.org) who are generally very helpful to each other in resolving common issues. It's worth searching here, too, to check if your question has already been answered. If not, feel free to open a new topic and see if anyone can give you a hand.
+
+
+## Issues with 3rd Party Services
+
+If you're having trouble with a 3rd party service such as Disqus comments, a specific hosting provider, or an external mail service: **Try contacting them directly for support, first**. We generally aren't able to solve or even diagnose issues in other products, because we don't have any access to their systems, data, or infrastructure.
+
+If you exhaust all support avenues and still need help, you can always post on the forum and see if anyone else might have experienced the same issue. However, it shouldn't be your first port of call. 
