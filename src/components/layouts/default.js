@@ -18,15 +18,6 @@ import '../css/prism.css'
 class DefaultLayout extends React.Component {
     componentDidMount() {
         Prism.highlightAll()
-        // Initialize Algolia docsearch (stopgap!)
-        // TODO Is this expensive? Should it be deferred until a user is about to search?
-        // eslint-disable-next-line no-undef
-        docsearch({
-            apiKey: `4fe7477fc2c60bd4afce28addb616c03`,
-            indexName: `ghost`,
-            inputSelector: `#homesearch,#globalnavsearch`,
-            debug: true, // Set debug to true if you want to inspect the dropdown
-        })
     }
 
     render() {
