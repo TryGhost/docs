@@ -50,7 +50,7 @@ function PrevNextSection(props) {
 
         const currentIndex = _.findIndex(flatSidebar, item => item.link === props.location.pathname)
         const prev = flatSidebar[currentIndex - 1]
-        const next = flatSidebar[currentIndex + 1]
+        const next = flatSidebar[currentIndex + 1] || { group: `Setup`, link: `/setup/`, title: `Install Ghost` }
 
         return (
             <PrevNext prev={ prev } next={ next } />
