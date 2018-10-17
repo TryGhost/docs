@@ -268,7 +268,7 @@ mark {
 }
 
 .bg-darkgrey-searchbar {
-    background-color: color-mod(var(--darkgrey) a(0.04));
+    background-color: color-mod(var(--midlightgrey) a(0.1));
 }
 
 /* Home */
