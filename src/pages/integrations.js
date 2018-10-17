@@ -28,7 +28,7 @@ class IntegrationsPage extends React.Component {
                     image={imageUrl}
                 />
                 <Layout title="Integrations" headerDividerStyle="shadow" header={ <IntegrationsHeader /> }>
-                    <div className={ Spirit.page.xl }>
+                    <div className={ Spirit.page.xl + `pt10` }>
                         <div className="flex br4">
                             <div className="gh-integration-sidebar flex-shrink-0 w50 mr5">
                                 <div className="flex flex-column mb6">

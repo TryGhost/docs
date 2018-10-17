@@ -70,6 +70,7 @@ NavBar.defaultProps = {
 NavBar.propTypes = {
     theme: PropTypes.oneOf([`dark`, `light`]),
     searchField: PropTypes.bool,
+    location: PropTypes.object,
 }
 
 export default NavBar

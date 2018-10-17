@@ -4,7 +4,7 @@ import NavBar from './navbar'
 class IntegrationsHeader extends React.Component {
     render() {
         return (
-            <div className="bg-integrations-header-image mb10">
+            <div className="bg-integrations-header-image">
                 <div className="bg-integrations-header-cover">
                     <header className="top-0 left-0 right-0 z-9999">
                         <NavBar theme="light" />
