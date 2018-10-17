@@ -11,13 +11,13 @@ class MetaData extends React.Component {
         const { ghostPost } = this.props.data || {}
         const { markdownRemark } = this.props.data || {}
         const { siteMetadata } = this.props.data.site
-        const { type, title, description, image } = this.props
+        const { type, title, description, image, fetchAuthorData } = this.props
         const canonical = path.join(siteMetadata.siteUrl, this.props.location.pathname, `/`)
 
         if (type === `article`) {
             if (ghostPost) {
                 return (
-                    <ArticleMetaGhost data={ this.props.data } canonical={canonical} />
+                    <ArticleMetaGhost data={this.props.data} canonical={canonical} fetchAuthorData={fetchAuthorData} />
                 )
             } else if (markdownRemark) {
                 return (
@@ -60,6 +60,7 @@ MetaData.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
     image: PropTypes.string,
+    fetchAuthorData: PropTypes.bool,
 }
 
 export default MetaData

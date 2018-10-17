@@ -20,13 +20,13 @@ class WebsiteMeta extends React.Component {
                     <meta property="og:title" content={ title } />
                     <meta property="og:description" content={ description } />
                     <meta property="og:url" content={canonical} />
-                    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
+                    <meta property="article:publisher" content="https://www.facebook.com/ghost/" />
                     <meta name="twitter:title" content={ title } />
                     <meta name="twitter:description" content={ description } />
                     <meta name="twitter:url" content={canonical} />
                     <meta name="twitter:site" content="@tryghost" />
                     <script type="application/ld+json">{`
-                        "@context": "https://schema.org",
+                        "@context": "https://schema.org/",
                         "@type": ${type && type === `series` ? `"Series"` : `"WebSite"`},
                         "publisher": {
                             "@type": "Organization",

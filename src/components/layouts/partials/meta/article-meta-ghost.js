@@ -6,24 +6,43 @@ import _ from 'lodash'
 import getPostExcerpt from '../../../../utils/post-excerpt'
 import ImageMeta from './image-meta'
 
+function getAuthorProperties(primaryAuthor, fetchAuthorData) {
+    let authorProfiles = []
+
+    if (fetchAuthorData) {
+        authorProfiles.push(
+            primaryAuthor.website ? primaryAuthor.website : null,
+            primaryAuthor.twitter ? `https://twitter.com/${_.trimStart(primaryAuthor.twitter, `@`)}/` : null,
+            primaryAuthor.facebook ? `https://www.facebook.com/${primaryAuthor.facebook}/` : null
+        )
+    } else {
+        authorProfiles.push(
+            `https://ghost.org/`,
+            `https://twitter.com/ghost/`,
+            `https://www.facebook.com/ghost/`
+        )
+    }
+
+    authorProfiles = _.compact(authorProfiles)
+
+    return {
+        name: fetchAuthorData ? primaryAuthor.name : `Ghost`,
+        sameAsArray: authorProfiles.length ? `["${_.join(authorProfiles, `", "`)}"]` : null,
+        image: fetchAuthorData ? primaryAuthor.profile_image : null,
+    }
+}
+
 class ArticleMetaGhost extends React.Component {
     render() {
         const { ghostPost } = this.props.data
-        const { canonical } = this.props
+        const { canonical, fetchAuthorData } = this.props
         const { siteMetadata } = this.props.data.site
 
-        let authorProfiles = []
         const excerpt = getPostExcerpt(ghostPost)
         const publicTags = _.map(_.filter(ghostPost.tags, { visibility: `public` }), `name`)
         const primaryTag = _.get(ghostPost.primaryTag, `name`, publicTags[0])
 
-        authorProfiles.push(
-            ghostPost.primary_author.website,
-            ghostPost.primary_author.twitter ? `https://twitter.com/${_.trimStart(ghostPost.primary_author.twitter, `@`)}/` : null,
-            ghostPost.primary_author.facebook ? `https://www.facebook.com/${ghostPost.primary_author.facebook}/` : null
-        )
-
-        authorProfiles = _.compact(authorProfiles)
+        const author = getAuthorProperties(ghostPost.primary_author, fetchAuthorData)
 
         return (
             <>
@@ -52,7 +71,7 @@ class ArticleMetaGhost extends React.Component {
                     <meta property="article:published_time" content={ ghostPost.published_at } />
                     <meta property="article:modified_time" content={ghostPost.updated_at } />
                     {publicTags.map((keyword, i) => (<meta property="article:tag" content={keyword} key={i} />))}
-                    <meta property="article:author" content="https://www.facebook.com/ghost" />
+                    <meta property="article:author" content="https://www.facebook.com/ghost/" />
 
                     <meta name="twitter:title"
                         content={
@@ -72,13 +91,13 @@ class ArticleMetaGhost extends React.Component {
                     {/* <meta name="twitter.label1" content="Reading time" /> */}
                     {/* <meta name="twitter:data1" content="TODO: Reading time helper and replace existing `label1` data" /> */}
                     <meta name="twitter:label1" content="Written by" />
-                    <meta name="twitter:data1" content={ghostPost.primary_author.name} />
+                    <meta name="twitter:data1" content={author.name} />
                     { primaryTag ? <meta name="twitter:label2" content="Filed under" /> : null }
                     { primaryTag ? <meta name="twitter:data2" content={ primaryTag } /> : null }
                     <meta name="twitter:site" content="@tryghost" />
                     <meta name="twitter:creator" content="@tryghost" />
                     <script type="application/ld+json">{`
-                        "@context": "https://schema.org",
+                        "@context": "https://schema.org/",
                         "@type": "Article",
                         "publisher": {
                             "@type": "Organization",
@@ -92,9 +111,9 @@ class ArticleMetaGhost extends React.Component {
                         },
                         "author": {
                             "@type": "Person",
-                            "name": "${ghostPost.primary_author.name}",
-                            ${ghostPost.primary_author.profile_image ? `"image": "${ghostPost.primary_author.profile_image}",` : ``}
-                            ${authorProfiles.length ? `"sameAs": [${_.join(authorProfiles, `, `)}]` : ``}
+                            "name": "${author.name}",
+                            ${author.image ? `"image": "${author.image}",` : ``}
+                            ${author.sameAsArray ? `"sameAs": ${author.sameAsArray}` : ``}
                         },
                         ${publicTags.length ? `"keywords": "${_.join(publicTags, `, `)}",` : ``}
                         "headline": "${ghostPost.meta_title || ghostPost.title}",
@@ -115,6 +134,10 @@ class ArticleMetaGhost extends React.Component {
     }
 }
 
+ArticleMetaGhost.defaultProps = {
+    fetchAuthorData: false,
+}
+
 ArticleMetaGhost.propTypes = {
     data: PropTypes.shape({
         ghostPost: PropTypes.object.isRequired,
@@ -127,6 +150,7 @@ ArticleMetaGhost.propTypes = {
         }).isRequired,
     }).isRequired,
     canonical: PropTypes.string.isRequired,
+    fetchAuthorData: PropTypes.bool,
 }
 
 export default ArticleMetaGhost

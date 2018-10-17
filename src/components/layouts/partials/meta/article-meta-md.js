@@ -30,7 +30,7 @@ class ArticleMetaMD extends React.Component {
                     <meta property="og:url" content={ canonical } />
                     <meta property="article:published_time" content={ isoDate } />
                     {fm.keywords.map((keyword, i) => (<meta property="article:tag" content={keyword} key={i} />))}
-                    <meta property="article:author" content="https://www.facebook.com/ghost" />
+                    <meta property="article:author" content="https://www.facebook.com/ghost/" />
 
                     <meta name="twitter:title" content={ fm.meta_title || fm.title } />
                     <meta name="twitter:description" content={ fm.meta_description || post.excerpt } />
@@ -42,7 +42,7 @@ class ArticleMetaMD extends React.Component {
                     <meta name="twitter:site" content="@tryghost" />
                     <meta name="twitter:creator" content="@tryghost" />
                     <script type="application/ld+json">{`
-                        "@context": "https://schema.org",
+                        "@context": "https://schema.org/",
                         "@type": "Article",
                         "publisher": {
                             "@type": "Organization",
@@ -56,11 +56,11 @@ class ArticleMetaMD extends React.Component {
                         },
                         "author": {
                             "@type": "Person",
-                            "name": "Ghost Foundation",
+                            "name": "Ghost",
                             "sameAs: [
                                 "https://ghost.org/",
-                                "https://www.facebook.com/ghost",
-                                "https://twitter.com/tryghost"
+                                "https://www.facebook.com/ghost/",
+                                "https://twitter.com/tryghost/"
                             ]
                         },
                         ${fm.keywords.length ? `"keywords": "${_.join(fm.keywords, `, `)}",` : ``}

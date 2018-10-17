@@ -13,7 +13,7 @@ class Tutorial extends React.Component {
 
         return (
             <>
-                <MetaData data={this.props.data} location={this.props.location} type="article" />
+                <MetaData data={this.props.data} location={this.props.location} type="article" fetchAuthorData={true} />
                 <Layout title="Home" headerDividerStyle="shadow" mainClass="bg-white">
                     <div className="bg-tutorials">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1 white` }>
