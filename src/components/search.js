@@ -58,7 +58,7 @@ class Results extends React.Component {
         }
 
         return (
-            <div>
+            <React.Fragment>
                 <Autosuggest
                     suggestions={hits}
                     onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -77,7 +77,7 @@ class Results extends React.Component {
                 <Index indexName="api" />
                 <Index indexName="tutorial" />
                 <Index indexName="integration" />
-            </div>
+            </React.Fragment>
         )
     }
 }
