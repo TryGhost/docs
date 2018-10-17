@@ -21,7 +21,7 @@ By the end of this tutorial you will have completed a local Ghost install that r
 
 If you would like to customise Ghost core, or contribute to the upstream repository, use the contribution guide.
 
-> Local installs aren’t suitable for production — head to [this install guide](https://docs.ghost.org/setup/ubuntu/) if you want to deploy to production.
+> Local installs aren’t suitable for production — head to [this install guide](/setup/ubuntu/) if you want to deploy to production.
 
 ## Prerequisites
 
@@ -98,7 +98,7 @@ Useful commands:
 * Run `ghost ls` from anywhere – lists all running Ghost blogs
 
 ### Debugging
-For troubleshooting and errors, use the site search and [FAQ section](https://docs.ghost.org/faq/) to find information about common error messages.
+For troubleshooting and errors, use the site search and [FAQ section](/faq/) to find information about common error messages.
 
 ---
 
@@ -168,6 +168,6 @@ GScan can also be accessed at [gscan.ghost.org](https://gscan.ghost.org/), where
 
 To summarise, in this section you installed the Ghost CLI and installed Ghost locally — congrats! You can now put Ghost through it’s paces and see what it’s all about, or jump right into developing a custom Ghost theme.
 
-👉 Remember, local installs are not suitable for production. If you decide to deploy to production, [follow this guide](https://docs.ghost.org/install/ubuntu/).
+👉 Remember, local installs are not suitable for production. If you decide to deploy to production, [follow this guide](/install/ubuntu/).
 
-For more information about theme development read the [Handlebars theme documentation](https://docs.ghost.org/api/handlebars-themes/) and check out the [tutorials](https://docs.ghost.org/tutorials/).
+For more information about theme development read the [Handlebars theme documentation](/api/handlebars-themes/) and check out the [tutorials](/tutorials/).

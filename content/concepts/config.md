@@ -4,33 +4,33 @@ meta_title: "Core Concepts - Config Options"
 meta_description: "Ghost has a custom configuration file that can be used to configure your site and override Ghost's default behaviour. Read more 👉"
 keywords:
     - config
-    - concepts 
+    - concepts
     - ghost
     - publishing
 sidebar: "concepts"
 ---
 
-For self-hosted Ghost users, a custom configuration file can be used to override Ghost's default behaviour. This provides you with a range of options to configure your publication to suit your needs. 
+For self-hosted Ghost users, a custom configuration file can be used to override Ghost's default behaviour. This provides you with a range of options to configure your publication to suit your needs.
 
 
 ## Overview
 
-When you install Ghost using the supported and recommended method using `ghost-cli`, a custom configuration file is created for you by default. There are some configuration options which are required by default, and many optional configurations. 
+When you install Ghost using the supported and recommended method using `ghost-cli`, a custom configuration file is created for you by default. There are some configuration options which are required by default, and many optional configurations.
 
-The three required options are `url` and `database` which are configured during setup, and `mail` which needs to be configured once you've installed Ghost. 
+The three required options are `url` and `database` which are configured during setup, and `mail` which needs to be configured once you've installed Ghost.
 
-This article explains how to setup your mail config, as well as walk you through all of the available config options. 
+This article explains how to setup your mail config, as well as walk you through all of the available config options.
 
 
 ## Custom configuration files
 
-The configuration is managed by [nconf](https://github.com/indexzero/nconf/). A custom configuration file must be a valid JSON file located in the root folder and changes to the file can be implemented using `ghost restart`. 
+The configuration is managed by [nconf](https://github.com/indexzero/nconf/). A custom configuration file must be a valid JSON file located in the root folder and changes to the file can be implemented using `ghost restart`.
 
-Since Node.js has the concept of environments built in, Ghost supports two envionments: **development** and **production**. All public Ghost publications run in production mode, while development mode can be used to test or build on top of Ghost locally. 
+Since Node.js has the concept of environments built in, Ghost supports two envionments: **development** and **production**. All public Ghost publications run in production mode, while development mode can be used to test or build on top of Ghost locally.
 
-> Check out the official install guides for [development](https://docs.ghost.org/install/local/) and [production](https://docs.ghost.org/install/ubuntu/). 
+> Check out the official install guides for [development](/install/local/) and [production](/install/ubuntu/).
 
-The configuration files reflect the environment you are using: 
+The configuration files reflect the environment you are using:
 
 * `config.development.json`
 * `config.production.json`
@@ -87,23 +87,23 @@ There are a number of configuration options which are explained in detail in thi
 
 *(Required in production)*
 
-Once a Ghost publication is installed, the first thing to do is set a url. When installing using `ghost-cli` the install process request the URL during the setup process. 
+Once a Ghost publication is installed, the first thing to do is set a url. When installing using `ghost-cli` the install process request the URL during the setup process.
 
-Enter the URL that is used to access your publication. If using a subpath, enter the full path, `https://example.com/blog/`. If using SSL, always enter the URL with `https://`. 
+Enter the URL that is used to access your publication. If using a subpath, enter the full path, `https://example.com/blog/`. If using SSL, always enter the URL with `https://`.
 
-#### SSL 
-We always recommend using SSL to run your Ghost publication in production. Ghost has a number of configuration options for working with SSL, and securing the URLs for the admin `/ghost/` and the frontend of your publication. Without SSL your username and password are sent in plaintext. 
+#### SSL
+We always recommend using SSL to run your Ghost publication in production. Ghost has a number of configuration options for working with SSL, and securing the URLs for the admin `/ghost/` and the frontend of your publication. Without SSL your username and password are sent in plaintext.
 
 `ghost-cli` prompts to setup SSL during the installation process. After a successful ssl setup, you can find your ssl certificate in `/etc/letsencrypt`.
 
-If you see errors such as `access denied from url`, then the provided URL in your config file is incorrect and needs to be updated. 
+If you see errors such as `access denied from url`, then the provided URL in your config file is incorrect and needs to be updated.
 
 
 ## Database
 
 *(Required in production)*
 
-Ghost is configured using MySQL by default: 
+Ghost is configured using MySQL by default:
 ```
 "database": {
   "client": "mysql",
@@ -148,9 +148,9 @@ It's possible to limit the number of simultaneous connections using the pool set
 
 *(Required in production)*
 
-The most important piece of configuration once you've been through the install process is to setup mail. Mail configuration allows Ghost to send emails such as lost password and user invite emails. 
+The most important piece of configuration once you've been through the install process is to setup mail. Mail configuration allows Ghost to send emails such as lost password and user invite emails.
 
-Ghost uses [Nodemailer 0.7](https://github.com/nodemailer/nodemailer/tree/0.7/) under the hood, and tries to use the direct mail service if available - but a more reliable solution is to setup mail using an external service. 
+Ghost uses [Nodemailer 0.7](https://github.com/nodemailer/nodemailer/tree/0.7/) under the hood, and tries to use the direct mail service if available - but a more reliable solution is to setup mail using an external service.
 
 #### Setup an email sending account
 
@@ -161,9 +161,9 @@ Choose an external email service and sign up and verify your account. We highly 
 Mailgun allows you to use your own domain for sending transactional emails. Otherwise you can use a subdomain that Mailgun provide you with (also known as the sandbox domain, limited to 300 emails per day). You can change this at any time.
 
 **Make a note of your domain information**
-Once your domain is setup, find your new email service SMTP username and password that has been created for you (this is not the ones you used to sign up for Mailgun with). You can find this under "Domain Information" and make a note of the following details: 
+Once your domain is setup, find your new email service SMTP username and password that has been created for you (this is not the ones you used to sign up for Mailgun with). You can find this under "Domain Information" and make a note of the following details:
 
-* Default SMTP login 
+* Default SMTP login
 * Default password
 
 #### Update your `config.production.json` file
@@ -182,11 +182,11 @@ Open your production config file in any code editor and paste the username and p
 }
 ```
 
-Once you are finished, hit save and then run `restart ghost` for your changes to take effect. It is possible to reuse your settings for a development environment if you have both, by making the same changes to `config.development.json`. 
+Once you are finished, hit save and then run `restart ghost` for your changes to take effect. It is possible to reuse your settings for a development environment if you have both, by making the same changes to `config.development.json`.
 
 
 #### Amazon SES
-It's also possible to use [Amazon Simple Email Service](https://aws.amazon.com/ses/). Use the SMTP username and password given when signing up and configure your `config.[env].json` file as follows: 
+It's also possible to use [Amazon Simple Email Service](https://aws.amazon.com/ses/). Use the SMTP username and password given when signing up and configure your `config.[env].json` file as follows:
 ```
 "mail": {
     "transport": "SMTP",
@@ -204,7 +204,7 @@ It's also possible to use [Amazon Simple Email Service](https://aws.amazon.com/s
 
 #### From address
 
-By default the 'from' address for mail sent from Ghost is set to the title of your publication, for example `<ghost@your-publication.com>`. To override this to something different, use: 
+By default the 'from' address for mail sent from Ghost is set to the title of your publication, for example `<ghost@your-publication.com>`. To override this to something different, use:
 
 ```
 "mail": {
@@ -212,7 +212,7 @@ By default the 'from' address for mail sent from Ghost is set to the title of yo
 }
 ```
 
-A custom name can also be provided: 
+A custom name can also be provided:
 
 ```
 "mail": {
@@ -226,14 +226,14 @@ A custom name can also be provided:
 Admin can be used to specify a different protocol for your admin panel or a different hostname (domain name). It can't affect the path at which the admin panel is served (this is always /ghost/).
 
 ```
-"admin": { 
-  "url": "http://example.com" 
+"admin": {
+  "url": "http://example.com"
 }
 ```
 
 ## Server
 
-The server host and port are the IP address and port number that Ghost listens on for requests. By default, requests are routed from port 80 to Ghost by nginx (recommended), or apache. 
+The server host and port are the IP address and port number that Ghost listens on for requests. By default, requests are routed from port 80 to Ghost by nginx (recommended), or apache.
 
 ```
 "server": {
@@ -243,7 +243,7 @@ The server host and port are the IP address and port number that Ghost listens o
 ```
 
 #### Unix Sockets
-Ghost can also be configured to listen on a unix socket by changing the server config: 
+Ghost can also be configured to listen on a unix socket by changing the server config:
 
 ```
 "server": {
@@ -264,23 +264,23 @@ The default permissions are 0660, but this can be configured by expanding the so
 
 ## Privacy
 
-All features inside the privacy.md file are enabled by default. It is possible to turn these off in order to protect privacy: 
+All features inside the privacy.md file are enabled by default. It is possible to turn these off in order to protect privacy:
 
 * Update check
 * Gravatar
 * RPC ping
 * Structured data
 
-For more information about the features, read the [privacy.md page](https://github.com/TryGhost/Ghost/blob/master/PRIVACY.md/). 
+For more information about the features, read the [privacy.md page](https://github.com/TryGhost/Ghost/blob/master/PRIVACY.md/).
 
-To turn off **all** of the features, use: 
+To turn off **all** of the features, use:
 ```
 "privacy": {
     "useTinfoil": true
 }
 ```
 
-Alternatively, configure each feature individually: 
+Alternatively, configure each feature individually:
 ```
 "privacy": {
     "useUpdateCheck": false,
@@ -299,10 +299,10 @@ The configuration of paths can be relative or absolute. To use a content directo
 "paths": {
     "contentPath": "content/"
 },
-``` 
-When using a custom content path, the content directory must exist and contain sub directories for data, images, themes, logs and adapters. 
+```
+When using a custom content path, the content directory must exist and contain sub directories for data, images, themes, logs and adapters.
 
-> If using an Sqlite database, you'll also need to update the path to your database to match the new location of the data folder. 
+> If using an Sqlite database, you'll also need to update the path to your database to match the new location of the data folder.
 
 
 ## Referrer Policy
@@ -312,7 +312,7 @@ Set the value of the content attribute of the meta referrer HTML tag by adding r
 
 ## Logging
 
-Configure how Ghost should log, for example: 
+Configure how Ghost should log, for example:
 ```
 "logging": {
   "path": "something/",
@@ -332,15 +332,15 @@ The default log level is `info` which prints all info, warning and error logs. S
 
 #### `rotation`
 
-Tell Ghost to rotate your log files. By default Ghost keeps 10 log files and rotates every day. Rotation is enabled by default in production and disabled in development. 
+Tell Ghost to rotate your log files. By default Ghost keeps 10 log files and rotates every day. Rotation is enabled by default in production and disabled in development.
 
 #### `transports`
 
-Define where Ghost should log to. By default Ghost writes to stdout and into file for production, and to stdout only for development. 
+Define where Ghost should log to. By default Ghost writes to stdout and into file for production, and to stdout only for development.
 
 #### `path`
 
-Log your content path, e.g. `content/logs/`. Set any path but ensure the permissions are correct to write into this folder. 
+Log your content path, e.g. `content/logs/`. Set any path but ensure the permissions are correct to write into this folder.
 
 
 ## Spam
@@ -350,7 +350,7 @@ Tell Ghost how to treat [spam requests](https://github.com/TryGhost/Ghost/blob/m
 
 ## Caching
 
-Configure [caching](https://github.com/TryGhost/Ghost/blob/master/core/server/config/defaults.json#L57/) for sitemaps, redirects or assets. 
+Configure [caching](https://github.com/TryGhost/Ghost/blob/master/core/server/config/defaults.json#L57/) for sitemaps, redirects or assets.
 
 
 ## Compress
@@ -360,7 +360,7 @@ The compression flag is turned on by default using `"compress": true`. Alternati
 
 ## Image optimisation
 
-When uploading images into the Ghost editor, they are automatically processed and compressed by default. This can be disabled in your `config.[env].json` file using: 
+When uploading images into the Ghost editor, they are automatically processed and compressed by default. This can be disabled in your `config.[env].json` file using:
 
 ```
     "imageOptimization": {
@@ -368,18 +368,18 @@ When uploading images into the Ghost editor, they are automatically processed an
     }
 ```
 
-Image compression details: 
+Image compression details:
 
 * Resize the image to 2000px max width
 * JPEG's are compressed to 80% quality.
 * Meta data removed
 
-The original image is kept with the suffix `_0`. 
+The original image is kept with the suffix `_0`.
 
 
 ## Summary
 
-You've explored how to configure a self-hosted Ghost publication with the required config options, as well as discovered how to make use of the optional config options that are available in the `config.[env].json` file. 
+You've explored how to configure a self-hosted Ghost publication with the required config options, as well as discovered how to make use of the optional config options that are available in the `config.[env].json` file.
 
 If you run into any issues when configuring your publication, try searching this site to find information about common error messages and issues.
 

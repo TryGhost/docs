@@ -4,18 +4,18 @@ meta_title: "Core Concepts - Dynamic Routing"
 meta_description: "Configure your site in almost any way you want by mapping content and templates to URL patterns with Dynamic Routing. Read more 👉"
 keywords:
     - routing
-    - concepts 
+    - concepts
     - ghost
     - publishing
 sidebar: "concepts"
 ---
 
-Dynamic routing is a flexible configuration layer which allows you to control the structure of your site in almost any way you want by mapping content and templates to URL patterns. 
+Dynamic routing is a flexible configuration layer which allows you to control the structure of your site in almost any way you want by mapping content and templates to URL patterns.
 
 ## Overview
-The Dynamic Routing configuration layer unlocks many custom publication options such as custom home pages and content collections. 
+The Dynamic Routing configuration layer unlocks many custom publication options such as custom home pages and content collections.
 
-This article walks you through the core concepts of Dynamic Routing with Ghost. At the end you’ll have an understanding of how it works. For more specific configuration guides, check out the [tutorials](https://docs.ghost.org/tutorials/).
+This article walks you through the core concepts of Dynamic Routing with Ghost. At the end you’ll have an understanding of how it works. For more specific configuration guides, check out the [tutorials](/tutorials/).
 
 ### When to use dynamic routing
 
@@ -33,13 +33,13 @@ The `routes.yaml` file divided into three sections: `routes`, `collections`, and
 
 ```
 routes:
-    
+
 collections:
 /:
 permalink: /{slug}/
 template:
 - index
-    
+
 taxonomies:
 tag: /tag/{slug}/
 author: /author/{slug}/
@@ -48,7 +48,7 @@ author: /author/{slug}/
 The rest of this article explains how `routes`, `collections` and `taxonomies` function, followed by how all of the available `YAML` properties can be used in each.
 
 > **Strict indentation**
-> YAML files use whitespace indentation to denote structure - using tabs is be invalid. Having mismatched indentation is the most common reason for a YAML file not being valid. 
+> YAML files use whitespace indentation to denote structure - using tabs is be invalid. Having mismatched indentation is the most common reason for a YAML file not being valid.
 
 ---
 
@@ -56,7 +56,7 @@ The rest of this article explains how `routes`, `collections` and `taxonomies` f
 
 A route is a single URL that is assigned a specific template and/or set of data. Routes allow you to create custom content and templates such as a home page, an about page or a custom RSS feed.
 
-Routes can be configured as shown: 
+Routes can be configured as shown:
 
 ```
 routes:
@@ -67,21 +67,21 @@ routes:
   rss:          # true/false (optional, default: true)
   content_type: # content type, eg 'rss' for RSS (optional, default: html)
   ```
-      
 
-For example, to set a custom home page on `/` as well as about pages at `about/careers` and `about/team` then use routes to define the URL routing. Read more about [custom pages](https://docs.ghost.org/tutorials/custom-home-page/). 
+
+For example, to set a custom home page on `/` as well as about pages at `about/careers` and `about/team` then use routes to define the URL routing. Read more about [custom pages](/tutorials/custom-home-page/).
 ```
 routes:
   /: home
   /about/careers/: about-careers
   /about/team/: about-team
   ```
-    
+
 ---
 
 ## Collections
 
-Collections allow you to create groups of posts that match a filter. A collection alters the URL for all posts that match the filter with a permalink. Each collection has an index URL where all posts in that collection are listed and paginated. 
+Collections allow you to create groups of posts that match a filter. A collection alters the URL for all posts that match the filter with a permalink. Each collection has an index URL where all posts in that collection are listed and paginated.
 
 ### Content structure
 
@@ -97,15 +97,15 @@ collections:
   template:  # template or list of templates to use (optional)
   ```
 
-Ordering collections in the `routes.yaml` file is important. Posts that match the filters of multiple collections appears within the first collection listed with a match, and not in other collections. Read more about [creating custom collections](https://docs.ghost.org/tutorials/creating-content-collections/). 
+Ordering collections in the `routes.yaml` file is important. Posts that match the filters of multiple collections appears within the first collection listed with a match, and not in other collections. Read more about [creating custom collections](/tutorials/creating-content-collections/).
 
 ---
 
 ## Taxonomies
 
-Taxonomies are used to group posts based on a common relation. In Ghost, this is always the author of the post, or using tags. 
+Taxonomies are used to group posts based on a common relation. In Ghost, this is always the author of the post, or using tags.
 
-Taxonomies allow you to amend the taxonomy permalink to something more appropriate for your publication. Unlike a collection, a taxonomy doesn’t alter the URL of individual posts, 
+Taxonomies allow you to amend the taxonomy permalink to something more appropriate for your publication. Unlike a collection, a taxonomy doesn’t alter the URL of individual posts,
 
 Taxonomies are structured like this:
 ```
@@ -115,23 +115,23 @@ taxonomies:
 
 
 * The `type` is one of `tag` or `author`,
-* the `/url/{slug}/` is the permalink for that taxonomy, 
+* the `/url/{slug}/` is the permalink for that taxonomy,
 * and `{slug}` represents the URL value of the `tag` or the `author`.
 
-In the Ghost theme layer, template files can be used to specify how a particular tag or author’s posts are rendered at the permalink. Find out more about changing. Read more about [custom taxonomies](https://docs.ghost.org/tutorials/change-url-for-tags-authors/). 
+In the Ghost theme layer, template files can be used to specify how a particular tag or author’s posts are rendered at the permalink. Find out more about changing. Read more about [custom taxonomies](/tutorials/change-url-for-tags-authors/).
 
 ---
 
 ## Properties
 
-Now you have a concept of how routes, collections and taxonomies work at a high level, it’s time to dig into the properties that you can utilise in the `routes.yaml` file for ultimate flexibility in configuring your Ghost publication. 
+Now you have a concept of how routes, collections and taxonomies work at a high level, it’s time to dig into the properties that you can utilise in the `routes.yaml` file for ultimate flexibility in configuring your Ghost publication.
 
 
 ### controller (channels)
 
 The `controller` property has one supported value: `channel`. A channel is a paginated index of posts that match a specified filter, such as all posts tagged with "news" and "fashion".
 
-This means you are able to create subsets and supersets by combining or dividing existing content. 
+This means you are able to create subsets and supersets by combining or dividing existing content.
 
 Unlike collections, creating a channel does not change a posts individual URL. Instead they allow for creating a view of content along with pagination that is not possible to do with the `{{get}}` helper alone.
 
@@ -150,7 +150,7 @@ A `filter` must be used in combination with the `controller: channel` configurat
 
 ### filter
 
-A filter is used to select a specific group of posts that belong to a collection or a channel. 
+A filter is used to select a specific group of posts that belong to a collection or a channel.
 
 The `filter` property follows the same syntax as the API’s filter parameter and is used to restrict which posts appear in a collection or channel.
 
@@ -167,7 +167,7 @@ filter: author:steve+tag:x # must be written by "steve" and have tag "x"
 
 ### data
 
-The `data` property is used to fetch resources using Ghost’s API for use in the collection's template. This property can fetch arbitrary posts, pages, tags and authors to be made available in a handlebars template, avoiding the need to use `{{get}}` everywhere. 
+The `data` property is used to fetch resources using Ghost’s API for use in the collection's template. This property can fetch arbitrary posts, pages, tags and authors to be made available in a handlebars template, avoiding the need to use `{{get}}` everywhere.
 
 Another important use for the `data` property is to associate resources with particular URLs so that accessing a resource from a different URL automatically redirects, avoiding duplicate content and confusing site structures.
 
@@ -207,11 +207,11 @@ Where `resource-type` is one of `tag`, `author`, `post`, or `page` - this sets t
 
 The `rss` property can be set to `true` or `false`. It defaults to `true` and if set to `false` the RSS feed is disabled for that collection.
 
-When set to `true`, find the `rss` URLs linked inside the `<head>` element. For example: 
+When set to `true`, find the `rss` URLs linked inside the `<head>` element. For example:
 
 * https://example.com/blog/rss/ default RSS generator (no template)
 
-Custom `rss` feeds can be set with the `content_type` property and a template. 
+Custom `rss` feeds can be set with the `content_type` property and a template.
 
 ### content_type
 
@@ -223,11 +223,11 @@ routes:
   content_type: rss
 ```
 
-`content-type` can be a short version that matches a typical file extension for a mime-type, or it can be set to the full mime-type. 
+`content-type` can be a short version that matches a typical file extension for a mime-type, or it can be set to the full mime-type.
 
 ### index URL
 
-The index URL property (or collection "key") determines where the archive pages for a collection appear. 
+The index URL property (or collection "key") determines where the archive pages for a collection appear.
 
 For example, in the following example, the index URL is `/blog/`:
 ```
@@ -238,15 +238,15 @@ collections:
 
 The trailing slash is required, so `/blog/:` is valid, but `/blog:` is not. The index URL will also include archive URLs:
 
-* https://example.com/blog/ 
+* https://example.com/blog/
 * https://example.com/blog/page/2
 
-Ghost will use the default template to render these routes. For example, `index.hbs` for `/blog:/` and `home.hbs` for `/:` - unless specific templates are set using the [template](http://docs.ghost.org/concepts/routing/#template/) property. 
+Ghost will use the default template to render these routes. For example, `index.hbs` for `/blog:/` and `home.hbs` for `/:` - unless specific templates are set using the [template](http://docs.ghost.org/concepts/routing/#template/) property.
 
 
 ### permalink
 
-The `permalink` property determines the URL for any post that is matched by a collection's filter. 
+The `permalink` property determines the URL for any post that is matched by a collection's filter.
 
 Available permalink variables:
 ```
@@ -278,6 +278,6 @@ collections:
 
 ## Further reading
 
-There are infinite ways to configure a Ghost publication, but some of the most popular examples have been documented over at the [tutorials](https://docs.ghost.org/tutorials/) page. 
+There are infinite ways to configure a Ghost publication, but some of the most popular examples have been documented over at the [tutorials](/tutorials/) page.
 
-Since Dynamic Routing is so flexible with endless configuration possibilities, errors can sometimes occur. Try searching this site or using the [FAQs](https://docs.ghost.org/faq/) if you encounter any issues configuring your publication.
+Since Dynamic Routing is so flexible with endless configuration possibilities, errors can sometimes occur. Try searching this site or using the [FAQs](/faq/) if you encounter any issues configuring your publication.
