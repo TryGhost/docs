@@ -469,6 +469,20 @@ mark {
     background-color: #35BCAD;
 }
 
+.tutorial-green {
+    color: #35BCAD;
+}
+
+.stroke-tutorial-green g,
+.stroke-tutorial-green path {
+    stroke: #35BCAD;
+}
+
+.fill-tutorial-green g,
+.fill-tutorial-green path {
+    fill: #35BCAD;
+}
+
 .tutorial-featured-post {
     border-top: 4px solid #35BCAD;
 }

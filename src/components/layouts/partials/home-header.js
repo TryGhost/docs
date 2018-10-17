@@ -11,7 +11,7 @@ class MainBox extends React.Component {
     render() {
         return (
             <Box className="col-12 col-4-ns pa5 pa10-l pt8-l flex flex-column tdn content-stretch" to={ this.props.to } radius="4" elevation="2">
-                <Icon name={ this.props.icon } className="w10 h10 w12-ns h12-ns stroke-w--1-5 mr2 mb2" />
+                <Icon name={ this.props.icon } className={`w10 h10 w12-ns h12-ns stroke-w--1-5 mr2 mb2 stroke-${this.props.color}`} />
                 <div className="flex flex-column justify-between flex-auto">
                     <div>
                         <h2 className={ Spirit.h4 + `mt0 mt2-ns darkgrey flex-shrink-1` }>{ this.props.title }</h2>
@@ -70,7 +70,7 @@ class HomeHeader extends React.Component {
                             to="/tutorials/"
                             title="Tutorials"
                             icon="typing"
-                            color="green">
+                            color="tutorial-green">
                             Browse tutorials for most common setup and development use-cases.</MainBox>
                     </section>
                 </div>
