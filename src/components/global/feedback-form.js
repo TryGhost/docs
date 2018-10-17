@@ -14,22 +14,24 @@ class FeedbackForm extends React.Component {
         super(props)
         this.state = {
             showSucces: false,
-            error: ``
+            error: ``,
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleError = this.handleError.bind(this)
     }
 
-    handleError = (error) => {
-        this.setState(() => ({ error: error.message}))
+    handleError(error) {
+        this.setState(() => {
+            return { error: error.message }
+        })
     }
 
-    handleChange = (e) => {
+    handleChange(e) {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit(e) {
         e.preventDefault()
         const form = e.target
         fetch(`/`, {
@@ -38,12 +40,14 @@ class FeedbackForm extends React.Component {
             body: encode({
                 "form-name": form.getAttribute(`name`),
                 "feedback-type": `Feedback`,
-                "page": this.props.location.pathname,
-                "email": this.state.email,
-                "message": this.state.message,
+                page: this.props.location.pathname,
+                email: this.state.email,
+                message: this.state.message,
             }),
         })
-            .then(() => this.setState((state) => ({ showSucces: !state.showSucces })))
+            .then(() => this.setState((state) => {
+                return { showSucces: !state.showSucces }
+            }))
             .catch(error => this.handleError(error))
     }
 
