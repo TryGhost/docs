@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/layouts/default'
 import FAQ from '../components/faq'
@@ -40,10 +40,11 @@ class FAQPage extends React.Component {
                         </div>
                         <div className="col-4 pa15 pt10 mt10">
                             {/* <h4 className={ Spirit.h4 + `mb4` }>Filter</h4> */}
+                            {/* <Link to="/faq/" className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">General</Link>
                             <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Errors</span>
                             <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Ghost(Pro)</span>
                             <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Self-hosted</span>
-                            <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Themes</span>
+                            <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Themes</span> */}
                         </div>
                     </div>
                 </Layout>
