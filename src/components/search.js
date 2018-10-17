@@ -72,6 +72,9 @@ class Results extends React.Component {
                     getSectionSuggestions={this.getSectionSuggestions}
                 />
                 <Index indexName="faq" />
+                <Index indexName="concept" />
+                <Index indexName="setup" />
+                <Index indexName="api" />
                 <Index indexName="tutorial" />
                 <Index indexName="integration" />
             </div>
