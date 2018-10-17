@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import Link from 'gatsby-link'
 import { Highlight, Index , connectAutoComplete } from 'react-instantsearch-dom'
 import Autosuggest from 'react-autosuggest'
 
@@ -31,7 +32,7 @@ class Results extends React.Component {
 
     renderSuggestion(hit) {
         console.log('hit', hit);
-        return <Highlight attribute="title" hit={hit} tagName="mark" />;
+        return <Link to={hit.url}><Highlight attribute="title" hit={hit} tagName="mark" /></Link>;
     }
 
     renderSectionTitle(section) {
@@ -68,7 +69,7 @@ class Results extends React.Component {
                     multiSection={true}
                     theme={theme}
                     renderSectionTitle={this.renderSectionTitle}
-                getSectionSuggestions={this.getSectionSuggestions}
+                    getSectionSuggestions={this.getSectionSuggestions}
                 />
                 <Index indexName="faq" />
                 <Index indexName="tutorial" />
