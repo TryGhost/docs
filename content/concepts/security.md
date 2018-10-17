@@ -53,3 +53,22 @@ Ghost as an organisation is profitable, wholly independent, and only makes reven
 In addition the Ghost software itself contains [a plainly written summary](https://github.com/TryGhost/Ghost/blob/master/PRIVACY.md) of every privacy-affecting feature within Ghost, along with detailed configuration options allowing any and all of them to be disabled at will.
 
 We take user privacy extremely seriously.
+
+## WIP
+
+- XSS Prevention: enable inbuilt handlebars HTML escape & ensure we return safe/escaped strings for any custom handlebars helpers
+- Brute Force Protection: e.g. for user login (5 attempts per hour+ip), same for password reset
+- Knex+Bookshelf (ORM + Query Builder) prevent SQL Injections, because Ghost itself does not build up raw SQL statements. Ghost never interpolate variables directly to SQL strings.
+- Authentication standards followed by owasp (https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication)
+    - including strong password validation
+    - strong hashed passwords using salted hashed functions 
+- base64 encode/decode tokens in url for invites + password reset (attacker needs the secret from the server to decode tokens from urls)
+    - server makes use of token expiry AND one time usages of tokens only (!)
+- NSP check (https://github.com/nodesecurity/nsp) to ensure we don't use 3rd party deps which are vulno
+   - runs randomly time by time, but don't tell anybody
+- strong data validation and serialisation to ensure that attackers can't just insert what they want to the db (data types etc)
+- filesystem symlink protection for theme uploads
+- Ghost-CLI
+    - default ssl support
+    - does not use root user
+    - standardised read+write permissions on the OS for a web application (https://www.owasp.org/index.php/File_System)

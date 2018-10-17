@@ -67,23 +67,28 @@ This part of the guide will ensure all prerequisites are met for installing the 
 ### Create a new user 👋
 
 Open up your terminal and login to your new server as the root user:
-```
+
+```bash
 ssh root@your_server_ip
 ```
+
 Create a new user with regular account privileges and follow prompts to create a password:
-```
+
+```bash
 adduser <user>
 ```
 
 > Note: Using the user name `ghost` causes conflicts with the Ghost CLI, so it’s important to use an alternative name.
 
 Add your new user to the superuser group to unlock administrative privileges:
-```
+
+```bash
 usermod -aG sudo <user>
 ```
 
 Log in as the new user:
-```
+
+```bash
 su - <user>
 ```
 
@@ -94,12 +99,13 @@ At this point, we recommend following the [DigitalOcean tutorial](https://www.di
 
 Ensure package lists and installed packages are up to date. Package lists:
 
-```
+```bash
 sudo apt-get update
 ```
 
 Installed packages:
-```
+
+```bash
 sudo apt-get upgrade
 ```
 
@@ -109,13 +115,13 @@ Follow any prompts to enter the password you just created in the previous step.
 
 Ghost uses an NGINX server and the SSL configuration requires NGINX 1.9.5 or higher. Install NGINX on your server:
 
-```
+```bash
 sudo apt-get install nginx
 ```
 
 If `ufw` was activated, the firewall allows HTTP and HTTPS connections. Open Firewall:
 
-```
+```bash
 sudo ufw allow 'Nginx Full'
 ```
 
@@ -123,24 +129,27 @@ sudo ufw allow 'Nginx Full'
 ### Install MySQL
 
 The Ghost CLI installs Ghost with MySQL by default and we recommend this database. Install MySQL:
-```
+
+```bash
 sudo apt-get install mysql-server
 ```
 
 #### MySQL on Ubuntu 18.04
 If you’re running Ubuntu 18.04, a password is required to ensure MySQL is compatible with `Ghost-CLI`. This requires a few extra steps! To set a password, run:
 
-```
+```bash
 sudo mysql
 ```
 
 Then replace password with a password of your choice (keep the quotation marks):
-```
+
+```bash
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 ```
 
 Exit  `mysql` with `quit` and login to your user again:
-```
+
+```bash
 su - <user>
 ```
 
@@ -155,12 +164,14 @@ If Node.js is already installed, ensure it’s installed system wide. Check wher
 Node installations with `nvm` are problematic and should be uninstalled - see troubleshooting for further information.
 
 Add the NodeSource APT repository for Node 8:
-```
+
+```bash
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash
 ```
 
 Install Node.js:
-```
+
+```bash
 sudo apt-get install -y nodejs
 ```
 ---
@@ -170,11 +181,11 @@ The Ghost CLI is a fully loaded tool to help you get Ghost installed and configu
 
 `ghost-cli` is an npm module that can be installed with `npm` or `yarn` on a production server using a non-root user:
 
-```
+```bash
 sudo npm install -g ghost-cli@latest
 ```
 
-```
+```bash
 sudo yarn global add ghost-cli@latest
 ```
 
@@ -198,7 +209,8 @@ This guide is the recommended setup. If you would prefer more fine-grained contr
 Create a new directory folder for your installation in terminal.
 
 Replace `folder` with your site name:
-```
+
+```bash
 sudo mkdir -p /var/www/{folder}
 ```
 
@@ -206,12 +218,13 @@ sudo mkdir -p /var/www/{folder}
 
 Your user must own this new directory. Use the following command where `[user]` is the user you created during the server setup phase, and `folder` is the directory you just created:
 
-```
+```bash
 sudo chown [user]:[user] /var/www/{folder}
 ```
 
 Grant the correct permissions to your new installation folder:
-```
+
+```bash
 sudo chmod 775 /var/www/ghost
 ```
 Read more about [permission requirements](/docs/cli-knowledge-base#section-permissions/).
@@ -219,7 +232,8 @@ Read more about [permission requirements](/docs/cli-knowledge-base#section-permi
 ### Navigate to the new folder
 
 In terminal, navigate to your new folder:
-```
+
+```bash
 cd /var/www/ghost
 ```
 
@@ -230,7 +244,7 @@ Make sure this directory is empty with `ls` before proceeding to install.
 
 Now you've made it this far, it's time to install Ghost with a single command 😀
 
-```
+```bash
 ghost install
 ```
 

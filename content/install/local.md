@@ -47,13 +47,8 @@ The Ghost CLI is a fully loaded tool to help you get Ghost installed. With a loc
 
 `ghost-cli` is an npm module that can be installed with `npm` or `yarn` on a local machine. There is no requirement to use a non-root user for a local install. Installing on the root user removes the need to use `sudo`.
 
-```
-npm i -g ghost-cli@latest
-```
-
-`@latest` ensures the latest version of the  `ghost-cli` is installed. Using yarn, adjust this to:
-```
-yarn global add ghost-cli@latest
+```bash
+npm install ghost-cli@latest -g
 ```
 
 Ghost CLI requires no configuration or setup. Once you've got it installed as a global module, you'll have the full suite of `ghost` commands ready at your disposal. Use `ghost help` for a list of commands.
@@ -62,12 +57,11 @@ Ghost CLI requires no configuration or setup. Once you've got it installed as a 
 
 ## Install Ghost
 
-It’s time to Install Ghost.
-
 Following the prerequisites, have a clean empty directory ready for Ghost to be installed to on your machine.
 
 In your terminal, `cd` into the empty directory and run the install command:
-```
+
+```bash
 ghost install local
 ```
 
@@ -117,13 +111,14 @@ Theme development requires the ability to restart Ghost to pick up changes that 
 ### Install nodemon
 
 Ensure Ghost is stopped inside your local directory run:
-```
+
+```bash
 ghost stop
 ```
 
 Install nodemon globally:
 
-```
+```bash
 npm install -g nodemon@latest
 ```
 
@@ -148,17 +143,20 @@ This starts Ghost, watching all hbs, js and css files inside of the [your-theme-
 GScan is a tool that validates Ghost themes for the latest versions of Ghost.
 
 Ghost automatically runs this tool when a theme is uploaded or activated. For development purposes, run these checks yourself by globally installing the `gscan` npm package:
-```
-npm install -g gscan
+
+```bash 
+npm install gscan -g
 ```
 
 Once this is installed you can run `gscan <file path>` anywhere to run the checks against a folder on your computer, for example:
-```
+
+```bash
 gscan /path/to/ghost/content/themes/casper
 ```
 
 To run GScan on a zip file, pass the `-z` flag
-```
+
+```bash
 gscan -z /path/to/downloads/theme.zip
 ```
 

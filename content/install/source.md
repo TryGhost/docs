@@ -6,30 +6,45 @@ keywords:
     - Contribute to Ghost
 ---
 
-## This is the second heading
+This guide is for installing a local development copy of Ghost from source, primarily for the purpose of modifying Ghost core
 
-Spicy jalapeno cupidatat chicken ut filet mignon sausage ut boudin nulla reprehenderit strip steak proident cillum incididunt short loin cow. Pig in pastrami, leberkas eiusmod enim bresaola do. Filet mignon officia quis kevin pork, swine strip steak excepteur hamburger chicken pork chop boudin shankle. Velit chicken pig in cupim kielbasa jerky. Bresaola excepteur veniam, andouille magna brisket aliquip nostrud jerky.
 
-```javascript
-makeArray() {
-    // Hey hey what can I do
-    const foo = []
-    bar.split('').forEach(letter => {
-      foo.push(letter)
-    })
-    return foo
-}
+## Pre-requisites
+
+Before getting started, you'll need these global packages to be installed:
+
+- **A [supported version](/faq/node-versions/) of [Node.js](https://nodejs.org)** - Ideally installed via [nvm](https://github.com/creationix/nvm#install-script)
+- **[Yarn](https://yarnpkg.com/en/docs/install#alternatives-tab)** - to manage all the packages
+
+
+## Initial Setup
+
+These commands only need to be run once to get your Ghost install up and running
+
+#### 1. Clone Ghost and make it your working directory:
+
+```bash
+git clone git@github.com:TryGhost/Ghost.git && cd Ghost
 ```
 
-### This is the third heading
+#### 2. Install global packages
 
-Pork chop ribeye ut chicken buffalo proident minim leberkas cupim adipisicing burgdoggen incididunt pastrami cupidatat. Prosciutto kevin dolore labore ham, cupidatat pork loin fatback picanha irure ad short ribs duis. Cupidatat excepteur jerky doner, incididunt consectetur turkey pariatur. Culpa consectetur cillum shank ham hock anim pastrami ex tempor eu. Fatback strip steak pig, bacon salami drumstick ut capicola short loin flank.
+```bash
+yarn global add knex-migrator grunt-cli ember-cli bower
+```
 
-Jowl dolor duis, cupidatat pork tempor nostrud incididunt short loin laborum. Duis nostrud fatback ribeye consequat ad. Proident pancetta ut tempor. Short loin officia eiusmod beef. Sunt tongue pig venison, sint mollit ad excepteur velit adipisicing flank pancetta pariatur. Dolor t-bone swine alcatra fatback ribeye, mollit dolore incididunt ullamco.
+#### 3. Run the first-time setup & install tasks:
 
-Spare ribs aute fugiat, pariatur andouille labore nulla exercitation. Aliqua picanha sirloin consequat drumstick sint exercitation pork nisi et. Dolore swine fugiat pork salami proident. Bacon excepteur filet mignon labore pariatur in in nulla magna fugiat prosciutto. Laboris sint ground round, pancetta ipsum in pariatur voluptate fatback andouille velit shoulder flank quis sausage.
+```bash
+yarn setup
+```
 
-Hamburger ham shank est, officia qui capicola proident. Ribeye dolore prosciutto sirloin alcatra. Rump short ribs quis ex fugiat proident incididunt irure t-bone meatball veniam sirloin meatloaf. Tongue anim sint pancetta bresaola sirloin.
-Does your lorem ipsum text long for something a little meatier? Give our generator a try…
+The `setup` task will install dependencies, initialise the database, set up git hooks & initialise submodules and run a first build of the admin (which can often take a **very** long time ⏳). It should only ever be run **once**!
+  
+#### Once you see a "done" message, start Ghost with:
 
-
+```bash
+grunt dev
+```
+- Visit your new site at http://localhost:2368/
+- See the list of development commands below for other options
