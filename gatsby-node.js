@@ -3,6 +3,9 @@ const path = require(`path`)
 const _ = require(`lodash`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const urlUtils = require(`./src/utils/urls`)
+const { allGhostPosts, allMarkdownPosts } = require(`./src/utils/node-queries`)
+const { ghostQueryConfig, markdownQueryConfig, defaultMarkdownSection } = require(`./src/utils/query-config`)
+const knownSections = _.map(markdownQueryConfig, `section`)
 
 const sortByDateDescending = (a, b) => {
     const aPublishedAt = (new Date(a.node.published_at)).getTime()
@@ -65,7 +68,7 @@ const getRelatedPosts = (currentPost, allPosts) => {
 
         // We return the concatinated list of posts, but put our higher ranked posts first, then
         // the regular filtered posts, which we order by date
-        filteredPosts = _.concat(higherRankedPosts, filteredPosts.sort(sortByDateDescending)).slice(0,NUMBER_RELATED_POSTS)
+        filteredPosts = _.concat(higherRankedPosts, filteredPosts.sort(sortByDateDescending)).slice(0, NUMBER_RELATED_POSTS)
     } else if (filteredPosts.length) {
         // We didn't have more than 2 tags in common, the result will only be sorted by date
         if (filteredPosts.length > NUMBER_RELATED_POSTS) {
@@ -91,11 +94,20 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
     if (node.internal.type === `MarkdownRemark`) {
         let slug = urlUtils.urlForMarkdown(node, createFilePath({ node, getNode, basePath: `pages` }))
+        // Section is the first part of the path
+        let section = slug.match(/^\/(.*?)\//)[1]
+        section = _.includes(knownSections, section) ? section : defaultMarkdownSection
 
         createNodeField({
             node,
             name: `slug`,
             value: slug,
+        })
+
+        createNodeField({
+            node,
+            name: `section`,
+            value: section,
         })
     }
 }
@@ -103,8 +115,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
     const { createRedirect } = actions
-    const { allGhostPosts, allMarkdownPosts } = require(`./src/utils/node-queries`)
-    const { ghostQueryConfig } = require(`./src/utils/query-config`)
     const queryPromises = []
 
     createRedirect({
@@ -171,6 +181,7 @@ exports.createPages = ({ graphql, actions }) => {
                                 // in page queries as GraphQL variables.
                                 slug: node.slug,
                                 relatedPosts: getRelatedPosts(node, result.data.allGhostPost.edges),
+                                section,
                             },
                         })
                     })
@@ -197,6 +208,7 @@ exports.createPages = ({ graphql, actions }) => {
                             // Data passed to context is available
                             // in page queries as GraphQL variables.
                             slug: node.fields.slug,
+                            section: node.fields.section,
                         },
                     })
                     return resolve()

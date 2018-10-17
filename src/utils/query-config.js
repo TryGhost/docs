@@ -20,3 +20,20 @@ module.exports.ghostQueryConfig = [
         indexName: `integration`,
     },
 ]
+
+module.exports.markdownQueryConfig = [
+    {
+        section: `concepts`,
+        indexName: `concept`,
+    },
+    {
+        section: `setup`,
+        indexName: `setup`,
+    },
+    {
+        section: `api`,
+        indexName: `api`,
+    },
+]
+
+module.exports.defaultMarkdownSection = `setup`
