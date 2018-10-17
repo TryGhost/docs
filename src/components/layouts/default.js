@@ -6,6 +6,7 @@ import Prism from 'prismjs'
 // Partials and components
 import Header from './partials/header'
 import Footer from './partials/footer'
+import SearchWrapper from './search-wrapper'
 
 // Spirit
 // import 'ghost-spirit/public/spirit-brand.css'
@@ -30,7 +31,7 @@ class DefaultLayout extends React.Component {
 
     render() {
         const { children } = this.props
-        const header = this.props.header ? this.props.header : <Header dividerStyle={ this.props.headerDividerStyle }/>
+        const header = this.props.header ? this.props.header : <Header dividerStyle={this.props.headerDividerStyle} />
 
         return (
             <>
@@ -40,13 +41,15 @@ class DefaultLayout extends React.Component {
                     <body className={this.props.bodyClass + ` flex flex-column whitney f7 fw4 darkgrey readability`} />
                 </Helmet>
 
-                { header }
+                <SearchWrapper>
+                    {header}
 
-                <main className={ this.props.mainClass ? this.props.mainClass : `bg-whitegrey-l2 pb10` }>
-                    { children }
-                </main>
+                    <main className={ this.props.mainClass ? this.props.mainClass : `bg-whitegrey-l2 pb10` }>
+                        {children}
+                    </main>
 
-                <Footer />
+                    <Footer />
+                </SearchWrapper>
             </>
         )
     }

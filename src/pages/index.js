@@ -8,6 +8,7 @@ import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import Box from '../components/layouts/partials/box'
 import MetaData from '../components/layouts/partials/meta-data'
+import Search from '../components/search'
 
 // import bghome from '../images/home-bg.svg' // eslint-disable-line no-unused-vars
 
@@ -86,7 +87,7 @@ class IndexPage extends React.Component {
                             <div className="pa4 pl5 pr5 mt6 w-100 mw-s f4 br-pill bg-white shadow-3 center flex items-center justify-between">
                                 <Icon name="search" className="fill-lightgrey-d2 h6" />
                                 <label htmlFor="homesearch" className="clip">Search</label>
-                                <input id="homesearch" name="homesearch" className="input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0" type="text" placeholder="Search documentation..." autoComplete="off" />
+                                <Search />
                             </div>
                         </div>
 
