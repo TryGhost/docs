@@ -5,14 +5,12 @@ import PropTypes from 'prop-types'
 import { Spirit } from './spirit-styles'
 import getPostExcerpt from '../utils/post-excerpt'
 import Box from '../components/layouts/partials/box'
-import Icon from '../components/global/icon'
+// import Icon from '../components/global/icon'
 
 const PostCard = ({ post, className }) => {
     // const tag = post.primaryTag ? post.primaryTag.name : (post.tags ? post.tags[0].name : `Untagged`)
     const url = `/tutorials/${post.slug}/`
     const excerpt = getPostExcerpt(post)
-
-    console.log(JSON.stringify(post))
 
     return (
         <Box to={ url } elevation="2" className={ className + ` pa10 pa8 flex flex-column justify-between flex-third relative box-hover-test tutorial-post-card tdn` }>
@@ -33,7 +31,7 @@ const PostCard = ({ post, className }) => {
                         if (item.name.match(/^#/)) {
                             return null
                         } else {
-                            return <span key={ i } className="bg-midgrey dib word-nowrap pt1 pb1 pl2 pr2 white br2 f-supersmall">{ item.name }</span> 
+                            return <span key={ i } className="bg-midgrey dib word-nowrap pt1 pb1 pl2 pr2 white br2 f-supersmall">{ item.name }</span>
                         }
                     }) : null }
                 </div>
