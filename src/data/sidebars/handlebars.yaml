@@ -99,8 +99,8 @@
         link: /api/handlebars-themes/helpers/labs/
   - group: Features
     items:
-      - title: Content
-        link: /api/handlebars-themes/content/
+      - title: Editor
+        link: /api/handlebars-themes/editor/
       - title: Google AMP
         link: /api/handlebars-themes/google-amp/
       - title: Subscribers
