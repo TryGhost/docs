@@ -19,6 +19,7 @@ const sortByDateDescending = (a, b) => {
 }
 
 const getRelatedPosts = (currentPost, allPosts) => {
+    const NUMBER_RELATED_POSTS = 5
     let mostCommonTags = []
 
     const hasSameTags = ({ node }) => {
@@ -44,7 +45,7 @@ const getRelatedPosts = (currentPost, allPosts) => {
     }
 
     // Our base articles that have min 2 tags in common
-    let filteredPosts = allPosts.filter(hasSameTags)
+    let filteredPosts = _.filter(allPosts, hasSameTags)
 
     if (filteredPosts.length && mostCommonTags.length) {
         const higherRankedPosts = []
@@ -63,17 +64,25 @@ const getRelatedPosts = (currentPost, allPosts) => {
 
         // We return the concatinated list of posts, but put our higher ranked posts first, then
         // the regular filtered posts, which we order by date
-        return _.concat(higherRankedPosts, filteredPosts.sort(sortByDateDescending)).slice(0,5)
+        filteredPosts = _.concat(higherRankedPosts, filteredPosts.sort(sortByDateDescending)).slice(0,NUMBER_RELATED_POSTS)
+    } else if (filteredPosts.length) {
+        // We didn't have more than 2 tags in common, the result will only be sorted by date
+        if (filteredPosts.length > NUMBER_RELATED_POSTS) {
+            filteredPosts = filteredPosts.sort(sortByDateDescending).slice(0, NUMBER_RELATED_POSTS)
+        } else if (filteredPosts.length > 1) {
+            filteredPosts = filteredPosts.sort(sortByDateDescending)
+        }
     }
 
-    // We didn't have more than 2 tags in common, the result will only be sorted by date
-    if (filteredPosts.length > 5) {
-        return filteredPosts.sort(sortByDateDescending).slice(0, 5)
-    } else if (filteredPosts.length > 1) {
-        return filteredPosts.sort(sortByDateDescending)
-    }
+    // if we didn't reach the minimum number of related posts, we randomly pick some until we do
+    if (filteredPosts.length < NUMBER_RELATED_POSTS) {
+        let missingPostsNumber = NUMBER_RELATED_POSTS - filteredPosts.length
+        let randomPosts = _.filter(allPosts, ({ node }) => currentPost.slug !== node.slug).slice(0, missingPostsNumber)
 
-    return filteredPosts
+        return _.concat(filteredPosts, randomPosts)
+    } else {
+        return filteredPosts
+    }
 }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
