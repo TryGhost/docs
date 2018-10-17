@@ -43,7 +43,7 @@ class HomeHeader extends React.Component {
                 <header className="top-0 left-0 right-0 z-9999">
                     <NavBar theme="dark" searchField={ true } />
                 </header>
-                <div className={Spirit.page.xl + `pa-vw3 flex flex-column items-center`}>
+                <div className={Spirit.page.xl + `pa-vw2 pb-vw3 flex flex-column items-center`}>
                     <h1 className="ma0 pa0 f-headline">Ghost Documentation</h1>
                     {/* <p className="ma0 mt2 f4 white-80">All your favourite apps and tools, integrated with Ghost</p> */}
                     <div className="pa4 pl5 pr5 mt5 w-100 mw-s f4 br-pill bg-white shadow-3 center flex items-center justify-between">
