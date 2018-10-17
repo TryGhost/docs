@@ -1,5 +1,12 @@
 ---
 title: "Storage Adapters"
+meta_title: "Core Concepts - Custom Storage Adapters"
+meta_description: "Find out how to use a custom storage adapters to send your publication's images to a CDN or database using the custom storage module 📂"
+keywords:
+    - storage
+    - concepts 
+    - ghost
+    - publishing
 sidebar: "concepts"
 ---
 
@@ -80,7 +87,12 @@ module.exports = MyCustomAdapter;
 
 #### Required methods
 
-Your custom storage adapter must implement five required functions: save, exists, serve, delete and read. 
+Your custom storage adapter must implement five required functions: 
+* `save` - The `.save()` method stores the image and returns a promise which resolves the path from which the image should be requested in future.
+* `exists` - Used by the base storage adapter to check whether a file exists or note
+* `serve` - Ghost calls `.serve()` as part of its middleware stack, and mounts the returned function as the middleware for serving images
+* `delete`
+* `read`
 
 ```
 'use strict';
@@ -117,13 +129,6 @@ class MyCustomAdapter extends BaseAdapter{
 
 module.exports = MyCustomAdapter;
 ```
-
-**`save`**
-
-| Usages    | Arguments     | Returns     |
-| --------- | ------------- | ----------- |
-| [upload images](https://github.com/TryGhost/Ghost/blob/master/core/server/api/upload.js#L24),
-[import images](https://github.com/TryGhost/Ghost/tree/master/core/server/data/importer/importers/image.js#L66) | `image` an image object with properties name and path `targetDir` (optional) a path to where to store the image. | A promise which resolves to the full URI of the image, either relative to the blog or absolute. |
 
 
 ## Summary

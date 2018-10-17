@@ -1,5 +1,12 @@
 ---
 title: "Custom Schedulers"
+meta_title: "Core Concepts - Custom Schedulers"
+meta_description: "Find out how to use a custom adapter for scheduling content on your Ghost publication ⏰"
+keywords:
+    - schedulers
+    - concepts 
+    - ghost
+    - publishing
 sidebar: "concepts"
 ---
 
