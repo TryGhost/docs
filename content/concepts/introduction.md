@@ -44,85 +44,85 @@ The first question most people have is, of course, how is Ghost different from e
     </thead>
     <tbody>
         <tr>
-            <td>Exceptionally fast</td>
+            <td>🏎 Exceptionally fast</td>
             <td>✅</td>
             <td>❌</td>
             <td>✅</td>
         </tr>
         <tr>
-            <td>Reliably secure</td>
+            <td>🔒 Reliably secure</td>
             <td>✅</td>
             <td>❌</td>
             <td>✅</td>
         </tr>
         <tr>
-            <td>Great design</td>
+            <td>🎨 Great design</td>
             <td>✅</td>
             <td>❌</td>
             <td>✅</td>
         </tr>
         <tr>
-            <td>Modern technology</td>
+            <td>👩🏼‍🚀 Modern technology</td>
             <td>✅</td>
             <td>❌</td>
             <td>✅</td>
         </tr>
         <tr>
-            <td>Open Source</td>
+            <td>♻️ Open Source</td>
             <td>✅</td>
             <td>✅</td>
             <td>❌</td>
         </tr>
         <tr>
-            <td>Own your brand+data</td>
+            <td>🏰 Own your brand+data</td>
             <td>✅</td>
             <td>✅</td>
             <td>❌</td>
         </tr>
         <tr>
-            <td>Use a custom domain</td>
+            <td>🌍 Use a custom domain</td>
             <td>✅</td>
             <td>✅</td>
             <td>❌</td>
         </tr>
         <tr>
-            <td>Control your site design</td>
+            <td>🖼 Control your site design</td>
             <td>✅</td>
             <td>✅</td>
             <td>❌</td>
         </tr>
         <tr>
-            <td>Censorship-free</td>
+            <td>🌱 Censorship-free</td>
             <td>✅</td>
             <td>✅</td>
             <td>❌</td>
         </tr>
         <tr>
-            <td>Built-in SEO control</td>
+            <td>⭐️ Built-in SEO control</td>
             <td>✅</td>
             <td>❌</td>
             <td>❌</td>
         </tr>
         <tr>
-            <td>Native REST API</td>
+            <td>🚀 Native REST API</td>
             <td>✅</td>
             <td>❌</td>
             <td>❌</td>
         </tr>
         <tr>
-            <td>Comprehensive SDK</td>
+            <td>🛠 Comprehensive SDK</td>
             <td>✅</td>
             <td>❌</td>
             <td>❌</td>
         </tr>
         <tr>
-            <td>Works with any front-end<br>or static site framework</td>
+            <td>🤝 Works with any front-end<br>or static site framework</td>
             <td>✅</td>
             <td>❌</td>
             <td>❌</td>
         </tr>
         <tr>
-            <td>Non-profit organisation with<br>a sustainable business model</td>
+            <td>❤️ Non-profit organisation with<br>a sustainable business model</td>
             <td>✅</td>
             <td>❌</td>
             <td>❌</td>
