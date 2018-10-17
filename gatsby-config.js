@@ -87,10 +87,12 @@ module.exports = {
                             showLineNumbers: false,
                         },
                     },
+                    `gatsby-remark-external-links`,
                     `gatsby-remark-autolink-headers`,
                 ],
             },
         },
+        `gatsby-plugin-catch-links`,
         {
             resolve: `gatsby-source-ghost`,
             options: {
