@@ -48,6 +48,7 @@ module.exports = {
                 name: `markdown-pages`,
             },
         },
+        `gatsby-plugin-sitemap`,
         /**
          *  Content Plugins
          */
