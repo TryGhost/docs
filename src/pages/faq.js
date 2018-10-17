@@ -10,9 +10,9 @@ import MetaData from '../components/layouts/partials/meta-data'
 class FAQPage extends React.Component {
     render() {
         // TODO: Replace with real title and description for FAQPage
-        const title = `FAQ - Frequently Asked Questions`
-        const description = ``
-        const imageUrl = `https://unsplash.it/400/300/?random?BoldMage`
+        const title = `FAQ - Ghost Docs`
+        const description = `Answers to our most popular questions: billing, hosting, troubleshooting and more.`
+        const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
 
         const posts = this.props.data.allGhostPost.edges
 

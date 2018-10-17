@@ -63,9 +63,9 @@ function FAQQuestion(props) {
 class IndexPage extends React.Component {
     render() {
         // TODO: Replace with real title and description for IndexPage
-        const title = ``
-        const description = ``
-        const imageUrl = ``
+        const title = `Ghost Docs`
+        const description = `Ghost - Open-source publishing platform documentation 👉 Install guides, tutorials, API docs and FAQs.`
+        const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
 
         return (
             <>
@@ -92,26 +92,26 @@ class IndexPage extends React.Component {
 
                         <section className={ Spirit.page.xl + `grid-12 gutter-row-20 gutter-36-ns`}>
 
-                            <MainBox 
-                                to="/concepts/introduction/" 
-                                title="Core Concepts" 
-                                icon="blocks" 
+                            <MainBox
+                                to="/concepts/introduction/"
+                                title="Core Concepts"
+                                icon="blocks"
                                 color="purple">
                                 Understand the fundamentals of Ghost development.
                             </MainBox>
-                            
-                            <MainBox 
-                                to="/setup/" 
-                                title="Setup Guide" 
-                                icon="rocket" 
+
+                            <MainBox
+                                to="/setup/"
+                                title="Setup Guide"
+                                icon="rocket"
                                 color="blue">
                                 Setting up a Ghost site on a server or locally.
                             </MainBox>
-                            
-                            <MainBox 
-                                to="/tutorials/" 
-                                title="Tutorials" 
-                                icon="typing" 
+
+                            <MainBox
+                                to="/tutorials/"
+                                title="Tutorials"
+                                icon="typing"
                                 color="green">
                                 Browse tutorials for most common setup and development use-cases.
                             </MainBox>
@@ -129,9 +129,9 @@ class IndexPage extends React.Component {
                                         Clients, tools and libraries for working with Ghost
                                     </p>
                                 </div>
-                                <APIBox 
-                                    to="/api/" 
-                                    title="Frontend SDKs" 
+                                <APIBox
+                                    to="/api/"
+                                    title="Frontend SDKs"
                                     icon="sdks">
                                     Frameworks for working with the Ghost API to build a publication website
                                 </APIBox>

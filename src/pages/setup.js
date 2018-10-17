@@ -32,9 +32,9 @@ SetupBox.propTypes = {
 class SetupIndexPage extends React.Component {
     render() {
         // TODO: Replace with real title and description for FAQPage
-        const title = `Setup Guide`
-        const description = `All the tools to get started with Ghost`
-        const imageUrl = ``
+        const title = `Setup Guides – Ghost Documentation`
+        const description = `All the tools to get started with Ghost: self-hosted, development and premium hosted install guides.`
+        const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
 
         return (
             <>
