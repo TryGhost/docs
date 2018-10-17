@@ -17,7 +17,7 @@ class FAQ extends React.Component {
         return (
             <>
                 <MetaData data={this.props.data} location={this.props.location} type="article" />
-                <Layout bodyClass="bg-white" mainClass="bg-whitegrey-l2 pb15">
+                <Layout bodyClass="bg-white" mainClass="bg-whitegrey-l2 pb10">
 
                     <div className="bg-faq bb b--whitegrey">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1` }>

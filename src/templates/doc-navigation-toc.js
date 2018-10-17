@@ -185,7 +185,7 @@ class DocTemplate extends React.Component {
         return (
             <>
                 <MetaData data={ this.props.data } location={ this.props.location } type="article" />
-                <Layout mainClass="pb0">
+                <Layout>
                     <PageHeader location={ this.props.location } />
 
                     <div className={ Spirit.page.xl + `flex ${justification}` }>

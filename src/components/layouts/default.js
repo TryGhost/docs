@@ -42,7 +42,7 @@ class DefaultLayout extends React.Component {
 
                 { header }
 
-                <main className={ this.props.mainClass ? this.props.mainClass : `pb-vw4` }>
+                <main className={ this.props.mainClass ? this.props.mainClass : `bg-whitegrey-l2 pb10` }>
                     { children }
                 </main>
 
@@ -54,7 +54,7 @@ class DefaultLayout extends React.Component {
 
 DefaultLayout.defaultProps = {
     headerDividerStyle: `shadow`,
-    bodyClass: `bg-whitegrey-l2`,
+    bodyClass: `bg-white`,
 }
 
 DefaultLayout.propTypes = {
