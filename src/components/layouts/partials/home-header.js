@@ -46,7 +46,7 @@ class HomeHeader extends React.Component {
                 <div className={Spirit.page.xl + `pa-vw3 flex flex-column items-center`}>
                     <h1 className="ma0 pa0 f-headline">Ghost Documentation</h1>
                     {/* <p className="ma0 mt2 f4 white-80">All your favourite apps and tools, integrated with Ghost</p> */}
-                    <div className="pa4 pl5 pr5 mt6 w-100 mw-s f4 br-pill bg-white shadow-3 center flex items-center justify-between">
+                    <div className="pa4 pl5 pr5 mt5 w-100 mw-s f4 br-pill bg-white shadow-3 center flex items-center justify-between">
                         <Icon name="search" className="fill-lightgrey-d2 h6" />
                         <label htmlFor="homesearch" className="clip">Search</label>
                         <Search />
