@@ -45,7 +45,7 @@
 }
 
 .post-content>p:first-child {
-    margin: var(--vr-2) 0 0;
+    margin: calc(var(--vr-2) - 1px) 0 0;
     font-size: 1.9rem;
     line-height: var(--vr-4);
 }
