@@ -7,6 +7,7 @@ import Layout from '../components/layouts/default'
 import FAQ from '../components/faq'
 import { Spirit } from '../components/spirit-styles'
 import MetaData from '../components/layouts/partials/meta-data'
+import FAQTagList from '../components/layouts/partials/faq-taglist'
 
 class FAQTags extends React.Component {
     render() {
@@ -41,17 +42,13 @@ class FAQTags extends React.Component {
                     </div>
                     <div className={ Spirit.page.xl + `grid-12` }>
                         <div className="bg-white shadow-2 br4 mt10 pa15 pt10 pb12 col-8">
-                            <h4 className={ Spirit.h2 + `col-12 pb2 bb b--whitegrey mb5` }>{ tagName }</h4>
+                            {/* <h4 className={ Spirit.h2 + `col-12 pb2 bb b--whitegrey mb5` }>{ tagName }</h4> */}
                             { posts.map(({ node }) => (
                                 <FAQ key={ node.id } post={ node } />
                             )) }
                         </div>
-                        <div className="col-4 pa15 pt10 mt10">
-                            {/* <h4 className={ Spirit.h4 + `mb4` }>Filter</h4> */ }
-                            <span className="dib ba bg-faq-color white pa1 pl2 pr2 br3 mr2 mb2">Errors</span>
-                            <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Ghost(Pro)</span>
-                            <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Self-hosted</span>
-                            <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Themes</span>
+                        <div className="col-4 pa15 pt10 mt11">
+                            <FAQTagList location={ this.props.location } />
                         </div>
                     </div>
                 </Layout>

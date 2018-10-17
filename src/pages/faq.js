@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layouts/default'
 import FAQ from '../components/faq'
 import { Spirit } from '../components/spirit-styles'
 import MetaData from '../components/layouts/partials/meta-data'
+import FAQTagList from '../components/layouts/partials/faq-taglist'
 
 class FAQPage extends React.Component {
     render() {
@@ -38,13 +39,8 @@ class FAQPage extends React.Component {
                                 <FAQ key={ node.id } post={ node } />
                             )) }
                         </div>
-                        <div className="col-4 pa15 pt10 mt10">
-                            {/* <h4 className={ Spirit.h4 + `mb4` }>Filter</h4> */}
-                            {/* <Link to="/faq/" className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">General</Link>
-                            <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Errors</span>
-                            <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Ghost(Pro)</span>
-                            <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Self-hosted</span>
-                            <span className="dib ba bg-midlightgrey white pa1 pl2 pr2 br3 mr2 mb2">Themes</span> */}
+                        <div className="col-4 pa15 pt10 mt11">
+                            <FAQTagList location={ this.props.location } />
                         </div>
                     </div>
                 </Layout>

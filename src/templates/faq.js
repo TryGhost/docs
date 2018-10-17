@@ -53,7 +53,7 @@ class FAQ extends React.Component {
                         <div className="col-4">
                             { relatedPosts.length ?
                                 <div className="mw-content pa15 center mt6">
-                                    <h4 className={ Spirit.h5 + `mb4` }>Related Questions</h4>
+                                    <h4 className={ Spirit.h5 + `mb4 midgrey` }>Related Questions</h4>
                                     <RelatedPosts relatedPosts={ relatedPosts } />
                                 </div> :
                                 null

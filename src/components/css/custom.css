@@ -488,6 +488,10 @@ Before adding custom CSS, think about if it rather should be in Spirit...
     color: #CC3AA2;
 }
 
+.faq-question:last-of-type {
+    border-bottom: none;
+}
+
 
 /* Table of Contents */
 /* ----------------------------------------------------------------------- */
