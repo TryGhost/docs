@@ -2,6 +2,7 @@ const Promise = require(`bluebird`)
 const path = require(`path`)
 const _ = require(`lodash`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const urlUtils = require(`./src/utils/urls`)
 
 const sortByDateDescending = (a, b) => {
     const aPublishedAt = (new Date(a.node.published_at)).getTime()
@@ -89,15 +90,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions
 
     if (node.internal.type === `MarkdownRemark`) {
-        // Passing a `path` property in frontmatter will overwrite the
-        // slug that we build from the folder structure
-        let slug = node.frontmatter.path ? node.frontmatter.path : createFilePath({ node, getNode, basePath: `pages` })
-
-        // Remove the version slug from the latest API version docs
-        // TODO: use env config to add latest API version
-        if (slug.match(/\/api\/v2\/\S*/i)) {
-            slug = slug.replace(/\/v2/, ``)
-        }
+        let slug = urlUtils.urlForMarkdown(node, createFilePath({ node, getNode, basePath: `pages` }))
 
         createNodeField({
             node,
@@ -149,15 +142,17 @@ exports.createPages = ({ graphql, actions }) => {
                         tagArchives = _.uniqBy(_.compact(tagArchives), `slug`)
 
                         _.forEach(tagArchives, (tag) => {
+                            tag.url = urlUtils.urlForGhostTag(tag, prefix)
+
                             createPage({
-                                path: `${prefix}${tag.slug}/`,
+                                path: tag.url,
                                 component: path.resolve(tagsTemplate),
                                 context: {
                                     // Data passed to context is available
                                     // in page queries as GraphQL variables.
                                     tagSlug: tag.slug,
                                     tagName: tag.name,
-                                    tagLink: path.join(prefix, tag.slug),
+                                    tagLink: tag.url,
                                 },
                             })
                         })
@@ -166,13 +161,10 @@ exports.createPages = ({ graphql, actions }) => {
                     _.forEach(items, ({ node }) => {
                         // Update the existing URL field to reflect the URL in Gatsby and
                         // not in Ghost. Also needed to link to related posts.
-                        node.url = `${prefix}${node.slug}/`
-
-                        // Create primary tags pages for each internal main tag
-                        // First, find all the tags
+                        node.url = urlUtils.urlForGhostPost(node, prefix)
 
                         createPage({
-                            path: `${prefix}${node.slug}/`,
+                            path: node.url,
                             component: path.resolve(template),
                             context: {
                                 // Data passed to context is available
