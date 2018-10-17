@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { Highlight } from 'react-instantsearch-dom'
+import { Highlight, Index , connectAutoComplete } from 'react-instantsearch-dom'
 import Autosuggest from 'react-autosuggest'
-import { connectAutoComplete } from 'react-instantsearch-dom'
 
 class Results extends React.Component {
     constructor(props) {
@@ -31,6 +30,7 @@ class Results extends React.Component {
     }
 
     renderSuggestion(hit) {
+        console.log('hit', hit);
         return <Highlight attribute="title" hit={hit} tagName="mark" />;
     }
 
@@ -57,15 +57,23 @@ class Results extends React.Component {
         }
 
         return (
-            <Autosuggest
-            suggestions={hits}
-            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-            getSuggestionValue={this.getSuggestionValue}
-            renderSuggestion={this.renderSuggestion}
-            inputProps={inputProps}
-            theme={theme}
-            />
+            <div>
+                <Autosuggest
+                    suggestions={hits}
+                    onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+                    onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+                    getSuggestionValue={this.getSuggestionValue}
+                    renderSuggestion={this.renderSuggestion}
+                    inputProps={inputProps}
+                    multiSection={true}
+                    theme={theme}
+                    renderSectionTitle={this.renderSectionTitle}
+                getSectionSuggestions={this.getSectionSuggestions}
+                />
+                <Index indexName="faq" />
+                <Index indexName="tutorial" />
+                <Index indexName="integration" />
+            </div>
         )
     }
 }
@@ -77,6 +85,6 @@ Results.propTypes = {
     refine: PropTypes.func.isRequired,
 }
 
-const Search = connectAutoComplete(Results)
+const AutoComplete = connectAutoComplete(Results)
 
 export default AutoComplete
