@@ -11,7 +11,7 @@ const headerSkin = {
         menuItem: `middarkgrey-l1 link hover-blue word-nowrap`,
         logoTheme: `dark`,
         docsTitleClass: `blue`,
-        searchBox: `bg-whitegrey-l1 middarkgrey dark-placeholder`,
+        searchBox: `bg-darkgrey-searchbar middarkgrey dark-placeholder`,
     },
     light: {
         menuItem: Spirit.link.white,
@@ -51,10 +51,10 @@ class NavBar extends React.Component {
                         <Link className={ theme.menuItem + ` f-supersmall-m f8-l pa3 mr3` } to="/faq/">FAQ</Link>
                     </div>
                 </div>
-                <div className="flex flex-auto flex-nowrap justify-end items-center">
+                <div className={ `flex-auto flex-nowrap justify-end items-center ` + (this.props.searchField ? `flex` : ` dn`) }>
                     <div className="relative">
                         <label htmlFor="globalnavsearch" className="clip">Search</label>
-                        <input id="globalnavsearch" name="globalnavsearch" type="text" className={ theme.searchBox + ` f8 pa2 pl4 pr4 ba f8 fw4 br3 whitney form-text bn br-pill w-sidebar dn db-l lh-1-0` } placeholder="Search Ghost docs..." />
+                        <input id="globalnavsearch" name="globalnavsearch" type="text" className={ theme.searchBox + ` f8 pa2 pl4 pr4 ba f8 fw4 br3 whitney form-text bn br-pill w-sidebar dn db-l lh-1-0` } placeholder="Search documentation..." />
                     </div>
                 </div>
             </nav>
@@ -64,10 +64,12 @@ class NavBar extends React.Component {
 
 NavBar.defaultProps = {
     theme: `dark`,
+    searchField: true,
 }
 
 NavBar.propTypes = {
     theme: PropTypes.oneOf([`dark`, `light`]),
+    searchField: PropTypes.bool,
 }
 
 export default NavBar

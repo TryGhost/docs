@@ -181,7 +181,7 @@ mark {
 }
 
 .hover-underline-blue:hover {
-    box-shadow: var(--blue) 0 -1px 0 inset;
+    box-shadow: color-mod(var(--blue) a(0.5)) 0 -1px 0 inset;
     text-decoration: none;
 }
 
@@ -267,6 +267,10 @@ mark {
     transition: all 0.2s ease;
 }
 
+.bg-darkgrey-searchbar {
+    background-color: color-mod(var(--darkgrey) a(0.04));
+}
+
 /* Home */
 /* ----------------------------------------------------------------------- */
 .gh-bg-home {
@@ -280,6 +284,31 @@ mark {
 
 .api-box-min-height {
     min-height: 12rem;
+}
+
+.api-hover h4,
+.api-hover:hover svg g,
+.api-hover:hover svg path {
+    transition: all 0.8s ease;
+}
+
+.api-hover:hover h4 {
+    color: var(--blue);
+    transition: all 0.2s ease;
+}
+
+.api-hover:hover svg g,
+.api-hover:hover svg path {
+    stroke: var(--blue);
+    transition: all 0.2s ease;
+}
+
+.home-faq-question h4 {
+    transition: all 0.2s ease;
+}
+
+.home-faq-question:hover h4 {
+    box-shadow: color-mod(var(--blue) a(0.5)) 0 -1px 0 inset;
 }
 
 /* Integrations
