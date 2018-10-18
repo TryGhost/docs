@@ -130,7 +130,7 @@ The first question most people have is, of course, how is Ghost different from e
     </tbody>
 </table>
 
-**In short:** Other open platforms are generally old and bloated, while other closed platforms give you absolutely no control. Ghost provides the best of both worlds, and more that neither have.
+**In short:** Other open platforms are generally old, slow and bloated, while other closed platforms give you absolutely no control or ownership of your content. Ghost provides the best of both worlds, and more.
 
 Still after a more detailed comparison? We've got some in-depth articles comparing Ghost to [WordPress](https://ghost.org/vs/wordpress/), [Medium](https://ghost.org/vs/medium/) and [Tumblr](https://ghost.org/vs/tumblr/).
 

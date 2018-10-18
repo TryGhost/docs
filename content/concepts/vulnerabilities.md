@@ -1,6 +1,6 @@
 ---
 title: "Reporting Vulnerabilities"
-meta_title: "Core Concepts - Reporting Vulnerabilities"
+meta_title: "Reporting Security Vulnerabilities in Ghost Core"
 meta_description: "Find out how to take part in responsible disclosure to the Ghost security team."
 keywords:
     - concepts
@@ -10,7 +10,7 @@ keywords:
 sidebar: "concepts"
 ---
 
-How to take part in responsible disclosure to the Ghost Security team.
+Take part in responsible disclosure to the Ghost Security team
 
 Potential security vulnerabilities can be reported directly us at `security@ghost.org`. The Ghost Security Team communicates privately and works in a secured, isolated repository for tracking, testing, and resolving security-related issues.
 
