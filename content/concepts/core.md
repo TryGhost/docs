@@ -1,5 +1,5 @@
 ---
-title: "Core API"
+title: "Ghost Core API"
 sidebar: "concepts"
 ---
 
