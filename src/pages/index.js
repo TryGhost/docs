@@ -48,7 +48,7 @@ class IndexPage extends React.Component {
     render() {
         // TODO: Replace with real title and description for IndexPage
         const title = `Ghost Docs`
-        const description = `Ghost - Open-source publishing platform documentation 👉 Install guides, tutorials, API docs and FAQs.`
+        const description = `Get familiar with Ghost - the open source professional publishing platform.  Install guides, tutorials, API docs and FAQs.`
         const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
 
         return (
