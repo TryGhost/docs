@@ -82,6 +82,7 @@ class Results extends React.Component {
             placeholder: `Search documentation...`,
             onChange: this.onChange,
             value,
+            autoFocus: true
         }
 
         // <input id="homesearch" name="homesearch" className="input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0" type="text" placeholder="Search documentation..." autoComplete="off" />
