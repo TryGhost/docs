@@ -19,7 +19,7 @@ const Footer = () => (
                 <p className={ Spirit.small + `midgrey mt1`}>Spend less time running your servers and more time running your site. <strong className="blue">Ghost(Pro)</strong> has got you covered.</p>
             </a>
 
-            <a href="https://ghost.org/pricing" className="db w-50 pr20 pt7 pb7 pl30 relative tdn dark-h4-hover">
+            <a href="https://forum.ghost.org/" className="db w-50 pr20 pt7 pb7 pl30 relative tdn dark-h4-hover">
                 <Icon name="chat-double-bubble" className="absolute top-10 left-10 w13 h-auto fill-purple" />
                 <h4 className={ Spirit.h4 + `darkgrey` }>Looking for help or advice?</h4>
                 <p className={ Spirit.small + `midgrey mt1` }>Join the <strong>Ghost community</strong>  and meet thousands of other professional users and developers now</p>
