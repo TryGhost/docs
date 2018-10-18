@@ -512,6 +512,10 @@ kbd {
     z-index: -999;
 }
 
+.z-500 {
+    z-index: 500;
+}
+
 /* ul .sidebarlink-active:after {
     content: '';
     display: block;
