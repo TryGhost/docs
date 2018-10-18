@@ -9,6 +9,9 @@ const algoliaGhostFields = `
     title
     html
     image: feature_image
+    tags {
+        name
+    }
 `
 
 const algoliaMarkdownFields = `
@@ -67,33 +70,33 @@ const mdQueries = markdownQueryConfig.map(({ section, indexName }) => {
 })
 
 // Uncomment these for testing, to temporarily only do this for a small number of posts
-let testQueryArr = [{
-    query: `
-    {
-        allMarkdownRemark(
-            sort: {order: ASC, fields: [frontmatter___date]},
-            filter: {fields: {
-                slug: {eq: "/install/source/"},
-            }}
-        ) {
-            edges {
-                node {
-                    ${algoliaMarkdownFields}
-                }
-            }
-        }
-    }
-    `,
-    indexName: `setup`,
-    transformer: ({ data }) => data
-        .allMarkdownRemark.edges
-        .map(mdNodeMap)
-        .reduce(fragmentTransformer, []),
-}]
+// let testQueryArr = [{
+//     query: `
+//     {
+//         allMarkdownRemark(
+//             sort: {order: ASC, fields: [frontmatter___date]},
+//             filter: {fields: {
+//                 slug: {eq: "/install/source/"},
+//             }}
+//         ) {
+//             edges {
+//                 node {
+//                     ${algoliaMarkdownFields}
+//                 }
+//             }
+//         }
+//     }
+//     `,
+//     indexName: `setup`,
+//     transformer: ({ data }) => data
+//         .allMarkdownRemark.edges
+//         .map(mdNodeMap)
+//         .reduce(fragmentTransformer, []),
+// }]
 
-module.exports = testQueryArr
+// module.exports = testQueryArr
 // module.exports = [ghostQueries[1]]
 // module.exports = [mdQueries[1]]
 
 // The REAL DEAL
-// module.exports = ghostQueries.concat(mdQueries)
+module.exports = ghostQueries.concat(mdQueries)

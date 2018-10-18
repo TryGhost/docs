@@ -7,7 +7,7 @@ import Integration from '../components/integration'
 import { Spirit } from '../components/spirit-styles'
 import IntegrationsHeader from '../components/layouts/partials/integrations-header'
 import MetaData from '../components/layouts/partials/meta-data'
-import { Index, connectHits } from 'react-instantsearch-dom'
+import { Index, Menu, ClearRefinements, connectHits } from 'react-instantsearch-dom'
 
 const CustomHits = connectHits(({ hits }) => (
     <div className="gh-integrations w-100">
@@ -32,33 +32,51 @@ class IntegrationsPage extends React.Component {
                     description={description || this.props.data.site.siteMetadata.description}
                     image={imageUrl}
                 />
-                <Layout title="Integrations" headerDividerStyle="shadow" header={ <IntegrationsHeader /> }>
-                    <div className={ Spirit.page.xl + `pt10` }>
-                        <div className="flex br4">
-                            <div className="gh-integration-sidebar flex-shrink-0 w50 mr5">
-                                <div className="flex flex-column mb6">
-                                    <h3 className="ma0 mb2">Sort by</h3>
-                                    <a className="link pa2 pl0 blue fw6" href="#">Most popular</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">A – Z</a>
+                <Layout title="Integrations" headerDividerStyle="shadow" header={<IntegrationsHeader />}>
+                    <Index indexName="integration">
+                        <div className={ Spirit.page.xl + `pt10` }>
+                            <div className="flex br4">
+
+                                <div className="gh-integration-sidebar flex-shrink-0 w50 mr5">
+                                    {/* We don't yet have any data to filter on
+                                        <div className="flex flex-column mb6">
+                                        <h3 className="ma0 mb2">Sort by</h3>
+                                        <a className="link pa2 pl0 blue fw6" href="#">Most popular</a>
+                                        <a className="link pa2 pl0 midgrey" href="#">A – Z</a>
+                                    </div> */}
+                                    <div className="flex flex-column mb6">
+                                        <h3 className="ma0 mb2">Filter by</h3>
+                                        <ClearRefinements translations={{ reset: `All integrations` }}/>
+                                        <Menu
+                                            attribute="tags.name"
+                                            transformItems={items => items.filter(item => item.value.charAt(0) !== `#`).sort((a, b) => {
+                                                if (a.value < b.value) {
+                                                    return -1
+                                                }
+                                                if (a.value > b.value) {
+                                                    return 1
+                                                }
+                                                return 0
+                                            })}
+                                        />
+                                        {/*
+                                        Original styled links
+                                        <a className="link pa2 pl0 blue fw6" href="#">All integrations</a>
+                                        <a className="link pa2 pl0 midgrey" href="#">Automation</a>
+                                        <a className="link pa2 pl0 midgrey" href="#">Analytics</a>
+                                        <a className="link pa2 pl0 midgrey" href="#">Editor Cards</a>
+                                        <a className="link pa2 pl0 midgrey" href="#">Communication</a>
+                                        <a className="link pa2 pl0 midgrey" href="#">Marketing</a>
+                                        <a className="link pa2 pl0 midgrey" href="#">Support</a>
+                                        <a className="link pa2 pl0 midgrey" href="#">Storage</a>
+                                        <a className="link pa2 pl0 midgrey" href="#">Utilities</a> */}
+                                    </div>
                                 </div>
-                                <div className="flex flex-column mb6">
-                                    <h3 className="ma0 mb2">Filter by</h3>
-                                    <a className="link pa2 pl0 blue fw6" href="#">All integrations</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Automation</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Analytics</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Editor Cards</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Communication</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Marketing</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Support</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Storage</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Utilities</a>
-                                </div>
-                            </div>
-                            <Index indexName="integration">
                                 <CustomHits />
-                            </Index>
+
+                            </div>
                         </div>
-                    </div>
+                    </Index>
                 </Layout>
             </>
         )
