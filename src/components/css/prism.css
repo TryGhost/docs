@@ -111,7 +111,7 @@ a > code[class*="language-"] {
 
 Usage, in Markdown files:
 
-```html:title=post.hbs
+```handlebars:title=post.hbs
 // Some code
 ```
 

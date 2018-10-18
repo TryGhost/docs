@@ -39,7 +39,7 @@ module.exports = {
             options: {
                 plugins: [
                     `gatsby-remark-code-titles`,
-                    `gatsby-remark-prismjs`,
+                    `gatsby-remark-prismjs`, // TODO: make aliases work!
                     `gatsby-remark-external-links`,
                     `gatsby-remark-autolink-headers`,
                 ],

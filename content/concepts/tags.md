@@ -29,7 +29,7 @@ Ghost has a concept of `primary_tag`, used simply to refer to the very first tag
 
 ### Internal tag
 
-Tags which are prefixed by a `#` character, otherwise known as hashtags, are internal tags within Ghost - which is to say that they aren't rendered publicly. This can be particularly useful when you want to drive particular functionality based on a tag, but you don't necessarily want to output the tag for readers to see. 
+Tags which are prefixed by a `#` character, otherwise known as hashtags, are internal tags within Ghost - which is to say that they aren't rendered publicly. This can be particularly useful when you want to drive particular functionality based on a tag, but you don't necessarily want to output the tag for readers to see.
 
 
 ## Example usage
@@ -69,7 +69,7 @@ Tag archives are only generated for tags which are assigned to published posts, 
 
 Here's a sample tag object from the Ghost [Content API](/api/content/):
 
-```JSON
+```json
 tag: {
     "id": "1239bbfe90a518a862677abc",
     "name": "Getting Started",

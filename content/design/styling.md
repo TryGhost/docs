@@ -15,7 +15,7 @@ Use Spirit for styling the overall UI of Ghost Docs. If you need a new style dec
 ### UI style helpers
 
 For most common styles you can retrieve Spirit class combinations from the `Spirit` object in [`spirit-styles.js`](https://github.com/TryGhost/docs/blob/master/src/components/spirit-styles.js).
-```html
+```jsx
 <h1 class={ Spirit.h1 }>This is a heading</h1>
 
 // Renders:
@@ -24,7 +24,7 @@ For most common styles you can retrieve Spirit class combinations from the `Spir
 
 If you need further styles you can simply concatenate them to the style helpers.
 
-```html
+```jsx
 <h1 class={ Spirit.h1 + `pt2` }>This is a heading</h1>
 
 // Renders:

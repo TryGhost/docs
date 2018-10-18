@@ -55,7 +55,7 @@ In your terminal, `cd` into an empty directory and run the install command:
 ghost install local
 ```
 
-Once the install is finished you'll be able to access your new site on `http://localhost:2368` and `http://localhost:2368/ghost` to access Ghost Admin ✨ 
+Once the install is finished you'll be able to access your new site on `http://localhost:2368` and `http://localhost:2368/ghost` to access Ghost Admin ✨
 
 <mark><strong>That's it! You're done.</strong></mark>
 
@@ -107,7 +107,7 @@ This starts Ghost, watching all hbs, js and css files inside of the [your-theme-
 
 GScan is a tool that validates Ghost themes for compatibility with the latest versions of Ghost. Ghost automatically runs this tool when a theme is uploaded or activated. For development purposes, your can also run these checks yourself by locally installing it.
 
-```bash 
+```bash
 # Install gscan globally
 npm install gscan -g
 
