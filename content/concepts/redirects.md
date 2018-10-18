@@ -20,7 +20,8 @@ The redirects.json file is located in `content/data/redirects.json` and can also
 This file always starts with a `[` and ends with a `]`. A new ghost publication will have an empty redirect file containing `[]`. It can be edited in any source code editor.
 
 Entries to the redirects file follow this structure: 
-```
+
+```json
 {
   "from": "/url/" ,
   "to":  "/url/",

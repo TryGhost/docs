@@ -21,13 +21,14 @@ The storage layer is used to store images from an upload admin UI, from the API,
 By default Ghost stores images on your filesystem. The default location is the Ghost content path in your Ghost folder under `content/images`, or an alternative custom content path that you have configured. 
 
 In order to use a custom storage adapter, your custom configuration file needs to be updated to provide config for your new storage module and set it as active:
-```
+
+```json
 storage: {
     active: 'my-module',
     'my-module': {
         key: 'abcdef'
     }
-},
+}
 ```
 
 The storage block should have 2 items:
@@ -71,7 +72,7 @@ In order to replace the storage module, use these requirements. You can also tak
 
 A custom storage adapter must inherit from your base storage adapter. By default the Base Storage Adapter is installed by Ghost and should be available in your custom adapter.
 
-```
+```javascript
 'use strict';
 
 var BaseAdapter = require('ghost-storage-base');
@@ -94,7 +95,7 @@ Your custom storage adapter must implement five required functions:
 * `delete`
 * `read`
 
-```
+```javascript
 'use strict';
 
 var BaseAdapter = require('ghost-storage-base');

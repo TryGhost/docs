@@ -1,6 +1,6 @@
 ---
 title: "Custom Schedulers"
-meta_title: "Core Concepts - Custom Schedulers"
+meta_title: "Custom Scheduler Modules for Ghost"
 meta_description: "Discover how to use a custom adapter for scheduling content on your Ghost publication ⏰"
 keywords:
     - schedulers
@@ -30,7 +30,7 @@ The following guide explains how to write your own adapters, for example if you 
 
 Use the file name `my-adapter.js`: 
 
-```
+```javascript
 var util = require('util');
 
 // If this require does not work, then your content folder structure is different
@@ -76,7 +76,7 @@ module.exports = MyAdapter;
 
 Copy your new adapter to `content/scheduling/` and edit your config file to identify your new adapter: 
 
-```
+```json
 "scheduling": {
   "active": 'my-adapter'
 }
