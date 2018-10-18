@@ -19,39 +19,43 @@ We take security very seriously at Ghost and welcome any peer review of our comp
 
 ## Security features
 
-### SSL
+### Automatic SSL
 
-Letsencrypt integration, non-support of SSL in 2019
+Ghost's CLI tool attempts to automatically configure SSL certificates for all new Ghost installs with Let's Encrypt by default. In 2019 we intend to make SSL mandatory for all new installs.
+
+### Standardised permissions
+
+Ghost-CLI does not run as `root` and automatically configures all server directory permissions correctly according to [OWASP Standards](https://www.owasp.org/index.php/File_System).
+
+### Brute force protection
+
+User login attempts and password reset requests are all limited to 5 per hour per IP.
+
+### Data validation and serlialisation
+
+Ghost performs strong serialisation and validatio on all data that goes into the database, as well as automated symlink protection on all uploaded files.
+
+### Encoded tokens everywhere
+
+All user invitation and password reset tokens are base64 encoded with serverside secret. All tokens are always single use and always expire.
 
 ### Password hashing
 
-bcrypt
+Ghost follows [OWASP authentication standards](https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication) with all passwords hashed and salted properly using `bcrypt` to ensure password integrity.
+
+### SQLi prevention
+
+Ghost uses [Bookshelf](http://bookshelfjs.org) ORM + [Knex](https://knexjs.org) query builder and does not generate _any_ of its own raw SQL queries. Ghost has no interpolation of variables directly to SQL strings.
 
 ### XSS prevention
 
-Embeds not available in trusted environment (Editor)
+Ghost uses safe/escaped stringa used everywhere, including and especially in all custom Handlebars helpers used in [Ghost Themes](/api/handlebars-themes/)
 
-### CSRF
+### Dependency management
 
-- Tokens on HTTP requests? When? For what?
-- What about API calls?
-- Any considations for caching?
+All Ghost dependencies are continually scanned with [NSP](https://github.com/nodesecurity/nsp) to ensure their integrity.
 
-### DDoS
-
-TLDR use Caching/HAProxy
-
-
-## Security risks
-
-### Privelige escalation
-
-Install admin / frontend on different domains
-
-### Server hardening
-
-Ensure proper user permissions, or just use Ghost-CLI
-
+---
 
 ## Privacy
 
@@ -61,21 +65,3 @@ In addition the Ghost software itself contains [a plainly written summary](https
 
 We take user privacy extremely seriously.
 
-## WIP
-
-- XSS Prevention: enable inbuilt handlebars HTML escape & ensure we return safe/escaped strings for any custom handlebars helpers
-- Brute Force Protection: e.g. for user login (5 attempts per hour+ip), same for password reset
-- Knex+Bookshelf (ORM + Query Builder) prevent SQL Injections, because Ghost itself does not build up raw SQL statements. Ghost never interpolate variables directly to SQL strings.
-- Authentication standards followed by owasp (https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication)
-    - including strong password validation
-    - strong hashed passwords using salted hashed functions 
-- base64 encode/decode tokens in url for invites + password reset (attacker needs the secret from the server to decode tokens from urls)
-    - server makes use of token expiry AND one time usages of tokens only (!)
-- NSP check (https://github.com/nodesecurity/nsp) to ensure we don't use 3rd party deps which are vulno
-   - runs randomly time by time, but don't tell anybody
-- strong data validation and serialisation to ensure that attackers can't just insert what they want to the db (data types etc)
-- filesystem symlink protection for theme uploads
-- Ghost-CLI
-    - default ssl support
-    - does not use root user
-    - standardised read+write permissions on the OS for a web application (https://www.owasp.org/index.php/File_System)
