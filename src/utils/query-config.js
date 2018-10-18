@@ -28,7 +28,7 @@ const markdownQueryConfig = [
     {
         section: `concepts`,
         indexName: `concept`,
-        niceName: `Core Concepts`,
+        niceName: `Concepts`,
     },
     {
         section: `setup`,
