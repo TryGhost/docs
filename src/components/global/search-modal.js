@@ -94,8 +94,11 @@ class SearchModal extends React.Component {
                     <div className="absolute pa4 top-0 right-0 pointer" onClick={this.closeModal}><Icon name="close" className="fill-midgrey w3 h-auto" /></div>
                     {/* <div className="pa4 pl5 pr5 mt5 w-100 mw-s f4 br-pill bg-white shadow-3 center flex items-center justify-between"> */}
                     {/* <Icon name="search" className="fill-lightgrey-d2 h6" /> */}
-                    <label htmlFor="globalsearch" className="clip">Search</label>
-                    <Search />
+                    <div className="relative">
+                        <Icon name="search" className="fill-midgrey-l1 w4 h-auto absolute search-modal-input-field left-3" />
+                        <label htmlFor="globalsearch" className="clip">Search</label>
+                        <Search />
+                    </div>
                     {/* </div> */}
                 </Modal>
             </>

@@ -82,7 +82,7 @@ class Results extends React.Component {
         }
 
         // <input id="homesearch" name="homesearch" className="input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0" type="text" placeholder="Search documentation..." autoComplete="off" />
-        const inputTheme = `input-reset form-text b--transparent search-modal-field-bg br-pill flex-auto whitney lh-1-0 pa2 pl3 plr3 w-100 dark-placeholder`
+        const inputTheme = `input-reset form-text b--transparent search-modal-field-bg br-pill flex-auto whitney lh-1-0 pa2 pl8 plr3 w-100 dark-placeholder`
 
         const theme = {
             input: inputTheme,

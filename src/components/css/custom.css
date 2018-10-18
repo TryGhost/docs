@@ -338,6 +338,10 @@ kbd {
     overflow: hidden;
 }
 
+.search-modal-input-field {
+    top: 10px;
+}
+
 .search-modal-result-container {
     max-height: calc(100vh - 23.6rem);
     overflow-y: scroll;
