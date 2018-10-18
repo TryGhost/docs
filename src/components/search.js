@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link'
 import { Highlight, Snippet, Index, Configure, connectAutoComplete } from 'react-instantsearch-dom'
 import Autosuggest from 'react-autosuggest'
+import { Spirit } from './spirit-styles';
 
 const renderSectionSuggestion = (hit) => {
     return (
         <>
-            <Link to={hit.url}>
-                <span>{hit.section}</span>
-                <Highlight attribute="title" hit={hit} tagName="mark" />
-                <Snippet attribute="html" hit={hit} />
+            <Link to={hit.url} className="tdn db pt2 pb2 blue hover-bg-whitegrey-l2 mb2 nl11 nr11 pl11 pr11">
+                <span className="search-result-section db f-supersmall midlightgrey">{hit.section} /</span>
+                <h4 className={ Spirit.h5 + `dib` }><Highlight attribute="title" hit={hit} tagName="mark" className="search-result-page blue mt2" /></h4>
+                <p className={ Spirit.small + `midgrey`}><Snippet attribute="html" hit={hit} className="search-result-snippet" />...</p>
             </Link>
         </>
     )
@@ -19,8 +20,8 @@ const renderSectionSuggestion = (hit) => {
 const renderFaqSectionSuggestion = (hit) => {
     return (
         <>
-            <Link to={hit.url}>
-                <Highlight attribute="title" hit={hit} tagName="mark" />
+            <Link to={ hit.url } className="tdn db pt2 pb2 blue hover-bg-whitegrey-l2 mb2 nl11 nr11 pl11 pr11">
+                <h4 className={ Spirit.h5 }><Highlight attribute="title" hit={hit} tagName="mark" className="search-result-page" /></h4>
             </Link>
         </>
     )
@@ -91,14 +92,14 @@ class Results extends React.Component {
             // inputOpen: 'react-autosuggest__input--open',
             // inputFocused: 'react-autosuggest__input--focused',
             // suggestionsContainer: 'pa15',
-            suggestionsContainerOpen: 'pa15 pt5 pb0 mt10 bt b--whitegrey nl10 nr10 nb10 search-modal-result-container',
-            // suggestionsList: 'react-autosuggest__suggestions-list',
+            suggestionsContainerOpen: 'pa11 pt5 pb5 mt10 bt b--whitegrey nl10 nr10 nb10 search-modal-result-container',
+            suggestionsList: 'list pa0 ma0 search-modal-suggestion-list',
             // suggestion: 'react-autosuggest__suggestion',
             // suggestionFirst: 'react-autosuggest__suggestion--first',
             // suggestionHighlighted: 'react-autosuggest__suggestion--highlighted',
-            // sectionContainer: 'react-autosuggest__section-container',
-            // sectionContainerFirst: 'react-autosuggest__section-container--first',
-            // sectionTitle: 'react-autosuggest__section-title'
+            sectionContainer: 'pb5 pt4 bt b--whitegrey nl11 nr11 pl11 pr11',
+            sectionContainerFirst: 'bn',
+            sectionTitle: Spirit.excerpt + 'fw5 darkgrey'
         }
 
         return (
