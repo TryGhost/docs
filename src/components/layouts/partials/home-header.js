@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from './navbar'
 // import SectionHeading from './section-heading'
-import Search from '../../search'
+import SearchModal from '../../global/search-modal'
 import Icon from '../../global/icon'
 import Box from '../../layouts/partials/box'
 import { Spirit } from '../../spirit-styles'
@@ -46,11 +46,8 @@ class HomeHeader extends React.Component {
                 <div className={Spirit.page.xl + `pa-vw2 pb-vw3 flex flex-column items-center`}>
                     <h1 className="ma0 pa0 f-headline">Ghost Documentation</h1>
                     {/* <p className="ma0 mt2 f4 white-80">All your favourite apps and tools, integrated with Ghost</p> */}
-                    <div className="pa4 pl5 pr5 mt5 w-100 mw-s f4 br-pill bg-white shadow-3 center flex items-center justify-between">
-                        <Icon name="search" className="fill-lightgrey-d2 h6" />
-                        <label htmlFor="homesearch" className="clip">Search</label>
-                        <Search />
-                    </div>
+                    <SearchModal isHome />
+
                     <section className={ `grid-12 gutter-row-20 gutter-36-ns mt15` }>
                         <MainBox
                             to="/concepts/introduction/"

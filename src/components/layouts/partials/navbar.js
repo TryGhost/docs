@@ -4,6 +4,7 @@ import { Spirit } from '../../spirit-styles'
 import PropTypes from 'prop-types'
 
 import Logo from "../../global/logo"
+import SearchModal from '../../global/search-modal'
 
 // Theme definitions
 const headerSkin = {
@@ -53,8 +54,7 @@ class NavBar extends React.Component {
                 </div>
                 <div className={ `flex-auto flex-nowrap justify-end items-center ` + (this.props.searchField ? `flex` : ` dn`) }>
                     <div className="relative">
-                        <label htmlFor="globalnavsearch" className="clip">Search</label>
-                        <input id="globalnavsearch" name="globalnavsearch" type="text" className={ theme.searchBox + ` f8 pa2 pl4 pr4 ba f8 fw4 br3 whitney form-text bn br-pill w-sidebar dn db-l lh-1-0` } placeholder="Search documentation..." />
+                        <SearchModal theme={theme} />
                     </div>
                 </div>
             </nav>
