@@ -88,6 +88,7 @@ class FeedbackForm extends React.Component {
                         <div className="flex items-center">
                             <div className="w-50 mr4 relative">
                                 <Icon name="arrow-down" className="w3 h-auto absolute top-dropdown-arrow right-4 fill-midgrey" />
+                                <label htmlFor="feedback-type" className="clip">Select feedback type</label>
                                 <select
                                     name="feedback-type"
                                     className="appearance-none db ba b--whitegrey whitney pa3 bg-white w-100 h10 mt4 middarkgrey outline-0 f8"
@@ -100,6 +101,7 @@ class FeedbackForm extends React.Component {
                                     <option>Other</option>
                                 </select>
                             </div>
+                            <label htmlFor="email" className="clip">Email</label>
                             <input
                                 name="email"
                                 type="email"
@@ -113,6 +115,7 @@ class FeedbackForm extends React.Component {
                                 onChange={this.handleChange}
                             />
                         </div>
+                        <label htmlFor="message" className="clip">Message</label>
                         <textarea
                             name="message"
                             className="resize-none w-100 f8 pa3 h40 whitney db bg-white br3 ba b--whitegrey mt4 form-text middarkgrey"
