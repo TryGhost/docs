@@ -7,6 +7,13 @@ import Integration from '../components/integration'
 import { Spirit } from '../components/spirit-styles'
 import IntegrationsHeader from '../components/layouts/partials/integrations-header'
 import MetaData from '../components/layouts/partials/meta-data'
+import { Index, connectHits } from 'react-instantsearch-dom'
+
+const CustomHits = connectHits(({ hits }) => (
+    <div className="gh-integrations w-100">
+        {hits.map(hit => <Integration key={hit.objectID} post={hit} />)}
+    </div>
+))
 
 class IntegrationsPage extends React.Component {
     render() {
@@ -14,8 +21,6 @@ class IntegrationsPage extends React.Component {
         const title = `Integrations`
         const description = `Your favourite apps and tools, integrated with Ghost. Connect tools for automation, analytics, marketing, support and much more.`
         const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
-
-        const posts = this.props.data.allGhostPost.edges
 
         return (
             <>
@@ -49,11 +54,9 @@ class IntegrationsPage extends React.Component {
                                     <a className="link pa2 pl0 midgrey" href="#">Utilities</a>
                                 </div>
                             </div>
-                            <div className="gh-integrations w-100">
-                                {posts.map(({ node }) => (
-                                    <Integration key={node.id} post={node} />
-                                ))}
-                            </div>
+                            <Index indexName="integration">
+                                <CustomHits />
+                            </Index>
                         </div>
                     </div>
                 </Layout>
@@ -71,7 +74,6 @@ IntegrationsPage.propTypes = {
                 description: PropTypes.string.isRequired,
             }).isRequired,
         }).isRequired,
-        allGhostPost: PropTypes.object.isRequired,
     }).isRequired,
     location: PropTypes.shape({
         pathname: PropTypes.string.isRequired,
@@ -84,17 +86,6 @@ export const pageQuery = graphql`
   query GhostIntegrationsQuery {
     site {
         ...SiteMetaFields
-    }
-    allGhostPost(
-        sort: { order: DESC, fields: [published_at] },
-        limit: 50,
-        filter: {tags: {elemMatch: {slug: {eq: "hash-integration"}}}}
-    ) {
-      edges {
-        node {
-          ...GhostPostListFields
-        }
-      }
     }
   }
 `

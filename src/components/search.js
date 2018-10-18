@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link'
-import { Highlight, Snippet, Index , connectAutoComplete } from 'react-instantsearch-dom'
+import { Highlight, Snippet, Index, Configure, connectAutoComplete } from 'react-instantsearch-dom'
 import Autosuggest from 'react-autosuggest'
 
 const renderSectionSuggestion = (hit) => {
@@ -101,6 +101,7 @@ class Results extends React.Component {
 
         return (
             <>
+                <Configure hitsPerPage="8" />
                 <Autosuggest
                     suggestions={hits}
                     onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}

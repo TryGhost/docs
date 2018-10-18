@@ -11,7 +11,6 @@ const SearchWrapper = ({ children }) => (
         indexName="faq"
     >
         <Configure attributesToSnippet="html" />
-        <Configure hitsPerPage="8" />
         {children}
     </InstantSearch>
 )
