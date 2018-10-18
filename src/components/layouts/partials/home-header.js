@@ -15,9 +15,9 @@ class MainBox extends React.Component {
                 <div className="flex flex-column justify-between flex-auto">
                     <div>
                         <h2 className={ Spirit.h4 + `mt0 mt2-ns darkgrey flex-shrink-1` }>{ this.props.title }</h2>
-                        <p className={ Spirit.p + `mt2 midgrey` }>{ this.props.children }</p>
+                        <p className={ Spirit.small + `midgrey` }>{ this.props.children }</p>
                     </div>
-                    <span className={ `${this.props.color} dib mt5 link fw5 f5 flex items-center` }>
+                    <span className={ `${this.props.color} dib mt2 link fw5 f5 flex items-center` }>
                         Learn more <Icon name="arrow-right" className={ `w3 h3 ml2 fill-${this.props.color}` } />
                     </span>
                 </div>
