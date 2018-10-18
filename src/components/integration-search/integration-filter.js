@@ -30,7 +30,7 @@ class IntegrationMenu extends React.Component {
 
     renderItem = (item) => {
         return (<a
-            key={item.label} c
+            key={item.label}
             className="link pa2 pl0 midgrey"
             onClick={(e) => {
                 e.preventDefault()
