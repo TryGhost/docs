@@ -61,23 +61,25 @@ class SetupIndexPage extends React.Component {
                         <section className="grid-12 gutter-row-20 gutter-36-l">
                             {/* <h3 className={ Spirit.h4 + `col-12 middarkgrey` }>I want to setup a site...</h3> */}
                             <SetupBox href="https://ghost.org/pricing/" title="Ghost(Pro)" icon="ghost-pro-logo" iconClass="w9 h9 stroke-w--1-5" headingClass="mt2">
-                                Ghost’s premium hosted service delivers a seamless experience, giving you time to focus on what really matters
+                                Fully managed <strong>PaaS</strong> with 1-click deployment, worldwide CDN, backups, upgrades & security
                             </SetupBox>
 
                             <SetupBox to="/install/ubuntu/" title="Ubuntu" icon="ubuntu-logo" iconClass="w8 h8 stroke-w--1-5" headingClass="mt2">
-                                A full guide for installing Ghost on your Ubuntu production server
+                                A full guide for installing Ghost on Ubuntu<br/>
+                                <strong>16.04 LTS</strong> and <strong>18.04 LTS</strong> <em>(Recommended)</em>
                             </SetupBox>
 
-                            <SetupBox to="/install/docker/" title="Docker" icon="docker-logo" iconClass="w10 h10" headingClass="mt1">
-                                Dolore sunt ad quis cillum nostrud irure et ad veniam ex exercitation mollit. Pariatur reprehenderit.
+                            <SetupBox href="https://hub.docker.com/_/ghost/" title="Docker" icon="docker-logo" iconClass="w10 h10" headingClass="mt1">
+                                <strong>Unofficial community package</strong> for running<br/>
+                                Ghost inside a Docker container
                             </SetupBox>
 
                             <SetupBox to="/install/local/" title="Local install" icon="terminal" iconClass="fill-midlightgrey w8 h8" headingClass="mt2">
-                                A complete guide to install an instance of Ghost locally for development
+                                <strong>Fast-track</strong> local install for running Ghost on your computer or doing theme development
                             </SetupBox>
 
                             <SetupBox to="/install/source/" title="Install from Source" icon="github-outline" iconClass="fill-darkgrey w8 h8" headingClass="mt2">
-                                Eu laboris labore est nisi voluptate in duis ut. Exercitation irure id dolor est minim
+                                <strong>Advanced developer guide</strong> for working directly on Ghost Core and Ghost Admin
                             </SetupBox>
                         </section>
                     </div>
