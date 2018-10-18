@@ -8,6 +8,7 @@ const algoliaGhostFields = `
     slug
     title
     html
+    image: feature_image
 `
 
 const algoliaMarkdownFields = `
@@ -18,6 +19,7 @@ const algoliaMarkdownFields = `
     }
     frontmatter {
         title
+        image
     }
     html
 `
