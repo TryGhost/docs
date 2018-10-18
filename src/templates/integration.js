@@ -67,13 +67,14 @@ Integration.propTypes = {
 
 export default Integration
 
-export const articleQuery = graphql`
-    query($slug: String!) {
-        site {
-            ...SiteMetaFields
-        }
-        ghostPost(slug: { eq: $slug }) {
-            ...GhostPostFields
-        }
-    }
-`
+// TODO: Uncomment for bringing back Integrations
+// export const articleQuery = graphql`
+//     query($slug: String!) {
+//         site {
+//             ...SiteMetaFields
+//         }
+//         ghostPost(slug: { eq: $slug }) {
+//             ...GhostPostFields
+//         }
+//     }
+// `
