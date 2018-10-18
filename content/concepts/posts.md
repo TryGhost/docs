@@ -24,7 +24,7 @@ Additionally, posts have **Code Injection** fields which mean you can register a
 
 Here's an example of a [post](https://demo.ghost.io/welcome/) in the default Ghost Theme:
 
-[![Post](/images/concepts/post.jpg)](https://demo.ghost.io/welcome/)
+[![Post](../images/concepts/post.jpg)](https://demo.ghost.io/welcome/)
 
 
 ## Creating content
@@ -37,7 +37,7 @@ The writing experience in Ghost will be very familiar to most people who have sp
 
 Writing simple content is a breeze - but there are tons of powerful shortcuts, too. You can write plaintext, activating formatting options using either the mouse or keyboard shortcutcs. But you can also write in Markdown, if you prefer, and the editor will convert it as you type - rendering an instant preview.
 
-![MobileDoc](/images/concepts/editor.png)
+![MobileDoc](../images/concepts/editor.png)
 
 Additionally, the editor contains intelligent logic around pasting. You can copy and past from _most_ sources and it will be correctly transformed into readable content without needing any special treatment. (Go ahead, try copying the content of this page straight into the editor!) — You can also do things like pasting a URL over the top of any highlighted text to create a link.
 
@@ -47,7 +47,7 @@ Having a clean writing experience is good, but nowadays great publishing means s
 
 Ghost content comes with extensible, rich media objects called Cards. The easiest way to think of them is like having Slack integrations in your content.
 
-![Cards](/images/concepts/cards.png)
+![Cards](../images/concepts/cards.png)
 
 **For example:** Either by pressing the `+` button or typing `/` - you can trigger an Unsplash integration to find and insert a royalty-free photo for your post.
 
@@ -61,7 +61,7 @@ All post content in Ghost is stored in [MobileDoc](https://github.com/bustle/mob
 
 Because MobileDoc is **Just JSON**™️, it's extremely portable and can be transformed into multiple formats. This is particularly powerful because it's just as easy to parse your content into HTML to render on the web as it is to pull the same content into a mobile app using completely different syntax.
 
-![MobileDoc](/images/concepts/mobiledoc.png)
+![MobileDoc](../images/concepts/mobiledoc.png)
 
 Even the dynamic cards mentioned above are a part of MobileDoc! It's a fast growing open standard which is used by [Ghost](https://ghost.org), [Bustle](https://bustle.com), and an increasing number of other popular platforms and publications.
 

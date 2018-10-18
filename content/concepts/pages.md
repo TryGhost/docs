@@ -23,7 +23,7 @@ Pages are only ever published on the slug which is given to them, and do not aut
 
 Here's an example of a [page](https://demo.ghost.io/about/) in the default Ghost Theme:
 
-[![Page](/images/concepts/page.jpg)](https://demo.ghost.io/about/)
+[![Page](../images/concepts/page.jpg)](https://demo.ghost.io/about/)
 
 
 ## Custom templates

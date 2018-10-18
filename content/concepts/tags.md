@@ -36,7 +36,7 @@ Tags which are prefixed by a `#` character, otherwise known as hashtags, are int
 
 As a quick example of how you might use tags, let's look at a quick example of a Hollywood news site which is publishing a post about Ryan Reynolds being announced as the lead in a new movie called "Son of Deadpool".
 
-![Tags](/images/concepts/tags.png)
+![Tags](../images/concepts/tags.png)
 
 Here the post has 4 tags:
 
@@ -60,7 +60,7 @@ All actively used public tags (so, those not prefixed with `#`) generate automat
 
 Here's an example of an [tag archive](https://demo.ghost.io/tag/getting-started/) in the default Ghost Theme:
 
-[![Author Archive](/images/concepts/tag-archive.jpg)](https://demo.ghost.io/tag/getting-started/)
+[![Tag Archive](/images/concepts/tag-archive.jpg)](https://demo.ghost.io/tag/getting-started/)
 
 Tag archives are only generated for tags which are assigned to published posts, any other tags are not publicly visible.
 
