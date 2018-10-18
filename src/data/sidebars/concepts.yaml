@@ -31,6 +31,14 @@
         link: /concepts/tags/
       - title: Users
         link: /concepts/users/
+  - group: Hosting
+    items:
+      - title: Hosting overview
+        link: /concepts/hosting/
+      - title: Recommendations
+        link: /concepts/server-recommendations/
+      - title: Troubleshooting
+        link: /concepts/hosting-problems/
   - group: Configuration
     items:
       - title: Config options
@@ -43,14 +51,6 @@
         link: /concepts/storage-adapters/
       - title: Custom schedulers
         link: /concepts/custom-schedulers/
-  - group: Hosting
-    items:
-      - title: Hosting overview
-        link: /concepts/hosting/
-      - title: Recommendations
-        link: /concepts/server-recommendations/
-      - title: Troubleshooting
-        link: /concepts/hosting-problems/
   - group: Security
     items:
       - title: Overview

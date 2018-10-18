@@ -49,7 +49,7 @@ a > code[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #ff4482;
+	color: #ff5884;
 }
 
 .token.boolean,
