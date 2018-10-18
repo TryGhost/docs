@@ -72,7 +72,11 @@ class Results extends React.Component {
     }
 
     render() {
-        const { hits } = this.props;
+        // Don't show sections with no results
+        let hits = this.props.hits.filter(hit => {
+            return hit.hits.length !== 0
+        });
+
         const { value } = this.state;
         const inputProps = {
             placeholder: `Search documentation...`,
