@@ -25,7 +25,7 @@ These three areas work together to make every Ghost site function smoothly, but 
 
 ## How things fit together
 
-[TODO: Diagram]
+<!-- [TODO: Diagram] -->
 
 Physically, the Ghost codebase is structured in two main directories:
 
@@ -37,7 +37,7 @@ Physically, the Ghost codebase is structured in two main directories:
 
 Ghost ships with the [Bookshelf.js ORM](http://bookshelfjs.org) layer by default allowing for a range of databases to be used. Currently SQLite3 is the supported default in development while MySQL is recommended for production. Other databases are available, and compatible, but not supported by the core team.
 
-Additionally, while Ghost uses local file storage by default it's also possible to use custom storage adapters to make your filesystem completely external. There are fairly wide range of pre-made [storage adapters for Ghost](/concepts/storage-adapters/) already available for use. 
+Additionally, while Ghost uses local file storage by default it's also possible to use custom storage adapters to make your filesystem completely external. There are fairly wide range of pre-made [storage adapters for Ghost](/concepts/storage-adapters/) already available for use.
 
 ### Ghost-CLI
 
