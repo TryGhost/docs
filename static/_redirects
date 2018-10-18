@@ -1,7 +1,7 @@
 # Redirect default Netlify subdomain to primary domain
 
-https://tryghost.netlify.com/*      https://newdocs.ghost.org/:splat     301!
-http://tryghost.netlify.com/*       https://newdocs.ghost.org/:splat     301!
+https://tryghost.netlify.com/*      https://docs.ghost.org/:splat               301!
+http://tryghost.netlify.com/*       https://docs.ghost.org/:splat               301!
 
 
 # Make edit links work
