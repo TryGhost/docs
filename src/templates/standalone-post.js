@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
+import Prism from 'prismjs'
 
 import Layout from '../components/layouts/default'
 // import Authors from '../components/authors'
@@ -8,6 +9,15 @@ import { Spirit } from '../components/spirit-styles'
 import MetaData from '../components/layouts/partials/meta-data'
 
 class Tutorial extends React.Component {
+    componentDidMount() {
+        // TODO: Prism for Webpack currently supports basic languages. `handlebars`,
+        // `yaml`, and `json` are not amongst those. To load those languages, we'd
+        // need to load them specifically following the webpack instructions here:
+        // https://prismjs.com/#examples and https://github.com/mAAdhaTTah/babel-plugin-prismjs
+        // The other option is to create a plugin for GhostPosts.
+        Prism.highlightAll()
+    }
+
     render() {
         const post = this.props.data.ghostPost
 
@@ -23,7 +33,7 @@ class Tutorial extends React.Component {
                     <div className={ Spirit.page.xl + `pb15` }>
                         <article className="mw-content center pa15 pb10">
                             <h1 className={ Spirit.h1 }>{ post.title }</h1>
-                            <section className="post-content tutorial-content" dangerouslySetInnerHTML={ { __html: post.html } } />
+                            <section className="post-content tutorial-content" dangerouslySetInnerHTML={{ __html: post.html }} />
                             {/* <Authors authors={ post.authors } /> */}
                         </article>
 

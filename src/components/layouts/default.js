@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import Prism from 'prismjs'
 
 // Partials and components
 import Header from './partials/header'
@@ -16,10 +15,6 @@ import '../css/app.css'
 import '../css/prism.css'
 
 class DefaultLayout extends React.Component {
-    componentDidMount() {
-        Prism.highlightAll()
-    }
-
     render() {
         const { children } = this.props
         const header = this.props.header ? this.props.header : <Header dividerStyle={this.props.headerDividerStyle} />

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
+import Prism from 'prismjs'
 
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
@@ -10,6 +11,15 @@ import MetaData from '../components/layouts/partials/meta-data'
 import RelatedPosts from '../components/global/related-posts'
 
 class FAQ extends React.Component {
+    componentDidMount() {
+        // TODO: Prism for Webpack currently supports basic languages. `handlebars`,
+        // `yaml`, and `json` are not amongst those. To load those languages, we'd
+        // need to load them specifically following the webpack instructions here:
+        // https://prismjs.com/#examples and https://github.com/mAAdhaTTah/babel-plugin-prismjs
+        // The other option is to create a plugin for GhostPosts.
+        Prism.highlightAll()
+    }
+
     render() {
         const post = this.props.data.ghostPost
         const { relatedPosts } = this.props.pageContext
