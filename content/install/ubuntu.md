@@ -1,27 +1,32 @@
 ---
-title: "Install Ghost on your server"
+title: "How to install Ghost on Ubuntu"
 date: "2018-10-01"
-meta_title: "Install Ghost On Your Server (Ubuntu)"
-meta_description: "Ghost is a completely open-source professional publishing platform. Find out how to spin up an instance of Ghost on your own production server!"
-image: "https://unsplash.it/400/300/?random?BoldMage"
+meta_title: "How to install & setup Ghost on Ubuntu 16.04 + 18.04"
+meta_description: "A full production install guide for how to install the Ghost professional publishing platform on a production server running Ubuntu 16.04 or 18.04."
 keywords:
     - setup
     - production
     - server
     - ubuntu
-
-
 ---
 
-A full guide for installing Ghost on your Ubuntu production server
+A full guide for installing, configuring and running Ghost on your Ubuntu **16.04** or **18.04** server, for use in production
 
 ## Overview
 
-Welcome to Ghost! We’re glad you’re here. The purpose of this article is to guide you through installing Ghost on your production server using the Ghost CLI. It’s suitable if you want to self host your site and manage your own upgrades and maintenance.
+This the official guide for self-hosting Ghost using our recommended stack of Ubuntu 16.04 or 18.04. If you're comfortable installing, maintaining and updating your own software, this is the place for you. By the end of this guide you'll have a fully configured Ghost install running in production using MySQL.
 
-This tutorial walks you through server setup and Ghost CLI installation. You’ll then use the Ghost CLI to install and configure Ghost to production.
+This install is **not** suitable for [local use](/install/local/) or [contributing](/install/source/) to core.
 
-> If you’re looking to install Ghost on a local machine to test it out or develop a theme, use the [local install](/install/local/) guide. If you want to contribute to the open source project, skip to the [contribution guide](/source/).
+<a class="sbox" href="https://www.digitalocean.com/docs/one-clicks/ghost/" target="_blank" rel="noopener">
+    <div class="sbox-image">
+        <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="65.2 173.5 180 180"><style>.st0{fill:#0080ff}</style><g id="XMLID_229_"><g id="XMLID_690_"><g id="XMLID_691_"><g id="XMLID_44_"><g id="XMLID_48_"><path id="XMLID_49_" class="st0" d="M155.2 351.7v-34.2c36.2 0 64.3-35.9 50.4-74-5.1-14.1-16.4-25.4-30.5-30.5-38.1-13.8-74 14.2-74 50.4H67c0-57.7 55.8-102.7 116.3-83.8 26.4 8.3 47.5 29.3 55.7 55.7 18.9 60.6-26 116.4-83.8 116.4z"/></g><path id="XMLID_47_" class="st0" d="M155.3 317.6h-34v-34h34z"/><path id="XMLID_46_" class="st0" d="M121.3 343.8H95.1v-26.2h26.2z"/><path id="XMLID_45_" class="st0" d="M95.1 317.6H73.2v-21.9h21.9v21.9z"/></g></g></g></g></svg>
+    </div>
+    <div class="sbox-content">
+        <h4>Save time with our DigitalOcean One-Click Application</h4>
+        <p>This is a detailed manual install guide, but we've also teamed up with our friends over at DigitalOcean to  automate nearly the entire process and have you up and running in just a few minutes 👉</p>
+    </div>
+</a>
 
 
 ## Prerequisites

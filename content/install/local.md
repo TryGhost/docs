@@ -1,9 +1,8 @@
 ---
-title: "Installing Ghost Locally"
+title: "How to install Ghost locally"
 date: "2018-10-01"
-meta_title: "Installing Ghost Locally: Theme Development"
-meta_description: "Want to give Ghost a try? With local installs you can test the platform or develop a Ghost theme. Read the full guide here 👻"
-image: "https://unsplash.it/400/300/?random?BoldMage"
+meta_title: "How to install Ghost locally on Mac, PC or Linux"
+meta_description: "A detailed local install guide for how to install the Ghost publishing platform on your computer running Mac, PC or Linux. Ideal for Ghost theme development."
 keywords:
     - setup
     - local
@@ -15,7 +14,7 @@ Fast-track local install for getting Ghost running on your computer or setup for
 
 ## Overview
 
-Running Ghost locally is the easiest way to get your own copy of the softwar running and be able to do some local development with it. By the end of this tutorial you will have completed a local Ghost install that runs in development mode using SQLite3.
+Running Ghost locally is the easiest way to get your own copy of the software running and be able to do some local development with it. By the end of this guide you will have completed a local Ghost install that runs in development mode using SQLite3.
 
 This install is **not** suitable for [production use](/install/ubuntu/) or [contributing](/install/source/) to core.
 

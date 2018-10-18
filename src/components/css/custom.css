@@ -658,3 +658,39 @@ mark {
     background: #3eb0ef;
     border-radius: 0 2px 2px 0;
 }
+
+
+/* Special Content Box */
+
+.sbox {
+    position: relative;
+    z-index: 40;
+    display: flex;
+    padding: 20px 30px 25px;
+    border: #d3e5ff 1px solid;
+    color: inherit !important;
+    background: #f3f8ff;
+    border-radius: 8px;
+}
+.sbox:hover {
+    box-shadow: none !important;
+}
+
+.sbox-image {
+    width: 60px;
+    margin: 1px 20px 0 0;
+}
+
+.sbox-content h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.sbox-content p {
+    font-size: 1.4rem;
+    line-height: 1.55em;
+}
+
+.post-content p+.sbox {
+    margin: 3.2rem 0 0;
+}
