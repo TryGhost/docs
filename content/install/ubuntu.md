@@ -39,7 +39,6 @@ The officially recommended production installation requires the following stack:
 * MySQL 5.5, 5.6, or 5.7 (*not* >= 8.0)
 * Systemd
 * A server with at least 1GB memory
-* A non-root user for running Ghost-CLI commands
 * A registered domain name
 
 Before getting started you should set an **A record** from the domain you plan to use, pointing at the server’s IP address and ensure that it's resolving correctly. This must be done in advance so that SSL can be properly configured during setup.

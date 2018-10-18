@@ -9,7 +9,7 @@ keywords:
 This guide is for installing a local development copy of Ghost from source, primarily for the purpose of modifying Ghost core
 
 
-## Pre-requisites
+## Prerequisites
 
 Before getting started, you'll need these global packages to be installed:
 
