@@ -17,10 +17,6 @@
         link: /concepts/admin/
       - title: Front-end
         link: /concepts/front-end/
-      - title: Database
-        link: /concepts/database/
-      - title: File storage
-        link: /concepts/storage/
   - group: Data Model
     items:
       - title: Posts

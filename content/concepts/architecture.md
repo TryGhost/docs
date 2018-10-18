@@ -20,6 +20,9 @@ Ghost is structured as a modern, decoupled web application with a sensible servi
 These three areas work together to make every Ghost site function smoothly, but because they're decoupled there's plenty of room for customisation.
 
 
+---
+
+
 ## How things fit together
 
 [TODO: Diagram]
@@ -30,13 +33,18 @@ Physically, the Ghost codebase is structured in two main directories:
 - `content` - Contains the files which may be added or changed by the user such as themes and images
 
 
-### Data & storage
+### Data & Storage
 
-Additionally, the database and file storage layers can be easily customised to suit individual preferences and environments.
+Ghost ships with the [Bookshelf.js ORM](http://bookshelfjs.org) layer by default allowing for a range of databases to be used. Currently SQLite3 is the supported default in development while MySQL is recommended for production. Other databases are available, and compatible, but not supported by the core team.
+
+Additionally, while Ghost uses local file storage by default it's also possible to use custom storage adapters to make your filesystem completely external. There are fairly wide range of pre-made [storage adapters for Ghost](/concepts/storage-adapters/) already available for use. 
 
 ### Ghost-CLI
 
 Orchestrating these different components is done via a comprehensive CLI and set of utilities to keep everything running and up to date.
+
+
+---
 
 
 ## Philosophy

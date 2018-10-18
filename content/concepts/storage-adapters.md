@@ -1,7 +1,7 @@
 ---
 title: "Storage Adapters"
-meta_title: "Core Concepts - Custom Storage Adapters"
-meta_description: "Find out how to use custom storage adapters to send your publication's images to a CDN or database using the custom storage module 📂"
+meta_title: "Custom Storage Adapters for Ghost"
+meta_description: "Find out how to use custom storage adapters to store your publication's images to externally on S3, Google Drive, Azure, Github, Imgur and more."
 keywords:
     - storage
     - concepts 
