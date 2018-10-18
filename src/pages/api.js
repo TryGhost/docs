@@ -13,7 +13,7 @@ import MetaData from '../components/layouts/partials/meta-data'
 import GoLogo from '../images/go-logo.png' // eslint-disable-line no-unused-vars
 
 const sectionStyles = {
-    container: `grid-12 mt-vw4 mt-vw4-ns`,
+    container: `grid-12 mt-vw4 mt20-ns`,
     headingContainer: `col-12 col-4-ns mr10-ns`,
     cardContainer: `col-12 col-8-ns mt-vw4 mt0-ns grid-icon-boxes`,
 }
@@ -83,7 +83,7 @@ class APIPage extends React.Component {
                     <div className={ Spirit.page.l + `pb-vw4 pb-vw3-ns pt-vw4 pt-vw3-ns` }>
                         <APISection first={ true }>
                             <div className={ sectionStyles.headingContainer }>
-                                <h2 className={ Spirit.h3 }>Frontend SDKs</h2>
+                                <h2 id="frontend-sdk" className={ Spirit.h3 + `pt20 nt20`}>Frontend SDKs</h2>
                                 <p className={ Spirit.small + `midgrey-l2 mt2` }>Frameworks for working with the Ghost API to build a publication website</p>
                             </div>
                             <div className={ sectionStyles.cardContainer }>
@@ -95,7 +95,7 @@ class APIPage extends React.Component {
 
                         <APISection>
                             <div className={ sectionStyles.headingContainer }>
-                                <h2 className={ Spirit.h3 }>REST API</h2>
+                                <h2 id="rest-api" className={ Spirit.h3 + `pt20 nt20` }>REST API</h2>
                                 <p className={ Spirit.small + `midgrey-l2 mt2` }>A full reference of API Endpoints</p>
                             </div>
                             <div className={ sectionStyles.cardContainer }>
@@ -107,7 +107,7 @@ class APIPage extends React.Component {
 
                         <APISection>
                             <div className={ sectionStyles.headingContainer }>
-                                <h2 className={ Spirit.h3 }>Tools</h2>
+                                <h2 id="tools" className={ Spirit.h3 + `pt20 nt20`}>Tools</h2>
                                 <p className={ Spirit.small + `midgrey-l2 mt2` }>Utilities to help build and manage Ghost</p>
                             </div>
                             <div className={ sectionStyles.cardContainer }>
@@ -119,7 +119,7 @@ class APIPage extends React.Component {
 
                         <APISection>
                             <div className={ sectionStyles.headingContainer }>
-                                <h2 className={ Spirit.h3 + `mt2`}>Client Libraries</h2>
+                                <h2 id="client-libraries" className={ Spirit.h3 + `pt20 nt18`}>Client Libraries</h2>
                                 <p className={ Spirit.small + `midgrey-l2 mt2` }>Specific libraries for interacting with the Ghost API directly</p>
                                 <h4 className="f-supersmall dib ma0 pa0 bg-green pa1 br-pill pl3 pr3 tc white mt2 nudge-top--2">Coming soon</h4>
                             </div>

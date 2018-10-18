@@ -15,13 +15,13 @@ import homeIllustration from '../images/home-illustration.svg' // eslint-disable
 class APIBox extends React.Component {
     render() {
         return (
-            <div className="flex items-center pa7 tdn bb b--whitegrey justify-between api-hover flex-auto">
+            <Link to={ this.props.to } className="flex items-center pa7 tdn bb b--whitegrey justify-between api-hover flex-auto">
                 <span className="dib mr3 mt1 miw10 tc"><Icon name={ this.props.icon } className="stroke-middarkgrey-l2" /></span>
                 <div className="flex-auto">
                     <h4 className={ Spirit.h5 + `darkgrey mt2 mt0-l` }>{ this.props.title }</h4>
                     <p className={ Spirit.small + `midgrey` }>{ this.props.children }</p>
                 </div>
-            </div>
+            </Link>
         )
     }
 }
@@ -75,21 +75,21 @@ class IndexPage extends React.Component {
                             <section className="col-6 flex flex-column justify-between">
                                 <Link to="/api/" className={ Spirit.h3 + `link darkgrey hover-midgrey flex-grow-0` }>API Reference</Link>
 
-                                <Box to="/api/" className="mt5 tdn flex-auto flex flex-column items-stretch" elevation="1">
+                                <Box className="mt5 tdn flex-auto flex flex-column items-stretch" elevation="1">
                                     <APIBox
-                                        to="/api/"
+                                        to="/api/#frontend-sdk"
                                         title="Frontend SDKs"
                                         icon="sdks">
                                         Frameworks for working with the Ghost API to build a publication website
                                     </APIBox>
                                     <APIBox
-                                        to="/api/"
+                                        to="/api/#rest-api"
                                         title="Rest API"
                                         icon="rest-api">
                                         A full reference of API Endpoints
                                     </APIBox>
                                     <APIBox
-                                        to="/api/"
+                                        to="/api/#tools"
                                         title="Tools"
                                         icon="tools">
                                         Utilities to help build and manage Ghost
