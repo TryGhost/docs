@@ -1,31 +1,38 @@
 ---
 title: "Tags"
+meta_title: "Core Concepts - Tags"
+meta_description: "Discover how to use the primary taxonomy within Ghost for filtering and organising the relationships between your publication content."
+keywords:
+    - concepts
+    - ghost
+    - publishing
+    - tags
 sidebar: "concepts"
 ---
 
-Tags are the primary taxonomy within Ghost for filtering and organising the relationships between your content
+Tags are the primary taxonomy within Ghost for filtering and organising the relationships between your content.
 
 Right off the bat, probably the best way to think about tags in Ghost is like labels in GMail. Tags are a powerful, dynamic taxonomy which can be used to categorise content, control design, and drive automation within your site.
 
 
-## Tag Types
+## Tag types
 
-Tags are much more than just simple keywords, so there are several different ways of using them to accomplish a variety of use-cases.
+Tags are much more than just simple keywords - there are several different ways of using them to accomplish a variety of use-cases.
 
-### Regular Tag
+### Regular tag
 
 All tags come with their own data object and can have a title, description, image and meta data. Ghost Handlebars Themes will autoamtically generate tag archive pages for any tags which are assigned to active posts. For example all posts tagged with `News` will appear on `example.com/tag/news/`, as well as in the automatically generated XML sitemap.
 
-### Primary Tag
+### Primary tag
 
-Ghost has a simple concept of `primary_tag` used simply to refer to the very first tag which a post has. This is useful for when you want to return a singular, most-important tag rather than a full array of all tags assigned to a post.
+Ghost has a concept of `primary_tag`, used simply to refer to the very first tag which a post has. This is useful for when you want to return a singular, most-important tag rather than a full array of all tags assigned to a post.
 
-### Internal Tag
+### Internal tag
 
 Tags which are prefixed by a `#` character, otherwise known as hashtags, are internal tags within Ghost - which is to say that they aren't rendered publicly. This can be particularly useful when you want to drive particular functionality based on a tag, but you don't necessarily want to output the tag for readers to see. 
 
 
-## Example Usage
+## Example usage
 
 As a quick example of how you might use tags, let's look at a quick example of a Hollywood news site which is publishing a post about Ryan Reynolds being announced as the lead in a new movie called "Son of Deadpool".
 
@@ -47,9 +54,9 @@ The `#feature` tag is used by the front-end or theme-layer as a conditional flag
 You can see this use-case in action on the main Ghost blog. Here's [a regular post](https://blog.ghost.org/image-galleries/), and here's a [#feature](https://blog.ghost.org/5/). The design of the post reacts to the tags.
 
 
-## Tag Archives
+## Tag archives
 
-All actively used public tags (so, those not prefixed with `#`) generate automatic tag archives within Ghost Handlebars Themes. Tag archives are automatically added to the Google XML Sitemap, and have their own pagination + RSS feeds.
+All actively used public tags (so, those not prefixed with `#`) generate automatic tag archives within Ghost Handlebars Themes. Tag archives are automatically added to the Google XML Sitemap, and have their own pagination and RSS feeds.
 
 Here's an example of an [tag archive](https://demo.ghost.io/tag/getting-started/) in the default Ghost Theme:
 
@@ -58,9 +65,9 @@ Here's an example of an [tag archive](https://demo.ghost.io/tag/getting-started/
 Tag archives are only generated for tags which are assigned to published posts, any other tags are not publicly visible.
 
 
-## Sample API Data
+## Sample API data
 
-Here's a sample tag object from the Ghost [Content API](/api/content/)
+Here's a sample tag object from the Ghost [Content API](/api/content/):
 
 ```JSON
 tag: {

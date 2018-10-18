@@ -1,7 +1,7 @@
 ---
 title: "Storage Adapters"
 meta_title: "Core Concepts - Custom Storage Adapters"
-meta_description: "Find out how to use a custom storage adapters to send your publication's images to a CDN or database using the custom storage module 📂"
+meta_description: "Find out how to use custom storage adapters to send your publication's images to a CDN or database using the custom storage module 📂"
 keywords:
     - storage
     - concepts 

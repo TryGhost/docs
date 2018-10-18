@@ -1,5 +1,12 @@
 ---
 title: "Architecture"
+meta_title: "Core Concepts - Architecture Overview"
+meta_description: "Ghost is structured as a modern, decoupled web application. Discover how things fit together at Ghost."
+keywords:
+    - concepts
+    - ghost
+    - publishing
+    - architecture
 sidebar: "concepts"
 ---
 
@@ -23,7 +30,7 @@ Physically, the Ghost codebase is structured in two main directories:
 - `content` - Contains the files which may be added or changed by the user such as themes and images
 
 
-### Data & Storage
+### Data & storage
 
 Additionally, the database and file storage layers can be easily customised to suit individual preferences and environments.
 

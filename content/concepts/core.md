@@ -1,5 +1,12 @@
 ---
 title: "Ghost Core API"
+meta_title: "Core Concepts - Core API"
+meta_description: "At it's heart Ghost is a RESTful JSON API. Find out how to work with the Ghost API to retrieve publication content with ease."
+keywords:
+    - concepts
+    - ghost
+    - publishing
+    - API
 sidebar: "concepts"
 ---
 
@@ -28,9 +35,9 @@ When authenticated with the **admin** or **owner** role, the Admin API provides 
 
 ## JavaScript SDK
 
-Ghost core comes with an accompanying JavaScript SDK designed to remove any pain arounf authentication and data access.
+Ghost core comes with an accompanying JavaScript SDK designed to remove pain around authentication and data access.
 
-It also provides tools for working with API data to accomplish common use cases such as returning a list of tags for a post, rendering meta data in the `<head>`, and outputting data with sensible fallbacks.
+It provides tools for working with API data to accomplish common use cases such as returning a list of tags for a post, rendering meta data in the `<head>`, and outputting data with sensible fallbacks.
 
 Leveraging FLOSS & npm, an ever-increasing amount of Ghost's JavaScript tooling has been made available via our SDK. If you're working in JavaScript, chances are you won't need to code anything more than wiring.
 
@@ -40,6 +47,7 @@ Leveraging FLOSS & npm, an ever-increasing amount of Ghost's JavaScript tooling 
 Notify an external service when content has changed or been updated by calling a configured HTTP endpoint. This makes it a breeze to do things like trigger a rebuild in a static site generator, or notify Slack that something happened.
 
 By combining Webhooks and the API it is possible to integrate into any aspect of your content lifecycle, to enable a wide range of content distribution and workflow automation use cases.
+
 
 ## Versioning
 

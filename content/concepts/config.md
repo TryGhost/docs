@@ -1,7 +1,7 @@
 ---
 title: "Config"
 meta_title: "Core Concepts - Config Options"
-meta_description: "Ghost has a custom configuration file that can be used to configure your site and override Ghost's default behaviour. Read more 👉"
+meta_description: "Find out how to configure your site and override Ghost's default behaviour with robust config options. Read more 👉"
 keywords:
     - config
     - concepts

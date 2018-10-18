@@ -143,25 +143,25 @@ Previously, John was a core contributor of WordPress and watched as the platform
 
 Today, Ghost is one of the most popular open source projects in the world - the **#1** CMS [on Github](https://github.com/tryghost/ghost) - and is used in production by millions of people. 
 
-More than anything, we approach building Ghost to create the product we've always wanted to use, the company we've always wanted to do business with, and the evironment we've always wanted to work in. 
+More than anything, we approach building Ghost to create the product we've always wanted to use, the company we've always wanted to do business with, and the environment we've always wanted to work in. 
 
 So, we do things a little differently to most others:
 
-#### Independent Structure
+#### Independent structure
 Ghost is structured as a [non-profit organisation](https://ghost.org/about) to ensure it can legally never be sold and will always remain independent, building products based on the needs of its users - _not_ the whims of investors looking for 💰 returns.
 
-#### Sustainable Business
+#### Sustainable business
 
 While the software we release is free, we also sell [premium managed hosting](https://ghost.org/pricing/) for it, which gives the non-profit organisation a sustainable business model and allows it to be 100% self-funded.
 
-#### Distributed Team
+#### Distributed team
 
-Having a sustainable business allows us to hire open source contributors to work on Ghost full-time, and we do this [entirely remotely](https://ghost.org/about/#careers). Anyone in the world can work at Ghost, and live wherever they choose.
+Having a sustainable business allows us to hire open source contributors to work on Ghost full-time, and we do this [entirely remotely](https://ghost.org/about/#careers). The core Ghost team is fully distributed and live wherever they choose.
 
-#### Transparent by Default
+#### Transparent by default
 
 We share [our revenue](https://ghost.org/about) transparently and [our code](https://github.com/tryghost) openly so anyone can verify what we do and how we do it. No cloaks or daggers. 
 
-#### Unconditional Open Source
+#### Unconditional open source
 
 All our projects are released under the permissive open source [MIT licence](https://en.wikipedia.org/wiki/MIT_License), so that even if the company were to fail, our code could still be picked up and carried on by anyone in the world without restriction.
