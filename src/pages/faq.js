@@ -10,7 +10,7 @@ import FAQTagList from '../components/layouts/partials/faq-taglist'
 
 class FAQPage extends React.Component {
     render() {
-        // TODO: Replace with real title and description for FAQPage
+        // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
         const title = `FAQ`
         const description = `Answers to our most popular questions: billing, hosting, troubleshooting and more.`
         const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`

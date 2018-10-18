@@ -405,8 +405,7 @@ kbd {
 /* ----------------------------------------------------------------------- */
 
 .gh-integration-sidebar a:hover {
-    color: #3eb0ef !important;
-    /*TODO: color: var(--blue);*/
+    color: var(--blue) !important;
 }
 
 .gh-integration-card {

@@ -57,7 +57,7 @@ Card.propTypes = {
 
 class APIPage extends React.Component {
     render() {
-        // TODO: Replace with real title and description for APIPage
+        // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
         const title = `API Reference`
         const description = `Comprehensive documentation of API clients, tools and libraries for working with Ghost.`
         const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`

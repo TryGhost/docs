@@ -15,7 +15,7 @@ class FAQTags extends React.Component {
         const { tagName, tagLink } = this.props.pageContext
 
         // TODO: Replace with real title and description for FAQTags
-        const title = `FAQ - ${tagName} - ${this.props.data.site.siteMetadata.title}`
+        const title = `FAQ - ${tagName} - Ghost`
         const description = ``
         const imageUrl = ``
 

@@ -46,7 +46,7 @@ function FAQQuestion(props) {
 
 class IndexPage extends React.Component {
     render() {
-        // TODO: Replace with real title and description for IndexPage
+        // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
         const title = `Ghost Docs`
         const description = `Get familiar with Ghost - the open source professional publishing platform.  Install guides, tutorials, API docs and FAQs.`
         const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`

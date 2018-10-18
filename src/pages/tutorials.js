@@ -10,7 +10,7 @@ import MetaData from '../components/layouts/partials/meta-data'
 
 class TutorialsPage extends React.Component {
     render() {
-        // TODO: Replace with real title and description for FAQPage
+        // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
         const title = `Tutorials`
         const description = `Customise your Ghost publication to suit your needs with practical guides for a variety of use-cases.`
         const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
