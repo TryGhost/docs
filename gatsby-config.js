@@ -20,7 +20,7 @@ if (!process.env.GH_CLIENT_SECRET) {
 module.exports = {
     siteMetadata: {
         title: `Ghost Docs`,
-        siteUrl: process.env.SITE_URL || `https://newdocs.ghost.org`,
+        siteUrl: process.env.SITE_URL || `https://docs.ghost.org`,
         description: `Everything you need to know about working with the Ghost professional publishing platform.`,
     },
     plugins: [
