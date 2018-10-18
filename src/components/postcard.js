@@ -18,7 +18,7 @@ const PostCard = ({ post, className }) => {
                 <header>
                     {/* <Icon name="typing" className="tutorial-feature-image w7 h-auto" /> */}
                     {/* { post.feature_image ? <img src={ post.feature_image } className="tutorial-feature-image" /> : <Icon name="typing" className="w7 h-auto tutorial-feature-image" /> } */}
-                    <h2 className={ Spirit.h3 + `darkgrey mt2` }>{ post.title }</h2>
+                    <h2 className={ Spirit.h3 + `darkgrey nt2` }>{ post.title }</h2>
                 </header>
                 { excerpt ? <section className={ Spirit.p + `midgrey mt4` }>{ excerpt }</section> : null }
             </div>
