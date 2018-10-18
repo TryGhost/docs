@@ -284,6 +284,47 @@ kbd {
     background-color: color-mod(var(--midlightgrey) a(0.1));
 }
 
+.button-blue {
+    background: linear-gradient(to top, color-mod(var(--blue) l(-15%) s(+16%)) 0%, color-mod(var(--blue) l(+8%) s(+6%)) 100%);
+    font-weight: 500;
+    border-radius: 4px;
+    box-sizing: border-box;
+    line-height: 1.0em;
+    box-shadow: 0 4px 14px -6px color-mod(var(--blue) l(-20%) s(-15%) a(0.25));
+    cursor: pointer;
+    font-size: 1.3rem;
+    position: relative;
+}
+
+.button-blue:before {
+    content: "";
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+    opacity: 0.0;
+}
+
+.button-blue:hover:before {
+    opacity: 0.8;
+}
+
+.appearance-none {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.resize-none {
+    resize: none;
+}
+
+.top-dropdown-arrow {
+    top: 30px;
+}
+
 /* Search */
 /* ----------------------------------------------------------------------- */
 .search-modal-overlay {

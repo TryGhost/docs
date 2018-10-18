@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { Spirit } from '../../components/spirit-styles'
+import Icon from '../../components/global/icon'
 
 function encode(data) {
     return Object.keys(data)
@@ -85,17 +86,20 @@ class FeedbackForm extends React.Component {
                             </label>
                         </p>
                         <div className="flex items-center">
-                            <select
-                                name="feedback-type"
-                                className="db ba b--whitegrey whitney pa3 bg-white w-50 h10 mt4 mr4 middarkgrey"
-                                onChange={this.handleChange}
-                            >
-                                <option>Feedback</option>
-                                <option>Issue</option>
-                                <option>Typo</option>
-                                <option>Praise</option>
-                                <option>Other</option>
-                            </select>
+                            <div className="w-50 mr4 relative">
+                                <Icon name="arrow-down" className="w3 h-auto absolute top-dropdown-arrow right-4 fill-midgrey" />
+                                <select
+                                    name="feedback-type"
+                                    className="appearance-none db ba b--whitegrey whitney pa3 bg-white w-100 h10 mt4 middarkgrey outline-0 f8"
+                                    onChange={this.handleChange}
+                                >
+                                    <option>Feedback</option>
+                                    <option>Issue</option>
+                                    <option>Typo</option>
+                                    <option>Praise</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
                             <input
                                 name="email"
                                 type="email"
@@ -111,12 +115,12 @@ class FeedbackForm extends React.Component {
                         </div>
                         <textarea
                             name="message"
-                            className="w-100 f8 pa3 h40 whitney db bg-white br3 ba b--whitegrey mt4 form-text middarkgrey"
+                            className="resize-none w-100 f8 pa3 h40 whitney db bg-white br3 ba b--whitegrey mt4 form-text middarkgrey"
                             placeholder="Your message..."
                             required="required"
                             onChange={this.handleChange}
                         />
-                        <button className="blue mt4 pa3 pl7 pr7 bg-lgr-blue white bn br3 whitney f8" type="submit">Send</button>
+                        <button className="mt4 pa3 pl7 pr7 button-blue white bn whitney f8" type="submit">Send</button>
                     </form>
                 </div>
             )
