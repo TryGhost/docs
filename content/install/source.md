@@ -17,7 +17,7 @@ Before getting started, you'll need these global packages to be installed:
 - **[Yarn](https://yarnpkg.com/en/docs/install#alternatives-tab)** - to manage all the packages
 
 
-#### The install these global packages
+#### Then install these global packages
 
 ```bash
 yarn global add knex-migrator grunt-cli ember-cli bower
