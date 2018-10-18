@@ -125,7 +125,7 @@ class Results extends React.Component {
                 <Index indexName="setup" />
                 <Index indexName="api" />
                 <Index indexName="tutorial" />
-                <Index indexName="integration" />
+                {/* Don't include integrations till we're ready: <Index indexName="integration" /> */}
             </>
         )
     }
