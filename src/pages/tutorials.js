@@ -11,7 +11,7 @@ import MetaData from '../components/layouts/partials/meta-data'
 class TutorialsPage extends React.Component {
     render() {
         // TODO: Replace with real title and description for FAQPage
-        const title = `Tutorials –  Ghost Documentation`
+        const title = `Tutorials`
         const description = `Customise your Ghost publication to suit your needs with practical guides for a variety of use-cases.`
         const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
 

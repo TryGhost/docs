@@ -58,7 +58,7 @@ Card.propTypes = {
 class APIPage extends React.Component {
     render() {
         // TODO: Replace with real title and description for APIPage
-        const title = `API Reference – Ghost Docs`
+        const title = `API Reference`
         const description = `Comprehensive documentation of API clients, tools and libraries for working with Ghost.`
         const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
 

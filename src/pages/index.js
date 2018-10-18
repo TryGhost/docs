@@ -61,7 +61,13 @@ class IndexPage extends React.Component {
                     description={ description || this.props.data.site.siteMetadata.description }
                     image={imageUrl}
                 />
-                <Layout title="Home" headerDividerStyle="shadow" bodyClass="bg-white" mainClass="bg-whitegrey-l2 pb-vw6 pb-vw3-ns" header={ <HomeHeader /> }>
+                <Layout
+                    title="Home"
+                    headerDividerStyle="shadow"
+                    bodyClass="bg-white"
+                    mainClass="bg-whitegrey-l2 pb-vw6 pb-vw3-ns"
+                    header={<HomeHeader />}
+                >
 
                     <div className="pt-vw3">
                         <div className={ Spirit.page.xl + `grid-12 gutter-row-20 gutter-40-ns` }>
@@ -108,7 +114,7 @@ class IndexPage extends React.Component {
                                     </FAQQuestion>
 
                                     <Link to="/faq/" className={ Spirit.p + `midgrey fw5 link hover-blue` }>More FAQ...</Link>
-                                    
+
                                 </div>
                             </section>
                         </div>

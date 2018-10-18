@@ -11,7 +11,7 @@ import MetaData from '../components/layouts/partials/meta-data'
 class IntegrationsPage extends React.Component {
     render() {
         // TODO: Replace with real title and description for IntegrationsPage
-        const title = `Integrations – Ghost Documentation`
+        const title = `Integrations`
         const description = `Your favourite apps and tools, integrated with Ghost. Connect tools for automation, analytics, marketing, support and much more.`
         const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
 
