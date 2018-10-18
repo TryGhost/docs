@@ -340,7 +340,18 @@ kbd {
 
 .search-modal-result-container {
     max-height: calc(100vh - 23.6rem);
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.search-modal-suggestion-list {
+    padding-left: 10.0rem;
+    margin-top: -3.9rem;
+}
+
+.search-modal-field-bg,
+.search-result:hover {
+    background: color-mod(var(--whitegrey) l(+4%));
 }
 
 .search-result-page mark {
@@ -352,7 +363,8 @@ kbd {
 .search-result-snippet em {
     font-style: unset;
     box-shadow: color-mod(var(--blue) a(0.8)) 0 -1px 0 inset;
-    color: var(--middarkgrey);
+    /* color: var(--middarkgrey-l1); */
+    font-weight: 500;
 }
 
 .body-modal-open {

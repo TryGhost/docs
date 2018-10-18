@@ -86,12 +86,12 @@ class SearchModal extends React.Component {
                     contentLabel="Search"
                     shouldCloseOnEsc
                     shouldReturnFocusAfterClose={false}
-                    className="search-modal br5 mw-m center left-0 right-0 top-14 bg-white absolute mb10 pa10 shadow-3"
+                    className="search-modal br5 mw-m center left-0 right-0 top-15 bg-white absolute mb10 pa10 shadow-3"
                     overlayClassName="search-modal-overlay fixed absolute--fill flex flex-column items-center z-999"
                     bodyOpenClassName="body-modal-open z-9999"
                     // portalClassName=``
                 >
-                    <div className="absolute pa4 top-0 right-0" onClick={this.closeModal}><Icon name="close" className="fill-midgrey w3 h-auto" /></div>
+                    <div className="absolute pa4 top-0 right-0 pointer" onClick={this.closeModal}><Icon name="close" className="fill-midgrey w3 h-auto" /></div>
                     {/* <div className="pa4 pl5 pr5 mt5 w-100 mw-s f4 br-pill bg-white shadow-3 center flex items-center justify-between"> */}
                     {/* <Icon name="search" className="fill-lightgrey-d2 h6" /> */}
                     <label htmlFor="globalsearch" className="clip">Search</label>

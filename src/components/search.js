@@ -5,28 +5,24 @@ import { Highlight, Snippet, Index, Configure, connectAutoComplete } from 'react
 import Autosuggest from 'react-autosuggest'
 import { Spirit } from './spirit-styles';
 
-const renderSectionSuggestion = (hit) => {
-    return (
+const HitTemplate = (props) => {
+    const hit = props.hit
+    return(
         <>
-            <Link to={hit.url} className="tdn db pt2 pb2 blue hover-bg-whitegrey-l2 mb2 nl11 nr11 pl11 pr11">
-                <span className="search-result-section dib br1 pa1 bg-whitegrey-l2 f-supersmall midlightgrey nl1">{ hit.section }</span>
-                <div>
-                    <h4 className={ Spirit.h5 + `dib` }><Highlight attribute="title" hit={hit} tagName="mark" className="search-result-page blue mt2" /></h4>
-                    <p className={ Spirit.small + `midgrey`}><Snippet attribute="html" hit={hit} className="search-result-snippet" />...</p>
-                </div>
+            <Link to={ hit.url } className="tdn db pt3 pb3 blue search-result nl5 nr11 pl5 pr11 br3 br--left">
+                <h4 className={ Spirit.h5 + `dib` }><Highlight attribute="title" hit={ hit } tagName="mark" className="search-result-page blue" /></h4>
+                <p className={ Spirit.small + `midgrey nudge-bottom--2` }><Snippet attribute="html" hit={ hit } className="search-result-snippet" />...</p>
             </Link>
         </>
     )
 }
 
+const renderSectionSuggestion = (hit) => {
+    return <HitTemplate hit={ hit }/>
+}
+
 const renderFaqSectionSuggestion = (hit) => {
-    return (
-        <>
-            <Link to={ hit.url } className="tdn db pt2 pb2 blue hover-bg-whitegrey-l2 nl11 nr11 pl11 pr11">
-                <h4 className={ Spirit.h5 + `dib` }><Highlight attribute="title" hit={hit} tagName="mark" className="search-result-page" /></h4>
-            </Link>
-        </>
-    )
+    return <HitTemplate hit={ hit } />
 }
 
 class Results extends React.Component {
@@ -86,7 +82,7 @@ class Results extends React.Component {
         }
 
         // <input id="homesearch" name="homesearch" className="input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0" type="text" placeholder="Search documentation..." autoComplete="off" />
-        const inputTheme = `input-reset form-text b--transparent bg-darkgrey-searchbar br-pill flex-auto whitney lh-1-0 pa2 pl3 plr3 w-100 dark-placeholder`
+        const inputTheme = `input-reset form-text b--transparent search-modal-field-bg br-pill flex-auto whitney lh-1-0 pa2 pl3 plr3 w-100 dark-placeholder`
 
         const theme = {
             input: inputTheme,
@@ -99,14 +95,14 @@ class Results extends React.Component {
             // inputOpen: 'react-autosuggest__input--open',
             // inputFocused: 'react-autosuggest__input--focused',
             // suggestionsContainer: 'pa15',
-            suggestionsContainerOpen: 'pa11 pt2 pb5 mt10 bt b--whitegrey nl10 nr10 nb10 search-modal-result-container',
-            suggestionsList: 'list pa0 ma0 search-modal-suggestion-list',
+            suggestionsContainerOpen: 'pa11 pt3 pb3 mt10 bt b--whitegrey nl10 nr10 nb10 search-modal-result-container',
+            suggestionsList: 'list pa0 ma0 search-modal-suggestion-list flex-auto ml11',
             // suggestion: 'react-autosuggest__suggestion',
             // suggestionFirst: 'react-autosuggest__suggestion--first',
-            suggestionHighlighted: 'red',
-            sectionContainer: 'pb5 pt5 bt b--whitegrey nl11 nr11 pl11 pr11',
-            sectionContainerFirst: 'bn',
-            sectionTitle: Spirit.excerpt + 'fw5 darkgrey'
+            // suggestionHighlighted: 'red',
+            sectionContainer: 'pb4',
+            // sectionContainerFirst: 'bn',
+            sectionTitle: 'f6 f5-l lh-h4 fw5 midgrey w25 tr mt2 sticky top-2'
         }
 
         return (
