@@ -79,7 +79,7 @@ function PageHeader(props) {
     let bgClass = `bg-api-reference`
 
     // Handlebars
-    if (props.location.pathname.match(/\/api\//i)) {
+    if (props.location.pathname.match(/^\/api\//i)) {
         title = `API Reference`
         mainLink = `/api/`
         if (props.location.pathname.match(/\/handlebars-themes\//i)) {
@@ -109,7 +109,7 @@ function PageHeader(props) {
     }
 
     // Setup
-    if (props.location.pathname.match(/\/setup\//i) || props.location.pathname.match(/\/install\//i)) {
+    if (props.location.pathname.match(/^\/setup\//i) || props.location.pathname.match(/^\/install\//i)) {
         title = `Setup Guide`
         mainLink = `/setup/`
         bgClass = `bg-setup`
@@ -136,7 +136,7 @@ function PageHeader(props) {
     }
 
     // Core Concepts
-    if (props.location.pathname.match(/\/concepts\//i)) {
+    if (props.location.pathname.match(/^\/concepts\//i)) {
         title = `Core Concepts`
         mainLink = `/concepts/introduction/`
         bgClass = `bg-concepts`
