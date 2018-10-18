@@ -38,24 +38,28 @@ The configuration files reflect the environment you are using:
 
 #### Ghost in development
 If you would like to start Ghost in development, you don't have to specify any environment, because development is default. To test Ghost in production, you can use:
-```
+
+```bash
 NODE_ENV=production node index.js
 ```
 
 #### Debugging the configuration output
 Start Ghost with:
-```
+
+```bash
 DEBUG=ghost:*,ghost-config node index.js
 ```
 
 #### Running Ghost with config env variables
 Start Ghost using environment variables which match the name and case of each config option:
-```
+
+```bash
 url=http://ghost.local:2368 node index.js
 ```
 
 For nested config options, separate with two underscores:
-```
+
+```bash
 database__connection__host=mysql node index.js
 ```
 
@@ -83,7 +87,7 @@ There are a number of configuration options which are explained in detail in thi
 | `imageOptimization` | Optional | Configure image manipulation and processing |
 
 
-## URL
+### URL
 
 *(Required in production)*
 
@@ -99,12 +103,13 @@ We always recommend using SSL to run your Ghost publication in production. Ghost
 If you see errors such as `access denied from url`, then the provided URL in your config file is incorrect and needs to be updated.
 
 
-## Database
+### Database
 
 *(Required in production)*
 
 Ghost is configured using MySQL by default:
-```
+
+```json
 "database": {
   "client": "mysql",
   "connection": {
@@ -119,7 +124,7 @@ Ghost is configured using MySQL by default:
 
 Alternatively you can configure sqlite3:
 
-```
+```json
 "database": {
   "client": "sqlite3",
   "connection": {
@@ -133,7 +138,7 @@ Alternatively you can configure sqlite3:
 #### Number of connections
 It's possible to limit the number of simultaneous connections using the pool setting. The default values are a minimum of 2 and a maximum of 10, which means Ghost always maintains two active database connections. You can set the minimum to 0 to prevent this:
 
-```
+```json
 "database": {
   "client": ...,
   "connection": { ... },
@@ -144,7 +149,7 @@ It's possible to limit the number of simultaneous connections using the pool set
 }
 ```
 
-## Mail
+### Mail
 
 *(Required in production)*
 
@@ -169,7 +174,8 @@ Once your domain is setup, find your new email service SMTP username and passwor
 #### Update your `config.production.json` file
 
 Open your production config file in any code editor and paste the username and password you just copied into the defined fields, for example:
-```
+
+```json
 "mail": {
     "transport": "SMTP",
     "options": {
@@ -187,7 +193,8 @@ Once you are finished, hit save and then run `restart ghost` for your changes to
 
 #### Amazon SES
 It's also possible to use [Amazon Simple Email Service](https://aws.amazon.com/ses/). Use the SMTP username and password given when signing up and configure your `config.[env].json` file as follows:
-```
+
+```json
 "mail": {
     "transport": "SMTP",
     "options": {
@@ -206,7 +213,7 @@ It's also possible to use [Amazon Simple Email Service](https://aws.amazon.com/s
 
 By default the 'from' address for mail sent from Ghost is set to the title of your publication, for example `<ghost@your-publication.com>`. To override this to something different, use:
 
-```
+```json
 "mail": {
     "from": "myemail@address.com",
 }
@@ -214,28 +221,28 @@ By default the 'from' address for mail sent from Ghost is set to the title of yo
 
 A custom name can also be provided:
 
-```
+```json
 "mail": {
     "from": "'Custom Name' <myemail@address.com>",
 }
 ```
 
 
-## Admin URL
+### Admin URL
 
 Admin can be used to specify a different protocol for your admin panel or a different hostname (domain name). It can't affect the path at which the admin panel is served (this is always /ghost/).
 
-```
+```json
 "admin": {
   "url": "http://example.com"
 }
 ```
 
-## Server
+### Server
 
 The server host and port are the IP address and port number that Ghost listens on for requests. By default, requests are routed from port 80 to Ghost by nginx (recommended), or apache.
 
-```
+```json
 "server": {
     "host": "127.0.0.1",
     "port": 2368
@@ -245,14 +252,15 @@ The server host and port are the IP address and port number that Ghost listens o
 #### Unix Sockets
 Ghost can also be configured to listen on a unix socket by changing the server config:
 
-```
+```json
 "server": {
     "socket": "path/to/socket.sock"
 }
 ```
 
 The default permissions are 0660, but this can be configured by expanding the socket config:
-```
+
+```json
 "server": {
     "socket": {
         "path": "path/to/socket.sock",
@@ -262,7 +270,7 @@ The default permissions are 0660, but this can be configured by expanding the so
 ```
 
 
-## Privacy
+### Privacy
 
 All features inside the privacy.md file are enabled by default. It is possible to turn these off in order to protect privacy:
 
@@ -274,14 +282,16 @@ All features inside the privacy.md file are enabled by default. It is possible t
 For more information about the features, read the [privacy.md page](https://github.com/TryGhost/Ghost/blob/master/PRIVACY.md/).
 
 To turn off **all** of the features, use:
-```
+
+```json
 "privacy": {
     "useTinfoil": true
 }
 ```
 
 Alternatively, configure each feature individually:
-```
+
+```json
 "privacy": {
     "useUpdateCheck": false,
     "useGravatar": false,
@@ -291,11 +301,11 @@ Alternatively, configure each feature individually:
 ```
 
 
-## Paths
+### Paths
 
 The configuration of paths can be relative or absolute. To use a content directory that does not live inside the Ghost folder, specify a paths object with a new contentPath:
 
-```
+```json
 "paths": {
     "contentPath": "content/"
 },
@@ -305,15 +315,16 @@ When using a custom content path, the content directory must exist and contain s
 > If using an Sqlite database, you'll also need to update the path to your database to match the new location of the data folder.
 
 
-## Referrer Policy
+### Referrer Policy
 
 Set the value of the content attribute of the meta referrer HTML tag by adding referrerPolicy to your config. `origin-when-crossorigin` is default. Read through all possible [options](https://www.w3.org/TR/referrer-policy/#referrer-policies/).
 
 
-## Logging
+### Logging
 
 Configure how Ghost should log, for example:
-```
+
+```json
 "logging": {
   "path": "something/",
   "level": "info",
@@ -343,26 +354,26 @@ Define where Ghost should log to. By default Ghost writes to stdout and into fil
 Log your content path, e.g. `content/logs/`. Set any path but ensure the permissions are correct to write into this folder.
 
 
-## Spam
+### Spam
 
 Tell Ghost how to treat [spam requests](https://github.com/TryGhost/Ghost/blob/master/core/server/config/defaults.json#L26/).
 
 
-## Caching
+### Caching
 
 Configure [caching](https://github.com/TryGhost/Ghost/blob/master/core/server/config/defaults.json#L57/) for sitemaps, redirects or assets.
 
 
-## Compress
+### Compress
 
 The compression flag is turned on by default using `"compress": true`. Alternatively you can turn it off with `"compress": false`.
 
 
-## Image optimisation
+### Image optimisation
 
 When uploading images into the Ghost editor, they are automatically processed and compressed by default. This can be disabled in your `config.[env].json` file using:
 
-```
+```json
     "imageOptimization": {
         "resize": false
     }
