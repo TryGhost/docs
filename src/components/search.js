@@ -74,7 +74,7 @@ class Results extends React.Component {
     render() {
         // Don't show sections with no results
         let hits = this.props.hits.filter(hit => {
-            return hit.hits.length !== 0
+            return hit.hits && hit.hits.length !== 0
         });
 
         const { value } = this.state;
