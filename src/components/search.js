@@ -110,7 +110,7 @@ class Results extends React.Component {
 
         return (
             <>
-                <Configure hitsPerPage="8" />
+                <Configure hitsPerPage="5" />
                 <Autosuggest
                     suggestions={hits}
                     onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
