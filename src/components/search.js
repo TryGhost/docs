@@ -5,17 +5,25 @@ import { Highlight, Snippet, Index , connectAutoComplete } from 'react-instantse
 import Autosuggest from 'react-autosuggest'
 
 const renderSectionSuggestion = (hit) => {
-    return <Link to={hit.url}>
-        <span>{hit.section}</span>
-        <Highlight attribute="title" hit={hit} tagName="mark" />
-        <Snippet attribute="html" hit={hit} />
-    </Link>;
+    return (
+        <>
+            <Link to={hit.url}>
+                <span>{hit.section}</span>
+                <Highlight attribute="title" hit={hit} tagName="mark" />
+                <Snippet attribute="html" hit={hit} />
+            </Link>
+        </>
+    )
 }
 
 const renderFaqSectionSuggestion = (hit) => {
-    return <Link to={hit.url}>
-        <Highlight attribute="title" hit={hit} tagName="mark" />
-    </Link>;
+    return (
+        <>
+            <Link to={hit.url}>
+                <Highlight attribute="title" hit={hit} tagName="mark" />
+            </Link>
+        </>
+    )
 }
 
 class Results extends React.Component {
@@ -71,11 +79,28 @@ class Results extends React.Component {
 
         // <input id="homesearch" name="homesearch" className="input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0" type="text" placeholder="Search documentation..." autoComplete="off" />
         const theme = {
-            input: `input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0`
+            input: `input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0`,
+            inputOpen: `input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0`,
+            inputFocused: `input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0`,
+            // Default values:
+            // container: 'react-autosuggest__container',
+            // containerOpen: 'react-autosuggest__container--open',
+            // input: 'react-autosuggest__input',
+            // inputOpen: 'react-autosuggest__input--open',
+            // inputFocused: 'react-autosuggest__input--focused',
+            // suggestionsContainer: 'react-autosuggest__suggestions-container',
+            // suggestionsContainerOpen: 'react-autosuggest__suggestions-container--open',
+            // suggestionsList: 'react-autosuggest__suggestions-list',
+            // suggestion: 'react-autosuggest__suggestion',
+            // suggestionFirst: 'react-autosuggest__suggestion--first',
+            // suggestionHighlighted: 'react-autosuggest__suggestion--highlighted',
+            // sectionContainer: 'react-autosuggest__section-container',
+            // sectionContainerFirst: 'react-autosuggest__section-container--first',
+            // sectionTitle: 'react-autosuggest__section-title'
         }
 
         return (
-            <React.Fragment>
+            <>
                 <Autosuggest
                     suggestions={hits}
                     onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -94,7 +119,7 @@ class Results extends React.Component {
                 <Index indexName="api" />
                 <Index indexName="tutorial" />
                 <Index indexName="integration" />
-            </React.Fragment>
+            </>
         )
     }
 }
