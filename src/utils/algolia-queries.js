@@ -1,6 +1,7 @@
 const { allGhostPosts, allMarkdownPosts } = require(`./node-queries`)
 const { ghostQueryConfig, markdownQueryConfig } = require(`./query-config`)
-const urlUtils = require('./urls')
+const { fragmentTransformer } = require(`./algolia-transforms`)
+const urlUtils = require(`./urls`)
 
 const algoliaGhostFields = `
     objectID:id
@@ -21,22 +22,21 @@ const algoliaMarkdownFields = `
     html
 `
 
-const chunkString = (str, length) => str.match(new RegExp(`(.|[\r\n]){1,` + length + `}`, `g`))
+const mdNodeMap = ({ node }) => {
+    // Flatten fields
+    node.slug = node.fields.slug
+    node.section = node.fields.section
+    node.title = node.frontmatter.title
+    // @TODO make this consistent?!
+    node.url = node.slug
 
-const transformer = (chunksTotal, node) => {
-    const htmlChunks = chunkString(node.html, 5000)
-    const record = node;
-    const recordChunks = htmlChunks.reduce((recordChunksTotal, htmlChunksItem, idx) => {
-        return [
-            ...recordChunksTotal,
-            { ...record, ...{ html: htmlChunksItem }, objectID: `${node.objectID}_${idx}` }
-        ];
-    }, []);
+    delete node.frontmatter
+    delete node.fields
 
-    return [...chunksTotal, ...recordChunks];
+    return node
 }
 
-let ghostQueries = ghostQueryConfig.map(({ tag, section, indexName }) => {
+const ghostQueries = ghostQueryConfig.map(({ tag, section, indexName }) => {
     return {
         query: allGhostPosts(tag, algoliaGhostFields),
         indexName,
@@ -48,35 +48,50 @@ let ghostQueries = ghostQueryConfig.map(({ tag, section, indexName }) => {
                 node.url = urlUtils.urlForGhostPost(node, section)
                 return node
             })
-            .reduce(transformer, []),
+            .reduce(fragmentTransformer, []),
     }
 })
 
-let mdQueries = markdownQueryConfig.map(({ section, indexName }) => {
+const mdQueries = markdownQueryConfig.map(({ section, indexName }) => {
     return {
         query: allMarkdownPosts(section, algoliaMarkdownFields),
         indexName,
         transformer: ({ data }) => data
             .allMarkdownRemark.edges
-                .map(({ node }) => {
-                    // Flatten fields
-                    node.slug = node.fields.slug
-                    node.section = node.fields.section
-                    node.title = node.frontmatter.title
-                    // @TODO make this consistent?!
-                    node.url = node.slug
-
-                    delete node.frontmatter
-                    delete node.fields
-
-                    return node
-                })
-                .reduce(transformer, [])
+            .map(mdNodeMap)
+            .reduce(fragmentTransformer, []),
 
     }
 })
 
 // Uncomment these for testing, to temporarily only do this for a small number of posts
+// let testQueryArr = [{
+//     query: `
+//     {
+//         allMarkdownRemark(
+//             sort: {order: ASC, fields: [frontmatter___date]},
+//             filter: {fields: {
+//                 slug: {eq: "/install/source/"},
+//             }}
+//         ) {
+//             edges {
+//                 node {
+//                     ${algoliaMarkdownFields}
+//                 }
+//             }
+//         }
+//     }
+//     `,
+//     indexName: `setup`,
+//     transformer: ({ data }) => data
+//         .allMarkdownRemark.edges
+//         .map(mdNodeMap)
+//         .reduce(fragmentTransformer, []),
+// }]
+
+// module.exports = testQueryArr
 // module.exports = [ghostQueries[1]]
 // module.exports = [mdQueries[1]]
+
+// The REAL DEAL
 module.exports = ghostQueries.concat(mdQueries)
