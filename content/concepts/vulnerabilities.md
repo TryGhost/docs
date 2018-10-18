@@ -1,14 +1,21 @@
 ---
 title: "Reporting Vulnerabilities"
+meta_title: "Core Concepts - Reporting Vulnerabilities"
+meta_description: "Find out how to take part in responsible disclosure to the Ghost security team."
+keywords:
+    - concepts
+    - ghost
+    - publishing
+    - vulnerabilities
 sidebar: "concepts"
 ---
 
-How to take part in responsible disclosure to the Ghost Security team
+How to take part in responsible disclosure to the Ghost Security team.
 
 Potential security vulnerabilities can be reported directly us at `security@ghost.org`. The Ghost Security Team communicates privately and works in a secured, isolated repository for tracking, testing, and resolving security-related issues.
 
 
-## Responsible Disclosure Guidelines
+## Responsible disclosure guidelines
 
 The Ghost Security team is committed to working with security researchers to verify, reproduce and respond to legitimate reported vulnerabilities.
 
@@ -21,7 +28,7 @@ Security issues always take precedence over bug fixes and feature work. We can a
 We will publicly acknowledge any report that results in a security commit to https://github.com/TryGhost/Ghost
   
 
-## Issue Triage
+## Issue triage
 
 We're always interested in hearing about any reproducible vulnerability that affects the security of Ghost users, including...
 

@@ -1,12 +1,19 @@
 ---
 title: "Governance"
+meta_title: "Core Concepts - Governance"
+meta_description: "Learn about Governance at Ghost - stewarded by an independent non-profit organisation and a fully remote company!"
+keywords:
+    - concepts
+    - ghost
+    - publishing
+    - governance
 sidebar: "concepts"
 ---
 
 Ghost is stewarded by an independent non-profit organisation called the Ghost Foundation, which is fully remote company
 
 
-## Core Team
+## Core team
 
 In addition to [full time product team](https://ghost.org/about/) working for Ghost Foundation, there are a number of community members who have contributed to the project for a lengthy period of time and are considered part of the core team. They are:
 
@@ -16,7 +23,7 @@ In addition to [full time product team](https://ghost.org/about/) working for Gh
 - [David Balderston](https://github.com/dbalders) - Community
 
 
-#### How Core Team Members are Added
+#### How core team members are added
 
 People typically invited to join the Core Team officially after an extended period of successful contribution to Ghost and demonstrating good judgement. In particular, this means having humility, being open to feedback and changing their mind, knowing the limits of their abilities and being able to communicate all of these things such that it is noticed. Good judgement is what produces trust, not quality, quantity or pure technical skill.
 
@@ -25,7 +32,7 @@ When we believe a core contributor would make a great ambassador for Ghost and f
 Core Team members are granted commit rights to Ghost projects, access to the Ghost Foundation private Slack, and occasionally join our international team retreats.
 
 
-## Community Guidelines
+## Community guidelines
 
 All participation in the Ghost community is subject to our incredibly straightforward [code of conduct](http://ghost.org/conduct) and wider [community guidelines](https://forum.ghost.org/t/faq-guidelines/5).
 

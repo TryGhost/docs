@@ -1,11 +1,18 @@
 ---
 title: "Development Principles"
+meta_title: "Core Concepts - Development Principles"
+meta_description: "Ghost is developed by a small core team. Find out more about feature requests and the Ghost product roadmap!"
+keywords:
+    - concepts
+    - ghost
+    - publishing
+    - principles
 sidebar: "concepts"
 ---
 
-Developing Ghost as a product is a complex process undertaken by a small number of people with a great deal of care
+Developing Ghost as a product is a complex process undertaken by a small number of people with a great deal of care.
 
-## Product Roadmap
+## Product roadmap
 
 The Ghost product team maintains a broad 1-2 year product roadmap at any given time which defines the overall direction of the company and the software. While the exact roadmap isn't shared publicly (we tried it and it turned out to be more distracting than helpful), the things being worked on are generally very visible [on Github](https://github.com/tryghost/ghost).
 
@@ -16,7 +23,7 @@ The Ghost product team maintains a broad 1-2 year product roadmap at any given t
 - Refining and improving the core functionality of the product
 
 
-## Feature Requests
+## Feature requests
 
 We welcome feature requests from users over in [the ideas category](https://forum.ghost.org/c/Ideas) of the Ghost Forum. Here people can request and suggest things which they'd like to see in Ghost, and others can add their vote or comment. 
 
@@ -44,13 +51,13 @@ For features which are so large that there are multiple entire companies and sta
 
 *Eg: Search, Comments, Media Management, Newsletters*
 
-### Custom Tools
+### Custom tools
 
 Where specific features are only relevant to a small number of people, or small number of users, they tend to be implemented in external custom tools which are specific to those tasks. This keeps core leaner and meaner for everyone.
 
 *Eg: Importers, Compatibility scanners*
 
-### Specialist Functionality
+### Specialist functionality
 
 Certain features are suitable for inclusion in core, but they are niche pieces of functionality which require a specific skillset both to build and maintain. Typically these features do not automatically get built unless they have a dedicated specialist volunteer contributor to build them.
 

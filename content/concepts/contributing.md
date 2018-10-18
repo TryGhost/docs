@@ -1,14 +1,21 @@
 ---
 title: "Contributing to Ghost"
+meta_title: "Core Concepts - Contributing"
+meta_description: "Find out how to contribute to the completely open source Ghost software!"
+keywords:
+    - concepts
+    - ghost
+    - publishing
+    - contributing
 sidebar: "concepts"
 ---
 
-Ghost is completely open source software built almost entirely by volunteer contributors who use it every day
+Ghost is completely open source software built almost entirely by volunteer contributors who use it every day.
 
 The best part about structuring a software project this was is that not only does everyone get to own the source code without restriction, but as people all over the world help to improve it: Everyone benefits.
 
 
-## Development Guide
+## Development guide
 
 If you're a developer looking to help, but you're not sure where to begin: Check out the [good first issue](https://github.com/TryGhost/Ghost/labels/good%20first%20issue) label on Github, which contains small piece of work that have been specifically flagged as being friendly to new contributors.
 
@@ -17,7 +24,7 @@ Or, if you're looking for something a little more challenging to sink your teeth
 When you're ready, check out the full **[Ghost Contributing Guide](https://github.com/TryGhost/Ghost/blob/master/.github/CONTRIBUTING.md)** for detailed instructions about how to hack on Ghost Core and send changes upstream.
 
 
-## Other Ways to Help
+## Other ways to help
 
 The primary way to contribute to Ghost is by writing code, but if you're not a developer there are still ways you can help. We always need help with:
 

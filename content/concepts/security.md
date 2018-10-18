@@ -1,5 +1,12 @@
 ---
 title: "Ghost Security"
+meta_title: "Core Concepts - Security"
+meta_description: "Ghost is committed to developing secure, reliable products utilising all modern security best practices. Find out more!"
+keywords:
+    - concepts
+    - ghost
+    - publishing
+    - security
 sidebar: "concepts"
 ---
 
@@ -10,17 +17,17 @@ The Ghost security team is made up of full time staff employed by the Ghost Foun
 We take security very seriously at Ghost and welcome any peer review of our completely [open source codebase](https://github.com/tryghost/ghost) to help ensure that it remains completely secure.
 
 
-## Security Features
+## Security features
 
 ### SSL
 
 Letsencrypt integration, non-support of SSL in 2019
 
-### Password Hashing
+### Password hashing
 
 bcrypt
 
-### XSS Prevention
+### XSS prevention
 
 Embeds not available in trusted environment (Editor)
 
@@ -35,13 +42,13 @@ Embeds not available in trusted environment (Editor)
 TLDR use Caching/HAProxy
 
 
-## Security Risks
+## Security risks
 
-### Privelige Escalation
+### Privelige escalation
 
 Install admin / frontend on different domains
 
-### Server Hardening
+### Server hardening
 
 Ensure proper user permissions, or just use Ghost-CLI
 

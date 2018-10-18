@@ -1,14 +1,21 @@
 ---
 title: "Hosting Ghost"
+meta_title: "Core Concepts - Hosting"
+meta_description: "A short guide to running Ghost in a production environment and setting it up to serve traffic at scale."
+keywords:
+    - concepts
+    - ghost
+    - publishing
+    - hosting
 sidebar: "concepts"
 ---
 
-A short guide to running Ghost in a production environment and setting it up to serve traffic at scale
+A short guide to running Ghost in a production environment and setting it up to serve traffic at scale.
 
 
 ## Ghost(Pro)
 
-The easiest way to deploy a production-ready instance of Ghost is on our official fully-managed PaaS. **[Ghost(Pro)](https://ghost.org/pricing)** runs the exact same open source codebase and has no limitations compared to self hosting. It's the easiest way to save a lot of time installing and managing your environment.
+The most efficient way to deploy a production-ready instance of Ghost is on our official fully-managed PaaS. **[Ghost(Pro)](https://ghost.org/pricing)** runs the exact same open source codebase and has no limitations compared to self hosting. It's the easiest way to save a lot of time installing and managing your environment.
 
 <style>
 .ghostpro-comparison th:not(:first-child),
@@ -86,7 +93,7 @@ The easiest way to deploy a production-ready instance of Ghost is on our officia
 </table>
 
 
-## Self-Hosting
+## Self-hosting
 
 For self-hosting Ghost in production our officially recommended stack is:
 
@@ -98,7 +105,7 @@ For self-hosting Ghost in production our officially recommended stack is:
 - A server with at least 1GB memory
 - A non-root user for running `ghost` commands
 
-**Ubuntu 16.04** and **Ubuntu 18.04** are the only officially supported operating systems. Our [Ubuntu install guide](/setup/ubuntu/) will walk you through how to get a server setup this way. 
+**Ubuntu 16.04** and **Ubuntu 18.04** are the only officially supported operating systems. Our [Ubuntu install guide](/setup/ubuntu/) walks you through how to get a server setup this way. 
 
 Other operating systems may work fine and you're welcome to use them, but we are unable to assist with debugging or optimising for them at present - so you're on your own there. Our recommendation: Use Ubuntu, because that's where you'll have the fewest headaches.
 
