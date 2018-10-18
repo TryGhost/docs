@@ -3,28 +3,29 @@ title: "Front-end"
 sidebar: "concepts"
 ---
 
-## This is the second heading
+Ghost is a full headless CMS which is completely agnostic of any particular front end or static site framework
 
-Spicy jalapeno cupidatat chicken ut filet mignon sausage ut boudin nulla reprehenderit strip steak proident cillum incididunt short loin cow. Pig in pastrami, leberkas eiusmod enim bresaola do. Filet mignon officia quis kevin pork, swine strip steak excepteur hamburger chicken pork chop boudin shankle. Velit chicken pig in cupim kielbasa jerky. Bresaola excepteur veniam, andouille magna brisket aliquip nostrud jerky.
+Just like Ghost's admin client, its front-end is both optional and interchangeable. While Ghost's early architecture represented more of a standard monolithic web-app, it's no compatible with just about any front-end you can throw at it. 
 
-```javascript
-makeArray() {
-    // Hey hey what can I do
-    const foo = []
-    bar.split('').forEach(letter => {
-      foo.push(letter)
-    })
-    return foo
-}
-```
+It doesn't even have to be a website!
 
-### This is the third heading
 
-Pork chop ribeye ut chicken buffalo proident minim leberkas cupim adipisicing burgdoggen incididunt pastrami cupidatat. Prosciutto kevin dolore labore ham, cupidatat pork loin fatback picanha irure ad short ribs duis. Cupidatat excepteur jerky doner, incididunt consectetur turkey pariatur. Culpa consectetur cillum shank ham hock anim pastrami ex tempor eu. Fatback strip steak pig, bacon salami drumstick ut capicola short loin flank.
+## Handlebars Themes
 
-Jowl dolor duis, cupidatat pork tempor nostrud incididunt short loin laborum. Duis nostrud fatback ribeye consequat ad. Proident pancetta ut tempor. Short loin officia eiusmod beef. Sunt tongue pig venison, sint mollit ad excepteur velit adipisicing flank pancetta pariatur. Dolor t-bone swine alcatra fatback ribeye, mollit dolore incididunt ullamco.
+Ghost ships with its own [Handlebars.js](/api/handlebars-themes/) theme layer served by an Express.js webserver, so out of the box it automatically comes with a default front-end. This is a really fast way to get a site up and running, and despite being relatively simple Handlebars is both powerful and extremely performant.
 
-Spare ribs aute fugiat, pariatur andouille labore nulla exercitation. Aliqua picanha sirloin consequat drumstick sint exercitation pork nisi et. Dolore swine fugiat pork salami proident. Bacon excepteur filet mignon labore pariatur in in nulla magna fugiat prosciutto. Laboris sint ground round, pancetta ipsum in pariatur voluptate fatback andouille velit shoulder flank quis sausage.
+Ghost Handlebars Themes have the additional benefit of being fairly widely adopted since the platform first launched back in 2013, so there's a broad [third party marketplace](https://marketplace.ghost.org) of pre-built themes as well as [extensive documentation](/api/handlebars-themes/) on how to build a custom theme.
 
-Hamburger ham shank est, officia qui capicola proident. Ribeye dolore prosciutto sirloin alcatra. Rump short ribs quis ex fugiat proident incididunt irure t-bone meatball veniam sirloin meatloaf. Tongue anim sint pancetta bresaola sirloin.
-Does your lorem ipsum text long for something a little meatier? Give our generator a try…
+
+## Static Site Generators
+
+Thanks to its decoupled architecture Ghost is also compatible with just about any of the front-end frameworks or static site generators which have become increasingly popular thanks to being fun to work with, extremely fast, and more and more powerful as the JAMstack grows in maturity. So it works with the tools you already use.
+
+This very documentation site is running on a [Gatsby.js](/api/gatsby/) front-end, connected to both **Ghost** and **Github** as content sources, hosted statically on [Netlify](https://netlify.com) with dynamic serverless functions powered by [AWS Lambda](https://aws.amazon.com/lambda/) (like the feedback form at the bottom of this page). It's a brave new world!
+
+We're working on greatly expanding our range of documentation, tools and SDKs to better serve the wider front-end development community.
+
+
+## Custom front-ends
+
+Of course you can also just build your own completely custom front-end, too. Particularly if you're using the Ghost API as a service to drive content infrastructure for a mobile or native application which isn't based on the web.
