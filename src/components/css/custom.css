@@ -325,6 +325,12 @@ kbd {
     top: 30px;
 }
 
+.dim:hover,
+.dim:focus {
+    opacity: .75;
+    transition: opacity 0.15s ease-in;
+}
+
 /* Search */
 /* ----------------------------------------------------------------------- */
 .search-modal-overlay {
