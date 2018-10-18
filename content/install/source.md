@@ -24,6 +24,9 @@ yarn global add knex-migrator grunt-cli ember-cli bower
 ```
 
 
+---
+
+
 ## Create Github forks
 
 First you'll need to make forks of both the [Ghost](https://github.com/tryghost/ghost) and [Ghost-Admin](https://github.com/tryghost/ghost-admin) respositories. Click on the fork button right at the top, wait for a copy to be created over on your personal Github account, and you should be all set!
@@ -32,9 +35,16 @@ First you'll need to make forks of both the [Ghost](https://github.com/tryghost/
 ![Fork](/images/setup/fork.gif)
 
 
+---
+
+
 ## Configure repositories
 
+The next step is to configure the Git repositories for local development
+
 ### Ghost Core
+
+The main Ghost repository contains the full Ghost package, including the Admin client and default theme which will also be automatically set up
 
 ```bash
 # First clone Ghost and make it your working dir
@@ -56,7 +66,7 @@ git remote add origin git@github.com:<YourUsername>/Ghost.git
 
 ### Ghost Admin
 
-Ghost-Admin is a submodule repository of the main Ghost repository, so we need to repeat the same steps to get git working correctly.
+Because Ghost-Admin is a submodule repository of the main Ghost repository, the same steps need to be repeated to configure Git here, too.
 
 ```bash
 # Switch to Ghost-Admin dir
@@ -87,6 +97,9 @@ cd ../../
 ```
 
 
+---
+
+
 ## Run setup & installation
 
 ```bash
@@ -96,6 +109,9 @@ yarn setup
 The `setup` task will install dependencies, initialise the database, set up git hooks & initialise submodules and run a first build of the admin. The very first build generally takes **a while**, so now's a good time to re-open that Reddit tab.
 
 
+---
+
+
 ## Start Ghost
 
 ```bash
@@ -103,7 +119,10 @@ The `setup` task will install dependencies, initialise the database, set up git 
 grunt dev
 ```
 
-Visit your new site at http://localhost:2368/
+<mark><strong>Ghost is now running at</strong> http://localhost:2368/</mark>
+
+
+---
 
 
 ## Stay up to date
@@ -120,14 +139,18 @@ That's it, you're done with the install! The rest of this guide is about working
 ---
 
 
-## Commands
+## Dev Commands
+
+When running locally there are a number development utility commands which come in handy for running tests, building packages, and other helpful tasks.
 
 ### Running Ghost
+
+The most commonly used commands for running the core codebase locally
 
 ```bash
 grunt dev
 # Default way of running Ghost in development mode
-# Builds Admin files on start & then watches for changes
+# Builds admin files on start & then watches for changes
 
 grunt dev --server
 # Ignores admin changes
@@ -154,7 +177,7 @@ knex-migrator init
 # Populate a fresh database
 ```
 
-### Test suite
+### Server Tests
 
 Tests run with SQlite. To use MySQL, prepend commands with `NODE_ENV=testing-mysql`
 
@@ -177,3 +200,68 @@ grunt test:path/to/test.js
 grunt lint
 # Make sure your code doesn't suck
 ```
+
+### Client Tests
+
+Client tests should always be run inside the `core/client` directory. Any time you have `grunt dev` running the client tests will be available at http://localhost:4200/tests
+
+
+```bash
+ember test
+# Run all tests in Chrome + Firefox
+
+ember test --server
+# Run all tests, leave results open, and watch for changes
+
+ember test -f 'gh-my-component'
+# Run tests where `describe()` or `it()` matches supplied argument
+# Note: Case sensitive
+
+ember test --launch=chrome
+# Run all tests in Chrome only
+
+ember test -s -f 'Acceptance: Settings - General' --launch=chrome
+# Most useful test comment for continuous local development
+# Targets specific test of area being worked on
+# Only using Chrome to keep resource usage minimal
+```
+
+
+---
+
+
+## Troubleshooting
+
+Some common Ghost development problems and their solutions
+
+**ERROR: (EADDRINUSE) Cannot start Ghost**<br>
+This error means that Ghost is already running, and you need to stop it
+
+**ERROR: ENOENT**<br>
+This error means that the mentioned file doesn't exist
+
+**ERROR Error: Cannot find module**<br>
+Install did not complete. Remove your `node_modules` and re-run `yarn`
+
+**Error: Cannot find module './build/default/DTraceProviderBindings'**<br>
+You switched node versions. Remove your `node_modules` and re-run `yarn`
+
+**ENOENT: no such file or directory, stat 'path/to/favicon.ico' at Error (native)**<br>
+Your admin client has not been built. Run `grunt prod` for production or `grunt dev`
+
+**TypeError: Cannot read property 'tagName' of undefined**<br>
+You can't run `ember test` at the same time as `grunt dev`. Wait for tests to finish before continuing and wait for the "Build successful" message before loading admin.
+
+**yarn.lock conflicts**<br>
+When rebasing a feature branch it's possible you'll get conflicts on `yarn.lock` because there were dependency changes in both `master` and `<feature-branch>`.
+
+1. Note what dependencies have changed in `package.json`<br>
+   <small>(Eg. `dev-1` was added and dev dep `dev-2` was removed)</small>
+2. `git reset HEAD package.json yarn.lock` - unstages the files
+3. `git checkout -- package.json yarn.lock` - removes local changes
+4. `yarn add dev-1 -D` - re-adds the dependency and updates yarn.lock
+5. `yarn remove dev-2` - removes the dependency and updates yarn.lock
+6. `git add package.json yarn.lock` - re-stage the changes
+7. `git rebase --continue` - continue with the rebase
+
+It's always more reliable to let `yarn` auto-generate the lockfile rather than trying to manually merge potentially incompatible changes.
