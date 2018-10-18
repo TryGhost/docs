@@ -51,7 +51,9 @@ class SetupIndexPage extends React.Component {
                     <section className="bg-setup">
                         <div className={ Spirit.page.xl + `tc-ns pt-vw6 pt-vw5-ns pb-vw5 white` }>
                             <h1 className={ Spirit.sectionHeading + `gh-integration-header-shadow` }>Setup Guide</h1>
-                            <p className={ Spirit.sectionSubHeading }>All the tools to get started with Ghost</p>
+                            <p className={ Spirit.sectionSubHeading }>
+                               The easiest way to get started is to use <strong>Ghost(Pro)</strong>. If you prefer to self-host, we strongly recommend an Ubuntu server with at least 1GB of memory to run Ghost.
+                            </p>
                         </div>
                     </section>
 
