@@ -22,7 +22,8 @@ http://tryghost.netlify.com/*       https://docs.ghost.org/:splat               
 
 # Custom Redirects for Readme.io (docs)
 
-/docs                                  /                                       301!
+/docs
+/search                                /                                       301!
 /docs/supported-node-versions          /faq/node-versions                      301!
 /docs/versioning                       /                                       301!
 /docs/migrating-to-ghost-2-0-0         /faq/upgrade-to-ghost-2-0               301!
@@ -37,7 +38,8 @@ http://tryghost.netlify.com/*       https://docs.ghost.org/:splat               
 /docs/upgrade                          /faq/upgrade-to-ghost-2-0                301!
 /docs/redirects                        /concepts/redirects                     301!
 /docs/dynamic-routing                  /concepts/routing                       301!
-/docs/troubleshooting                  /faq                                    301! /docs/ghost-cli                        /api/ghost-cli                          301!
+/docs/troubleshooting                  /faq                                    301!
+/docs/ghost-cli                        /api/ghost-cli                          301!
 /docs/cli-config                       /api/ghost-cli/config                   301!
 /docs/cli-doctor                       /api/ghost-cli/doctor                   301!
 /docs/cli-help                         /api/ghost-cli/help                     301!
@@ -69,30 +71,68 @@ http://tryghost.netlify.com/*       https://docs.ghost.org/:splat               
 
 # Custom Redirects for Readme.io (themes)
 
-/docs                                  /api/handlebars-themes                   301!
-/docs/getting-started                  /api/handlebars-themes                   301!
-/docs/handlebars                       /api/handlebars-themes                   301!
-/docs/structure                        /api/handlebars-themes/structure         301!
-/docs/templates                        /api/handlebars-themes/structure         301!
-/docs/changelog                        /api/handlebars-themes                   301!
-/docs/packagejson                      /api/handlebars-themes/packagejason      301!
-/docs/gscan                            /api/handlebars-themes                   301!
-/docs/faq                              /faq                                     301!
-/docs/migrate-to-ghost-1-0-0           /faq/upgrade-to-ghost-1-0                301!
-/docs/i18n                             /api/handlebars-themes/helpers/translate 301!
-/docs/context-overview                 /api/handlebars-themes/context           301!
-/docs/index-context                    /api/handlebars-themes/context/index/    301!
-/docs/home-context                     /api/handlebars-themes/context/index/    301!
-/docs/post-context                     /api/handlebars-themes/context/post/     301!
-/docs/page-context                     /api/handlebars-themes/context/page/     301!
-/docs/tag-context                      /api/handlebars-themes/context/tag/      301!
-/docs/author-context                   /api/handlebars-themes/context/author/   301!
-/docs/paged-context                    /api/handlebars-themes                   301!
-/docs/private-context                  /api/handlebars-themes                   301!
-/docs/subscribe-context                /api/handlebars-themes/subscribers       301!
-/docs/amp-context                      /api/handlebars-themes/google-amp        301!
-
-
+/t/docs                                  /api/handlebars-themes                     301!
+/t/docs/getting-started                  /api/handlebars-themes                     301!
+/t/docs/handlebars                       /api/handlebars-themes                     301!
+/t/docs/structure                        /api/handlebars-themes/structure           301!
+/t/docs/templates                        /api/handlebars-themes/structure           301!
+/t/docs/changelog                        /api/handlebars-themes                     301!
+/t/docs/packagejson                      /api/handlebars-themes/packagejason        301!
+/t/docs/gscan                            /api/handlebars-themes                     301!
+/t/docs/faq                              /faq                                       301!
+/t/docs/migrate-to-ghost-1-0-0           /faq/upgrade-to-ghost-1-0                  301!
+/t/docs/i18n                             /api/handlebars-themes/helpers/translate   301!
+/t/docs/context-overview                 /api/handlebars-themes/context             301!
+/t/docs/index-context                    /api/handlebars-themes/context/index/      301!
+/t/docs/home-context                     /api/handlebars-themes/context/index/      301!
+/t/docs/post-context                     /api/handlebars-themes/context/post/       301!
+/t/docs/page-context                     /api/handlebars-themes/context/page/       301!
+/t/docs/tag-context                      /api/handlebars-themes/context/tag/        301!
+/t/docs/author-context                   /api/handlebars-themes/context/author/     301!
+/t/docs/paged-context                    /api/handlebars-themes                     301!
+/t/docs/private-context                  /api/handlebars-themes                     301!
+/t/docs/subscribe-context                /api/handlebars-themes/subscribers         301!
+/t/docs/amp-context                      /api/handlebars-themes/google-amp          301!
+/t/docs/subscribers                      /api/handlebars-themes/subscribers         301!
+/t/docs/amp                              /api/handlebars-themes/amp                 301!
+/t/docs/ghost-editor                     /api/handlebars-themes/editor              301!
+/t/docs/helpers                          /api/handlebars-themes/helpers/functional  301!
+/t/docs/blog                             /api/handlebars-themes/helpers/blog        301!
+/t/docs/config                           /api/handlebars-themes/helpers/config      301!
+/t/docs/asset                            /api/handlebars-themes/helpers/asset       301!
+/t/docs/author                           /api/handlebars-themes/helpers/authors     301!
+/t/docs/authors                          /api/handlebars-themes/helpers/authors     301!
+/t/docs/body_class                       /api/handlebars-themes/helpers/body_class  301!
+/t/docs/content                          /api/handlebars-themes/helpers/content               301!
+/t/docs/date                             /api/handlebars-themes/helpers/date                  301!
+/t/docs/encode                           /api/handlebars-themes/helpers/encode                301!
+/t/docs/excerpt                          /api/handlebars-themes/helpers/excerpt               301!
+/t/docs/facebook_url                     /api/handlebars-themes/helpers/facebook_url          301!
+/t/docs/foreach                          /api/handlebars-themes/helpers/foreach               301!
+/t/docs/get                              /api/handlebars-themes/helpers/get                   301!
+/t/docs/ghost_foot                       /api/handlebars-themes/helpers/ghost_head_foot       301!
+/t/docs/ghost_head                       /api/handlebars-themes/helpers/ghost_head_foot       301!
+/t/docs/has                              /api/handlebars-themes/helpers/has                   301!
+/t/docs/if                               /api/handlebars-themes/helpers/if                    301!
+/t/docs/img_url                          /api/handlebars-themes/helpers/img_url               301!
+/t/docs/is                               /api/handlebars-themes/helpers/is                    301!
+/t/docs/lang                             /api/handlebars-themes/helpers/lang                  301!
+/t/docs/log                              /api/handlebars-themes/helpers/log                   301!
+/t/docs/meta_description                 /api/handlebars-themes/helpers                       301!
+/t/docs/meta_title                       /api/handlebars-themes/helpers                       301!
+/t/docs/navigation                       /api/handlebars-themes/helpers/navigation            301!
+/t/docs/page_url                         /api/handlebars-themes/helpers                       301!
+/t/docs/pagination                       /api/handlebars-themes/helpers/pagination            301!
+/t/docs/t                                /api/handlebars-themes/helpers/translate             301!
+/t/docs/tags                             /api/handlebars-themes/helpers/tags                  301!
+/t/docs/title                            /api/handlebars-themes/helpers/title                 301!
+/t/docs/twitter_url                      /api/handlebars-themes/helpers/twitter_url           301!
+/t/docs/unless                           /api/handlebars-themes/helpers/unless                301!
+/t/docs/url                              /api/handlebars-themes/helpers/url                   301!
+/t/docs/ghost-url-api                    /api/handlebars-themes                               301!
+/t/docs/ghost-api-ajax                   /api/handlebars-themes                               301!
+/t/docs/highlight-first-post-on-home     /api/handlebars-themes                               301!
+/t/docs/recent-featured-sidebar          /api/handlebars-themes                               301!
 
 # Versioned links
 
@@ -113,7 +153,8 @@ http://tryghost.netlify.com/*       https://docs.ghost.org/:splat               
 /v*/docs/upgrade                          /faq/upgrade-to-ghost-2-0                301!
 /v*/docs/redirects                        /concepts/redirects                     301!
 /v*/docs/dynamic-routing                  /concepts/routing                       301!
-/v*/docs/troubleshooting                  /faq                                    301! /v*/docs/ghost-cli                        /api/ghost-cli                          301!
+/v*/docs/troubleshooting                  /faq                                    301!
+/v*/docs/ghost-cli                        /api/ghost-cli                          301!
 /v*/docs/cli-config                       /api/ghost-cli/config                   301!
 /v*/docs/cli-doctor                       /api/ghost-cli/doctor                   301!
 /v*/docs/cli-help                         /api/ghost-cli/help                     301!
@@ -145,25 +186,65 @@ http://tryghost.netlify.com/*       https://docs.ghost.org/:splat               
 
 # Custom Redirects for Readme.io (themes)
 
-/v*/docs                                  /api/handlebars-themes                   301!
-/v*/docs/getting-started                  /api/handlebars-themes                   301!
-/v*/docs/handlebars                       /api/handlebars-themes                   301!
-/v*/docs/structure                        /api/handlebars-themes/structure         301!
-/v*/docs/templates                        /api/handlebars-themes/structure         301!
-/v*/docs/changelog                        /api/handlebars-themes                   301!
-/v*/docs/packagejson                      /api/handlebars-themes/packagejason      301!
-/v*/docs/gscan                            /api/handlebars-themes                   301!
-/v*/docs/faq                              /faq                                     301!
-/v*/docs/migrate-to-ghost-1-0-0           /faq/upgrade-to-ghost-1-0                301!
-/v*/docs/i18n                             /api/handlebars-themes/helpers/translate 301!
-/v*/docs/context-overview                 /api/handlebars-themes/context           301!
-/v*/docs/index-context                    /api/handlebars-themes/context/index/    301!
-/v*/docs/home-context                     /api/handlebars-themes/context/index/    301!
-/v*/docs/post-context                     /api/handlebars-themes/context/post/     301!
-/v*/docs/page-context                     /api/handlebars-themes/context/page/     301!
-/v*/docs/tag-context                      /api/handlebars-themes/context/tag/      301!
-/v*/docs/author-context                   /api/handlebars-themes/context/author/   301!
-/v*/docs/paged-context                    /api/handlebars-themes                   301!
-/v*/docs/private-context                  /api/handlebars-themes                   301!
-/v*/docs/subscribe-context                /api/handlebars-themes/subscribers       301!
-/v*/docs/amp-context                      /api/handlebars-themes/google-amp        301!
+/t/v*/docs                                  /api/handlebars-themes                     301!
+/t/v*/docs/getting-started                  /api/handlebars-themes                     301!
+/t/v*/docs/handlebars                       /api/handlebars-themes                     301!
+/t/v*/docs/structure                        /api/handlebars-themes/structure           301!
+/t/v*/docs/templates                        /api/handlebars-themes/structure           301!
+/t/v*/docs/changelog                        /api/handlebars-themes                     301!
+/t/v*/docs/packagejson                      /api/handlebars-themes/packagejason        301!
+/t/v*/docs/gscan                            /api/handlebars-themes                     301!
+/t/v*/docs/faq                              /faq                                       301!
+/t/v*/docs/migrate-to-ghost-1-0-0           /faq/upgrade-to-ghost-1-0                  301!
+/t/v*/docs/i18n                             /api/handlebars-themes/helpers/translate   301!
+/t/v*/docs/context-overview                 /api/handlebars-themes/context             301!
+/t/v*/docs/index-context                    /api/handlebars-themes/context/index/      301!
+/t/v*/docs/home-context                     /api/handlebars-themes/context/index/      301!
+/t/v*/docs/post-context                     /api/handlebars-themes/context/post/       301!
+/t/v*/docs/page-context                     /api/handlebars-themes/context/page/       301!
+/t/v*/docs/tag-context                      /api/handlebars-themes/context/tag/        301!
+/t/v*/docs/author-context                   /api/handlebars-themes/context/author/     301!
+/t/v*/docs/paged-context                    /api/handlebars-themes                     301!
+/t/v*/docs/private-context                  /api/handlebars-themes                     301!
+/t/v*/docs/subscribe-context                /api/handlebars-themes/subscribers         301!
+/t/v*/docs/amp-context                      /api/handlebars-themes/google-amp          301!
+/t/v*/docs/subscribers                      /api/handlebars-themes/subscribers         301!
+/t/v*/docs/amp                              /api/handlebars-themes/amp                 301!
+/t/v*/docs/ghost-editor                     /api/handlebars-themes/editor              301!
+/t/v*/docs/helpers                          /api/handlebars-themes/helpers/functional  301!
+/t/v*/docs/blog                             /api/handlebars-themes/helpers/blog        301!
+/t/v*/docs/config                           /api/handlebars-themes/helpers/config      301!
+/t/v*/docs/asset                            /api/handlebars-themes/helpers/asset       301!
+/t/v*/docs/author                           /api/handlebars-themes/helpers/authors     301!
+/t/v*/docs/authors                          /api/handlebars-themes/helpers/authors     301!
+/t/v*/docs/body_class                       /api/handlebars-themes/helpers/body_class  301!
+/t/v*/docs/content                          /api/handlebars-themes/helpers/content               301!
+/t/v*/docs/date                             /api/handlebars-themes/helpers/date                  301!
+/t/v*/docs/encode                           /api/handlebars-themes/helpers/encode                301!
+/t/v*/docs/excerpt                          /api/handlebars-themes/helpers/excerpt               301!
+/t/v*/docs/facebook_url                     /api/handlebars-themes/helpers/facebook_url          301!
+/t/v*/docs/foreach                          /api/handlebars-themes/helpers/foreach               301!
+/t/v*/docs/get                              /api/handlebars-themes/helpers/get                   301!
+/t/v*/docs/ghost_foot                       /api/handlebars-themes/helpers/ghost_head_foot       301!
+/t/v*/docs/ghost_head                       /api/handlebars-themes/helpers/ghost_head_foot       301!
+/t/v*/docs/has                              /api/handlebars-themes/helpers/has                   301!
+/t/v*/docs/if                               /api/handlebars-themes/helpers/if                    301!
+/t/v*/docs/img_url                          /api/handlebars-themes/helpers/img_url               301!
+/t/v*/docs/is                               /api/handlebars-themes/helpers/is                    301!
+/t/v*/docs/lang                             /api/handlebars-themes/helpers/lang                  301!
+/t/v*/docs/log                              /api/handlebars-themes/helpers/log                   301!
+/t/v*/docs/meta_description                 /api/handlebars-themes/helpers                       301!
+/t/v*/docs/meta_title                       /api/handlebars-themes/helpers                       301!
+/t/v*/docs/navigation                       /api/handlebars-themes/helpers/navigation            301!
+/t/v*/docs/page_url                         /api/handlebars-themes/helpers                       301!
+/t/v*/docs/pagination                       /api/handlebars-themes/helpers/pagination            301!
+/t/v*/docs/t                                /api/handlebars-themes/helpers/translate             301!
+/t/v*/docs/tags                             /api/handlebars-themes/helpers/tags                  301!
+/t/v*/docs/title                            /api/handlebars-themes/helpers/title                 301!
+/t/v*/docs/twitter_url                      /api/handlebars-themes/helpers/twitter_url           301!
+/t/v*/docs/unless                           /api/handlebars-themes/helpers/unless                301!
+/t/v*/docs/url                              /api/handlebars-themes/helpers/url                   301!
+/t/v*/docs/ghost-url-api                    /api/handlebars-themes                               301!
+/t/v*/docs/ghost-api-ajax                   /api/handlebars-themes                               301!
+/t/v*/docs/highlight-first-post-on-home     /api/handlebars-themes                               301!
+/t/v*/docs/recent-featured-sidebar          /api/handlebars-themes                               301!
