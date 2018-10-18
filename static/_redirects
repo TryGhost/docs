@@ -1,8 +1,11 @@
 # Redirect default Netlify subdomain to primary domain
+
 https://tryghost.netlify.com/*      https://newdocs.ghost.org/:splat     301!
 http://tryghost.netlify.com/*       https://newdocs.ghost.org/:splat     301!
 
+
 # Make edit links work
+
 /integrations/*/edit                https://docs-2.ghost.io/:splat/edit  302!
 /tutorials/*/edit                   https://docs-2.ghost.io/:splat/edit  302!
 /faq/*/edit                         https://docs-2.ghost.io/:splat/edit  302!
@@ -10,7 +13,157 @@ http://tryghost.netlify.com/*       https://newdocs.ghost.org/:splat     301!
 /concepts/*/edit                    https://github.com/TryGhost/docs/tree/master/content/concepts/:splat.md  302!
 /setup/*/edit                       https://github.com/TryGhost/docs/tree/master/content/setup/:splat.md     302!
 
+
 # Temporary API redirects
 
 /api/content/*                      https://api.ghost.org                   301!
 /api/admin/*                        https://api.ghost.org                   301!
+
+
+# Custom Redirects for Readme.io (docs)
+
+/docs                                  /                                       301!
+/docs/supported-node-versions          /faq/node-versions                      301!
+/docs/versioning                       /                                       301!
+/docs/migrating-to-ghost-2-0-0         /faq/upgrade-to-ghost-2-0               301!
+/docs/migrating-to-ghost-1-0-0         /faq/upgrade-to-ghost-1-0               301!
+/docs/markdown-changes-in-1-0          /faq/markdown-breaking-changes          301!
+/docs/getting-started-guide            /concepts/introduction                  301!
+/docs/hosting                          /concepts/hosting                       301!
+/docs/install                          /install/ubuntu                         301!
+/docs/install-local                    /install/local                          301!
+/docs/config                           /concepts/config                        301!
+/docs/mail-config                      /concepts/config                        301!
+/docs/upgrade                          /faq/upgrade-to-ghost-2-0                301!
+/docs/redirects                        /concepts/redirects                     301!
+/docs/dynamic-routing                  /concepts/routing                       301!
+/docs/troubleshooting                  /faq                                    301! /docs/ghost-cli                        /api/ghost-cli                          301!
+/docs/cli-config                       /api/ghost-cli/config                   301!
+/docs/cli-doctor                       /api/ghost-cli/doctor                   301!
+/docs/cli-help                         /api/ghost-cli/help                     301!
+/docs/cli-install                      /api/ghost-cli/install                  301!
+/docs/cli-log                          /api/ghost-cli/log                      301!
+/docs/cli-ls                           /api/ghost-cli/ls                       301!
+/docs/cli-setup                        /api/ghost-cli/setup                    301!
+/docs/cli-start                        /api/ghost-cli/start                    301!
+/docs/cli-stop                         /api/ghost-cli/stop                     301!
+/docs/cli-restart                      /api/ghost-cli/restart                  301!
+/docs/cli-run                          /api/ghost-cli/run                      301!
+/docs/cli-update                       /api/ghost-cli/update                   301!
+/docs/cli-uninstall                    /api/ghost-cli/uninstall                301!
+/docs/cli-knowledge-base               /api/ghost-cli/knowledgebase            301!
+/docs/using-a-custom-storage-module    /concepts/storage-adapters              301!
+/docs/using-a-custom-scheduling-module /concepts/custom-schedulers             301!
+/docs/using-ghost-as-an-npm-module     /                                       301!
+/docs/using-ghost-cli-programatically  /api/ghost-cli                          301!
+/docs/how-does-oauth-work-with-ghost   /                                       301!
+/docs/the-importer                     /faq/the-importer                       301!
+/docs/contributing                     /concepts/contributing                  301!
+/docs/code-standards                   /concepts/principles                    301!
+/docs/working-with-ghost               /install/source                         301!
+/docs/working-with-the-admin-client    /install/source                         301!
+/docs/the-core-team                    /concepts/governance                    301!
+/docs/git-workflow                     /concepts/principles                    301!
+/docs/codebase-overview                /concepts/architecture                  301!
+
+
+# Custom Redirects for Readme.io (themes)
+
+/docs                                  /api/handlebars-themes                   301!
+/docs/getting-started                  /api/handlebars-themes                   301!
+/docs/handlebars                       /api/handlebars-themes                   301!
+/docs/structure                        /api/handlebars-themes/structure         301!
+/docs/templates                        /api/handlebars-themes/structure         301!
+/docs/changelog                        /api/handlebars-themes                   301!
+/docs/packagejson                      /api/handlebars-themes/packagejason      301!
+/docs/gscan                            /api/handlebars-themes                   301!
+/docs/faq                              /faq                                     301!
+/docs/migrate-to-ghost-1-0-0           /faq/upgrade-to-ghost-1-0                301!
+/docs/i18n                             /api/handlebars-themes/helpers/translate 301!
+/docs/context-overview                 /api/handlebars-themes/context           301!
+/docs/index-context                    /api/handlebars-themes/context/index/    301!
+/docs/home-context                     /api/handlebars-themes/context/index/    301!
+/docs/post-context                     /api/handlebars-themes/context/post/     301!
+/docs/page-context                     /api/handlebars-themes/context/page/     301!
+/docs/tag-context                      /api/handlebars-themes/context/tag/      301!
+/docs/author-context                   /api/handlebars-themes/context/author/   301!
+/docs/paged-context                    /api/handlebars-themes                   301!
+/docs/private-context                  /api/handlebars-themes                   301!
+/docs/subscribe-context                /api/handlebars-themes/subscribers       301!
+/docs/amp-context                      /api/handlebars-themes/google-amp        301!
+
+
+
+# Versioned links
+
+# Custom Redirects for Readme.io (docs)
+
+/v*/docs                                  /                                       301!
+/v*/docs/supported-node-versions          /faq/node-versions                      301!
+/v*/docs/versioning                       /                                       301!
+/v*/docs/migrating-to-ghost-2-0-0         /faq/upgrade-to-ghost-2-0               301!
+/v*/docs/migrating-to-ghost-1-0-0         /faq/upgrade-to-ghost-1-0               301!
+/v*/docs/markdown-changes-in-1-0          /faq/markdown-breaking-changes          301!
+/v*/docs/getting-started-guide            /concepts/introduction                  301!
+/v*/docs/hosting                          /concepts/hosting                       301!
+/v*/docs/install                          /install/ubuntu                         301!
+/v*/docs/install-local                    /install/local                          301!
+/v*/docs/config                           /concepts/config                        301!
+/v*/docs/mail-config                      /concepts/config                        301!
+/v*/docs/upgrade                          /faq/upgrade-to-ghost-2-0                301!
+/v*/docs/redirects                        /concepts/redirects                     301!
+/v*/docs/dynamic-routing                  /concepts/routing                       301!
+/v*/docs/troubleshooting                  /faq                                    301! /v*/docs/ghost-cli                        /api/ghost-cli                          301!
+/v*/docs/cli-config                       /api/ghost-cli/config                   301!
+/v*/docs/cli-doctor                       /api/ghost-cli/doctor                   301!
+/v*/docs/cli-help                         /api/ghost-cli/help                     301!
+/v*/docs/cli-install                      /api/ghost-cli/install                  301!
+/v*/docs/cli-log                          /api/ghost-cli/log                      301!
+/v*/docs/cli-ls                           /api/ghost-cli/ls                       301!
+/v*/docs/cli-setup                        /api/ghost-cli/setup                    301!
+/v*/docs/cli-start                        /api/ghost-cli/start                    301!
+/v*/docs/cli-stop                         /api/ghost-cli/stop                     301!
+/v*/docs/cli-restart                      /api/ghost-cli/restart                  301!
+/v*/docs/cli-run                          /api/ghost-cli/run                      301!
+/v*/docs/cli-update                       /api/ghost-cli/update                   301!
+/v*/docs/cli-uninstall                    /api/ghost-cli/uninstall                301!
+/v*/docs/cli-knowledge-base               /api/ghost-cli/knowledgebase            301!
+/v*/docs/using-a-custom-storage-module    /concepts/storage-adapters              301!
+/v*/docs/using-a-custom-scheduling-module /concepts/custom-schedulers             301!
+/v*/docs/using-ghost-as-an-npm-module     /                                       301!
+/v*/docs/using-ghost-cli-programatically  /api/ghost-cli                          301!
+/v*/docs/how-does-oauth-work-with-ghost   /                                       301!
+/v*/docs/the-importer                     /faq/the-importer                       301!
+/v*/docs/contributing                     /concepts/contributing                  301!
+/v*/docs/code-standards                   /concepts/principles                    301!
+/v*/docs/working-with-ghost               /install/source                         301!
+/v*/docs/working-with-the-admin-client    /install/source                         301!
+/v*/docs/the-core-team                    /concepts/governance                    301!
+/v*/docs/git-workflow                     /concepts/principles                    301!
+/v*/docs/codebase-overview                /concepts/architecture                  301!
+
+
+# Custom Redirects for Readme.io (themes)
+
+/v*/docs                                  /api/handlebars-themes                   301!
+/v*/docs/getting-started                  /api/handlebars-themes                   301!
+/v*/docs/handlebars                       /api/handlebars-themes                   301!
+/v*/docs/structure                        /api/handlebars-themes/structure         301!
+/v*/docs/templates                        /api/handlebars-themes/structure         301!
+/v*/docs/changelog                        /api/handlebars-themes                   301!
+/v*/docs/packagejson                      /api/handlebars-themes/packagejason      301!
+/v*/docs/gscan                            /api/handlebars-themes                   301!
+/v*/docs/faq                              /faq                                     301!
+/v*/docs/migrate-to-ghost-1-0-0           /faq/upgrade-to-ghost-1-0                301!
+/v*/docs/i18n                             /api/handlebars-themes/helpers/translate 301!
+/v*/docs/context-overview                 /api/handlebars-themes/context           301!
+/v*/docs/index-context                    /api/handlebars-themes/context/index/    301!
+/v*/docs/home-context                     /api/handlebars-themes/context/index/    301!
+/v*/docs/post-context                     /api/handlebars-themes/context/post/     301!
+/v*/docs/page-context                     /api/handlebars-themes/context/page/     301!
+/v*/docs/tag-context                      /api/handlebars-themes/context/tag/      301!
+/v*/docs/author-context                   /api/handlebars-themes/context/author/   301!
+/v*/docs/paged-context                    /api/handlebars-themes                   301!
+/v*/docs/private-context                  /api/handlebars-themes                   301!
+/v*/docs/subscribe-context                /api/handlebars-themes/subscribers       301!
+/v*/docs/amp-context                      /api/handlebars-themes/google-amp        301!
