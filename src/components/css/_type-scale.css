@@ -1,5 +1,5 @@
 /* Overriding Spirit/Brand font sizes */
-.f-headline { font-size: 5.0rem; }
+.f-headline { font-size: 4.8rem; }
 .f-subheadline { font-size: 4.4rem; }
 .f1 { font-size: 4.4rem; }
 .f2 { font-size: 2.85rem; }
@@ -13,7 +13,7 @@
 .f-nav-first-level {font-size: 1.65rem;}
 
 @media (--breakpoint-not-small) {
-    .f-headline-ns { font-size: 5.0rem; }
+    .f-headline-ns { font-size: 4.8rem; }
     .f-subheadline-ns { font-size: 4.4rem; }
     .f1-ns { font-size: 4.4rem; }
     .f2-ns { font-size: 2.85rem; }
@@ -28,7 +28,7 @@
 }
 
 @media (--breakpoint-medium) {
-    .f-headline-m { font-size: 5.0rem; }
+    .f-headline-m { font-size: 4.8rem; }
     .f-subheadline-m { font-size: 4.4rem; }
     .f1-m { font-size: 4.4rem; }
     .f2-m { font-size: 2.85rem; }
@@ -43,7 +43,7 @@
 }
 
 @media (--breakpoint-large) {
-    .f-headline-l { font-size: 5.0rem; }
+    .f-headline-l { font-size: 4.8rem; }
     .f-subheadline-l { font-size: 4.4rem; }
     .f1-l { font-size: 4.4rem; }
     .f2-l { font-size: 2.85rem; }

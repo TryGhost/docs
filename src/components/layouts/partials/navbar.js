@@ -13,12 +13,14 @@ const headerSkin = {
         logoTheme: `dark`,
         docsTitleClass: `blue`,
         searchBox: `bg-darkgrey-searchbar middarkgrey dark-placeholder`,
+        icon: `fill-midlightgrey-l2`,
     },
     light: {
         menuItem: Spirit.link.white,
         logoTheme: `light`,
         docsTitleClass: `white`,
-        searchBox: `bg-white-20 white white-placeholder`,
+        searchBox: `bg-white-10 white white-placeholder`,
+        icon: `fill-white`,
     },
 }
 

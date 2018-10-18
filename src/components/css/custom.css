@@ -108,7 +108,7 @@ kbd {
 }
 
 .white-placeholder::placeholder { /* Most modern browsers support this now. */
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .dark-placeholder::placeholder { /* Most modern browsers support this now. */
@@ -333,6 +333,10 @@ kbd {
 
 /* Search */
 /* ----------------------------------------------------------------------- */
+.search-navbar-input-field {
+    padding-left: 3.4rem;
+}
+
 .search-modal-overlay {
     background-color: rgba(84, 102, 109, 0.5);
 }

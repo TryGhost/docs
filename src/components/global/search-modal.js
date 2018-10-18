@@ -62,19 +62,20 @@ class SearchModal extends React.Component {
                             />
                         </div>
                     </> :
-                    <>
+                    <div className="relative">
+                        <Icon name="search" className={`${theme.icon} w4 h-auto absolute top-2 left-3`} />
                         <label htmlFor="globalnavsearch" className="clip">Search</label>
                         <input
                             id="globalnavsearch"
                             name="globalnavsearch"
                             type="text"
-                            className={theme.searchBox + ` f8 pa2 pl4 pr4 ba f8 fw4 br3 whitney form-text bn br-pill w-sidebar dn db-l lh-1-0`}
+                            className={ theme.searchBox + ` search-navbar-input-field f8 pa2 pl8 pr4 ba f8 fw4 br3 whitney form-text bn br-pill w-sidebar dn db-l lh-1-0`}
                             placeholder="Search documentation..."
                             autoComplete="off"
                             onFocus={this.openModal}
                             onClick={this.openModal}
                         />
-                    </>
+                    </div>
                 }
                 <Modal
                     isOpen={ this.state.modalIsOpen }
