@@ -94,4 +94,19 @@ describe('Algolia Transforms', function () {
         reducedFragments[4].url.should.eql('/install/test/');
         reducedFragments[5].url.should.eql('/install/test/#testing');
     });
+
+    it('Processes massive example correctly', function () {
+        const fakeNode = {
+            objectID: `abc`,
+            title: `Install from Source`,
+            url: `/install/source/`,
+            html: readFixture(`massive-example`)
+        };
+
+        let reducedFragments = [fakeNode].reduce(transforms.fragmentTransformer, []);
+
+        reducedFragments.forEach((fragment) => {
+            JSON.stringify(fragment).length.should.be.below(10000);
+        });
+    });
 });

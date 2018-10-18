@@ -30,8 +30,14 @@ const reduceFragmentsUnderHeadings = (accumulator, fragment) => {
 
     if (existingFragment) {
         // Merge our fragments together
-        existingFragment.html += fragment.html
-        existingFragment.content += ` ${fragment.content}` // keep a space
+        if (fragment.node && fragment.node.tagName === `PRE`) {
+            // For pre-tags, we don't keep all the markup
+            existingFragment.html += ` ${fragment.content}` // keep a space
+            existingFragment.content += ` ${fragment.content}` // keep a space
+        } else {
+            existingFragment.html += fragment.html
+            existingFragment.content += ` ${fragment.content}` // keep a space
+        }
     } else {
         // If we don't already have a matching fragment with this anchor, add it
         accumulator.push(fragment)
@@ -55,7 +61,8 @@ module.exports.fragmentTransformer = (recordAccumulator, node) => {
     const records = htmlFragments.reduce((fragmentAccumulator, fragment, index) => {
         // Don't need a reference to the html node type
         delete fragment.node
-        // For now, we're not going to index the content string
+        // For now at least, we're not going to index the content string
+        // The HTML string is already very long, and there are size limits
         delete fragment.content
         // If we have an anchor, change the URL to be a deep link
         if (fragment.anchor) {
@@ -63,6 +70,9 @@ module.exports.fragmentTransformer = (recordAccumulator, node) => {
         }
 
         let objectID = `${node.objectID}_${index}`
+
+        // If fragments are too long, we need this to see which fragment it was
+        console.log(`indexing`, objectID, fragment.url || node.url, fragment.html.length) // eslint-disable-line no-console
 
         return [
             ...fragmentAccumulator,
