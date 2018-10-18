@@ -289,6 +289,18 @@ mark {
     overflow: scroll;
 }
 
+.search-result-page mark {
+    background: none;
+    color: color-mod(var(--blue) l(-25%));
+    /* box-shadow: color-mod(var(--blue) a(0.5)) 0 -1px 0 inset; */
+}
+
+.search-result-snippet em {
+    font-style: unset;
+    box-shadow: color-mod(var(--blue) a(0.8)) 0 -1px 0 inset;
+    color: var(--middarkgrey);
+}
+
 .body-modal-open {
     overflow: hidden;
 }
