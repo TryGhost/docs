@@ -14,7 +14,7 @@ Thanks to its decoupled architecture Ghost is able to have the best of both worl
 
 Great for editors. Great for developers. Also available as [Desktop App](https://ghost.org/downloads/).
 
-![Ghost Admin](/images/concepts/ghost-admin.png)
+![Ghost Admin](../images/concepts/ghost-admin.png)
 
 
 ## Publishing workflow
