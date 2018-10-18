@@ -49,7 +49,7 @@ There are multiple ways you can use Spirit:
 You can use Spirit CSS classes directly in `className` attribute. Typically for non-reusable, custom components where Spirit classes are sufficiently let you style the component.
 
 _Example:_
-```
+```jsx
 <div className="flex justify-between pa10"></div>
 ```
 
@@ -59,7 +59,7 @@ _Example:_
 - _TODO: needs to be outsourced to a gatsby plugin or external react module. (The Ghost admin client is using the [ember-cli-ghost-spirit](https://github.com/TryGhost/ember-cli-ghost-spirit) addon to access Spirit/Product helpers.)_
 
 _Example:_
-```
+```jsx
 <h1 className={ SpiritStyle.heading.h1 }></h1> <!-- Returns "f1 fw5 bb b--lightgrey pb3 mb7 mt10" -->
 ```
 
@@ -67,7 +67,7 @@ _Example:_
 Use [styled-components](https://next.gatsbyjs.org/docs/styled-components/) combined with Spirit styles to inject custom CSS within the context of the given component.
 
 _Example:_
-```
+```jsx
 const Header = () => (
     <Container>...</Container>
 )
