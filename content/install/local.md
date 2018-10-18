@@ -37,7 +37,7 @@ To install Ghost locally you will need the following:
 
 ## Install Ghost-CLI
 
-Ghost CLI is a commandline tool to help you get Ghost installed and configured for use, quickly and easily. The npm module can be installed with `npm` or `yarn` on a local machine, depending on your preference.
+[Ghost-CLI](/api/ghost-cli/) is a commandline tool to help you get Ghost installed and configured for use, quickly and easily. The npm module can be installed with `npm` or `yarn` on a local machine, depending on your preference.
 
 ```bash
 npm install ghost-cli@latest -g
