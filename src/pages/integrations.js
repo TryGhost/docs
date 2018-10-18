@@ -3,17 +3,22 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layouts/default'
-import Integration from '../components/integration'
+import { IntegrationIndex, IntegrationFilterMenu, IntegrationResults } from '../components/integration-search'
 import { Spirit } from '../components/spirit-styles'
 import IntegrationsHeader from '../components/layouts/partials/integrations-header'
 import MetaData from '../components/layouts/partials/meta-data'
-import { Index, Menu, ClearRefinements, connectHits } from 'react-instantsearch-dom'
 
-const CustomHits = connectHits(({ hits }) => (
-    <div className="gh-integrations w-100">
-        {hits.map(hit => <Integration key={hit.objectID} post={hit} />)}
-    </div>
-))
+const filterInternalTags = items => items
+    .filter(item => item.label.charAt(0) !== `#`)
+    .sort((a, b) => {
+        if (a.label < b.label) {
+            return -1
+        }
+        if (a.label > b.label) {
+            return 1
+        }
+        return 0
+    })
 
 class IntegrationsPage extends React.Component {
     render() {
@@ -33,7 +38,7 @@ class IntegrationsPage extends React.Component {
                     image={imageUrl}
                 />
                 <Layout title="Integrations" headerDividerStyle="shadow" header={<IntegrationsHeader />}>
-                    <Index indexName="integration">
+                    <IntegrationIndex>
                         <div className={ Spirit.page.xl + `pt10` }>
                             <div className="flex br4">
 
@@ -46,37 +51,16 @@ class IntegrationsPage extends React.Component {
                                     </div> */}
                                     <div className="flex flex-column mb6">
                                         <h3 className="ma0 mb2">Filter by</h3>
-                                        <ClearRefinements translations={{ reset: `All integrations` }}/>
-                                        <Menu
+                                        <IntegrationFilterMenu
                                             attribute="tags.name"
-                                            transformItems={items => items.filter(item => item.value.charAt(0) !== `#`).sort((a, b) => {
-                                                if (a.value < b.value) {
-                                                    return -1
-                                                }
-                                                if (a.value > b.value) {
-                                                    return 1
-                                                }
-                                                return 0
-                                            })}
+                                            transformItems={filterInternalTags}
                                         />
-                                        {/*
-                                        Original styled links
-                                        <a className="link pa2 pl0 blue fw6" href="#">All integrations</a>
-                                        <a className="link pa2 pl0 midgrey" href="#">Automation</a>
-                                        <a className="link pa2 pl0 midgrey" href="#">Analytics</a>
-                                        <a className="link pa2 pl0 midgrey" href="#">Editor Cards</a>
-                                        <a className="link pa2 pl0 midgrey" href="#">Communication</a>
-                                        <a className="link pa2 pl0 midgrey" href="#">Marketing</a>
-                                        <a className="link pa2 pl0 midgrey" href="#">Support</a>
-                                        <a className="link pa2 pl0 midgrey" href="#">Storage</a>
-                                        <a className="link pa2 pl0 midgrey" href="#">Utilities</a> */}
                                     </div>
                                 </div>
-                                <CustomHits />
-
+                                <IntegrationResults />
                             </div>
                         </div>
-                    </Index>
+                    </IntegrationIndex>
                 </Layout>
             </>
         )
