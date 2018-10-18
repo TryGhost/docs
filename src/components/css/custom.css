@@ -99,7 +99,7 @@ mark {
 }
 
 .dark-placeholder::placeholder { /* Most modern browsers support this now. */
-    color: #B4C5CF;
+    color: var(--lightgrey-d2);
 }
 
 /* Text styles */
@@ -269,6 +269,28 @@ mark {
 
 .bg-darkgrey-searchbar {
     background-color: color-mod(var(--midlightgrey) a(0.1));
+}
+
+/* Search */
+/* ----------------------------------------------------------------------- */
+.search-modal-overlay {
+    background-color: rgba(84, 102, 109, 0.5);
+}
+
+.search-modal {
+    outline: none;
+    /* max-height: calc(100vh - 13.6rem); */
+    /* min-height: 20.0rem; */
+    overflow: hidden;
+}
+
+.search-modal-result-container {
+    max-height: calc(100vh - 23.6rem);
+    overflow: scroll;
+}
+
+.body-modal-open {
+    overflow: hidden;
 }
 
 /* Home */

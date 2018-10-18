@@ -6,29 +6,6 @@ import Search from '../search'
 // import { Spirit } from '../spirit-styles'
 import Icon from './icon'
 
-const customStyles = {
-    content: {
-        top: `50%`,
-        left: `50%`,
-        right: `auto`,
-        bottom: `auto`,
-        marginRight: `-50%`,
-        transform: `translate(-50%, -50%)`,
-    },
-    overlay: {
-        position: `absolute`,
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: `unset`,
-        minHeight: `100%`,
-        minWidth: `100%`,
-        zIndex: 10,
-        overflowY: `auto`,
-        backgroundColor: `rgba(255, 255, 255, 0.95)`,
-    },
-}
-
 class SearchModal extends React.Component {
     constructor() {
         super()
@@ -100,29 +77,26 @@ class SearchModal extends React.Component {
                     </>
                 }
                 <Modal
-                    isOpen={this.state.modalIsOpen}
-                    style={customStyles}
-                    onAfterOpen={this.afterOpenModal}
-                    onRequestClose={this.closeModal}
+                    isOpen={ this.state.modalIsOpen }
+                    // style={customStyles}
+                    onAfterOpen={ this.afterOpenModal }
+                    onRequestClose={ this.closeModal }
                     // closeTimeoutMS={0}
                     shouldFocusAfterRender
                     contentLabel="Search"
                     shouldCloseOnEsc
                     shouldReturnFocusAfterClose={false}
+                    className="search-modal br5 mw-m center left-0 right-0 top-14 bg-white absolute mb10 pa10 shadow-3"
+                    overlayClassName="search-modal-overlay fixed absolute--fill flex flex-column items-center z-999"
+                    bodyOpenClassName="body-modal-open z-9999"
                     // portalClassName=``
-                    // overlayClassName=``
-                    // className=``
                 >
-                    <div>
-                        <div className="flex" onClick={this.closeModal} >
-                            <Icon name="close" className="fill-midgrey h3" />
-                        </div>
-                        <div className="pa4 pl5 pr5 mt5 w-100 mw-s f4 br-pill bg-white shadow-3 center flex items-center justify-between">
-                            <Icon name="search" className="fill-lightgrey-d2 h6" />
-                            <label htmlFor="globalsearch" className="clip">Search</label>
-                            <Search />
-                        </div>
-                    </div>
+                    <div className="absolute pa4 top-0 right-0" onClick={this.closeModal}><Icon name="close" className="fill-midgrey w3 h-auto" /></div>
+                    {/* <div className="pa4 pl5 pr5 mt5 w-100 mw-s f4 br-pill bg-white shadow-3 center flex items-center justify-between"> */}
+                    {/* <Icon name="search" className="fill-lightgrey-d2 h6" /> */}
+                    <label htmlFor="globalsearch" className="clip">Search</label>
+                    <Search />
+                    {/* </div> */}
                 </Modal>
             </>
         )

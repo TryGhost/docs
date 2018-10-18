@@ -78,18 +78,20 @@ class Results extends React.Component {
         }
 
         // <input id="homesearch" name="homesearch" className="input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0" type="text" placeholder="Search documentation..." autoComplete="off" />
+        const inputTheme = `input-reset form-text b--transparent bg-darkgrey-searchbar br-pill flex-auto whitney lh-1-0 pa2 pl3 plr3 w-100 dark-placeholder`
+
         const theme = {
-            input: `input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0`,
-            inputOpen: `input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0`,
-            inputFocused: `input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0`,
+            input: inputTheme,
+            inputOpen: inputTheme,
+            inputFocused: inputTheme,
             // Default values:
             // container: 'react-autosuggest__container',
             // containerOpen: 'react-autosuggest__container--open',
             // input: 'react-autosuggest__input',
             // inputOpen: 'react-autosuggest__input--open',
             // inputFocused: 'react-autosuggest__input--focused',
-            // suggestionsContainer: 'react-autosuggest__suggestions-container',
-            // suggestionsContainerOpen: 'react-autosuggest__suggestions-container--open',
+            // suggestionsContainer: 'pa15',
+            suggestionsContainerOpen: 'pa15 pt5 pb0 mt10 bt b--whitegrey nl10 nr10 nb10 search-modal-result-container',
             // suggestionsList: 'react-autosuggest__suggestions-list',
             // suggestion: 'react-autosuggest__suggestion',
             // suggestionFirst: 'react-autosuggest__suggestion--first',
