@@ -46,7 +46,7 @@
 
 .post-content>p:first-child {
     margin: calc(var(--vr-2) - 1px) 0 0;
-    font-size: 1.9rem;
+    font-size: 1.75rem;
     line-height: var(--vr-4);
 }
 
