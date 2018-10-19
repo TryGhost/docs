@@ -47,7 +47,7 @@ class SearchModal extends React.Component {
                 {/* TODO: this can probably be simplyfied so we wouldn't need this conditional */}
                 {isHome ?
                     <>
-                        <div className="pa3 pa4-ns pl4 pr4 pl5-ns pr5-ns mt5 mb5 mb0-ns w-100 mw-s-ns mw-100 f4 br-pill bg-white shadow-3 center flex items-center justify-between">
+                        <div className="pa3 pa4-ns pl4 pr4 pl5-ns pr5-ns mt3 mt5-ns mb5 mb0-ns w-100 mw-s mw-100 f4 br-pill bg-white shadow-3 center flex items-center justify-between">
                             <Icon name="search" className="fill-lightgrey-d2 w5 w6-ns h-auto" />
                             <label htmlFor="homesearch" className="clip">Search</label>
                             <input
