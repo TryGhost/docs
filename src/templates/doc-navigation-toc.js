@@ -192,7 +192,7 @@ class DocTemplate extends React.Component {
             if (post.frontmatter.sidebar) {
                 leftSidebar = <NavBar location={ this.props.location } sidebar={ post.frontmatter.sidebar } />
             } else {
-                leftSidebar = <TOC headingsOffset="-200" listClasses="lefty" showHeading={ false } />
+                leftSidebar = <TOC headingsOffset="-200" listClasses="lefty" className="mt5 mb5 mt10-ns mb0-ns" showHeading={ false } />
             }
             justification = `justify-start`
         } else {
