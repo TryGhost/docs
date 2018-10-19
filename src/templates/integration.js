@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import { graphql } from 'gatsby'
+// import { graphql } from 'gatsby'
 import Prism from 'prismjs'
 
 import Layout from '../components/layouts/default'
