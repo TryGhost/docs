@@ -98,7 +98,7 @@ class IndexPage extends React.Component {
 
                             </section>
 
-                            <section className="col-12 col-6-ns mt0-ns bt bn-ns b--whitegrey nl5 nr5 ml0-ns mr0-ns pl5 pr5 pl0-ns pr0-ns pt5 pt0-ns ">
+                            <section className="col-12 col-6-ns mt0-ns bt bn-ns b--whitegrey nl5 nr5 nl0-ns nr0-ns ml0-ns mr0-ns pl5 pr5 pl0-ns pr0-ns pt5 pt0-ns ">
                                 <Link to="/faq/" className={ Spirit.h3 + `link darkgrey hover-midgrey` }>FAQ</Link>
                                 <div className="mt3 mt7-ns">
                                     <FAQQuestion to="/faq/upgrade-to-ghost-2-0/" title="Upgrade to Ghost 2.0">
