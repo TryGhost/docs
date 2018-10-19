@@ -124,6 +124,19 @@ exports.createPages = ({ graphql, actions }) => {
         toPath: `/design/styling/`,
     })
 
+    createRedirect({
+        fromPath: `/api/content/`,
+        isPermanent: true,
+        redirectInBrowser: true,
+        toPath: `https://api.ghost.org`,
+    })
+    createRedirect({
+        fromPath: `/api/admin/`,
+        isPermanent: true,
+        redirectInBrowser: true,
+        toPath: `https://api.ghost.org`,
+    })
+
     // Query for each of the tags that we defined above
     ghostQueryConfig.forEach(({ tag, section, template, tagsTemplate }) => {
         queryPromises.push(new Promise((resolve, reject) => {
