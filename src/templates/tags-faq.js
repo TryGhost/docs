@@ -14,7 +14,6 @@ class FAQTags extends React.Component {
         const posts = this.props.data.allGhostPost.edges
         const { tagName, tagLink } = this.props.pageContext
 
-        // TODO: Replace with real title and description for FAQTags
         const title = `FAQ - ${tagName} - Ghost`
         const description = ``
         const imageUrl = ``

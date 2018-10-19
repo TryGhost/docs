@@ -5,15 +5,15 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import MetaData from '../components/layouts/partials/meta-data'
+import IntegrationsTagList from '../components/layouts/partials/integrations-taglist'
+import Integration from '../components/integration-search/integration'
 
-class IntegrationsPage extends React.Component {
+class IntegrationsTags extends React.Component {
     render() {
         const posts = this.props.data.allGhostPost.edges
-        console.log(`TCL: IntegrationsPage -> render -> posts`, posts)
         const { tagName, tagLink } = this.props.pageContext
 
-        // TODO: Replace with real title and description for FAQPage
-        const title = `Tutorials - ${tagName} - ${this.props.data.site.siteMetadata.title}`
+        const title = `Integrations - ${tagName} - ${this.props.data.site.siteMetadata.title}`
         const description = ``
         const imageUrl = ``
 
@@ -42,22 +42,20 @@ class IntegrationsPage extends React.Component {
                     </div>
                     <div className={Spirit.page.xl + `pt10`}>
                         <div className="flex br4">
+                            <div className="gh-integration-sidebar flex-shrink-0 w50 mr5">
+                                <div className="flex flex-column mb6">
+                                    <IntegrationsTagList location={this.props.location} />
+                                </div>
+                            </div>
                             <div className="gh-integrations w-100">
-                                {posts.map(({ node }) => (
-                                        <>
-                                            {/* TODO: make an integrations card? */}
-                                            <Link
-                                                className="gh-integration-card flex flex-column justify-center items-center w-100 h30 pa3 tc link darkgrey bg-white shadow-2 br5"
-                                                to={`/integrations/${node.slug}`}
-                                                key={node.id}
-                                            >
-                                                <div className="flex justify-center items-center h10 w13 mt1 mb3">
-                                                    <img className="w-100 h-100" style={{ objectFit: `contain` }} src={node.feature_image} alt={node.title} />
-                                                </div>
-                                                <div className="f8">{node.title}</div>
-                                            </Link>
-                                        </>
-                                ))}
+                                {posts.map(({ node }) => {
+                                    const hit = {
+                                        title: node.title,
+                                        image: node.feature_image,
+                                        url: `/integrations/${node.slug}`,
+                                    }
+                                    return (<Integration key={node.id} hit={hit} />)
+                                })}
                             </div>
                         </div>
                     </div>
@@ -67,7 +65,7 @@ class IntegrationsPage extends React.Component {
     }
 }
 
-IntegrationsPage.propTypes = {
+IntegrationsTags.propTypes = {
     data: PropTypes.shape({
         site: PropTypes.shape({
             siteMetadata: PropTypes.shape({
@@ -87,7 +85,7 @@ IntegrationsPage.propTypes = {
     }).isRequired,
 }
 
-export default IntegrationsPage
+export default IntegrationsTags
 
 export const tagsQuery = graphql`
     query($tagSlug: String!) {
