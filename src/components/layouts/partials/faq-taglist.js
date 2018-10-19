@@ -13,16 +13,20 @@ const tags = [
         link: `/faq/general/`,
     },
     {
-        name: `Ghost(Pro)`,
-        link: `/faq/ghost-pro/`,
-    },
-    {
         name: `Errors`,
         link: `/faq/errors/`,
     },
     {
-        name: `Self-hosted`,
-        link: `/faq/self-hosted/`,
+        name: `Using Ghost`,
+        link: `/faq/using-ghost/`,
+    },
+    {
+        name: `Ghost(Pro)`,
+        link: `/faq/ghost-pro/`,
+    },
+    {
+        name: `Self-hosting`,
+        link: `/faq/self-hosting/`,
     },
 ]
 
