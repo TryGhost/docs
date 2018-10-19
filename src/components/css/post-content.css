@@ -741,7 +741,7 @@ Usage (In Ghost editor):
 .faq-content ol li::before {
     counter-increment: listitem;
     content: counter(listitem);
-    background: var(--lightgrey);
+    background: var(--lightgrey-l2);
     color: var(--darkgrey);
     font-size: 12px;
     font-weight: 500;
