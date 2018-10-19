@@ -760,11 +760,6 @@ Usage (In Ghost editor):
     border: 1px solid var(--whitegrey);
 }
 
-.faq-content > p:first-child {
-    font-size: 1.45rem;
-    line-height: inherit;
-}
-
 .faq-content h3 {
     font-size: 1.9rem;
     font-weight: 500;
