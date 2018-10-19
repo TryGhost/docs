@@ -144,7 +144,7 @@ http://tryghost.netlify.com/*       https://docs.ghost.org/:splat               
 /article/37-ghost-shortcuts               /faq/using-the-editor                                301!
 /article/49-upgrade-downgrade-plans       /faq/upgrade-downgrade-ghostpro                      301!
 /article/87-change-ghost-org-email-address  /faq/change-ghost-email-address                    301!
-/article/96-add-a-new-publication           /faq/add-a-publication                             301!
+/article/96-add-a-new-publication           /faq                                               301!
 /article/97-delete-a-publication            /faq/delete-my-publication                         301!
 /article/98-change-the-publication-subdomain /faq/change-ghost-io-subdomain/                   301!
 /section/9-user-management                   /faq/managing-your-team                           301!
@@ -301,6 +301,7 @@ http://tryghost.netlify.com/*       https://docs.ghost.org/:splat               
 /v*/docs/the-core-team                    /concepts/governance                    301!
 /v*/docs/git-workflow                     /concepts/principles                    301!
 /v*/docs/codebase-overview                /concepts/architecture                  301!
+/v*/docs/basic-nginx-config-self-hosted-with-custom-domain  /                     301!
 
 
 # Custom Redirects for Readme.io (themes)
