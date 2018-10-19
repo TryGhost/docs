@@ -46,7 +46,7 @@
 
 .post-content>p:first-child {
     margin: calc(var(--vr-2) - 1px) 0 0;
-    font-size: 1.9rem;
+    font-size: 1.75rem;
     line-height: var(--vr-4);
 }
 
@@ -741,7 +741,7 @@ Usage (In Ghost editor):
 .faq-content ol li::before {
     counter-increment: listitem;
     content: counter(listitem);
-    background: var(--lightgrey);
+    background: var(--lightgrey-l2);
     color: var(--darkgrey);
     font-size: 12px;
     font-weight: 500;
@@ -758,11 +758,6 @@ Usage (In Ghost editor):
 
 .faq-content img {
     border: 1px solid var(--whitegrey);
-}
-
-.faq-content > p:first-child {
-    font-size: 1.45rem;
-    line-height: inherit;
 }
 
 .faq-content h3 {
