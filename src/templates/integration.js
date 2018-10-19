@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { graphql } from 'gatsby'
 import Prism from 'prismjs'
+import Img from "gatsby-image"
 
 import Layout from '../components/layouts/default'
-import integrationIcon from '../images/integration-icon.png'
+// import integrationIcon from '../images/integration-icon.png'
 import { Spirit } from '../components/spirit-styles'
 import TOC from '../components/layouts/partials/toc'
 import MetaData from '../components/layouts/partials/meta-data'
@@ -35,7 +36,7 @@ class Integration extends React.Component {
                                 <img className="mw100" src={post.feature_image} alt={post.title} />
                             </div>
                             <div className="flex-shrink-0 flex justify-center items-center h30 w30 pa11 bg-white br-100 shadow-3 nl2 nr2">
-                                <img className="mw100" src={integrationIcon} alt="Ghost" />
+                                <Img className="mw100" fixed={this.props.data.file.childImageSharp.fixed} alt="Ghost" />
                             </div>
                         </div>
                     </div>
@@ -74,6 +75,13 @@ export const articleQuery = graphql`
         }
         ghostPost(slug: { eq: $slug }) {
             ...GhostPostFields
+        }
+        file(relativePath: {eq: "integration-icon.png"}) {
+            childImageSharp {
+                fixed(width: 32, height: 32) {
+                    ...GatsbyImageSharpFixed
+                }
+            }
         }
     }
 `
