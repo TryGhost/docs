@@ -10,14 +10,14 @@ import PropTypes from 'prop-types'
 class MainBox extends React.Component {
     render() {
         return (
-            <Box className="col-12 col-4-ns pa5 pa10-l pt8-l flex flex-column tdn content-stretch" to={ this.props.to } radius="4" elevation="2">
-                <Icon name={ this.props.icon } className={`w10 h10 w12-ns h12-ns stroke-w--1-5 mr2 mb2 stroke-${this.props.color}`} />
+            <Box className="col-12 col-4-ns pa5 pa10-l pt8-l flex flex-column-ns items-start tdn content-stretch" to={ this.props.to } radius="4" elevation="2">
+                <Icon name={ this.props.icon } className={`w10 h-auto w12-ns stroke-w--1-5 mr3 mb2 stroke-${this.props.color}`} />
                 <div className="flex flex-column justify-between flex-auto">
                     <div>
                         <h2 className={ Spirit.h4 + `mt0 mt2-ns darkgrey flex-shrink-1` }>{ this.props.title }</h2>
                         <p className={ Spirit.small + `midgrey` }>{ this.props.children }</p>
                     </div>
-                    <span className={ `${this.props.color} dib mt2 link fw5 f5 flex items-center` }>
+                    <span className={ `${this.props.color} dib mt2 link fw5 f7 f5-ns flex items-center` }>
                         Learn more <Icon name="arrow-right" className={ `w3 h3 ml2 fill-${this.props.color}` } />
                     </span>
                 </div>
@@ -44,11 +44,11 @@ class HomeHeader extends React.Component {
                     <NavBar theme="dark" searchField={ true } />
                 </header>
                 <div className={Spirit.page.xl + `pa-vw2 pb-vw3 flex flex-column items-center`}>
-                    <h1 className="ma0 pa0 f-headline">Ghost Documentation</h1>
+                    <h1 className="ma0 pa0 f2 f1-ns f-headline-l">Ghost Documentation</h1>
                     {/* <p className="ma0 mt2 f4 white-80">All your favourite apps and tools, integrated with Ghost</p> */}
                     <SearchModal isHome />
 
-                    <section className={ `grid-12 gutter-row-20 gutter-36-ns mt15` }>
+                    <section className={ `grid-12 gutter-row-20 gutter-36-ns mt10 mt15-l miw-100 miw-auto-ns` }>
                         <MainBox
                             to="/concepts/introduction/"
                             title="Core Concepts"

@@ -114,6 +114,10 @@ kbd {
     width: 22rem;
 }
 
+@media (--breakpoint-not-small) { .w-sidebar-ns { width: 22rem; } }
+@media (--breakpoint-medium) { .w-sidebar-m { width: 22rem; } }
+@media (--breakpoint-large) { .w-sidebar-l { width: 22rem; } }
+
 .mw-content {
     max-width: 76rem;
 }
@@ -443,25 +447,29 @@ kbd {
     grid-auto-rows: minmax(12rem, auto);
 }
 
-.api-box-min-height {
-    min-height: 12rem;
+.mih-10 {
+    min-height: 10rem;
 }
 
-.api-hover h4,
+@media (--breakpoint-not-small) { .mih-10-ns { min-height: 10rem; } }
+@media (--breakpoint-medium) { .mih-10-m { min-height: 10rem; } }
+@media (--breakpoint-large) { .mih-10-l { min-height: 10rem; } }
+
+.api-box h4,
 .dark-h4-hover h4,
-.api-hover:hover svg g,
-.api-hover:hover svg path {
+.api-box:hover svg g,
+.api-box:hover svg path {
     transition: all 0.8s ease;
 }
 
 .dark-h4-hover:hover h4,
-.api-hover:hover h4 {
+.api-box:hover h4 {
     color: var(--blue);
     transition: all 0.2s ease;
 }
 
-.api-hover:hover svg g,
-.api-hover:hover svg path {
+.api-box:hover svg g,
+.api-box:hover svg path {
     stroke: var(--blue);
     transition: all 0.2s ease;
 }
@@ -476,6 +484,17 @@ kbd {
 
 /* Integrations
 /* ----------------------------------------------------------------------- */
+.grid-integrations-index {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 115px;
+    grid-gap: 24px;
+    grid-gap: auto;
+}
+
+/* @media (--breakpoint-not-small) { .grid-index { grid-template-columns: repeat(8, 1fr); } } */
+@media (--breakpoint-not-small) { .grid-integrations-index { grid-template-columns: repeat(4, 1fr); } }
+@media (--breakpoint-large) { .grid-integrations-index { grid-template-columns: repeat(8, 1fr); } }
 
 .gh-integration-sidebar a:hover {
     color: var(--blue) !important;
