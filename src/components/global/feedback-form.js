@@ -42,7 +42,7 @@ class FeedbackForm extends React.Component {
                 "form-name": form.getAttribute(`name`),
                 "feedback-type": `Feedback`,
                 page: this.props.location.pathname,
-                ...this.state
+                ...this.state,
             }),
         })
             .then(() => this.setState((state) => {

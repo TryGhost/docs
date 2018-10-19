@@ -1,7 +1,5 @@
 /* Before adding custom CSS, think about if it rather should be in Spirit */
 
-/* Globals - should definitely be in Spirit */
-
 /* Usage: <mark>Highlight</mark> */
 mark {
     background-color: #fdffb6;
@@ -23,17 +21,66 @@ kbd {
     display: inline-block;
 }
 
-/* Custom typography for UI -- maybe should be in Spirit... */
+
+/* Media queries copied from Spirit */
+/* @custom-media --breakpoint-not-small screen and (min-width: 44rem);
+@custom-media --breakpoint-medium screen and (min-width: 44rem) and (max-width: 66rem);
+@custom-media --breakpoint-large screen and (min-width: 66rem); */
+
+/* Custom typography for UI */
 .lh-h1 { line-height: var(--vr-8); }
-.lh-h2 { line-height: var(--vr-6); }
+.lh-h2 { line-height: var(--vr-5); }
 .lh-h3 { line-height: var(--vr-4); }
-.lh-h4 { line-height: var(--vr-4); }
+.lh-h4 { line-height: var(--vr-3); }
 .lh-h5 { line-height: var(--vr-3); }
 .lh-h6 { line-height: var(--vr-3); }
 .lh-p  { line-height: var(--vr-3); }
 .lh-small  { line-height: var(--vr-3); }
 .lh-tiny  { line-height: var(--vr-2); }
 .lh-1-0 { line-height: 1em; }
+
+.ws-normal { white-space: normal; }
+.nowrap { white-space: nowrap; }
+.pre { white-space: pre; }
+
+@media (--breakpoint-not-small) {
+    .lh-h1-ns { line-height: var(--vr-8); }
+    .lh-h2-ns { line-height: var(--vr-5); }
+    .lh-h3-ns { line-height: var(--vr-4); }
+    .lh-h4-ns { line-height: var(--vr-3); }
+    .lh-h5-ns { line-height: var(--vr-3); }
+    .lh-h6-ns { line-height: var(--vr-3); }
+    .lh-p-ns  { line-height: var(--vr-3); }
+    .lh-small-ns  { line-height: var(--vr-3); }
+    .lh-tiny-ns  { line-height: var(--vr-2); }
+    .lh-1-0-ns { line-height: 1em; }
+}
+
+@media (--breakpoint-medium) {
+    .lh-h1-m { line-height: var(--vr-8); }
+    .lh-h2-m { line-height: var(--vr-5); }
+    .lh-h3-m { line-height: var(--vr-4); }
+    .lh-h4-m { line-height: var(--vr-3); }
+    .lh-h5-m { line-height: var(--vr-3); }
+    .lh-h6-m { line-height: var(--vr-3); }
+    .lh-p-m  { line-height: var(--vr-3); }
+    .lh-small-m  { line-height: var(--vr-3); }
+    .lh-tiny-m  { line-height: var(--vr-2); }
+    .lh-1-0-m { line-height: 1em; }
+}
+
+@media (--breakpoint-large) {
+    .lh-h1-l { line-height: var(--vr-8); }
+    .lh-h2-l { line-height: var(--vr-5); }
+    .lh-h3-l { line-height: var(--vr-4); }
+    .lh-h4-l { line-height: var(--vr-3); }
+    .lh-h5-l { line-height: var(--vr-3); }
+    .lh-h6-l { line-height: var(--vr-3); }
+    .lh-p-l  { line-height: var(--vr-3); }
+    .lh-small-l  { line-height: var(--vr-3); }
+    .lh-tiny-l  { line-height: var(--vr-2); }
+    .lh-1-0-l { line-height: 1em; }
+}
 
 .word-normal { word-break: normal; }
 .word-wrap { word-break: break-all; }

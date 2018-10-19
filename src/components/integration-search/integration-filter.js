@@ -16,28 +16,26 @@ class IntegrationMenu extends React.Component {
     }
 
     state = {
-        query: '',
-      };
+        query: ``,
+    }
 
     selectItem = (item) => {
-        this.resetQuery();
-        this.props.refine(item.value);
+        this.resetQuery()
+        this.props.refine(item.value)
     };
 
     resetQuery = () => {
-        this.setState({ query: '' });
+        this.setState({ query: `` })
     };
 
-    renderItem = (item) => {
-        return (<a
-            key={item.label}
-            className="link pa2 pl0 midgrey"
-            onClick={(e) => {
-                e.preventDefault()
-                this.selectItem(item)
-            }}
-        >{item.label}</a>)
-    }
+    renderItem = item => (<a
+        key={item.label}
+        className="link pa2 pl0 midgrey"
+        onClick={(e) => {
+            e.preventDefault()
+            this.selectItem(item)
+        }}
+    >{item.label}</a>)
 
     render() {
         let items = this.props.items
