@@ -149,6 +149,79 @@ It's possible to limit the number of simultaneous connections using the pool set
 }
 ```
 
+#### SSL
+In a typical Ghost installation the MySQL database will be on the same server as Ghost itself. With cloud computing and database-as-a-service providers you might want to enable SSL connections to the database.
+
+If your Certificate CA or the CA of your database provider is in the Mozilla trusted CA list you can enable SSL by adding `"ssl": true` to the database connection configuration:
+
+```json
+"database": {
+  "client": "mysql",
+  "connection": {
+    "host": "your_cloud_database",
+    "port": 3306,
+    "user": "your_database_user",
+    "password": "your_database_password",
+    "database": "your_database_name",
+    "ssl": true
+  }
+}
+```
+
+This has been confirmed to work with Azure Database for MySQL. To find out if your provider is supported see the [Mozilla Included CA Certificate List](https://wiki.mozilla.org/CA/Included_Certificates).
+
+For Amazon RDS you'll need to configure the connection with `"ssl": "Amazon RDS"`:
+
+```json
+"database": {
+  "client": "mysql",
+  "connection": {
+    "host": "your_cloud_database",
+    "port": 3306,
+    "user": "your_database_user",
+    "password": "your_database_password",
+    "database": "your_database_name",
+    "ssl": "Amazon RDS"
+  }
+}
+```
+
+Custom or self-signed certificates are a little more advanced. You'll need to output your CA certificate (not your CA private key) as a single line string including literal new line characters `\n` (you can get the single line string with `awk '{printf "%s\\n", $0}' CustomRootCA.crt`) and add it to the configuration:
+
+```json
+"database": {
+  "client": "mysql",
+  "connection": {
+    "host": "your_cloud_database",
+    "port": 3306,
+    "user": "your_database_user",
+    "password": "your_database_password",
+    "database": "your_database_name",
+    "ssl": {
+      "ca": "-----BEGIN CERTIFICATE-----\nMIIFY... truncated ...pq8fa/a\n-----END CERTIFICATE-----\n"
+    }
+  }
+}
+```
+
+For a certificate chain, include all CA certificates in the single line string:
+
+```json
+"database": {
+  "client": "mysql",
+  "connection": {
+    "host": "your_cloud_database",
+    "port": 3306,
+    "user": "your_database_user",
+    "password": "your_database_password",
+    "database": "your_database_name",
+    "ssl": {
+      "ca": "-----BEGIN CERTIFICATE-----\nMIIFY... truncated ...pq8fa/a\n-----END CERTIFICATE-----\n-----BEGIN CERTIFICATE-----\nMIIFY... truncated ...wn8v90/a\n-----END CERTIFICATE-----\n"
+    }
+  }
+}
+```
+
 ### Mail
 
 *(Required in production)*
@@ -393,7 +466,3 @@ The original image is kept with the suffix `_0`.
 You've explored how to configure a self-hosted Ghost publication with the required config options, as well as discovered how to make use of the optional config options that are available in the `config.[env].json` file.
 
 If you run into any issues when configuring your publication, try searching this site to find information about common error messages and issues.
-
-
-
-
