@@ -29,26 +29,26 @@ If you’re using a different front end for your publication, refer to the offic
 
 The routes configuration file is a YAML file, which is located in `content/settings/routes.yaml`.
 
-The `routes.yaml` file divided into three sections: `routes`, `collections`, and `taxonomies`. The default file looks like this:
+The `routes.yaml` file is divided into three sections: `routes`, `collections`, and `taxonomies`. The default file looks like this:
 
 ```
 routes:
 
 collections:
-/:
-permalink: /{slug}/
-template:
-- index
+  /:
+    permalink: /{slug}/
+    template:
+      - index
 
 taxonomies:
-tag: /tag/{slug}/
-author: /author/{slug}/
+  tag: /tag/{slug}/
+  author: /author/{slug}/
 ```
 
 The rest of this article explains how `routes`, `collections` and `taxonomies` function, followed by how all of the available `YAML` properties can be used in each.
 
 > **Strict indentation**
-> YAML files use whitespace indentation to denote structure - using tabs is be invalid. Having mismatched indentation is the most common reason for a YAML file not being valid.
+> YAML files use whitespace indentation to denote structure - using tabs is invalid. Having mismatched indentation is the most common reason for a YAML file not being valid.
 
 ---
 
@@ -61,11 +61,11 @@ Routes can be configured as shown:
 ```
 routes:
   /custom-slug/: # index URL
-  controller:   # type of route, 'channel' is the only supported value (optional)
-  filter:       # a filter string (optional)
-  data:         # a data object (optional)
-  rss:          # true/false (optional, default: true)
-  content_type: # content type, eg 'rss' for RSS (optional, default: html)
+    controller:   # type of route, 'channel' is the only supported value (optional)
+    filter:       # a filter string (optional)
+    data:         # a data object (optional)
+    rss:          # true/false (optional, default: true)
+    content_type: # content type, eg 'rss' for RSS (optional, default: html)
   ```
 
 
@@ -90,11 +90,11 @@ It's possible to have a single collection that contains all posts (like the defa
 ```
 collections:
   /blog/: # index URL
-  permalink: # post URL (required)
-  rss:       # true/false (optional, default: true)
-  filter:    # a filter string (optional)
-  data:      # a data object (optional)
-  template:  # template or list of templates to use (optional)
+    permalink: # post URL (required)
+    rss:       # true/false (optional, default: true)
+    filter:    # a filter string (optional)
+    data:      # a data object (optional)
+    template:  # template or list of templates to use (optional)
   ```
 
 Ordering collections in the `routes.yaml` file is important. Posts that match the filters of multiple collections appears within the first collection listed with a match, and not in other collections. Read more about [creating custom collections](/tutorials/creating-content-collections/).
@@ -219,8 +219,8 @@ Use this property this to specify a route returns something other than HTML. For
 ```
 routes:
   /podcast/rss/:
-  template: podcast/rss
-  content_type: rss
+    template: podcast/rss
+    content_type: rss
 ```
 
 `content-type` can be a short version that matches a typical file extension for a mime-type, or it can be set to the full mime-type.
