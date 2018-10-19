@@ -71,6 +71,7 @@ http://tryghost.netlify.com/*       https://docs.ghost.org/:splat               
 
 # Custom Redirects for Readme.io (themes)
 
+/t                                       /api/handlebars-themes                     301!
 /t/docs                                  /api/handlebars-themes                     301!
 /t/docs/getting-started                  /api/handlebars-themes                     301!
 /t/docs/handlebars                       /api/handlebars-themes                     301!
@@ -186,6 +187,7 @@ http://tryghost.netlify.com/*       https://docs.ghost.org/:splat               
 
 # Custom Redirects for Readme.io (themes)
 
+/t/v*                                       /api/handlebars-themes                     301!
 /t/v*/docs                                  /api/handlebars-themes                     301!
 /t/v*/docs/getting-started                  /api/handlebars-themes                     301!
 /t/v*/docs/handlebars                       /api/handlebars-themes                     301!
