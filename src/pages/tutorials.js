@@ -34,9 +34,9 @@ class TutorialsPage extends React.Component {
                         </div>
                     </div>
                     <div className={ Spirit.page.xl + `mt-vw5 mt-vw2-ns` }>
-                        <section className="grid-12 gutter-32">
+                        <section className="grid-12 gutter-row-20 gutter-20-ns gutter-36-l">
                             {posts.map(({ node }) => (
-                                <PostCard key={node.id} post={node} className="col-4" />
+                                <PostCard key={node.id} post={node} className="col-12 col-6-ns col-4-l" />
                             ))}
                         </section>
                     </div>

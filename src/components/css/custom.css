@@ -194,7 +194,7 @@ kbd {
 }
 .shadow-1-hover:hover {
     box-shadow: 0 0 5px rgba(0,0,0,.02), 0 5px 22px -6px rgba(0,0,0,.1);
-    transform: scale(1.025);
+    transform: scale(1.02);
     transition: all 0.3s ease;
 }
 .shadow-1-hover.on-white:hover {
