@@ -84,11 +84,10 @@ IntegrationsPage.propTypes = {
 
 export default IntegrationsPage
 
-// TODO: uncomment to Bring back integrations
-// export const pageQuery = graphql`
-//   query GhostIntegrationsQuery {
-//     site {
-//         ...SiteMetaFields
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query GhostIntegrationsQuery {
+    site {
+        ...SiteMetaFields
+    }
+  }
+`
