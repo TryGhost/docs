@@ -469,6 +469,8 @@ kbd {
 /* ----------------------------------------------------------------------- */
 .gh-bg-home {
     background: url(../../images/bg-home.svg) no-repeat, radial-gradient(ellipse at top, rgba(252,253,255,1) 0%,rgba(228,233,245,1) 100%);
+    /* background: url(../../images/bg-home.svg) no-repeat, linear-gradient(60deg, rgba(75, 55, 172, 1) 0%, rgba(99, 199, 193, 1) 100%);; */
+    /* background: url(../../images/bg-home.svg) no-repeat, linear-gradient(60deg, rgba(75, 55, 172, 0.2) 0%, rgba(99, 199, 193, 0.4) 100%);; */
     background-size: cover;
 }
 

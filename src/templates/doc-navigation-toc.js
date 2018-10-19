@@ -171,9 +171,12 @@ class DocTemplate extends React.Component {
     }
 
     toggleMobileMenu() {
-        this.setState({
-            mobileMenuIsOpen: !this.state.mobileMenuIsOpen,
-        })
+        const that = this
+        return function () {
+            that.setState({
+                mobileMenuIsOpen: !that.state.mobileMenuIsOpen,
+            })
+        }
     }
 
     render() {
@@ -207,7 +210,7 @@ class DocTemplate extends React.Component {
 
                     <div className={ Spirit.page.xl + `flex flex-column flex-row-ns ${justification} relative` }>
                         
-                        <button onClick={ () => this.toggleMobileMenu() } className="bg-transparent bn appearance-none absolute right-7 db dn-ns" style={{
+                        <button onClick={ this.toggleMobileMenu() } className="bg-transparent bn appearance-none absolute right-7 db dn-ns" style={{
                             top: `-40px`,
                         }}><Icon name="hamburger" className="w6 h-auto stroke-white db dn-ns" /></button>
                         
