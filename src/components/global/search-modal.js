@@ -16,7 +16,6 @@ class SearchModal extends React.Component {
 
         this.openModal = this.openModal.bind(this)
         this.closeModal = this.closeModal.bind(this)
-        this.afterOpenModal = this.afterOpenModal.bind(this)
     }
 
     openModal() {
@@ -31,16 +30,12 @@ class SearchModal extends React.Component {
         })
     }
 
-    afterOpenModal() {
-
-    }
-
     componentDidMount() {
         Modal.setAppElement(`#___gatsby`)
     }
 
     render() {
-        const { theme, isHome } = this.props
+        const { theme, isHome, isOpen } = this.props
 
         return (
             <>
@@ -61,7 +56,8 @@ class SearchModal extends React.Component {
                                 onClick={this.openModal}
                             />
                         </div>
-                    </> :
+                    </> : null }
+                {theme ?
                     <div className="relative h8 h-auto-l" onClick={ this.openModal }>
                         <Icon name="search" className={`${theme.icon} w4 h-auto absolute top-2 stroke-w--1-5 right-0 left-3-l`} />
                         <label htmlFor="globalnavsearch" className="clip">Search</label>
@@ -74,10 +70,11 @@ class SearchModal extends React.Component {
                             autoComplete="off"
                             onFocus={this.openModal}
                         />
-                    </div>
-                }
+                    </div> : null}
                 <Modal
-                    isOpen={ this.state.modalIsOpen }
+                    // TODO: this logic is completely wrong!!!! Works to open it,
+                    // but you can't close it afterwords (ofc) LOL
+                    isOpen={isOpen ? isOpen : this.state.modalIsOpen }
                     // style={customStyles}
                     onAfterOpen={ this.afterOpenModal }
                     onRequestClose={ this.closeModal }
@@ -108,11 +105,13 @@ class SearchModal extends React.Component {
 
 SearchModal.defaultProps = {
     isHome: false,
+    isOpen: false,
 }
 
 SearchModal.propTypes = {
     theme: PropTypes.object,
     isHome: PropTypes.bool,
+    isOpen: PropTypes.bool,
 }
 
 export default SearchModal
