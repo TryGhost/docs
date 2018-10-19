@@ -62,8 +62,8 @@ class SearchModal extends React.Component {
                             />
                         </div>
                     </> :
-                    <div className="relative">
-                        <Icon name="search" className={`${theme.icon} w4 h-auto absolute top-2 left-3`} />
+                    <div className="relative h8 h-auto-l" onClick={ this.openModal }>
+                        <Icon name="search" className={`${theme.icon} w4 h-auto absolute top-2 stroke-w--1-5 right-0 left-3-l`} />
                         <label htmlFor="globalnavsearch" className="clip">Search</label>
                         <input
                             id="globalnavsearch"
@@ -73,7 +73,6 @@ class SearchModal extends React.Component {
                             placeholder="Search documentation..."
                             autoComplete="off"
                             onFocus={this.openModal}
-                            onClick={this.openModal}
                         />
                     </div>
                 }

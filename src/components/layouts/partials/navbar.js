@@ -9,11 +9,11 @@ import SearchModal from '../../global/search-modal'
 // Theme definitions
 const headerSkin = {
     dark: {
-        menuItem: `middarkgrey-l1 link hover-blue word-nowrap`,
+        menuItem: `middarkgrey-l1 link hover-blue nowrap`,
         logoTheme: `dark`,
         docsTitleClass: `blue`,
         searchBox: `bg-darkgrey-searchbar middarkgrey dark-placeholder`,
-        icon: `fill-midlightgrey-l2`,
+        icon: `fill-midlightgrey`,
     },
     light: {
         menuItem: Spirit.link.white,
@@ -40,25 +40,40 @@ class NavBar extends React.Component {
 
         return (
             <nav className={ Spirit.page.xl + `flex flex-auto flex-nowrap items-center justify-between pt2 pb2` }>
-                <div className="flex flex-auto flex-nowrap items-center f8">
+                <div className="flex items-center pt3 pb3 nudge-bottom--2 w-sidebar pr3">
+                    <a href="https://ghost.org" className="nudge-top--3"><Logo theme={ this.props.theme } /></a>
+                    <Link className={theme.docsTitleClass + ` gh-nav-logo-suffix relative ma0 ml4 pa0 pl4 f6 lh-1-5 fw4 link nudge-top--2` } to="/">Docs</Link>
+                </div>
+                <div className="dn flex-ns flex-auto items-center overflow-x-auto">
+                    <Link className={ theme.menuItem + ` f8 pa3 mr3 nl3`} to="/concepts/introduction/">Concepts</Link>
+                    <Link className={ theme.menuItem + ` f8 pa3 mr3` } to="/setup/">Setup</Link>
+                    <Link className={ theme.menuItem + ` f8 pa3 mr3` } to="/tutorials/">Tutorials</Link>
+                    <Link className={ theme.menuItem + ` f8 pa3 mr3` } to="/api/">API Reference</Link>
+                    <Link className={ theme.menuItem + ` f8 pa3 mr3` } to="/integrations/">Integrations</Link>
+                    <Link className={ theme.menuItem + ` f8 pa3 mr3` } to="/faq/">FAQ</Link>
+                </div>
+                <div className="relative pl3">
+                    <SearchModal theme={theme} />
+                </div>
+                {/* <div className="flex flex-auto flex-nowrap items-center f8">
                     <div className="flex items-center pt3 pb3 nudge-bottom--2 w-sidebar">
                         <a href="https://ghost.org" className="nudge-top--3"><Logo theme={ this.props.theme } /></a>
                         <Link className={theme.docsTitleClass + ` gh-nav-logo-suffix relative ma0 ml4 pa0 pl4 f6 lh-1-5 fw4 link nudge-top--2` } to="/">Docs</Link>
                     </div>
-                    <div className="dn flex-ns items-center">
-                        <Link className={ theme.menuItem + ` f-supersmall-m f8-l pa3 mr3 nl3`} to="/concepts/introduction/">Concepts</Link>
-                        <Link className={ theme.menuItem + ` f-supersmall-m f8-l pa3 mr3` } to="/setup/">Setup</Link>
-                        <Link className={ theme.menuItem + ` f-supersmall-m f8-l pa3 mr3` } to="/tutorials/">Tutorials</Link>
-                        <Link className={ theme.menuItem + ` f-supersmall-m f8-l pa3 mr3` } to="/api/">API Reference</Link>
-                        {/* <Link className={ theme.menuItem + ` f-supersmall-m f8-l pa3 mr3` } to="/integrations/">Integrations</Link> */}
-                        <Link className={ theme.menuItem + ` f-supersmall-m f8-l pa3 mr3` } to="/faq/">FAQ</Link>
+                    <div className="flex items-center overflow-x-auto">
+                        <Link className={ theme.menuItem + ` f8 pa3 mr3 nl3`} to="/concepts/introduction/">Concepts</Link>
+                        <Link className={ theme.menuItem + ` f8 pa3 mr3` } to="/setup/">Setup</Link>
+                        <Link className={ theme.menuItem + ` f8 pa3 mr3` } to="/tutorials/">Tutorials</Link>
+                        <Link className={ theme.menuItem + ` f8 pa3 mr3` } to="/api/">API Reference</Link>
+                        <Link className={ theme.menuItem + ` f-supersmall-m f8-l pa3 mr3` } to="/integrations/">Integrations</Link>
+                        <Link className={ theme.menuItem + ` f8 pa3 mr3` } to="/faq/">FAQ</Link>
                     </div>
                 </div>
                 <div className={ `flex-auto flex-nowrap justify-end items-center ` + (this.props.searchField ? `flex` : ` dn`) }>
                     <div className="relative">
                         <SearchModal theme={theme} />
                     </div>
-                </div>
+                </div> */}
             </nav>
         )
     }
