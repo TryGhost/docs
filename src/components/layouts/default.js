@@ -30,7 +30,7 @@ class DefaultLayout extends React.Component {
                 <SearchWrapper>
                     {header}
 
-                    <main className={ this.props.mainClass ? this.props.mainClass : `bg-whitegrey-l2 pb10` }>
+                    <main className={ this.props.mainClass ? this.props.mainClass : `bg-whitegrey-l2 pb5 pb10-ns` }>
                         {children}
                     </main>
 

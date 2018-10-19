@@ -52,23 +52,25 @@ class FeedbackForm extends React.Component {
     }
 
     render() {
+        const containerStyle = `relative mw-content center pa5 pa15-ns pt10-ns bg-white shadow-2 mt5 mt10-ns br4`
+
         if (this.state.showSucces) {
             return (
-                <div className="relative mw-content center pa15 pt10 bg-white shadow-2 mt10 br4">
+                <div className={ containerStyle }>
                     <h4 className={Spirit.h4 + `mt1 nudge-top--2`}>Thanks for the feedback! 🤗</h4>
                     <p className={`${Spirit.small} mt1 midgrey`}>Your message has been successfully delivered to our team, who will review your suggestions shortly. If we have any followup questions we&apos;ll be in touch!</p>
                 </div>
             )
         } else if (this.state.error) {
             return (
-                <div className="relative mw-content center pa15 pt10 bg-white shadow-2 mt10 br4">
+                <div className={ containerStyle }>
                     <h4 className={Spirit.h4 + `mt1 nudge-top--2 red`}>Rats. Something went wrong 😑</h4>
                     <p className={`${Spirit.small} mt1 midgrey`}>You can try again if you like, or skip this form entirely and just send us an email directly at <a href="mailto:hello@ghost.org" className="link blue">hello@ghost.org</a>. Sorry for the trouble!</p>
                 </div>
             )
         } else {
             return (
-                <div className="relative mw-content center pa15 pt10 bg-white shadow-2 mt10 br4">
+                <div className={ containerStyle }>
                     <h4 className={Spirit.h4 + `mt1 nudge-top--2`}>Help us improve this page</h4>
                     <p className={`${Spirit.small} mt1 midgrey`}>Please let us know what&apos;s working and what&apos;s not with this page.</p>
                     <form

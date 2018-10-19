@@ -113,10 +113,20 @@ kbd {
 .w-sidebar {
     width: 22rem;
 }
-
 @media (--breakpoint-not-small) { .w-sidebar-ns { width: 22rem; } }
 @media (--breakpoint-medium) { .w-sidebar-m { width: 22rem; } }
 @media (--breakpoint-large) { .w-sidebar-l { width: 22rem; } }
+
+.h0 { 
+    height: 0;
+}
+@media (--breakpoint-not-small) { 
+    .h0-ns { height: 0; } 
+    .h-auto-ns {     height: auto; }  /* < This needs to be here because of the mobile 
+                                           navigation menu. Should be deleted if copied to Spirit */
+}
+@media (--breakpoint-medium) { .h0-m { height: 0; } }
+@media (--breakpoint-large) { .h0-l { height: 0; } }
 
 .mw-content {
     max-width: 76rem;
@@ -380,6 +390,25 @@ kbd {
 .dim:focus {
     opacity: .75;
     transition: opacity 0.15s ease-in;
+}
+
+.left-sidebar {
+    max-height: 0;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.left-sidebar.mobile-nav-open {
+    max-height: 800px;
+    transition: all 0.8s ease;
+}
+
+@media (--breakpoint-not-small) { 
+    .left-sidebar { 
+        max-height: unset;
+        overflow: unset;
+        transition: none;
+    } 
 }
 
 /* Search */

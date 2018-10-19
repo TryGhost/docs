@@ -11,7 +11,7 @@ import PrevNext from '../components/global/prev-next'
 import DesignNavSidebar from '../components/layouts/partials/design-nav-sidebar'
 import TOC from '../components/layouts/partials/toc'
 import MetaData from '../components/layouts/partials/meta-data'
-// import Icon from '../components/global/icon'
+import Icon from '../components/global/icon'
 
 function NavBar(props) {
     if (props.location.pathname.match(/\S\/design\//i)) {
@@ -145,7 +145,7 @@ function PageHeader(props) {
     if (title) {
         return (
             <div className={ bgClass }>
-                <div className={ Spirit.page.xl + `pt-vw5 pt-vw1-ns pb-vw1 white` }>
+                <div className={ Spirit.page.xl + `pt12 pb4 pt-vw1-ns pb-vw1-ns white pl10 pl0-ns` }>
                     <h1 className={ Spirit.h4 + `gh-integration-header-shadow` }>
                         <Link to={ mainLink } className={ `link dim ${subtitle ? `white-80 fw3` : `white`}` }>{ title }</Link>
                         { subtitle ? <Link to={ subLink } className="link white dim titleslash-white pl4 ml4 relative">{ subtitle }</Link> : null }
@@ -159,6 +159,23 @@ function PageHeader(props) {
 }
 
 class DocTemplate extends React.Component {
+
+    constructor() {
+        super()
+
+        this.state = {
+            mobileMenuIsOpen: false,
+        }
+
+        this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
+    }
+
+    toggleMobileMenu() {
+        this.setState(() => {
+            return { mobileMenuIsOpen: !this.state.mobileMenuIsOpen }
+        })
+    }
+
     render() {
         const post = this.props.data.markdownRemark
         post.frontmatter.keywords = post.frontmatter.keywords || []
@@ -188,27 +205,35 @@ class DocTemplate extends React.Component {
                 <Layout>
                     <PageHeader location={ this.props.location } />
 
-                    <div className={ Spirit.page.xl + `flex ${justification}` }>
+                    <div className={ Spirit.page.xl + `flex flex-column flex-row-ns ${justification} relative` }>
+                        
+                        <div onClick={ this.toggleMobileMenu } className="absolute right-7 db dn-ns" style={{
+                            top: `-40px`,
+                        }}><Icon name="hamburger" className="w6 h-auto stroke-white db dn-ns" /></div>
+                        
                         { leftSidebar ?
-                            <div className={ `w-sidebar pt10 pr10 flex-shrink-0-l relative` }>
+                            <div className={ (this.state.mobileMenuIsOpen ? `mobile-nav-open` : ``) + ` w-100 w-sidebar-ns pr10 pl5 pl0-ns flex-shrink-0-l relative left-sidebar` }>
                                 { leftSidebar }
                             </div>
                             : null }
-                        <div className="w-100 mw-content bg-white shadow-2 br4 br--bottom">
-                            <article className="flex-auto pa15 pt10 pb10">
-                                <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
-                                <section className="post-content" dangerouslySetInnerHTML={ {
-                                    __html: post.html,
-                                } } />
+                        <div>
+                            <div className={ `w-100 mw-content bg-white shadow-2 br4` + (this.state.mobileMenuIsOpen ? `` : ` br--bottom`)}>
+                                <article className="flex-auto pa5 pa15-ns pt10-ns pb10-ns">
+                                    <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
+                                    <section className="post-content" dangerouslySetInnerHTML={ {
+                                        __html: post.html,
+                                    } } />
 
-                            </article>
-                            <div className="mw-content pa15 pb0 pt0 bt b--whitegrey mt5">
-                                <PrevNextSection
-                                    location={ this.props.location }
-                                    sidebar={ post.frontmatter.sidebar }
-                                    fm={ post.frontmatter }
-                                />
+                                </article>
+                                <div className="mw-content pl5 pr5 pl15-ns pr15-ns bt b--whitegrey mt5">
+                                    <PrevNextSection
+                                        location={ this.props.location }
+                                        sidebar={ post.frontmatter.sidebar }
+                                        fm={ post.frontmatter }
+                                    />
+                                </div>
                             </div>
+                            <FeedbackForm location={ this.props.location } />
                         </div>
                         { rightSidebar ?
                             <div className="order-3 w-sidebar flex-shrink-0 dn db-l pt10 pl7">
@@ -216,7 +241,6 @@ class DocTemplate extends React.Component {
                             </div>
                             : null }
                     </div>
-                    <FeedbackForm location={ this.props.location } />
                 </Layout>
             </>
         )

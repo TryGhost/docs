@@ -20,7 +20,7 @@ class TOC extends React.Component {
     render() {
         return (
             <>
-                <nav className={ `${this.props.className} nr3 sticky top-25` }>
+                <nav className={ `${this.props.className} nr3 sticky top-25 mt5 mb5 mt10-ns mb0-ns` }>
                     { (this.props.showHeading ? <h3 className="f4 measure--0-2 middarkgrey ma0 pa0 fw4 mt3 nudge-bottom--2">On this page</h3> : null) }
                     <div className={ `toc-list-container ${this.props.listClasses}`}></div>
                 </nav>
