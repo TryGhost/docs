@@ -21,7 +21,7 @@ module.exports = {
     siteMetadata: {
         title: `Ghost Docs`,
         siteUrl: process.env.SITE_URL || `https://docs.ghost.org`,
-        description: `Everything you need to know about working with the Ghost professional publishing platform.`,
+        description: `Everything you need to know about working with the Ghost professional publishing platform.`
     },
     plugins: [
         /**
@@ -31,8 +31,8 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 path: `${__dirname}/content/`,
-                name: `markdown-pages`,
-            },
+                name: `markdown-pages`
+            }
         },
         {
             resolve: `gatsby-transformer-remark`,
@@ -41,15 +41,15 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
-                            maxWidth: 590,
-                        },
+                            maxWidth: 590
+                        }
                     },
                     `gatsby-remark-code-titles`,
                     `gatsby-remark-prismjs`, // TODO: make aliases work!
                     `gatsby-remark-external-links`,
-                    `gatsby-remark-autolink-headers`,
-                ],
-            },
+                    `gatsby-remark-autolink-headers`
+                ]
+            }
         },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
@@ -59,8 +59,8 @@ module.exports = {
             options: {
                 apiUrl: `https://docs-2.ghost.io`,
                 clientId: `ghost-frontend`,
-                clientSecret: `${process.env.GH_CLIENT_SECRET}`,
-            },
+                clientSecret: `${process.env.GH_CLIENT_SECRET}`
+            }
         },
         {
             resolve: `gatsby-plugin-algolia`,
@@ -68,8 +68,8 @@ module.exports = {
                 appId: `6RCFK5TOI5`,
                 apiKey: `${process.env.ALGOLIA_ADMIN_KEY}`,
                 queries: algoliaQueries,
-                chunkSize: 10000, // default: 1000
-            },
+                chunkSize: 10000 // default: 1000
+            }
         },
         `gatsby-plugin-catch-links`,
         /**
@@ -84,12 +84,13 @@ module.exports = {
                 background_color: `#343f44`,
                 theme_color: `#343f44`,
                 display: `minimal-ui`,
-                icon: `src/images/favicon.png`,
-            },
+                icon: `src/images/favicon.png`
+            }
         },
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sitemap`,
+        `gatsby-plugin-force-trailing-slashes`,
         /**
          *  Display Plugins
          */
@@ -103,17 +104,17 @@ module.exports = {
                     colorModFunction(),
                     customProperties({ preserve: false }),
                     postcssCustomMedia(),
-                    cssNano({ zindex: false }),
-                ],
-            },
+                    cssNano({ zindex: false })
+                ]
+            }
         },
         {
             resolve: `gatsby-plugin-react-svg`,
             options: {
                 rule: {
-                    include: /icons/,
-                },
-            },
-        },
-    ],
-}
+                    include: /icons/
+                }
+            }
+        }
+    ]
+};
