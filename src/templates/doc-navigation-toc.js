@@ -163,20 +163,14 @@ class DocTemplate extends React.Component {
     constructor() {
         super()
 
-        this.state = {
-            mobileMenuIsOpen: false,
-        }
-
+        this.state = { isToggleOn: false }
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
     }
 
     toggleMobileMenu() {
-        const that = this
-        return function () {
-            that.setState({
-                mobileMenuIsOpen: !that.state.mobileMenuIsOpen,
-            })
-        }
+        this.setState(state => ({
+            isToggleOn: !state.isToggleOn,
+        }))
     }
 
     render() {
@@ -210,17 +204,17 @@ class DocTemplate extends React.Component {
 
                     <div className={ Spirit.page.xl + `flex flex-column flex-row-ns ${justification} relative` }>
                         
-                        <button onClick={ this.toggleMobileMenu() } className="bg-transparent bn appearance-none absolute right-7 db dn-ns" style={{
+                        <button onClick={ this.toggleMobileMenu } className="bg-transparent bn appearance-none absolute right-7 db dn-ns" style={{
                             top: `-40px`,
                         }}><Icon name="hamburger" className="w6 h-auto stroke-white db dn-ns" /></button>
                         
                         { leftSidebar ?
-                            <div className={ (this.state.mobileMenuIsOpen ? `mobile-nav-open` : ``) + ` w-100 w-sidebar-ns pr10 pl5 pl0-ns flex-shrink-0-l relative left-sidebar` }>
+                            <div className={ (this.state.isToggleOn ? `mobile-nav-open` : ``) + ` w-100 w-sidebar-ns pr10 pl5 pl0-ns flex-shrink-0-l relative left-sidebar` }>
                                 { leftSidebar }
                             </div>
                             : null }
                         <div>
-                            <div className={ `w-100 mw-content bg-white shadow-2 br4` + (this.state.mobileMenuIsOpen ? `` : ` br--bottom`)}>
+                            <div className={ `w-100 mw-content bg-white shadow-2 br4` + (this.state.isToggleOn ? `` : ` br--bottom`)}>
                                 <article className="flex-auto pa5 pa15-ns pt10-ns pb10-ns">
                                     <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
                                     <section className="post-content" dangerouslySetInnerHTML={ {
