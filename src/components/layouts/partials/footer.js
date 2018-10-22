@@ -39,7 +39,7 @@ const Footer = () => (
                 </ul>
 
                 <ul className="flex list pa0 ma0 items-center">
-                    <li className={ listItemClass }><a href="http://ghost.org" className="link pa2 midgrey hover-blue dib mr0">Ghost.org</a></li>
+                    <li className={ listItemClass }><a href="https://ghost.org" className="link pa2 midgrey hover-blue dib mr0">Ghost.org</a></li>
                 </ul>
             </div>
 
