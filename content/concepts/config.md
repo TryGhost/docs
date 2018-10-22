@@ -239,6 +239,7 @@ Choose an external email service and sign up and verify your account. We highly 
 Mailgun allows you to use your own domain for sending transactional emails. Otherwise you can use a subdomain that Mailgun provide you with (also known as the sandbox domain, limited to 300 emails per day). You can change this at any time.
 
 **Make a note of your domain information**
+
 Once your domain is setup, find your new email service SMTP username and password that has been created for you (this is not the ones you used to sign up for Mailgun with). You can find this under "Domain Information" and make a note of the following details:
 
 * Default SMTP login
