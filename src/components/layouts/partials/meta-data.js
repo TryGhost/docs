@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import path from 'path'
+import url from 'url'
 
 import ArticleMetaGhost from './meta/article-meta-ghost'
 import ArticleMetaMD from './meta/article-meta-md'
@@ -12,7 +12,7 @@ class MetaData extends React.Component {
         const { markdownRemark } = this.props.data || {}
         const { siteMetadata } = this.props.data.site
         const { type, title, description, image, fetchAuthorData } = this.props
-        const canonical = path.join(siteMetadata.siteUrl, this.props.location.pathname, `/`)
+        const canonical = url.resolve(siteMetadata.siteUrl, this.props.location.pathname, `/`)
 
         if (type === `article`) {
             if (ghostPost) {
