@@ -69,7 +69,7 @@ class IndexPage extends React.Component {
                     header={<HomeHeader />}
                 >
 
-                    <div className="pt-vw3">
+                    <div className="pt-vw3 home-main-box-padding-ns">
                         <div className={ Spirit.page.xl + `grid-12 gutter-row-20 gutter-40-ns` }>
 
                             <section className="col-12 col-6-ns flex flex-column justify-between mt4 mt0-ns">
