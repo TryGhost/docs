@@ -49,7 +49,7 @@ class SearchModal extends React.Component {
                                 id="homesearch"
                                 name="homesearch"
                                 type="text"
-                                className="input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0 f5 f4-ns bg-transparent white-placeholder"
+                                className="input-reset form-text ba b--transparent flex-auto ml2 whitney lh-normal f5 f4-ns bg-transparent white-placeholder"
                                 placeholder="Search documentation..."
                                 autoComplete="off"
                                 onFocus={this.openModal}
@@ -65,7 +65,7 @@ class SearchModal extends React.Component {
                             id="globalnavsearch"
                             name="globalnavsearch"
                             type="text"
-                            className={ theme.searchBox + ` search-navbar-input-field f8 pa2 pl8 pr4 ba f8 fw4 br3 whitney form-text bn br-pill w-sidebar dn db-l lh-1-0`}
+                            className={ theme.searchBox + ` search-navbar-input-field f8 pa2 pl8 pr4 ba f8 fw4 br3 whitney form-text bn br-pill w-sidebar dn db-l lh-normal`}
                             placeholder="Search documentation..."
                             autoComplete="off"
                             onFocus={this.openModal}

@@ -38,6 +38,7 @@ kbd {
 .lh-small  { line-height: var(--vr-3); }
 .lh-tiny  { line-height: var(--vr-2); }
 .lh-1-0 { line-height: 1em; }
+.lh-normal { line-height: normal; }
 
 .ws-normal { white-space: normal; }
 .nowrap { white-space: nowrap; }
@@ -54,6 +55,7 @@ kbd {
     .lh-small-ns  { line-height: var(--vr-3); }
     .lh-tiny-ns  { line-height: var(--vr-2); }
     .lh-1-0-ns { line-height: 1em; }
+    .lh-normal-ns { line-height: normal; }
 }
 
 @media (--breakpoint-medium) {
@@ -67,6 +69,7 @@ kbd {
     .lh-small-m  { line-height: var(--vr-3); }
     .lh-tiny-m  { line-height: var(--vr-2); }
     .lh-1-0-m { line-height: 1em; }
+    .lh-normal-ns { line-height: normal; }
 }
 
 @media (--breakpoint-large) {
@@ -80,6 +83,7 @@ kbd {
     .lh-small-l  { line-height: var(--vr-3); }
     .lh-tiny-l  { line-height: var(--vr-2); }
     .lh-1-0-l { line-height: 1em; }
+    .lh-normal-ns { line-height: normal; }
 }
 
 .word-normal { word-break: normal; }
