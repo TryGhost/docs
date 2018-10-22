@@ -93,7 +93,7 @@ class FeedbackForm extends React.Component {
                                 <label htmlFor="feedback-type" className="clip">Select feedback type</label>
                                 <select
                                     name="feedback-type"
-                                    className="appearance-none db ba b--whitegrey whitney pa3 bg-white w-100 h10 mt4 middarkgrey outline-0 f8"
+                                    className="appearance-none db ba b--whitegrey whitney pa3 bg-white w-100 h10 mt4 middarkgrey outline-0 f8 br3"
                                     onChange={this.handleChange}
                                 >
                                     <option>Feedback</option>
@@ -107,7 +107,7 @@ class FeedbackForm extends React.Component {
                             <input
                                 name="email"
                                 type="email"
-                                className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-1-0 bg-white ba b--whitegrey mt4 middarkgrey"
+                                className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-normal bg-white ba b--whitegrey mt4 middarkgrey"
                                 placeholder="Email..."
                                 autoCapitalize="none"
                                 autoComplete="off"
