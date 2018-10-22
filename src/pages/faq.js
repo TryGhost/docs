@@ -32,7 +32,7 @@ class FAQPage extends React.Component {
                         </div>
                     </div>
                     <div className={ Spirit.page.xl + `grid-12`}>
-                        <div className="bg-white shadow-2 br4 mt10 pa15 pt10 pb12 col-8">
+                        <div className="bg-white shadow-2 br4 mt5 mt10-ns pa5 pa15-ns pt10-ns pb12-ns col-12 col-8-ns">
 
                             <Link to="/faq/using-custom-domains/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
                                 <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Using Custom Domains &raquo;</h4>
@@ -76,7 +76,7 @@ class FAQPage extends React.Component {
 
 
                         </div>
-                        <div className="col-4 pa15 pt10 mt11">
+                        <div className="col-12 col-4-ns pa5 pa15-ns pt10-ns mt11-ns ">
                             <FAQTagList location={ this.props.location } />
                         </div>
                     </div>

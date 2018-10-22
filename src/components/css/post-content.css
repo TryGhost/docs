@@ -579,7 +579,7 @@ Usage (In Ghost editor):
 
 /* Tables */
 .post-content table {
-    overflow-x: auto;
+    overflow-x: scroll;
     margin: var(--vr-4) 0 0;
     width: 100%;
     border-spacing: 0;
@@ -588,9 +588,8 @@ Usage (In Ghost editor):
     white-space: nowrap;
     vertical-align: top;
     -webkit-overflow-scrolling: touch;
-    margin-left: -24px;
-    margin-right: -24px;
-    overflow: hidden;
+    display: block;
+    align-self: flex-start;
 }
 
 .post-content thead,
