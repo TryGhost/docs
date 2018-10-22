@@ -83,7 +83,7 @@ class SearchModal extends React.Component {
                     contentLabel="Search"
                     shouldCloseOnEsc
                     shouldReturnFocusAfterClose={false}
-                    className="search-modal br5 mw-m center left-0 right-0 top-15 bg-white absolute mb10 pa10 shadow-3"
+                    className="search-modal br5 mw-m center left-5 right-5 top-5 left-15-ns right-15-ns top-15-ns bg-white absolute mb10 pa5 pt10 pb10 pa10-ns shadow-3"
                     overlayClassName="search-modal-overlay fixed absolute--fill flex flex-column items-center z-999"
                     bodyOpenClassName="body-modal-open z-9999"
                     // portalClassName=``
