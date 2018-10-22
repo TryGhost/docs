@@ -159,18 +159,17 @@ function PageHeader(props) {
 }
 
 class DocTemplate extends React.Component {
-
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = { isToggleOn: false }
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
     }
 
     toggleMobileMenu() {
-        this.setState(state => ({
-            isToggleOn: !state.isToggleOn,
-        }))
+        this.setState((state) => {
+            return { isToggleOn: !state.isToggleOn }
+        })
     }
 
     render() {
@@ -203,11 +202,11 @@ class DocTemplate extends React.Component {
                     <PageHeader location={ this.props.location } />
 
                     <div className={ Spirit.page.xl + `flex flex-column flex-row-ns ${justification} relative` }>
-                        
-                        <button onClick={ this.toggleMobileMenu } className="bg-transparent bn appearance-none absolute right-7 db dn-ns" style={{
+
+                        <button onClick={e => this.toggleMobileMenu(e)} className="bg-transparent bn appearance-none absolute right-7 db dn-ns" style={{
                             top: `-40px`,
                         }}><Icon name="hamburger" className="w6 h-auto stroke-white db dn-ns" /></button>
-                        
+
                         { leftSidebar ?
                             <div className={ (this.state.isToggleOn ? `mobile-nav-open` : ``) + ` w-100 w-sidebar-ns pr10 pl5 pl0-ns flex-shrink-0-l relative left-sidebar` }>
                                 { leftSidebar }

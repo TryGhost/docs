@@ -7,8 +7,8 @@ import Search from '../search'
 import Icon from './icon'
 
 class SearchModal extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
             modalIsOpen: false,
