@@ -6,7 +6,6 @@ import Helmet from 'react-helmet'
 import Header from './partials/header'
 import Footer from './partials/footer'
 import SearchWrapper from './search-wrapper'
-import Shortcuts from '../global/shortcuts'
 
 // Spirit
 // import 'ghost-spirit/public/spirit-brand.css'
@@ -29,7 +28,6 @@ class DefaultLayout extends React.Component {
                 </Helmet>
 
                 <SearchWrapper>
-                    <Shortcuts />
                     {header}
 
                     <main className={ this.props.mainClass ? this.props.mainClass : `bg-whitegrey-l2 pb5 pb10-ns` }>
