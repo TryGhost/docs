@@ -78,13 +78,13 @@ class FeedbackForm extends React.Component {
                         method="post"
                         action="#"
                         data-netlify="true"
-                        data-netlify-honeypot="bot-field"
+                        data-netlify-honeypot="your-message"
                         onSubmit={this.handleSubmit}
                     >
                         <p hidden>
                             <label>
-                                Don’t fill this out:{` `}
-                                <input name="bot-field" type="hidden" onChange={this.handleChange} />
+                                Your Message:{` `}
+                                <textarea name="your-message" placeholder="Your message..." onChange={this.handleChange} />
                             </label>
                         </p>
                         <div className="flex items-center">
