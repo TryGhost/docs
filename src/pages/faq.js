@@ -39,14 +39,14 @@ class FAQPage extends React.Component {
                                 <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>If you would like to make your site memorable and easy to find with a branded custom domain, then you can map any domain you own directly to your Ghost(Pro) publication.</p>
                             </Link>
 
-                            <Link to="/faq/the-importer/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
-                                <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Imports & Exports &raquo;</h4>
-                                <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>Publishing with Ghost gives you full ownership and access to your content and data, with sensible JSON exports available at any time.</p>
+                              <Link to="/faq/forgot-password/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
+                                <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>How do I reset my password? &raquo;</h4>
+                                <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>In Ghost, each publication user has their own account details and password which can be reset or changed. Read more if you forgot your password or need to reset it!</p>
                             </Link>
 
                             <Link to="/faq/using-the-editor/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
                                 <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Using the editor &raquo;</h4>
-                                <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>Ghost has a powerful visual editor with familiar formatting options, as well as the ability to seamlessly add dynamic content.</p>
+                                <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>Ghost has a powerful visual editor with familiar formatting options, with full support for dynamic content, allowing you to add images, galleries, videos, embeds and code!</p>
                             </Link>
 
                             <Link to="/faq/publishing-options/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
@@ -56,7 +56,12 @@ class FAQPage extends React.Component {
 
                             <Link to="/faq/managing-your-team/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
                                 <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Managing Your Team &raquo;</h4>
-                                <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>Ghost has a number of different user roles and permissions for your team. Find out how to collaborate with Ghost!</p>
+                                <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>Ghost has a number of different user roles and permissions for your team for effective collaboration and publication management. Read more more about inviting your team to Ghost!</p>
+                            </Link>
+
+                            <Link to="/faq/the-importer/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
+                                <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Imports & Exports &raquo;</h4>
+                                <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>Publishing with Ghost gives you full ownership and access to your content and data, with sensible JSON imports and exports available at any time. Find out more about imports and migrations!</p>
                             </Link>
 
                             <Link to="/faq/design-settings/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
@@ -64,14 +69,10 @@ class FAQPage extends React.Component {
                                 <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>Adding some design touches to your Ghost publication can be done from the Admin page when logged in to your publication. From here you can add navigation and upload a custom theme.</p>
                             </Link>
 
-                            <Link to="/faq/forgot-password/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
-                                <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>How do I reset my password? &raquo;</h4>
-                                <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>In Ghost, each publication user has their own account details and password which can be reset or changed.</p>
-                            </Link>
 
                             <Link to="/faq/analytics/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
                                 <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>How can I track how many views my site is getting? &raquo;</h4>
-                                <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>Ghost integrates very easily with all 3rd party analytics tools out there, which take just a few minutes to set up.</p>
+                                <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>Ghost integrates seamlessly with all 3rd party analytics tools out there, and it takes just a few minutes to set up using the code injection feature in your publication settings. </p>
                             </Link>
 
                         </div>
