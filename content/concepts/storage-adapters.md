@@ -57,6 +57,7 @@ The storage block should have 2 items:
 * [ghost-github](https://github.com/ifvictr/ghost-github) saves to GitHub
 * [pages-store](https://github.com/zce/pages-store) saves to GitHub Pages or other pages service, e.g. Coding Pages
 * [WebDAV Storage](https://github.com/bartt/ghost-webdav-storage-adapter) saves to a WebDAV server.
+* [qiniu-store](https://github.com/zce/qiniu-store) saves to Qiniu
 
 
 ## Creating a custom storage adapter
