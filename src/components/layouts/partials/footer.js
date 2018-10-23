@@ -33,13 +33,13 @@ const Footer = () => (
                 <ul className="flex list pa0 ma0 items-center">
                     <li className={ listItemClass }><a href="https://ghost.org" className="dib pt2 mr6"><Logo /></a></li>
                     <li className={ listItemClass + ` dn db-l` }><Link to="/" className={ linkClass }>Docs Home</Link></li>
-                    <li className={ listItemClass + ` dn db-l` }><a href="https://help.ghost.org" className={ linkClass }>Help Center</a></li>
+                    <li className={ listItemClass + ` dn db-l` }><a href="https://forum.ghost.org" className={ linkClass }>Forum</a></li>
                     <li className={ listItemClass + ` dn db-l` }><a href="https://status.ghost.org" className={ linkClass }>Status</a></li>
                     <li className={ listItemClass + ` dn db-l` }><a href="https://twitter.com/tryghost" className={ linkClass }>@TryGhost</a></li>
                 </ul>
 
                 <ul className="flex list pa0 ma0 items-center">
-                    <li className={ listItemClass }><a href="http://ghost.org" className="link pa2 midgrey hover-blue dib mr0">Ghost.org</a></li>
+                    <li className={ listItemClass }><a href="https://ghost.org" className="link pa2 midgrey hover-blue dib mr0">Ghost.org</a></li>
                 </ul>
             </div>
 

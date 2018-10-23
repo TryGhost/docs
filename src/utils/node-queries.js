@@ -8,6 +8,10 @@ published_at
 tags {
     slug
     name
+    description
+    meta_title
+    meta_description
+    feature_image
 }
 `
 

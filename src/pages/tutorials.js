@@ -11,7 +11,7 @@ import MetaData from '../components/layouts/partials/meta-data'
 class TutorialsPage extends React.Component {
     render() {
         // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
-        const title = `Tutorials`
+        const title = `Tutorials - Ghost`
         const description = `Customise your Ghost publication to suit your needs with practical guides for a variety of use-cases.`
         const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
 
@@ -34,9 +34,9 @@ class TutorialsPage extends React.Component {
                         </div>
                     </div>
                     <div className={ Spirit.page.xl + `mt-vw5 mt-vw2-ns` }>
-                        <section className="grid-12 gutter-32">
+                        <section className="grid-12 gutter-row-20 gutter-20-ns gutter-36-l">
                             {posts.map(({ node }) => (
-                                <PostCard key={node.id} post={node} className="col-4" />
+                                <PostCard key={node.id} post={node} className="col-12 col-6-ns col-4-l" />
                             ))}
                         </section>
                     </div>

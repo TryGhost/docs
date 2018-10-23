@@ -1,6 +1,6 @@
 ---
 title: "Ghost Security"
-meta_title: "Core Concepts - Security"
+meta_title: "Ghost Security - Core Concepts"
 meta_description: "Ghost is committed to developing secure, reliable products utilising all modern security best practices. Find out more!"
 keywords:
     - concepts

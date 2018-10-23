@@ -12,11 +12,11 @@ import MetaData from '../components/layouts/partials/meta-data'
 class TutorialsTags extends React.Component {
     render() {
         const posts = this.props.data.allGhostPost.edges
-        const { tagName, tagLink } = this.props.pageContext
+        const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription } = this.props.pageContext
 
-        const title = `Tutorials - ${tagName} - ${this.props.data.site.siteMetadata.title}`
-        const description = ``
-        const imageUrl = ``
+        const title = tagMetaTitle || `Tutorials - ${tagName} - Ghost`
+        const description = tagMetaDescription || tagDescription || ``
+        const imageUrl = tagImage || ``
 
         return (
             <>
@@ -34,7 +34,7 @@ class TutorialsTags extends React.Component {
                             <h1 className={Spirit.h4 + `gh-integration-header-shadow pl10`}>
                                 <Link to="/tutorials/" className={`link dim white fw3`}>Tutorials</Link>
                                 <span className="white titleslash-white pl4 ml4 relative">
-                                    <Link to={tagLink} className="link dim white">{tagName}</Link>
+                                    <Link to={tagURL} className="link dim white">{tagName}</Link>
                                 </span>
                             </h1>
                         </div>
@@ -68,7 +68,11 @@ TutorialsTags.propTypes = {
     }).isRequired,
     pageContext: PropTypes.shape({
         tagName: PropTypes.string.isRequired,
-        tagLink: PropTypes.string.isRequired,
+        tagURL: PropTypes.string.isRequired,
+        tagDescription: PropTypes.string,
+        tagMetaDescription: PropTypes.string,
+        tagMetaTitle: PropTypes.string,
+        tagImage: PropTypes.string,
     }).isRequired,
 }
 

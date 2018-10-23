@@ -31,7 +31,7 @@ class Tutorial extends React.Component {
                         </div>
                     </div>
                     <div className={ Spirit.page.xl + `pb15` }>
-                        <article className="mw-content center pa15 pb10">
+                        <article className="mw-content center pa7 pa15-ns pb10">
                             <h1 className={ Spirit.h1 }>{ post.title }</h1>
                             <section className="post-content tutorial-content" dangerouslySetInnerHTML={{ __html: post.html }} />
                             {/* <Authors authors={ post.authors } /> */}

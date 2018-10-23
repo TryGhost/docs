@@ -1,6 +1,6 @@
 ---
 title: "Governance"
-meta_title: "Core Concepts - Governance"
+meta_title: "Governance at Ghost - Core Concepts"
 meta_description: "Learn about Governance at Ghost - stewarded by an independent non-profit organisation and a fully remote company!"
 keywords:
     - concepts
@@ -34,7 +34,7 @@ Core Team members are granted commit rights to Ghost projects, access to the Gho
 
 ## Community guidelines
 
-All participation in the Ghost community is subject to our incredibly straightforward [code of conduct](http://ghost.org/conduct) and wider [community guidelines](https://forum.ghost.org/t/faq-guidelines/5).
+All participation in the Ghost community is subject to our incredibly straightforward [code of conduct](https://ghost.org/conduct) and wider [community guidelines](https://forum.ghost.org/t/faq-guidelines/5).
 
 The vast majority of the Ghost community is incredible, and we work hard to make sure it stays that way. We always welcome people who are friendly and participate constructively, but we outright ban anyone who is behaving in a poisonous manner.
 

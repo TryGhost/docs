@@ -1,7 +1,5 @@
 # Docs
 
-_[Note: This project is in active early development and is not suitable for public use]_
-
 **For the most up to date Ghost documentation, please visit: https://docs.ghost.org**
 
 ---

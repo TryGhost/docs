@@ -58,7 +58,7 @@ Card.propTypes = {
 class APIPage extends React.Component {
     render() {
         // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
-        const title = `API Reference`
+        const title = `API Reference - Ghost`
         const description = `Comprehensive documentation of API clients, tools and libraries for working with Ghost.`
         const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
 
@@ -68,8 +68,8 @@ class APIPage extends React.Component {
                     data={ this.props.data }
                     location={ this.props.location }
                     type="website"
-                    title={ title || this.props.data.site.siteMetadata.title }
-                    description={ description || this.props.data.site.siteMetadata.description }
+                    title={title}
+                    description={description}
                     image={ imageUrl }
                 />
                 <Layout title="API" mainClass="bg-whitegrey-l2" bodyClass="bg-white">

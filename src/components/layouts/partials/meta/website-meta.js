@@ -12,7 +12,7 @@ class WebsiteMeta extends React.Component {
         return (
             <>
                 <Helmet>
-                    <title>{ `${title} - Ghost` }</title>
+                    <title>{title}</title>
                     <meta name="description" content={ description } />
                     <link rel="canonical" href={ canonical } />
                     <meta property="og:site_name" content={ siteMetadata.title } />
@@ -20,31 +20,32 @@ class WebsiteMeta extends React.Component {
                     <meta property="og:title" content={ title } />
                     <meta property="og:description" content={ description } />
                     <meta property="og:url" content={canonical} />
-                    <meta property="article:publisher" content="https://www.facebook.com/ghost/" />
                     <meta name="twitter:title" content={ title } />
                     <meta name="twitter:description" content={ description } />
                     <meta name="twitter:url" content={canonical} />
                     <meta name="twitter:site" content="@tryghost" />
                     <script type="application/ld+json">{`
-                        "@context": "https://schema.org/",
-                        "@type": ${type && type === `series` ? `"Series"` : `"WebSite"`},
-                        "publisher": {
-                            "@type": "Organization",
-                            "name": "${siteMetadata.title}",
-                            "logo": {
-                                "@type": "ImageObject",
-                                "url": "https://blog.ghost.org/favicon.png",
-                                "width": 60,
-                                "height": 60,
-                            }
-                        },
-                        "url": "${canonical}",
-                        ${image ? `"image": "${image}",` : ``}
-                        "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": "${siteMetadata.siteUrl}"
-                        },
-                        "description": "${description}"
+                        {
+                            "@context": "https://schema.org/",
+                            "@type": ${type && type === `series` ? `"Series"` : `"WebSite"`},
+                            "publisher": {
+                                "@type": "Organization",
+                                "name": "Ghost",
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "url": "https://blog.ghost.org/favicon.png",
+                                    "width": 60,
+                                    "height": 60
+                                }
+                            },
+                            "url": "${canonical}",
+                            ${image ? `"image": "${image}",` : ``}
+                            "mainEntityOfPage": {
+                                "@type": "WebPage",
+                                "@id": "${siteMetadata.siteUrl}"
+                            },
+                            "description": "${description}"
+                        }
                     `}</script>
                 </Helmet>
                 <ImageMeta image={image} />

@@ -18,7 +18,7 @@ export const Spirit = {
     h5: ` f6 lh-h6 f5-l lh-h5-l fw6 ma0 pa0 `,
     h6: ` f7 lh-h7 f6-l lh-h6-l fw6 ttu ma0 pa0 measure-0-2 `,
     excerpt: ` f5 lh-h5 f4-l lh-h4-l ma0 pa0 fw4 `,
-    p: ` f5 lh-p ma0 pa0 `,
+    p: ` f7 f5-l lh-p ma0 pa0 `,
     small: ` f8 lh-1-65 ma0 pa0 `,
     tiny: ` f-supersmall lh-tiny ma0 pa0 `,
 

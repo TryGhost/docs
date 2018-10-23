@@ -52,23 +52,25 @@ class FeedbackForm extends React.Component {
     }
 
     render() {
+        const containerStyle = `relative mw-content center pa5 pa15-ns pt10-ns bg-white shadow-2 mt5 mt10-ns br4`
+
         if (this.state.showSucces) {
             return (
-                <div className="relative mw-content center pa15 pt10 bg-white shadow-2 mt10 br4">
+                <div className={ containerStyle }>
                     <h4 className={Spirit.h4 + `mt1 nudge-top--2`}>Thanks for the feedback! 🤗</h4>
                     <p className={`${Spirit.small} mt1 midgrey`}>Your message has been successfully delivered to our team, who will review your suggestions shortly. If we have any followup questions we&apos;ll be in touch!</p>
                 </div>
             )
         } else if (this.state.error) {
             return (
-                <div className="relative mw-content center pa15 pt10 bg-white shadow-2 mt10 br4">
+                <div className={ containerStyle }>
                     <h4 className={Spirit.h4 + `mt1 nudge-top--2 red`}>Rats. Something went wrong 😑</h4>
                     <p className={`${Spirit.small} mt1 midgrey`}>You can try again if you like, or skip this form entirely and just send us an email directly at <a href="mailto:hello@ghost.org" className="link blue">hello@ghost.org</a>. Sorry for the trouble!</p>
                 </div>
             )
         } else {
             return (
-                <div className="relative mw-content center pa15 pt10 bg-white shadow-2 mt10 br4">
+                <div className={ containerStyle }>
                     <h4 className={Spirit.h4 + `mt1 nudge-top--2`}>Help us improve this page</h4>
                     <p className={`${Spirit.small} mt1 midgrey`}>Please let us know what&apos;s working and what&apos;s not with this page.</p>
                     <form
@@ -76,13 +78,13 @@ class FeedbackForm extends React.Component {
                         method="post"
                         action="#"
                         data-netlify="true"
-                        data-netlify-honeypot="bot-field"
+                        data-netlify-honeypot="your-message"
                         onSubmit={this.handleSubmit}
                     >
                         <p hidden>
                             <label>
-                                Don’t fill this out:{` `}
-                                <input name="bot-field" type="hidden" onChange={this.handleChange} />
+                                Your Message:{` `}
+                                <textarea name="your-message" placeholder="Your message..." onChange={this.handleChange} />
                             </label>
                         </p>
                         <div className="flex items-center">
@@ -91,7 +93,7 @@ class FeedbackForm extends React.Component {
                                 <label htmlFor="feedback-type" className="clip">Select feedback type</label>
                                 <select
                                     name="feedback-type"
-                                    className="appearance-none db ba b--whitegrey whitney pa3 bg-white w-100 h10 mt4 middarkgrey outline-0 f8"
+                                    className="appearance-none db ba b--whitegrey whitney pa3 bg-white w-100 h10 mt4 middarkgrey outline-0 f8 br3"
                                     onChange={this.handleChange}
                                 >
                                     <option>Feedback</option>
@@ -105,7 +107,7 @@ class FeedbackForm extends React.Component {
                             <input
                                 name="email"
                                 type="email"
-                                className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-1-0 bg-white ba b--whitegrey mt4 middarkgrey"
+                                className="w-50 f8 pa3 ba fw4 whitney form-text br3 db lh-normal bg-white ba b--whitegrey mt4 middarkgrey"
                                 placeholder="Email..."
                                 autoCapitalize="none"
                                 autoComplete="off"

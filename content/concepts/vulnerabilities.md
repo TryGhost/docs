@@ -40,7 +40,7 @@ We're always interested in hearing about any reproducible vulnerability that aff
 
 #### However, we're generally _not_ interested in...
 
-- [Privelige escalation](#xss--privilege-escalation-attacks) as result of trusted users publishing arbitrary JavaScript<sup><a href="#xss--privilege-escalation-attacks">1</a><sup>
+- [Privelige escalation](#privilege-escalation-attacks) as result of trusted users publishing arbitrary JavaScript<sup><a href="#privilege-escalation-attacks">1</a><sup>
 - HTTP sniffing or HTTP tampering exploits
 - Open API endpoints serving public data
 - Ghost version number disclosure

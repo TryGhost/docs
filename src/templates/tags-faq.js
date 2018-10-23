@@ -12,21 +12,21 @@ import FAQTagList from '../components/layouts/partials/faq-taglist'
 class FAQTags extends React.Component {
     render() {
         const posts = this.props.data.allGhostPost.edges
-        const { tagName, tagLink } = this.props.pageContext
+        const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription } = this.props.pageContext
 
-        const title = `FAQ - ${tagName} - Ghost`
-        const description = ``
-        const imageUrl = ``
+        const title = tagMetaTitle || `FAQ - ${tagName} - Ghost`
+        const description = tagMetaDescription || tagDescription || ``
+        const imageUrl = tagImage || ``
 
         return (
             <>
                 <MetaData
-                    data={ this.props.data }
-                    location={ this.props.location }
+                    data={this.props.data}
+                    location={this.props.location}
                     type="series"
-                    title={ title || this.props.data.site.siteMetadata.title }
-                    description={ description || this.props.data.site.siteMetadata.description }
-                    image={ imageUrl }
+                    title={title}
+                    description={description}
+                    image={imageUrl}
                 />
                 <Layout title="FAQ" headerDividerStyle="shadow">
                     <div className="bg-faq bb b--whitegrey">
@@ -34,19 +34,19 @@ class FAQTags extends React.Component {
                             <h1 className={ Spirit.h4 + `white` }>
                                 <Link to="/faq/" className={ `link dim white fw3` }>Frequently Asked Questions</Link>
                                 <span className="white titleslash-white pl4 ml4 relative">
-                                    <Link to={ tagLink } className="link dim white">{ tagName }</Link>
+                                    <Link to={tagURL} className="link dim white">{tagName}</Link>
                                 </span>
                             </h1>
                         </div>
                     </div>
-                    <div className={ Spirit.page.xl + `grid-12` }>
-                        <div className="bg-white shadow-2 br4 mt10 pa15 pt10 pb12 col-8">
+                    <div className={ Spirit.page.xl + `grid-12 pb5` }>
+                        <div className="bg-white shadow-2 br4 mt10 pa5 pa15-ns pt10-ns pb12-ns col-12 col-8-ns">
                             {/* <h4 className={ Spirit.h2 + `col-12 pb2 bb b--whitegrey mb5` }>{ tagName }</h4> */}
                             { posts.map(({ node }) => (
                                 <FAQ key={ node.id } post={ node } />
                             )) }
                         </div>
-                        <div className="col-4 pa15 pt10 mt11">
+                        <div className="col-12 col-4-ns pa5 pa15-ns pt10-ns mt11-ns">
                             <FAQTagList location={ this.props.location } />
                         </div>
                     </div>
@@ -72,7 +72,11 @@ FAQTags.propTypes = {
     }).isRequired,
     pageContext: PropTypes.shape({
         tagName: PropTypes.string.isRequired,
-        tagLink: PropTypes.string.isRequired,
+        tagURL: PropTypes.string.isRequired,
+        tagDescription: PropTypes.string,
+        tagMetaDescription: PropTypes.string,
+        tagMetaTitle: PropTypes.string,
+        tagImage: PropTypes.string,
     }).isRequired,
 }
 

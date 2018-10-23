@@ -124,6 +124,19 @@ exports.createPages = ({ graphql, actions }) => {
         toPath: `/design/styling/`,
     })
 
+    createRedirect({
+        fromPath: `/api/content/`,
+        isPermanent: true,
+        redirectInBrowser: true,
+        toPath: `https://api.ghost.org`,
+    })
+    createRedirect({
+        fromPath: `/api/admin/`,
+        isPermanent: true,
+        redirectInBrowser: true,
+        toPath: `https://api.ghost.org`,
+    })
+
     // Query for each of the tags that we defined above
     ghostQueryConfig.forEach(({ tag, section, template, tagsTemplate }) => {
         queryPromises.push(new Promise((resolve, reject) => {
@@ -160,9 +173,15 @@ exports.createPages = ({ graphql, actions }) => {
                                 context: {
                                     // Data passed to context is available
                                     // in page queries as GraphQL variables.
+                                    // TODO: this could be refactored to be an object
+                                    // not sure if it interfers with search
                                     tagSlug: tag.slug,
                                     tagName: tag.name,
-                                    tagLink: tag.url,
+                                    tagURL: tag.url,
+                                    tagDescription: tag.description,
+                                    tagImage: tag.feature_image,
+                                    tagMetaTitle: tag.meta_title,
+                                    tagMetaDescription: tag.meta_description,
                                 },
                             })
                         })

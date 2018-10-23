@@ -1,6 +1,6 @@
 ---
 title: "Hosting Ghost"
-meta_title: "Core Concepts - Hosting"
+meta_title: "Hosting a Ghost publication - Core Concepts"
 meta_description: "A short guide to running Ghost in a production environment and setting it up to serve traffic at scale."
 keywords:
     - concepts
@@ -105,7 +105,7 @@ For self-hosting Ghost in production our officially recommended stack is:
 - A server with at least 1GB memory
 - A non-root user for running `ghost` commands
 
-**Ubuntu 16.04** and **Ubuntu 18.04** are the only officially supported operating systems. Our [Ubuntu install guide](/setup/ubuntu/) walks you through how to get a server setup this way. 
+**Ubuntu 16.04** and **Ubuntu 18.04** are the only officially supported operating systems. Our [Ubuntu install guide](/install/ubuntu/) walks you through how to get a server setup this way. 
 
 Other operating systems may work fine and you're welcome to use them, but we are unable to assist with debugging or optimising for them at present - so you're on your own there. Our recommendation: Use Ubuntu, because that's where you'll have the fewest headaches.
 

@@ -1,6 +1,6 @@
 ---
 title: "Ghost Core API"
-meta_title: "Core Concepts - Core API"
+meta_title: "Ghost Core API - Concepts"
 meta_description: "At it's heart Ghost is a RESTful JSON API. Find out how to work with the Ghost API to retrieve publication content with ease."
 keywords:
     - concepts

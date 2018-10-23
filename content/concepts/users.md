@@ -1,6 +1,6 @@
 ---
 title: "Users"
-meta_title: "Core Concepts - Users"
+meta_title: "Users & Permissions in Ghost - Core Concepts"
 meta_description: "Ghost has built-in staff user permissions to allow teams to collaborate effectively. Learn more about user permissions in Ghost."
 keywords:
     - concepts

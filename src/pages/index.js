@@ -15,8 +15,8 @@ import homeIllustration from '../images/home-illustration.svg' // eslint-disable
 class APIBox extends React.Component {
     render() {
         return (
-            <Link to={ this.props.to } className="flex items-center pa7 tdn bb b--whitegrey justify-between api-hover flex-auto">
-                <span className="dib mr3 mt1 miw10 tc"><Icon name={ this.props.icon } className="stroke-middarkgrey-l2" /></span>
+            <Link to={ this.props.to } className="flex items-start pa4 pa7-ns tdn bb b--whitegrey justify-between mih-10 flex-auto api-box">
+                <span className="dib mr3 mt3 miw10 tc"><Icon name={ this.props.icon } className="stroke-middarkgrey-l2" /></span>
                 <div className="flex-auto">
                     <h4 className={ Spirit.h5 + `darkgrey mt2 mt0-l` }>{ this.props.title }</h4>
                     <p className={ Spirit.small + `midgrey` }>{ this.props.children }</p>
@@ -57,8 +57,8 @@ class IndexPage extends React.Component {
                     data={ this.props.data }
                     location={ this.props.location }
                     type="website"
-                    title={ title || this.props.data.site.siteMetadata.title }
-                    description={ description || this.props.data.site.siteMetadata.description }
+                    title={title}
+                    description={description}
                     image={imageUrl}
                 />
                 <Layout
@@ -69,10 +69,10 @@ class IndexPage extends React.Component {
                     header={<HomeHeader />}
                 >
 
-                    <div className="pt-vw3">
+                    <div className="pt-vw3 home-main-box-padding-ns">
                         <div className={ Spirit.page.xl + `grid-12 gutter-row-20 gutter-40-ns` }>
 
-                            <section className="col-6 flex flex-column justify-between">
+                            <section className="col-12 col-6-ns flex flex-column justify-between mt4 mt0-ns">
                                 <Link to="/api/" className={ Spirit.h3 + `link darkgrey hover-midgrey flex-grow-0` }>API Reference</Link>
 
                                 <Box className="mt5 tdn flex-auto flex flex-column items-stretch" elevation="1">
@@ -98,9 +98,9 @@ class IndexPage extends React.Component {
 
                             </section>
 
-                            <section className="col-6">
+                            <section className="col-12 col-6-ns mt0-ns bt bn-ns b--whitegrey nl5 nr5 nl0-ns nr0-ns ml0-ns mr0-ns pl5 pr5 pl0-ns pr0-ns pt5 pt0-ns ">
                                 <Link to="/faq/" className={ Spirit.h3 + `link darkgrey hover-midgrey` }>FAQ</Link>
-                                <div className="mt7">
+                                <div className="mt3 mt7-ns">
                                     <FAQQuestion to="/faq/upgrade-to-ghost-2-0/" title="Upgrade to Ghost 2.0">
                                         Ghost 2.0 was released in September 2018 and the second major upgrade since the platform launched. Learn how to upgrade
                                     </FAQQuestion>
@@ -119,38 +119,38 @@ class IndexPage extends React.Component {
                             </section>
                         </div>
 
-                        <section className={ Spirit.page.xl + `col-12 mt-vw3` }>
+                        {/* <section className={ Spirit.page.xl + `col-12 mt8 mt-vw3-ns bt bn-ns b--whitegrey pt5 pt0-ns` }>
                             <Link to="/integrations/" className={ Spirit.h3 + `link darkgrey hover-midgrey` }>Integrations</Link>
                             <p className={ Spirit.p + `mt2 midgrey flex flex-column flex-row-ns justify-between items-center-ns` }>
                                 All your favourite apps and tools, integrated with Ghost. <Link to="/integrations/" className="blue link din nb1 mt2 mt0-ns hover-underline-blue"><span className="flex items-center fw5">Browse all integrations <Icon name="arrow-right" className="w3 h3 ml1 fill-blue" /></span></Link>
                             </p>
-                            <div className="grid-icon-boxes mt4 mt6-l">
-                                <Box to="/integrations/feedly/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                            <div className="grid-integrations-index mt4 mt6-l">
+                                <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
                                     <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/feedly.png" alt="Feedly" />
                                     Feedly</Box>
-                                <Box to="/integrations/zapier/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                                <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
                                     <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/zapier.png" alt="Zapier" />
                                     Zapier</Box>
-                                <Box to="/integrations/slack/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                                <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
                                     <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/slack.png" alt="Slack" />
                                     Slack</Box>
-                                <Box to="/integrations/tumblr/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                                <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
                                     <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/Tumblr_Logos_2018.03.06_iOS-Icon-Blue.png" alt="Tumblr" />
                                     Tumblr</Box>
-                                <Box to="/integrations/medium/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                                <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
                                     <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/medium.png" alt="Medium" />
                                     Medium</Box>
-                                <Box to="/integrations/discourse/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                                <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
                                     <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/discourse.png" alt="Discourse" />
                                     Discourse</Box>
-                                <Box to="/integrations/surveymonkey/" className="flex br4 flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
+                                <Box to="/integrations/" className="flex br4 flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
                                     <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/Goldie_Sabaeus_RGB.svg" alt="Discourse" />
                                     SurveyMonkey</Box>
                                 <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
                                     <Icon name="more" className="w8 nudge-top--6" />
                                     See More</Box>
                             </div>
-                        </section>
+                        </section> */}
                     </div>
                 </Layout>
             </>

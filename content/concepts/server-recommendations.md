@@ -1,6 +1,6 @@
 ---
 title: "Server Recommendations"
-meta_title: "Core Concepts - Server Recommendations"
+meta_title: "Server Recommendations for Ghost - Core Concepts"
 meta_description: "The recommended options for self-hosting a Ghost publication on your server for the highest security and performance."
 keywords:
     - concepts

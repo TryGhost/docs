@@ -21,7 +21,7 @@ class DefaultLayout extends React.Component {
 
         return (
             <>
-                <Helmet defaultTitle={`Ghost Docs - Ghost`} >
+                <Helmet>
                     <html lang="en" className="fs-base" />
                     <link type="text/css" href="https://cloud.typography.com/6076934/6704592/css/fonts.css" rel="stylesheet" />
                     <body className={this.props.bodyClass + ` flex flex-column whitney f7 fw4 darkgrey readability`} />
@@ -30,7 +30,7 @@ class DefaultLayout extends React.Component {
                 <SearchWrapper>
                     {header}
 
-                    <main className={ this.props.mainClass ? this.props.mainClass : `bg-whitegrey-l2 pb10` }>
+                    <main className={ this.props.mainClass ? this.props.mainClass : `bg-whitegrey-l2 pb5 pb10-ns` }>
                         {children}
                     </main>
 

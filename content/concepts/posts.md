@@ -1,6 +1,6 @@
 ---
 title: "Posts"
-meta_title: "Core Concepts - Posts"
+meta_title: "Working with posts in Ghost - Core Concepts"
 meta_description: "Posts are the primary entry-type within Ghos. Discover how to work with posts and content."
 keywords:
     - concepts

@@ -46,23 +46,23 @@ class FAQ extends React.Component {
                     </div>
 
                     <div className={ Spirit.page.xl + `grid-12` }>
-                        <section className="bg-white br4 shadow-1 col-8 mt10 pa15 pt10 pl7">
+                        <section className="bg-white br4 shadow-1 col-12 col-8-l mt5 pa5 pl5 pl3-ns mt10-ns pa15-ns pt10-ns pl7-ns">
                             <div className="mw-content">
-                                <div className="flex items-start mb3">
-                                    <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 fw5 br-100 tc white bg-faq-color lh-1-0">?</div>
-                                    <h1 className={`${Spirit.h3} ma0 f4 nudge-bottom--4`}>{ post.title }</h1>
+                                <div className="flex flex-column flex-row-ns items-start">
+                                    <div className="flex-shrink-0 flex justify-center items-center w5 h5 w6-l h6-l mr4 fw5 br-100 tc white bg-faq-color lh-normal nudge-bottom--2-ns">?</div>
+                                    <h1 className={`${Spirit.h3} ma0 f4 nudge-bottom--4 mt3 mt0-ns`}>{ post.title }</h1>
                                 </div>
 
-                                <div className="flex items-start">
-                                    <div className="flex-shrink-0 flex justify-center items-center w6 h6 mr4 f8 fw5 br-100 tc faq-color ba b--faq-color">&raquo;</div>
+                                <div className="flex flex-column flex-row-ns items-start mt3">
+                                    <div className="flex-shrink-0 flex justify-center items-center w5 h5 w6-l h6-l mr4 f8 fw5 br-100 tc faq-color ba b--faq-color mb2 mb0-ns nudge-top--2-m">&raquo;</div>
                                     <section className="post-content faq-content" dangerouslySetInnerHTML={ { __html: post.html } } />
                                 </div>
                             </div>
                         </section>
 
-                        <div className="col-4">
+                        <div className="col-12 col-4-l">
                             { relatedPosts.length ?
-                                <div className="mw-content pa15 center mt6">
+                                <div className="mw-content-ns pl5 pa15-ns pt5 pt5-m pt15-l pb0 pb0-m pb15-l center mt6">
                                     <h4 className={ Spirit.h5 + `mb4 midgrey` }>Related Questions</h4>
                                     <RelatedPosts relatedPosts={ relatedPosts } />
                                 </div> :

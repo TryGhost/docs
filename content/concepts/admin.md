@@ -1,9 +1,16 @@
 ---
 title: "Ghost Admin"
+meta_title: "Ghost Admin - Core Concepts"
+meta_description: "Ghost is installed with a streamlined clientside admin interface for editors who need a powerful tool to manage their content."
+keywords:
+    - concepts
+    - ghost
+    - publishing
+    - architecture
 sidebar: "concepts"
 ---
 
-A streamlined clientside admin interface for editors who need a powerful tool to manage their content
+A streamlined clientside admin interface for editors who need a powerful tool to manage their content.
 
 Traditionally, people writing content and people writing code rarely agree on the best platform to use. Tools with great editors generally lack speed and extensibility, and speedy frameworks basically always sacrifice user experience.
 

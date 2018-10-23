@@ -452,6 +452,23 @@ Usage (In Ghost editor):
     margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
 }
 
+/* Some grouped styles for smaller viewports */
+@media (max-width: 500px) {
+
+    .post-content hr {
+        margin: var(--vr-6) 0 0;
+    }
+
+    .post-content hr + h1,
+    .post-content hr + h2,
+    .post-content hr + h3,
+    .post-content hr + h4,
+    .post-content hr + h5,
+    .post-content hr + h6 {
+        margin: calc(var(--vr-4) - var(--navbar-size)) 0 0;
+    }
+}
+
 
 /* Non-text content */
 
@@ -579,7 +596,7 @@ Usage (In Ghost editor):
 
 /* Tables */
 .post-content table {
-    overflow-x: auto;
+    overflow-x: scroll;
     margin: var(--vr-4) 0 0;
     width: 100%;
     border-spacing: 0;
@@ -588,9 +605,8 @@ Usage (In Ghost editor):
     white-space: nowrap;
     vertical-align: top;
     -webkit-overflow-scrolling: touch;
-    margin-left: -24px;
-    margin-right: -24px;
-    overflow: hidden;
+    display: block;
+    align-self: flex-start;
 }
 
 .post-content thead,
