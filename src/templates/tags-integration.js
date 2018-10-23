@@ -11,11 +11,11 @@ import Integration from '../components/integration-search/integration'
 class IntegrationsTags extends React.Component {
     render() {
         const posts = this.props.data.allGhostPost.edges
-        const { tagName, tagLink } = this.props.pageContext
+        const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription } = this.props.pageContext
 
-        const title = `Integrations - ${tagName} - ${this.props.data.site.siteMetadata.title}`
-        const description = ``
-        const imageUrl = ``
+        const title = tagMetaTitle || `Integrations - ${tagName} - Ghost`
+        const description = tagMetaDescription || tagDescription || ``
+        const imageUrl = tagImage || ``
 
         return (
             <>
@@ -34,7 +34,7 @@ class IntegrationsTags extends React.Component {
                                 <h1 className={Spirit.h4 + `gh-integration-header-shadow pl10`}>
                                     <Link to="/integrations/" className={`link dim white fw3`}>Ghost Integrations</Link>
                                     <span className="white titleslash-white pl4 ml4 relative">
-                                        <Link to={tagLink} className="link dim white">{tagName}</Link>
+                                        <Link to={tagURL} className="link dim white">{tagName}</Link>
                                     </span>
                                 </h1>
                             </div>
@@ -81,7 +81,11 @@ IntegrationsTags.propTypes = {
     }).isRequired,
     pageContext: PropTypes.shape({
         tagName: PropTypes.string.isRequired,
-        tagLink: PropTypes.string.isRequired,
+        tagURL: PropTypes.string.isRequired,
+        tagDescription: PropTypes.string,
+        tagMetaDescription: PropTypes.string,
+        tagMetaTitle: PropTypes.string,
+        tagImage: PropTypes.string,
     }).isRequired,
 }
 
