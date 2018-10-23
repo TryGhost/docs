@@ -74,7 +74,7 @@ class FeedbackForm extends React.Component {
                     <h4 className={Spirit.h4 + `mt1 nudge-top--2`}>Help us improve this page</h4>
                     <p className={`${Spirit.small} mt1 midgrey`}>Please let us know what&apos;s working and what&apos;s not with this page.</p>
                     <form
-                        name="feedback-form"
+                        name="feedback"
                         method="post"
                         action="#"
                         data-netlify="true"
@@ -125,6 +125,14 @@ class FeedbackForm extends React.Component {
                             required="required"
                             onChange={this.handleChange}
                         />
+                        <p hidden>
+                            <label htmlFor="location" className="clip">Location</label>
+                            <input
+                                name="location"
+                                placeholder={this.props.location.pathname}
+                                onChange={this.handleChange}
+                            />
+                        </p>
                         <button className="mt4 pa3 pl7 pr7 button-blue white bn whitney f8" type="submit">Send</button>
                     </form>
                 </div>
