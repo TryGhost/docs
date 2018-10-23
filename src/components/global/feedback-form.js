@@ -41,7 +41,7 @@ class FeedbackForm extends React.Component {
             body: encode({
                 "form-name": form.getAttribute(`name`),
                 "feedback-type": `Feedback`,
-                page: this.props.location.pathname,
+                location: this.props.location.href,
                 ...this.state,
             }),
         })
@@ -125,6 +125,14 @@ class FeedbackForm extends React.Component {
                             required="required"
                             onChange={this.handleChange}
                         />
+                        <p hidden>
+                            <label htmlFor="location" className="clip">Location</label>
+                            <input
+                                name="location"
+                                placeholder={this.props.location.href}
+                                onChange={this.handleChange}
+                            />
+                        </p>
                         <button className="mt4 pa3 pl7 pr7 button-blue white bn whitney f8" type="submit">Send</button>
                     </form>
                 </div>
@@ -135,7 +143,7 @@ class FeedbackForm extends React.Component {
 
 FeedbackForm.propTypes = {
     location: PropTypes.shape({
-        pathname: PropTypes.string.isRequired,
+        href: PropTypes.string.isRequired,
     }).isRequired,
 }
 export default FeedbackForm
