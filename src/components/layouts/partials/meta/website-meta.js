@@ -25,25 +25,27 @@ class WebsiteMeta extends React.Component {
                     <meta name="twitter:url" content={canonical} />
                     <meta name="twitter:site" content="@tryghost" />
                     <script type="application/ld+json">{`
-                        "@context": "https://schema.org/",
-                        "@type": ${type && type === `series` ? `"Series"` : `"WebSite"`},
-                        "publisher": {
-                            "@type": "Organization",
-                            "name": "Ghost",
-                            "logo": {
-                                "@type": "ImageObject",
-                                "url": "https://blog.ghost.org/favicon.png",
-                                "width": 60,
-                                "height": 60,
-                            }
-                        },
-                        "url": "${canonical}",
-                        ${image ? `"image": "${image}",` : ``}
-                        "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": "${siteMetadata.siteUrl}"
-                        },
-                        "description": "${description}"
+                        {
+                            "@context": "https://schema.org/",
+                            "@type": ${type && type === `series` ? `"Series"` : `"WebSite"`},
+                            "publisher": {
+                                "@type": "Organization",
+                                "name": "Ghost",
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "url": "https://blog.ghost.org/favicon.png",
+                                    "width": 60,
+                                    "height": 60
+                                }
+                            },
+                            "url": "${canonical}",
+                            ${image ? `"image": "${image}",` : ``}
+                            "mainEntityOfPage": {
+                                "@type": "WebPage",
+                                "@id": "${siteMetadata.siteUrl}"
+                            },
+                            "description": "${description}"
+                        }
                     `}</script>
                 </Helmet>
                 <ImageMeta image={image} />

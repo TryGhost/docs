@@ -97,34 +97,36 @@ class ArticleMetaGhost extends React.Component {
                     <meta name="twitter:site" content="@tryghost" />
                     <meta name="twitter:creator" content="@tryghost" />
                     <script type="application/ld+json">{`
-                        "@context": "https://schema.org/",
-                        "@type": "Article",
-                        "publisher": {
-                            "@type": "Organization",
-                            "name":  "Ghost",
-                            "logo": {
-                                "@type": "ImageObject",
-                                "url": "https://blog.ghost.org/favicon.png",
-                                "width": 60,
-                                "height": 60,
+                        {
+                            "@context": "https://schema.org/",
+                            "@type": "Article",
+                            "publisher": {
+                                "@type": "Organization",
+                                "name":  "Ghost",
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "url": "https://blog.ghost.org/favicon.png",
+                                    "width": 60,
+                                    "height": 60
+                                }
+                            },
+                            "author": {
+                                "@type": "Person",
+                                "name": "${author.name}",
+                                ${author.image ? `"image": "${author.image}",` : ``}
+                                ${author.sameAsArray ? `"sameAs": ${author.sameAsArray}` : ``}
+                            },
+                            ${publicTags.length ? `"keywords": "${_.join(publicTags, `, `)}",` : ``}
+                            "headline": "${ghostPost.meta_title || ghostPost.title}",
+                            "url": "${canonical}",
+                            "datePublished": "${ghostPost.published_at}",
+                            "dateModified": "${ghostPost.updated_at}",
+                            ${ghostPost.feature_image ? `"image": "${ghostPost.feature_image}",` : ``}
+                            "description": "${ghostPost.meta_description || excerpt}",
+                            "mainEntityOfPage": {
+                                "@type": "WebPage",
+                                "@id": "${siteMetadata.siteUrl}"
                             }
-                        },
-                        "author": {
-                            "@type": "Person",
-                            "name": "${author.name}",
-                            ${author.image ? `"image": "${author.image}",` : ``}
-                            ${author.sameAsArray ? `"sameAs": ${author.sameAsArray}` : ``}
-                        },
-                        ${publicTags.length ? `"keywords": "${_.join(publicTags, `, `)}",` : ``}
-                        "headline": "${ghostPost.meta_title || ghostPost.title}",
-                        "url": "${canonical}",
-                        "datePublished": "${ghostPost.published_at}",
-                        "dateModified": "${ghostPost.updated_at}",
-                        ${ghostPost.feature_image ? `"image": "${ghostPost.feature_image}",` : ``}
-                        "description": "${ghostPost.meta_description || excerpt}",
-                        "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": "${siteMetadata.siteUrl}"
                         }
                     `}</script>
                 </Helmet>

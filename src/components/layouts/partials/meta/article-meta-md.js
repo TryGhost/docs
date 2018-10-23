@@ -42,36 +42,38 @@ class ArticleMetaMD extends React.Component {
                     <meta name="twitter:site" content="@tryghost" />
                     <meta name="twitter:creator" content="@tryghost" />
                     <script type="application/ld+json">{`
-                        "@context": "https://schema.org/",
-                        "@type": "Article",
-                        "publisher": {
-                            "@type": "Organization",
-                            "name":  "Ghost",
-                            "logo": {
-                                "@type": "ImageObject",
-                                "url": "https://blog.ghost.org/favicon.png",
-                                "width": 60,
-                                "height": 60,
+                        {
+                            "@context": "https://schema.org/",
+                            "@type": "Article",
+                            "publisher": {
+                                "@type": "Organization",
+                                "name":  "Ghost",
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "url": "https://blog.ghost.org/favicon.png",
+                                    "width": 60,
+                                    "height": 60
+                                }
+                            },
+                            "author": {
+                                "@type": "Person",
+                                "name": "Ghost",
+                                "sameAs: [
+                                    "https://ghost.org/",
+                                    "https://www.facebook.com/ghost/",
+                                    "https://twitter.com/tryghost/"
+                                ]
+                            },
+                            ${fm.keywords.length ? `"keywords": "${_.join(fm.keywords, `, `)}",` : ``}
+                            "headline": "${fm.meta_title || fm.title}",
+                            "url": "${canonical}",
+                            "datePublished": "${isoDate}",
+                            ${fm.image ? `"fm.image": "${fm.image}",` : ``}
+                            "description": "${fm.meta_description || post.excerpt}",
+                            "mainEntityOfPage": {
+                                "@type": "WebPage",
+                                "@id": "${siteMetadata.siteUrl}"
                             }
-                        },
-                        "author": {
-                            "@type": "Person",
-                            "name": "Ghost",
-                            "sameAs: [
-                                "https://ghost.org/",
-                                "https://www.facebook.com/ghost/",
-                                "https://twitter.com/tryghost/"
-                            ]
-                        },
-                        ${fm.keywords.length ? `"keywords": "${_.join(fm.keywords, `, `)}",` : ``}
-                        "headline": "${fm.meta_title || fm.title}",
-                        "url": "${canonical}",
-                        "datePublished": "${isoDate}",
-                        ${fm.image ? `"fm.image": "${fm.image}",` : ``}
-                        "description": "${fm.meta_description || post.excerpt}",
-                        "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": "${siteMetadata.siteUrl}"
                         }
                     `}</script>
                 </Helmet>
