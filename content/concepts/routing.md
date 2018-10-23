@@ -167,7 +167,7 @@ filter: author:steve+tag:x # must be written by "steve" and have tag "x"
 
 ### data
 
-The `data` property is used to fetch resources using Ghost’s API for use in the collection's template. This property can fetch arbitrary posts, pages, tags and authors to be made available in a handlebars template, avoiding the need to use `{{get}}` everywhere.
+The `data` property is used to fetch resources using Ghost’s API for use in the template. This property can fetch arbitrary posts, pages, tags and authors to be made available in a handlebars template, avoiding the need to use `{{get}}` everywhere.
 
 Another important use for the `data` property is to associate resources with particular URLs so that accessing a resource from a different URL automatically redirects, avoiding duplicate content and confusing site structures.
 
