@@ -113,7 +113,7 @@ class ArticleMetaGhost extends React.Component {
                             "author": {
                                 "@type": "Person",
                                 "name": "${author.name}",
-                                ${author.image ? `"image": "${author.image}",` : ``}
+                                ${author.image ? author.sameAsArray ? `"image": "${author.image}",` : `"image": "${author.image}"` : ``}
                                 ${author.sameAsArray ? `"sameAs": ${author.sameAsArray}` : ``}
                             },
                             ${publicTags.length ? `"keywords": "${_.join(publicTags, `, `)}",` : ``}

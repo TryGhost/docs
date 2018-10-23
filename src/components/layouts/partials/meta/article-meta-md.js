@@ -58,7 +58,7 @@ class ArticleMetaMD extends React.Component {
                             "author": {
                                 "@type": "Person",
                                 "name": "Ghost",
-                                "sameAs: [
+                                "sameAs": [
                                     "https://ghost.org/",
                                     "https://www.facebook.com/ghost/",
                                     "https://twitter.com/tryghost/"
