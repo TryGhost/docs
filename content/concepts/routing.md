@@ -31,7 +31,7 @@ The routes configuration file is a YAML file, which is located in `content/setti
 
 The `routes.yaml` file is divided into three sections: `routes`, `collections`, and `taxonomies`. The default file looks like this:
 
-```
+```yaml
 routes:
 
 collections:
@@ -58,7 +58,7 @@ A route is a single URL that is assigned a specific template and/or set of data.
 
 Routes can be configured as shown:
 
-```
+```yaml
 routes:
   /custom-slug/: # index URL
     controller:   # type of route, 'channel' is the only supported value (optional)
@@ -70,7 +70,7 @@ routes:
 
 
 For example, to set a custom home page on `/` as well as about pages at `about/careers` and `about/team` then use routes to define the URL routing. Read more about [custom pages](/tutorials/custom-home-page/).
-```
+```yaml
 routes:
   /: home
   /about/careers/: about-careers
@@ -87,7 +87,7 @@ Collections allow you to create groups of posts that match a filter. A collectio
 
 It's possible to have a single collection that contains all posts (like the default collection). Alternatively you can use multiple collections to split your site into distinct areas such as `/blog/` and `/podcast/`. Structure:
 
-```
+```yaml
 collections:
   /blog/: # index URL
     permalink: # post URL (required)
@@ -108,7 +108,7 @@ Taxonomies are used to group posts based on a common relation. In Ghost, this is
 Taxonomies allow you to amend the taxonomy permalink to something more appropriate for your publication. Unlike a collection, a taxonomy doesn’t alter the URL of individual posts,
 
 Taxonomies are structured like this:
-```
+```yaml
 taxonomies:
   type: /url/{slug}/
   ```
@@ -135,7 +135,7 @@ This means you are able to create subsets and supersets by combining or dividing
 
 Unlike collections, creating a channel does not change a posts individual URL. Instead they allow for creating a view of content along with pagination that is not possible to do with the `{{get}}` helper alone.
 
-```
+```yaml
 routes:
   /rumours/mobile/:
     controller: channel
@@ -156,7 +156,7 @@ The `filter` property follows the same syntax as the API’s filter parameter an
 
 Some examples for filtering posts are:
 
-```
+```yaml
 filter: tag:x+tag:y # must have both "x" and "y" tags (+ = AND)
 filter: tag:x,tag:y # can have either "x" or "y" tags (, = OR)
 filter: tag:-x+tag:y # must have tag "y" but not tag "x" (- = NOT)
@@ -172,7 +172,7 @@ The `data` property is used to fetch resources using Ghost’s API for use in th
 Another important use for the `data` property is to associate resources with particular URLs so that accessing a resource from a different URL automatically redirects, avoiding duplicate content and confusing site structures.
 
 **Longform structure:**
-```
+```yaml
 data:
   name: # variable name in the template - {{name}}
     resource:   # tags/users/posts (required)
@@ -188,7 +188,7 @@ data:
 ```
 
 **Shorthand structure:**
-```
+```yaml
 routes:
   /:
     data: resource-type.slug
@@ -216,7 +216,7 @@ Custom `rss` feeds can be set with the `content_type` property and a template.
 ### content_type
 
 Use this property this to specify a route returns something other than HTML. For example to create a custom RSS feed:
-```
+```yaml
 routes:
   /podcast/rss/:
     template: podcast/rss
@@ -230,7 +230,7 @@ routes:
 The index URL property (or collection "key") determines where the archive pages for a collection appear.
 
 For example, in the following example, the index URL is `/blog/`:
-```
+```yaml
 collections:
   /blog/:
     permalink: /blog/{slug}/
@@ -265,7 +265,7 @@ The `template` property is optional but if specified can be a single value or an
 
 Here's an example of how to use `template` to specify which template will be rendered:
 
-```
+```yaml
 collections:
   /podcast/:
     permalink: /podcast/{slug}/
