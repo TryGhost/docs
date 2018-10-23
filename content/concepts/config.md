@@ -1,6 +1,6 @@
 ---
 title: "Config"
-meta_title: "Core Concepts - Config Options"
+meta_title: "Configuring Ghost - Core Concepts"
 meta_description: "Find out how to configure your site and override Ghost's default behaviour with robust config options. Read more 👉"
 keywords:
     - config

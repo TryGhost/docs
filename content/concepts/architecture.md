@@ -1,6 +1,6 @@
 ---
 title: "Architecture"
-meta_title: "Core Concepts - Architecture Overview"
+meta_title: "Ghost Architecture - Core Concepts"
 meta_description: "Ghost is structured as a modern, decoupled web application. Discover how things fit together at Ghost."
 keywords:
     - concepts

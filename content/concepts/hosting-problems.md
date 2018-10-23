@@ -1,7 +1,7 @@
 ---
 title: "Troubleshooting"
-meta_title: "Core Concepts - Troubleshooting"
-meta_description: "Posts are the primary entry-type within Ghos. Discover how to work with posts and content."
+meta_title: "Troubleshooting with Ghost - Core Concepts"
+meta_description: "If you're having trouble with running Ghost, here's a quick guide to resolving almost any problem."
 keywords:
     - concepts
     - ghost
@@ -10,7 +10,7 @@ keywords:
 sidebar: "concepts"
 ---
 
-If you're having trouble with running Ghost, here's a quick guide to resolving almost any problem
+If you're having trouble with running Ghost, here's a quick guide to resolving almost any problem.
 
 
 ## Search the docs

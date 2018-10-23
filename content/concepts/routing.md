@@ -1,6 +1,6 @@
 ---
 title: "Dynamic Routing"
-meta_title: "Core Concepts - Dynamic Routing"
+meta_title: "Dynamic Routing Configuration in Ghost - Core Concepts"
 meta_description: "Configure your site in almost any way you want by mapping content and templates to URL patterns with Dynamic Routing. Read more 👉"
 keywords:
     - routing

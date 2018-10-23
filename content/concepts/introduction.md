@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-meta_title: "Core Concepts - Introduction"
+meta_title: "Introduction to Ghost - Core Concepts"
 meta_description: "Ghost is an open source, professional publishing platform built on a modern Node.js technology stack — designed for teams who need power, flexibility and performance."
 keywords:
     - concepts

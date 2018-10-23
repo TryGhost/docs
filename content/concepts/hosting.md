@@ -1,6 +1,6 @@
 ---
 title: "Hosting Ghost"
-meta_title: "Core Concepts - Hosting"
+meta_title: "Hosting a Ghost publication - Core Concepts"
 meta_description: "A short guide to running Ghost in a production environment and setting it up to serve traffic at scale."
 keywords:
     - concepts

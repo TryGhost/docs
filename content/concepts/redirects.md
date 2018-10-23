@@ -1,6 +1,6 @@
 ---
 title: "Redirects"
-meta_title: "Core Concepts - Redirects"
+meta_title: "Redirects in Ghost - Core Concepts"
 meta_description: "Redirects can be created and edited within a single, accessible file. Read more about working redirects in Ghost."
 keywords:
     - redirects

@@ -1,6 +1,6 @@
 ---
 title: "Development Principles"
-meta_title: "Core Concepts - Development Principles"
+meta_title: "Ghost Development Principles - Core Concepts"
 meta_description: "Ghost is developed by a small core team. Find out more about feature requests and the Ghost product roadmap!"
 keywords:
     - concepts

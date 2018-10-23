@@ -1,6 +1,6 @@
 ---
 title: "Ecosystem"
-meta_title: "Core Concepts - Ecosystem"
+meta_title: "The Ghost Ecosystem - Core Concepts"
 meta_description: "Become familiar with the ecosystem of Ghost with a top-level overview and useful links to get you started."
 keywords:
     - concepts

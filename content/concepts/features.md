@@ -1,7 +1,7 @@
 ---
 title: "Features"
-meta_title: "Core Concepts - Features"
-meta_description: "Ghost comes with powerful features built  directly into the core software which are customisable and extensible to suit your needs."
+meta_title: "Ghost Features - Core Concepts"
+meta_description: "Ghost comes with powerful features built directly into the core software which are customisable and extensible to suit your needs."
 keywords:
     - concepts
     - ghost
