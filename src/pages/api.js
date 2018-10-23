@@ -68,8 +68,8 @@ class APIPage extends React.Component {
                     data={ this.props.data }
                     location={ this.props.location }
                     type="website"
-                    title={ title || this.props.data.site.siteMetadata.title }
-                    description={ description || this.props.data.site.siteMetadata.description }
+                    title={title}
+                    description={description}
                     image={ imageUrl }
                 />
                 <Layout title="API" mainClass="bg-whitegrey-l2" bodyClass="bg-white">

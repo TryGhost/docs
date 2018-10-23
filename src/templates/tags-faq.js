@@ -12,22 +12,21 @@ import FAQTagList from '../components/layouts/partials/faq-taglist'
 class FAQTags extends React.Component {
     render() {
         const posts = this.props.data.allGhostPost.edges
-        const { tagName, tagLink } = this.props.pageContext
+        const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription } = this.props.pageContext
 
-        // TODO: Replace with real title and description for FAQTags
-        const title = `FAQ - ${tagName} - Ghost`
-        const description = ``
-        const imageUrl = ``
+        const title = tagMetaTitle || `FAQ - ${tagName} - Ghost`
+        const description = tagMetaDescription || tagDescription || ``
+        const imageUrl = tagImage || ``
 
         return (
             <>
                 <MetaData
-                    data={ this.props.data }
-                    location={ this.props.location }
+                    data={this.props.data}
+                    location={this.props.location}
                     type="series"
-                    title={ title || this.props.data.site.siteMetadata.title }
-                    description={ description || this.props.data.site.siteMetadata.description }
-                    image={ imageUrl }
+                    title={title}
+                    description={description}
+                    image={imageUrl}
                 />
                 <Layout title="FAQ" headerDividerStyle="shadow">
                     <div className="bg-faq bb b--whitegrey">
@@ -35,7 +34,7 @@ class FAQTags extends React.Component {
                             <h1 className={ Spirit.h4 + `white` }>
                                 <Link to="/faq/" className={ `link dim white fw3` }>Frequently Asked Questions</Link>
                                 <span className="white titleslash-white pl4 ml4 relative">
-                                    <Link to={ tagLink } className="link dim white">{ tagName }</Link>
+                                    <Link to={tagURL} className="link dim white">{tagName}</Link>
                                 </span>
                             </h1>
                         </div>
@@ -73,7 +72,11 @@ FAQTags.propTypes = {
     }).isRequired,
     pageContext: PropTypes.shape({
         tagName: PropTypes.string.isRequired,
-        tagLink: PropTypes.string.isRequired,
+        tagURL: PropTypes.string.isRequired,
+        tagDescription: PropTypes.string,
+        tagMetaDescription: PropTypes.string,
+        tagMetaTitle: PropTypes.string,
+        tagImage: PropTypes.string,
     }).isRequired,
 }
 

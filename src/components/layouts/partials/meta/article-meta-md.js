@@ -19,7 +19,7 @@ class ArticleMetaMD extends React.Component {
         return (
             <>
                 <Helmet>
-                    <title>{`${fm.meta_title || fm.title} - Ghost`}</title>
+                    <title>{fm.meta_title || fm.title}</title>
                     <meta name="description" content={ fm.meta_description || post.excerpt } />
                     <link rel="canonical" href={ canonical } />
 
@@ -46,7 +46,7 @@ class ArticleMetaMD extends React.Component {
                         "@type": "Article",
                         "publisher": {
                             "@type": "Organization",
-                            "name":  "${siteMetadata.title}",
+                            "name":  "Ghost",
                             "logo": {
                                 "@type": "ImageObject",
                                 "url": "https://blog.ghost.org/favicon.png",

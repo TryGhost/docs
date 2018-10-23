@@ -47,7 +47,7 @@ class ArticleMetaGhost extends React.Component {
         return (
             <>
                 <Helmet>
-                    <title>{`${ghostPost.meta_title || ghostPost.title} - Ghost`}</title>
+                    <title>{ghostPost.meta_title || ghostPost.title}</title>
                     <meta name="description" content={ ghostPost.meta_description || excerpt } />
                     <link rel="canonical" href={ canonical } />
 
@@ -101,7 +101,7 @@ class ArticleMetaGhost extends React.Component {
                         "@type": "Article",
                         "publisher": {
                             "@type": "Organization",
-                            "name":  "${siteMetadata.title}",
+                            "name":  "Ghost",
                             "logo": {
                                 "@type": "ImageObject",
                                 "url": "https://blog.ghost.org/favicon.png",

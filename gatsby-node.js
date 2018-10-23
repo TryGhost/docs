@@ -173,9 +173,15 @@ exports.createPages = ({ graphql, actions }) => {
                                 context: {
                                     // Data passed to context is available
                                     // in page queries as GraphQL variables.
+                                    // TODO: this could be refactored to be an object
+                                    // not sure if it interfers with search
                                     tagSlug: tag.slug,
                                     tagName: tag.name,
-                                    tagLink: tag.url,
+                                    tagURL: tag.url,
+                                    tagDescription: tag.description,
+                                    tagImage: tag.feature_image,
+                                    tagMetaTitle: tag.meta_title,
+                                    tagMetaDescription: tag.meta_description,
                                 },
                             })
                         })

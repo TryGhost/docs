@@ -21,8 +21,8 @@ class FAQPage extends React.Component {
                     data={ this.props.data }
                     location={ this.props.location }
                     type="website"
-                    title={ title || this.props.data.site.siteMetadata.title }
-                    description={ description || this.props.data.site.siteMetadata.description }
+                    title={title}
+                    description={description}
                     image={ imageUrl }
                 />
                 <Layout title="FAQ" headerDividerStyle="shadow">
@@ -73,7 +73,6 @@ class FAQPage extends React.Component {
                                 <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>How can I track how many views my site is getting? &raquo;</h4>
                                 <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>Ghost integrates very easily with all 3rd party analytics tools out there, which take just a few minutes to set up.</p>
                             </Link>
-
 
                         </div>
                         <div className="col-12 col-4-ns pa5 pa15-ns pt10-ns mt11-ns ">
