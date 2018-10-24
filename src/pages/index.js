@@ -126,25 +126,25 @@ class IndexPage extends React.Component {
                             </p>
                             <div className="grid-integrations-index mt4 mt6-l">
                                 <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                                    <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/feedly.png" alt="Feedly" />
+                                    <img className="w10 mb3" src="https://docs.ghost.io/content/images/2018/09/feedly.png" alt="Feedly" />
                                     Feedly</Box>
                                 <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                                    <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/zapier.png" alt="Zapier" />
+                                    <img className="w10 mb3" src="https://docs.ghost.io/content/images/2018/09/zapier.png" alt="Zapier" />
                                     Zapier</Box>
                                 <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                                    <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/slack.png" alt="Slack" />
+                                    <img className="w10 mb3" src="https://docs.ghost.io/content/images/2018/09/slack.png" alt="Slack" />
                                     Slack</Box>
                                 <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                                    <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/Tumblr_Logos_2018.03.06_iOS-Icon-Blue.png" alt="Tumblr" />
+                                    <img className="w10 mb3" src="https://docs.ghost.io/content/images/2018/09/Tumblr_Logos_2018.03.06_iOS-Icon-Blue.png" alt="Tumblr" />
                                     Tumblr</Box>
                                 <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                                    <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/medium.png" alt="Medium" />
+                                    <img className="w10 mb3" src="https://docs.ghost.io/content/images/2018/09/medium.png" alt="Medium" />
                                     Medium</Box>
                                 <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                                    <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/discourse.png" alt="Discourse" />
+                                    <img className="w10 mb3" src="https://docs.ghost.io/content/images/2018/09/discourse.png" alt="Discourse" />
                                     Discourse</Box>
                                 <Box to="/integrations/" className="flex br4 flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
-                                    <img className="w10 mb3" src="https://docs-2.ghost.io/content/images/2018/09/Goldie_Sabaeus_RGB.svg" alt="Discourse" />
+                                    <img className="w10 mb3" src="https://docs.ghost.io/content/images/2018/09/Goldie_Sabaeus_RGB.svg" alt="Discourse" />
                                     SurveyMonkey</Box>
                                 <Box to="/integrations/" className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn gh-integration-card" onWhite="false" elevation="2">
                                     <Icon name="more" className="w8 nudge-top--6" />

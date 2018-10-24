@@ -10,9 +10,9 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 
 # Make edit links work
 
-/integrations/*/edit                https://docs-2.ghost.io/:splat/edit  302!
-/tutorials/*/edit                   https://docs-2.ghost.io/:splat/edit  302!
-/faq/*/edit                         https://docs-2.ghost.io/:splat/edit  302!
+/integrations/*/edit                https://docs.ghost.io/:splat/edit  302!
+/tutorials/*/edit                   https://docs.ghost.io/:splat/edit  302!
+/faq/*/edit                         https://docs.ghost.io/:splat/edit  302!
 /api/*/edit                         https://github.com/tryghost/docs-api/tree/master/:splat.md  302!
 /concepts/*/edit                    https://github.com/TryGhost/docs/tree/master/content/concepts/:splat.md  302!
 /setup/*/edit                       https://github.com/TryGhost/docs/tree/master/content/setup/:splat.md     302!
