@@ -19,15 +19,13 @@ This article walks you through the core concepts of Dynamic Routing with Ghost. 
 
 ### When to use dynamic routing
 
-When building a custom publication using Ghost’s theme layer, you can utilise Dynamic Routing to configure your site.
-
-If you’re using a different front end for your publication, refer to the official documentation of the site builder you are using for configuration guidelines. Read more about using an alternative front end with Ghost.
+When building a custom publication using Ghost’s theme layer on the front end, you can utilise Dynamic Routing to configure your site in pretty much any way you want. If you're interested using a different front end on your Ghost publication such as a static site generator or a custom front end check out the [front end](/concepts/front-end/) documentation.
 
 ---
 
 ## Routing configurations
 
-The routes configuration file is a YAML file, which is located in `content/settings/routes.yaml`.
+The routes configuration file is a YAML file, which is located in: `content/settings/routes.yaml`.
 
 The `routes.yaml` file is divided into three sections: `routes`, `collections`, and `taxonomies`. The default file looks like this:
 
@@ -45,7 +43,7 @@ taxonomies:
   author: /author/{slug}/
 ```
 
-The rest of this article explains how `routes`, `collections` and `taxonomies` function, followed by how all of the available `YAML` properties can be used in each.
+The rest of this article explains how `routes`, `collections` and `taxonomies` function, followed by how all of the available `YAML` properties can be used. 
 
 > **Strict indentation**
 > YAML files use whitespace indentation to denote structure - using tabs is invalid. Having mismatched indentation is the most common reason for a YAML file not being valid.
@@ -56,7 +54,7 @@ The rest of this article explains how `routes`, `collections` and `taxonomies` f
 
 A route is a single URL that is assigned a specific template and/or set of data. Routes allow you to create custom content and templates such as a home page, an about page or a custom RSS feed.
 
-Routes can be configured as shown:
+Routes are configured as follows:
 
 ```yaml
 routes:
@@ -69,7 +67,7 @@ routes:
   ```
 
 
-For example, to set a custom home page on `/` as well as about pages at `about/careers` and `about/team` then use routes to define the URL routing. Read more about [custom pages](/tutorials/custom-home-page/).
+For example, to set a custom home page on `/` as well as about pages at `about/careers` and `about/team`, you'd use routes to define the URL routing. 
 ```yaml
 routes:
   /: home
@@ -77,15 +75,19 @@ routes:
   /about/team/: about-team
   ```
 
+For more information about custom pages, check out the [custom pages](/tutorials/custom-home-page/) tutorial.
+
 ---
 
 ## Collections
 
-Collections allow you to create groups of posts that match a filter. A collection alters the URL for all posts that match the filter with a permalink. Each collection has an index URL where all posts in that collection are listed and paginated.
+Collections allow you to create groups of posts that match a filter, and alters the URL for all posts. Each collection has an index URL where all posts in that collection are listed and paginated and posts can only belong to one collection. 
+
+Use a collection when you want to create distinct areas on your site, where posts belong explicitly to one group or another. If you're building a content hub that does not affect the URL of posts, check out the `controller: channel` [property](/concepts/routing/#controller-channels). 
 
 ### Content structure
 
-It's possible to have a single collection that contains all posts (like the default collection). Alternatively you can use multiple collections to split your site into distinct areas such as `/blog/` and `/podcast/`. Structure:
+It's possible to have a single collection that contains all posts - like the default `index` collection. Alternatively you can use multiple collections to split your site into distinct areas such as `/blog/` and `/podcast/`. Example structure:
 
 ```yaml
 collections:
@@ -97,7 +99,7 @@ collections:
     template:  # template or list of templates to use (optional)
   ```
 
-Ordering collections in the `routes.yaml` file is important. Posts that match the filters of multiple collections appears within the first collection listed with a match, and not in other collections. Read more about [creating custom collections](/tutorials/creating-content-collections/).
+Ordering collections in the `routes.yaml` file is important. Posts that match the filters of multiple collections appears within the first collection listed with a match, and not in other collections. Read more about [creating custom collections](/tutorials/creating-content-collections/) in this tutorial.
 
 ---
 
@@ -105,7 +107,7 @@ Ordering collections in the `routes.yaml` file is important. Posts that match th
 
 Taxonomies are used to group posts based on a common relation. In Ghost, this is always the author of the post, or using tags.
 
-Taxonomies allow you to amend the taxonomy permalink to something more appropriate for your publication. Unlike a collection, a taxonomy doesn’t alter the URL of individual posts,
+Using taxonomies, Ghost will automatically generate URLs like `/tag/getting-started/` which will render a list of posts that have this tag. Posts can appear in multiple taxonomies and the URL of the post is not affected. 
 
 Taxonomies are structured like this:
 ```yaml
@@ -113,12 +115,11 @@ taxonomies:
   type: /url/{slug}/
   ```
 
-
 * The `type` is one of `tag` or `author`,
 * the `/url/{slug}/` is the permalink for that taxonomy,
 * and `{slug}` represents the URL value of the `tag` or the `author`.
 
-In the Ghost theme layer, template files can be used to specify how a particular tag or author’s posts are rendered at the permalink. Find out more about changing. Read more about [custom taxonomies](/tutorials/change-url-for-tags-authors/).
+In the Ghost theme layer, template files can be used to specify how a particular tag or author’s posts are rendered at the permalink. Taxonomies also allow you to amend the taxonomy permalink to something more appropriate for your publication. Read more about [custom taxonomies](/tutorials/change-url-for-tags-authors/) in this tutorial.
 
 ---
 
@@ -129,11 +130,11 @@ Now you have a concept of how routes, collections and taxonomies work at a high 
 
 ### controller (channels)
 
-The `controller` property has one supported value: `channel`. A channel is a paginated index of posts that match a specified filter, such as all posts tagged with "news" and "fashion".
+The `controller` property has one supported value: `channel`. A channel is a paginated index of posts that match a specified filter. This allows you to create subsets and supersets by combining or dividing existing posts into content hubs. 
 
-This means you are able to create subsets and supersets by combining or dividing existing content.
+Unlike collections, creating a channel doesn't change a posts individual URL and posts can belong to multiple channels. For example, you can have a channel for all featured posts, and another for all featured posts with a particular tag or author. 
 
-Unlike collections, creating a channel does not change a posts individual URL. Instead they allow for creating a view of content along with pagination that is not possible to do with the `{{get}}` helper alone.
+**A channel is similar to a search results page** - it's a filtered view of your site content along with pagination. Here's an example of some channels filtering by tag in the `routes.yaml` file: 
 
 ```yaml
 routes:
@@ -145,8 +146,7 @@ routes:
     filter: tag:[imac,mac-pro]
 ```
 
-A `filter` must be used in combination with the `controller: channel` configuration to select a specific list of posts for display using the `{{posts}}` template variable.
-
+A `filter` must be used in combination with the `controller: channel` configuration to select a specific list of posts for display using the `{{posts}}` template variable. Read more about creating [channels and content hubs](/tutorials/building-a-content-hub/) in this tutorial. 
 
 ### filter
 
@@ -167,7 +167,7 @@ filter: author:steve+tag:x # must be written by "steve" and have tag "x"
 
 ### data
 
-The `data` property is used to fetch resources using Ghost’s API for use in the collection's template. This property can fetch arbitrary posts, pages, tags and authors to be made available in a handlebars template, avoiding the need to use `{{get}}` everywhere.
+The `data` property is used to fetch resources using Ghost’s API for use in the route or collection's template. This property can fetch arbitrary posts, pages, tags and authors to be made available in a handlebars template, avoiding the need to use `{{get}}` everywhere.
 
 Another important use for the `data` property is to associate resources with particular URLs so that accessing a resource from a different URL automatically redirects, avoiding duplicate content and confusing site structures.
 
