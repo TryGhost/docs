@@ -21,12 +21,6 @@ kbd {
     display: inline-block;
 }
 
-
-/* Media queries copied from Spirit */
-/* @custom-media --breakpoint-not-small screen and (min-width: 44rem);
-@custom-media --breakpoint-medium screen and (min-width: 44rem) and (max-width: 66rem);
-@custom-media --breakpoint-large screen and (min-width: 66rem); */
-
 /* Custom typography for UI */
 .lh-h1 { line-height: var(--vr-8); }
 .lh-h2 { line-height: var(--vr-5); }

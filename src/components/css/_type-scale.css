@@ -11,6 +11,7 @@
 .f8 { font-size: 1.3rem; }
 .f-supersmall { font-size: 1.1rem; }
 .f-nav-first-level {font-size: 1.65rem;}
+.f1-mobile { font-size: 3.6rem; };
 
 @media (--breakpoint-not-small) {
     .f-headline-ns { font-size: 4.8rem; }
@@ -25,6 +26,7 @@
     .f8-ns { font-size: 1.3rem; }
     .f-supersmall-ns { font-size: 1.1rem; }
     .f-nav-first-level-ns {font-size: 1.65rem;}
+    .f1-mobile-ns { font-size: 3.6rem; };
 }
 
 @media (--breakpoint-medium) {
@@ -40,6 +42,7 @@
     .f8-m { font-size: 1.3rem; }
     .f-supersmall-m { font-size: 1.1rem; }
     .f-nav-first-level-m {font-size: 1.65rem;}
+    .f1-mobile-ns { font-size: 3.6rem; };
 }
 
 @media (--breakpoint-large) {
@@ -55,4 +58,5 @@
     .f8-l { font-size: 1.3rem; }
     .f-supersmall-l { font-size: 1.1rem; }
     .f-nav-first-level-l {font-size: 1.65rem;}
+    .f1-mobile-ns { font-size: 3.6rem; };
 }
