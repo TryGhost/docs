@@ -1,7 +1,7 @@
 {
   "name": "docs",
-  "version": "0.0.0",
-  "description": "tbc",
+  "version": "1.0.0",
+  "description": "Documentation for the Ghost publishing platform",
   "repository": "git@github.com:TryGhost/docs.git",
   "author": "Ghost Foundation",
   "license": "MIT",
