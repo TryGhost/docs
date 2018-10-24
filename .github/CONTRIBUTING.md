@@ -21,8 +21,8 @@ If you just want to fix a typo or contribute a piece of content, the quickest wa
 ```
 gatsby develop
 ```
-View: [http://localhost:8000](http://localhost:8000)
-Alias: `yarn dev`
+- View: [http://localhost:8000](http://localhost:8000)
+- Alias: `yarn dev`
 
 
 ### Create Production Build
@@ -37,8 +37,8 @@ and
 gatsby serve
 ```
 
-View: [http://localhost:9000](http://localhost:9000)
-Alias: `yarn serve`
+- View: [http://localhost:9000](http://localhost:9000)
+- Alias: `yarn serve`
 
 
 ## Submitting Pull Requests
