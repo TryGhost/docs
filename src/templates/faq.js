@@ -48,13 +48,13 @@ class FAQ extends React.Component {
                     <div className={ Spirit.page.xl + `grid-12` }>
                         <section className="bg-white br4 shadow-1 col-12 col-8-l mt5 pa5 pl5 pl3-ns mt10-ns pa15-ns pt10-ns pl7-ns">
                             <div className="mw-content">
-                                <div className="flex flex-column flex-row-ns items-start">
+                                <div className="flex flex-row items-start">
                                     <div className="flex-shrink-0 flex justify-center items-center w5 h5 w6-l h6-l mr4 fw5 br-100 tc white bg-faq-color lh-normal nudge-bottom--2-ns">?</div>
-                                    <h1 className={`${Spirit.h3} ma0 f4 nudge-bottom--4 mt3 mt0-ns`}>{ post.title }</h1>
+                                    <h1 className={`${Spirit.h3} ma0 f4 nudge-bottom--4-ns`}>{ post.title }</h1>
                                 </div>
 
-                                <div className="flex flex-column flex-row-ns items-start mt3">
-                                    <div className="flex-shrink-0 flex justify-center items-center w5 h5 w6-l h6-l mr4 f8 fw5 br-100 tc faq-color ba b--faq-color mb2 mb0-ns nudge-top--2-m">&raquo;</div>
+                                <div className="flex flex-column flex-row-ns items-start mt5 mt3-ns">
+                                    <div className="dn flex-ns flex-shrink-0 justify-center items-center w5 h5 w6-l h6-l mr4 f8 fw5 br-100 tc faq-color ba b--faq-color mb2 mb0-ns nudge-top--2-m">&raquo;</div>
                                     <section className="post-content faq-content" dangerouslySetInnerHTML={ { __html: post.html } } />
                                 </div>
                             </div>
