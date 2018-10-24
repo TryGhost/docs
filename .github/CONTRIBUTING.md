@@ -1,6 +1,52 @@
 # Contributing to Ghost Documentation
 
----
+If you're interested in contributing to Ghost's docs, you're in the right place! This guide contains instuctions for how to install this repository from source and work on the site locally.
+
+
+## Quick Edits
+
+If you just want to fix a typo or contribute a piece of content, the quickest way to get started is to fork the repository and edit the relevant Markdown file in the [/content](https://github.com/TryGhost/docs/tree/master/content) folder directly in the browser. Then commit and open a pull request on this repository.
+
+
+## Installation from Source
+
+1. `git clone` this repo & `cd` into it as usual
+2. `npm install --global gatsby-cli` to install Gatsby
+3. `yarn` to install top-level dependencies.
+4. Copy `.env.example` to `.env.development`
+
+
+### Run Locally
+
+```
+gatsby develop
+```
+View: [http://localhost:8000](http://localhost:8000)
+Alias: `yarn dev`
+
+
+### Create Production Build
+
+```
+gatsby build
+```
+
+and
+
+```
+gatsby serve
+```
+
+View: [http://localhost:9000](http://localhost:9000)
+Alias: `yarn serve`
+
+
+## Submitting Pull Requests
+
+Once you've made a change on your local branch, you can commit it and open a Pull Request which will be reviewed by 1-2 members of the Ghost core team. Small changes usually get merged as soon as we've had chance to read through them!
+
+If any changes or discussion are needed, we'll let you know!
+
 
 ## Contributor License Agreement
 
