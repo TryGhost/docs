@@ -158,7 +158,7 @@ kbd {
 }
 .link:focus   {
     transition: all .15s ease;
-    outline: 1px dotted currentColor;
+    outline: none;
 }
 
 
