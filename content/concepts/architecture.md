@@ -25,7 +25,7 @@ These three areas work together to make every Ghost site function smoothly, but 
 
 ## How things fit together
 
-<!-- [TODO: Diagram] -->
+![Ghost Architecture](../images/concepts/ghost-architecture.png)
 
 Physically, the Ghost codebase is structured in two main directories:
 

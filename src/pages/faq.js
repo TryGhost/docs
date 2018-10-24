@@ -35,7 +35,7 @@ class FAQPage extends React.Component {
                         <div className="bg-white shadow-2 br4 mt5 mt10-ns pa5 pa15-ns pt10-ns pb12-ns col-12 col-8-ns">
 
                             <Link to="/faq/using-custom-domains/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
-                                <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Using Custom Domains &raquo;</h4>
+                                <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Using custom domains &raquo;</h4>
                                 <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>If you would like to make your site memorable and easy to find with a branded custom domain, then you can map any domain you own directly to your Ghost(Pro) publication.</p>
                             </Link>
 
@@ -50,22 +50,22 @@ class FAQPage extends React.Component {
                             </Link>
 
                             <Link to="/faq/publishing-options/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
-                                <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Publishing Options &raquo;</h4>
+                                <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Publishing options &raquo;</h4>
                                 <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>The post settings menu within the editor allows you to fully optimise your content. This is where you can add tags and authors, feature a post, or turn a post into a page.</p>
                             </Link>
 
                             <Link to="/faq/managing-your-team/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
-                                <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Managing Your Team &raquo;</h4>
+                                <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Managing your team &raquo;</h4>
                                 <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>Ghost has a number of different user roles and permissions for your team for effective collaboration and publication management. Read more more about inviting your team to Ghost!</p>
                             </Link>
 
                             <Link to="/faq/the-importer/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
-                                <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Imports & Exports &raquo;</h4>
+                                <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Imports & exports &raquo;</h4>
                                 <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>Publishing with Ghost gives you full ownership and access to your content and data, with sensible JSON imports and exports available at any time. Find out more about imports and migrations!</p>
                             </Link>
 
                             <Link to="/faq/design-settings/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
-                                <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Design Settings &raquo;</h4>
+                                <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Design settings &raquo;</h4>
                                 <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>Adding some design touches to your Ghost publication can be done from the Admin page when logged in to your publication. From here you can add navigation and upload a custom theme.</p>
                             </Link>
 
