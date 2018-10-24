@@ -65,7 +65,7 @@ module.exports = {
         {
             resolve: `gatsby-source-ghost`,
             options: {
-                apiUrl: `https://docs-2.ghost.io`,
+                apiUrl: `https://docs.ghost.io`,
                 clientId: `ghost-frontend`,
                 clientSecret: `${process.env.GH_CLIENT_SECRET}`,
             },

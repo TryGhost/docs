@@ -1,12 +1,12 @@
 ---
 title: "Front-end"
-meta_title: "Ghost Front-end - Core Concepts"
+meta_title: "Ghost front-end - Core Concepts"
 meta_description: "Ghost is a full headless CMS which is completely agnostic of any particular front-end or static site framework. Find out more..."
 keywords:
     - concepts
     - ghost
     - publishing
-    - features
+    - front-end
 sidebar: "concepts"
 ---
 

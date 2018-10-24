@@ -10,9 +10,9 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 
 # Make edit links work
 
-/integrations/*/edit                https://docs-2.ghost.io/:splat/edit  302!
-/tutorials/*/edit                   https://docs-2.ghost.io/:splat/edit  302!
-/faq/*/edit                         https://docs-2.ghost.io/:splat/edit  302!
+/integrations/*/edit                https://docs.ghost.io/:splat/edit  302!
+/tutorials/*/edit                   https://docs.ghost.io/:splat/edit  302!
+/faq/*/edit                         https://docs.ghost.io/:splat/edit  302!
 /api/*/edit                         https://github.com/tryghost/docs-api/tree/master/:splat.md  302!
 /concepts/*/edit                    https://github.com/TryGhost/docs/tree/master/content/concepts/:splat.md  302!
 /setup/*/edit                       https://github.com/TryGhost/docs/tree/master/content/setup/:splat.md     302!
@@ -221,6 +221,7 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /section/12-questions/3                             /faq/                                       301!
 /section/12-questions/3                             /faq/                                       301!
 /category/5-frequently-asked-questions              /faq/                                       301!
+/article/26-user-role-capabilities                  /faq/managing-your-team/                    301!
 
 /article/63-i-have-questions-about-how-to-use-ghost-where-can-i-get-help        /faq/                                             301!
 /article/71-how-do-i-set-up-a-custom-domain-for-ghost-pro                       /faq/using-custom-domains/                        301!
