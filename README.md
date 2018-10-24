@@ -1,4 +1,4 @@
-# Docs
+# Ghost Docs
 
 This is the repository for [Ghost](https://github.com/tryghost/ghost)'s official documentation, located at https://docs.ghost.org. You'll probably just want to head over there and read them directly on the web.
 
