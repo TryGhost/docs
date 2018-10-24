@@ -205,11 +205,9 @@ Where `resource-type` is one of `tag`, `author`, `post`, or `page` - this sets t
 
 ### rss
 
-The `rss` property can be set to `true` or `false`. It defaults to `true` and if set to `false` the RSS feed is disabled for that collection.
+The `rss` property can be set to `true` or `false`. It defaults to `true` and if set to `false` the RSS feed is disabled for that collection. When set to `true`, find the `rss` URLs linked inside the `<head>` element. For example:
 
-When set to `true`, find the `rss` URLs linked inside the `<head>` element. For example:
-
-* https://example.com/blog/rss/ default RSS generator (no template)
+* `example.com/blog/rss/` - default RSS generator (no template)
 
 Custom `rss` feeds can be set with the `content_type` property and a template.
 
@@ -238,8 +236,8 @@ collections:
 
 The trailing slash is required, so `/blog/:` is valid, but `/blog:` is not. The index URL will also include archive URLs:
 
-* https://example.com/blog/
-* https://example.com/blog/page/2
+* `example.com/blog/`
+* `example.com/blog/page/2`
 
 Ghost will use the default template to render these routes. For example, `index.hbs` for `/blog:/` and `home.hbs` for `/:` - unless specific templates are set using the [template](http://docs.ghost.org/concepts/routing/#template/) property.
 
