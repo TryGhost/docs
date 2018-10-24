@@ -59,7 +59,7 @@ class SearchModal extends React.Component {
                     </> : null }
                 {theme ?
                     <div className="relative h8 h-auto-l" onClick={ this.openModal }>
-                        <Icon name="search" className={`${theme.icon} w4 h-auto absolute top-2 stroke-w--1-5 right-3 left-3-l`} />
+                        <Icon name="search" className={`${theme.icon} w4 h-auto absolute top-2 right-3 left-3-l`} />
                         <label htmlFor="globalnavsearch" className="clip">Search</label>
                         <input
                             id="globalnavsearch"

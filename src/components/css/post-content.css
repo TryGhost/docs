@@ -172,6 +172,11 @@
     text-decoration: none;
 }
 
+.post-content .gatsby-resp-image-link:hover,
+.post-content a img:hover {
+    box-shadow: none;
+}
+
 .post-content strong,
 .post-content em {
     color: color(var(--darkgrey) l(-5%));
@@ -424,18 +429,6 @@ Usage (In Ghost editor):
     border-top: 1px solid var(--whitegrey);
 }
 
-/* .post-content hr::before {
-    content: "\00B7 \00B7 \00B7";
-    text-align: center;
-    margin: 0 auto;
-    font-size: 22px;
-    font-family: monospace;
-    display: block;
-    color: var(--lightgrey);
-    letter-spacing: -6px;
-    margin-top: -10px;
-} */
-
 .post-content hr + p,
 .post-content hr + ul,
 .post-content hr + ol,
@@ -500,7 +493,17 @@ Usage (In Ghost editor):
 .post-content ul + div,
 .post-content ol + div,
 .post-content blockquote + div,
-.post-content h6 + div
+.post-content h6 + div,
+
+.post-content table + p,
+.post-content table + ul,
+.post-content table + ol,
+.post-content table + blockquote,
+.post-content p + table,
+.post-content ul + table,
+.post-content ol + table,
+.post-content blockquote + table,
+.post-content h6 + table
 {
     margin: var(--vr-4) 0 0;
 }
@@ -519,7 +522,12 @@ Usage (In Ghost editor):
 .post-content div + h3,
 .post-content div + h4,
 .post-content div + h5,
-.post-content div + h6
+.post-content div + h6,
+.post-content table + h1,
+.post-content table + h3,
+.post-content table + h4,
+.post-content table + h5,
+.post-content table + h6
 {
     margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
 }
@@ -547,7 +555,13 @@ Usage (In Ghost editor):
 .post-content h3 + div,
 .post-content h4 + div,
 .post-content h5 + div,
-.post-content h6 + div {
+.post-content h6 + div,
+.post-content h1 + table,
+.post-content h2 + table,
+.post-content h3 + table,
+.post-content h4 + table,
+.post-content h5 + table,
+.post-content h6 + table {
     margin: var(--vr-2);
 }
 
