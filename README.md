@@ -1,164 +1,36 @@
-# Docs
+# Ghost Docs
 
-**For the most up to date Ghost documentation, please visit: https://docs.ghost.org**
-
----
-
-## Installation
-1. `git clone` this repo & `cd` into it as usual
-1. `npm install --global gatsby-cli` to install Gatsby
-1. `yarn` to install top-level dependencies.
-1. Copy `.env.example` to `.env.development` and insert Ghost API key
+This is the repository for [Ghost](https://github.com/tryghost/ghost)'s official documentation, located at https://docs.ghost.org. You'll probably just want to head over there and read them directly on the web.
 
 
-## Run
-- `yarn dev`
-- View: [http://localhost:8000](http://localhost:8000)
+## 👻 Using Ghost
 
-## Production build (to test locally)
-- `yarn serve`
-- View: [http://localhost:9000](http://localhost:9000)
+If you're looking for some quick links to get you started, try these:
 
-
-## Markdown content
-
-The folder structure in the content directory reflects how the URL is generated.
-e. g.
-    - `/content/setup/ubuntu/index.md` will be generated as `https://docs.ghost.org/setup/ubuntu`
-    - `/content/concepts/introduction.md` will be generated as `https://docs.ghost.org/concepts/introduction`
-
-### API
-
-- v0.11 --> branch `v0.11`
-- v2 --> branch `master`
-
-See --> [API docs repo](https://github.com/TryGhost/docs-api)
-
-### Concepts & setup
-
-## Spirit
-Ghost Docs uses [Spirit/Brand](https://github.com/TryGhost/Spirit) as its design system. For development, it's recommended to `yarn link` the local Spirit repo to docs ([`yarn link` how to](https://yarnpkg.com/lang/en/docs/cli/link/)).
-
-### Using Spirit
-
-There are multiple ways you can use Spirit:
-
-#### 1. Inline Spirit (Tachyons) CSS classes
-You can use Spirit CSS classes directly in `className` attribute. Typically for non-reusable, custom components where Spirit classes are sufficiently let you style the component.
-
-_Example:_
-```jsx
-<div className="flex justify-between pa10"></div>
-```
-
-#### 2. SpiritStyle
-- `import { SpiritStyle } from '/src/components/spirit-brand/spirit-styles.js'` in components
-- The properties of `SpiritStyle` object are predefined combinations of Spirit CSS classes. Use it for all the reusable styles (e.g. links, headings etc.).
-- _TODO: needs to be outsourced to a gatsby plugin or external react module. (The Ghost admin client is using the [ember-cli-ghost-spirit](https://github.com/TryGhost/ember-cli-ghost-spirit) addon to access Spirit/Product helpers.)_
-
-_Example:_
-```jsx
-<h1 className={ SpiritStyle.heading.h1 }></h1> <!-- Returns "f1 fw5 bb b--lightgrey pb3 mb7 mt10" -->
-```
-
-#### 3. Styled Components + CSS classes or SpiritStyle
-Use [styled-components](https://next.gatsbyjs.org/docs/styled-components/) combined with Spirit styles to inject custom CSS within the context of the given component.
-
-_Example:_
-```jsx
-const Header = () => (
-    <Container>...</Container>
-)
-
-const Container = styled.div.attrs({
-        className: { SpiritStyle.box } " shadow-2"
-})`
-    margin: 10px;
-`
-```
-## Helpers
-### Tags
-Returns tags for a post as HTML or simple string. Will fallback to generate a tag `General` if no tag applicable is found.
-
-**Options:**
-  - `post`                [required, the post object]
-  - `internal`            [optional, bool, default false, returns internal tags if set to true]
-  - `limit`               [optional, number, default 1, limits the number of tags to be returned]
-  - `separator`           [optional, string, default ", ", sets the separator to concat the tags]
-  - `html`                [optional, bool, default false, returns tags and separators in `span` elements when set to true]
-  - `classes`             [optional when html is used, string, default "darkgrey fw5", classNames used for the html tags]
-  - `separatorClasses`    [optional when html is used, string, default "mr1 ml1 f8 midgrey", classNames used for the html separator tags]
-
-**Example usage HTML**:
-
-```jsx
-<div>
-    <Tags
-        post={post}
-        separator=" / "
-        html={true}
-    />
-</div>
-```
-
-will render:
-
-```html
-<div>
-    <span class="darkgrey fw5">Tag</span>
-</div>
-```
-
----
-
-```jsx
-<div>
-    <Tags
-        post={post}
-        separator=" / "
-        html={true}
-        internal={true}
-        limit={5}
-    />
-</div>
-```
-
-will render:
-
-```html
-<div>
-    <span class="darkgrey fw5">#internal</span>
-    <span class="mr1 ml1 f8 midgrey"> / </span>
-    <span class="darkgrey fw5">Tag</span>
-</div>
-```
-
-**Example usage string**:
-
-```jsx
-<span>
-    <Tags
-        post={post}
-        limit={5}
-    />
-</span>
-```
-
-will render:
-
-```html
-<span>Tag, Tag2, Tag3, Tag4, Tag5</span>
-```
+- [Introduction to Ghost](https://docs.ghost.org/concepts/)
+- [Detailed install guides](https://docs.ghost.org/setup/)
+- [Ghost tutorials](https://docs.ghost.org/tutorials/)
+- [Full API reference](https://docs.ghost.org/api/)
+- [Frequently Asked Questions](https://docs.ghost.org/faq/)
 
 
-## Ghost Content
+## 🚑 Getting Support
 
---> https://docs-2.ghost.io
+If you're stuck on something and need a helping hand, you'll find a large community of thousands of Ghost users over on the [official Ghost forum](https://forum.ghost.org). Search to see if someone has gotten stuck on the same thing before! If not, feel free to start a new topic 🤗
 
-## Test
-- `yarn lint` run just eslint --> not setup yet completely
-- `yarn test` run lint && tests --> not tests yet
 
-# Copyright & License
+## 🛠 Contributing
+
+If you're interested in contributing to our docs either with content or code, we can always use the help! All of this is open source so that anyone can get involved if they have fixes or improvements to add.
+
+**[Read the contributing guide 👉](https://github.com/TryGhost/docs/blob/master/.github/CONTRIBUTING.md)**
+
+
+#### Code of Conduct
+
+Ghost is dedicated to building constructive, diverse and safe community. We expect everyone participating the Ghost community to read and follow our [code of conduct](https://ghost.org/conduct/). We have absolutely zero tolerance for poisonous behaviour of any kind.
+
+
+## Copyright & License
 
 Copyright (c) 2018 Ghost Foundation - Released under the [MIT license](LICENSE).

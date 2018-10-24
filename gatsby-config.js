@@ -12,9 +12,9 @@ require(`dotenv`).config({
     path: `.env.${process.env.NODE_ENV}`,
 })
 
-if (!process.env.GH_CLIENT_SECRET) {
+if (!process.env.GHOST_API_URL || !process.env.GHOST_API_KEY) {
     throw new Error(
-        `GH_CLIENT_SECRET is required to build. Check the README.`
+        `GHOST_API_URL and GHOST_API_KEY are required to build. Check the CONTRIBUTING guide.`
     )
 }
 
@@ -65,9 +65,9 @@ module.exports = {
         {
             resolve: `gatsby-source-ghost`,
             options: {
-                apiUrl: `https://docs.ghost.io`,
+                apiUrl: `${process.env.GHOST_API_URL}`,
                 clientId: `ghost-frontend`,
-                clientSecret: `${process.env.GH_CLIENT_SECRET}`,
+                clientSecret: `${process.env.GHOST_API_KEY}`,
             },
         },
         {
