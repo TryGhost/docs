@@ -60,11 +60,11 @@ class SetupIndexPage extends React.Component {
                     <div className={ Spirit.page.xl + `mt-vw3`}>
                         <section className="grid-12 gutter-row-20 gutter-20-ns gutter-36-l">
                             {/* <h3 className={ Spirit.h4 + `col-12 middarkgrey` }>I want to setup a site...</h3> */}
-                            <SetupBox href="https://ghost.org/pricing/" title="Ghost(Pro)" icon="ghost-pro-logo" iconClass="w9 h9 stroke-w--1-5" headingClass="mt2">
+                            <SetupBox href="https://ghost.org/pricing/" title="Ghost(Pro)" icon="ghost-pro-logo" iconClass="w9 h9" headingClass="mt2">
                                 <strong>Fully managed PaaS</strong> with 1-click deployment, worldwide CDN, backups, upgrades & security
                             </SetupBox>
 
-                            <SetupBox to="/install/ubuntu/" title="Ubuntu" icon="ubuntu-logo" iconClass="w8 h8 stroke-w--1-5" headingClass="mt2">
+                            <SetupBox to="/install/ubuntu/" title="Ubuntu" icon="ubuntu-logo" iconClass="w8 h8" headingClass="mt2">
                                 <p className={ Spirit.small + `mw70` }>
                                     A full guide for installing Ghost on Ubuntu <strong>16.04 LTS</strong> and <strong>18.04 LTS</strong> <em>(Recommended)</em>
                                 </p>
