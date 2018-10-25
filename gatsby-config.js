@@ -80,7 +80,6 @@ const plugins = [
             icon: `src/images/favicon.png`,
         },
     },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-force-trailing-slashes`,
@@ -121,6 +120,15 @@ if (process.env.ALGOLIA_ADMIN_KEY && !process.env.ALGOLIA_ADMIN_KEY.match(/<key>
             chunkSize: 10000, // default: 1000
         },
     })
+}
+
+const SERVICE_WORKER_KILL_SWITCH = true
+
+if (!SERVICE_WORKER_KILL_SWITCH) {
+    plugins.push(`gatsby-plugin-offline`)
+} else {
+    console.log(`KILL Service Worker!`)
+    plugins.push(`gatsby-plugin-remove-serviceworker`)
 }
 
 module.exports = {
