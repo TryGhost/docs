@@ -39,7 +39,7 @@ exports.onRouteUpdate = function () {
  *
  */
 const killServiceWorker = () => {
-    const SERVICE_WORKER_KILL_SWITCH = false
+    const SERVICE_WORKER_KILL_SWITCH = true
 
     if (SERVICE_WORKER_KILL_SWITCH && `serviceWorker` in navigator) {
         navigator.serviceWorker.getRegistrations().then(registratons => registratons.forEach((registration) => {
