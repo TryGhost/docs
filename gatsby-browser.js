@@ -30,7 +30,6 @@ const trustAllScripts = () => {
 exports.onRouteUpdate = function () {
     trustAllScripts()
 }
-
 /**
  * Kill service workers
  *
@@ -38,9 +37,9 @@ exports.onRouteUpdate = function () {
  * set SERVICE_WORKER_KILL_SWITCH to true and deploy this change
  *
  */
-const killServiceWorker = () => {
-    const SERVICE_WORKER_KILL_SWITCH = true
+const SERVICE_WORKER_KILL_SWITCH = true
 
+const killServiceWorker = () => {
     if (SERVICE_WORKER_KILL_SWITCH && `serviceWorker` in navigator) {
         navigator.serviceWorker.getRegistrations().then(registratons => registratons.forEach((registration) => {
             console.log(`Unregister service worker:`, registration)
@@ -52,4 +51,3 @@ const killServiceWorker = () => {
 exports.onPreRouteUpdate = function () {
     killServiceWorker()
 }
-
