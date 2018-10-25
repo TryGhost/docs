@@ -908,11 +908,11 @@ pre {
     margin: 1.5em 0 3em;
     padding: 20px;
     max-width: 100%;
-    border: color(var(--darkgrey) l(-10%)) 1px solid;
+    border: none;
     color: var(--whitegrey);
     font-size: 1.3rem;
     line-height: 1.7em;
-    background: color(var(--darkgrey) l(-3%));
+    background: #2a3644;
     border-radius: 5px;
 }
 

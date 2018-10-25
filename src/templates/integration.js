@@ -45,7 +45,7 @@ class Integration extends React.Component {
                             <div className="order-2">
                                 <TOC className="miw50" headingsOffset="-400" />
                             </div>
-                            <article className="order-1 pr10">
+                            <article className="w-100 order-1 pr10">
                                 <div className="mb5 f8">
                                     <Link className="link midgrey" to="/integrations/">Integrations</Link>
                                     <span className="mr1 ml1 f8 midgrey">/</span>
