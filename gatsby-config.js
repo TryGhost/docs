@@ -114,12 +114,9 @@ if (process.env.ALGOLIA_ADMIN_KEY && !process.env.ALGOLIA_ADMIN_KEY.match(/<key>
     })
 }
 
-const SERVICE_WORKER_KILL_SWITCH = true
-
-if (!SERVICE_WORKER_KILL_SWITCH) {
+if (!process.env.SERVICE_WORKER_KILL_SWITCH) {
     plugins.push(`gatsby-plugin-offline`)
 } else {
-    console.log(`KILL Service Worker!`)
     plugins.push(`gatsby-plugin-remove-serviceworker`)
 }
 
