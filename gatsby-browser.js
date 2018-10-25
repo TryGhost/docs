@@ -30,3 +30,26 @@ const trustAllScripts = () => {
 exports.onRouteUpdate = function () {
     trustAllScripts()
 }
+
+/**
+ * Kill service workers
+ *
+ * When service workers prevent cause weird behaviour,
+ * set SERVICE_WORKER_KILL_SWITCH to true and deploy this change
+ *
+ */
+const killServiceWorker = () => {
+    const SERVICE_WORKER_KILL_SWITCH = true
+
+    if (SERVICE_WORKER_KILL_SWITCH && `serviceWorker` in navigator) {
+        navigator.serviceWorker.getRegistrations().then(registratons => registratons.forEach((registration) => {
+            console.log(`Unregister service worker:`, registration)
+            return registration.unregister()
+        }))
+    }
+}
+
+exports.onPreRouteUpdate = function () {
+    killServiceWorker()
+}
+
