@@ -448,9 +448,9 @@ The compression flag is turned on by default using `"compress": true`. Alternati
 When uploading images into the Ghost editor, they are automatically processed and compressed by default. This can be disabled in your `config.[env].json` file using:
 
 ```json
-    "imageOptimization": {
-        "resize": false
-    }
+"imageOptimization": {
+  "resize": false
+}
 ```
 
 Image compression details:
