@@ -34,20 +34,21 @@ exports.onRouteUpdate = function () {
  * Kill service workers
  *
  * When service workers prevent cause weird behaviour,
- * set SERVICE_WORKER_KILL_SWITCH to true and deploy this change
+ * set SERVICE_WORKER_KILL_SWITCH in config to true and trigger build
  *
  */
-// const SERVICE_WORKER_KILL_SWITCH = true
+const SERVICE_WORKER_KILL_SWITCH = (process.env.SERVICE_WORKER_KILL_SWITCH === `true`) || false
 
-// const killServiceWorker = () => {
-//     if (SERVICE_WORKER_KILL_SWITCH && `serviceWorker` in navigator) {
-//         navigator.serviceWorker.getRegistrations().then(registratons => registratons.forEach((registration) => {
-//             console.log(`Unregister service worker:`, registration)
-//             return registration.unregister()
-//         }))
-//     }
-// }
+const killServiceWorker = () => {
+    // && /https/.test(location.protocol)
+    if (SERVICE_WORKER_KILL_SWITCH && `serviceWorker` in navigator) {
+        navigator.serviceWorker.getRegistrations().then(registratons => registratons.forEach((registration) => {
+            console.log(`Unregister service worker:`, registration)
+            return registration.unregister()
+        }))
+    }
+}
 
-// exports.onPreRouteUpdate = function () {
-//     killServiceWorker()
-// }
+exports.onPreRouteUpdate = function () {
+    killServiceWorker()
+}

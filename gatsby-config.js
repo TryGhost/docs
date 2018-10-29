@@ -17,6 +17,8 @@ if (!process.env.GHOST_API_URL || !process.env.GHOST_API_KEY) {
     )
 }
 
+const SERVICE_WORKER_KILL_SWITCH = (process.env.SERVICE_WORKER_KILL_SWITCH === `true`) || false
+
 const plugins = [
     /**
      *  Content Plugins
@@ -114,10 +116,13 @@ if (process.env.ALGOLIA_ADMIN_KEY && !process.env.ALGOLIA_ADMIN_KEY.match(/<key>
     })
 }
 
-if (!process.env.SERVICE_WORKER_KILL_SWITCH) {
-    plugins.push(`gatsby-plugin-offline`)
-} else {
+// Global switch to either use or remove service worker
+if (SERVICE_WORKER_KILL_SWITCH) {
+    console.log(`Remove service worker plugin`)
     plugins.push(`gatsby-plugin-remove-serviceworker`)
+} else {
+    console.log(`Install service worker plugin`)
+    plugins.push(`gatsby-plugin-offline`)
 }
 
 module.exports = {
