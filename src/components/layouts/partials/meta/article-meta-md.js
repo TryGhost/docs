@@ -45,16 +45,6 @@ class ArticleMetaMD extends React.Component {
                         {
                             "@context": "https://schema.org/",
                             "@type": "Article",
-                            "publisher": {
-                                "@type": "Organization",
-                                "name":  "Ghost",
-                                "logo": {
-                                    "@type": "ImageObject",
-                                    "url": "https://blog.ghost.org/favicon.png",
-                                    "width": 60,
-                                    "height": 60
-                                }
-                            },
                             "author": {
                                 "@type": "Person",
                                 "name": "Ghost",
@@ -82,6 +72,17 @@ class ArticleMetaMD extends React.Component {
         )
     }
 }
+
+// "publisher": {
+//     "@type": "Organization",
+//         "name": "Ghost",
+//             "logo": {
+//         "@type": "ImageObject",
+//             "url": "https://blog.ghost.org/favicon.png",
+//                 "width": 60,
+//                     "height": 60
+//     }
+// },
 
 ArticleMetaMD.propTypes = {
     data: PropTypes.shape({

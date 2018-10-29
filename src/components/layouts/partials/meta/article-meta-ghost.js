@@ -100,16 +100,6 @@ class ArticleMetaGhost extends React.Component {
                         {
                             "@context": "https://schema.org/",
                             "@type": "Article",
-                            "publisher": {
-                                "@type": "Organization",
-                                "name":  "Ghost",
-                                "logo": {
-                                    "@type": "ImageObject",
-                                    "url": "https://blog.ghost.org/favicon.png",
-                                    "width": 60,
-                                    "height": 60
-                                }
-                            },
                             "author": {
                                 "@type": "Person",
                                 "name": "${author.name}",
@@ -135,6 +125,17 @@ class ArticleMetaGhost extends React.Component {
         )
     }
 }
+
+// "publisher": {
+//     "@type": "Organization",
+//         "name": "Ghost",
+//             "logo": {
+//         "@type": "ImageObject",
+//             "url": "https://blog.ghost.org/favicon.png",
+//                 "width": 60,
+//                     "height": 60
+//     }
+// },
 
 ArticleMetaGhost.defaultProps = {
     fetchAuthorData: false,
