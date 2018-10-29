@@ -239,7 +239,7 @@ The trailing slash is required, so `/blog/:` is valid, but `/blog:` is not. The 
 * `example.com/blog/`
 * `example.com/blog/page/2`
 
-Ghost will use the default template to render these routes. For example, `index.hbs` for `/blog:/` and `home.hbs` for `/:` - unless specific templates are set using the [template](http://docs.ghost.org/concepts/routing/#template/) property.
+Ghost will use the default template to render these routes. For example, `index.hbs` for `/blog:/` and `home.hbs` for `/:` - unless specific templates are set using the [template](http://docs.ghost.org/concepts/routing/#template) property.
 
 
 ### permalink
