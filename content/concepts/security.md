@@ -33,7 +33,7 @@ User login attempts and password reset requests are all limited to 5 per hour pe
 
 ### Data validation and serlialisation
 
-Ghost performs strong serialisation and validatio on all data that goes into the database, as well as automated symlink protection on all uploaded files.
+Ghost performs strong serialisation and validation on all data that goes into the database, as well as automated symlink protection on all uploaded files.
 
 ### Encoded tokens everywhere
 
