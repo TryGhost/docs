@@ -59,7 +59,7 @@ class FeedbackForm extends React.Component {
                 headers: { "Content-Type": `application/x-www-form-urlencoded` },
                 body: encode({
                     "form-name": form.getAttribute(`name`),
-                    ...this.formData,
+                    ...formData,
                 }),
             })
                 .then(() => this.setState((state) => {
