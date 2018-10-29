@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import _ from 'lodash'
 
 import { Spirit } from '../../components/spirit-styles'
 import Icon from '../../components/global/icon'
@@ -33,22 +34,39 @@ class FeedbackForm extends React.Component {
     }
 
     handleSubmit = (e) => {
+        let isValid = true
         e.preventDefault()
         const form = e.target
-        fetch(`/`, {
-            method: `POST`,
-            headers: { "Content-Type": `application/x-www-form-urlencoded` },
-            body: encode({
-                "form-name": form.getAttribute(`name`),
-                "feedback-type": `Feedback`,
-                location: this.props.location.href,
-                ...this.state,
-            }),
+
+        // These are the required fields. Don't post the form when any of the fields are missing
+        const formData = {
+            "feedback-type": this.state[`feedback-type`] || `Feedback`,
+            location: this.props.location.href,
+            email: this.state.email,
+            message: this.state.message,
+        }
+
+        // TODO: proper inline validation
+        _.each(formData, (val) => {
+            if (_.isEmpty(val)) {
+                isValid = false
+            }
         })
-            .then(() => this.setState((state) => {
-                return { showSucces: !state.showSucces }
-            }))
-            .catch(error => this.handleError(error))
+
+        if (isValid) {
+            fetch(`/`, {
+                method: `POST`,
+                headers: { "Content-Type": `application/x-www-form-urlencoded` },
+                body: encode({
+                    "form-name": form.getAttribute(`name`),
+                    ...this.formData,
+                }),
+            })
+                .then(() => this.setState((state) => {
+                    return { showSucces: !state.showSucces }
+                }))
+                .catch(error => this.handleError(error))
+        }
     }
 
     render() {
