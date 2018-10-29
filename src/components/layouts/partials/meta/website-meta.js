@@ -28,16 +28,6 @@ class WebsiteMeta extends React.Component {
                         {
                             "@context": "https://schema.org/",
                             "@type": ${type && type === `series` ? `"Series"` : `"WebSite"`},
-                            "publisher": {
-                                "@type": "Organization",
-                                "name": "Ghost",
-                                "logo": {
-                                    "@type": "ImageObject",
-                                    "url": "https://blog.ghost.org/favicon.png",
-                                    "width": 60,
-                                    "height": 60
-                                }
-                            },
                             "url": "${canonical}",
                             ${image ? `"image": "${image}",` : ``}
                             "mainEntityOfPage": {
@@ -53,6 +43,17 @@ class WebsiteMeta extends React.Component {
         )
     }
 }
+
+// "publisher": {
+//     "@type": "Organization",
+//         "name": "Ghost",
+//             "logo": {
+//         "@type": "ImageObject",
+//             "url": "https://blog.ghost.org/favicon.png",
+//                 "width": 60,
+//                     "height": 60
+//     }
+// },
 
 WebsiteMeta.propTypes = {
     data: PropTypes.shape({
