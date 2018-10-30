@@ -611,5 +611,5 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /v1/docs/migrating-to-1-0-0	                        /faq/upgrade-to-ghost-1-0/                  301!
 /hc/en-us/articles/224089787-Subscribers-Beta       /api/handlebars-themes/subscribers/         301!
 /hc/en-us/articles/115000301672-Public-API-Beta     /api/content/                               301!
-
+/custom-amp-themes                                  /tutorials/custom-amp-themes/               301!
 
