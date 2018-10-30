@@ -88,7 +88,7 @@ export const pageQuery = graphql`
     }
     allGhostPost(
         sort: { order: DESC, fields: [published_at] },
-        limit: 50,
+        limit: 100,
         filter: {tags: {elemMatch: {slug: {eq: "hash-integration"}}}}
     ) {
       edges {
