@@ -1,17 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
-import Layout from '../components/layouts/default'
-import { Spirit } from '../components/spirit-styles'
+import IntegrationsContent from '../components/integrations-content'
 import MetaData from '../components/layouts/partials/meta-data'
-import IntegrationsTagList from '../components/layouts/partials/integrations-taglist'
-import Integration from '../components/integration'
 
 class IntegrationsTags extends React.Component {
     render() {
         const posts = this.props.data.allGhostPost.edges
-        const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription } = this.props.pageContext
+        const { tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription } = this.props.pageContext
 
         const title = tagMetaTitle || `Integrations - ${tagName} - Ghost`
         const description = tagMetaDescription || tagDescription || ``
@@ -27,32 +24,10 @@ class IntegrationsTags extends React.Component {
                     description={description || this.props.data.site.siteMetadata.description}
                     image={imageUrl}
                 />
-                <Layout title="Integrations" headerDividerStyle="shadow" >
-                    <div className="bg-integrations-header-image">
-                        <div className={Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1`}>
-                            <div className="pa-vw4 tc">
-                                <h1 className={Spirit.h4 + `gh-integration-header-shadow pl10`}>
-                                    <Link to="/integrations/" className={`link dim white fw3`}>Ghost Integrations</Link>
-                                    <span className="white titleslash-white pl4 ml4 relative">
-                                        <Link to={tagURL} className="link dim white">{tagName}</Link>
-                                    </span>
-                                </h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={Spirit.page.xl + `pt10`}>
-                        <div className="flex br4">
-                            <div className="gh-integration-sidebar flex-shrink-0 w50 mr5">
-                                <div className="flex flex-column mb6">
-                                    <IntegrationsTagList location={this.props.location} />
-                                </div>
-                            </div>
-                            <div className="gh-integrations w-100">
-                                {posts.map(({ node }) => (<Integration key={node.id} post={node} />))}
-                            </div>
-                        </div>
-                    </div>
-                </Layout>
+                <IntegrationsContent
+                    posts={posts}
+                    location={this.props.location}
+                />
             </>
         )
     }
@@ -74,7 +49,7 @@ IntegrationsTags.propTypes = {
     }).isRequired,
     pageContext: PropTypes.shape({
         tagName: PropTypes.string.isRequired,
-        tagURL: PropTypes.string.isRequired,
+        // tagURL: PropTypes.string.isRequired,
         tagDescription: PropTypes.string,
         tagMetaDescription: PropTypes.string,
         tagMetaTitle: PropTypes.string,
