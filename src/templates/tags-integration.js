@@ -6,7 +6,7 @@ import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import MetaData from '../components/layouts/partials/meta-data'
 import IntegrationsTagList from '../components/layouts/partials/integrations-taglist'
-import Integration from '../components/integration-search/integration'
+import Integration from '../components/integration'
 
 class IntegrationsTags extends React.Component {
     render() {
@@ -48,14 +48,7 @@ class IntegrationsTags extends React.Component {
                                 </div>
                             </div>
                             <div className="gh-integrations w-100">
-                                {posts.map(({ node }) => {
-                                    const hit = {
-                                        title: node.title,
-                                        image: node.feature_image,
-                                        url: `/integrations/${node.slug}`,
-                                    }
-                                    return (<Integration key={node.id} hit={hit} />)
-                                })}
+                                {posts.map(({ node }) => (<Integration key={node.id} post={node} />))}
                             </div>
                         </div>
                     </div>

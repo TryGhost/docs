@@ -2,25 +2,26 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
+// TODO: tags and their slugs are not final yet!
 const tags = [
     {
         name: `All integrations`,
         link: `/integrations/`,
     },
     {
+        name: `Automation`,
+        link: `/integrations/automation/`,
+    },
+    {
         name: `Analytics`,
         link: `/integrations/analytics/`,
     },
     {
-        name: `Card`,
+        name: `Editor Cards`,
         link: `/integrations/card/`,
     },
     {
-        name: `Comments`,
-        link: `/integrations/comments/`,
-    },
-    {
-        name: `Email`,
+        name: `Communication`,
         link: `/integrations/email/`,
     },
     {
@@ -28,8 +29,16 @@ const tags = [
         link: `/integrations/marketing/`,
     },
     {
+        name: `Support`,
+        link: `/integrations/support/`,
+    },
+    {
         name: `Storage`,
         link: `/integrations/storage/`,
+    },
+    {
+        name: `Utilities`,
+        link: `/integrations/utilities/`,
     },
 ]
 

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layouts/default'
-import Integration from "../components/integration-search/integration"
-import { IntegrationIndex, IntegrationFilterMenu, IntegrationResults } from '../components/integration-search'
+import Integration from "../components/integration"
 import { Spirit } from '../components/spirit-styles'
 import IntegrationsHeader from '../components/layouts/partials/integrations-header'
+import IntegrationsTagList from '../components/layouts/partials/integrations-taglist'
 import MetaData from '../components/layouts/partials/meta-data'
 
 class IntegrationsPage extends React.Component {
@@ -38,16 +38,7 @@ class IntegrationsPage extends React.Component {
                                     <a className="link pa2 pl0 midgrey" href="#">A – Z</a>
                                 </div>
                                 <div className="flex flex-column mb6">
-                                    <h3 className="ma0 mb2">Filter by</h3>
-                                    <a className="link pa2 pl0 blue fw6" href="#">All integrations</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Automation</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Analytics</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Editor Cards</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Communication</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Marketing</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Support</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Storage</a>
-                                    <a className="link pa2 pl0 midgrey" href="#">Utilities</a>
+                                    <IntegrationsTagList location={this.props.location} />
                                 </div>
                             </div>
                             <div className="gh-integrations w-100">
