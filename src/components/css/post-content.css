@@ -692,7 +692,7 @@ Usage (In Ghost editor):
 
 .post-content figcaption {
     margin: var(--vr-2) 0 0;
-    font-size: 80%;
+    font-size: 0.9em;
     line-height: var(--vr-2);
     text-align: center;
     letter-spacing: 0.2px;
@@ -889,6 +889,16 @@ Usage (In Ghost editor):
     border-top: 1px solid var(--whitegrey);
     border-radius: 0;
 }
+
+.integration-content .kg-width-wide {
+    width: calc(100% + 7rem);
+    margin-left: -6rem;
+    margin-right: -1rem;
+}
+.integration-content .kg-width-wide .kg-image {
+    max-width: 100%;
+}
+
 
 /* Code Boxes
 /* ---------------------------------------------------------- */
