@@ -5,8 +5,23 @@ import _ from 'lodash'
 import Layout from './layouts/default'
 import Integration from "./integration"
 import { Spirit } from './spirit-styles'
-import IntegrationsHeader from './layouts/partials/integrations-header'
+// import IntegrationsHeader from './layouts/partials/integrations-header'
+import NavBar from './layouts/partials/navbar'
+import { IntegrationIndex, IntegrationSearchBox, IntegrationFilterMenu, IntegrationResults } from './integration-search'
 import IntegrationsTagList from './layouts/partials/integrations-taglist'
+// import IntegrationIndex from './integration-search/integration-index'
+
+const filterInternalTags = items => items
+    .filter(item => item.label.charAt(0) !== `#`)
+    .sort((a, b) => {
+        if (a.label < b.label) {
+            return -1
+        }
+        if (a.label > b.label) {
+            return 1
+        }
+        return 0
+    })
 
 class IntegrationsContent extends React.Component {
     constructor(props) {
@@ -14,7 +29,24 @@ class IntegrationsContent extends React.Component {
         this.state = {
             posts: this.props.posts,
             activeSorting: `date`,
+            searchActive: false,
+            currentFilter: ``,
         }
+
+        this.toggleSearch = this.toggleSearch.bind(this)
+        this.setCurrentFilter = this.setCurrentFilter.bind(this)
+    }
+
+    toggleSearch() {
+        this.setState(() => {
+            return { searchActive: true }
+        })
+    }
+
+    setCurrentFilter(filter) {
+        this.setState(() => {
+            return { currentFilter: filter }
+        })
     }
 
     sortBy(field) {
@@ -45,32 +77,72 @@ class IntegrationsContent extends React.Component {
         })
     }
 
+    componentDidMount() {
+        let tagSlug = /(?:\/*?integrations\/)(\S*)(?:\/{1})/.exec(this.props.location.pathname)
+        tagSlug = tagSlug && tagSlug.length > 1 ? tagSlug[1] : ``
+
+        this.setCurrentFilter(tagSlug)
+    }
+
     render() {
         const { posts } = this.state
 
         return (
             <>
-                <Layout title="Integrations" headerDividerStyle="shadow" header={<IntegrationsHeader />}>
-                    <div className={Spirit.page.xl + `pt10`}>
-                        <div className="flex br4">
-                            <div className="gh-integration-sidebar flex-shrink-0 w50 mr5">
-                                <div className="flex flex-column mb6">
-                                    {/* TODO: make sortable fn here */}
-                                    <h3 className="ma0 mb2">Sort by</h3>
-                                    <a className={`link pa2 pl0 ${this.state.activeSorting === `date` ? `blue fw6` : `midgrey`}`} href="#" onClick={this.sortBy.bind(this, `date`)}>Most popular</a>
-                                    <a className={`link pa2 pl0 ${this.state.activeSorting === `title` ? `blue fw6` : `midgrey`}`} href="#" onClick={this.sortBy.bind(this, `title`)}>A – Z</a>
-                                </div>
-                                <div className="flex flex-column mb6">
-                                    <IntegrationsTagList location={this.props.location} />
-                                </div>
-                            </div>
-                            <div className="gh-integrations w-100">
-                                {posts.map(({ node }) => (
-                                    <Integration key={node.id} post={node} />
-                                ))}
+                <Layout title="Integrations" headerDividerStyle="shadow">
+                    <div className="bg-integrations-header-image">
+                        <div className="bg-integrations-header-cover">
+                            <header className="top-0 left-0 right-0 z-9999">
+                                <NavBar theme="light" />
+                            </header>
+                            <div className="pa-vw4 tc">
+                                <h1 className="ma0 pa0 f-headline white gh-integration-header-shadow">Ghost Integrations</h1>
+                                <p className="ma0 mt2 f4 white-80">All your favourite apps and tools, integrated with Ghost</p>
+
+                                <IntegrationSearchBox
+                                    activeSorting={this.state.activeSorting}
+                                    currentFilter={this.state.currentFilter}
+                                    searchActive={this.toggleSearch}
+                                />
                             </div>
                         </div>
                     </div>
+                    <IntegrationIndex>
+                        <div className={Spirit.page.xl + `pt10`}>
+                            <div className="flex br4">
+                                <div className="gh-integration-sidebar flex-shrink-0 w50 mr5">
+                                    <div className="flex flex-column mb6">
+                                        <h3 className="ma0 mb2">Sort by</h3>
+                                        <a className={`link pa2 pl0 ${this.state.activeSorting === `date` ? `blue fw6` : `midgrey`}`} href="#" onClick={this.sortBy.bind(this, `date`)}>Most popular</a>
+                                        <a className={`link pa2 pl0 ${this.state.activeSorting === `title` ? `blue fw6` : `midgrey`}`} href="#" onClick={this.sortBy.bind(this, `title`)}>A – Z</a>
+                                    </div>
+                                    <div className="flex flex-column mb6">
+                                        {this.state.searchActive ?
+                                        <>
+                                            <IntegrationFilterMenu
+                                                attribute="tags.name"
+                                                currentRefinement={this.state.currentFilter}
+                                                transformItems={filterInternalTags}
+                                            />
+                                        </> :
+                                            <IntegrationsTagList location={this.props.location} setFilter={this.setCurrentFilter}/>
+                                        }
+
+                                    </div>
+                                </div>
+                                {this.state.searchActive ?
+                                    <IntegrationResults /> :
+                                    <>
+                                        <div className="gh-integrations w-100">
+                                            {posts.map(({ node }) => (
+                                                <Integration key={node.id} post={node} />
+                                            ))}
+                                        </div>
+                                    </>
+                                }
+                            </div>
+                        </div>
+                    </IntegrationIndex>
                 </Layout>
             </>
         )
