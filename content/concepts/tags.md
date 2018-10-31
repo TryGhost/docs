@@ -21,7 +21,7 @@ Tags are much more than just simple keywords - there are several different ways 
 
 ### Regular tag
 
-All tags come with their own data object and can have a title, description, image and meta data. Ghost Handlebars Themes will autoamtically generate tag archive pages for any tags which are assigned to active posts. For example all posts tagged with `News` will appear on `example.com/tag/news/`, as well as in the automatically generated XML sitemap.
+All tags come with their own data object and can have a title, description, image and meta data. Ghost Handlebars Themes will automatically generate tag archive pages for any tags which are assigned to active posts. For example all posts tagged with `News` will appear on `example.com/tag/news/`, as well as in the automatically generated XML sitemap.
 
 ### Primary tag
 
