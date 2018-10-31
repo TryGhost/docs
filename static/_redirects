@@ -256,7 +256,7 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /article/106-where-can-i-find-details-on-using-the-koenig-editor                /faq/using-the-editor/                            301!
 /article/107-can-i-easily-transition-from-self-hosted-to-ghost-pro-or-vice-versa /faq/                                            301!
 /article/108-where-can-i-find-my-ghost-version-and-environment-details           /api/ghost-cli/help/                             301!
-
+/article/100-proxy-configuration-for-ghost-pro                                   /faq/can-i-run-ghost-from-a-subdirectory/        301!
 
 # Versioned links
 
