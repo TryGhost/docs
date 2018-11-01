@@ -201,10 +201,10 @@ kbd {
 }
 
 .shadow-2 {
-    box-shadow: 0 0 5px rgba(0,0,0,.02), 0 5px 22px -6px rgba(0,0,0,.1);
+    box-shadow: 0 0 5px rgba(0,0,0,.02), 0 5px 22px -8px rgba(0,0,0,.1);
 }
 .shadow-2.on-white {
-    box-shadow: 0 0 3px rgba(0,0,0,.08), 0 5px 22px -6px rgba(0,0,0,.08);
+    box-shadow: 0 0 3px rgba(0,0,0,.08), 0 5px 22px -8px rgba(0,0,0,.08);
 }
 .shadow-2-hover:hover {
     transform: scale(1.05) translateY(-2.5%);
