@@ -1,9 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
+// import ReCaptcha from "react-google-recaptcha"
 
 import { Spirit } from '../../components/spirit-styles'
 import Icon from '../../components/global/icon'
+
+// const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
+
+// const recaptchaRef = React.createRef()
 
 function encode(data) {
     return Object.keys(data)
@@ -21,6 +26,7 @@ class FeedbackForm extends React.Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleError = this.handleError.bind(this)
+        // this.handleRecaptcha = this.handleRecaptcha.bind(this)
     }
 
     handleError(error) {
@@ -33,7 +39,16 @@ class FeedbackForm extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    // handleRecaptcha() {
+    //     const recaptchaValue = recaptchaRef.current.getValue()
+    //     console.log(`TCL: FeedbackForm -> handleRecaptcha -> recaptchaValue`, recaptchaValue)
+    //     this.setState({ "g-recaptcha-response": recaptchaValue })
+    // }
+
     handleSubmit = (e) => {
+        // recaptchaRef.current.execute()
+        // console.log(`TCL: FeedbackForm -> handleSubmit -> recaptchaRef.current`, recaptchaRef.current)
+
         let isValid = true
         e.preventDefault()
         const form = e.target
@@ -59,6 +74,7 @@ class FeedbackForm extends React.Component {
                 headers: { "Content-Type": `application/x-www-form-urlencoded` },
                 body: encode({
                     "form-name": form.getAttribute(`name`),
+                    // "g-recaptcha-response": this.state[`g-recaptcha-response`],
                     ...formData,
                 }),
             })
@@ -97,6 +113,7 @@ class FeedbackForm extends React.Component {
                         action="#"
                         data-netlify="true"
                         data-netlify-honeypot="your-message"
+                        data-netlify-recaptcha="true"
                         onSubmit={this.handleSubmit}
                     >
                         <p hidden>
@@ -151,6 +168,11 @@ class FeedbackForm extends React.Component {
                                 onChange={this.handleChange}
                             />
                         </p>
+                        {/* <ReCaptcha
+                            ref={recaptchaRef}
+                            size="invisible"
+                            sitekey={RECAPTCHA_KEY}
+                        /> */}
                         <button className="mt4 pa3 pl7 pr7 button-blue white bn whitney f8" type="submit">Send</button>
                     </form>
                 </div>
