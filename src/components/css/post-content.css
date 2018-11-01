@@ -47,7 +47,7 @@
 .post-content>p:first-child {
     margin: calc(var(--vr-2) - 1px) 0 0;
     font-size: 1.75rem;
-    line-height: var(--vr-4);
+    line-height: calc(var(--vr-4) - 0.4rem); /* Fine tune line height for this font size */
 }
 
 .post-content ol,
@@ -325,7 +325,7 @@ Usage (In Ghost editor):
 .post-content h4 {
     font-size: 1.75rem;
     font-weight: 500;
-    line-height: var(--vr-4);
+    line-height: calc(var(--vr-4) - 0.4rem);
     padding-top: var(--navbar-size);
     margin: calc(var(--vr-4) - var(--navbar-size)) 0 0;
 }
