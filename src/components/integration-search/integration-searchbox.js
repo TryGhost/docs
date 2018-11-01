@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connectSearchBox } from 'react-instantsearch-dom'
-import { navigate } from 'gatsby'
 
 // const IntegrationSearch = ({ currentRefinement, refine }) => {
 class IntegrationSearch extends React.Component {
@@ -10,51 +9,41 @@ class IntegrationSearch extends React.Component {
 
         this.state = {
             currentInput: this.props.currentRefinement,
+            showReset: false,
         }
 
-        this.searchInput = React.createRef()
         this.handleChange = this.handleChange.bind(this)
         this.setInput = this.setInput.bind(this)
-        this.clearInput = this.clearInput.bind(this)
-        this.navigateHome = this.navigateHome.bind(this)
-    }
-
-    navigateHome = () => {
-        if (this.props.location.pathname.match(/\/integrations\/\s*/)) {
-            // When we're not on the main integrations page, navigate there
-            navigate(`/integrations/`)
-        }
+        this.resetSearch = this.resetSearch.bind(this)
+        this.toggleResetButton = this.toggleResetButton.bind(this)
     }
 
     setInput = e => this.setState(() => {
         return { currentInput: e }
     })
 
-    clearInput = () => {
+    toggleResetButton(val) {
         this.setState(() => {
+            return { showReset: val }
+        })
+    }
+
+    resetSearch = () => {
+        this.props.searchActive(false)
+        this.toggleResetButton(false)
+        this.props.refine()
+
+        return this.setState(() => {
             return { currentInput: `` }
         })
-        return this.props.refine()
     }
 
     handleChange = (e) => {
-        let currentVal = e.target.value
-        console.log(`handleChange -> currentVal set to:`, currentVal)
+        this.setInput(e.target.value)
 
-        // safe input
-        this.setInput(currentVal)
-        console.log(`handleChange -> setInput, current state:`, this.state.currentInput)
-
-        this.navigateHome()
-        console.log(`handleChange -> navigateHome finished`)
-        console.log(`navigateHome -> focus`)
-        this.searchInput.current.focus()
-
-        // Signal to parent component, that the search is active now
+        // Tell to parent component, that the search is active now
         this.props.searchActive(true)
-        console.log(`handleChange -> searchActive set finished`)
-
-        console.log(`handleChange -> refine now`)
+        this.toggleResetButton(true)
 
         return this.props.refine(e.target.value)
     }
@@ -72,9 +61,12 @@ class IntegrationSearch extends React.Component {
                 autoComplete="off"
                 value={this.state.currentInput}
                 onChange={this.handleChange}
-                ref={this.searchInput}
             />
-            <button onClick={this.clearInput}>X</button>
+                {this.state.showReset ?
+                    <button onClick={this.resetSearch}>X</button> :
+                    null
+                }
+
         </>
         )
     }
@@ -87,12 +79,9 @@ const IntegrationSearchBox = connectSearchBox(IntegrationSearch)
 
 IntegrationSearch.propTypes = {
     searchActive: PropTypes.func.isRequired,
-    currentFilter: PropTypes.string,
     currentRefinement: PropTypes.string,
     refine: PropTypes.func,
-    location: PropTypes.shape({
-        pathname: PropTypes.string.isRequired,
-    }).isRequired,
+    returnTo: PropTypes.string.isRequired,
 }
 
 export default IntegrationSearchBox

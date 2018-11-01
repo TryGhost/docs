@@ -65,6 +65,8 @@ class IntegrationsTagList extends React.Component {
         this.props.setFilter(tagSlug)
     }
     render() {
+        const activeLocation = this.props.searchActive ? `/integrations/` : this.props.location.pathname
+
         return (
             <>
                 <h3 className="ma0 mb2">Filter by</h3>
@@ -72,7 +74,7 @@ class IntegrationsTagList extends React.Component {
                         <Link
                             key={i}
                             to={item.link}
-                            className={(this.props.location.pathname === item.link ? `blue fw6` : `midgrey`) + ` link pa2 pl0` }
+                            className={(activeLocation === item.link ? `blue fw6` : `midgrey`) + ` link pa2 pl0` }
                             onClick={this.handleFilter}
                         >
                             { item.name }
@@ -87,6 +89,7 @@ class IntegrationsTagList extends React.Component {
 IntegrationsTagList.propTypes = {
     location: PropTypes.object.isRequired,
     setFilter: PropTypes.func.isRequired,
+    searchActive: PropTypes.bool.isRequired,
 }
 
 export default IntegrationsTagList

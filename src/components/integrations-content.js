@@ -26,10 +26,9 @@ class IntegrationsContent extends React.Component {
     }
 
     toggleSearch() {
-        this.setState(() => {
+        this.setState((state) => {
             return {
-                searchActive: true,
-                currentFilter: ``,
+                searchActive: !state.searchActive,
             }
         })
     }
@@ -89,12 +88,9 @@ class IntegrationsContent extends React.Component {
                             <div className="pa-vw4 tc">
                                 <h1 className="ma0 pa0 f-headline white gh-integration-header-shadow">Ghost Integrations</h1>
                                 <p className="ma0 mt2 f4 white-80">All your favourite apps and tools, integrated with Ghost</p>
-
                                 <IntegrationSearchBox
-                                    activeSorting={this.state.activeSorting}
-                                    currentFilter={this.state.currentFilter}
                                     searchActive={this.toggleSearch}
-                                    location={this.props.location}
+                                    returnTo={this.props.location.pathname}
                                 />
                             </div>
                         </div>
@@ -109,7 +105,11 @@ class IntegrationsContent extends React.Component {
                                         <a className={`link pa2 pl0 ${this.state.activeSorting === `title` ? `blue fw6` : `midgrey`}`} href="#" onClick={this.sortBy.bind(this, `title`)}>A – Z</a>
                                     </div>
                                     <div className="flex flex-column mb6">
-                                        <IntegrationsTagList location={this.props.location} setFilter={this.setCurrentFilter} />
+                                        <IntegrationsTagList
+                                            location={this.props.location}
+                                            setFilter={this.setCurrentFilter}
+                                            searchActive={this.state.searchActive}
+                                        />
                                     </div>
                                 </div>
                                 {this.state.searchActive ?
