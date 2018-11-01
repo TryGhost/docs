@@ -25,10 +25,11 @@ class Integration extends React.Component {
     render() {
         const post = this.props.data.ghostPost
         const { relatedPosts } = this.props.pageContext
+        const title = `Ghost + ${post.title} Integration`
 
         return (
             <>
-                <MetaData data={this.props.data} location={this.props.location} type="article" />
+                <MetaData data={this.props.data} location={this.props.location} type="article" title={title} />
                 <Layout>
                     <div className="pa-vw4 tc">
                         <h1 className="ma0 pa0 f-headline">{post.title} + Ghost</h1>
