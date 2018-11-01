@@ -14,7 +14,9 @@ const Page = () => (
             <div>
                 <section className="flex-auto flex bg-white br4 shadow-1 pa15 pt12">
                     <div className="order-2">
-                        <TOC />
+                        <div className="nr3 sticky top-25">
+                            <TOC />
+                        </div>
                     </div>
                     <div className="order-1">
                         <span className="f7 fw5 measure-wide ttu dib mb1 midlightgrey">Breadcrumbs</span>

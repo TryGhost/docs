@@ -10,6 +10,7 @@ import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import TOC from '../components/layouts/partials/toc'
 import MetaData from '../components/layouts/partials/meta-data'
+import RelatedPosts from '../components/global/related-posts'
 
 class Integration extends React.Component {
     componentDidMount() {
@@ -23,6 +24,7 @@ class Integration extends React.Component {
 
     render() {
         const post = this.props.data.ghostPost
+        const { relatedPosts } = this.props.pageContext
 
         return (
             <>
@@ -43,7 +45,16 @@ class Integration extends React.Component {
                     <div className={ Spirit.page.l + `flex` }>
                         <div className="w-100 pa15 pt13 bg-white br4 shadow-1 flex flex-start">
                             <div className="order-2">
-                                <TOC className="miw50" headingsOffset="-400" />
+                                <div className="nr3 sticky top-25">
+                                    <TOC className="miw50" headingsOffset="-400" />
+                                    {relatedPosts.length ?
+                                        <div className="miw50 mw-content-ns mt6">
+                                            <h4 className={Spirit.h5 + `mb4 midgrey`}>Related Integrations</h4>
+                                            <RelatedPosts relatedPosts={relatedPosts} />
+                                        </div> :
+                                        null
+                                    }
+                                </div>
                             </div>
                             <article className="w-100 order-1 pr10">
                                 <div className="mb5 f8">
@@ -64,6 +75,9 @@ class Integration extends React.Component {
 Integration.propTypes = {
     data: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
+    pageContext: PropTypes.shape({
+        relatedPosts: PropTypes.array.isRequired,
+    }).isRequired,
 }
 
 export default Integration
