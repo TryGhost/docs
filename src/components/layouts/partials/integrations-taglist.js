@@ -8,47 +8,77 @@ const tags = [
         name: `All integrations`,
         link: `/integrations/`,
     },
+    // {
+    //     name: `Automation`,
+    //     link: `/integrations/automation/`,
+    // },
+    // {
+    //     name: `Analytics`,
+    //     link: `/integrations/analytics/`,
+    // },
+    // {
+    //     name: `Cards`,
+    //     link: `/integrations/card/`,
+    // },
     {
-        name: `Automation`,
-        link: `/integrations/automation/`,
+        name: `Content`,
+        link: `/integrations/content/`,
     },
+    // {
+    //     name: `Communication`,
+    //     link: `/integrations/email/`,
+    // },
+    // {
+    //     name: `Marketing`,
+    //     link: `/integrations/marketing/`,
+    // },
+    // {
+    //     name: `Storage`,
+    //     link: `/integrations/storage/`,
+    // },
+    // {
+    //     name: `Support`,
+    //     link: `/integrations/support/`,
+    // },
     {
-        name: `Analytics`,
-        link: `/integrations/analytics/`,
+        name: `Surveys & Forms`,
+        link: `/integrations/surveys-forms/`,
     },
-    {
-        name: `Editor Cards`,
-        link: `/integrations/card/`,
-    },
-    {
-        name: `Communication`,
-        link: `/integrations/email/`,
-    },
-    {
-        name: `Marketing`,
-        link: `/integrations/marketing/`,
-    },
-    {
-        name: `Support`,
-        link: `/integrations/support/`,
-    },
-    {
-        name: `Storage`,
-        link: `/integrations/storage/`,
-    },
-    {
-        name: `Utilities`,
-        link: `/integrations/utilities/`,
-    },
+    // {
+    //     name: `Utilities`,
+    //     link: `/integrations/utilities/`,
+    // },
 ]
 
 class IntegrationsTagList extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.handleFilter = this.handleFilter.bind(this)
+    }
+
+    handleFilter(e) {
+        let tagSlug = /(?:\/*?integrations\/)(\S*)(?:\/{1})/.exec(e.target.href)
+
+        tagSlug = tagSlug && tagSlug.length > 1 ? tagSlug[1] : ``
+
+        this.props.setFilter(tagSlug)
+    }
     render() {
+        const activeLocation = this.props.searchActive ? `/integrations/` : this.props.location.pathname
+
         return (
             <>
                 <h3 className="ma0 mb2">Filter by</h3>
                     { tags.map((item, i) => (
-                        <Link key={i} to={item.link} className={(this.props.location.pathname === item.link ? `blue fw6` : `midgrey`) + ` link pa2 pl0` }>{ item.name }</Link>
+                        <Link
+                            key={i}
+                            to={item.link}
+                            className={(activeLocation === item.link ? `blue fw6` : `midgrey`) + ` link pa2 pl0` }
+                            onClick={this.handleFilter}
+                        >
+                            { item.name }
+                        </Link>
                     )) }
 
             </>
@@ -58,6 +88,8 @@ class IntegrationsTagList extends React.Component {
 
 IntegrationsTagList.propTypes = {
     location: PropTypes.object.isRequired,
+    setFilter: PropTypes.func.isRequired,
+    searchActive: PropTypes.bool.isRequired,
 }
 
 export default IntegrationsTagList
