@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
 const Integration = (props) => {
-    const { post } = props
-    const { hit } = props
+    const { post, hit } = props
     const url = post ? `/integrations/${post.slug}/` : hit.url
     const image = post ? post.feature_image : hit.image
     const title = post ? post.title : hit.title

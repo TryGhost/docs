@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connectSearchBox } from 'react-instantsearch-dom'
 
-// const IntegrationSearch = ({ currentRefinement, refine }) => {
 class IntegrationSearch extends React.Component {
     constructor(props) {
         super(props)

@@ -5,11 +5,9 @@ import _ from 'lodash'
 import Layout from './layouts/default'
 import Integration from "./integration"
 import { Spirit } from './spirit-styles'
-// import IntegrationsHeader from './layouts/partials/integrations-header'
 import NavBar from './layouts/partials/navbar'
 import { IntegrationIndex, IntegrationSearchBox, IntegrationResults } from './integration-search'
 import IntegrationsTagList from './layouts/partials/integrations-taglist'
-// import IntegrationIndex from './integration-search/integration-index'
 
 class IntegrationsContent extends React.Component {
     constructor(props) {
