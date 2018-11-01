@@ -57,7 +57,34 @@ class Results extends React.Component {
     }
 
     renderSectionTitle(section) {
-        return searchConfig[section.index]
+        // console.log(searchConfig[section.index])
+        var labelClass = `br-pill bg-white ba pa1 pl2 pr2 nowrap`
+        switch (section.index) {
+        case `faq`:
+            labelClass += ` faq-color b--faq-color`
+            break
+
+        case `concept`:
+            labelClass += ` concept-color b--concept-color`
+            break
+        
+        case `setup`:
+            labelClass += ` setup-color b--setup-color`
+            break
+
+        case `api`:
+            labelClass += ` middarkgrey b--middarkgrey`
+            break
+
+        case `tutorial`:
+            labelClass += ` tutorial-color b--tutorial-color`
+            break
+    
+        default:
+            labelClass += ` midgrey b--midgrey`
+            break
+        }
+        return <span className={ labelClass }>{ searchConfig[section.index] }</span>
     }
 
     getSectionSuggestions(section) {
@@ -77,7 +104,7 @@ class Results extends React.Component {
         }
 
         // <input id="homesearch" name="homesearch" className="input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0" type="text" placeholder="Search documentation..." autoComplete="off" />
-        const inputTheme = `input-reset form-text b--transparent search-modal-field-bg br-pill flex-auto whitney lh-normal pa2 pl8 plr3 w-100 dark-placeholder`
+        const inputTheme = `input-reset form-text b--transparent search-modal-field-bg br-pill flex-auto whitney lh-normal pa2 pl8 plr3 w-100 dark-placeholder`        
 
         const theme = {
             input: inputTheme,
@@ -91,13 +118,13 @@ class Results extends React.Component {
             // inputFocused: 'react-autosuggest__input--focused',
             // suggestionsContainer: 'pa15',
             suggestionsContainerOpen: `pa11 pt3 pb3 mt10 bt b--whitegrey nl10 nr10 nb10 search-modal-result-container`,
-            suggestionsList: `list pa0 ma0 search-modal-suggestion-list flex-auto ml11`,
+            suggestionsList: `list pa0 ma0 pt1 search-modal-suggestion-list flex-auto ml11`,
             // suggestion: 'react-autosuggest__suggestion',
             // suggestionFirst: 'react-autosuggest__suggestion--first',
             // suggestionHighlighted: 'red',
             sectionContainer: `pb4`,
             // sectionContainerFirst: 'bn',
-            sectionTitle: `f6 f5-l lh-h4 fw5 midgrey w25 tr mt2 sticky top-2`,
+            sectionTitle: `f8 lh-h4 fw5 midgrey w30 tr mt2 sticky top-2 pr2`,
         }
 
         return (

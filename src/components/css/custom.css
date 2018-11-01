@@ -699,10 +699,26 @@ kbd {
     min-height: 20rem;
 }
 
+.setup-color {
+    color: #008BD6;
+}
+
+.b--setup-color {
+    border-color: #008BD6;
+}
+
 /* Core Concepts */
 /* ----------------------------------------------------------------------- */
 .bg-concepts {
     background: url(../../images/bg-concepts.svg) bottom center no-repeat, linear-gradient(60deg, #6B23AE 0%, #C86DD7 100%);
+}
+
+.concept-color {
+    color: #7726A0;
+}
+
+.b--concept-color {
+    border-color: #7726A0;
 }
 
 /* Tutorials */
@@ -715,8 +731,13 @@ kbd {
     background-color: #35BCAD;
 }
 
-.tutorial-green {
+.tutorial-green,
+.tutorial-color {
     color: #35BCAD;
+}
+
+.b--tutorial-color {
+    border-color: #35BCAD;
 }
 
 .stroke-tutorial-green g,
@@ -766,15 +787,15 @@ kbd {
 }
 
 .bg-faq-color {
-    background: #CC3AA2;
+    background: #D948B0;
 }
 
 .b--faq-color {
-    border-color: #CC3AA2;
+    border-color: #D948B0;
 }
 
 .faq-color {
-    color: #CC3AA2;
+    color: #D948B0;
 }
 
 .faq-question h4 {
@@ -782,7 +803,7 @@ kbd {
 }
 
 .faq-question:hover h4 {
-    color: #CC3AA2;
+    color: #D948B0;
 }
 
 .faq-question:last-of-type {
