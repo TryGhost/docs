@@ -116,14 +116,7 @@ exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
     const { createRedirect } = actions
     const queryPromises = []
-
-    createRedirect({
-        fromPath: `/design/`,
-        isPermanent: true,
-        redirectInBrowser: true,
-        toPath: `/design/styling/`,
-    })
-
+    
     createRedirect({
         fromPath: `/api/content/`,
         isPermanent: true,

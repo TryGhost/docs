@@ -8,15 +8,12 @@ import { Spirit } from '../components/spirit-styles'
 import NavSidebar from '../components/global/navigation-sidebar'
 import FeedbackForm from '../components/global/feedback-form'
 import PrevNext from '../components/global/prev-next'
-import DesignNavSidebar from '../components/layouts/partials/design-nav-sidebar'
 import TOC from '../components/layouts/partials/toc'
 import MetaData from '../components/layouts/partials/meta-data'
 import Icon from '../components/global/icon'
 
 function NavBar(props) {
-    if (props.location.pathname.match(/\S\/design\//i)) {
-        return <DesignNavSidebar />
-    } else if (props.sidebar) {
+    if (props.sidebar) {
         return <NavSidebar sidebar={ props.sidebar } location={ props.location } />
     } else {
         return null
