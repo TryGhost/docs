@@ -562,7 +562,7 @@ Usage (In Ghost editor):
 .post-content h4 + table,
 .post-content h5 + table,
 .post-content h6 + table {
-    margin: var(--vr-2);
+    margin: var(--vr-2) 0;
 }
 
 /* Footnotes */
