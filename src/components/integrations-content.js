@@ -7,21 +7,9 @@ import Integration from "./integration"
 import { Spirit } from './spirit-styles'
 // import IntegrationsHeader from './layouts/partials/integrations-header'
 import NavBar from './layouts/partials/navbar'
-import { IntegrationIndex, IntegrationSearchBox, IntegrationFilterMenu, IntegrationResults } from './integration-search'
+import { IntegrationIndex, IntegrationSearchBox, IntegrationResults } from './integration-search'
 import IntegrationsTagList from './layouts/partials/integrations-taglist'
 // import IntegrationIndex from './integration-search/integration-index'
-
-const filterInternalTags = items => items
-    .filter(item => item.label.charAt(0) !== `#`)
-    .sort((a, b) => {
-        if (a.label < b.label) {
-            return -1
-        }
-        if (a.label > b.label) {
-            return 1
-        }
-        return 0
-    })
 
 class IntegrationsContent extends React.Component {
     constructor(props) {
@@ -39,7 +27,10 @@ class IntegrationsContent extends React.Component {
 
     toggleSearch() {
         this.setState(() => {
-            return { searchActive: true }
+            return {
+                searchActive: true,
+                currentFilter: ``,
+            }
         })
     }
 
@@ -103,6 +94,7 @@ class IntegrationsContent extends React.Component {
                                     activeSorting={this.state.activeSorting}
                                     currentFilter={this.state.currentFilter}
                                     searchActive={this.toggleSearch}
+                                    location={this.props.location}
                                 />
                             </div>
                         </div>
@@ -117,17 +109,7 @@ class IntegrationsContent extends React.Component {
                                         <a className={`link pa2 pl0 ${this.state.activeSorting === `title` ? `blue fw6` : `midgrey`}`} href="#" onClick={this.sortBy.bind(this, `title`)}>A – Z</a>
                                     </div>
                                     <div className="flex flex-column mb6">
-                                        {this.state.searchActive ?
-                                        <>
-                                            <IntegrationFilterMenu
-                                                attribute="tags.name"
-                                                currentRefinement={this.state.currentFilter}
-                                                transformItems={filterInternalTags}
-                                            />
-                                        </> :
-                                            <IntegrationsTagList location={this.props.location} setFilter={this.setCurrentFilter}/>
-                                        }
-
+                                        <IntegrationsTagList location={this.props.location} setFilter={this.setCurrentFilter} />
                                     </div>
                                 </div>
                                 {this.state.searchActive ?
