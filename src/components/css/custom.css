@@ -608,6 +608,16 @@ kbd {
     }
 }
 
+.integration-color {
+    color: #FE8167;
+}
+
+.b--integration {
+    border-color: #FE8167;
+}
+
+/* ---------------------- */
+
 .grid-navbar {
     display: grid;
     grid-template-columns: 220px auto;
@@ -648,7 +658,6 @@ kbd {
     bottom: 0;
     background: var(--whitegrey-l2);
     width: 10000px;
-    /* z-index: -999; */
 }
 
 .nav-sidebar:after {
@@ -660,7 +669,6 @@ kbd {
     background: linear-gradient(90deg, var(--whitegrey-l2) 0%, rgba(0, 0, 0, 0.015) 100%);
     border-right: 1px solid var(--whitegrey-l1);
     width: 8px;
-    /* z-index: -997; */
 }
 
 .z--999 {
