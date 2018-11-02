@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connectSearchBox } from 'react-instantsearch-dom'
 
+import Icon from "../global/icon"
+
 class IntegrationSearch extends React.Component {
     constructor(props) {
         super(props)
@@ -48,26 +50,15 @@ class IntegrationSearch extends React.Component {
     }
 
     render() {
-        return (
-        <>
-            <label htmlFor="integrationsearch" className="clip">Search</label>
-            <input
-                id="integrationsearch"
-                name="integrationsearch"
-                className="input-reset form-text pa4 pl5 pr5 mt8 w-100 mw-s f6 br-pill ba b--transparent bg-white shadow-2"
-                type="text"
-                placeholder="Search integrations..."
-                autoComplete="off"
-                value={this.state.currentInput}
-                onChange={this.handleChange}
-            />
-                {this.state.showReset ?
-                    <button onClick={this.resetSearch}>X</button> :
-                    null
-                }
-
-        </>
-        )
+        return <div className="relative mt8 mw-s center">
+            <label htmlFor="integrationsearch" className="clip">
+                    Search
+            </label>
+            <input id="integrationsearch" name="integrationsearch" className="input-reset form-text pa4 pl5 pr5 w-100 f6 br-pill ba b--transparent bg-white shadow-2" type="text" placeholder="Search integrations..." autoComplete="off" value={this.state.currentInput} onChange={this.handleChange} />
+            {this.state.showReset ? <button className="absolute top-0 right-0 bottom-0 pa0 pr2 b--transparent flex justify-center items-center bg-transparent" onClick={this.resetSearch}>
+                <Icon name="close" className="w4 h4 pa2 fill-darkgrey bg-white br-100 pointer dim" />
+            </button> : null}
+        </div>
     }
 }
 
