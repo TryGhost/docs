@@ -68,6 +68,7 @@ const getRelatedPosts = (currentPost, allPosts) => {
 
         // We return the concatinated list of posts, but put our higher ranked posts first, then
         // the regular filtered posts, which we order by date
+
         filteredPosts = _.concat(higherRankedPosts, filteredPosts.sort(sortByDateDescending)).slice(0, NUMBER_RELATED_POSTS)
     } else if (filteredPosts.length) {
         // We didn't have more than 2 tags in common, the result will only be sorted by date
@@ -81,14 +82,19 @@ const getRelatedPosts = (currentPost, allPosts) => {
     // if we didn't reach the minimum number of related posts, we randomly pick some until we do
     if (filteredPosts.length < NUMBER_RELATED_POSTS) {
         let missingPostsNumber = NUMBER_RELATED_POSTS - filteredPosts.length
-        const allPostsAvailable = _.filter(allPosts, ({ node }) => currentPost.slug !== node.slug)
+        // Only check the posts that are not used yet
+        const allPostsAvailable = _.difference(allPosts, filteredPosts)
         const randomPosts = []
 
-        while (missingPostsNumber > 0) {
-            const randomPostNumber = Math.floor(Math.random() * allPostsAvailable.length - 1)
-            randomPosts.push(allPostsAvailable.splice(randomPostNumber, 1))
+        while (missingPostsNumber > 0 && allPostsAvailable.length) {
+            const randomPostNumber = Math.floor(Math.random() * (allPostsAvailable.length + 1))
+            const [randomPost] = allPostsAvailable.splice(randomPostNumber, 1)
 
-            missingPostsNumber -= 1
+            if (randomPost) {
+                randomPosts.push(randomPost)
+
+                missingPostsNumber -= 1
+            }
         }
 
         return _.concat(filteredPosts, randomPosts)

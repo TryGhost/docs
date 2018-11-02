@@ -19,7 +19,14 @@ class RelatedPosts extends React.Component {
 }
 
 RelatedPosts.propTypes = {
-    relatedPosts: PropTypes.array.isRequired,
+    relatedPosts: PropTypes.arrayOf(
+        PropTypes.shape({
+            node: PropTypes.shape({
+                title: PropTypes.string.isRequired,
+                url: PropTypes.string.isRequired,
+                feature_image: PropTypes.string,
+            }).isRequired,
+        })).isRequired,
 }
 
 export default RelatedPosts
