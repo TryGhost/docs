@@ -58,7 +58,7 @@ class Integration extends React.Component {
                                     }
                                 </div>
                             </div>
-                            <article className="w-100 order-1 pr10">
+                            <article className="w-100 order-1 pr15">
                                 <div className="mb0 f8">
                                     <Link className="link midlightgrey fw5" to="/integrations/">Integrations</Link>
                                     <span className="mr1 ml1 f8 midgrey">/</span>
