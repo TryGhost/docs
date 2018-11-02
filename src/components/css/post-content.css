@@ -855,14 +855,14 @@ Usage (In Ghost editor):
     counter-increment: headingitem;
     content: counter(headingitem);
     position: absolute;
-    left: -36px;
-    width: 24px;
-    height: 24px;
+    left: -40px;
+    width: 25px;
+    height: 25px;
     font-size: 1.4rem;
     border-radius: 100%;
     background: #35BCAD;
     color: #ffffff;
-    top: 96px;
+    top: 95px;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -870,8 +870,8 @@ Usage (In Ghost editor):
 }
 
 .integration-content h2:before {
-    background: var(--lightgrey-l2);
-    color: var(--darkgrey);
+    background: var(--darkgrey-l2);
+    color: #fff;
 }
 
 .tutorial-content h2:last-of-type {
