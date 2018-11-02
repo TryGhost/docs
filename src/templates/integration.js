@@ -11,6 +11,7 @@ import { Spirit } from '../components/spirit-styles'
 import TOC from '../components/layouts/partials/toc'
 import MetaData from '../components/layouts/partials/meta-data'
 import RelatedPosts from '../components/global/related-posts'
+import Tags from '../components/helpers/tags'
 
 class Integration extends React.Component {
     componentDidMount() {
@@ -61,7 +62,14 @@ class Integration extends React.Component {
                                 <div className="mb1 f8">
                                     <Link className="link midgrey" to="/integrations/">Integrations</Link>
                                     <span className="mr1 ml1 f8 midgrey">/</span>
-                                    <span className="darkgrey fw5">{post.title}</span>
+                                    <Tags
+                                        post={post}
+                                        separator="false"
+                                        html={true}
+                                        classes="darkgrey fw5"
+                                        linkToPrefix="integrations"
+                                        linkClasses="link darkgrey fw5"
+                                    />
                                 </div>
                                 <section className="post-content integration-content" dangerouslySetInnerHTML={{ __html: post.html }} />
                             </article>
