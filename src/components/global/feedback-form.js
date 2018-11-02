@@ -7,6 +7,7 @@ import { Spirit } from '../../components/spirit-styles'
 import Icon from '../../components/global/icon'
 
 const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
+console.log(`RECAPTCHA_KEY`, RECAPTCHA_KEY)
 
 const recaptchaRef = React.createRef()
 
@@ -41,7 +42,7 @@ class FeedbackForm extends React.Component {
 
     handleRecaptcha = () => {
         const recaptchaValue = recaptchaRef.current.getValue()
-        console.log(`handleRecaptcha -> value`, recaptchaValue)
+
         this.setState({ "g-recaptcha-response": recaptchaValue })
     };
 
