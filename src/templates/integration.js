@@ -49,8 +49,8 @@ class Integration extends React.Component {
                                 <div className="nr3 sticky top-25">
                                     <TOC className="miw50" headingsOffset="-400" />
                                     {relatedPosts.length ?
-                                        <div className="miw50 mw-content-ns mt6">
-                                            <h4 className={Spirit.h5 + `mb4 midgrey`}>Related Integrations</h4>
+                                        <div className="miw50 mw-content-ns mt10">
+                                            <h3 className="f5 measure--0-2 middarkgrey ma0 pa0 fw5 mb3">You might also like...</h3>
                                             <RelatedPosts relatedPosts={relatedPosts} />
                                         </div> :
                                         null
