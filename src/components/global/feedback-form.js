@@ -8,6 +8,8 @@ import Icon from '../../components/global/icon'
 
 const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
 
+const recaptchaRef = React.createRef()
+
 function encode(data) {
     return Object.keys(data)
         .map(key => encodeURIComponent(key) + `=` + encodeURIComponent(data[key]))
@@ -37,13 +39,15 @@ class FeedbackForm extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    handleRecaptcha = (value) => {
-        console.log(`handleRecaptcha -> value`, value)
-        this.setState({ "g-recaptcha-response": value })
+    handleRecaptcha = () => {
+        const recaptchaValue = recaptchaRef.current.getValue()
+        console.log(`handleRecaptcha -> value`, recaptchaValue)
+        this.setState({ "g-recaptcha-response": recaptchaValue })
     };
 
     handleSubmit = (e) => {
         e.preventDefault()
+        recaptchaRef.current.execute()
         let isValid = true
         const form = e.target
 
@@ -164,7 +168,8 @@ class FeedbackForm extends React.Component {
                             />
                         </p>
                         <Recaptcha
-                            ref={`recaptcha`}
+                            ref={recaptchaRef}
+                            size="invisible"
                             sitekey={RECAPTCHA_KEY}
                             onChange={this.handleRecaptcha}
                         />
