@@ -39,16 +39,20 @@ class FeedbackForm extends React.Component {
     }
 
     handleRecaptcha = () => {
+        recaptchaRef.current.execute()
+        console.log(`handleRecaptcha -> recaptchaRef.current`, recaptchaRef.current)
         const recaptchaValue = recaptchaRef.current.getValue()
-        console.log('TCL: FeedbackForm -> handleRecaptcha -> recaptchaValue', recaptchaValue);
+        console.log(`handleRecaptcha -> recaptchaValue`, recaptchaValue)
 
-        this.setState({ "g-recaptcha-response": recaptchaValue })
+        return this.setState(() => {
+            return { "g-recaptcha-response": recaptchaValue }
+        })
     };
 
     handleSubmit = (e) => {
-        e.preventDefault()
-        recaptchaRef.current.execute()
         this.handleRecaptcha()
+
+        e.preventDefault()
         let isValid = true
         const form = e.target
 
@@ -60,6 +64,8 @@ class FeedbackForm extends React.Component {
             email: this.state.email,
             message: this.state.message,
         }
+
+        console.log(...this.state)
 
         // TODO: proper inline validation
         _.each(formData, (val) => {
