@@ -57,7 +57,7 @@ export const pageQuery = graphql`
         ...SiteMetaFields
     }
     allGhostPost(
-        sort: { order: DESC, fields: [published_at] },
+        sort: { order: ASC, fields: [published_at] },
         limit: 100,
         filter: {tags: {elemMatch: {slug: {eq: "hash-integration"}}}}
     ) {
