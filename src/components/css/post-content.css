@@ -950,3 +950,37 @@ pre {
 .post-content pre code * {
     color: inherit;
 }
+
+
+/* Zapier Embeds
+/* ---------------------------------------------------------- */
+
+.zapier {
+    width: 100%;
+}
+
+.zapier + .zapier {
+    position: relative;
+}
+
+.zapier + .zapier:before {
+    content: "";
+    height: 30px;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: -40px;
+}
+
+.zapier + .zapier:after {
+    content: "";
+    height: 29px;
+    width: 1px;
+    margin: 0 auto;
+    background: #DADFE2;
+    position: absolute;
+    top: -33px;
+    left: 50%;
+    z-index: 50;
+}
+
