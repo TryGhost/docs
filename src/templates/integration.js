@@ -50,8 +50,8 @@ class Integration extends React.Component {
                                 <div className="nr3 sticky top-25">
                                     <TOC className="miw50" headingsOffset="-400" />
                                     {relatedPosts.length ?
-                                        <div className="miw50 mw-content-ns mt10">
-                                            <h3 className="f5 measure--0-2 middarkgrey ma0 pa0 fw5 mb3">You might also like...</h3>
+                                        <div className="miw50 mw-content-ns mt15">
+                                            <h3 className="f4 measure--0-2 middarkgrey ma0 mb3 pa0 fw4">You might also like...</h3>
                                             <RelatedPosts relatedPosts={relatedPosts} showImages/>
                                         </div> :
                                         null
@@ -59,8 +59,8 @@ class Integration extends React.Component {
                                 </div>
                             </div>
                             <article className="w-100 order-1 pr10">
-                                <div className="mb1 f8">
-                                    <Link className="link midgrey" to="/integrations/">Integrations</Link>
+                                <div className="mb0 f8">
+                                    <Link className="link midlightgrey fw5" to="/integrations/">Integrations</Link>
                                     <span className="mr1 ml1 f8 midgrey">/</span>
                                     <Tags
                                         post={post}
@@ -68,7 +68,7 @@ class Integration extends React.Component {
                                         html={true}
                                         classes="darkgrey fw5"
                                         linkToPrefix="integrations"
-                                        linkClasses="link darkgrey fw5"
+                                        linkClasses="link darkgrey fw6"
                                     />
                                 </div>
                                 <section className="post-content integration-content" dangerouslySetInnerHTML={{ __html: post.html }} />
