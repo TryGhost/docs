@@ -40,6 +40,7 @@ class FeedbackForm extends React.Component {
 
     handleRecaptcha = () => {
         const recaptchaValue = recaptchaRef.current.getValue()
+        console.log('TCL: FeedbackForm -> handleRecaptcha -> recaptchaValue', recaptchaValue);
 
         this.setState({ "g-recaptcha-response": recaptchaValue })
     };
@@ -47,6 +48,7 @@ class FeedbackForm extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
         recaptchaRef.current.execute()
+        this.handleRecaptcha()
         let isValid = true
         const form = e.target
 
