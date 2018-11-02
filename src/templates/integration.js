@@ -51,7 +51,7 @@ class Integration extends React.Component {
                                     {relatedPosts.length ?
                                         <div className="miw50 mw-content-ns mt10">
                                             <h3 className="f5 measure--0-2 middarkgrey ma0 pa0 fw5 mb3">You might also like...</h3>
-                                            <RelatedPosts relatedPosts={relatedPosts} />
+                                            <RelatedPosts relatedPosts={relatedPosts} showImages/>
                                         </div> :
                                         null
                                     }
