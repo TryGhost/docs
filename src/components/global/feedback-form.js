@@ -6,7 +6,7 @@ import Recaptcha from "react-google-recaptcha"
 import { Spirit } from '../../components/spirit-styles'
 import Icon from '../../components/global/icon'
 
-const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
+const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY || $GATSBY_SITE_RECAPTCHA_KEY // eslint-disable-line
 console.log(`RECAPTCHA_KEY`, RECAPTCHA_KEY)
 
 const recaptchaRef = React.createRef()
