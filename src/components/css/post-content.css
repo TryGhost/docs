@@ -692,7 +692,7 @@ Usage (In Ghost editor):
 
 .post-content figcaption {
     margin: var(--vr-2) 0 0;
-    font-size: 80%;
+    font-size: 0.9em;
     line-height: var(--vr-2);
     text-align: center;
     letter-spacing: 0.2px;
@@ -855,14 +855,14 @@ Usage (In Ghost editor):
     counter-increment: headingitem;
     content: counter(headingitem);
     position: absolute;
-    left: -36px;
-    width: 24px;
-    height: 24px;
+    left: -40px;
+    width: 25px;
+    height: 25px;
     font-size: 1.4rem;
     border-radius: 100%;
     background: #35BCAD;
     color: #ffffff;
-    top: 96px;
+    top: 95px;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -870,8 +870,8 @@ Usage (In Ghost editor):
 }
 
 .integration-content h2:before {
-    background: var(--lightgrey-l2);
-    color: var(--darkgrey);
+    background: var(--darkgrey-l2);
+    color: #fff;
 }
 
 .tutorial-content h2:last-of-type {
@@ -889,6 +889,16 @@ Usage (In Ghost editor):
     border-top: 1px solid var(--whitegrey);
     border-radius: 0;
 }
+
+.integration-content .kg-width-wide {
+    width: calc(100% + 7rem);
+    margin-left: -6rem;
+    margin-right: -1rem;
+}
+.integration-content .kg-width-wide .kg-image {
+    max-width: 100%;
+}
+
 
 /* Code Boxes
 /* ---------------------------------------------------------- */
@@ -922,11 +932,11 @@ pre {
     margin: 1.5em 0 3em;
     padding: 20px;
     max-width: 100%;
-    border: color(var(--darkgrey) l(-10%)) 1px solid;
+    border: none;
     color: var(--whitegrey);
     font-size: 1.3rem;
     line-height: 1.7em;
-    background: color(var(--darkgrey) l(-3%));
+    background: #2a3644;
     border-radius: 5px;
 }
 
@@ -940,3 +950,37 @@ pre {
 .post-content pre code * {
     color: inherit;
 }
+
+
+/* Zapier Embeds
+/* ---------------------------------------------------------- */
+
+.zapier {
+    width: 100%;
+}
+
+.zapier + .zapier {
+    position: relative;
+}
+
+.zapier + .zapier:before {
+    content: "";
+    height: 30px;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: -40px;
+}
+
+.zapier + .zapier:after {
+    content: "";
+    height: 29px;
+    width: 1px;
+    margin: 0 auto;
+    background: #DADFE2;
+    position: absolute;
+    top: -33px;
+    left: 50%;
+    z-index: 50;
+}
+

@@ -15,13 +15,14 @@ const ghostQueryConfig = [
         tagsTemplate: `./src/templates/tags-tutorials.js`,
         indexName: `tutorial`,
     },
-    // {
-    //     tag: `hash-integration`,
-    //     section: `integrations`,
-    //     niceName: `Integrations`,
-    //     template: `./src/templates/integration.js`,
-    //     indexName: `integration`,
-    // },
+    {
+        tag: `hash-integration`,
+        section: `integrations`,
+        niceName: `Integrations`,
+        template: `./src/templates/integration.js`,
+        tagsTemplate: `./src/templates/tags-integration.js`,
+        indexName: `integration`,
+    },
 ]
 
 const markdownQueryConfig = [

@@ -39,7 +39,7 @@ class FAQPage extends React.Component {
                                 <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>If you would like to make your site memorable and easy to find with a branded custom domain, then you can map any domain you own directly to your Ghost(Pro) publication.</p>
                             </Link>
 
-                              <Link to="/faq/forgot-password/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
+                            <Link to="/faq/forgot-password/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
                                 <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>How do I reset my password? &raquo;</h4>
                                 <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>In Ghost, each publication user has their own account details and password which can be reset or changed. Read more if you forgot your password or need to reset it!</p>
                             </Link>
@@ -68,7 +68,6 @@ class FAQPage extends React.Component {
                                 <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>Design settings &raquo;</h4>
                                 <p className={`${Spirit.small}ma0 f8 lh-copy middarkgrey mb6`}>Adding some design touches to your Ghost publication can be done from the Admin page when logged in to your publication. From here you can add navigation and upload a custom theme.</p>
                             </Link>
-
 
                             <Link to="/faq/analytics/" className={ `f5 db tdn mb6 faq-question bb b--whitegrey` }>
                                 <h4 className={`${Spirit.excerpt} link darkgrey fw5`}>How can I track how many views my site is getting? &raquo;</h4>

@@ -119,7 +119,7 @@ class IndexPage extends React.Component {
                             </section>
                         </div>
 
-                        {/* <section className={ Spirit.page.xl + `col-12 mt8 mt-vw3-ns bt bn-ns b--whitegrey pt5 pt0-ns` }>
+                        <section className={ Spirit.page.xl + `col-12 mt8 mt-vw3-ns bt bn-ns b--whitegrey pt5 pt0-ns` }>
                             <Link to="/integrations/" className={ Spirit.h3 + `link darkgrey hover-midgrey` }>Integrations</Link>
                             <p className={ Spirit.p + `mt2 midgrey flex flex-column flex-row-ns justify-between items-center-ns` }>
                                 All your favourite apps and tools, integrated with Ghost. <Link to="/integrations/" className="blue link din nb1 mt2 mt0-ns hover-underline-blue"><span className="flex items-center fw5">Browse all integrations <Icon name="arrow-right" className="w3 h3 ml1 fill-blue" /></span></Link>
@@ -150,7 +150,7 @@ class IndexPage extends React.Component {
                                     <Icon name="more" className="w8 nudge-top--6" />
                                     See More</Box>
                             </div>
-                        </section> */}
+                        </section>
                     </div>
                 </Layout>
             </>

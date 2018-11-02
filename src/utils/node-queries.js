@@ -5,6 +5,7 @@ slug
 title
 url
 published_at
+feature_image
 tags {
     slug
     name

@@ -11,6 +11,7 @@ const algoliaGhostFields = `
     image: feature_image
     tags {
         name
+        slug
     }
 `
 

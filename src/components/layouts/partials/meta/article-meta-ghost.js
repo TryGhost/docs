@@ -35,7 +35,7 @@ function getAuthorProperties(primaryAuthor, fetchAuthorData) {
 class ArticleMetaGhost extends React.Component {
     render() {
         const { ghostPost } = this.props.data
-        const { canonical, fetchAuthorData } = this.props
+        const { canonical, fetchAuthorData, title } = this.props
         const { siteMetadata } = this.props.data.site
 
         const excerpt = getPostExcerpt(ghostPost)
@@ -47,7 +47,7 @@ class ArticleMetaGhost extends React.Component {
         return (
             <>
                 <Helmet>
-                    <title>{ghostPost.meta_title || ghostPost.title}</title>
+                    <title>{ghostPost.meta_title || title || ghostPost.title}</title>
                     <meta name="description" content={ ghostPost.meta_description || excerpt } />
                     <link rel="canonical" href={ canonical } />
 
@@ -56,8 +56,9 @@ class ArticleMetaGhost extends React.Component {
                     <meta name="og:title"
                         content={
                             ghostPost.og_title ||
-                            ghostPost.title ||
-                            ghostPost.meta_title
+                            title ||
+                            ghostPost.meta_title ||
+                            ghostPost.title
                         }
                     />
                     <meta name="og:description"
@@ -76,8 +77,9 @@ class ArticleMetaGhost extends React.Component {
                     <meta name="twitter:title"
                         content={
                             ghostPost.twitter_title ||
-                            ghostPost.title ||
-                            ghostPost.meta_title
+                            title ||
+                            ghostPost.meta_title ||
+                            ghostPost.title
                         }
                     />
                     <meta name="twitter:description"
@@ -107,7 +109,7 @@ class ArticleMetaGhost extends React.Component {
                                 ${author.sameAsArray ? `"sameAs": ${author.sameAsArray}` : ``}
                             },
                             ${publicTags.length ? `"keywords": "${_.join(publicTags, `, `)}",` : ``}
-                            "headline": "${ghostPost.meta_title || ghostPost.title}",
+                            "headline": "${ghostPost.meta_title || title || ghostPost.title}",
                             "url": "${canonical}",
                             "datePublished": "${ghostPost.published_at}",
                             "dateModified": "${ghostPost.updated_at}",
@@ -154,6 +156,7 @@ ArticleMetaGhost.propTypes = {
     }).isRequired,
     canonical: PropTypes.string.isRequired,
     fetchAuthorData: PropTypes.bool,
+    title: PropTypes.string,
 }
 
 export default ArticleMetaGhost

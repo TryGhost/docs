@@ -1,14 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-// import { graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Prism from 'prismjs'
+import Img from "gatsby-image"
 
 import Layout from '../components/layouts/default'
-import integrationIcon from '../images/integration-icon.png'
+// import integrationIcon from '../images/integration-icon.png'
 import { Spirit } from '../components/spirit-styles'
 import TOC from '../components/layouts/partials/toc'
 import MetaData from '../components/layouts/partials/meta-data'
+import RelatedPosts from '../components/global/related-posts'
+import Tags from '../components/helpers/tags'
 
 class Integration extends React.Component {
     componentDidMount() {
@@ -22,10 +25,12 @@ class Integration extends React.Component {
 
     render() {
         const post = this.props.data.ghostPost
+        const { relatedPosts } = this.props.pageContext
+        const title = `Ghost + ${post.title} Integration`
 
         return (
             <>
-                <MetaData data={this.props.data} location={this.props.location} type="article" />
+                <MetaData data={this.props.data} location={this.props.location} type="article" title={title} />
                 <Layout>
                     <div className="pa-vw4 tc">
                         <h1 className="ma0 pa0 f-headline">{post.title} + Ghost</h1>
@@ -35,20 +40,36 @@ class Integration extends React.Component {
                                 <img className="mw100" src={post.feature_image} alt={post.title} />
                             </div>
                             <div className="flex-shrink-0 flex justify-center items-center h30 w30 pa11 bg-white br-100 shadow-3 nl2 nr2">
-                                <img className="mw100" src={integrationIcon} alt="Ghost" />
+                                <Img className="mw100" fixed={this.props.data.file.childImageSharp.fixed} alt="Ghost" />
                             </div>
                         </div>
                     </div>
                     <div className={ Spirit.page.l + `flex` }>
                         <div className="w-100 pa15 pt13 bg-white br4 shadow-1 flex flex-start">
                             <div className="order-2">
-                                <TOC className="miw50" headingsOffset="-400" />
+                                <div className="nr3 sticky top-25">
+                                    <TOC className="miw50" headingsOffset="-400" />
+                                    {relatedPosts.length ?
+                                        <div className="miw50 mw-content-ns mt10">
+                                            <h3 className="f5 measure--0-2 middarkgrey ma0 pa0 fw5 mb3">You might also like...</h3>
+                                            <RelatedPosts relatedPosts={relatedPosts} showImages/>
+                                        </div> :
+                                        null
+                                    }
+                                </div>
                             </div>
-                            <article className="order-1 pr10">
-                                <div className="mb5 f8">
+                            <article className="w-100 order-1 pr10">
+                                <div className="mb1 f8">
                                     <Link className="link midgrey" to="/integrations/">Integrations</Link>
                                     <span className="mr1 ml1 f8 midgrey">/</span>
-                                    <span className="darkgrey fw5">{post.title}</span>
+                                    <Tags
+                                        post={post}
+                                        separator="false"
+                                        html={true}
+                                        classes="darkgrey fw5"
+                                        linkToPrefix="integrations"
+                                        linkClasses="link darkgrey fw5"
+                                    />
                                 </div>
                                 <section className="post-content integration-content" dangerouslySetInnerHTML={{ __html: post.html }} />
                             </article>
@@ -63,18 +84,27 @@ class Integration extends React.Component {
 Integration.propTypes = {
     data: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
+    pageContext: PropTypes.shape({
+        relatedPosts: PropTypes.array.isRequired,
+    }).isRequired,
 }
 
 export default Integration
 
-// TODO: Uncomment for bringing back Integrations
-// export const articleQuery = graphql`
-//     query($slug: String!) {
-//         site {
-//             ...SiteMetaFields
-//         }
-//         ghostPost(slug: { eq: $slug }) {
-//             ...GhostPostFields
-//         }
-//     }
-// `
+export const articleQuery = graphql`
+    query($slug: String!) {
+        site {
+            ...SiteMetaFields
+        }
+        ghostPost(slug: { eq: $slug }) {
+            ...GhostPostFields
+        }
+        file(relativePath: {eq: "integration-icon.png"}) {
+            childImageSharp {
+                fixed(width: 32, height: 32) {
+                    ...GatsbyImageSharpFixed
+                }
+            }
+        }
+    }
+`

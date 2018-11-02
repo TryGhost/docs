@@ -82,8 +82,10 @@ const getRelatedPosts = (currentPost, allPosts) => {
     // if we didn't reach the minimum number of related posts, we randomly pick some until we do
     if (filteredPosts.length < NUMBER_RELATED_POSTS) {
         let missingPostsNumber = NUMBER_RELATED_POSTS - filteredPosts.length
-        // Only check the posts that are not used yet
+        // Only check the posts that are not used yet and remove our current post as well
+        allPosts = _.filter(allPosts, ({ node }) => node.slug !== currentPost.slug)
         const allPostsAvailable = _.difference(allPosts, filteredPosts)
+
         const randomPosts = []
 
         while (missingPostsNumber > 0 && allPostsAvailable.length) {

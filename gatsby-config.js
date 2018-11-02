@@ -6,6 +6,7 @@ const cssNano = require(`cssnano`)
 const customProperties = require(`postcss-custom-properties`)
 const easyImport = require(`postcss-easy-import`)
 const algoliaQueries = require(`./src/utils/algolia-queries`)
+const path = require(`path`)
 
 require(`dotenv`).config({
     path: `.env.${process.env.NODE_ENV}`,
@@ -26,8 +27,15 @@ const plugins = [
     {
         resolve: `gatsby-source-filesystem`,
         options: {
-            path: `${__dirname}/content/`,
+            path: path.join(__dirname, `content`),
             name: `markdown-pages`,
+        },
+    },
+    {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+            path: path.join(__dirname, `src`, `images`),
+            name: `images`,
         },
     },
     {
@@ -47,8 +55,8 @@ const plugins = [
             ],
         },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-transformer-yaml`,
     {
         resolve: `gatsby-source-ghost`,

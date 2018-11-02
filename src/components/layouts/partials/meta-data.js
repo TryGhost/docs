@@ -17,7 +17,12 @@ class MetaData extends React.Component {
         if (type === `article`) {
             if (ghostPost) {
                 return (
-                    <ArticleMetaGhost data={this.props.data} canonical={canonical} fetchAuthorData={fetchAuthorData} />
+                    <ArticleMetaGhost
+                        data={this.props.data}
+                        canonical={canonical}
+                        fetchAuthorData={fetchAuthorData}
+                        title={title}
+                    />
                 )
             } else if (markdownRemark) {
                 return (

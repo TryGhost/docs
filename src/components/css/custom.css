@@ -115,12 +115,12 @@ kbd {
 @media (--breakpoint-medium) { .w-sidebar-m { width: 22rem; } }
 @media (--breakpoint-large) { .w-sidebar-l { width: 22rem; } }
 
-.h0 { 
+.h0 {
     height: 0;
 }
-@media (--breakpoint-not-small) { 
-    .h0-ns { height: 0; } 
-    .h-auto-ns {     height: auto; }  /* < This needs to be here because of the mobile 
+@media (--breakpoint-not-small) {
+    .h0-ns { height: 0; }
+    .h-auto-ns {     height: auto; }  /* < This needs to be here because of the mobile
                                            navigation menu. Should be deleted if copied to Spirit */
 }
 @media (--breakpoint-medium) { .h0-m { height: 0; } }
@@ -158,7 +158,7 @@ kbd {
 }
 .link:focus   {
     transition: all .15s ease;
-    outline: none;
+    outline: none !important;
 }
 
 
@@ -401,12 +401,12 @@ kbd {
     transition: all 0.8s ease;
 }
 
-@media (--breakpoint-not-small) { 
-    .left-sidebar { 
+@media (--breakpoint-not-small) {
+    .left-sidebar {
         max-height: unset;
         overflow: unset;
         transition: none;
-    } 
+    }
 }
 
 .header-heading-shadow {
@@ -502,18 +502,18 @@ kbd {
     transition: all 0.4s ease;
 }
 
-@media (--breakpoint-not-small) { 
-    .mih-10-ns { min-height: 10rem; } 
+@media (--breakpoint-not-small) {
+    .mih-10-ns { min-height: 10rem; }
     .home-main-box-margin-ns { margin-bottom: -23.0rem; }
     .home-main-box-padding-ns { padding-top: 23.0rem; }
 }
-@media (--breakpoint-medium) { 
-    .mih-10-m { min-height: 10rem; } 
+@media (--breakpoint-medium) {
+    .mih-10-m { min-height: 10rem; }
     .home-main-box-margin-m { margin-bottom: -23.0rem; }
     .home-main-box-padding-m { padding-top: 23.0rem; }
 }
-@media (--breakpoint-large) { 
-    .mih-10-l { min-height: 10rem; } 
+@media (--breakpoint-large) {
+    .mih-10-l { min-height: 10rem; }
     .home-main-box-margin-l { margin-bottom: -23.0rem; }
     .home-main-box-padding-l { padding-top: 23.0rem; }
 }

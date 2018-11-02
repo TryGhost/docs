@@ -1,16 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connectHits } from 'react-instantsearch-dom'
-import Integration from './integration'
+import Integration from '../integration'
 
-const IntegrationResults = connectHits(({ hits }) => (
-    <div className="gh-integrations w-100">
-        {hits.map(hit => <Integration key={hit.objectID} hit={hit} />)}
-    </div>
-))
+class IntegrationResults extends React.Component {
+    render() {
+        return (
+            <div className="gh-integrations w-100">
+                {this.props.hits.map(hit => <Integration key={hit.objectID} hit={hit} />)}
+            </div>
+        )
+    }
+}
 
-Integration.propTypes = {
+IntegrationResults.propTypes = {
     hits: PropTypes.array.isRequired,
 }
 
-export default IntegrationResults
+const IntegrationResultsList = connectHits(IntegrationResults)
+
+export default IntegrationResultsList
