@@ -81,7 +81,15 @@ const getRelatedPosts = (currentPost, allPosts) => {
     // if we didn't reach the minimum number of related posts, we randomly pick some until we do
     if (filteredPosts.length < NUMBER_RELATED_POSTS) {
         let missingPostsNumber = NUMBER_RELATED_POSTS - filteredPosts.length
-        let randomPosts = _.filter(allPosts, ({ node }) => currentPost.slug !== node.slug).slice(0, missingPostsNumber)
+        const allPostsAvailable = _.filter(allPosts, ({ node }) => currentPost.slug !== node.slug)
+        const randomPosts = []
+
+        while (missingPostsNumber > 0) {
+            const randomPostNumber = Math.floor(Math.random() * allPostsAvailable.length - 1)
+            randomPosts.push(allPostsAvailable.splice(randomPostNumber, 1))
+
+            missingPostsNumber -= 1
+        }
 
         return _.concat(filteredPosts, randomPosts)
     } else {
@@ -116,7 +124,7 @@ exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
     const { createRedirect } = actions
     const queryPromises = []
-    
+
     createRedirect({
         fromPath: `/api/content/`,
         isPermanent: true,
