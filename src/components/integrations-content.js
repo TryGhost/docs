@@ -19,14 +19,14 @@ class IntegrationsContent extends React.Component {
             currentFilter: ``,
         }
 
-        this.toggleSearch = this.toggleSearch.bind(this)
+        this.searchSwitch = this.searchSwitch.bind(this)
         this.setCurrentFilter = this.setCurrentFilter.bind(this)
     }
 
-    toggleSearch() {
+    searchSwitch(val) {
         this.setState((state) => {
             return {
-                searchActive: !state.searchActive,
+                searchActive: val ? val : !state.searchActive,
             }
         })
     }
@@ -90,7 +90,7 @@ class IntegrationsContent extends React.Component {
                                     <h1 className="ma0 pa0 f-headline white gh-integration-header-shadow">Ghost Integrations</h1>
                                     <p className="ma0 mt2 f4 white-80">All your favourite apps and tools, integrated with Ghost</p>
                                     <IntegrationSearchBox
-                                        searchActive={this.toggleSearch}
+                                        searchActive={this.searchSwitch}
                                         returnTo={this.props.location.pathname}
                                     />
                                 </div>
