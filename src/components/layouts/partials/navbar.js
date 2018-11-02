@@ -48,8 +48,8 @@ class NavBar extends React.Component {
                     <Link className={ theme.menuItem + ` f8 pa3 mr1 mr3-l nl3`} to="/concepts/introduction/">Concepts</Link>
                     <Link className={ theme.menuItem + ` f8 pa3 mr1 mr3-l` } to="/setup/">Setup</Link>
                     <Link className={ theme.menuItem + ` f8 pa3 mr1 mr3-l` } to="/tutorials/">Tutorials</Link>
-                    <Link className={ theme.menuItem + ` f8 pa3 mr1 mr3-l` } to="/api/">API Reference</Link>
                     <Link className={ theme.menuItem + ` f8 pa3 mr1 mr3-l` } to="/integrations/">Integrations</Link>
+                    <Link className={ theme.menuItem + ` f8 pa3 mr1 mr3-l` } to="/api/">API Reference</Link>
                     <Link className={ theme.menuItem + ` f8 pa3 mr1 mr3-l` } to="/faq/">FAQ</Link>
                 </div>
                 <div className="relative pl3">
