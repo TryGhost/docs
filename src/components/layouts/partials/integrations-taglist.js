@@ -1,54 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-// TODO: tags and their slugs are not final yet!
-const tags = [
-    {
-        name: `All integrations`,
-        link: `/integrations/`,
-    },
-    // {
-    //     name: `Automation`,
-    //     link: `/integrations/automation/`,
-    // },
-    // {
-    //     name: `Analytics`,
-    //     link: `/integrations/analytics/`,
-    // },
-    // {
-    //     name: `Cards`,
-    //     link: `/integrations/card/`,
-    // },
-    {
-        name: `Content`,
-        link: `/integrations/content/`,
-    },
-    // {
-    //     name: `Communication`,
-    //     link: `/integrations/email/`,
-    // },
-    // {
-    //     name: `Marketing`,
-    //     link: `/integrations/marketing/`,
-    // },
-    // {
-    //     name: `Storage`,
-    //     link: `/integrations/storage/`,
-    // },
-    // {
-    //     name: `Support`,
-    //     link: `/integrations/support/`,
-    // },
-    {
-        name: `Surveys & Forms`,
-        link: `/integrations/surveys-forms/`,
-    },
-    // {
-    //     name: `Utilities`,
-    //     link: `/integrations/utilities/`,
-    // },
-]
+import { getTagsforPostCollection } from '../../../utils/tag-utils'
 
 class IntegrationsTagList extends React.Component {
     constructor(props) {
@@ -66,18 +20,26 @@ class IntegrationsTagList extends React.Component {
     }
     render() {
         const activeLocation = this.props.searchActive ? `/integrations/` : this.props.location.pathname
+        const posts = this.props.data.allGhostPost.edges
+        const tags = getTagsforPostCollection(posts, `integrations`)
+
+        tags.unshift({
+            name: `All Integrations`,
+            slug: `all-integrations`,
+            link: `/integrations/`,
+        })
 
         return (
             <>
                 <h3 className="ma0 mb2">Filter by</h3>
-                    { tags.map((item, i) => (
+                    { tags.map((tag, i) => (
                         <Link
                             key={i}
-                            to={item.link}
-                            className={(activeLocation === item.link ? `blue fw6` : `midgrey`) + ` link pa2 pl0` }
+                            to={tag.link}
+                            className={(activeLocation === tag.link ? `blue fw6` : `midgrey`) + ` link pa2 pl0` }
                             onClick={this.handleFilter}
                         >
-                            { item.name }
+                            { tag.name }
                         </Link>
                     )) }
 
@@ -90,6 +52,29 @@ IntegrationsTagList.propTypes = {
     location: PropTypes.object.isRequired,
     setFilter: PropTypes.func.isRequired,
     searchActive: PropTypes.bool.isRequired,
+    data: PropTypes.shape({
+        allGhostPost: PropTypes.object.isRequired,
+    }).isRequired,
 }
 
-export default IntegrationsTagList
+const props = props => (
+    <StaticQuery
+        query={graphql`
+            query GhostIntegrationsTagsQuery {
+                allGhostPost(
+                    sort: { order: ASC, fields: [published_at] },
+                    limit: 100,
+                    filter: {tags: {elemMatch: {slug: {eq: "hash-integration"}}}}
+                ) {
+                edges {
+                    node {
+                    ...GhostTagListFields
+                    }
+                }
+                }
+            }
+        `}
+        render={data => <IntegrationsTagList data={data} {...props} />}
+    />
+)
+export default props
