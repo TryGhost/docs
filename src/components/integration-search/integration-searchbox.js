@@ -42,6 +42,11 @@ class IntegrationSearch extends React.Component {
     handleChange = (e) => {
         this.setInput(e.target.value)
 
+        if (!e.target.value) {
+            // input field is empty, stop what we're doing
+            return this.resetSearch()
+        }
+
         // Tell to parent component, that the search is active now
         this.props.searchActive(true)
         this.toggleResetButton(true)
