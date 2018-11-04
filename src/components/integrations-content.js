@@ -87,8 +87,8 @@ class IntegrationsContent extends React.Component {
                                     <NavBar theme="light" />
                                 </header>
                                 <div className="pa-vw4 tc">
-                                    <h1 className="ma0 pa0 f-headline white gh-integration-header-shadow">Ghost Integrations</h1>
-                                    <p className="ma0 mt2 f4 white-80">All your favourite apps and tools, integrated with Ghost</p>
+                                    <h1 className="f2-ns f1-m f-headline-l ma0 pa0 white gh-integration-header-shadow">Ghost Integrations</h1>
+                                    <p className="ma0 mt2 f5 f4-ns white-80 lh-1-5">All your favourite apps and tools, integrated with Ghost</p>
                                     <IntegrationSearchBox
                                         searchActive={this.searchSwitch}
                                         returnTo={this.props.location.pathname}
@@ -101,7 +101,7 @@ class IntegrationsContent extends React.Component {
                     <IntegrationIndex>
                         <div className={Spirit.page.xl + `pt10`}>
                             <div className="flex br4">
-                                <div className="gh-integration-sidebar flex-shrink-0 w50 mr5">
+                                <div className="gh-integration-sidebar flex-shrink-0 w50 mr5 dn db-ns">
                                     <div className="flex flex-column mb6">
                                         <h3 className="ma0 mb2">Sort by</h3>
                                         <a className={`link pa2 pl0 ${this.state.activeSorting === `date` ? `blue fw6` : `midgrey`}`} href="#" onClick={this.sortBy.bind(this, `date`)}>Most popular</a>

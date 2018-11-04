@@ -608,6 +608,12 @@ kbd {
     }
 }
 
+@media (max-width: 440px) {
+    .gh-integrations {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 .integration-color {
     color: #FE8167;
 }
