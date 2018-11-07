@@ -148,16 +148,15 @@ kbd {
 
 .link:link,
 .link:visited {
-    transition: all .15s ease;
+    transition: inherit; /* This needs to be completely removed from Spirit */
 }
 .link:hover   {
     transition: all .15s ease;
 }
 .link:active  {
-    transition: all .15s ease;
+    transition: inherit; /* This needs to be completely removed from Spirit */
 }
 .link:focus   {
-    transition: all .15s ease;
     outline: none !important;
 }
 
