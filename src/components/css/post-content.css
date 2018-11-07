@@ -44,10 +44,12 @@
     font-size: 1.45rem;
 }
 
-.post-content>p:first-child {
+.post-content > p:first-child {
     margin: calc(var(--vr-2) - 1px) 0 0;
     font-size: 1.75rem;
-    line-height: calc(var(--vr-4) - 0.4rem); /* Fine tune line height for this font size */
+    line-height: calc(
+        var(--vr-4) - 0.4rem
+    ); /* Fine tune line height for this font size */
 }
 
 .post-content ol,
@@ -167,7 +169,7 @@
 }
 
 .post-content a:hover {
-    color: #2497D6;
+    color: #2497d6;
     box-shadow: var(--blue) 0 -1px 0 inset;
     text-decoration: none;
 }
@@ -199,7 +201,6 @@
     height: auto;
 }
 
-
 /* Full bleed images (#full)
 Super neat trick courtesy of @JoelDrapper
 Usage (In Ghost edtior):
@@ -209,7 +210,6 @@ Usage (In Ghost edtior):
     max-width: none;
     width: 100vw;
 }
-
 
 /* Image captions
 Usage (In Ghost editor):
@@ -222,7 +222,6 @@ Usage (In Ghost editor):
     margin-bottom: 1.5em;
     text-align: center;
 }
-
 
 /* Override third party iframe styles */
 .post-content iframe {
@@ -370,8 +369,7 @@ Usage (In Ghost editor):
 .post-content h2 + p,
 .post-content h3 + p,
 .post-content h4 + p,
-.post-content h6 + p
- {
+.post-content h6 + p {
     margin: var(--vr-1) 0 0;
 }
 
@@ -380,25 +378,25 @@ Usage (In Ghost editor):
 .post-content h1 + h3,
 .post-content h1 + h4,
 .post-content h1 + h6 {
-    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;;
+    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
 }
 
 .post-content h2 + h2,
 .post-content h2 + h3,
 .post-content h2 + h4,
 .post-content h2 + h6 {
-    margin: calc(var(--vr-2) - var(--navbar-size)) 0 0;;
+    margin: calc(var(--vr-2) - var(--navbar-size)) 0 0;
 }
 
 .post-content h3 + h3,
 .post-content h3 + h4,
 .post-content h3 + h6 {
-    margin: calc(var(--vr-2) - var(--navbar-size)) 0 0;;
+    margin: calc(var(--vr-2) - var(--navbar-size)) 0 0;
 }
 
 .post-content h4 + h4,
 .post-content h4 + h6 {
-    margin: calc(var(--vr-1) - var(--navbar-size)) 0 0;;
+    margin: calc(var(--vr-1) - var(--navbar-size)) 0 0;
 }
 
 .post-content h5 + p,
@@ -416,7 +414,6 @@ Usage (In Ghost editor):
 .post-content h5 + h6 {
     margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
 }
-
 
 .post-content hr {
     position: relative;
@@ -447,7 +444,6 @@ Usage (In Ghost editor):
 
 /* Some grouped styles for smaller viewports */
 @media (max-width: 500px) {
-
     .post-content hr {
         margin: var(--vr-6) 0 0;
     }
@@ -462,7 +458,6 @@ Usage (In Ghost editor):
     }
 }
 
-
 /* Non-text content */
 
 .post-content figure + p,
@@ -474,7 +469,6 @@ Usage (In Ghost editor):
 .post-content ol + figure,
 .post-content blockquote + figure,
 .post-content h6 + figure,
-
 .post-content pre + p,
 .post-content pre + ul,
 .post-content pre + ol,
@@ -484,7 +478,6 @@ Usage (In Ghost editor):
 .post-content ol + pre,
 .post-content blockquote + pre,
 .post-content h6 + pre,
-
 .post-content div + p,
 .post-content div + ul,
 .post-content div + ol,
@@ -494,7 +487,6 @@ Usage (In Ghost editor):
 .post-content ol + div,
 .post-content blockquote + div,
 .post-content h6 + div,
-
 .post-content table + p,
 .post-content table + ul,
 .post-content table + ol,
@@ -503,8 +495,7 @@ Usage (In Ghost editor):
 .post-content ul + table,
 .post-content ol + table,
 .post-content blockquote + table,
-.post-content h6 + table
-{
+.post-content h6 + table {
     margin: var(--vr-4) 0 0;
 }
 
@@ -527,8 +518,7 @@ Usage (In Ghost editor):
 .post-content table + h3,
 .post-content table + h4,
 .post-content table + h5,
-.post-content table + h6
-{
+.post-content table + h6 {
     margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
 }
 
@@ -635,7 +625,7 @@ Usage (In Ghost editor):
 .post-content th {
     color: var(--darkgrey);
     font-size: 1.35rem;
-    line-height: 1.0em;
+    line-height: 1em;
     font-weight: 600;
     letter-spacing: 0.2px;
     text-align: left;
@@ -713,7 +703,6 @@ Usage (In Ghost editor):
     margin: 0;
 }
 
-
 @media (max-width: 1040px) {
     .post-content .kg-width-full .kg-image {
         width: 100vw;
@@ -747,7 +736,6 @@ Usage (In Ghost editor):
 .kg-gallery-image:not(:first-of-type) {
     margin: 0 0 0 0.75em;
 }
-
 
 /* 7.7. FAQ Custom List Styles
 /* ---------------------------------------------------------- */
@@ -861,7 +849,7 @@ Usage (In Ghost editor):
     height: 23px;
     font-size: 1.3rem;
     border-radius: 100%;
-    background: #35BCAD;
+    background: #35bcad;
     color: #ffffff;
     text-align: center;
     padding: 0;
@@ -899,7 +887,6 @@ Usage (In Ghost editor):
     max-width: 100%;
 }
 
-
 /* Code Boxes
 /* ---------------------------------------------------------- */
 
@@ -909,22 +896,23 @@ Usage (In Ghost editor):
 
 code,
 pre {
-	font-family: Menlo, Courier, monospace;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	tab-size: 4;
-	hyphens: none;
+    font-family: Menlo, Courier, monospace;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    tab-size: 4;
+    hyphens: none;
 }
 
 .post-content code {
     padding: 0 5px 2px;
     font-size: 0.8em;
     line-height: 1em;
-    font-weight: 400!important;
+    font-weight: 400 !important;
     background: var(--whitegrey);
     border-radius: 3px;
+    white-space: pre-wrap;
 }
 
 .post-content pre {
@@ -945,12 +933,12 @@ pre {
     font-size: inherit;
     line-height: inherit;
     background: transparent;
+    white-space: pre;
 }
 
 .post-content pre code * {
     color: inherit;
 }
-
 
 /* Zapier Embeds
 /* ---------------------------------------------------------- */
@@ -977,10 +965,9 @@ pre {
     height: 29px;
     width: 1px;
     margin: 0 auto;
-    background: #DADFE2;
+    background: #dadfe2;
     position: absolute;
     top: -33px;
     left: 50%;
     z-index: 50;
 }
-
