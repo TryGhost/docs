@@ -113,7 +113,7 @@ class FeedbackForm extends React.Component {
                         action="#"
                         data-netlify="true"
                         data-netlify-honeypot="your-message"
-                        data-netlify-recaptcha="true"
+                        // data-netlify-recaptcha="true"
                         onSubmit={this.handleSubmit}
                     >
                         <p hidden>
