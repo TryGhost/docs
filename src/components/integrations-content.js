@@ -100,7 +100,7 @@ class IntegrationsContent extends React.Component {
                 >
                     <IntegrationIndex>
                         <div className={Spirit.page.xl + `pt10`}>
-                            <div className="flex br4">
+                            <div className="flex items-start br4">
                                 <div className="gh-integration-sidebar flex-shrink-0 w50 mr5 dn db-ns">
                                     <div className="flex flex-column mb6">
                                         <h3 className="ma0 mb2">Sort by</h3>
