@@ -33,9 +33,9 @@ SetupBox.propTypes = {
 class SetupIndexPage extends React.Component {
     render() {
         // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
-        const title = `Setup Guides - Ghost`
-        const description = `All the tools to get started with Ghost: self-hosted, development and premium hosted install guides.`
-        const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
+        const title = `How To Install Ghost: Setup & Configuration - Open Source Publishing`
+        const description = `All the tools you need to get started with Ghost 👉Self-hosted install & setup, local install guide for development, contribution guidelines & premium hosted services!`
+        const imageUrl = ``
 
         return (
             <>
