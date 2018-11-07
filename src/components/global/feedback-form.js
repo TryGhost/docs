@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
-
+import Recaptcha from "react-google-recaptcha"
 import { Spirit } from '../../components/spirit-styles'
 import Icon from '../../components/global/icon'
+
+const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
 
 function encode(data) {
     return Object.keys(data)
@@ -21,6 +23,7 @@ class FeedbackForm extends React.Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleError = this.handleError.bind(this)
+        this.handleRecaptcha = this.handleRecaptcha.bind(this)
     }
 
     handleError(error) {
@@ -33,6 +36,10 @@ class FeedbackForm extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    handleRecaptcha = (value) => {
+        this.setState({ "g-recaptcha-response": value })
+    }
+
     handleSubmit = (e) => {
         let isValid = true
         e.preventDefault()
@@ -41,6 +48,7 @@ class FeedbackForm extends React.Component {
         // These are the required fields. Don't post the form when any of the fields are missing
         const formData = {
             "feedback-type": this.state[`feedback-type`] || `Feedback`,
+            "g-recaptcha-response": this.state[`g-recaptcha-response`],
             location: this.props.location.href,
             email: this.state.email,
             message: this.state.message,
@@ -97,6 +105,7 @@ class FeedbackForm extends React.Component {
                         action="#"
                         data-netlify="true"
                         data-netlify-honeypot="your-message"
+                        data-netlify-recaptcha="true"
                         onSubmit={this.handleSubmit}
                     >
                         <p hidden>
@@ -151,6 +160,11 @@ class FeedbackForm extends React.Component {
                                 onChange={this.handleChange}
                             />
                         </p>
+                        <Recaptcha
+                            ref={`recaptcha`}
+                            sitekey={RECAPTCHA_KEY}
+                            onChange={this.handleRecaptcha}
+                        />
                         <button className="mt4 pa3 pl7 pr7 button-blue white bn whitney f8" type="submit">Send</button>
                     </form>
                 </div>
