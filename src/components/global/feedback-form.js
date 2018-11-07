@@ -5,7 +5,7 @@ import Recaptcha from "react-google-recaptcha"
 import { Spirit } from '../../components/spirit-styles'
 import Icon from '../../components/global/icon'
 
-const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
+const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY || process.env.GATSBY_SITE_RECAPTCHA_KEY
 
 function encode(data) {
     return Object.keys(data)
