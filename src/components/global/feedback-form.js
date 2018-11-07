@@ -1,14 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
-// import ReCaptcha from "react-google-recaptcha"
 
 import { Spirit } from '../../components/spirit-styles'
 import Icon from '../../components/global/icon'
-
-// const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
-
-// const recaptchaRef = React.createRef()
 
 function encode(data) {
     return Object.keys(data)
@@ -26,7 +21,6 @@ class FeedbackForm extends React.Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleError = this.handleError.bind(this)
-        // this.handleRecaptcha = this.handleRecaptcha.bind(this)
     }
 
     handleError(error) {
@@ -39,16 +33,7 @@ class FeedbackForm extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    // handleRecaptcha() {
-    //     const recaptchaValue = recaptchaRef.current.getValue()
-    //     console.log(`TCL: FeedbackForm -> handleRecaptcha -> recaptchaValue`, recaptchaValue)
-    //     this.setState({ "g-recaptcha-response": recaptchaValue })
-    // }
-
     handleSubmit = (e) => {
-        // recaptchaRef.current.execute()
-        // console.log(`TCL: FeedbackForm -> handleSubmit -> recaptchaRef.current`, recaptchaRef.current)
-
         let isValid = true
         e.preventDefault()
         const form = e.target
@@ -74,7 +59,6 @@ class FeedbackForm extends React.Component {
                 headers: { "Content-Type": `application/x-www-form-urlencoded` },
                 body: encode({
                     "form-name": form.getAttribute(`name`),
-                    // "g-recaptcha-response": this.state[`g-recaptcha-response`],
                     ...formData,
                 }),
             })
@@ -90,21 +74,21 @@ class FeedbackForm extends React.Component {
 
         if (this.state.showSucces) {
             return (
-                <div className={ containerStyle }>
+                <div className={containerStyle}>
                     <h4 className={Spirit.h4 + `mt1 nudge-top--2`}>Thanks for the feedback! 🤗</h4>
                     <p className={`${Spirit.small} mt1 midgrey`}>Your message has been successfully delivered to our team, who will review your suggestions shortly. If we have any followup questions we&apos;ll be in touch!</p>
                 </div>
             )
         } else if (this.state.error) {
             return (
-                <div className={ containerStyle }>
+                <div className={containerStyle}>
                     <h4 className={Spirit.h4 + `mt1 nudge-top--2 red`}>Rats. Something went wrong 😑</h4>
                     <p className={`${Spirit.small} mt1 midgrey`}>You can try again if you like, or skip this form entirely and just send us an email directly at <a href="mailto:hello@ghost.org" className="link blue">hello@ghost.org</a>. Sorry for the trouble!</p>
                 </div>
             )
         } else {
             return (
-                <div className={ containerStyle }>
+                <div className={containerStyle}>
                     <h4 className={Spirit.h4 + `mt1 nudge-top--2`}>Help us improve this page</h4>
                     <p className={`${Spirit.small} mt1 midgrey`}>Please let us know what&apos;s working and what&apos;s not with this page.</p>
                     <form
@@ -113,7 +97,6 @@ class FeedbackForm extends React.Component {
                         action="#"
                         data-netlify="true"
                         data-netlify-honeypot="your-message"
-                        // data-netlify-recaptcha="true"
                         onSubmit={this.handleSubmit}
                     >
                         <p hidden>
@@ -168,11 +151,6 @@ class FeedbackForm extends React.Component {
                                 onChange={this.handleChange}
                             />
                         </p>
-                        {/* <ReCaptcha
-                            ref={recaptchaRef}
-                            size="invisible"
-                            sitekey={RECAPTCHA_KEY}
-                        /> */}
                         <button className="mt4 pa3 pl7 pr7 button-blue white bn whitney f8" type="submit">Send</button>
                     </form>
                 </div>
