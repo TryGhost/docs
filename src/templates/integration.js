@@ -71,7 +71,7 @@ class Integration extends React.Component {
                                         linkClasses="link darkgrey fw6"
                                     />
                                 </div>
-                                <section className="post-content integration-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+                                <section className="post-content integration-content external-scripts" dangerouslySetInnerHTML={{ __html: post.html }} />
                             </article>
                         </div>
                     </div>
