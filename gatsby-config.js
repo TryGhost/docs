@@ -79,7 +79,7 @@ const plugins = [
             background_color: `#343f44`,
             theme_color: `#343f44`,
             display: `minimal-ui`,
-            icon: `src/images/favicon.png`,
+            icon: `static/favicon.png`,
         },
     },
     `gatsby-plugin-react-helmet`,
