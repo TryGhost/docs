@@ -218,7 +218,7 @@ class DocTemplate extends React.Component {
                             <div className={ `w-100 mw-content bg-white shadow-2 br4` + (this.state.isToggleOn ? `` : ` br--bottom`)}>
                                 <article className="flex-auto pa5 pa8-m pa15-l pt10-ns pb10-ns pt10-l pb10-l">
                                     <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
-                                    <section className="post-content" dangerouslySetInnerHTML={ {
+                                    <section className="post-content external-scripts" dangerouslySetInnerHTML={ {
                                         __html: post.html,
                                     } } />
 

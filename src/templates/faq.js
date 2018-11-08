@@ -55,7 +55,7 @@ class FAQ extends React.Component {
 
                                 <div className="flex flex-column flex-row-ns items-start mt5 mt3-ns">
                                     <div className="dn flex-ns flex-shrink-0 justify-center items-center w5 h5 w6-l h6-l mr4 f8 fw5 br-100 tc faq-color ba b--faq-color mb2 mb0-ns nudge-top--2-m">&raquo;</div>
-                                    <section className="post-content faq-content" dangerouslySetInnerHTML={ { __html: post.html } } />
+                                    <section className="post-content faq-content external-scripts" dangerouslySetInnerHTML={ { __html: post.html } } />
                                 </div>
                             </div>
                         </section>

@@ -14,7 +14,7 @@
  * via ids/classnames etc.
  */
 const trustAllScripts = () => {
-    const scriptNodes = document.querySelectorAll(`.post-content script`)
+    const scriptNodes = document.querySelectorAll(`.external-scripts script`)
 
     scriptNodes.forEach((node) => {
         // @TODO do the same for inline scripts?
