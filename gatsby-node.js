@@ -145,6 +145,14 @@ exports.createPages = ({ graphql, actions }) => {
         redirectInBrowser: true,
         toPath: `https://api.ghost.org`,
     })
+    // The /concepts page doesn't exist, we need to redirect to
+    // the first post of this section
+    createRedirect({
+        fromPath: `/concepts`,
+        isPermanent: true,
+        redirectInBrowser: true,
+        toPath: `/concepts/introduction/`,
+    })
 
     // Query for each of the tags that we defined above
     ghostQueryConfig.forEach(({ tag, section, template, tagsTemplate }) => {
