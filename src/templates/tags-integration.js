@@ -65,7 +65,7 @@ export const tagsQuery = graphql`
             ...SiteMetaFields
         }
         allGhostPost(
-            sort: { order: DESC, fields: [published_at] },
+            sort: { order: ASC, fields: [published_at] },
             limit: 10,
             filter: {tags: {elemMatch: {slug: {eq: $tagSlug}}}}
         ) {
