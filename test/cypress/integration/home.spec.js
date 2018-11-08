@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 context('Home', () => {
     beforeEach(() => {
         cy.visit('/');
@@ -10,5 +8,7 @@ context('Home', () => {
         cy.get('#globalnavsearch').should('be.visible');
         cy.viewport(1050, 500);
         cy.get('#globalnavsearch').should('not.be.visible');
+
+        // TODO: test search modal behaviour
     });
 });
