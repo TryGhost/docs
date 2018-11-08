@@ -33,34 +33,34 @@ class Integration extends React.Component {
                 <MetaData data={this.props.data} location={this.props.location} type="article" title={title} />
                 <Layout>
                     <div className="pa-vw4 tc">
-                        <h1 className="ma0 pa0 f-headline">{post.title} + Ghost</h1>
-                        <p className="ma0 mt2 f4 midgrey">How to use Ghost and {post.title} together</p>
+                        <h1 className="ma0 pa0 f2-ns f1-m f-headline-l">{post.title} + Ghost</h1>
+                        <p className="ma0 mt2 f5 f4-l midgrey">How to use Ghost and {post.title} together</p>
                         <div className="flex items-center justify-center mt5">
-                            <div className="flex-shrink-0 flex justify-center items-center h30 w30 pa10 bg-white br-100 shadow-3 nl2 nr2">
+                            <div className="flex-shrink-0 flex justify-center items-center h20 w20 h30-l w30-l pa5 pa10-l bg-white br-100 shadow-3 nl2 nr2">
                                 <img className="mw100" src={post.feature_image} alt={post.title} />
                             </div>
-                            <div className="flex-shrink-0 flex justify-center items-center h30 w30 pa11 bg-white br-100 shadow-3 nl2 nr2">
-                                <Img className="mw100" fixed={this.props.data.file.childImageSharp.fixed} alt="Ghost" />
+                            <div className="flex-shrink-0 flex justify-center items-center h20 w20 h30-l w30-l pa6 pa11-l bg-white br-100 shadow-3 nl2 nr2">
+                                <Img fixed={this.props.data.file.childImageSharp.fixed} alt="Ghost" />
                             </div>
                         </div>
                     </div>
                     <div className={ Spirit.page.l + `flex` }>
-                        <div className="w-100 pa15 pt13 bg-white br4 shadow-1 flex flex-start">
+                        <div className="w-100 pa15 pt13 bg-white br4 shadow-1 flex flex-column flex-row-ns flex-start">
                             <div className="order-2">
-                                <div className="nr3 sticky top-25">
-                                    <TOC className="miw50" headingsOffset="-400" />
+                                <div className="nr3 sticky-ns top-25">
+                                    <div className="dn db-ns"><TOC className="miw50" headingsOffset="-400" /></div>
                                     {relatedPosts.length ?
-                                        <div className="miw50 mw-content-ns mt10">
-                                            <h3 className="f5 measure--0-2 middarkgrey ma0 pa0 fw5 mb3">You might also like...</h3>
+                                        <div className="miw50 mw-content-ns mt15">
+                                            <h3 className="f4 measure--0-2 middarkgrey ma0 mb3 pa0 fw4">You might also like...</h3>
                                             <RelatedPosts relatedPosts={relatedPosts} showImages/>
                                         </div> :
                                         null
                                     }
                                 </div>
                             </div>
-                            <article className="w-100 order-1 pr10">
-                                <div className="mb1 f8">
-                                    <Link className="link midgrey" to="/integrations/">Integrations</Link>
+                            <article className="w-100 order-1 pr15-ns">
+                                <div className="mb0 f8">
+                                    <Link className="link midlightgrey fw5" to="/integrations/">Integrations</Link>
                                     <span className="mr1 ml1 f8 midgrey">/</span>
                                     <Tags
                                         post={post}
@@ -68,7 +68,7 @@ class Integration extends React.Component {
                                         html={true}
                                         classes="darkgrey fw5"
                                         linkToPrefix="integrations"
-                                        linkClasses="link darkgrey fw5"
+                                        linkClasses="link darkgrey fw6"
                                     />
                                 </div>
                                 <section className="post-content integration-content" dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -101,7 +101,7 @@ export const articleQuery = graphql`
         }
         file(relativePath: {eq: "integration-icon.png"}) {
             childImageSharp {
-                fixed(width: 32, height: 32) {
+                fixed(width: 30, height: 30) {
                     ...GatsbyImageSharpFixed
                 }
             }

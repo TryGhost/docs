@@ -59,9 +59,10 @@ class IntegrationSearch extends React.Component {
             <label htmlFor="integrationsearch" className="clip">
                     Search
             </label>
-            <input id="integrationsearch" name="integrationsearch" className="input-reset form-text pa4 pl5 pr5 w-100 f6 br-pill ba b--transparent bg-white shadow-2" type="text" placeholder="Search integrations..." autoComplete="off" value={this.state.currentInput} onChange={this.handleChange} />
+            <Icon name="search" className={ `fill-lightgrey w5 h-auto absolute top-4 left-4` } />
+            <input id="integrationsearch" name="integrationsearch" className="input-reset form-text pa4 pl10 pr8 w-100 f6 br-pill ba b--transparent bg-white shadow-2 whitney middarkgrey dark-placeholder" type="text" placeholder="Search integrations..." autoComplete="off" value={this.state.currentInput} onChange={this.handleChange} />
             {this.state.showReset ? <button className="absolute top-0 right-0 bottom-0 pa0 pr2 b--transparent flex justify-center items-center bg-transparent" onClick={this.resetSearch}>
-                <Icon name="close" className="w4 h4 pa2 fill-darkgrey bg-white br-100 pointer dim" />
+                <Icon name="close" className="w4 h4 pa2 fill-midgrey bg-white br-100 pointer dim" />
             </button> : null}
         </div>
     }

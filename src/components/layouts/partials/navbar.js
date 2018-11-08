@@ -44,13 +44,13 @@ class NavBar extends React.Component {
                     <a href="https://ghost.org" className="nudge-top--3"><Logo theme={ this.props.theme } /></a>
                     <Link className={theme.docsTitleClass + ` gh-nav-logo-suffix relative ma0 ml4 pa0 pl4 f6 lh-1-5 fw4 link nudge-top--1` } to="/">Docs</Link>
                 </div>
-                <div className="dn flex-ns flex-auto items-center overflow-x-auto">
-                    <Link className={ theme.menuItem + ` f8 pa3 mr1 mr3-l nl3`} to="/concepts/introduction/">Concepts</Link>
-                    <Link className={ theme.menuItem + ` f8 pa3 mr1 mr3-l` } to="/setup/">Setup</Link>
-                    <Link className={ theme.menuItem + ` f8 pa3 mr1 mr3-l` } to="/tutorials/">Tutorials</Link>
-                    <Link className={ theme.menuItem + ` f8 pa3 mr1 mr3-l` } to="/integrations/">Integrations</Link>
-                    <Link className={ theme.menuItem + ` f8 pa3 mr1 mr3-l` } to="/api/">API Reference</Link>
-                    <Link className={ theme.menuItem + ` f8 pa3 mr1 mr3-l` } to="/faq/">FAQ</Link>
+                <div className="dn flex-ns flex-auto items-center overflow-x-auto mr12 mr0-l ml5 ml0-l">
+                    <Link className={ theme.menuItem + ` nowrap f8 pa3 mr1 mr3-l nl3`} to="/concepts/introduction/">Concepts</Link>
+                    <Link className={ theme.menuItem + ` nowrap f8 pa3 mr1 mr3-l` } to="/setup/">Setup</Link>
+                    <Link className={ theme.menuItem + ` nowrap f8 pa3 mr1 mr3-l` } to="/tutorials/">Tutorials</Link>
+                    <Link className={ theme.menuItem + ` nowrap f8 pa3 mr1 mr3-l` } to="/integrations/">Integrations</Link>
+                    <Link className={ theme.menuItem + ` nowrap f8 pa3 mr1 mr3-l` } to="/api/">API Reference</Link>
+                    <Link className={ theme.menuItem + ` nowrap f8 pa3 mr1 mr3-l` } to="/faq/">FAQ</Link>
                 </div>
                 <div className="relative pl3">
                     <SearchModal theme={theme} />

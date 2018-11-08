@@ -26,7 +26,7 @@ function PrevNextSection(props) {
     // 2. other pages, where we set a `next` property in frontmatter
     // The following code serializes the data and pass it to a generic component.
 
-    if (props.sidebar === `concepts`) {
+    if (props.sidebar) {
         const [sidebarfile] = props.sidebar ? require(`../data/sidebars/${props.sidebar}.yaml`) : {}
 
         if (!sidebarfile) {
@@ -47,7 +47,12 @@ function PrevNextSection(props) {
 
         const currentIndex = _.findIndex(flatSidebar, item => item.link === props.location.pathname)
         const prev = flatSidebar[currentIndex - 1]
-        const next = flatSidebar[currentIndex + 1] || { group: `Setup`, link: `/setup/`, title: `Install Ghost` }
+        let next = flatSidebar[currentIndex + 1]
+
+        // Set the last page in "Concepts" to lead to the setup guide
+        if (!next && props.sidebar === `concepts`) {
+            next = { group: `Setup`, link: `/setup/`, title: `Install Ghost` }
+        }
 
         return (
             <PrevNext prev={ prev } next={ next } />

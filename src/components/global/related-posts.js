@@ -19,7 +19,7 @@ class RelatedPosts extends React.Component {
                                 </> :
                                 null
                             }
-                            <div className="f7">{node.title}</div>
+                            <div className="f8">{node.title}</div>
                         </Link>
                     </li>
                 ))}

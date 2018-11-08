@@ -79,6 +79,10 @@ class Results extends React.Component {
         case `tutorial`:
             labelClass += ` tutorial-color b--tutorial-color`
             break
+
+        case `integration`:
+            labelClass += ` integration-color b--integration-color`
+            break
     
         default:
             labelClass += ` midgrey b--midgrey`
