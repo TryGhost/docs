@@ -23,9 +23,9 @@ class FeedbackForm extends React.Component {
             error: ``,
         }
         this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleError = this.handleError.bind(this)
         this.handleRecaptcha = this.handleRecaptcha.bind(this)
+        this.handleError = this.handleError.bind(this)
+        this.submitForm = this.submitForm.bind(this)
     }
 
     handleError(error) {
@@ -38,23 +38,22 @@ class FeedbackForm extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    handleRecaptcha = () => {
-        recaptchaRef.current.execute()
-        console.log(`handleRecaptcha -> recaptchaRef.current`, recaptchaRef.current)
-        const recaptchaValue = recaptchaRef.current.getValue()
-        console.log(`handleRecaptcha -> recaptchaValue`, recaptchaValue)
+    handleRecaptcha() {
+        // recaptchaRef.current.execute()
+        console.log(`get recaptcha value and set state`)
 
-        return this.setState(() => {
-            return { "g-recaptcha-response": recaptchaValue }
+        this.setState(() => {
+            return { "g-recaptcha-response": recaptchaRef.current.execute() }
         })
-    };
+    }
 
-    handleSubmit = (e) => {
-        this.handleRecaptcha()
-
+    submitForm = (e) => {
         e.preventDefault()
         let isValid = true
         const form = e.target
+
+        this.handleRecaptcha()
+        console.log(`submitForm`, ...this.state)
 
         // These are the required fields. Don't post the form when any of the fields are missing,
         // as Netlify does validate those on the server-side
@@ -64,8 +63,6 @@ class FeedbackForm extends React.Component {
             email: this.state.email,
             message: this.state.message,
         }
-
-        console.log(...this.state)
 
         // TODO: proper inline validation
         _.each(formData, (val) => {
@@ -83,11 +80,9 @@ class FeedbackForm extends React.Component {
                     "g-recaptcha-response": this.state[`g-recaptcha-response`],
                     ...formData,
                 }),
-            })
-                .then(() => this.setState((state) => {
-                    return { showSucces: !state.showSucces }
-                }))
-                .catch(error => this.handleError(error))
+            }).then(() => this.setState((state) => {
+                return { showSucces: !state.showSucces }
+            })).catch(error => this.handleError(error))
         }
     }
 
@@ -119,7 +114,11 @@ class FeedbackForm extends React.Component {
                         action="#"
                         data-netlify="true"
                         data-netlify-honeypot="your-message"
-                        onSubmit={this.handleSubmit}
+                        data-netlify-recaptcha="true"
+                        onSubmit={() => {
+                            console.log(`execute recaptcha`)
+                            return recaptchaRef.current.execute()
+                        }}
                     >
                         <p hidden>
                             <label>
@@ -177,9 +176,12 @@ class FeedbackForm extends React.Component {
                             ref={recaptchaRef}
                             size="invisible"
                             sitekey={RECAPTCHA_KEY}
-                            onChange={this.handleRecaptcha}
                         />
-                        <button className="mt4 pa3 pl7 pr7 button-blue white bn whitney f8" type="submit">Send</button>
+                        <button
+                            className="mt4 pa3 pl7 pr7 button-blue white bn whitney f8"
+                            type="submit"
+                            onClick={this.submitForm}
+                        >Send</button>
                     </form>
                 </div>
             )
