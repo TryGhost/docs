@@ -6,7 +6,7 @@ class Logo extends React.Component {
         const Icon = require(`../../images/icons/` + this.props.name + `.svg`)
 
         return (
-            <Icon className={ this.props.className } />
+            <Icon className={ this.props.className } data-cy={`${this.props.name}-icon`}/>
         )
     }
 }
