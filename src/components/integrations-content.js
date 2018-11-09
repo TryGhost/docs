@@ -102,7 +102,7 @@ class IntegrationsContent extends React.Component {
                         <div className={Spirit.page.xl + `pt10`}>
                             <div className="flex items-start br4">
                                 <div className="gh-integration-sidebar flex-shrink-0 w50 mr5 dn db-ns">
-                                    <div className="flex flex-column mb6">
+                                    <div className="flex flex-column mb6" data-cy="sort">
                                         <h3 className="ma0 mb2">Sort by</h3>
                                         <a className={`link pa2 pl0 ${this.state.activeSorting === `date` ? `blue fw6` : `midgrey`}`} href="#" onClick={this.sortBy.bind(this, `date`)}>Most popular</a>
                                         <a className={`link pa2 pl0 ${this.state.activeSorting === `title` ? `blue fw6` : `midgrey`}`} href="#" onClick={this.sortBy.bind(this, `title`)}>A – Z</a>

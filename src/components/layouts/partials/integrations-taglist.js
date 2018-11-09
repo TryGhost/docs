@@ -31,13 +31,14 @@ class IntegrationsTagList extends React.Component {
 
         return (
             <>
-                <h3 className="ma0 mb2">Filter by</h3>
+                <h3 className="ma0 mb2" data-cy="filter">Filter by</h3>
                     { tags.map((tag, i) => (
                         <Link
                             key={i}
                             to={tag.link}
                             className={(activeLocation === tag.link ? `blue fw6` : `midgrey`) + ` link pa2 pl0` }
                             onClick={this.handleFilter}
+                            data-cy={`${tag.slug}-filter`}
                         >
                             { tag.name }
                         </Link>
