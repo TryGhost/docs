@@ -72,8 +72,6 @@ class SearchModal extends React.Component {
                         />
                     </div> : null}
                 <Modal
-                    // TODO: this logic is completely wrong!!!! Works to open it,
-                    // but you can't close it afterwords (ofc) LOL
                     isOpen={this.state.modalIsOpen }
                     // style={customStyles}
                     onAfterOpen={ this.afterOpenModal }
@@ -88,7 +86,7 @@ class SearchModal extends React.Component {
                     bodyOpenClassName="body-modal-open z-9999"
                     // portalClassName=``
                 >
-                    <div className="absolute pa4 top-0 right-0 pointer" onClick={this.closeModal}><Icon name="close" className="fill-midgrey w3 h-auto" /></div>
+                    <div className="absolute pa4 top-0 right-0 pointer" onClick={this.closeModal} data-cy="close-modal"><Icon name="close" className="fill-midgrey w3 h-auto" /></div>
                     {/* <div className="pa4 pl5 pr5 mt5 w-100 mw-s f4 br-pill bg-white shadow-3 center flex items-center justify-between"> */}
                     {/* <Icon name="search" className="fill-lightgrey-d2 h6" /> */}
                     <div className="relative">
