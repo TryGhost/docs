@@ -6,6 +6,8 @@ module.exports = {
         'plugin:react/recommended'
     ],
     "globals": {
-        "cy": true
+        "Cypress": true,
+        "cy": true,
+        "window": true
     }
 };
