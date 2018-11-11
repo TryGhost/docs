@@ -17,8 +17,10 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /concepts/*/edit                    https://github.com/TryGhost/docs/tree/master/content/concepts/:splat.md  302!
 /setup/*/edit                       https://github.com/TryGhost/docs/tree/master/content/setup/:splat.md     302!
 
-# Favicon
+# General
+
 /favicon.ico                        /favicon.png                                               302!
+/install                            /setup                              301!
 
 # Temporary API redirects
 
