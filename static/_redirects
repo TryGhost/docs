@@ -145,6 +145,7 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 # Custom redirects for Kayako (help)
 
 /section/7-getting-started                   /faq/                                              301!
+/article/29-ghost-editor-overview            /faq/using-the-editor/                             301!
 /article/7-how-to-use-ghost                  /faq/using-ghost/                                  301!
 /article/4-markdown-guide                    /faq/using-the-editor/                             301!
 /article/37-ghost-shortcuts                  /faq/using-the-editor/                             301!
