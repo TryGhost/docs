@@ -66,7 +66,7 @@ export const tagsQuery = graphql`
         }
         allGhostPost(
             sort: { order: ASC, fields: [published_at] },
-            limit: 10,
+            limit: 100,
             filter: {tags: {elemMatch: {slug: {eq: $tagSlug}}}}
         ) {
             edges {
