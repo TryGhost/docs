@@ -14,7 +14,7 @@ class RelatedPosts extends React.Component {
                             {showImages && node.feature_image ?
                                 <>
                                     <div className="flex justify-center items-center h6 w8 mr2">
-                                        <img className="w-100 h-100" style={{ objectFit: `contain` }} src={node.feature_image} alt={node.title} />
+                                        <img className="w-100 h-100" style={{ objectFit: `contain` }} src={`https://res.cloudinary.com/tryghost/image/fetch/w_60,h_50,c_fit/` + node.feature_image} alt={node.title} />
                                     </div>
                                 </> :
                                 null

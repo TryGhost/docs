@@ -27,6 +27,8 @@ class Integration extends React.Component {
         const post = this.props.data.ghostPost
         const { relatedPosts } = this.props.pageContext
         const title = `Ghost + ${post.title} Integration`
+        const image = post.feature_image
+        const optimisedImg = `https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit/${image}`
 
         return (
             <>
@@ -37,7 +39,7 @@ class Integration extends React.Component {
                         <p className="ma0 mt2 f5 f4-l midgrey">How to use Ghost and {post.title} together</p>
                         <div className="flex items-center justify-center mt5">
                             <div className="flex-shrink-0 flex justify-center items-center h20 w20 h30-l w30-l pa5 pa10-l bg-white br-100 shadow-3 nl2 nr2">
-                                <img className="mw100" src={post.feature_image} alt={post.title} />
+                                <img className="mw100" src={optimisedImg} alt={post.title} />
                             </div>
                             <div className="flex-shrink-0 flex justify-center items-center h20 w20 h30-l w30-l pa6 pa11-l bg-white br-100 shadow-3 nl2 nr2">
                                 <Img fixed={this.props.data.file.childImageSharp.fixed} alt="Ghost" />
