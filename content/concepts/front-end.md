@@ -12,7 +12,7 @@ sidebar: "concepts"
 
 Ghost is a full headless CMS which is completely agnostic of any particular front end or static site framework.
 
-Just like Ghost's admin client, its front-end is both optional and interchangeable. While Ghost's early architecture represented more of a standard monolithic web-app, it's no compatible with just about any front-end you can throw at it. 
+Just like Ghost's admin client, its front-end is both optional and interchangeable. While Ghost's early architecture represented more of a standard monolithic web-app, it's now compatible with just about any front-end you can throw at it. 
 
 It doesn't even have to be a website!
 
