@@ -46,6 +46,8 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /docs/upgrade                          /faq/upgrade-to-ghost-2-0/               301!
 /docs/redirects                        /concepts/redirects/                     301!
 /docs/dynamic-routing                  /concepts/routing/                       301!
+/docs/install#section-your-user-must-own-this-directory      /install/ubuntu/#create-a-directory 301!
+/docs/install#section-create-a-new-user                      /install/ubuntu/#create-a-new-user-                                    301!
 /docs/troubleshooting#section-fix-root-user                  /faq/root-user-fix/                                    301!
 /docs/troubleshooting                  /faq/                                    301!
 /docs/ghost-cli                        /api/ghost-cli/                          301!
