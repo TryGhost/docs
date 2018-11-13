@@ -199,6 +199,7 @@ exports.createPages = ({ graphql, actions }) => {
                                     tagImage: tag.feature_image,
                                     tagMetaTitle: tag.meta_title,
                                     tagMetaDescription: tag.meta_description,
+                                    section: section,
                                 },
                             })
                         })
