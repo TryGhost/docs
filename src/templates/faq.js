@@ -7,7 +7,7 @@ import Prism from 'prismjs'
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
 import Tags from '../components/helpers/tags'
-import MetaData from '../components/layouts/partials/meta-data'
+import { MetaData } from '../components/layouts/partials/meta'
 import RelatedPosts from '../components/global/related-posts'
 
 class FAQ extends React.Component {

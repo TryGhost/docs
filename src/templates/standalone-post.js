@@ -6,7 +6,7 @@ import Prism from 'prismjs'
 import Layout from '../components/layouts/default'
 // import Authors from '../components/authors'
 import { Spirit } from '../components/spirit-styles'
-import MetaData from '../components/layouts/partials/meta-data'
+import { MetaData } from '../components/layouts/partials/meta'
 
 class Tutorial extends React.Component {
     componentDidMount() {

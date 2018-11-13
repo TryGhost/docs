@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layouts/default'
 import Link from 'gatsby-link'
 import { Spirit } from '../components/spirit-styles'
-import MetaData from '../components/layouts/partials/meta-data'
+import { MetaData } from '../components/layouts/partials/meta'
 import FAQTagList from '../components/layouts/partials/faq-taglist'
 
 class FAQPage extends React.Component {
