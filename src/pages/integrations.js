@@ -4,13 +4,14 @@ import { graphql } from 'gatsby'
 
 import IntegrationsContent from '../components/integrations-content'
 import { MetaData } from '../components/meta'
+import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 class IntegrationsPage extends React.Component {
     render() {
         // TODO: Replace with real title and description for IntegrationsPage
         const title = `Integrations`
         const description = `Your favourite apps and tools, integrated with Ghost. Connect tools for automation, analytics, marketing, support and much more.`
-        const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
+        const imageUrl = getMetaImageUrls(`integrations`)
 
         const posts = this.props.data.allGhostPost.edges
 

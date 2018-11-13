@@ -9,6 +9,7 @@ import { Spirit } from '../components/spirit-styles'
 import Box from '../components/layouts/partials/box'
 import { MetaData } from '../components/meta'
 import HomeHeader from '../components/layouts/partials/home-header'
+import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 import homeIllustration from '../images/home-illustration.svg' // eslint-disable-line no-unused-vars
 
@@ -49,7 +50,7 @@ class IndexPage extends React.Component {
         // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
         const title = `Ghost Docs`
         const description = `Get familiar with Ghost - the open source professional publishing platform.  Install guides, tutorials, API docs and FAQs.`
-        const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
+        const imageUrl = getMetaImageUrls()
 
         return (
             <>

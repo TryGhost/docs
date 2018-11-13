@@ -2,9 +2,9 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
-import url from 'url'
 
 import { ImageMeta } from '.'
+import getMetaImageUrls from '../../utils/getMetaImageUrls'
 
 class ArticleMetaMD extends React.Component {
     render() {
@@ -16,7 +16,7 @@ class ArticleMetaMD extends React.Component {
         const { canonical } = this.props
         const { siteMetadata } = this.props.data.site
         const primaryTag = fm.keywords && fm.keywords.length ? fm.keywords[0] : null
-        const docsFeatureImage = url.resolve(siteMetadata.siteUrl, `/images/meta/Ghost Docs.jpg`)
+        const docsFeatureImage = getMetaImageUrls()
 
         return (
             <>
