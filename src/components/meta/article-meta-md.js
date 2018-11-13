@@ -16,7 +16,7 @@ class ArticleMetaMD extends React.Component {
         const { canonical } = this.props
         const { siteMetadata } = this.props.data.site
         const primaryTag = fm.keywords && fm.keywords.length ? fm.keywords[0] : null
-        const docsFeatureImage = url.resolve(siteMetadata.siteUrl, `/images/meta/ghost-docs.jpg`)
+        const docsFeatureImage = url.resolve(siteMetadata.siteUrl, `/images/meta/Ghost Docs.jpg`)
 
         return (
             <>
