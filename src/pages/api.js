@@ -7,6 +7,7 @@ import { Spirit } from '../components/spirit-styles'
 import Box from '../components/layouts/partials/box'
 import Icon from '../components/global/icon'
 import { MetaData } from '../components/meta'
+import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 // import bgapi from '../images/bg-api.svg' // eslint-disable-line no-unused-vars
 
@@ -60,7 +61,7 @@ class APIPage extends React.Component {
         // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
         const title = `API Reference - Ghost`
         const description = `Comprehensive documentation of API clients, tools and libraries for working with Ghost.`
-        const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
+        const imageUrl = getMetaImageUrls()
 
         return (
             <>

@@ -6,6 +6,7 @@ import Layout from '../components/layouts/default'
 import PostCard from '../components/postcard'
 import { Spirit } from '../components/spirit-styles'
 import { MetaData } from '../components/meta'
+import getMetaImageUrls from '../utils/getMetaImageUrls'
 // import SectionHeading from '../components/layouts/partials/section-heading'
 
 class TutorialsPage extends React.Component {
@@ -13,7 +14,7 @@ class TutorialsPage extends React.Component {
         // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
         const title = `Tutorials - Ghost`
         const description = `Customise your Ghost publication to suit your needs with practical guides for a variety of use-cases.`
-        const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
+        const imageUrl = getMetaImageUrls(`tutorials`)
 
         const posts = this.props.data.allGhostPost.edges
 

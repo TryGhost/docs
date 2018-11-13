@@ -7,13 +7,14 @@ import Link from 'gatsby-link'
 import { Spirit } from '../components/spirit-styles'
 import { MetaData } from '../components/meta'
 import FAQTagList from '../components/layouts/partials/faq-taglist'
+import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 class FAQPage extends React.Component {
     render() {
         // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
         const title = `FAQ - Ghost`
         const description = `Answers to our most popular questions: billing, hosting, troubleshooting and more.`
-        const imageUrl = `https://unsplash.com/photos/RPT3AjdXlZc`
+        const imageUrl = getMetaImageUrls(`faq`)
 
         return (
             <>

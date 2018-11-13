@@ -22,11 +22,11 @@ class FAQ extends React.Component {
 
     render() {
         const post = this.props.data.ghostPost
-        const { relatedPosts } = this.props.pageContext
+        const { relatedPosts, section } = this.props.pageContext
 
         return (
             <>
-                <MetaData data={this.props.data} location={this.props.location} type="article" />
+                <MetaData data={this.props.data} location={this.props.location} type="article" section={section} />
                 <Layout bodyClass="bg-white" mainClass="bg-whitegrey-l2 pb10">
 
                     <div className="bg-faq bb b--whitegrey">

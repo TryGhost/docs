@@ -7,6 +7,7 @@ import Icon from '../components/global/icon'
 import { Spirit } from '../components/spirit-styles'
 import Box from '../components/layouts/partials/box'
 import { MetaData } from '../components/meta'
+import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 class SetupBox extends React.Component {
     render() {
@@ -35,7 +36,7 @@ class SetupIndexPage extends React.Component {
         // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
         const title = `How To Install Ghost: Setup & Configuration - Open Source Publishing`
         const description = `All the tools you need to get started with Ghost 👉Self-hosted install & setup, local install guide for development, contribution guidelines & premium hosted services!`
-        const imageUrl = ``
+        const imageUrl = getMetaImageUrls()
 
         return (
             <>
