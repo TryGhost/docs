@@ -12,6 +12,7 @@ import TOC from '../components/layouts/partials/toc'
 import { MetaData } from '../components/meta'
 import RelatedPosts from '../components/global/related-posts'
 import Tags from '../components/helpers/tags'
+import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 class Integration extends React.Component {
     componentDidMount() {
@@ -25,14 +26,15 @@ class Integration extends React.Component {
 
     render() {
         const post = this.props.data.ghostPost
-        const { relatedPosts } = this.props.pageContext
+        const { relatedPosts, section } = this.props.pageContext
         const title = `Ghost + ${post.title} Integration`
         const image = post.feature_image
         const optimisedImg = `https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit/${image}`
+        const seoImage = getMetaImageUrls(section)
 
         return (
             <>
-                <MetaData data={this.props.data} location={this.props.location} type="article" title={title} />
+                <MetaData data={this.props.data} location={this.props.location} type="article" title={title} image={seoImage} />
                 <Layout>
                     <div className="pa-vw4 tc">
                         <h1 className="ma0 pa0 f2-ns f1-m f-headline-l">{post.title} + Ghost</h1>
@@ -88,6 +90,7 @@ Integration.propTypes = {
     location: PropTypes.object.isRequired,
     pageContext: PropTypes.shape({
         relatedPosts: PropTypes.array.isRequired,
+        section: PropTypes.string.isRequired,
     }).isRequired,
 }
 

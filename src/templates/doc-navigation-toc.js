@@ -11,6 +11,7 @@ import PrevNext from '../components/global/prev-next'
 import TOC from '../components/layouts/partials/toc'
 import { MetaData } from '../components/meta'
 import Icon from '../components/global/icon'
+import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 function NavBar(props) {
     if (props.sidebar) {
@@ -176,6 +177,8 @@ class DocTemplate extends React.Component {
 
     render() {
         const post = this.props.data.markdownRemark
+        const imageUrl = getMetaImageUrls()
+
         post.frontmatter.keywords = post.frontmatter.keywords || []
         post.frontmatter.sidebar = post.frontmatter.sidebar || ``
         post.frontmatter.toc = post.frontmatter.toc === false ? false : true
@@ -199,7 +202,12 @@ class DocTemplate extends React.Component {
 
         return (
             <>
-                <MetaData data={ this.props.data } location={ this.props.location } type="article" />
+                <MetaData
+                    data={ this.props.data }
+                    location={ this.props.location }
+                    type="article"
+                    image={imageUrl}
+                />
                 <Layout>
                     <PageHeader location={ this.props.location } />
 

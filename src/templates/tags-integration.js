@@ -4,15 +4,16 @@ import { graphql } from 'gatsby'
 
 import IntegrationsContent from '../components/integrations-content'
 import { MetaData } from '../components/meta'
+import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 class IntegrationsTags extends React.Component {
     render() {
         const posts = this.props.data.allGhostPost.edges
-        const { tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription } = this.props.pageContext
+        const { tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription, section } = this.props.pageContext
 
         const title = tagMetaTitle || `Integrations - ${tagName} - Ghost`
         const description = tagMetaDescription || tagDescription || ``
-        const imageUrl = tagImage || ``
+        const imageUrl = tagImage || getMetaImageUrls(section)
 
         return (
             <>
@@ -48,6 +49,7 @@ IntegrationsTags.propTypes = {
         pathname: PropTypes.string.isRequired,
     }).isRequired,
     pageContext: PropTypes.shape({
+        section: PropTypes.string.isRequired,
         tagName: PropTypes.string.isRequired,
         // tagURL: PropTypes.string.isRequired,
         tagDescription: PropTypes.string,

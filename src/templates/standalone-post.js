@@ -7,6 +7,7 @@ import Layout from '../components/layouts/default'
 // import Authors from '../components/authors'
 import { Spirit } from '../components/spirit-styles'
 import { MetaData } from '../components/meta'
+import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 class Tutorial extends React.Component {
     componentDidMount() {
@@ -20,10 +21,19 @@ class Tutorial extends React.Component {
 
     render() {
         const post = this.props.data.ghostPost
+        const { section } = this.props.pageContext
+        const image = getMetaImageUrls(section)
 
         return (
             <>
-                <MetaData data={this.props.data} location={this.props.location} type="article" fetchAuthorData={true} />
+                <MetaData
+                    data={this.props.data}
+                    location={this.props.location}
+                    type="article"
+                    fetchAuthorData={true}
+                    overwriteDefaultImage={true}
+                    image={image}
+                />
                 <Layout title="Home" headerDividerStyle="shadow" mainClass="bg-white">
                     <div className="bg-tutorials">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1 white` }>
@@ -50,6 +60,9 @@ class Tutorial extends React.Component {
 Tutorial.propTypes = {
     data: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
+    pageContext: PropTypes.shape({
+        section: PropTypes.string.isRequired,
+    }).isRequired,
 }
 
 export default Tutorial
