@@ -30,8 +30,10 @@ class Tutorial extends React.Component {
                     data={this.props.data}
                     location={this.props.location}
                     type="article"
-                    fetchAuthorData={true}
-                    overwriteDefaultImage={true}
+                    fetchAuthorData
+                    // Passing this property will allow us to overwrite the specific image, that is set for this section,
+                    // with the feature image that is set in the Ghost post
+                    overwriteDefaultImage
                     image={image}
                 />
                 <Layout title="Home" headerDividerStyle="shadow" mainClass="bg-white">
