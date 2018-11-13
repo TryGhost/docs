@@ -114,7 +114,12 @@ class ArticleMetaGhost extends React.Component {
                             "url": "${canonical}",
                             "datePublished": "${ghostPost.published_at}",
                             "dateModified": "${ghostPost.updated_at}",
-                            "image": "${seoImage}",
+                            "image": {
+                                "@type": "ImageObject",
+                                "url": "${seoImage}",
+                                "width": 1000,
+                                "height": 563
+                            },
                             "description": "${ghostPost.meta_description || excerpt}",
                             "mainEntityOfPage": {
                                 "@type": "WebPage",

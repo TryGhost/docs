@@ -29,7 +29,12 @@ class WebsiteMeta extends React.Component {
                             "@context": "https://schema.org/",
                             "@type": ${type && type === `series` ? `"Series"` : `"WebSite"`},
                             "url": "${canonical}",
-                            ${image ? `"image": "${image}",` : ``}
+                            "image": {
+                                "@type": "ImageObject",
+                                "url": "${image}",
+                                "width": 1000,
+                                "height": 563
+                            },
                             "mainEntityOfPage": {
                                 "@type": "WebPage",
                                 "@id": "${siteMetadata.siteUrl}"
@@ -68,7 +73,7 @@ WebsiteMeta.propTypes = {
     canonical: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    image: PropTypes.string,
+    image: PropTypes.string.isRequired,
     type: PropTypes.string,
 }
 
