@@ -16,9 +16,9 @@ class ImageMeta extends React.Component {
                     <meta name="twitter:card" content="summary_large_image" />
                     <meta name="twitter:image" content={image} />
                     <meta property="og:image" content={image} />
-                    {/* TODO: fetch image sizes
-                    <meta property="og:image:width" content="2000" />
-                    <meta property="og:image:height" content="666" /> */}
+                    {/* This are the image sizes of the SEO feature images */}
+                    <meta property="og:image:width" content="1000" />
+                    <meta property="og:image:height" content="523" />
                 </Helmet>
             </>
         )
