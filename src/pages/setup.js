@@ -6,7 +6,7 @@ import Layout from '../components/layouts/default'
 import Icon from '../components/global/icon'
 import { Spirit } from '../components/spirit-styles'
 import Box from '../components/layouts/partials/box'
-import { MetaData } from '../components/layouts/partials/meta'
+import { MetaData } from '../components/meta'
 
 class SetupBox extends React.Component {
     render() {
