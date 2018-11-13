@@ -11,7 +11,7 @@ import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 class FAQPage extends React.Component {
     render() {
-        // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
+        // Add meta title and description for this page here to overwrite the site meta data as set in our config
         const title = `FAQ - Ghost`
         const description = `Answers to our most popular questions: billing, hosting, troubleshooting and more.`
         const imageUrl = getMetaImageUrls(`faq`)
