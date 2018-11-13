@@ -6,7 +6,7 @@ import Link from 'gatsby-link'
 import Layout from '../components/layouts/default'
 import PostCard from '../components/postcard'
 import { Spirit } from '../components/spirit-styles'
-import MetaData from '../components/layouts/partials/meta-data'
+import { MetaData } from '../components/layouts/partials/meta'
 // import SectionHeading from '../components/layouts/partials/section-heading'
 
 class TutorialsTags extends React.Component {

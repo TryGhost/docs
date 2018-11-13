@@ -9,7 +9,7 @@ import Layout from '../components/layouts/default'
 // import integrationIcon from '../images/integration-icon.png'
 import { Spirit } from '../components/spirit-styles'
 import TOC from '../components/layouts/partials/toc'
-import MetaData from '../components/layouts/partials/meta-data'
+import { MetaData } from '../components/layouts/partials/meta'
 import RelatedPosts from '../components/global/related-posts'
 import Tags from '../components/helpers/tags'
 

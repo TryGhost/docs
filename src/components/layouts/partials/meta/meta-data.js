@@ -2,9 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import url from 'url'
 
-import ArticleMetaGhost from './meta/article-meta-ghost'
-import ArticleMetaMD from './meta/article-meta-md'
-import WebsiteMeta from './meta/website-meta'
+import { ArticleMetaGhost, ArticleMetaMD, WebsiteMeta } from '.'
 
 class MetaData extends React.Component {
     render() {
