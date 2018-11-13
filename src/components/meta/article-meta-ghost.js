@@ -35,12 +35,13 @@ function getAuthorProperties(primaryAuthor, fetchAuthorData) {
 class ArticleMetaGhost extends React.Component {
     render() {
         const { ghostPost } = this.props.data
-        const { canonical, fetchAuthorData, title } = this.props
+        const { canonical, fetchAuthorData, title, overwriteDefaultImage, image } = this.props
         const { siteMetadata } = this.props.data.site
 
         const excerpt = getPostExcerpt(ghostPost)
         const publicTags = _.map(_.filter(ghostPost.tags, { visibility: `public` }), `name`)
         const primaryTag = _.get(ghostPost.primaryTag, `name`, publicTags[0])
+        const seoImage = (overwriteDefaultImage && ghostPost.feature_image) ? ghostPost.feature_image : image
 
         const author = getAuthorProperties(ghostPost.primary_author, fetchAuthorData)
 
@@ -113,7 +114,7 @@ class ArticleMetaGhost extends React.Component {
                             "url": "${canonical}",
                             "datePublished": "${ghostPost.published_at}",
                             "dateModified": "${ghostPost.updated_at}",
-                            ${ghostPost.feature_image ? `"image": "${ghostPost.feature_image}",` : ``}
+                            "image": "${seoImage}",
                             "description": "${ghostPost.meta_description || excerpt}",
                             "mainEntityOfPage": {
                                 "@type": "WebPage",
@@ -122,7 +123,7 @@ class ArticleMetaGhost extends React.Component {
                         }
                     `}</script>
                 </Helmet>
-                <ImageMeta image={ghostPost.feature_image} />
+                <ImageMeta image={seoImage} />
             </>
         )
     }
@@ -155,8 +156,10 @@ ArticleMetaGhost.propTypes = {
         }).isRequired,
     }).isRequired,
     canonical: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
     fetchAuthorData: PropTypes.bool,
     title: PropTypes.string,
+    overwriteDefaultImage: PropTypes.bool,
 }
 
 export default ArticleMetaGhost

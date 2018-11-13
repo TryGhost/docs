@@ -24,7 +24,7 @@ class FAQPage extends React.Component {
                     type="website"
                     title={title}
                     description={description}
-                    image={ imageUrl }
+                    image={imageUrl}
                 />
                 <Layout title="FAQ" headerDividerStyle="shadow">
                     <div className="bg-faq bb b--whitegrey">

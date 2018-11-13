@@ -7,16 +7,17 @@ import Layout from '../components/layouts/default'
 import PostCard from '../components/postcard'
 import { Spirit } from '../components/spirit-styles'
 import { MetaData } from '../components/meta'
+import getMetaImageUrls from '../utils/getMetaImageUrls'
 // import SectionHeading from '../components/layouts/partials/section-heading'
 
 class TutorialsTags extends React.Component {
     render() {
         const posts = this.props.data.allGhostPost.edges
-        const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription } = this.props.pageContext
+        const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription, section } = this.props.pageContext
 
         const title = tagMetaTitle || `Tutorials - ${tagName} - Ghost`
         const description = tagMetaDescription || tagDescription || ``
-        const imageUrl = tagImage || ``
+        const imageUrl = tagImage || getMetaImageUrls(section)
 
         return (
             <>
@@ -67,6 +68,7 @@ TutorialsTags.propTypes = {
         pathname: PropTypes.string.isRequired,
     }).isRequired,
     pageContext: PropTypes.shape({
+        section: PropTypes.string.isRequired,
         tagName: PropTypes.string.isRequired,
         tagURL: PropTypes.string.isRequired,
         tagDescription: PropTypes.string,

@@ -9,7 +9,14 @@ class MetaData extends React.Component {
         const { ghostPost } = this.props.data || {}
         const { markdownRemark } = this.props.data || {}
         const { siteMetadata } = this.props.data.site
-        const { type, title, description, image, fetchAuthorData } = this.props
+        const {
+            type,
+            title,
+            description,
+            image,
+            fetchAuthorData,
+            overwriteDefaultImage,
+        } = this.props
         const canonical = url.resolve(siteMetadata.siteUrl, this.props.location.pathname, `/`)
 
         if (type === `article`) {
@@ -20,6 +27,8 @@ class MetaData extends React.Component {
                         canonical={canonical}
                         fetchAuthorData={fetchAuthorData}
                         title={title}
+                        image={image}
+                        overwriteDefaultImage={overwriteDefaultImage}
                     />
                 )
             } else if (markdownRemark) {
@@ -30,12 +39,12 @@ class MetaData extends React.Component {
         } else if (type === `website` || type === `series`) {
             return (
                 <WebsiteMeta
-                    data={ this.props.data }
-                    canonical={ canonical }
-                    title={ title }
-                    description={ description }
-                    image={ image }
-                    type={ type }
+                    data={this.props.data}
+                    canonical={canonical}
+                    title={title}
+                    description={description}
+                    image={image}
+                    type={type}
                 />
             )
         }
@@ -64,6 +73,7 @@ MetaData.propTypes = {
     description: PropTypes.string,
     image: PropTypes.string,
     fetchAuthorData: PropTypes.bool,
+    overwriteDefaultImage: PropTypes.bool,
 }
 
 export default MetaData

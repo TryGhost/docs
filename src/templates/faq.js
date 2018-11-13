@@ -9,6 +9,7 @@ import { Spirit } from '../components/spirit-styles'
 import Tags from '../components/helpers/tags'
 import { MetaData } from '../components/meta'
 import RelatedPosts from '../components/global/related-posts'
+import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 class FAQ extends React.Component {
     componentDidMount() {
@@ -23,10 +24,11 @@ class FAQ extends React.Component {
     render() {
         const post = this.props.data.ghostPost
         const { relatedPosts, section } = this.props.pageContext
+        const image = getMetaImageUrls(section)
 
         return (
             <>
-                <MetaData data={this.props.data} location={this.props.location} type="article" section={section} />
+                <MetaData data={this.props.data} location={this.props.location} type="article" image={image} />
                 <Layout bodyClass="bg-white" mainClass="bg-whitegrey-l2 pb10">
 
                     <div className="bg-faq bb b--whitegrey">
@@ -81,6 +83,7 @@ FAQ.propTypes = {
     location: PropTypes.object.isRequired,
     pageContext: PropTypes.shape({
         relatedPosts: PropTypes.array.isRequired,
+        section: PropTypes.string.isRequired,
     }).isRequired,
 }
 

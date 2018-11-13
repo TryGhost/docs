@@ -8,15 +8,16 @@ import FAQ from '../components/faq'
 import { Spirit } from '../components/spirit-styles'
 import { MetaData } from '../components/meta'
 import FAQTagList from '../components/layouts/partials/faq-taglist'
+import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 class FAQTags extends React.Component {
     render() {
         const posts = this.props.data.allGhostPost.edges
-        const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription } = this.props.pageContext
+        const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription, section } = this.props.pageContext
 
         const title = tagMetaTitle || `FAQ - ${tagName} - Ghost`
         const description = tagMetaDescription || tagDescription || ``
-        const imageUrl = tagImage || ``
+        const imageUrl = tagImage || getMetaImageUrls(section)
 
         return (
             <>
@@ -71,6 +72,7 @@ FAQTags.propTypes = {
         pathname: PropTypes.string.isRequired,
     }).isRequired,
     pageContext: PropTypes.shape({
+        section: PropTypes.string.isRequired,
         tagName: PropTypes.string.isRequired,
         tagURL: PropTypes.string.isRequired,
         tagDescription: PropTypes.string,
