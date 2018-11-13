@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
+import url from 'url'
 
 import { ImageMeta } from '.'
 
@@ -15,6 +16,7 @@ class ArticleMetaMD extends React.Component {
         const { canonical } = this.props
         const { siteMetadata } = this.props.data.site
         const primaryTag = fm.keywords && fm.keywords.length ? fm.keywords[0] : null
+        const docsFeatureImage = url.resolve(siteMetadata.siteUrl, `/images/meta/ghost-docs.jpg`)
 
         return (
             <>
@@ -58,7 +60,12 @@ class ArticleMetaMD extends React.Component {
                             "headline": "${fm.meta_title || fm.title}",
                             "url": "${canonical}",
                             "datePublished": "${isoDate}",
-                            ${fm.image ? `"fm.image": "${fm.image}",` : ``}
+                            "image": {
+                                "@type": "ImageObject",
+                                "url": "${docsFeatureImage}",
+                                "width": 1000,
+                                "height": 563
+                            },
                             "description": "${fm.meta_description || post.excerpt}",
                             "mainEntityOfPage": {
                                 "@type": "WebPage",
@@ -67,7 +74,7 @@ class ArticleMetaMD extends React.Component {
                         }
                     `}</script>
                 </Helmet>
-                <ImageMeta image={fm.image} />
+                <ImageMeta image={docsFeatureImage} />
             </>
         )
     }
@@ -75,12 +82,12 @@ class ArticleMetaMD extends React.Component {
 
 // "publisher": {
 //     "@type": "Organization",
-//         "name": "Ghost",
-//             "logo": {
+//     "name": "Ghost",
+//     "logo": {
 //         "@type": "ImageObject",
-//             "url": "https://blog.ghost.org/favicon.png",
-//                 "width": 60,
-//                     "height": 60
+//         "url": "https://blog.ghost.org/favicon.png",
+//         "width": 60,
+//         "height": 60
 //     }
 // },
 
