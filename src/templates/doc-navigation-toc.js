@@ -9,7 +9,7 @@ import NavSidebar from '../components/global/navigation-sidebar'
 import FeedbackForm from '../components/global/feedback-form'
 import PrevNext from '../components/global/prev-next'
 import TOC from '../components/layouts/partials/toc'
-import { MetaData } from '../components/layouts/partials/meta'
+import { MetaData } from '../components/meta'
 import Icon from '../components/global/icon'
 
 function NavBar(props) {

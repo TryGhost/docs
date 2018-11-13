@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from "react-helmet"
 import PropTypes from 'prop-types'
 
-import ImageMeta from './image-meta'
+import { ImageMeta } from '.'
 
 class WebsiteMeta extends React.Component {
     render() {

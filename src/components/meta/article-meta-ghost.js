@@ -3,7 +3,7 @@ import Helmet from "react-helmet"
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 
-import getPostExcerpt from '../../../../utils/post-excerpt'
+import getPostExcerpt from '../../utils/post-excerpt'
 import ImageMeta from './image-meta'
 
 function getAuthorProperties(primaryAuthor, fetchAuthorData) {
