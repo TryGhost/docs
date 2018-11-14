@@ -2,7 +2,7 @@
 // const testUtils = require('./utils');
 require('./utils');
 
-const transforms = require('../src/utils/algolia-transforms');
+const transforms = require('../utils/algolia-transforms');
 const fs = require('fs');
 const path = require('path');
 

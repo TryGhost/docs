@@ -5,7 +5,7 @@ const colorModFunction = require(`postcss-color-mod-function`)
 const cssNano = require(`cssnano`)
 const customProperties = require(`postcss-custom-properties`)
 const easyImport = require(`postcss-easy-import`)
-const algoliaQueries = require(`./src/utils/algolia-queries`)
+const algoliaQueries = require(`./utils/algolia-queries`)
 const path = require(`path`)
 
 require(`dotenv`).config({

@@ -2,9 +2,9 @@ const Promise = require(`bluebird`)
 const path = require(`path`)
 const _ = require(`lodash`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const urlUtils = require(`./src/utils/urls`)
-const { allGhostPosts, allMarkdownPosts } = require(`./src/utils/node-queries`)
-const { ghostQueryConfig, markdownQueryConfig, defaultMarkdownSection } = require(`./src/utils/query-config`)
+const urlUtils = require(`./utils/urls`)
+const { allGhostPosts, allMarkdownPosts } = require(`./utils/node-queries`)
+const { ghostQueryConfig, markdownQueryConfig, defaultMarkdownSection } = require(`./utils/query-config`)
 const knownSections = _.map(markdownQueryConfig, `section`)
 
 const sortByDateDescending = (a, b) => {
