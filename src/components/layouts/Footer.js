@@ -1,8 +1,8 @@
 import React from 'react'
-import { Spirit } from '../../spirit-styles'
+import { Spirit } from '../spirit-styles'
 import { Link } from 'gatsby'
-import Logo from '../../global/logo'
-import Icon from '../../global/icon'
+import Logo from '../global/logo'
+import Icon from '../global/icon'
 
 const listItemClass = `mb2 lh-1-65` // Probably should go to spirit-styles.js
 const linkClass = `link pa2 midgrey hover-blue dib mr5 f8`
