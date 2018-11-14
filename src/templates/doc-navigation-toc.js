@@ -5,7 +5,7 @@ import _ from 'lodash'
 
 import { Layout } from '../components/layouts'
 import { Spirit } from '../components/spirit-styles'
-import NavSidebar from '../components/global/navigation-sidebar'
+import { SidebarNav } from '../components/sidebar'
 import FeedbackForm from '../components/global/feedback-form'
 import PrevNext from '../components/global/prev-next'
 import TOC from '../components/layouts/TOC'
@@ -15,7 +15,7 @@ import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 function NavBar(props) {
     if (props.sidebar) {
-        return <NavSidebar sidebar={ props.sidebar } location={ props.location } />
+        return <SidebarNav sidebar={ props.sidebar } location={ props.location } />
     } else {
         return null
     }

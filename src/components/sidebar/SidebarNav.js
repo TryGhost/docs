@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+
+import SidebarLink from './SidebarLink'
+import SidebarList from './SidebarList'
 
 function groupExpanded(items, pathname) {
     var breakException = {}
@@ -19,49 +21,6 @@ function groupExpanded(items, pathname) {
         }
     }
     return false
-}
-
-class SidebarLink extends React.Component {
-    render() {
-        if (this.props.link) {
-            if (this.props.link.match(/^\s?http(s?)/gi)) {
-                return (
-                    <a href={ this.props.link } className={ `link db pv6px pr2 lh-1-5 pl0 ` + this.props.linkClasses } target="_blank" rel="noopener noreferrer">{ this.props.title }</a>
-                )
-            } else {
-                return (
-                    <Link to={ this.props.link } className={ `link db pv6px pr2 lh-1-5 pl0 ${this.props.linkClasses}` }>{ this.props.title }</Link>
-                )
-            }
-        } else {
-            return (
-                <>{ this.props.title }</>
-            )
-        }
-    }
-}
-
-class SidebarList extends React.Component {
-    render() {
-        const linkClasses = `midgrey fw4 hover-blue-l2`
-        const activeLinkClasses = `sidebarlink-active blue fw6`
-
-        return (
-            <>
-                <ul className="relative sidebar-list ma0 pa0 list mb5 pl6 mt1">
-                    { this.props.items.map((item, j) => (
-                        <li key={ j }>
-                            <SidebarLink
-                                link={ item.link }
-                                title={ item.title }
-                                linkClasses={ (item.link === this.props.location.pathname ? activeLinkClasses : linkClasses) }
-                            />
-                        </li>
-                    )) }
-                </ul>
-            </>
-        )
-    }
 }
 
 class SidebarNav extends React.Component {
@@ -96,17 +55,6 @@ class SidebarNav extends React.Component {
             </nav>
         )
     }
-}
-
-SidebarLink.propTypes = {
-    link: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    linkClasses: PropTypes.string.isRequired,
-}
-
-SidebarList.propTypes = {
-    items: PropTypes.array.isRequired,
-    location: PropTypes.object.isRequired,
 }
 
 SidebarNav.propTypes = {
