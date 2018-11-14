@@ -469,9 +469,9 @@ kbd {
 /* Home */
 /* ----------------------------------------------------------------------- */
 .gh-bg-home {
-    /* background: url(../../images/bg-home.svg) no-repeat, radial-gradient(ellipse at top, rgba(252,253,255,1) 0%,rgba(228,233,245,1) 100%); */
-    /* background: url(../../images/bg-home.svg) no-repeat, linear-gradient(60deg, rgba(75, 55, 172, 1) 0%, rgba(99, 199, 193, 1) 100%);; */
-    background: url(../../images/bg-home.svg) no-repeat, linear-gradient(60deg, #562DB5 0%, #19AFC9 100%);
+    /* background: url(../images/bg-home.svg) no-repeat, radial-gradient(ellipse at top, rgba(252,253,255,1) 0%,rgba(228,233,245,1) 100%); */
+    /* background: url(../images/bg-home.svg) no-repeat, linear-gradient(60deg, rgba(75, 55, 172, 1) 0%, rgba(99, 199, 193, 1) 100%);; */
+    background: url(../images/bg-home.svg) no-repeat, linear-gradient(60deg, #562DB5 0%, #19AFC9 100%);
     background-size: cover;
 }
 
@@ -572,7 +572,7 @@ kbd {
 }
 
 .bg-integrations-header-image {
-    background: url(../../images/bg-integrations.svg) bottom center no-repeat, linear-gradient(60deg, #FA3973 0%, #FEE140 100%);
+    background: url(../images/bg-integrations.svg) bottom center no-repeat, linear-gradient(60deg, #FA3973 0%, #FEE140 100%);
     background-size: cover;
 }
 
@@ -699,13 +699,13 @@ kbd {
 /* API */
 /* ----------------------------------------------------------------------- */
 .bg-api-reference {
-    background: url(../../images/bg-api.svg) bottom center no-repeat, linear-gradient(60deg, #29323c 0%, #485563 100%);
+    background: url(../images/bg-api.svg) bottom center no-repeat, linear-gradient(60deg, #29323c 0%, #485563 100%);
 }
 
 /* Setup */
 /* ----------------------------------------------------------------------- */
 .bg-setup {
-    background: url(../../images/bg-setup.svg) bottom center no-repeat, linear-gradient(60deg, #008BD6 0%, #3ECFE6 100%);
+    background: url(../images/bg-setup.svg) bottom center no-repeat, linear-gradient(60deg, #008BD6 0%, #3ECFE6 100%);
 }
 
 .setup-box-min-height {
@@ -723,7 +723,7 @@ kbd {
 /* Core Concepts */
 /* ----------------------------------------------------------------------- */
 .bg-concepts {
-    background: url(../../images/bg-concepts.svg) bottom center no-repeat, linear-gradient(60deg, #6B23AE 0%, #C86DD7 100%);
+    background: url(../images/bg-concepts.svg) bottom center no-repeat, linear-gradient(60deg, #6B23AE 0%, #C86DD7 100%);
 }
 
 .concept-color {
@@ -737,7 +737,7 @@ kbd {
 /* Tutorials */
 /* ----------------------------------------------------------------------- */
 .bg-tutorials {
-    background: url(../../images/bg-concepts.svg) center center no-repeat, linear-gradient(60deg, #118CA4 0%, #54E4B6 100%);
+    background: url(../images/bg-concepts.svg) center center no-repeat, linear-gradient(60deg, #118CA4 0%, #54E4B6 100%);
 }
 
 .bg-tutorial-color {
@@ -792,7 +792,7 @@ kbd {
 /* FAQ */
 /* ----------------------------------------------------------------------- */
 .bg-faq {
-    background: url(../../images/bg-setup.svg) center center no-repeat, linear-gradient(60deg, #A4116E 0%, #E454C5 100%);
+    background: url(../images/bg-setup.svg) center center no-repeat, linear-gradient(60deg, #A4116E 0%, #E454C5 100%);
 }
 
 .faq-content {
