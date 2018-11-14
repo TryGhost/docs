@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from './navbar'
+import NavBar from './partials/navbar'
 import PropTypes from 'prop-types'
 
 class Header extends React.Component {
