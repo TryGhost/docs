@@ -8,7 +8,6 @@ import PostCard from '../components/postcard'
 import { Spirit } from '../components/spirit-styles'
 import { MetaData } from '../components/meta'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
-// import SectionHeading from '../components/layouts/partials/section-heading'
 
 class TutorialsTags extends React.Component {
     render() {
