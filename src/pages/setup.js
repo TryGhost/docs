@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layouts/default'
 import Icon from '../components/global/icon'
 import { Spirit } from '../components/spirit-styles'
-import Box from '../components/layouts/partials/box'
+import Box from '../components/Box'
 import { MetaData } from '../components/meta'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 

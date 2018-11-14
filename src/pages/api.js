@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import Layout from '../components/layouts/default'
 import { Spirit } from '../components/spirit-styles'
-import Box from '../components/layouts/partials/box'
+import Box from '../components/Box'
 import Icon from '../components/global/icon'
 import { MetaData } from '../components/meta'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
