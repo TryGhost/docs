@@ -9,7 +9,6 @@
  */
 const trustAllScripts = () => {
     const scriptNodes = document.querySelectorAll(`.external-scripts script`)
-    console.log(`​trustAllScripts -> scriptNodes`, scriptNodes)
 
     scriptNodes.forEach((node) => {
         // @TODO do the same for inline scripts?
