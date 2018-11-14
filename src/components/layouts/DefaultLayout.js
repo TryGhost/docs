@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 // Partials and components
 import Header from './partials/header'
 import Footer from './partials/footer'
-import SearchWrapper from './search-wrapper'
+import SearchWrapper from './SearchWrapper'
 
 // Spirit
 // import 'ghost-spirit/public/spirit-brand.css'
