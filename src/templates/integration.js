@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import Prism from 'prismjs'
 import Img from "gatsby-image"
 
-import Layout from '../components/layouts/default'
+import { Layout } from '../components/layouts'
 // import integrationIcon from '../images/integration-icon.png'
 import { Spirit } from '../components/spirit-styles'
 import TOC from '../components/layouts/partials/toc'

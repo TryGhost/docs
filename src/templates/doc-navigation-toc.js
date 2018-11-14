@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import _ from 'lodash'
 
-import Layout from '../components/layouts/default'
+import { Layout } from '../components/layouts'
 import { Spirit } from '../components/spirit-styles'
 import NavSidebar from '../components/global/navigation-sidebar'
 import FeedbackForm from '../components/global/feedback-form'
