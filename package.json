@@ -16,7 +16,7 @@
     "cy:run": "cypress run",
     "test:e2e": "start-server-and-test dev http://localhost:8000 cy:open",
     "test:e2e:ci": "start-server-and-test dev http://localhost:8000 cy:run",
-    "test": "NODE_ENV=testing mocha -- $(find test -name '*.test.js') && yarn test:e2e",
+    "test": "NODE_ENV=testing mocha -- $(find test -name '*.test.js') && yarn test:e2e:ci",
     "preship": "yarn test",
     "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi",
     "master": "git pull -r origin master --autostash && cd content/api/v2 && git pull -r origin master --autostash && cd ../../../ && yarn"
