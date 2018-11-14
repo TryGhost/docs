@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import { getTagsforPostCollection } from '../../../utils/tag-utils'
+import { getTagsforPostCollection } from '../utils/tag-utils'
 
 class IntegrationsTagList extends React.Component {
     constructor(props) {

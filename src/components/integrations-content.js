@@ -7,7 +7,7 @@ import Integration from "./integration"
 import { Spirit } from './spirit-styles'
 import NavBar from './layouts/partials/navbar'
 import { IntegrationIndex, IntegrationSearchBox, IntegrationResults } from './integration-search'
-import IntegrationsTagList from './layouts/partials/integrations-taglist'
+import IntegrationsTagList from './IntegrationsTagList'
 
 class IntegrationsContent extends React.Component {
     constructor(props) {
