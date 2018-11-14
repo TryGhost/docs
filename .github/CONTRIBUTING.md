@@ -41,6 +41,20 @@ gatsby serve
 - Alias: `yarn serve`
 
 
+## Testing
+
+Before submitting changes, run
+
+```
+yarn test
+```
+
+This will run some tests to verify that
+
+- Algolia integration works
+- Frontend works as expected
+- No linting issues are present
+
 ## Submitting Pull Requests
 
 Once you've made a change on your local branch, you can commit it and open a Pull Request which will be reviewed by 1-2 members of the Ghost core team. Small changes usually get merged as soon as we've had chance to read through them!
