@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 // import Authors from './authors'
 import { Spirit } from './spirit-styles'
 import getPostExcerpt from '../utils/post-excerpt'
-import Box from '../components/layouts/partials/box'
+import Box from '../components/Box'
 // import Icon from '../components/global/icon'
 
 const PostCard = ({ post, className }) => {

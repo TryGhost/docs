@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Box from './layouts/partials/box'
+import Box from './Box'
 
 const Integration = (props) => {
     const { post, hit } = props
