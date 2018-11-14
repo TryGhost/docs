@@ -2,10 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 
-import { Layout } from './layouts'
+import { Layout, NavBar } from './layouts'
 import Integration from "./integration"
 import { Spirit } from './spirit-styles'
-import NavBar from './layouts/partials/navbar'
 import { IntegrationIndex, IntegrationSearchBox, IntegrationResults } from './integration-search'
 import IntegrationsTagList from './IntegrationsTagList'
 

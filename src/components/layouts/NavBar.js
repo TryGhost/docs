@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from "gatsby"
-import { Spirit } from '../../spirit-styles'
+import { Spirit } from '../spirit-styles'
 import PropTypes from 'prop-types'
 
-import Logo from "../../global/logo"
-import SearchModal from '../../global/search-modal'
+import Logo from "../global/logo"
+import SearchModal from '../global/search-modal'
 
 // Theme definitions
 const headerSkin = {
