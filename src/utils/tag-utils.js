@@ -28,7 +28,7 @@ getPrimaryTag.proptypes = {
 
 export const getTagsforPostCollection = function getTagsforPostCollection(posts, linkPrefix) {
     const tags = []
-    linkPrefix = /^(?:\/?)([a-zA-Z\d\-]*)(?:\/?)/i.exec(linkPrefix)[1]
+    linkPrefix = /^(?:\/?)([a-zA-Z\d-]*)(?:\/?)/i.exec(linkPrefix)[1]
 
     _.forEach(posts, ({ node }) => {
         _.map(node.tags, (tag) => {
