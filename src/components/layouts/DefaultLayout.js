@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 
 // Partials and components
 import Header from './partials/header'
-import Footer from './partials/footer'
+import Footer from './Footer'
 import SearchWrapper from './SearchWrapper'
 
 // Spirit
