@@ -7,7 +7,7 @@ import Layout from '../components/layouts/default'
 import FAQ from '../components/faq'
 import { Spirit } from '../components/spirit-styles'
 import { MetaData } from '../components/meta'
-import FAQTagList from '../components/layouts/partials/faq-taglist'
+import FAQTagList from '../components/FAQTagList'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 class FAQTags extends React.Component {
