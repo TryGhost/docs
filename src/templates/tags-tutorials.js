@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 
-import Layout from '../components/layouts/default'
+import { Layout } from '../components/layouts'
 import PostCard from '../components/postcard'
 import { Spirit } from '../components/spirit-styles'
 import { MetaData } from '../components/meta'

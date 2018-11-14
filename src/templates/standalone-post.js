@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import Prism from 'prismjs'
 
-import Layout from '../components/layouts/default'
+import { Layout } from '../components/layouts'
 // import Authors from '../components/authors'
 import { Spirit } from '../components/spirit-styles'
 import { MetaData } from '../components/meta'

@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Icon from '../components/global/icon'
-import Layout from '../components/layouts/default'
+import { Layout } from '../components/layouts'
 import { Spirit } from '../components/spirit-styles'
 import Box from '../components/Box'
 import { MetaData } from '../components/meta'
