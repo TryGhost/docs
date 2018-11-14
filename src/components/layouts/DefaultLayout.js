@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 // Partials and components
-import Header from './partials/header'
+import Header from './Header'
 import Footer from './Footer'
 import SearchWrapper from './SearchWrapper'
 
