@@ -1,6 +1,7 @@
 import React from 'react'
-import NavBar from './partials/navbar'
 import PropTypes from 'prop-types'
+
+import NavBar from './NavBar'
 
 class Header extends React.Component {
     render() {
