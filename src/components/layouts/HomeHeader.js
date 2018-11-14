@@ -1,8 +1,8 @@
 import React from 'react'
-import NavBar from './navbar'
-import SearchModal from '../../global/search-modal'
-import Icon from '../../global/icon'
-import { Spirit } from '../../spirit-styles'
+import NavBar from './partials/navbar'
+import SearchModal from '../global/search-modal'
+import Icon from '../global/icon'
+import { Spirit } from '../spirit-styles'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 

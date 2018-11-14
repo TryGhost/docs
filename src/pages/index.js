@@ -4,11 +4,10 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Icon from '../components/global/icon'
-import { Layout } from '../components/layouts'
+import { Layout, HomeHeader } from '../components/layouts'
 import { Spirit } from '../components/spirit-styles'
 import Box from '../components/Box'
 import { MetaData } from '../components/meta'
-import HomeHeader from '../components/layouts/partials/home-header'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 import homeIllustration from '../images/home-illustration.svg' // eslint-disable-line no-unused-vars
