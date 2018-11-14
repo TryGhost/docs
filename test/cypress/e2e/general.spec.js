@@ -1,3 +1,4 @@
+// TODO: restructure tests. Maybe by functionality and not by route?
 context('Home', () => {
     beforeEach(() => {
         cy.visit('/');
@@ -28,12 +29,39 @@ context('Home', () => {
     });
 
     context('Home search', () => {
-        it('opens search modal', () => {
+        it('opens and closes search modal', () => {
             cy.get('#homesearch').click();
             cy.get('.ReactModal__Content').should('be.visible');
             cy.get('[data-cy=close-modal').click();
         });
     });
+});
+
+context('Search modal', () => {
+    beforeEach(() => {
+        cy.visit('/');
+        cy.get('#homesearch').click();
+        cy.get('.ReactModal__Content').should('be.visible');
+    });
+
+    it('has focus on input when opened', () => {
+        cy.focused().should('have.attr', 'data-cy', 'search-input');
+    });
+
+    it('should show search results', () => {
+        // Search results are not visible
+        cy.get('#react-autowhatever-1').should('not.be.visible');
+
+        // Typing anything into the search input will show search results
+        cy.get('[data-cy=search-input]').type('t')
+            .get('#react-autowhatever-1').should('be.visible');
+
+        // Removing the input will remove the search results
+        cy.get('[data-cy=search-input]').type('{backspace}')
+            .get('#react-autowhatever-1').should('not.be.visible');
+    });
+
+    // TODO: stub the requsts to Algolia and test them
 });
 
 context('Concepts', () => {
@@ -42,7 +70,6 @@ context('Concepts', () => {
         cy.url().should('match', /http:\/\/localhost:8000\/concepts\//);
     });
 
-    // TODO: maybe make sidebar and toc as separate tests?
     context('Sidebar', () => {
         beforeEach(() => {
             cy.visit('/concepts/introduction/');
