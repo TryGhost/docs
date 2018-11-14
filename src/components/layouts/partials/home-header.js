@@ -1,6 +1,5 @@
 import React from 'react'
 import NavBar from './navbar'
-// import SectionHeading from './section-heading'
 import SearchModal from '../../global/search-modal'
 import Icon from '../../global/icon'
 import { Spirit } from '../../spirit-styles'
