@@ -49,7 +49,7 @@ Ghost uses [Bookshelf](http://bookshelfjs.org) ORM + [Knex](https://knexjs.org) 
 
 ### XSS prevention
 
-Ghost uses safe/escaped stringa used everywhere, including and especially in all custom Handlebars helpers used in [Ghost Themes](/api/handlebars-themes/)
+Ghost uses safe/escaped strings used everywhere, including and especially in all custom Handlebars helpers used in [Ghost Themes](/api/handlebars-themes/)
 
 ### Dependency management
 
