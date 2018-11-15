@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connectSearchBox } from 'react-instantsearch-dom'
 
-import { Icon } from '../global'
+import { Icon } from '../../global'
 
 class IntegrationSearch extends React.Component {
     constructor(props) {

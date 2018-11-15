@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import IntegrationsContent from '../components/integrations-content'
+import { IntegrationsContent } from '../components/integrations'
 import { MetaData } from '../components/meta'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 
