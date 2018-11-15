@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Spirit } from './spirit-styles'
-import getPostExcerpt from '../utils/post-excerpt'
-import Box from '../components/Box'
+import { Spirit } from '../spirit-styles'
+import getPostExcerpt from '../../utils/post-excerpt'
+import Box from '../Box'
 
 const PostCard = ({ post, className }) => {
     // const tag = post.primaryTag ? post.primaryTag.name : (post.tags ? post.tags[0].name : `Untagged`)

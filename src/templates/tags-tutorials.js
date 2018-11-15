@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 
 import { Layout } from '../components/layouts'
-import PostCard from '../components/postcard'
+import { PostCard } from '../components/tutorials'
 import { Spirit } from '../components/spirit-styles'
 import { MetaData } from '../components/meta'
 import getMetaImageUrls from '../utils/getMetaImageUrls'

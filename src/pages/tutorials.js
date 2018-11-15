@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import { Layout } from '../components/layouts'
-import PostCard from '../components/postcard'
+import { PostCard } from '../components/tutorials'
 import { Spirit } from '../components/spirit-styles'
 import { MetaData } from '../components/meta'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
