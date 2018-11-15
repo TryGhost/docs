@@ -430,7 +430,7 @@ Log your content path, e.g. `content/logs/`. Set any path but ensure the permiss
 
 ### Spam
 
-Tell Ghost how to treat [spam requests](https://github.com/TryGhost/Ghost/blob/master/core/server/config/defaults.json#L26/).
+Tell Ghost how to treat [spam requests](https://github.com/TryGhost/Ghost/blob/master/core/server/config/defaults.json#L31).
 
 
 ### Caching
