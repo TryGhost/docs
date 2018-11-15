@@ -4,7 +4,7 @@ import { Spirit } from '../spirit-styles'
 import PropTypes from 'prop-types'
 
 import { Logo } from "../global"
-import SearchModal from '../global/search-modal'
+import SearchModal from '../global/SearchModal'
 
 // Theme definitions
 const headerSkin = {
