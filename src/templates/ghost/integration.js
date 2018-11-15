@@ -5,11 +5,11 @@ import { graphql } from 'gatsby'
 import Prism from 'prismjs'
 import Img from "gatsby-image"
 
-import { Layout } from '../../components/global/layout'
+import { Layout } from '../../components/common/layout'
 // import integrationIcon from '../images/integration-icon.png'
 import { Spirit } from '../../styles/spirit-styles'
-import { RelatedPosts, Tags, TOC } from '../../components/global'
-import { MetaData, getMetaImageUrls } from '../../components/global/meta'
+import { RelatedPosts, Tags, TOC } from '../../components/common'
+import { MetaData, getMetaImageUrls } from '../../components/common/meta'
 
 class Integration extends React.Component {
     componentDidMount() {

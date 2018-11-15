@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 
-import { Layout } from '../../components/global/layout'
+import { Layout } from '../../components/common/layout'
 import { Spirit } from '../../styles/spirit-styles'
-import { MetaData, getMetaImageUrls } from '../../components/global/meta'
+import { MetaData, getMetaImageUrls } from '../../components/common/meta'
 import { FAQLink, FAQTagList } from '../../components/faq'
 
 class FAQTags extends React.Component {

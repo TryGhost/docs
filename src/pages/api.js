@@ -2,10 +2,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import { Layout } from '../components/global/layout'
+import { Layout } from '../components/common/layout'
 import { Spirit } from '../styles/spirit-styles'
-import { Icon, Box } from '../components/global'
-import { MetaData, getMetaImageUrls } from '../components/global/meta'
+import { Icon, Box } from '../components/common'
+import { MetaData, getMetaImageUrls } from '../components/common/meta'
 
 // import bgapi from '../images/bg-api.svg' // eslint-disable-line no-unused-vars
 
