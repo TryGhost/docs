@@ -5,7 +5,7 @@ import _ from 'lodash'
 
 import { Layout } from '../components/layouts'
 import { Spirit } from '../components/spirit-styles'
-import { SidebarNav } from '../components/sidebar'
+import { SidebarNav } from '../components/global/sidebar'
 import FeedbackForm from '../components/global/FeedbackForm'
 import TOC from '../components/layouts/TOC'
 import { MetaData } from '../components/meta'

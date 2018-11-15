@@ -26,7 +26,7 @@ function groupExpanded(items, pathname) {
 class SidebarNav extends React.Component {
     render() {
         const { sidebar, location } = this.props
-        const [sidebarfile] = sidebar ? require(`../../data/sidebars/${sidebar}.yaml`) : []
+        const [sidebarfile] = sidebar ? require(`../../../data/sidebars/${sidebar}.yaml`) : []
 
         if (!sidebarfile) {
             return null
