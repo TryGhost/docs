@@ -6,7 +6,7 @@ import Prism from 'prismjs'
 
 import { Layout } from '../components/layouts'
 import { Spirit } from '../components/spirit-styles'
-import Tags from '../components/helpers/tags'
+import Tags from '../components/global/Tags'
 import { MetaData } from '../components/meta'
 import RelatedPosts from '../components/global/related-posts'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
