@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-// import Authors from './authors'
 import { Spirit } from './spirit-styles'
 import getPostExcerpt from '../utils/post-excerpt'
 import Box from '../components/Box'
