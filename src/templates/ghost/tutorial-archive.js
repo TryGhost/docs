@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 
-import { Layout } from '../../components/global/layout'
+import { Layout } from '../../components/common/layout'
 import { PostCard } from '../../components/tutorials'
 import { Spirit } from '../../styles/spirit-styles'
-import { MetaData, getMetaImageUrls } from '../../components/global/meta'
+import { MetaData, getMetaImageUrls } from '../../components/common/meta'
 
 class TutorialsTags extends React.Component {
     render() {

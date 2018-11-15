@@ -3,11 +3,11 @@ import { Link } from 'gatsby'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import { Icon, Box } from '../components/global'
-import { Layout } from '../components/global/layout'
+import { Icon, Box } from '../components/common'
+import { Layout } from '../components/common/layout'
 import { HomeHeader } from '../components/home'
 import { Spirit } from '../styles/spirit-styles'
-import { MetaData, getMetaImageUrls } from '../components/global/meta'
+import { MetaData, getMetaImageUrls } from '../components/common/meta'
 
 import homeIllustration from '../images/home-illustration.svg' // eslint-disable-line no-unused-vars
 

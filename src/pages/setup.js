@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import { Layout } from '../components/global/layout'
-import { Icon, Box } from '../components/global'
+import { Layout } from '../components/common/layout'
+import { Icon, Box } from '../components/common'
 import { Spirit } from '../styles/spirit-styles'
-import { MetaData, getMetaImageUrls } from '../components/global/meta'
+import { MetaData, getMetaImageUrls } from '../components/common/meta'
 
 class SetupBox extends React.Component {
     render() {

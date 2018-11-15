@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { Layout } from '../components/global/layout'
+import { Layout } from '../components/common/layout'
 import { Spirit } from '../styles/spirit-styles'
-import { Icon } from '../components/global'
+import { Icon } from '../components/common'
 
 const NotFoundPage = () => (
     <Layout headerDividerStyle="shadow">

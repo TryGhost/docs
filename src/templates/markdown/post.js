@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import _ from 'lodash'
 
-import { Layout } from '../../components/global/layout'
+import { Layout } from '../../components/common/layout'
 import { Spirit } from '../../styles/spirit-styles'
-import { SidebarNav } from '../../components/global/sidebar'
-import { FeedbackForm, Icon, PrevNext, TOC } from '../../components/global'
-import { MetaData, getMetaImageUrls } from '../../components/global/meta'
+import { SidebarNav } from '../../components/common/sidebar'
+import { FeedbackForm, Icon, PrevNext, TOC } from '../../components/common'
+import { MetaData, getMetaImageUrls } from '../../components/common/meta'
 
 function NavBar(props) {
     if (props.sidebar) {

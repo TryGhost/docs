@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import Prism from 'prismjs'
 
-import { Layout } from '../../components/global/layout'
+import { Layout } from '../../components/common/layout'
 import { Spirit } from '../../styles/spirit-styles'
-import { MetaData, getMetaImageUrls } from '../../components/global/meta'
+import { MetaData, getMetaImageUrls } from '../../components/common/meta'
 
 class Tutorial extends React.Component {
     componentDidMount() {
