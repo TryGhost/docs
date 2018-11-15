@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Spirit } from '../../components/spirit-styles'
+import { Spirit } from './spirit-styles'
 
 class FeedbackForm extends React.Component {
     render() {
