@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import NavBar from './NavBar'
+import NavBar from '../layouts/NavBar'
 import SearchModal from '../global/SearchModal'
 import { Icon } from '../global'
 import { Spirit } from '../spirit-styles'
