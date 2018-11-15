@@ -5,7 +5,7 @@ import Link from 'gatsby-link'
 
 import { Layout } from '../components/layouts'
 import { Spirit } from '../components/spirit-styles'
-import { MetaData } from '../components/meta'
+import { MetaData } from '../components/global/meta'
 import { FAQLink, FAQTagList } from '../components/faq'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 

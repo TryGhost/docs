@@ -8,7 +8,7 @@ import { Spirit } from '../components/spirit-styles'
 import { SidebarNav } from '../components/global/sidebar'
 import FeedbackForm from '../components/global/FeedbackForm'
 import TOC from '../components/layouts/TOC'
-import { MetaData } from '../components/meta'
+import { MetaData } from '../components/global/meta'
 import { Icon, PrevNext } from '../components/global'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 

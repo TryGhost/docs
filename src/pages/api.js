@@ -6,7 +6,7 @@ import { Layout } from '../components/layouts'
 import { Spirit } from '../components/spirit-styles'
 import Box from '../components/global/Box'
 import { Icon } from '../components/global'
-import { MetaData } from '../components/meta'
+import { MetaData } from '../components/global/meta'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 // import bgapi from '../images/bg-api.svg' // eslint-disable-line no-unused-vars

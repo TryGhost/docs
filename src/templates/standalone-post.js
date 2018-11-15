@@ -5,7 +5,7 @@ import Prism from 'prismjs'
 
 import { Layout } from '../components/layouts'
 import { Spirit } from '../components/spirit-styles'
-import { MetaData } from '../components/meta'
+import { MetaData } from '../components/global/meta'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 class Tutorial extends React.Component {

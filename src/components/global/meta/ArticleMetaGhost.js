@@ -3,34 +3,9 @@ import Helmet from "react-helmet"
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 
-import getPostExcerpt from '../../utils/post-excerpt'
-import ImageMeta from './image-meta'
-
-function getAuthorProperties(primaryAuthor, fetchAuthorData) {
-    let authorProfiles = []
-
-    if (fetchAuthorData) {
-        authorProfiles.push(
-            primaryAuthor.website ? primaryAuthor.website : null,
-            primaryAuthor.twitter ? `https://twitter.com/${_.trimStart(primaryAuthor.twitter, `@`)}/` : null,
-            primaryAuthor.facebook ? `https://www.facebook.com/${primaryAuthor.facebook}/` : null
-        )
-    } else {
-        authorProfiles.push(
-            `https://ghost.org/`,
-            `https://twitter.com/ghost/`,
-            `https://www.facebook.com/ghost/`
-        )
-    }
-
-    authorProfiles = _.compact(authorProfiles)
-
-    return {
-        name: fetchAuthorData ? primaryAuthor.name : `Ghost`,
-        sameAsArray: authorProfiles.length ? `["${_.join(authorProfiles, `", "`)}"]` : null,
-        image: fetchAuthorData ? primaryAuthor.profile_image : null,
-    }
-}
+import getPostExcerpt from '../../../utils/post-excerpt'
+import getAuthorProperties from './getAuthorProperties'
+import ImageMeta from './ImageMeta'
 
 class ArticleMetaGhost extends React.Component {
     render() {

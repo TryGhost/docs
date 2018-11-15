@@ -3,8 +3,8 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 
-import { ImageMeta } from '.'
-import getMetaImageUrls from '../../utils/getMetaImageUrls'
+import ImageMeta from './ImageMeta'
+import getMetaImageUrls from '../../../utils/getMetaImageUrls'
 
 class ArticleMetaMD extends React.Component {
     render() {

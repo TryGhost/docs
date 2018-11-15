@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import { Layout } from '../components/layouts'
 import { PostCard } from '../components/tutorials'
 import { Spirit } from '../components/spirit-styles'
-import { MetaData } from '../components/meta'
+import { MetaData } from '../components/global/meta'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 class TutorialsPage extends React.Component {
