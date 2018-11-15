@@ -6,9 +6,8 @@ import Prism from 'prismjs'
 
 import { Layout } from '../../components/global/layout'
 import { Spirit } from '../../components/spirit-styles'
-import Tags from '../../components/global/Tags'
+import { Tags, RelatedPosts } from '../../components/global'
 import { MetaData } from '../../components/global/meta'
-import RelatedPosts from '../../components/global/RelatedPosts'
 import getMetaImageUrls from '../../utils/getMetaImageUrls'
 
 class FAQ extends React.Component {

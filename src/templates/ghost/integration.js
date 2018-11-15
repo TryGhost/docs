@@ -8,10 +8,8 @@ import Img from "gatsby-image"
 import { Layout } from '../../components/global/layout'
 // import integrationIcon from '../images/integration-icon.png'
 import { Spirit } from '../../components/spirit-styles'
-import TOC from '../../components/global/TOC'
+import { RelatedPosts, Tags, TOC } from '../../components/global'
 import { MetaData } from '../../components/global/meta'
-import RelatedPosts from '../../components/global/RelatedPosts'
-import Tags from '../../components/global/Tags'
 import getMetaImageUrls from '../../utils/getMetaImageUrls'
 
 class Integration extends React.Component {

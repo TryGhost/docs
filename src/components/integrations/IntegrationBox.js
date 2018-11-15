@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Box from '../global/Box'
+import { Box } from '../global'
 
 const IntegrationBox = (props) => {
     const { post, hit } = props

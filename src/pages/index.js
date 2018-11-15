@@ -3,11 +3,10 @@ import { Link } from 'gatsby'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import { Icon } from '../components/global'
+import { Icon, Box } from '../components/global'
 import { Layout } from '../components/global/layout'
 import { HomeHeader } from '../components/home'
 import { Spirit } from '../components/spirit-styles'
-import Box from '../components/global/Box'
 import { MetaData } from '../components/global/meta'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 

@@ -6,10 +6,8 @@ import _ from 'lodash'
 import { Layout } from '../../components/global/layout'
 import { Spirit } from '../../components/spirit-styles'
 import { SidebarNav } from '../../components/global/sidebar'
-import FeedbackForm from '../../components/global/FeedbackForm'
-import TOC from '../../components/global/TOC'
+import { FeedbackForm, Icon, PrevNext, TOC } from '../../components/global'
 import { MetaData } from '../../components/global/meta'
-import { Icon, PrevNext } from '../../components/global'
 import getMetaImageUrls from '../../utils/getMetaImageUrls'
 
 function NavBar(props) {
