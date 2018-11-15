@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { Spirit } from '../spirit-styles'
 import PropTypes from 'prop-types'
 
-import Logo from "../global/logo"
+import { Logo } from "../global"
 import SearchModal from '../global/search-modal'
 
 // Theme definitions

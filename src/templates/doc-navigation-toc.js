@@ -7,10 +7,9 @@ import { Layout } from '../components/layouts'
 import { Spirit } from '../components/spirit-styles'
 import { SidebarNav } from '../components/sidebar'
 import FeedbackForm from '../components/FeedbackForm'
-import PrevNext from '../components/global/prev-next'
 import TOC from '../components/layouts/TOC'
 import { MetaData } from '../components/meta'
-import { Icon } from '../components/global'
+import { Icon, PrevNext } from '../components/global'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 function NavBar(props) {
