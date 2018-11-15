@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Box from './Box'
 
-const Integration = (props) => {
+const IntegrationBox = (props) => {
     const { post, hit } = props
     const url = post ? `/integrations/${post.slug}/` : hit.url
     const title = post ? post.title : hit.title
@@ -19,9 +19,9 @@ const Integration = (props) => {
     )
 }
 
-Integration.propTypes = {
+IntegrationBox.propTypes = {
     post: PropTypes.object,
     hit: PropTypes.object,
 }
 
-export default Integration
+export default IntegrationBox

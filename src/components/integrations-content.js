@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import _ from 'lodash'
 
 import { Layout, NavBar } from './layouts'
-import Integration from "./integration"
+import IntegrationBox from "./IntegrationBox"
 import { Spirit } from './spirit-styles'
 import { IntegrationIndex, IntegrationSearchBox, IntegrationResults } from './integration-search'
 import IntegrationsTagList from './IntegrationsTagList'
@@ -119,7 +119,7 @@ class IntegrationsContent extends React.Component {
                                     <>
                                         <div className="gh-integrations w-100">
                                             {posts.map(({ node }) => (
-                                                <Integration key={node.id} post={node} />
+                                                <IntegrationBox key={node.id} post={node} />
                                             ))}
                                         </div>
                                     </>
