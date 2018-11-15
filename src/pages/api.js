@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import { Layout } from '../components/layouts'
+import { Layout } from '../components/global/layout'
 import { Spirit } from '../components/spirit-styles'
 import Box from '../components/global/Box'
 import { Icon } from '../components/global'

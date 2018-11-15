@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { Layout } from '../components/layouts'
+import { Layout } from '../components/global/layout'
 import { Spirit } from '../components/spirit-styles'
 import { Icon } from '../components/global'
 

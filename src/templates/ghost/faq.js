@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 import Prism from 'prismjs'
 
-import { Layout } from '../../components/layouts'
+import { Layout } from '../../components/global/layout'
 import { Spirit } from '../../components/spirit-styles'
 import Tags from '../../components/global/Tags'
 import { MetaData } from '../../components/global/meta'
