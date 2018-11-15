@@ -1,3 +1,1 @@
 export { default as Layout } from './DefaultLayout'
-export { default as NavBar } from './NavBar'
-export { default as TOC } from './TOC'

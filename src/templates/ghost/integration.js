@@ -8,7 +8,7 @@ import Img from "gatsby-image"
 import { Layout } from '../../components/layouts'
 // import integrationIcon from '../images/integration-icon.png'
 import { Spirit } from '../../components/spirit-styles'
-import TOC from '../../components/layouts/TOC'
+import TOC from '../../components/global/TOC'
 import { MetaData } from '../../components/global/meta'
 import RelatedPosts from '../../components/global/RelatedPosts'
 import Tags from '../../components/global/Tags'

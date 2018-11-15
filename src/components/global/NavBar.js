@@ -3,8 +3,8 @@ import { Link } from "gatsby"
 import { Spirit } from '../spirit-styles'
 import PropTypes from 'prop-types'
 
-import { Logo } from "../global"
-import SearchModal from '../global/SearchModal'
+import { Logo } from "."
+import SearchModal from './SearchModal'
 
 // Theme definitions
 const headerSkin = {
