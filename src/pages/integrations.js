@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import { IntegrationsContent } from '../components/integrations'
-import { MetaData } from '../components/global/meta'
-import getMetaImageUrls from '../utils/getMetaImageUrls'
+import { MetaData, getMetaImageUrls } from '../components/global/meta'
 
 class IntegrationsPage extends React.Component {
     render() {

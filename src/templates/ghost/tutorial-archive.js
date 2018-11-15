@@ -6,8 +6,7 @@ import Link from 'gatsby-link'
 import { Layout } from '../../components/global/layout'
 import { PostCard } from '../../components/tutorials'
 import { Spirit } from '../../components/spirit-styles'
-import { MetaData } from '../../components/global/meta'
-import getMetaImageUrls from '../../utils/getMetaImageUrls'
+import { MetaData, getMetaImageUrls } from '../../components/global/meta'
 
 class TutorialsTags extends React.Component {
     render() {

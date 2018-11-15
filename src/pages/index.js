@@ -7,8 +7,7 @@ import { Icon, Box } from '../components/global'
 import { Layout } from '../components/global/layout'
 import { HomeHeader } from '../components/home'
 import { Spirit } from '../components/spirit-styles'
-import { MetaData } from '../components/global/meta'
-import getMetaImageUrls from '../utils/getMetaImageUrls'
+import { MetaData, getMetaImageUrls } from '../components/global/meta'
 
 import homeIllustration from '../images/home-illustration.svg' // eslint-disable-line no-unused-vars
 

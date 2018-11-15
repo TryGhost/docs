@@ -9,8 +9,7 @@ import { Layout } from '../../components/global/layout'
 // import integrationIcon from '../images/integration-icon.png'
 import { Spirit } from '../../components/spirit-styles'
 import { RelatedPosts, Tags, TOC } from '../../components/global'
-import { MetaData } from '../../components/global/meta'
-import getMetaImageUrls from '../../utils/getMetaImageUrls'
+import { MetaData, getMetaImageUrls } from '../../components/global/meta'
 
 class Integration extends React.Component {
     componentDidMount() {

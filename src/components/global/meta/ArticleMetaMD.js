@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import _ from 'lodash'
 
 import ImageMeta from './ImageMeta'
-import getMetaImageUrls from '../../../utils/getMetaImageUrls'
+import { getMetaImageUrls } from '.'
 
 class ArticleMetaMD extends React.Component {
     render() {

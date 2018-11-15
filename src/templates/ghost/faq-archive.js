@@ -5,9 +5,8 @@ import Link from 'gatsby-link'
 
 import { Layout } from '../../components/global/layout'
 import { Spirit } from '../../components/spirit-styles'
-import { MetaData } from '../../components/global/meta'
+import { MetaData, getMetaImageUrls } from '../../components/global/meta'
 import { FAQLink, FAQTagList } from '../../components/faq'
-import getMetaImageUrls from '../../utils/getMetaImageUrls'
 
 class FAQTags extends React.Component {
     render() {

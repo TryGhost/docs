@@ -7,8 +7,7 @@ import { Layout } from '../../components/global/layout'
 import { Spirit } from '../../components/spirit-styles'
 import { SidebarNav } from '../../components/global/sidebar'
 import { FeedbackForm, Icon, PrevNext, TOC } from '../../components/global'
-import { MetaData } from '../../components/global/meta'
-import getMetaImageUrls from '../../utils/getMetaImageUrls'
+import { MetaData, getMetaImageUrls } from '../../components/global/meta'
 
 function NavBar(props) {
     if (props.sidebar) {

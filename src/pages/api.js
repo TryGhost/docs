@@ -5,8 +5,7 @@ import PropTypes from 'prop-types'
 import { Layout } from '../components/global/layout'
 import { Spirit } from '../components/spirit-styles'
 import { Icon, Box } from '../components/global'
-import { MetaData } from '../components/global/meta'
-import getMetaImageUrls from '../utils/getMetaImageUrls'
+import { MetaData, getMetaImageUrls } from '../components/global/meta'
 
 // import bgapi from '../images/bg-api.svg' // eslint-disable-line no-unused-vars
 

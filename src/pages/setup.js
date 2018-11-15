@@ -5,8 +5,7 @@ import { graphql } from 'gatsby'
 import { Layout } from '../components/global/layout'
 import { Icon, Box } from '../components/global'
 import { Spirit } from '../components/spirit-styles'
-import { MetaData } from '../components/global/meta'
-import getMetaImageUrls from '../utils/getMetaImageUrls'
+import { MetaData, getMetaImageUrls } from '../components/global/meta'
 
 class SetupBox extends React.Component {
     render() {
