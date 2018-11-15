@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 
 import NavBar from './NavBar'
 import SearchModal from '../global/search-modal'
-import Icon from '../global/icon'
+import { Icon } from '../global'
 import { Spirit } from '../spirit-styles'
-import { Link } from 'gatsby'
 
 class MainBox extends React.Component {
     render() {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import { Layout } from '../components/layouts'
-import Icon from '../components/global/icon'
+import { Icon } from '../components/global'
 import { Spirit } from '../components/spirit-styles'
 import Box from '../components/Box'
 import { MetaData } from '../components/meta'

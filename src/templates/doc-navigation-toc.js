@@ -10,7 +10,7 @@ import FeedbackForm from '../components/FeedbackForm'
 import PrevNext from '../components/global/prev-next'
 import TOC from '../components/layouts/TOC'
 import { MetaData } from '../components/meta'
-import Icon from '../components/global/icon'
+import { Icon } from '../components/global'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 function NavBar(props) {

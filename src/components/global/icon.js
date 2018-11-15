@@ -1,24 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-class Logo extends React.Component {
+class Icon extends React.Component {
     render() {
-        const Icon = require(`../../images/icons/` + this.props.name + `.svg`)
+        const IconFile = require(`../../images/icons/${this.props.name}.svg`)
 
         return (
-            <Icon className={ this.props.className } data-cy={`${this.props.name}-icon`}/>
+            <IconFile className={this.props.className} data-cy={`${this.props.name}-icon`}/>
         )
     }
 }
 
-Logo.defaultProps = {
+Icon.defaultProps = {
     name: ``,
     className: ``,
 }
 
-Logo.propTypes = {
+Icon.propTypes = {
     name: PropTypes.string.isRequired,
     className: PropTypes.string,
 }
 
-export default Logo
+export default Icon

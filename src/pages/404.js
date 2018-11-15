@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import { Layout } from '../components/layouts'
 import { Spirit } from '../components/spirit-styles'
-import Icon from '../components/global/icon'
+import { Icon } from '../components/global'
 
 const NotFoundPage = () => (
     <Layout headerDividerStyle="shadow">

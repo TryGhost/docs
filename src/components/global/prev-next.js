@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import { Spirit } from '../spirit-styles'
-import Icon from '../global/icon'
+import Icon from './Icon'
 
 class PrevNext extends React.Component {
     render() {
@@ -11,7 +11,7 @@ class PrevNext extends React.Component {
 
         return (
             <div className="grid-12">
-                {prev ? 
+                {prev ?
                     <Link to={ prev.link } className={ `col-6 flex pa10 pl0 tdn justify-start items-center blue nudge-left--1 prevnext-hover ba b--transparent` }>
                         <Icon name="arrow-left" className="w5 h5 fill-blue" />
                         <div className="ml4">
