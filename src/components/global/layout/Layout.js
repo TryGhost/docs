@@ -9,10 +9,10 @@ import SearchWrapper from './SearchWrapper'
 
 // Spirit
 // import 'ghost-spirit/public/spirit-brand.css'
-import '../../../css/app.css'
+import '../../../styles/app.css'
 
 // Additional styles
-import '../../../css/prism.css'
+import '../../../styles/prism.css'
 
 class DefaultLayout extends React.Component {
     render() {

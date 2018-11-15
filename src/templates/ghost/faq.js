@@ -5,7 +5,7 @@ import Link from 'gatsby-link'
 import Prism from 'prismjs'
 
 import { Layout } from '../../components/global/layout'
-import { Spirit } from '../../components/spirit-styles'
+import { Spirit } from '../../styles/spirit-styles'
 import { Tags, RelatedPosts } from '../../components/global'
 import { MetaData, getMetaImageUrls } from '../../components/global/meta'
 

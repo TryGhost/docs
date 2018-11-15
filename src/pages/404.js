@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import { Layout } from '../components/global/layout'
-import { Spirit } from '../components/spirit-styles'
+import { Spirit } from '../styles/spirit-styles'
 import { Icon } from '../components/global'
 
 const NotFoundPage = () => (

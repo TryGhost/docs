@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { Icon, Box } from '../components/global'
 import { Layout } from '../components/global/layout'
 import { HomeHeader } from '../components/home'
-import { Spirit } from '../components/spirit-styles'
+import { Spirit } from '../styles/spirit-styles'
 import { MetaData, getMetaImageUrls } from '../components/global/meta'
 
 import homeIllustration from '../images/home-illustration.svg' // eslint-disable-line no-unused-vars

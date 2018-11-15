@@ -1,5 +1,5 @@
 import React from 'react'
-import { Spirit } from '../../spirit-styles'
+import { Spirit } from '../../../styles/spirit-styles'
 import { Link } from 'gatsby'
 import { Icon, Logo } from '../.'
 

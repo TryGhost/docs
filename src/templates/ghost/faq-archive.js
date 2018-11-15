@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 
 import { Layout } from '../../components/global/layout'
-import { Spirit } from '../../components/spirit-styles'
+import { Spirit } from '../../styles/spirit-styles'
 import { MetaData, getMetaImageUrls } from '../../components/global/meta'
 import { FAQLink, FAQTagList } from '../../components/faq'
 

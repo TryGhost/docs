@@ -4,7 +4,7 @@ import { graphql, Link } from 'gatsby'
 import Prism from 'prismjs'
 
 import { Layout } from '../../components/global/layout'
-import { Spirit } from '../../components/spirit-styles'
+import { Spirit } from '../../styles/spirit-styles'
 import { MetaData, getMetaImageUrls } from '../../components/global/meta'
 
 class Tutorial extends React.Component {

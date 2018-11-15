@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import { Spirit } from '../spirit-styles'
+import { Spirit } from '../../styles/spirit-styles'
 import Icon from './Icon'
 
 class PrevNext extends React.Component {

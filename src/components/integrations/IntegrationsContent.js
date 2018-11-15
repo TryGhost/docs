@@ -5,7 +5,7 @@ import _ from 'lodash'
 import { Layout } from '../global/layout'
 import NavBar from '../global/NavBar'
 import IntegrationBox from "./IntegrationBox"
-import { Spirit } from '../spirit-styles'
+import { Spirit } from '../../styles/spirit-styles'
 import { IntegrationIndex, IntegrationSearchBox, IntegrationResults } from './integration-search'
 import IntegrationsTagList from './IntegrationsTagList'
 

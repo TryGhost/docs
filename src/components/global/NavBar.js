@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "gatsby"
-import { Spirit } from '../spirit-styles'
+import { Spirit } from '../../styles/spirit-styles'
 import PropTypes from 'prop-types'
 
 import { Logo } from "."

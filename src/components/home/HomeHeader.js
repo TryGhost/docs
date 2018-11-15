@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 import NavBar from '../global/NavBar'
 import { SearchModal } from '../global/search'
 import { Icon } from '../global'
-import { Spirit } from '../spirit-styles'
+import { Spirit } from '../../styles/spirit-styles'
 
 class MainBox extends React.Component {
     render() {

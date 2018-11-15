@@ -7,7 +7,7 @@ import Img from "gatsby-image"
 
 import { Layout } from '../../components/global/layout'
 // import integrationIcon from '../images/integration-icon.png'
-import { Spirit } from '../../components/spirit-styles'
+import { Spirit } from '../../styles/spirit-styles'
 import { RelatedPosts, Tags, TOC } from '../../components/global'
 import { MetaData, getMetaImageUrls } from '../../components/global/meta'
 

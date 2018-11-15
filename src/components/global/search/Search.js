@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { Highlight, Snippet, Index, Configure, connectAutoComplete } from 'react-instantsearch-dom'
 import Autosuggest from 'react-autosuggest'
-import { Spirit } from '../../spirit-styles'
+import { Spirit } from '../../../styles/spirit-styles'
 import { searchConfig } from '../../../../utils/query-config'
 
 const HitTemplate = (props) => {
