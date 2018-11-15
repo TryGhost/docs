@@ -10,7 +10,7 @@ import { Layout } from '../components/layouts'
 import { Spirit } from '../components/spirit-styles'
 import TOC from '../components/layouts/TOC'
 import { MetaData } from '../components/meta'
-import RelatedPosts from '../components/global/related-posts'
+import RelatedPosts from '../components/global/RelatedPosts'
 import Tags from '../components/global/Tags'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 

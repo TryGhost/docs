@@ -8,7 +8,7 @@ import { Layout } from '../components/layouts'
 import { Spirit } from '../components/spirit-styles'
 import Tags from '../components/global/Tags'
 import { MetaData } from '../components/meta'
-import RelatedPosts from '../components/global/related-posts'
+import RelatedPosts from '../components/global/RelatedPosts'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 class FAQ extends React.Component {
