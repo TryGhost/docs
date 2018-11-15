@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import _ from 'lodash'
 
-import { Layout } from '../components/layouts'
-import { Spirit } from '../components/spirit-styles'
-import { SidebarNav } from '../components/global/sidebar'
-import FeedbackForm from '../components/global/FeedbackForm'
-import TOC from '../components/layouts/TOC'
-import { MetaData } from '../components/global/meta'
-import { Icon, PrevNext } from '../components/global'
-import getMetaImageUrls from '../utils/getMetaImageUrls'
+import { Layout } from '../../components/layouts'
+import { Spirit } from '../../components/spirit-styles'
+import { SidebarNav } from '../../components/global/sidebar'
+import FeedbackForm from '../../components/global/FeedbackForm'
+import TOC from '../../components/layouts/TOC'
+import { MetaData } from '../../components/global/meta'
+import { Icon, PrevNext } from '../../components/global'
+import getMetaImageUrls from '../../utils/getMetaImageUrls'
 
 function NavBar(props) {
     if (props.sidebar) {
@@ -27,7 +27,7 @@ function PrevNextSection(props) {
     // The following code serializes the data and pass it to a generic component.
 
     if (props.sidebar) {
-        const [sidebarfile] = props.sidebar ? require(`../data/sidebars/${props.sidebar}.yaml`) : {}
+        const [sidebarfile] = props.sidebar ? require(`../../data/sidebars/${props.sidebar}.yaml`) : {}
 
         if (!sidebarfile) {
             return null

@@ -3,18 +3,18 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 
-import { Layout } from '../components/layouts'
-import { PostCard } from '../components/tutorials'
-import { Spirit } from '../components/spirit-styles'
-import { MetaData } from '../components/global/meta'
-import getMetaImageUrls from '../utils/getMetaImageUrls'
+import { Layout } from '../../components/layouts'
+import { Spirit } from '../../components/spirit-styles'
+import { MetaData } from '../../components/global/meta'
+import { FAQLink, FAQTagList } from '../../components/faq'
+import getMetaImageUrls from '../../utils/getMetaImageUrls'
 
-class TutorialsTags extends React.Component {
+class FAQTags extends React.Component {
     render() {
         const posts = this.props.data.allGhostPost.edges
         const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription, section } = this.props.pageContext
 
-        const title = tagMetaTitle || `Tutorials - ${tagName} - Ghost`
+        const title = tagMetaTitle || `FAQ - ${tagName} - Ghost`
         const description = tagMetaDescription || tagDescription || ``
         const imageUrl = tagImage || getMetaImageUrls(section)
 
@@ -24,27 +24,31 @@ class TutorialsTags extends React.Component {
                     data={this.props.data}
                     location={this.props.location}
                     type="series"
-                    title={title || this.props.data.site.siteMetadata.title}
-                    description={description || this.props.data.site.siteMetadata.description}
+                    title={title}
+                    description={description}
                     image={imageUrl}
                 />
-                <Layout title="Tutorials" headerDividerStyle="shadow">
-                    <div className="bg-tutorials">
-                        <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1 white` }>
-                            <h1 className={Spirit.h4 + `gh-integration-header-shadow pl10`}>
-                                <Link to="/tutorials/" className={`link dim white fw3`}>Tutorials</Link>
+                <Layout title="FAQ" headerDividerStyle="shadow">
+                    <div className="bg-faq bb b--whitegrey">
+                        <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1` }>
+                            <h1 className={ Spirit.h4 + `white` }>
+                                <Link to="/faq/" className={ `link dim white fw3` }>Frequently Asked Questions</Link>
                                 <span className="white titleslash-white pl4 ml4 relative">
                                     <Link to={tagURL} className="link dim white">{tagName}</Link>
                                 </span>
                             </h1>
                         </div>
                     </div>
-                    <div className={ Spirit.page.xl + `mt-vw5 mt-vw2-ns` }>
-                        <section className="grid-12 gutter-32">
-                            {posts.map(({ node }) => (
-                                <PostCard key={node.id} post={node} className="col-4" />
-                            ))}
-                        </section>
+                    <div className={ Spirit.page.xl + `grid-12 pb5` }>
+                        <div className="bg-white shadow-2 br4 mt10 pa5 pa15-ns pt10-ns pb12-ns col-12 col-8-ns">
+                            {/* <h4 className={ Spirit.h2 + `col-12 pb2 bb b--whitegrey mb5` }>{ tagName }</h4> */}
+                            { posts.map(({ node }) => (
+                                <FAQLink key={ node.id } post={ node } />
+                            )) }
+                        </div>
+                        <div className="col-12 col-4-ns pa5 pa15-ns pt10-ns mt11-ns">
+                            <FAQTagList location={ this.props.location } />
+                        </div>
                     </div>
                 </Layout>
             </>
@@ -52,7 +56,7 @@ class TutorialsTags extends React.Component {
     }
 }
 
-TutorialsTags.propTypes = {
+FAQTags.propTypes = {
     data: PropTypes.shape({
         site: PropTypes.shape({
             siteMetadata: PropTypes.shape({
@@ -77,7 +81,7 @@ TutorialsTags.propTypes = {
     }).isRequired,
 }
 
-export default TutorialsTags
+export default FAQTags
 
 export const tagsQuery = graphql`
     query($tagSlug: String!) {

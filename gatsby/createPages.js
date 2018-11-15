@@ -211,7 +211,7 @@ module.exports = async ({ graphql, actions }) => {
                 }
 
                 return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-                    const DocTemplate = path.resolve(`./src/templates/doc-navigation-toc.js`)
+                    const DocTemplate = path.resolve(`./src/templates/markdown/post.js`)
 
                     createPage({
                         path: node.fields.slug,

@@ -1,17 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Link from 'gatsby-link'
 
-import { IntegrationsContent } from '../components/integrations'
-import { MetaData } from '../components/global/meta'
-import getMetaImageUrls from '../utils/getMetaImageUrls'
+import { Layout } from '../../components/layouts'
+import { PostCard } from '../../components/tutorials'
+import { Spirit } from '../../components/spirit-styles'
+import { MetaData } from '../../components/global/meta'
+import getMetaImageUrls from '../../utils/getMetaImageUrls'
 
-class IntegrationsTags extends React.Component {
+class TutorialsTags extends React.Component {
     render() {
         const posts = this.props.data.allGhostPost.edges
-        const { tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription, section } = this.props.pageContext
+        const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription, section } = this.props.pageContext
 
-        const title = tagMetaTitle || `Integrations - ${tagName} - Ghost`
+        const title = tagMetaTitle || `Tutorials - ${tagName} - Ghost`
         const description = tagMetaDescription || tagDescription || ``
         const imageUrl = tagImage || getMetaImageUrls(section)
 
@@ -25,16 +28,31 @@ class IntegrationsTags extends React.Component {
                     description={description || this.props.data.site.siteMetadata.description}
                     image={imageUrl}
                 />
-                <IntegrationsContent
-                    posts={posts}
-                    location={this.props.location}
-                />
+                <Layout title="Tutorials" headerDividerStyle="shadow">
+                    <div className="bg-tutorials">
+                        <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1 white` }>
+                            <h1 className={Spirit.h4 + `gh-integration-header-shadow pl10`}>
+                                <Link to="/tutorials/" className={`link dim white fw3`}>Tutorials</Link>
+                                <span className="white titleslash-white pl4 ml4 relative">
+                                    <Link to={tagURL} className="link dim white">{tagName}</Link>
+                                </span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div className={ Spirit.page.xl + `mt-vw5 mt-vw2-ns` }>
+                        <section className="grid-12 gutter-32">
+                            {posts.map(({ node }) => (
+                                <PostCard key={node.id} post={node} className="col-4" />
+                            ))}
+                        </section>
+                    </div>
+                </Layout>
             </>
         )
     }
 }
 
-IntegrationsTags.propTypes = {
+TutorialsTags.propTypes = {
     data: PropTypes.shape({
         site: PropTypes.shape({
             siteMetadata: PropTypes.shape({
@@ -51,7 +69,7 @@ IntegrationsTags.propTypes = {
     pageContext: PropTypes.shape({
         section: PropTypes.string.isRequired,
         tagName: PropTypes.string.isRequired,
-        // tagURL: PropTypes.string.isRequired,
+        tagURL: PropTypes.string.isRequired,
         tagDescription: PropTypes.string,
         tagMetaDescription: PropTypes.string,
         tagMetaTitle: PropTypes.string,
@@ -59,7 +77,7 @@ IntegrationsTags.propTypes = {
     }).isRequired,
 }
 
-export default IntegrationsTags
+export default TutorialsTags
 
 export const tagsQuery = graphql`
     query($tagSlug: String!) {
@@ -67,7 +85,7 @@ export const tagsQuery = graphql`
             ...SiteMetaFields
         }
         allGhostPost(
-            sort: { order: ASC, fields: [published_at] },
+            sort: { order: DESC, fields: [published_at] },
             limit: 100,
             filter: {tags: {elemMatch: {slug: {eq: $tagSlug}}}}
         ) {

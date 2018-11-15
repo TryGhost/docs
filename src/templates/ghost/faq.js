@@ -4,12 +4,12 @@ import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 import Prism from 'prismjs'
 
-import { Layout } from '../components/layouts'
-import { Spirit } from '../components/spirit-styles'
-import Tags from '../components/global/Tags'
-import { MetaData } from '../components/global/meta'
-import RelatedPosts from '../components/global/RelatedPosts'
-import getMetaImageUrls from '../utils/getMetaImageUrls'
+import { Layout } from '../../components/layouts'
+import { Spirit } from '../../components/spirit-styles'
+import Tags from '../../components/global/Tags'
+import { MetaData } from '../../components/global/meta'
+import RelatedPosts from '../../components/global/RelatedPosts'
+import getMetaImageUrls from '../../utils/getMetaImageUrls'
 
 class FAQ extends React.Component {
     componentDidMount() {
