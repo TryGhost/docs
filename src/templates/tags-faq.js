@@ -4,10 +4,9 @@ import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 
 import { Layout } from '../components/layouts'
-import FAQ from '../components/faq'
 import { Spirit } from '../components/spirit-styles'
 import { MetaData } from '../components/meta'
-import FAQTagList from '../components/FAQTagList'
+import { FAQLink, FAQTagList } from '../components/faq'
 import getMetaImageUrls from '../utils/getMetaImageUrls'
 
 class FAQTags extends React.Component {
@@ -44,7 +43,7 @@ class FAQTags extends React.Component {
                         <div className="bg-white shadow-2 br4 mt10 pa5 pa15-ns pt10-ns pb12-ns col-12 col-8-ns">
                             {/* <h4 className={ Spirit.h2 + `col-12 pb2 bb b--whitegrey mb5` }>{ tagName }</h4> */}
                             { posts.map(({ node }) => (
-                                <FAQ key={ node.id } post={ node } />
+                                <FAQLink key={ node.id } post={ node } />
                             )) }
                         </div>
                         <div className="col-12 col-4-ns pa5 pa15-ns pt10-ns mt11-ns">

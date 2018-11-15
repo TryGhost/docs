@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import getPostExcerpt from '../utils/post-excerpt'
-import { Spirit } from './spirit-styles'
+import getPostExcerpt from '../../utils/post-excerpt'
+import { Spirit } from '../spirit-styles'
 
-const FAQ = (props) => {
+const FAQLink = (props) => {
     const post = props.post
     const url = `/faq/${post.slug}/`
     const excerpt = getPostExcerpt(post)
@@ -17,8 +17,8 @@ const FAQ = (props) => {
     )
 }
 
-FAQ.propTypes = {
+FAQLink.propTypes = {
     post: PropTypes.object.isRequired,
 }
 
-export default FAQ
+export default FAQLink
