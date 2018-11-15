@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import NavBar from '../global/NavBar'
-import SearchModal from '../global/SearchModal'
+import { SearchModal } from '../global/search'
 import { Icon } from '../global'
 import { Spirit } from '../spirit-styles'
 

@@ -3,7 +3,7 @@ import Modal from 'react-modal'
 import PropTypes from 'prop-types'
 
 import Search from './Search'
-import Icon from './Icon'
+import Icon from '../Icon'
 
 class SearchModal extends React.Component {
     constructor(props) {
