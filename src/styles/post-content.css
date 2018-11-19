@@ -609,7 +609,7 @@ Usage (In Ghost editor):
     white-space: nowrap;
     vertical-align: top;
     -webkit-overflow-scrolling: touch;
-    display: block;
+    /* display: block; */
     align-self: flex-start;
 }
 
