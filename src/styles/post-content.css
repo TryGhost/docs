@@ -818,6 +818,17 @@ Usage (In Ghost editor):
     line-height: var(--vr-4);
 }
 
+.faq-content .kg-width-wide,
+.faq-content .kg-width-full {
+    width: calc(100% + 12.8rem);
+    margin-left: -6.8rem;
+}
+
+.faq-content .kg-width-wide .kg-image,
+.faq-content .kg-width-full .kg-image {
+    max-width: 100%;
+}
+
 .faq-content hr,
 .faq-content hr + p,
 .faq-content hr + ul,
@@ -896,12 +907,14 @@ Usage (In Ghost editor):
     border-radius: 0;
 }
 
-.integration-content .kg-width-wide {
+.integration-content .kg-width-wide,
+.integration-content .kg-width-full {
     width: calc(100% + 7rem);
     margin-left: -6rem;
     margin-right: -1rem;
 }
-.integration-content .kg-width-wide .kg-image {
+.integration-content .kg-width-wide .kg-image,
+.integration-content .kg-width-full .kg-image {
     max-width: 100%;
 }
 
