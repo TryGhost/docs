@@ -225,6 +225,10 @@ Usage (In Ghost editor):
 
 /* Override third party iframe styles */
 .post-content iframe {
+    margin: calc(var(--vr-4)) auto !important;
+}
+
+.post-content figure iframe {
     margin: 0 auto !important;
 }
 
@@ -609,7 +613,6 @@ Usage (In Ghost editor):
     white-space: nowrap;
     vertical-align: top;
     -webkit-overflow-scrolling: touch;
-    /* display: block; */
     align-self: flex-start;
 }
 
