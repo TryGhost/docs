@@ -76,14 +76,11 @@ cd core/client
 #### Properly rename your references again
 
 ```bash
-# Rename origin to upstream
-git remote rename origin upstream
-
 # Ensure admin also has the correct path
 git remote set-url upstream git@github.com:TryGhost/Ghost-Admin.git
 
-# Add your fork as an origin, editing in <YourUsername>!
-git remote add origin git@github.com:<YourUsername>/Ghost-Admin.git
+# Same for your fork, editing in <YourUsername>!
+git remote set-url origin git@github.com:<YourUsername>/Ghost-Admin.git
 ```
 
 #### Bring Ghost-Admin up to date
