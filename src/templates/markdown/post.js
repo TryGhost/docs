@@ -183,7 +183,7 @@ class DocTemplate extends React.Component {
 
         if (post.frontmatter.sidebar && post.frontmatter.toc) { // Layout #1: sidebar and TOC
             leftSidebar = <NavBar location={ this.props.location } sidebar={ post.frontmatter.sidebar } />
-            rightSidebar = <div className="nr3 sticky top-25"><TOC headingsOffset="-200" className="pr4" listClasses="mt3" /></div>
+            rightSidebar = <div className="nr3 sticky top-25"><TOC headingsOffset="-200" className="pr4" listClasses="mt2" /></div>
             justification = `justify-between`
         } else if (post.frontmatter.sidebar || post.frontmatter.toc) { // Layout #2: sidebar only
             if (post.frontmatter.sidebar) {

@@ -6,12 +6,17 @@
 
 /* ------------------------------------ */
 
+/* Fix in-page anchors with sticky header */
+:target:before {
+    content: '';
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+}
+
 .post-content {
     line-height: var(--vr-3);
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: relative;
     margin: 0 auto;
 }
@@ -279,8 +284,7 @@ Usage (In Ghost editor):
 .post-content > h4:first-child,
 .post-content > h5:first-child,
 .post-content > h6:first-child {
-    padding-top: var(--navbar-size);
-    margin: calc(var(--vr-4) - var(--navbar-size)) 0 0;
+    margin: var(--vr-4) 0 0;
 }
 
 .post-content h1 {
@@ -288,8 +292,7 @@ Usage (In Ghost editor):
     font-weight: 300;
     line-height: var(--vr-8);
     letter-spacing: -0.2px;
-    padding-top: var(--navbar-size);
-    margin: calc(var(--vr-8) - var(--navbar-size)) 0 0;
+    margin: var(--vr-8) 0 0;
 }
 
 @media (max-width: 500px) {
@@ -302,9 +305,17 @@ Usage (In Ghost editor):
     font-size: 2.85rem;
     font-weight: 500;
     line-height: var(--vr-5);
-    padding-top: var(--navbar-size);
-    margin: calc(var(--vr-7) - var(--navbar-size)) 0 0;
+    margin: var(--vr-7) 0 0;
 }
+
+/* Fixing in-page anchors for H2's */
+.post-content h2:before {
+    content: '';
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+}
+
 @media (max-width: 500px) {
     .post-content h2 {
         font-size: 2.6rem;
@@ -315,8 +326,7 @@ Usage (In Ghost editor):
     font-size: 2.25rem;
     font-weight: 500;
     line-height: var(--vr-5);
-    padding-top: var(--navbar-size);
-    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
+    margin: var(--vr-6) 0 0;
     letter-spacing: -0.4px;
 }
 @media (max-width: 500px) {
@@ -329,8 +339,7 @@ Usage (In Ghost editor):
     font-size: 1.75rem;
     font-weight: 500;
     line-height: calc(var(--vr-4) - 0.4rem);
-    padding-top: var(--navbar-size);
-    margin: calc(var(--vr-4) - var(--navbar-size)) 0 0;
+    margin: var(--vr-4) 0 0;
 }
 @media (max-width: 500px) {
     .post-content h4 {
@@ -343,8 +352,7 @@ Usage (In Ghost editor):
     font-weight: 300;
     font-style: italic;
     line-height: var(--vr-5);
-    padding-top: var(--navbar-size);
-    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
+    margin: var(--vr-6) 0 0;
     color: var(--blue);
 }
 @media (max-width: 500px) {
@@ -358,8 +366,7 @@ Usage (In Ghost editor):
     font-size: 1.45rem;
     font-weight: 600;
     line-height: var(--vr-3);
-    padding-top: var(--navbar-size);
-    margin: calc(var(--vr-4) - var(--navbar-size)) 0 0;
+    margin: var(--vr-4) 0 0;
     text-transform: uppercase;
     letter-spacing: 0.2px;
     word-spacing: 3px;
@@ -382,25 +389,25 @@ Usage (In Ghost editor):
 .post-content h1 + h3,
 .post-content h1 + h4,
 .post-content h1 + h6 {
-    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
+    margin: var(--vr-6) 0 0;
 }
 
 .post-content h2 + h2,
 .post-content h2 + h3,
 .post-content h2 + h4,
 .post-content h2 + h6 {
-    margin: calc(var(--vr-2) - var(--navbar-size)) 0 0;
+    margin: var(--vr-2) 0 0;
 }
 
 .post-content h3 + h3,
 .post-content h3 + h4,
 .post-content h3 + h6 {
-    margin: calc(var(--vr-2) - var(--navbar-size)) 0 0;
+    margin: var(--vr-2) 0 0;
 }
 
 .post-content h4 + h4,
 .post-content h4 + h6 {
-    margin: calc(var(--vr-1) - var(--navbar-size)) 0 0;
+    margin: var(--vr-1) 0 0;
 }
 
 .post-content h5 + p,
@@ -416,7 +423,7 @@ Usage (In Ghost editor):
 .post-content h5 + h4,
 .post-content h5 + h5,
 .post-content h5 + h6 {
-    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
+    margin: var(--vr-6) 0 0;
 }
 
 .post-content hr {
@@ -443,7 +450,7 @@ Usage (In Ghost editor):
 .post-content hr + h4,
 .post-content hr + h5,
 .post-content hr + h6 {
-    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
+    margin: var(--vr-6) 0 0;
 }
 
 /* Some grouped styles for smaller viewports */
@@ -458,7 +465,7 @@ Usage (In Ghost editor):
     .post-content hr + h4,
     .post-content hr + h5,
     .post-content hr + h6 {
-        margin: calc(var(--vr-4) - var(--navbar-size)) 0 0;
+        margin: var(--vr-4) 0 0;
     }
 }
 
@@ -523,13 +530,13 @@ Usage (In Ghost editor):
 .post-content table + h4,
 .post-content table + h5,
 .post-content table + h6 {
-    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
+    margin: var(--vr-6) 0 0;
 }
 
 .post-content figure + h2,
 .post-content pre + h2,
 .post-content div + h2 {
-    margin: calc(var(--vr-10) - var(--navbar-size)) 0 0;
+    margin: var(--vr-10) 0 0;
 }
 
 .post-content h1 + figure,
@@ -667,12 +674,22 @@ Usage (In Ghost editor):
     width: 100%;
 }
 
+.post-content .kg-width-wide,
+.post-content .kg-width-full {
+    margin: var(--vr-4) -100% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .post-content .kg-width-wide .kg-image {
     max-width: 1040px;
+    width: 100vw;
 }
 
 .post-content .kg-width-full .kg-image {
     max-width: 100vw;
+    width: 100vw;
 }
 
 .post-content figure {
@@ -785,8 +802,7 @@ Usage (In Ghost editor):
     font-size: 1.9rem;
     font-weight: 500;
     line-height: var(--vr-4);
-    padding-top: var(--navbar-size);
-    margin: calc(var(--vr-5) - var(--navbar-size)) 0 0;
+    margin: var(--vr-5) 0 0;
 }
 
 .faq-content h4 {
@@ -816,7 +832,7 @@ Usage (In Ghost editor):
 .faq-content hr + h4,
 .faq-content hr + h5,
 .faq-content hr + h6 {
-    margin: calc(var(--vr-4) - var(--navbar-size)) 0 0;
+    margin: var(--vr-4) 0 0;
 }
 
 /* Tutorials and Integrations steps */
@@ -832,8 +848,7 @@ Usage (In Ghost editor):
     font-size: 2.5rem;
     font-weight: 500;
     line-height: var(--vr-5);
-    padding-top: var(--navbar-size);
-    margin: calc(var(--vr-6) - var(--navbar-size)) 0 0;
+    margin: var(--vr-6) 0 0;
     letter-spacing: -0.4px;
 }
 
@@ -841,12 +856,12 @@ Usage (In Ghost editor):
     color: var(--darkgrey);
 }
 
-.tutorial-content h2:before,
-.integration-content h2:before {
+.tutorial-content h2:after,
+.integration-content h2:after {
     counter-increment: headingitem;
     content: counter(headingitem);
     position: absolute;
-    top: 97px;
+    top: 88px;
     left: -40px;
     width: 23px;
     height: 23px;
@@ -860,14 +875,14 @@ Usage (In Ghost editor):
     line-height: 1.8em;
 }
 
-.integration-content h2:before {
+.integration-content h2:after {
     background: var(--whitegrey);
     color: var(--midgrey);
 }
 
 .tutorial-content h2:last-of-type {
     color: var(--darkgrey);
-    padding-top: calc(var(--navbar-size) / 2);
+    padding-top: 44px;
     margin: calc(var(--vr-6)) 0 0;
 }
 
