@@ -71,7 +71,7 @@ class APIPage extends React.Component {
                     description={description}
                     image={ imageUrl }
                 />
-                <Layout title="API" mainClass="bg-whitegrey-l2" bodyClass="bg-white">
+                <Layout mainClass="bg-whitegrey-l2" bodyClass="bg-white">
                     <section className="bg-api-reference">
                         <div className={ Spirit.page.xl + `tc-ns pt-vw6 pt-vw5-ns pb-vw5 white` }>
                             <h1 className={ Spirit.sectionHeading + `gh-integration-header-shadow`}>API Reference</h1>

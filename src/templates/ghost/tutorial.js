@@ -34,7 +34,7 @@ class Tutorial extends React.Component {
                     overwriteDefaultImage
                     image={image}
                 />
-                <Layout title="Home" headerDividerStyle="shadow" mainClass="bg-white">
+                <Layout headerDividerStyle="shadow" mainClass="bg-white">
                     <div className="bg-tutorials">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1 white` }>
                             <Link to="/tutorials/" className={ Spirit.h4 + `gh-integration-header-shadow white dim link` }>Tutorials</Link>

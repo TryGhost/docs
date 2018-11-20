@@ -26,7 +26,7 @@ class TutorialsPage extends React.Component {
                     description={description || this.props.data.site.siteMetadata.description}
                     image={imageUrl}
                 />
-                <Layout title="Tutorials" headerDividerStyle="shadow">
+                <Layout headerDividerStyle="shadow">
                     <div className="bg-tutorials">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1 white` }>
                             <h1 className={ Spirit.h4 + `gh-integration-header-shadow` }>Tutorials</h1>

@@ -78,7 +78,6 @@ class IntegrationsContent extends React.Component {
         return (
             <>
                 <Layout
-                    title="Integrations"
                     headerDividerStyle="shadow"
                     header={
                         <div className="bg-integrations-header-image">

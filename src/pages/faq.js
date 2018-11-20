@@ -25,7 +25,7 @@ class FAQPage extends React.Component {
                     description={description}
                     image={imageUrl}
                 />
-                <Layout title="FAQ" headerDividerStyle="shadow">
+                <Layout headerDividerStyle="shadow">
                     <div className="bg-faq bb b--whitegrey">
                         <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1` }>
                             <h1 className={ Spirit.h4 + `white`}>Frequently Asked Questions</h1>

@@ -61,7 +61,6 @@ class IndexPage extends React.Component {
                     image={imageUrl}
                 />
                 <Layout
-                    title="Home"
                     headerDividerStyle="shadow"
                     bodyClass="bg-white"
                     mainClass="bg-whitegrey-l2 pb-vw6 pb-vw3-ns"

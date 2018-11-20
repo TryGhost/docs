@@ -46,7 +46,7 @@ class SetupIndexPage extends React.Component {
                     description={description || this.props.data.site.siteMetadata.description}
                     image={imageUrl}
                 />
-                <Layout title="API" mainClass="bg-whitegrey-l2 pb-vw3" bodyClass="bg-white">
+                <Layout mainClass="bg-whitegrey-l2 pb-vw3" bodyClass="bg-white">
                     <section className="bg-setup">
                         <div className={ Spirit.page.xl + `tc-ns pt-vw6 pt-vw5-ns pb-vw5 white` }>
                             <h1 className={ Spirit.sectionHeading + `gh-integration-header-shadow` }>Setup Guide</h1>
