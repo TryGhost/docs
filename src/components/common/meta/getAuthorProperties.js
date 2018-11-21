@@ -1,6 +1,7 @@
 import _ from 'lodash'
+import PropTypes from 'prop-types'
 
-export const getAuthorProperties = function getAuthorProperties(primaryAuthor, fetchAuthorData) {
+export const getAuthorProperties = (primaryAuthor, fetchAuthorData) => {
     let authorProfiles = []
 
     if (fetchAuthorData) {
@@ -24,6 +25,21 @@ export const getAuthorProperties = function getAuthorProperties(primaryAuthor, f
         sameAsArray: authorProfiles.length ? `["${_.join(authorProfiles, `", "`)}"]` : null,
         image: fetchAuthorData ? primaryAuthor.profile_image : null,
     }
+}
+
+getAuthorProperties.defaultProps = {
+    fetchAuthorData: false,
+}
+
+getAuthorProperties.PropTypes = {
+    primaryAuthor: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        profile_image: PropTypes.string,
+        website: PropTypes.string,
+        twitter: PropTypes.string,
+        facebook: PropTypes.string,
+    }).isRequired,
+    fetchAuthorData: PropTypes.bool.isRequired,
 }
 
 export default getAuthorProperties
