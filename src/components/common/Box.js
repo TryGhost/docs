@@ -5,21 +5,29 @@ import { Link } from 'gatsby'
 const Box = ({ children, to, href, className, elevation, radius, onWhite }) => {
     const baseBoxClass = `bg-white`
     // Shadow classes
-    const shadowClasses = `shadow-${elevation} ${(onWhite ? `on-white` : ``)} ${(href || to ? `box-shadow-hover shadow-${elevation}-hover` : ``)}`
+    const shadowClasses = `shadow-${elevation} ${(href || to ? `box-shadow-hover shadow-${elevation}-hover` : ``)}`
     // Border radius clss
     const radiusClasses = `br${radius}`
 
     if (to) {
         // internal links
         return (
-            <Link to={to} className={`${baseBoxClass} ${shadowClasses} ${radiusClasses} db ${className}`}>
+            <Link
+                to={to}
+                className={`${baseBoxClass} ${shadowClasses} ${(onWhite ? `on-white` : ``)} ${radiusClasses} db ${className}`}
+            >
                 {children}
             </Link>
         )
     } else if (href) {
         // external links
         return (
-            <a href={href} className={`${baseBoxClass} ${shadowClasses} ${radiusClasses} db ${className}`} target="_blank" rel="noopener noreferrer">
+            <a
+                href={href}
+                className={`${baseBoxClass} ${shadowClasses} ${(onWhite ? `on-white` : ``)} ${radiusClasses} db ${className}`}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
                 {children}
             </a>
         )
