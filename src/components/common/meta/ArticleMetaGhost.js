@@ -14,20 +14,19 @@ class ArticleMetaGhost extends React.Component {
         const { siteMetadata } = this.props.data.site
 
         const excerpt = getPostExcerpt(ghostPost)
+        const author = getAuthorProperties(ghostPost.primary_author, fetchAuthorData)
         const publicTags = _.map(_.filter(ghostPost.tags, { visibility: `public` }), `name`)
         const primaryTag = _.get(ghostPost.primaryTag, `name`, publicTags[0])
         const seoImage = (overwriteDefaultImage && ghostPost.feature_image) ? ghostPost.feature_image : image
-
-        const author = getAuthorProperties(ghostPost.primary_author, fetchAuthorData)
 
         return (
             <>
                 <Helmet>
                     <title>{ghostPost.meta_title || title || ghostPost.title}</title>
-                    <meta name="description" content={ ghostPost.meta_description || excerpt } />
-                    <link rel="canonical" href={ canonical } />
+                    <meta name="description" content={ghostPost.meta_description || excerpt} />
+                    <link rel="canonical" href={canonical} />
 
-                    <meta property="og:site_name" content={ siteMetadata.title } />
+                    <meta property="og:site_name" content={siteMetadata.title} />
                     <meta name="og:type" content="article" />
                     <meta name="og:title"
                         content={
@@ -44,9 +43,9 @@ class ArticleMetaGhost extends React.Component {
                             ghostPost.meta_description
                         }
                     />
-                    <meta property="og:url" content={ canonical } />
-                    <meta property="article:published_time" content={ ghostPost.published_at } />
-                    <meta property="article:modified_time" content={ghostPost.updated_at } />
+                    <meta property="og:url" content={canonical} />
+                    <meta property="article:published_time" content={ghostPost.published_at} />
+                    <meta property="article:modified_time" content={ghostPost.updated_at} />
                     {publicTags.map((keyword, i) => (<meta property="article:tag" content={keyword} key={i} />))}
                     <meta property="article:author" content="https://www.facebook.com/ghost/" />
 
@@ -65,13 +64,13 @@ class ArticleMetaGhost extends React.Component {
                             ghostPost.meta_description
                         }
                     />
-                    <meta name="twitter:url" content={ canonical } />
+                    <meta name="twitter:url" content={canonical} />
                     {/* <meta name="twitter.label1" content="Reading time" /> */}
                     {/* <meta name="twitter:data1" content="TODO: Reading time helper and replace existing `label1` data" /> */}
                     <meta name="twitter:label1" content="Written by" />
                     <meta name="twitter:data1" content={author.name} />
-                    { primaryTag ? <meta name="twitter:label2" content="Filed under" /> : null }
-                    { primaryTag ? <meta name="twitter:data2" content={ primaryTag } /> : null }
+                    {primaryTag ? <meta name="twitter:label2" content="Filed under" /> : null}
+                    {primaryTag ? <meta name="twitter:data2" content={primaryTag} /> : null}
                     <meta name="twitter:site" content="@tryghost" />
                     <meta name="twitter:creator" content="@tryghost" />
                     <script type="application/ld+json">{`
@@ -126,7 +125,29 @@ ArticleMetaGhost.defaultProps = {
 
 ArticleMetaGhost.propTypes = {
     data: PropTypes.shape({
-        ghostPost: PropTypes.object.isRequired,
+        ghostPost: PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            published_at: PropTypes.string.isRequired,
+            updated_at: PropTypes.string.isRequired,
+            meta_title: PropTypes.string,
+            meta_description: PropTypes.string,
+            primary_author: PropTypes.object.isRequired,
+            feature_image: PropTypes.string,
+            tags: PropTypes.arrayOf(
+                PropTypes.shape({
+                    name: PropTypes.string,
+                    slug: PropTypes.string,
+                    visibility: PropTypes.string,
+                })
+            ),
+            primaryTag: PropTypes.shape({
+                name: PropTypes.string,
+            }),
+            og_title: PropTypes.string,
+            og_description: PropTypes.string,
+            twitter_title: PropTypes.string,
+            twitter_description: PropTypes.string,
+        }).isRequired,
         site: PropTypes.shape({
             siteMetadata: PropTypes.shape({
                 siteUrl: PropTypes.string.isRequired,
