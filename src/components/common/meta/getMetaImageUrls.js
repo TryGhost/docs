@@ -9,18 +9,18 @@ const imageUrls = {
     faq: url.resolve(SITEURL, `/images/meta/Ghost-FAQ.jpg`),
     integrations: url.resolve(SITEURL, `/images/meta/Ghost-Integrations.jpg`),
     tutorials: url.resolve(SITEURL, `/images/meta/Ghost-Tutorials.jpg`),
+    default: url.resolve(SITEURL, `/images/meta/Ghost-Docs.jpg`),
 }
 
-const getMetaImageUrls = (section) => {
-    if (!section || !imageUrls[section]) {
-        return url.resolve(SITEURL, `/images/meta/Ghost-Docs.jpg`)
-    } else {
-        return imageUrls[section]
-    }
+export const getMetaImageUrls = (section) => {
+    // Set the default image if no section is passed
+    section = section || `default`
+
+    return imageUrls[section]
 }
 
 getMetaImageUrls.proptypes = {
-    section: PropTypes.string,
+    section: PropTypes.string.isRequired,
 }
 
 export default getMetaImageUrls
