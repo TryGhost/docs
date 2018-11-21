@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from 'prop-types'
 import {
     InstantSearch,
     Configure,
@@ -14,5 +15,9 @@ const SearchWrapper = ({ children }) => (
         {children}
     </InstantSearch>
 )
+
+SearchWrapper.propTypes = {
+    children: PropTypes.node.isRequired,
+}
 
 export default SearchWrapper
