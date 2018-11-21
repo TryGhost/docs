@@ -1,8 +1,8 @@
 ---
-title: "How to install Ghost on Debian"
-date: "2018-11-19"
+title: "How to install Ghost on Debian Testing"
+date: "2018-11-21"
 meta_title: "How to install & setup Ghost on Debian Testing"
-meta_description: "A rolling deployment installation guide for the Ghost professional publishing platform using a staged server that runs Debian Testing."
+meta_description: "A rolling deployment installation guide for the Ghost professional publishing platform using a staged environment that runs Debian Testing."
 keywords:
     - setup
     - staging
@@ -10,20 +10,21 @@ keywords:
     - debian
     - rolling
     - deployment
+    - environment
 ---
 
-An ever-evolving guide for installing, configuring and running Ghost on your Debian **Testing** server, for use in staged deployments
+A rolling guide for installing, configuring and running Ghost on your Debian **Testing** environment, for use in staged deployments
 
 ## Overview
 
-This is an unofficial guide for self-hosting Ghost using the recommended stack on top of Debian Testing. If you're comfortable installing, maintaining and updating your own software, this is the place for you. By the end of this guide you'll have a fully configured Ghost install running in a staged environment using MySQL.
+This is an unofficial guide for self-hosting Ghost on top of the Debian Testing stack. If you're comfortable installing, maintaining and updating your own software, this is the place for you. By the end of this guide you'll have a fully configured Ghost install running in a staged environment using MySQL.
 
 This install is **not** suitable for [production use](/install/ubuntu/), [local use](/install/local/) or [contributing](/install/source/) to core.
 
 
 ## Prerequisites
 
-The unofficial recommended staged installation requires the following stack:
+The unofficial, staged installation requires the following stack:
 
 * Debian
 * NGINX (minimum of 1.9.5 for SSL)
@@ -138,7 +139,7 @@ sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.10-1_all.deb
 sudo dpkg -i mysql-apt-config_0.8.10-1_all.deb
 ```
 
-> Note: Add the newest Debian version to the unsupported system (the list starts from oldest to newest systems). Add the MySQL Server & Cluster product. Add the newest recommended MySQL version found in the prerequisites section of this guide. Select the 'ok' option when complete.
+> Note: Add the newest Debian version to the unsupported system (the list starts from oldest to newest systems). Add the MySQL Server & Cluster product. Add the newest MySQL version found in the prerequisites section of this guide. Select the 'ok' option when complete.
 
 Get the updated repository list and install MySQL.
 
