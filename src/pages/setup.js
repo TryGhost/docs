@@ -69,6 +69,12 @@ class SetupIndexPage extends React.Component {
                                 </p>
                             </SetupBox>
 
+                            <SetupBox to="/install/debian/" title="Debian" icon="debian-logo" iconClass="w8 h8" headingClass="mt2">
+                                <p className={ Spirit.small + `mw70` }>
+                                    An ever-evolving guide for installing Ghost on Debian Testing for <strong>rolling deployments</strong>
+                                </p>
+                            </SetupBox>
+
                             <SetupBox href="https://hub.docker.com/_/ghost/" title="Docker" icon="docker-logo" iconClass="w10 h10" headingClass="mt1">
                                 <p className={ Spirit.small + `mw70` }>
                                     <strong>Unofficial community package</strong> for running Ghost inside a Docker container
