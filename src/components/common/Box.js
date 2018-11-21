@@ -3,11 +3,14 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 const Box = ({ children, to, href, className, elevation, radius, onWhite }) => {
+    // Make sure the passed values are numbers and fall back to the defaults
+    const elevationNum = parseInt(elevation) || parseInt(Box.defaultProps.elevation)
+    const radiusNum = parseInt(radius) || parseInt(Box.defaultProps.radius)
     const baseBoxClass = `bg-white`
     // Shadow classes
-    const shadowClasses = `shadow-${elevation} ${(href || to ? `box-shadow-hover shadow-${elevation}-hover` : ``)}`
+    const shadowClasses = `shadow-${elevationNum} ${(href || to ? `box-shadow-hover shadow-${elevationNum}-hover` : ``)}`
     // Border radius clss
-    const radiusClasses = `br${radius}`
+    const radiusClasses = `br${radiusNum}`
 
     if (to) {
         // internal links
@@ -42,8 +45,8 @@ const Box = ({ children, to, href, className, elevation, radius, onWhite }) => {
 }
 
 Box.defaultProps = {
-    elevation: 2,
-    radius: 3,
+    elevation: `2`,
+    radius: `3`,
     onWhite: false,
 }
 
@@ -51,8 +54,8 @@ Box.propTypes = {
     children: PropTypes.node.isRequired,
     to: PropTypes.string,
     href: PropTypes.string,
-    elevation: PropTypes.number,
-    radius: PropTypes.number,
+    elevation: PropTypes.string,
+    radius: PropTypes.string,
     onWhite: PropTypes.bool,
     className: PropTypes.string,
 }

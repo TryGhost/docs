@@ -14,7 +14,7 @@ const PostCard = ({ post, className }) => {
         <Box
             to={url}
             className={`${className} pa10 pa8 flex flex-column justify-between flex-third relative tutorial-post-card tdn`}
-            elevation={1}
+            elevation="1"
         >
             <div>
                 <header>

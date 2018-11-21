@@ -36,7 +36,7 @@ APISection.propTypes = {
 class Card extends React.Component {
     render() {
         return (
-            <Box to={ this.props.to || null } href={ this.props.href } className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt8 pb5 tdn" elevation={ !this.props.href && !this.props.to ? `1` : `2` }>
+            <Box to={ this.props.to || null } href={ this.props.href } className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt8 pb5 tdn" elevation={!this.props.href && !this.props.to ? `1` : `2`}>
                 { this.props.icon ? <div className="w10 h10 flex justify-center items-center"><Icon name={ this.props.icon } className={ `w10 h10 mb4 ${this.props.iconClass}` }></Icon></div> : null }
                 { this.props.img ? <div className="w10 h10 flex justify-center items-center"><img src={ this.props.img } className="nudge-bottom--4" /></div> : null }
                 <span className={ (!this.props.to && !this.props.href ? `o-50` : ``)}>{ this.props.children }</span>

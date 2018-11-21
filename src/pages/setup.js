@@ -14,7 +14,7 @@ class SetupBox extends React.Component {
                 to={this.props.to}
                 href={this.props.href}
                 className="col-12 col-6-ns col-4-l pa8 tdn middarkgrey setup-box-min-height"
-                radius={4}
+                radius="4"
             >
                 <Icon name={ this.props.icon } className={ this.props.iconClass } />
                 <h4 className={ Spirit.h4 + `darkgrey ` + this.props.headingClass }>{ this.props.title }</h4>

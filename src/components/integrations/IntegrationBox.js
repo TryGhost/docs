@@ -13,8 +13,8 @@ const IntegrationBox = (props) => {
         <Box
             to={url}
             className="flex flex-column justify-center items-center w-100 h30 pa3 tc tdn darkgrey bg-white shadow-2"
-            elevation={2}
-            radius={4}
+            elevation="2"
+            radius="4"
         >
             <div className="flex justify-center items-center h10 w13 mt1">
                 <img className="w-100 h-100" style={{ objectFit: `contain` }} src={optimisedImg} alt={title} />
