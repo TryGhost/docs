@@ -2,70 +2,37 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
+const getBoxClass = ({ elevation, onWhite, radius, to, href }) => {
+    // Classes for setting shadows
+    const shadowClasses = `shadow-${elevation} ${(onWhite ? `on-white` : ``)} ${(href || to ? `box-shadow-hover shadow-${elevation}-hover` : ``)} `
+
+    // Classes for setting border radius
+    const radiusClasses = `br${radius}`
+
+    return shadowClasses + radiusClasses
+}
 class Box extends React.Component {
     render() {
         const children = this.props.children
-        var boxClass = ` bg-white `
-        var boxStyle = {}
-
-        // Setting shadows
-        switch (this.props.elevation) {
-        case `1`:
-            boxClass = boxClass + ` shadow-1 ` + (this.props.onWhite ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-1-hover ` : ` `)
-            break
-
-        case `2`:
-            boxClass = boxClass + ` shadow-2 ` + (this.props.onWhite ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-2-hover  ` : ` `)
-            break
-
-        case `3`:
-            boxClass = boxClass + ` shadow-3 ` + (this.props.onWhite ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-3-hover ` : ` `)
-            break
-        }
-
-        // Border radius
-        switch (this.props.radius) {
-        case `1`:
-            boxClass = boxClass + ` br1 `
-            break
-
-        case `2`:
-            boxClass = boxClass + ` br2 `
-            break
-
-        case `3`:
-            boxClass = boxClass + ` br3 `
-            break
-
-        case `4`:
-            boxClass = boxClass + ` br4 `
-            break
-
-        case `5`:
-            boxClass = boxClass + ` br5 `
-            break
-        }
+        const baseBoxClass = `bg-white`
+        const dynamicBoxClasses = getBoxClass(this.props)
 
         if (this.props.to) {
-            boxClass = boxClass + ` db `
-
             return (
-                <Link to={ this.props.to } className={ boxClass + this.props.className } style={ boxStyle }>
-                    { children }
+                <Link to={this.props.to} className={`${baseBoxClass} ${dynamicBoxClasses} db ${this.props.className}`}>
+                    {children}
                 </Link>
             )
         } else if (this.props.href) {
-            boxClass = boxClass + ` db `
-
             return (
-                <a href={ this.props.href } className={ boxClass + this.props.className } style={ boxStyle } target="_blank" rel="noopener noreferrer">
-                    { children }
+                <a href={this.props.href} className={`${baseBoxClass} ${dynamicBoxClasses} db ${this.props.className}`} target="_blank" rel="noopener noreferrer">
+                    {children}
                 </a>
             )
         } else {
             return (
-                <div className={ boxClass + this.props.className }>
-                    { children }
+                <div className={`${baseBoxClass} ${dynamicBoxClasses} ${this.props.className}`}>
+                    {children}
                 </div>
             )
         }
