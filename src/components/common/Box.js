@@ -11,15 +11,15 @@ class Box extends React.Component {
         // Setting shadows
         switch (this.props.elevation) {
         case `1`:
-            boxClass = boxClass + ` shadow-1 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-1-hover ` : ` `)
+            boxClass = boxClass + ` shadow-1 ` + (this.props.onWhite ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-1-hover ` : ` `)
             break
-        
+
         case `2`:
-            boxClass = boxClass + ` shadow-2 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-2-hover  ` : ` `)
+            boxClass = boxClass + ` shadow-2 ` + (this.props.onWhite ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-2-hover  ` : ` `)
             break
-        
+
         case `3`:
-            boxClass = boxClass + ` shadow-3 ` + (this.props.onWhite !== `false` ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-3-hover ` : ` `)
+            boxClass = boxClass + ` shadow-3 ` + (this.props.onWhite ? ` on-white ` : ` `) + (this.props.href || this.props.to ? ` box-shadow-hover shadow-3-hover ` : ` `)
             break
         }
 
@@ -48,7 +48,7 @@ class Box extends React.Component {
 
         if (this.props.to) {
             boxClass = boxClass + ` db `
-            
+
             return (
                 <Link to={ this.props.to } className={ boxClass + this.props.className } style={ boxStyle }>
                     { children }
@@ -64,11 +64,9 @@ class Box extends React.Component {
             )
         } else {
             return (
-                <>
-                    <div className={ boxClass + this.props.className }>
-                        { children }
-                    </div>
-                </>
+                <div className={ boxClass + this.props.className }>
+                    { children }
+                </div>
             )
         }
     }
@@ -79,7 +77,7 @@ Box.defaultProps = {
     href: ``,
     elevation: `2`,
     radius: `3`,
-    onWhite: `false`,
+    onWhite: false,
     linkClassName: `link`,
 }
 
@@ -88,8 +86,9 @@ Box.propTypes = {
     href: PropTypes.string,
     elevation: PropTypes.string,
     radius: PropTypes.string,
-    onWhite: PropTypes.string,
+    onWhite: PropTypes.bool,
     className: PropTypes.any,
+    children: PropTypes.node.isRequired,
 }
 
 export default Box
