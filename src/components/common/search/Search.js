@@ -1,26 +1,37 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import { Highlight, Snippet, Index, Configure, connectAutoComplete } from 'react-instantsearch-dom'
+import {
+    Highlight,
+    Snippet,
+    Index,
+    Configure,
+    connectAutoComplete,
+} from 'react-instantsearch-dom'
 import Autosuggest from 'react-autosuggest'
+
 import { Spirit } from '../../../styles/spirit-styles'
 import { searchConfig } from '../../../../utils/query-config'
 
-const HitTemplate = (props) => {
-    const hit = props.hit
-    return (
+const HitTemplate = ({ hit }) => (
         <>
-            <Link to={ hit.url } className="tdn db pt3 pb3 blue search-result nl5 nr11 pl5 pr11 br3 br--left">
-                <h4 className={ Spirit.h5 + `dib` }><Highlight attribute="title" hit={ hit } tagName="mark" className="search-result-page blue" /></h4>
-                <p className={ Spirit.small + `midgrey nudge-bottom--2` }><Snippet attribute="html" hit={ hit } className="search-result-snippet" />...</p>
+            <Link to={hit.url} className="tdn db pt3 pb3 blue search-result nl5 nr11 pl5 pr11 br3 br--left">
+                <h4 className={`${Spirit.h5} dib`}>
+                    <Highlight attribute="title" hit={hit} tagName="mark" className="search-result-page blue" />
+                </h4>
+                <p className={`${Spirit.small} midgrey nudge-bottom--2`}>
+                    <Snippet attribute="html" hit={hit} className="search-result-snippet" />
+                    ...
+                </p>
             </Link>
         </>
-    )
+)
+
+HitTemplate.propTypes = {
+    hit: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+    }).isRequired,
 }
-
-const renderSectionSuggestion = hit => <HitTemplate hit={ hit }/>
-
-const renderFaqSectionSuggestion = hit => <HitTemplate hit={ hit } />
 
 class Results extends React.Component {
     constructor(props) {
@@ -48,47 +59,19 @@ class Results extends React.Component {
         return hit.title
     }
 
-    renderSuggestion(hit) {
-        if (hit.section === `faq`) {
-            return renderFaqSectionSuggestion(hit)
-        } else {
-            return renderSectionSuggestion(hit)
+    renderSuggestion = hit => <HitTemplate hit={hit} />
+
+    renderSectionTitle({ index }) {
+        const labelClass = {
+            faq: `faq-color b--faq-color`,
+            concept: `concept-color b--concept-color`,
+            setup: `setup-color b--setup-color`,
+            api: `middarkgrey b--middarkgrey`,
+            tutorial: `tutorial-color b--tutorial-color`,
+            integration: `integration-color b--integration-color`,
         }
-    }
 
-    renderSectionTitle(section) {
-        // console.log(searchConfig[section.index])
-        var labelClass = `br-pill bg-white ba pa1 pl2 pr2 nowrap`
-        switch (section.index) {
-        case `faq`:
-            labelClass += ` faq-color b--faq-color`
-            break
-
-        case `concept`:
-            labelClass += ` concept-color b--concept-color`
-            break
-
-        case `setup`:
-            labelClass += ` setup-color b--setup-color`
-            break
-
-        case `api`:
-            labelClass += ` middarkgrey b--middarkgrey`
-            break
-
-        case `tutorial`:
-            labelClass += ` tutorial-color b--tutorial-color`
-            break
-
-        case `integration`:
-            labelClass += ` integration-color b--integration-color`
-            break
-
-        default:
-            labelClass += ` midgrey b--midgrey`
-            break
-        }
-        return <span className={ labelClass }>{ searchConfig[section.index] }</span>
+        return <span className={`br-pill bg-white ba pa1 pl2 pr2 nowrap ${labelClass[index] || `midgrey b--midgrey`}`}>{searchConfig[index]}</span>
     }
 
     getSectionSuggestions(section) {
@@ -97,7 +80,7 @@ class Results extends React.Component {
 
     render() {
         // Don't show sections with no results
-        let hits = this.props.hits.filter(hit => hit.hits && hit.hits.length !== 0)
+        const hits = this.props.hits.filter(hit => hit.hits && hit.hits.length !== 0)
 
         const { value } = this.state
         const inputProps = {
@@ -108,27 +91,15 @@ class Results extends React.Component {
             "data-cy": `search-input`,
         }
 
-        // <input id="homesearch" name="homesearch" className="input-reset form-text ba b--transparent flex-auto ml2 whitney lh-1-0" type="text" placeholder="Search documentation..." autoComplete="off" />
         const inputTheme = `input-reset form-text b--transparent search-modal-field-bg br-pill flex-auto whitney lh-normal pa2 pl8 plr3 w-100 dark-placeholder`
 
         const theme = {
             input: inputTheme,
             inputOpen: inputTheme,
             inputFocused: inputTheme,
-            // Default values:
-            // container: 'react-autosuggest__container',
-            // containerOpen: 'react-autosuggest__container--open',
-            // input: 'react-autosuggest__input',
-            // inputOpen: 'react-autosuggest__input--open',
-            // inputFocused: 'react-autosuggest__input--focused',
-            // suggestionsContainer: 'pa15',
             suggestionsContainerOpen: `pa11 pt3 pb3 mt10 bt b--whitegrey nl10 nr10 nb10 search-modal-result-container`,
             suggestionsList: `list pa0 ma0 pt1 search-modal-suggestion-list flex-auto ml11`,
-            // suggestion: 'react-autosuggest__suggestion',
-            // suggestionFirst: 'react-autosuggest__suggestion--first',
-            // suggestionHighlighted: 'red',
             sectionContainer: `pb4`,
-            // sectionContainerFirst: 'bn',
             sectionTitle: `f8 lh-h4 fw5 midgrey w30 tr mt2 sticky top-2 pr2`,
         }
 
@@ -159,7 +130,9 @@ class Results extends React.Component {
 }
 
 Results.propTypes = {
-    hits: PropTypes.arrayOf(PropTypes.object).isRequired,
+    hits: PropTypes.arrayOf(
+        PropTypes.object.isRequired,
+    ).isRequired,
     currentRefinement: PropTypes.string.isRequired,
     refine: PropTypes.func.isRequired,
 }
