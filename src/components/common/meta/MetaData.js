@@ -35,7 +35,10 @@ class MetaData extends React.Component {
                 )
             } else if (markdownRemark) {
                 return (
-                    <ArticleMetaMD data={this.props.data} canonical={canonical} />
+                    <ArticleMetaMD
+                        data={this.props.data}
+                        canonical={canonical}
+                    />
                 )
             }
         } else if (type === `website` || type === `series`) {
@@ -70,7 +73,7 @@ MetaData.propTypes = {
     location: PropTypes.shape({
         pathname: PropTypes.string.isRequired,
     }).isRequired,
-    type: PropTypes.string.isRequired,
+    type: PropTypes.oneOf([`website`, `series`, `article`]).isRequired,
     title: PropTypes.string,
     description: PropTypes.string,
     image: PropTypes.string,
