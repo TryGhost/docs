@@ -37,7 +37,7 @@ class SearchModal extends React.Component {
     render() {
         return (
             <>
-                <SearchInput {...this.props} onClick={this.openModal} />
+                <SearchInput theme={this.props.theme} isHome={this.props.isHome} onClick={this.openModal} />
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
@@ -67,7 +67,10 @@ SearchModal.defaultProps = {
 }
 
 SearchModal.propTypes = {
-    theme: PropTypes.object,
+    theme: PropTypes.shape({
+        icon: PropTypes.string,
+        searchBox: PropTypes.string,
+    }),
     isHome: PropTypes.bool,
 }
 
