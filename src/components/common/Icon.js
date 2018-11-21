@@ -1,19 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-class Icon extends React.Component {
-    render() {
-        const IconFile = require(`../../images/icons/${this.props.name}.svg`)
+const Icon = ({ name, className }) => {
+    const IconFile = require(`../../images/icons/${name}.svg`)
 
-        return (
-            <IconFile className={this.props.className} data-cy={`${this.props.name}-icon`}/>
-        )
-    }
-}
-
-Icon.defaultProps = {
-    name: ``,
-    className: ``,
+    return (
+        <IconFile className={className} data-cy={`${name}-icon`}/>
+    )
 }
 
 Icon.propTypes = {
