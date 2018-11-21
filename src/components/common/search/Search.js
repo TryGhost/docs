@@ -42,8 +42,8 @@ class Results extends React.Component {
     }
 
     onChange = (event, { newValue }) => {
-        this.setState({
-            value: newValue,
+        this.setState(() => {
+            return { value: newValue }
         })
     };
 
