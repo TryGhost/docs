@@ -11,7 +11,11 @@ const PostCard = ({ post, className }) => {
     const excerpt = getPostExcerpt(post)
 
     return (
-        <Box to={ url } elevation="1" className={ className + ` pa10 pa8 flex flex-column justify-between flex-third relative tutorial-post-card tdn` }>
+        <Box
+            to={url}
+            className={`${className} pa10 pa8 flex flex-column justify-between flex-third relative tutorial-post-card tdn`}
+            elevation={1}
+        >
             <div>
                 <header>
                     {/* <Icon name="typing" className="tutorial-feature-image w7 h-auto" /> */}

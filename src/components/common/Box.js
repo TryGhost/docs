@@ -42,8 +42,8 @@ const Box = ({ children, to, href, className, elevation, radius, onWhite }) => {
 }
 
 Box.defaultProps = {
-    elevation: `2`,
-    radius: `3`,
+    elevation: 2,
+    radius: 3,
     onWhite: false,
 }
 
@@ -51,8 +51,8 @@ Box.propTypes = {
     children: PropTypes.node.isRequired,
     to: PropTypes.string,
     href: PropTypes.string,
-    elevation: PropTypes.string,
-    radius: PropTypes.string,
+    elevation: PropTypes.number,
+    radius: PropTypes.number,
     onWhite: PropTypes.bool,
     className: PropTypes.string,
 }
