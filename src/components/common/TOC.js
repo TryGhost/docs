@@ -4,8 +4,6 @@ import tocbot from 'tocbot'
 
 class TOC extends React.Component {
     componentDidMount() {
-        const props = this.props
-
         tocbot.init({
             // Where to render the table of contents.
             tocSelector: `.toc-list-container`,
@@ -13,18 +11,16 @@ class TOC extends React.Component {
             contentSelector: `.post-content`,
             // Which headings to grab inside of the contentSelector element.
             headingSelector: `h2, h3`,
-            headingsOffset: parseInt(props.headingsOffset),
+            headingsOffset: parseInt(this.props.headingsOffset),
         })
     }
 
     render() {
         return (
-            <>
-                <nav className={ `${this.props.className}` } data-cy="toc">
-                    { (this.props.showHeading ? <h3 className="f4 measure--0-2 middarkgrey ma0 mb2 pa0 fw4 nudge-bottom--2">On this page</h3> : null) }
-                    <div className={ `toc-list-container ${this.props.listClasses}`}></div>
-                </nav>
-            </>
+            <nav className={`${this.props.className}` } data-cy="toc">
+                {(this.props.showHeading ? <h3 className="f4 measure--0-2 middarkgrey ma0 mb2 pa0 fw4 nudge-bottom--2">On this page</h3> : null)}
+                <div className={`toc-list-container ${this.props.listClasses}`}></div>
+            </nav>
         )
     }
 }
@@ -32,8 +28,6 @@ class TOC extends React.Component {
 TOC.defaultProps = {
     headingsOffset: `1`,
     showHeading: true,
-    className: ``,
-    listClasses: ``,
 }
 
 TOC.propTypes = {
