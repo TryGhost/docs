@@ -6,56 +6,54 @@ import ArticleMetaGhost from './ArticleMetaGhost'
 import ArticleMetaMD from './ArticleMetaMD'
 import WebsiteMeta from './WebsiteMeta'
 
-class MetaData extends React.Component {
-    render() {
-        const { ghostPost } = this.props.data || {}
-        const { markdownRemark } = this.props.data || {}
-        const { siteMetadata } = this.props.data.site
-        const {
-            type,
-            title,
-            description,
-            image,
-            fetchAuthorData,
-            overwriteDefaultImage,
-        } = this.props
-        const canonical = url.resolve(siteMetadata.siteUrl, this.props.location.pathname, `/`)
+const MetaData = ({
+    data,
+    type,
+    title,
+    description,
+    image,
+    fetchAuthorData,
+    overwriteDefaultImage,
+}) => {
+    const { ghostPost, markdownRemark } = data || {}
+    const { siteMetadata } = data.site
 
-        if (type === `article`) {
-            if (ghostPost) {
-                return (
-                    <ArticleMetaGhost
-                        data={this.props.data}
-                        canonical={canonical}
-                        fetchAuthorData={fetchAuthorData}
-                        title={title}
-                        image={image}
-                        overwriteDefaultImage={overwriteDefaultImage}
-                    />
-                )
-            } else if (markdownRemark) {
-                return (
-                    <ArticleMetaMD
-                        data={this.props.data}
-                        canonical={canonical}
-                    />
-                )
-            }
-        } else if (type === `website` || type === `series`) {
+    const canonical = url.resolve(siteMetadata.siteUrl, location.pathname, `/`)
+
+    if (type === `article`) {
+        if (ghostPost) {
             return (
-                <WebsiteMeta
-                    data={this.props.data}
+                <ArticleMetaGhost
+                    data={data}
                     canonical={canonical}
+                    fetchAuthorData={fetchAuthorData}
                     title={title}
-                    description={description}
                     image={image}
-                    type={type}
+                    overwriteDefaultImage={overwriteDefaultImage}
+                />
+            )
+        } else if (markdownRemark) {
+            return (
+                <ArticleMetaMD
+                    data={data}
+                    canonical={canonical}
                 />
             )
         }
-
-        return null
+    } else if (type === `website` || type === `series`) {
+        return (
+            <WebsiteMeta
+                data={data}
+                canonical={canonical}
+                title={title}
+                description={description}
+                image={image}
+                type={type}
+            />
+        )
     }
+
+    return null
 }
 
 MetaData.propTypes = {
