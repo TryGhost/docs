@@ -28,6 +28,7 @@ const FAQTagList = ({ data, location }) => {
                                 to={tag.link}
                                 className={`${dynamicClass} dib pa2 pl3 pr3 br3 mb3 mr3 f8 link`}
                                 key={i}
+                                data-cy={`${tag.slug}-filter`}
                             >
                                 {tag.name}
                             </Link>
@@ -41,7 +42,20 @@ const FAQTagList = ({ data, location }) => {
 FAQTagList.propTypes = {
     location: PropTypes.object.isRequired,
     data: PropTypes.shape({
-        allGhostPost: PropTypes.object.isRequired,
+        allGhostPost: PropTypes.shape({
+            edges: PropTypes.arrayOf(
+                PropTypes.shape({
+                    post: PropTypes.shape({
+                        tag: PropTypes.arrayOf(
+                            PropTypes.shape({
+                                name: PropTypes.string,
+                                slug: PropTypes.string,
+                            })
+                        ),
+                    }),
+                }).isRequired,
+            ).isRequired,
+        }).isRequired,
     }).isRequired,
 }
 
