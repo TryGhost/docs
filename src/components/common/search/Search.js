@@ -14,17 +14,15 @@ import { Spirit } from '../../../styles/spirit-styles'
 import { searchConfig } from '../../../../utils/query-config'
 
 const HitTemplate = ({ hit }) => (
-        <>
-            <Link to={hit.url} className="tdn db pt3 pb3 blue search-result nl5 nr11 pl5 pr11 br3 br--left">
-                <h4 className={`${Spirit.h5} dib`}>
-                    <Highlight attribute="title" hit={hit} tagName="mark" className="search-result-page blue" />
-                </h4>
-                <p className={`${Spirit.small} midgrey nudge-bottom--2`}>
-                    <Snippet attribute="html" hit={hit} className="search-result-snippet" />
-                    ...
-                </p>
-            </Link>
-        </>
+    <Link to={hit.url} className="tdn db pt3 pb3 blue search-result nl5 nr11 pl5 pr11 br3 br--left">
+        <h4 className={`${Spirit.h5} dib`}>
+            <Highlight attribute="title" hit={hit} tagName="mark" className="search-result-page blue" />
+        </h4>
+        <p className={`${Spirit.small} midgrey nudge-bottom--2`}>
+            <Snippet attribute="html" hit={hit} className="search-result-snippet" />
+            ...
+        </p>
+    </Link>
 )
 
 HitTemplate.propTypes = {
@@ -36,30 +34,41 @@ HitTemplate.propTypes = {
 class Results extends React.Component {
     constructor(props) {
         super(props)
+
         this.state = {
             value: this.props.currentRefinement,
         }
+
+        this.onChange = this.onChange.bind(this)
+        this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this)
+        this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this)
+        this.getSuggestionValue = this.getSuggestionValue.bind(this)
+        this.renderSuggestion = this.renderSuggestion.bind(this)
+        this.renderSectionTitle = this.renderSectionTitle.bind(this)
+        this.getSectionSuggestions = this.getSectionSuggestions.bind(this)
     }
 
-    onChange = (event, { newValue }) => {
+    onChange(event, { newValue }) {
         this.setState(() => {
             return { value: newValue }
         })
-    };
+    }
 
-    onSuggestionsFetchRequested = ({ value }) => {
+    onSuggestionsFetchRequested({ value }) {
         this.props.refine(value)
-    };
+    }
 
-    onSuggestionsClearRequested = () => {
+    onSuggestionsClearRequested() {
         this.props.refine()
-    };
+    }
 
     getSuggestionValue(hit) {
         return hit.title
     }
 
-    renderSuggestion = hit => <HitTemplate hit={hit} />
+    renderSuggestion(hit) {
+        return <HitTemplate hit={hit} />
+    }
 
     renderSectionTitle({ index }) {
         const labelClass = {
