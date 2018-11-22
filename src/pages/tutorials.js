@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import { Layout } from '../components/common/layout'
-import { PostCard } from '../components/tutorials'
+import { TutorialCard } from '../components/tutorials'
 import { Spirit } from '../styles/spirit-styles'
 import { MetaData, getMetaImageUrls } from '../components/common/meta'
 
@@ -35,7 +35,7 @@ class TutorialsPage extends React.Component {
                     <div className={ Spirit.page.xl + `mt-vw5 mt-vw2-ns` }>
                         <section className="grid-12 gutter-row-20 gutter-20-ns gutter-36-l">
                             {posts.map(({ node }) => (
-                                <PostCard key={node.id} post={node} className="col-12 col-6-ns col-4-l" section="tutorials" />
+                                <TutorialCard key={node.id} post={node} className="col-12 col-6-ns col-4-l" section="tutorials" />
                             ))}
                         </section>
                     </div>

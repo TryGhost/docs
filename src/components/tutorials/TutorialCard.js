@@ -6,7 +6,7 @@ import { Spirit } from '../../styles/spirit-styles'
 import { getPostExcerpt } from '../../utils/getPostExcerpt'
 import { removeInternalTags } from '../../utils/tag-utils'
 
-const PostCard = ({ post, className, section }) => {
+const TutorialCard = ({ post, className, section }) => {
     const url = `/${section}/${post.slug}/`
     const excerpt = getPostExcerpt(post)
     const tags = removeInternalTags(post.tags)
@@ -33,7 +33,7 @@ const PostCard = ({ post, className, section }) => {
     )
 }
 
-PostCard.propTypes = {
+TutorialCard.propTypes = {
     post: PropTypes.shape({
         title: PropTypes.string.isRequired,
         featured: PropTypes.bool,
@@ -47,4 +47,4 @@ PostCard.propTypes = {
     section: PropTypes.string.isRequired,
 }
 
-export default PostCard
+export default TutorialCard
