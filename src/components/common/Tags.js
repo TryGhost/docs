@@ -24,6 +24,7 @@ function filterTags(tags, internal) {
 *   - linkToPrefix: [optional, only for html, will render tags as a link to their archive pages],
 *   - linkClasses: [optional when linkToPrefix, default "link dim white fw3", classNames used for the anchor tags]
 */
+// TODO: this should really be a helper using Ghost SDK
 const Tags = (props) => {
     const post = props.post
     let tags = post.tags || []

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 
+// TODO: this should really be a helper using Ghost SDK
 export const getPostExcerpt = (post) => {
     if (post.custom_excerpt) {
         return post.custom_excerpt
