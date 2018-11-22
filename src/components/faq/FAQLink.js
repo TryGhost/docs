@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import getPostExcerpt from '../../utils/post-excerpt'
+import getPostExcerpt from '../../utils/getPostExcerpt'
 import { Spirit } from '../../styles/spirit-styles'
 
 const FAQLink = ({ post, section }) => {
