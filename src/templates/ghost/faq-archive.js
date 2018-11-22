@@ -40,10 +40,9 @@ class FAQTags extends React.Component {
                     </div>
                     <div className={ Spirit.page.xl + `grid-12 pb5` }>
                         <div className="bg-white shadow-2 br4 mt10 pa5 pa15-ns pt10-ns pb12-ns col-12 col-8-ns">
-                            {/* <h4 className={ Spirit.h2 + `col-12 pb2 bb b--whitegrey mb5` }>{ tagName }</h4> */}
-                            { posts.map(({ node }) => (
-                                <FAQLink key={ node.id } post={ node } />
-                            )) }
+                            {posts.map(({ node }) => (
+                                <FAQLink key={node.id} post={node} section={section}/>
+                            ))}
                         </div>
                         <div className="col-12 col-4-ns pa5 pa15-ns pt10-ns mt11-ns">
                             <FAQTagList location={ this.props.location } />
