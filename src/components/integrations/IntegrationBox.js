@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
 import { Box } from '../common'
 
-const IntegrationBox = (props) => {
-    const { post, hit } = props
-    const url = post ? `/integrations/${post.slug}/` : hit.url
+const IntegrationBox = ({ post, hit, section }) => {
+    const url = post ? `/${section}/${post.slug}/` : hit.url
     const title = post ? post.title : hit.title
     const image = post ? post.feature_image : hit.image
     const optimisedImg = `https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit/${image}`
@@ -25,8 +25,17 @@ const IntegrationBox = (props) => {
 }
 
 IntegrationBox.propTypes = {
-    post: PropTypes.object,
-    hit: PropTypes.object,
+    post: PropTypes.shape({
+        title: PropTypes.string,
+        feature_image: PropTypes.string,
+        slug: PropTypes.string,
+    }),
+    hit: PropTypes.shape({
+        url: PropTypes.string,
+        title: PropTypes.string,
+        image: PropTypes.string,
+    }),
+    section: PropTypes.string.isRequired,
 }
 
 export default IntegrationBox

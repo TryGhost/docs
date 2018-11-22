@@ -116,7 +116,7 @@ class IntegrationsContent extends React.Component {
                                     <>
                                         <div className="gh-integrations w-100">
                                             {posts.map(({ node }) => (
-                                                <IntegrationBox key={node.id} post={node} />
+                                                <IntegrationBox key={node.id} post={node} section="integrations" />
                                             ))}
                                         </div>
                                     </>
