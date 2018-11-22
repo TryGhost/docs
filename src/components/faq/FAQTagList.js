@@ -1,31 +1,41 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
-import { Spirit } from '../../styles/spirit-styles'
 import PropTypes from 'prop-types'
+import { Link, StaticQuery, graphql } from 'gatsby'
+
+import { Spirit } from '../../styles/spirit-styles'
 import { getTagsforPostCollection } from '../../utils/tag-utils'
 
-class FAQTagList extends React.Component {
-    render() {
-        const posts = this.props.data.allGhostPost.edges
-        const tags = getTagsforPostCollection(posts, `faq`)
+const FAQTagList = ({ data, location }) => {
+    const tags = getTagsforPostCollection(data.allGhostPost.edges, `faq`)
 
-        tags.unshift({
-            name: `All`,
-            slug: `all`,
-            link: `/faq/`,
-        })
+    // Add a default tag for "All" at first place, which
+    // links back to the general faq page
+    tags.unshift({
+        name: `All`,
+        slug: `all`,
+        link: `/faq/`,
+    })
 
-        return (
+    return (
             <>
-                <h4 className={ Spirit.h5 + `midgrey` }>FAQ topics</h4>
+                <h4 className={`${Spirit.h5} midgrey` }>FAQ topics</h4>
                 <div className="mt4">
-                    { tags.map((tag, i) => (
-                        <Link key={ i } to={ tag.link } className={ (this.props.location.pathname === tag.link ? `bg-faq-color white fw5` : `bg-whitegrey middarkgrey hover-bg-lightgrey-l2`) + ` dib pa2 pl3 pr3 br3 mb3 mr3 f8  link` }>{ tag.name }</Link>
-                    )) }
+                    {tags.map((tag, i) => {
+                        const dynamicClass = location.pathname === tag.link ? `bg-faq-color white fw5` : `bg-whitegrey middarkgrey hover-bg-lightgrey-l2`
+
+                        return (
+                            <Link
+                                to={tag.link}
+                                className={`${dynamicClass} dib pa2 pl3 pr3 br3 mb3 mr3 f8 link`}
+                                key={i}
+                            >
+                                {tag.name}
+                            </Link>
+                        )
+                    })}
                 </div>
             </>
-        )
-    }
+    )
 }
 
 FAQTagList.propTypes = {
@@ -35,7 +45,7 @@ FAQTagList.propTypes = {
     }).isRequired,
 }
 
-const props = props => (
+const FAQTagsQuery = props => (
     <StaticQuery
         query={graphql`
             query GhostFAQTagsQuery {
@@ -55,4 +65,4 @@ const props = props => (
         render={data => <FAQTagList data={data} {...props} />}
     />
 )
-export default props
+export default FAQTagsQuery
