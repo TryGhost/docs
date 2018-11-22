@@ -8,16 +8,17 @@ class IntegrationsTagList extends React.Component {
     constructor(props) {
         super(props)
 
-        this.handleFilter = this.handleFilter.bind(this)
+        // this.handleFilter = this.handleFilter.bind(this)
     }
 
-    handleFilter(e) {
-        let tagSlug = /(?:\/*?integrations\/)(\S*)(?:\/{1})/.exec(e.target.href)
+    // handleFilter(e) {
+    //     let tagSlug = /(?:\/*?integrations\/)(\S*)(?:\/{1})/.exec(e.target.href)
 
-        tagSlug = tagSlug && tagSlug.length > 1 ? tagSlug[1] : ``
+    //     tagSlug = tagSlug && tagSlug.length > 1 ? tagSlug[1] : ``
 
-        this.props.setFilter(tagSlug)
-    }
+    //     // this.props.setFilter(tagSlug)
+    // }
+
     render() {
         const activeLocation = this.props.searchActive ? `/integrations/` : this.props.location.pathname
         const posts = this.props.data.allGhostPost.edges
@@ -37,7 +38,7 @@ class IntegrationsTagList extends React.Component {
                             key={i}
                             to={tag.link}
                             className={(activeLocation === tag.link ? `blue fw6` : `midgrey`) + ` link pa2 pl0` }
-                            onClick={this.handleFilter}
+                            // onClick={this.handleFilter}
                             data-cy={`${tag.slug}-filter`}
                         >
                             { tag.name }
@@ -51,14 +52,14 @@ class IntegrationsTagList extends React.Component {
 
 IntegrationsTagList.propTypes = {
     location: PropTypes.object.isRequired,
-    setFilter: PropTypes.func.isRequired,
+    // setFilter: PropTypes.func.isRequired,
     searchActive: PropTypes.bool.isRequired,
     data: PropTypes.shape({
         allGhostPost: PropTypes.object.isRequired,
     }).isRequired,
 }
 
-const props = props => (
+const IntegrationTagsQuery = props => (
     <StaticQuery
         query={graphql`
             query GhostIntegrationsTagsQuery {
@@ -78,4 +79,4 @@ const props = props => (
         render={data => <IntegrationsTagList data={data} {...props} />}
     />
 )
-export default props
+export default IntegrationTagsQuery

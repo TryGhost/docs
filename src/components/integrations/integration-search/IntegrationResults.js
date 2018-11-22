@@ -6,7 +6,7 @@ import { IntegrationBox } from '../.'
 
 const IntegrationResults = ({ hits }) => (
     <div className="gh-integrations w-100">
-        {hits.map(hit => <IntegrationBox key={hit.objectID} hit={hit} />)}
+        {hits.map(hit => <IntegrationBox key={hit.objectID} hit={hit} section="integrations" />)}
     </div>
 )
 
