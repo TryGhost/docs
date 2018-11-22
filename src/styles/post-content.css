@@ -5,15 +5,6 @@
 }
 
 /* ------------------------------------ */
-
-/* Fix in-page anchors with sticky header */
-:target:before {
-    content: '';
-    display: block;
-    height: 80px;
-    margin-top: -80px;
-}
-
 .post-content {
     line-height: var(--vr-3);
     width: 100%;
@@ -308,14 +299,6 @@ Usage (In Ghost editor):
     margin: var(--vr-7) 0 0;
 }
 
-/* Fixing in-page anchors for H2's */
-.post-content h2:before {
-    content: '';
-    display: block;
-    height: 80px;
-    margin-top: -80px;
-}
-
 @media (max-width: 500px) {
     .post-content h2 {
         font-size: 2.6rem;
@@ -375,6 +358,19 @@ Usage (In Ghost editor):
     .post-content h6 {
         font-size: 2rem;
     }
+}
+
+/* Fixing in-page anchors for headings */
+.post-content h2:before,
+.post-content h3:before {
+    content: '';
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+}
+
+.post-content h2 {
+    pointer-events: none;
 }
 
 .post-content h2 + p,
@@ -897,7 +893,7 @@ Usage (In Ghost editor):
     margin: calc(var(--vr-6)) 0 0;
 }
 
-.tutorial-content h2:last-of-type:before {
+.tutorial-content h2:last-of-type:after {
     content: "";
     background: none;
     top: 30px;
