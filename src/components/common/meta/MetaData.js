@@ -14,6 +14,7 @@ const MetaData = ({
     image,
     fetchAuthorData,
     overwriteDefaultImage,
+    location,
 }) => {
     const { ghostPost, markdownRemark } = data || {}
     const { siteMetadata } = data.site
