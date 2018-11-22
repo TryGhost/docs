@@ -1,49 +1,62 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
+import { Link, StaticQuery, graphql } from 'gatsby'
 
 import { getTagsforPostCollection } from '../../utils/tag-utils'
 
-class IntegrationsTagList extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+const IntegrationsTagList = ({ location, searchActive, data }) => {
+    // When the search is active, we set the "All integrations" link as active and
+    // overwrite the real active link as long as the search is active
+    const activeLocation = searchActive ? `/integrations/` : location.pathname
+    const tags = getTagsforPostCollection(data.allGhostPost.edges, `integrations`)
 
-    render() {
-        const activeLocation = this.props.searchActive ? `/integrations/` : this.props.location.pathname
-        const posts = this.props.data.allGhostPost.edges
-        const tags = getTagsforPostCollection(posts, `integrations`)
+    // Add a default tag for "All Integrations" at first place, which
+    // links back to the general integrations page
+    tags.unshift({
+        name: `All Integrations`,
+        slug: `all-integrations`,
+        link: `/integrations/`,
+    })
 
-        tags.unshift({
-            name: `All Integrations`,
-            slug: `all-integrations`,
-            link: `/integrations/`,
-        })
+    return (
+        <>
+            <h3 className="ma0 mb2" data-cy="filter">Filter by</h3>
+            {tags.map((tag, i) => {
+                const dynamicClass = activeLocation === tag.link ? `blue fw6` : `midgrey`
 
-        return (
-            <>
-                <h3 className="ma0 mb2" data-cy="filter">Filter by</h3>
-                    { tags.map((tag, i) => (
-                        <Link
-                            key={i}
-                            to={tag.link}
-                            className={(activeLocation === tag.link ? `blue fw6` : `midgrey`) + ` link pa2 pl0` }
-                            data-cy={`${tag.slug}-filter`}
-                        >
-                            { tag.name }
-                        </Link>
-                    )) }
-
-            </>
-        )
-    }
+                return (
+                    <Link
+                        to={tag.link}
+                        className={`${dynamicClass} link pa2 pl0`}
+                        key={i}
+                        data-cy={`${tag.slug}-filter`}
+                    >
+                        {tag.name}
+                    </Link>
+                )
+            })}
+        </>
+    )
 }
 
 IntegrationsTagList.propTypes = {
     location: PropTypes.object.isRequired,
     searchActive: PropTypes.bool.isRequired,
     data: PropTypes.shape({
-        allGhostPost: PropTypes.object.isRequired,
+        allGhostPost: PropTypes.shape({
+            edges: PropTypes.arrayOf(
+                PropTypes.shape({
+                    post: PropTypes.shape({
+                        tag: PropTypes.arrayOf(
+                            PropTypes.shape({
+                                name: PropTypes.string,
+                                slug: PropTypes.string,
+                            })
+                        ),
+                    }),
+                }).isRequired,
+            ).isRequired,
+        }).isRequired,
     }).isRequired,
 }
 
