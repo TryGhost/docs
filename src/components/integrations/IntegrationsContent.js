@@ -88,10 +88,7 @@ class IntegrationsContent extends React.Component {
                                 <div className="pa-vw4 tc">
                                     <h1 className="f2-ns f1-m f-headline-l ma0 pa0 white gh-integration-header-shadow">Ghost Integrations</h1>
                                     <p className="ma0 mt2 f5 f4-ns white-80 lh-1-5">All your favourite apps and tools, integrated with Ghost</p>
-                                    <IntegrationSearchBox
-                                        searchActive={this.searchSwitch}
-                                        returnTo={this.props.location.pathname}
-                                    />
+                                    <IntegrationSearchBox searchActive={this.searchSwitch} />
                                 </div>
                             </div>
                         </div>
