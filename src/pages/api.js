@@ -3,31 +3,9 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import { Spirit } from '../styles/spirit-styles'
-import { Icon, Box } from '../components/common'
 import { Layout } from '../components/common/layout'
+import { APICard } from '../components/api'
 import { MetaData, getMetaImageUrls } from '../components/common/meta'
-
-const Card = ({ to, href, icon, img, iconClass, children }) => (
-    <Box
-        to={to || null}
-        href={href}
-        className="br4 flex flex-column justify-between items-center middarkgrey pa2 pt8 pb5 tdn"
-        elevation={!href && !to ? `1` : `2`}
-    >
-        {icon ? <div className="w10 h10 flex justify-center items-center"><Icon name={icon} className={`w10 h10 mb4 ${iconClass}`}></Icon></div> : null}
-        {img ? <div className="w10 h10 flex justify-center items-center"><img src={img} className="nudge-bottom--4" /></div> : null}
-        <span className={(!to && !href ? `o-50` : ``)}>{children}</span>
-    </Box>
-)
-
-Card.propTypes = {
-    to: PropTypes.string,
-    href: PropTypes.string,
-    icon: PropTypes.string,
-    img: PropTypes.string,
-    iconClass: PropTypes.string,
-    children: PropTypes.node.isRequired,
-}
 
 const APIPage = ({ data, location }) => {
     // Add meta title and description or this page here to overwrite the site meta data as set in the config
@@ -65,8 +43,8 @@ const APIPage = ({ data, location }) => {
                             <p className={`${Spirit.small} midgrey-l2 mt2`}>Frameworks for working with the Ghost API to build a publication website</p>
                         </div>
                         <div className={sectionStyles.cardContainer}>
-                            <Card to="/api/handlebars-themes/" icon="handlebars-logo">Handlebars</Card>
-                            <Card to="/api/gatsby/" icon="gatsby-logo">Gatsby</Card>
+                            <APICard to="/api/handlebars-themes/" icon="handlebars-logo">Handlebars</APICard>
+                            <APICard to="/api/gatsby/" icon="gatsby-logo">Gatsby</APICard>
                         </div>
                     </div>
 
@@ -76,9 +54,9 @@ const APIPage = ({ data, location }) => {
                             <p className={`${Spirit.small} midgrey-l2 mt2`}>A full reference of API Endpoints</p>
                         </div>
                         <div className={sectionStyles.cardContainer}>
-                            <Card to="/api/content/" icon="content-api-logo">Content API</Card>
-                            <Card to="/api/admin/" icon="admin-api-logo">Admin API</Card>
-                            <Card to="/api/webhooks/" icon="webhooks-logo">Webhooks</Card>
+                            <APICard to="/api/content/" icon="content-api-logo">Content API</APICard>
+                            <APICard to="/api/admin/" icon="admin-api-logo">Admin API</APICard>
+                            <APICard to="/api/webhooks/" icon="webhooks-logo">Webhooks</APICard>
                         </div>
                     </div>
 
@@ -88,9 +66,9 @@ const APIPage = ({ data, location }) => {
                             <p className={`${Spirit.small} midgrey-l2 mt2`}>Utilities to help build and manage Ghost</p>
                         </div>
                         <div className={sectionStyles.cardContainer}>
-                            <Card to="/api/ghost-cli/" icon="ghost-cli-logo">Ghost-CLI</Card>
-                            <Card to="/api/migration/" icon="migration-logo">Migration</Card>
-                            <Card href="https://gscan.ghost.org" icon="gscan-logo">GScan</Card>
+                            <APICard to="/api/ghost-cli/" icon="ghost-cli-logo">Ghost-CLI</APICard>
+                            <APICard to="/api/migration/" icon="migration-logo">Migration</APICard>
+                            <APICard href="https://gscan.ghost.org" icon="gscan-logo">GScan</APICard>
                         </div>
                     </div>
 
@@ -101,12 +79,12 @@ const APIPage = ({ data, location }) => {
                             <h4 className="f-supersmall dib ma0 pa0 bg-green pa1 br-pill pl3 pr3 tc white mt2 nudge-top--2">Coming soon</h4>
                         </div>
                         <div className={sectionStyles.cardContainer}>
-                            <Card icon="javascript-logo" iconClass="stroke-midlightgrey o-30">JavaScript</Card>
-                            <Card icon="ruby-logo" iconClass="stroke-midlightgrey o-30">Ruby</Card>
-                            <Card icon="php-logo" iconClass="stroke-midlightgrey o-30">PHP</Card>
-                            <Card icon="python-logo" iconClass="stroke-midlightgrey o-30">Python</Card>
-                            <Card icon="apple-logo" iconClass="stroke-midlightgrey o-30">iOS</Card>
-                            <Card icon="android-logo" iconClass="stroke-midlightgrey o-30">Android</Card>
+                            <APICard icon="javascript-logo" iconClass="stroke-midlightgrey o-30">JavaScript</APICard>
+                            <APICard icon="ruby-logo" iconClass="stroke-midlightgrey o-30">Ruby</APICard>
+                            <APICard icon="php-logo" iconClass="stroke-midlightgrey o-30">PHP</APICard>
+                            <APICard icon="python-logo" iconClass="stroke-midlightgrey o-30">Python</APICard>
+                            <APICard icon="apple-logo" iconClass="stroke-midlightgrey o-30">iOS</APICard>
+                            <APICard icon="android-logo" iconClass="stroke-midlightgrey o-30">Android</APICard>
                         </div>
                     </div>
                 </div>
