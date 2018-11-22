@@ -41,7 +41,7 @@ class TutorialsTags extends React.Component {
                     <div className={ Spirit.page.xl + `mt-vw5 mt-vw2-ns` }>
                         <section className="grid-12 gutter-32">
                             {posts.map(({ node }) => (
-                                <PostCard key={node.id} post={node} className="col-4" />
+                                <PostCard key={node.id} post={node} className="col-4" section={section} />
                             ))}
                         </section>
                     </div>
