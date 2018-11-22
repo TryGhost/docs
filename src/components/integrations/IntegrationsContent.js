@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import _ from 'lodash'
 
 import { Layout } from '../common/layout'
-import NavBar from '../common/NavBar'
+import { NavBar } from '../common/'
 import IntegrationBox from "./IntegrationBox"
 import { Spirit } from '../../styles/spirit-styles'
 import { IntegrationIndex, IntegrationSearchBox, IntegrationResults } from './integration-search'
@@ -19,10 +19,10 @@ class IntegrationsContent extends React.Component {
         }
 
         this.searchSwitch = this.searchSwitch.bind(this)
-        this.sortBy = this.sortBy.bind(this)
     }
 
     searchSwitch(val) {
+        // a passed argument needs to win over the toggle
         this.setState((state) => {
             return {
                 searchActive: val ? val : !state.searchActive,
@@ -86,8 +86,8 @@ class IntegrationsContent extends React.Component {
                                 <div className="gh-integration-sidebar flex-shrink-0 w50 mr5 dn db-ns">
                                     <div className="flex flex-column mb6" data-cy="sort">
                                         <h3 className="ma0 mb2">Sort by</h3>
-                                        <a className={`link pa2 pl0 ${this.state.activeSorting === `date` ? `blue fw6` : `midgrey`}`} href="#" onClick={this.sortBy.bind(this, `date`)}>Most popular</a>
-                                        <a className={`link pa2 pl0 ${this.state.activeSorting === `title` ? `blue fw6` : `midgrey`}`} href="#" onClick={this.sortBy.bind(this, `title`)}>A – Z</a>
+                                        <a href="#" className={`link pa2 pl0 ${this.state.activeSorting === `date` ? `blue fw6` : `midgrey`}`} onClick={this.sortBy.bind(this, `date`)}>Most popular</a>
+                                        <a href="#" className={`link pa2 pl0 ${this.state.activeSorting === `title` ? `blue fw6` : `midgrey`}`} onClick={this.sortBy.bind(this, `title`)}>A – Z</a>
                                     </div>
                                     <div className="flex flex-column mb6">
                                         <IntegrationsTagList
