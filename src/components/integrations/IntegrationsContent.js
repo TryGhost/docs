@@ -16,11 +16,10 @@ class IntegrationsContent extends React.Component {
             posts: this.props.posts,
             activeSorting: `date`,
             searchActive: false,
-            // currentFilter: ``,
         }
 
         this.searchSwitch = this.searchSwitch.bind(this)
-        // this.setCurrentFilter = this.setCurrentFilter.bind(this)
+        this.sortBy = this.sortBy.bind(this)
     }
 
     searchSwitch(val) {
@@ -30,12 +29,6 @@ class IntegrationsContent extends React.Component {
             }
         })
     }
-
-    // setCurrentFilter(filter) {
-    //     this.setState(() => {
-    //         return { currentFilter: filter }
-    //     })
-    // }
 
     sortBy(field) {
         let firstSortField
@@ -64,13 +57,6 @@ class IntegrationsContent extends React.Component {
             return { posts: sortedPosts }
         })
     }
-
-    // componentDidMount() {
-    //     let tagSlug = /(?:\/*?integrations\/)(\S*)(?:\/{1})/.exec(this.props.location.pathname)
-    //     tagSlug = tagSlug && tagSlug.length > 1 ? tagSlug[1] : ``
-
-    //     this.setCurrentFilter(tagSlug)
-    // }
 
     render() {
         const { posts } = this.state
@@ -106,7 +92,6 @@ class IntegrationsContent extends React.Component {
                                     <div className="flex flex-column mb6">
                                         <IntegrationsTagList
                                             location={this.props.location}
-                                            // setFilter={this.setCurrentFilter}
                                             searchActive={this.state.searchActive}
                                         />
                                     </div>
