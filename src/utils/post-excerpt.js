@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const getPostExcerpt = (post) => {
+export const getPostExcerpt = (post) => {
     if (post.custom_excerpt) {
         return post.custom_excerpt
     }
@@ -10,18 +10,23 @@ const getPostExcerpt = (post) => {
     }
 
     if (post.plaintext) {
-        return post.plaintext.substring(0, 200) + `...`
+        return `${post.plaintext.substring(0, 200)}...`
     }
 
     if (post.body) {
-        return post.body.body.substring(0, 200) + `...`
+        return `${post.body.body.substring(0, 200)}...`
     }
 
-    return post
+    return null
 }
 
 getPostExcerpt.proptypes = {
-    post: PropTypes.object.isRequired,
+    post: PropTypes.shape({
+        custom_excerpt: PropTypes.string,
+        excerpt: PropTypes.string,
+        plaintext: PropTypes.string,
+        body: PropTypes.string.isRequired,
+    }).isRequired,
 }
 
 export default getPostExcerpt
