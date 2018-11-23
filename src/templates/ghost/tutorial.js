@@ -36,20 +36,15 @@ class Tutorial extends React.Component {
                 />
                 <Layout headerDividerStyle="shadow" mainClass="bg-white">
                     <div className="bg-tutorials">
-                        <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1 white` }>
-                            <Link to="/tutorials/" className={ Spirit.h4 + `gh-integration-header-shadow white dim link` }>Tutorials</Link>
+                        <div className={`${Spirit.page.xl} pt-vw7 pt-vw1-ns pb-vw1 white`}>
+                            <Link to="/tutorials/" className={`${Spirit.h4} gh-integration-header-shadow white dim link`}>Tutorials</Link>
                         </div>
                     </div>
-                    <div className={ Spirit.page.xl + `pb15` }>
+                    <div className={`${Spirit.page.xl} pb15`}>
                         <article className="mw-content center pa7 pa15-ns pb10">
-                            <h1 className={ Spirit.h1 }>{ post.title }</h1>
+                            <h1 className={Spirit.h1}>{post.title}</h1>
                             <section className="post-content tutorial-content external-scripts" dangerouslySetInnerHTML={{ __html: post.html }} />
-                            {/* <Authors authors={ post.authors } /> */}
                         </article>
-
-                        {/* <footer className="pt5 bt b--whitegrey midgrey f8 pb8 mw-content center pl15 pr15">
-                            Updated: <time dateTime={ post.published_at_pretty }>{ post.published_at_pretty }</time>
-                        </footer> */}
                     </div>
                 </Layout>
             </>
