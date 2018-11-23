@@ -5,32 +5,30 @@ import { graphql } from 'gatsby'
 import { IntegrationsContent } from '../components/integrations'
 import { MetaData, getMetaImageUrls } from '../components/common/meta'
 
-class IntegrationsPage extends React.Component {
-    render() {
-        // TODO: Replace with real title and description for IntegrationsPage
-        const title = `Integrations`
-        const description = `Your favourite apps and tools, integrated with Ghost. Connect tools for automation, analytics, marketing, support and much more.`
-        const imageUrl = getMetaImageUrls(`integrations`)
+const IntegrationsPage = ({ data, location }) => {
+    // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
+    const title = `Integrations`
+    const description = `Your favourite apps and tools, integrated with Ghost. Connect tools for automation, analytics, marketing, support and much more.`
+    const imageUrl = getMetaImageUrls(`integrations`)
 
-        const posts = this.props.data.allGhostPost.edges
+    const posts = data.allGhostPost.edges
 
-        return (
-            <>
-                <MetaData
-                    data={this.props.data}
-                    location={this.props.location}
-                    type="website"
-                    title={title || this.props.data.site.siteMetadata.title}
-                    description={description || this.props.data.site.siteMetadata.description}
-                    image={imageUrl}
-                />
-                <IntegrationsContent
-                    posts={posts}
-                    location={this.props.location}
-                />
-            </>
-        )
-    }
+    return (
+        <>
+            <MetaData
+                data={data}
+                location={location}
+                type="website"
+                title={title || data.site.siteMetadata.title}
+                description={description || data.site.siteMetadata.description}
+                image={imageUrl}
+            />
+            <IntegrationsContent
+                posts={posts}
+                location={location}
+            />
+        </>
+    )
 }
 
 IntegrationsPage.propTypes = {
