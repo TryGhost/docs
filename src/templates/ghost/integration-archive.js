@@ -5,32 +5,31 @@ import { graphql } from 'gatsby'
 import { IntegrationsContent } from '../../components/integrations'
 import { MetaData, getMetaImageUrls } from '../../components/common/meta'
 
-class IntegrationsTags extends React.Component {
-    render() {
-        const posts = this.props.data.allGhostPost.edges
-        const { tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription, section } = this.props.pageContext
+const IntegrationsTags = ({ data, location, pageContext }) => {
+    const posts = data.allGhostPost.edges
+    const { tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription, section } = pageContext
 
-        const title = tagMetaTitle || `Integrations - ${tagName} - Ghost`
-        const description = tagMetaDescription || tagDescription || ``
-        const imageUrl = tagImage || getMetaImageUrls(section)
+    // Add meta title and description or this page here to overwrite the site meta data as set in the config
+    const title = tagMetaTitle || `Integrations - ${tagName} - Ghost`
+    const description = tagMetaDescription || tagDescription || ``
+    const imageUrl = tagImage || getMetaImageUrls(section)
 
-        return (
-            <>
-                <MetaData
-                    data={this.props.data}
-                    location={this.props.location}
-                    type="series"
-                    title={title || this.props.data.site.siteMetadata.title}
-                    description={description || this.props.data.site.siteMetadata.description}
-                    image={imageUrl}
-                />
-                <IntegrationsContent
-                    posts={posts}
-                    location={this.props.location}
-                />
-            </>
-        )
-    }
+    return (
+        <>
+            <MetaData
+                data={data}
+                location={location}
+                type="series"
+                title={title || data.site.siteMetadata.title}
+                description={description || data.site.siteMetadata.description}
+                image={imageUrl}
+            />
+            <IntegrationsContent
+                posts={posts}
+                location={location}
+            />
+        </>
+    )
 }
 
 IntegrationsTags.propTypes = {
@@ -50,7 +49,6 @@ IntegrationsTags.propTypes = {
     pageContext: PropTypes.shape({
         section: PropTypes.string.isRequired,
         tagName: PropTypes.string.isRequired,
-        // tagURL: PropTypes.string.isRequired,
         tagDescription: PropTypes.string,
         tagMetaDescription: PropTypes.string,
         tagMetaTitle: PropTypes.string,

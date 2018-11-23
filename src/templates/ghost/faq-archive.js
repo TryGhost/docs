@@ -11,6 +11,7 @@ const FAQTags = ({ data, location, pageContext }) => {
     const posts = this.props.data.allGhostPost.edges
     const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription, section } = pageContext
 
+    // Add meta title and description or this page here to overwrite the site meta data as set in the config
     const title = tagMetaTitle || `FAQ - ${tagName} - Ghost`
     const description = tagMetaDescription || tagDescription || ``
     const imageUrl = tagImage || getMetaImageUrls(section)
