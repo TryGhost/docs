@@ -12,7 +12,7 @@ const FAQLink = ({ post, section, title, children, to, className }) => {
 
     return (
         <Link to={url} className={className}>
-            <h4 className={`${Spirit.excerpt} link darkgrey fw5`} to={url}>{title} &raquo;</h4>
+            <h4 to={url} className={`${Spirit.excerpt} link darkgrey fw5`}>{title} &raquo;</h4>
             {excerpt ?
                 <p className={`${Spirit.small} ma0 f8 lh-copy middarkgrey mb6`}>{excerpt}</p>
                 : null
