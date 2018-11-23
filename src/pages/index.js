@@ -5,22 +5,9 @@ import PropTypes from 'prop-types'
 
 import { Icon, Box } from '../components/common'
 import { Layout } from '../components/common/layout'
-import { HomeHeader, HomeAPIBox } from '../components/home'
+import { HomeHeader, HomeAPIBox, HomeFAQLink } from '../components/home'
 import { Spirit } from '../styles/spirit-styles'
 import { MetaData, getMetaImageUrls } from '../components/common/meta'
-
-const HomeFAQLink = ({ to, title, children }) => (
-    <Link to={to} className="midgrey home-faq-question link dib pt1 pb5">
-        <h4 className={`${Spirit.h5} blue dib`}>{title} &raquo;</h4>
-        <p className={`${Spirit.small} mt0`}>{children}</p>
-    </Link>
-)
-
-HomeFAQLink.propTypes = {
-    to: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
-}
 
 const HomePage = ({ data, location }) => {
     // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
