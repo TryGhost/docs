@@ -6,7 +6,7 @@ import { IntegrationsContent } from '../components/integrations'
 import { MetaData, getMetaImageUrls } from '../components/common/meta'
 
 const IntegrationsPage = ({ data, location }) => {
-    // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
+    // Add meta title and description for this page here to overwrite the site meta data as set in the config
     const title = `Integrations`
     const description = `Your favourite apps and tools, integrated with Ghost. Connect tools for automation, analytics, marketing, support and much more.`
     const imageUrl = getMetaImageUrls(`integrations`)
