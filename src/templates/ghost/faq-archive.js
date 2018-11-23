@@ -1,57 +1,54 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Link from 'gatsby-link'
+import { graphql, Link } from 'gatsby'
 
 import { Layout } from '../../components/common/layout'
 import { Spirit } from '../../styles/spirit-styles'
 import { MetaData, getMetaImageUrls } from '../../components/common/meta'
 import { FAQLink, FAQTagList } from '../../components/faq'
 
-class FAQTags extends React.Component {
-    render() {
-        const posts = this.props.data.allGhostPost.edges
-        const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription, section } = this.props.pageContext
+const FAQTags = ({ data, location, pageContext }) => {
+    const posts = this.props.data.allGhostPost.edges
+    const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription, section } = pageContext
 
-        const title = tagMetaTitle || `FAQ - ${tagName} - Ghost`
-        const description = tagMetaDescription || tagDescription || ``
-        const imageUrl = tagImage || getMetaImageUrls(section)
+    const title = tagMetaTitle || `FAQ - ${tagName} - Ghost`
+    const description = tagMetaDescription || tagDescription || ``
+    const imageUrl = tagImage || getMetaImageUrls(section)
 
-        return (
-            <>
-                <MetaData
-                    data={this.props.data}
-                    location={this.props.location}
-                    type="series"
-                    title={title}
-                    description={description}
-                    image={imageUrl}
-                />
-                <Layout headerDividerStyle="shadow">
-                    <div className="bg-faq bb b--whitegrey">
-                        <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1` }>
-                            <h1 className={ Spirit.h4 + `white` }>
-                                <Link to="/faq/" className={ `link dim white fw3` }>Frequently Asked Questions</Link>
-                                <span className="white titleslash-white pl4 ml4 relative">
-                                    <Link to={tagURL} className="link dim white">{tagName}</Link>
-                                </span>
-                            </h1>
-                        </div>
+    return (
+        <>
+            <MetaData
+                data={data}
+                location={location}
+                type="series"
+                title={title}
+                description={description}
+                image={imageUrl}
+            />
+            <Layout headerDividerStyle="shadow">
+                <div className="bg-faq bb b--whitegrey">
+                    <div className={`${Spirit.page.xl} pt-vw7 pt-vw1-ns pb-vw1`}>
+                        <h1 className={`${Spirit.h4} white`}>
+                            <Link to="/faq/" className="link dim white fw3">Frequently Asked Questions</Link>
+                            <span className="white titleslash-white pl4 ml4 relative">
+                                <Link to={tagURL} className="link dim white">{tagName}</Link>
+                            </span>
+                        </h1>
                     </div>
-                    <div className={ Spirit.page.xl + `grid-12 pb5` }>
-                        <div className="bg-white shadow-2 br4 mt10 pa5 pa15-ns pt10-ns pb12-ns col-12 col-8-ns">
-                            {posts.map(({ node }) => (
-                                <FAQLink key={node.id} post={node} section={section}/>
-                            ))}
-                        </div>
-                        <div className="col-12 col-4-ns pa5 pa15-ns pt10-ns mt11-ns">
-                            <FAQTagList location={ this.props.location } />
-                        </div>
+                </div>
+                <div className={`${Spirit.page.xl} grid-12 pb5` }>
+                    <div className="bg-white shadow-2 br4 mt10 pa5 pa15-ns pt10-ns pb12-ns col-12 col-8-ns">
+                        {posts.map(({ node }) => (
+                            <FAQLink key={node.id} post={node} section={section}/>
+                        ))}
                     </div>
-                </Layout>
-            </>
-        )
-    }
+                    <div className="col-12 col-4-ns pa5 pa15-ns pt10-ns mt11-ns">
+                        <FAQTagList location={location} />
+                    </div>
+                </div>
+            </Layout>
+        </>
+    )
 }
 
 FAQTags.propTypes = {
