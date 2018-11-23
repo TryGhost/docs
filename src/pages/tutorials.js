@@ -2,47 +2,45 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
+import { Spirit } from '../styles/spirit-styles'
 import { Layout } from '../components/common/layout'
 import { TutorialCard } from '../components/tutorials'
-import { Spirit } from '../styles/spirit-styles'
 import { MetaData, getMetaImageUrls } from '../components/common/meta'
 
-class TutorialsPage extends React.Component {
-    render() {
-        // Add meta title and descriptionf or this page here to overwrite the site meta data as set in our config
-        const title = `Tutorials - Ghost`
-        const description = `Customise your Ghost publication to suit your needs with practical guides for a variety of use-cases.`
-        const imageUrl = getMetaImageUrls(`tutorials`)
+const TutorialsPage = ({ data, location }) => {
+    // Add meta title and description for this page here to overwrite the site meta data as set in the config
+    const title = `Tutorials - Ghost`
+    const description = `Customise your Ghost publication to suit your needs with practical guides for a variety of use-cases.`
+    const imageUrl = getMetaImageUrls(`tutorials`)
 
-        const posts = this.props.data.allGhostPost.edges
+    const posts = data.allGhostPost.edges
 
-        return (
-            <>
-                <MetaData
-                    data={this.props.data}
-                    location={this.props.location}
-                    type="website"
-                    title={title || this.props.data.site.siteMetadata.title}
-                    description={description || this.props.data.site.siteMetadata.description}
-                    image={imageUrl}
-                />
-                <Layout headerDividerStyle="shadow">
-                    <div className="bg-tutorials">
-                        <div className={ Spirit.page.xl + `pt-vw7 pt-vw1-ns pb-vw1 white` }>
-                            <h1 className={ Spirit.h4 + `gh-integration-header-shadow` }>Tutorials</h1>
-                        </div>
+    return (
+        <>
+            <MetaData
+                data={data}
+                location={location}
+                type="website"
+                title={title || data.site.siteMetadata.title}
+                description={description || data.site.siteMetadata.description}
+                image={imageUrl}
+            />
+            <Layout headerDividerStyle="shadow">
+                <div className="bg-tutorials">
+                    <div className={`${Spirit.page.xl} pt-vw7 pt-vw1-ns pb-vw1 white`}>
+                        <h1 className={`${Spirit.h4} gh-integration-header-shadow`}>Tutorials</h1>
                     </div>
-                    <div className={ Spirit.page.xl + `mt-vw5 mt-vw2-ns` }>
-                        <section className="grid-12 gutter-row-20 gutter-20-ns gutter-36-l">
-                            {posts.map(({ node }) => (
-                                <TutorialCard key={node.id} post={node} className="col-12 col-6-ns col-4-l" section="tutorials" />
-                            ))}
-                        </section>
-                    </div>
-                </Layout>
-            </>
-        )
-    }
+                </div>
+                <div className={`${Spirit.page.xl} mt-vw5 mt-vw2-ns`}>
+                    <section className="grid-12 gutter-row-20 gutter-20-ns gutter-36-l">
+                        {posts.map(({ node }) => (
+                            <TutorialCard key={node.id} post={node} className="col-12 col-6-ns col-4-l" section="tutorials" />
+                        ))}
+                    </section>
+                </div>
+            </Layout>
+        </>
+    )
 }
 
 TutorialsPage.propTypes = {
