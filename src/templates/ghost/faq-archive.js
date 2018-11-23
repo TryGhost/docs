@@ -8,7 +8,7 @@ import { MetaData, getMetaImageUrls } from '../../components/common/meta'
 import { FAQLink, FAQTagList } from '../../components/faq'
 
 const FAQTags = ({ data, location, pageContext }) => {
-    const posts = this.props.data.allGhostPost.edges
+    const posts = data.allGhostPost.edges
     const { tagURL, tagName, tagDescription, tagImage, tagMetaTitle, tagMetaDescription, section } = pageContext
 
     // Add meta title and description or this page here to overwrite the site meta data as set in the config
