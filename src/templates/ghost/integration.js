@@ -1,12 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
+import Img from 'gatsby-image'
 import Prism from 'prismjs'
-import Img from "gatsby-image"
 
 import { Layout } from '../../components/common/layout'
-// import integrationIcon from '../images/integration-icon.png'
 import { Spirit } from '../../styles/spirit-styles'
 import { RelatedPosts, Tags, TOC } from '../../components/common'
 import { MetaData, getMetaImageUrls } from '../../components/common/meta'
@@ -45,7 +43,7 @@ class Integration extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className={ Spirit.page.l + `flex` }>
+                    <div className={`${Spirit.page.l} flex` }>
                         <div className="w-100 pa15 pt13 bg-white br4 shadow-1 flex flex-column flex-row-ns flex-start">
                             <div className="order-2">
                                 <div className="nr3 sticky-ns top-25">
@@ -66,7 +64,7 @@ class Integration extends React.Component {
                                     <Tags
                                         post={post}
                                         separator="false"
-                                        html={true}
+                                        html
                                         classes="darkgrey fw5"
                                         linkToPrefix="integrations"
                                         linkClasses="link darkgrey fw6"
@@ -83,7 +81,19 @@ class Integration extends React.Component {
 }
 
 Integration.propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.shape({
+        site: PropTypes.shape({
+            siteMetadata: PropTypes.shape({
+                siteUrl: PropTypes.string.isRequired,
+                title: PropTypes.string.isRequired,
+                description: PropTypes.string.isRequired,
+            }).isRequired,
+        }).isRequired,
+        ghostPost: PropTypes.object.isRequired,
+        file: PropTypes.object({
+            childImageSharp: PropTypes.string.isRequired,
+        }).isRequired,
+    }).isRequired,
     location: PropTypes.object.isRequired,
     pageContext: PropTypes.shape({
         relatedPosts: PropTypes.array.isRequired,
