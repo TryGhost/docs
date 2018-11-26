@@ -5,6 +5,7 @@ import SidebarLink from './SidebarLink'
 import SidebarList from './SidebarList'
 
 const SidebarNav = ({ sidebar, location }) => {
+    // TODO: make util for this
     if (sidebar) {
         try {
             // declare as var here, so it's accessible outside of the try scope

@@ -9,9 +9,9 @@ import { SidebarNav } from '../../components/common/sidebar'
 import { FeedbackForm, Icon, PrevNext, TOC } from '../../components/common'
 import { MetaData, getMetaImageUrls } from '../../components/common/meta'
 
-function NavBar(props) {
-    if (props.sidebar) {
-        return <SidebarNav sidebar={ props.sidebar } location={ props.location } />
+function NavBar({ sidebar, location }) {
+    if (sidebar) {
+        return <SidebarNav sidebar={sidebar} location={location} />
     } else {
         return null
     }
@@ -24,7 +24,13 @@ function PrevNextSection(props) {
     // The following code serializes the data and pass it to a generic component.
 
     if (props.sidebar) {
-        const [sidebarfile] = props.sidebar ? require(`../../data/sidebars/${props.sidebar}.yaml`) : {}
+        // TODO: make util for this
+        try {
+            // declare as var here, so it's accessible outside of the try scope
+            var [sidebarfile] = require(`../../data/sidebars/${props.sidebar}.yaml`)
+        } catch (e) {
+            throw e
+        }
 
         if (!sidebarfile) {
             return null
@@ -229,9 +235,9 @@ class DocTemplate extends React.Component {
                                 </article>
                                 <div className="mw-content pl5 pr5 pl15-ns pr15-ns bt b--whitegrey mt5">
                                     <PrevNextSection
-                                        location={ this.props.location }
-                                        sidebar={ post.frontmatter.sidebar }
-                                        fm={ post.frontmatter }
+                                        location={this.props.location}
+                                        sidebar={post.frontmatter.sidebar}
+                                        fm={post.frontmatter}
                                     />
                                 </div>
                             </div>
