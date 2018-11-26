@@ -47,8 +47,8 @@ The next step is to configure the Git repositories for local development
 The main Ghost repository contains the full Ghost package, including the Admin client and default theme which will also be automatically set up
 
 ```bash
-# First clone Ghost and make it your working dir
-git clone git@github.com:TryGhost/Ghost.git && cd Ghost
+# First clone Ghost with submodules and make it your working dir
+git clone --recurse-submodules git@github.com:TryGhost/Ghost && cd Ghost
 ```
 
 #### Properly rename your references
@@ -56,9 +56,6 @@ git clone git@github.com:TryGhost/Ghost.git && cd Ghost
 ```bash
 # Rename origin to upstream
 git remote rename origin upstream
-
-# Ensure it has the correct path
-git remote set-url upstream git@github.com:TryGhost/Ghost.git
 
 # Add your fork as an origin, editing in <YourUsername>!
 git remote add origin git@github.com:<YourUsername>/Ghost.git
@@ -76,11 +73,11 @@ cd core/client
 #### Properly rename your references again
 
 ```bash
-# Ensure admin also has the correct path
-git remote set-url upstream git@github.com:TryGhost/Ghost-Admin.git
+# Rename origin to upstream again
+git remote rename origin upstream
 
-# Same for your fork, editing in <YourUsername>!
-git remote set-url origin git@github.com:<YourUsername>/Ghost-Admin.git
+# Add your fork as an origin, editing in <YourUsername>!
+git remote add origin git@github.com:<YourUsername>/Ghost-Admin.git
 ```
 
 #### Bring Ghost-Admin up to date
