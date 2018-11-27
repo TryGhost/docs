@@ -30,7 +30,7 @@ const ArticleMetaMD = ({ data, canonical }) => {
                 <meta name="og:description" content={fm.meta_description || post.excerpt} />
                 <meta property="og:url" content={canonical} />
                 <meta property="article:published_time" content={publishedAtISODate} />
-                {fm.keywords.map((keyword, i) => (<meta property="article:tag" content={keyword} key={i} />))}
+                {fm.keywords && fm.keywords.length ? fm.keywords.map((keyword, i) => (<meta property="article:tag" content={keyword} key={i} />)) : null}
                 <meta property="article:author" content="https://www.facebook.com/ghost/" />
 
                 <meta name="twitter:title" content={fm.meta_title || fm.title} />
@@ -55,7 +55,7 @@ const ArticleMetaMD = ({ data, canonical }) => {
                                 "https://twitter.com/tryghost/"
                             ]
                         },
-                        ${fm.keywords.length ? `"keywords": "${_.join(fm.keywords, `, `)}",` : ``}
+                        ${fm.keywords && fm.keywords.length ? `"keywords": "${_.join(fm.keywords, `, `)}",` : ``}
                         "headline": "${fm.meta_title || fm.title}",
                         "url": "${canonical}",
                         "datePublished": "${publishedAtISODate}",
