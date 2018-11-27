@@ -181,41 +181,41 @@ class DocTemplate extends React.Component {
     }
 
     render() {
+        const { location } = this.props
         const post = this.props.data.markdownRemark
         const imageUrl = getMetaImageUrls()
-        let leftSidebar, rightSidebar, justification
+        const sideBarLayout = {}
 
-        post.frontmatter.sidebar = post.frontmatter.sidebar || ``
-        post.frontmatter.toc = post.frontmatter.toc === false ? false : true
+        const { sidebar } = post.frontmatter || ``
+        const toc = post.frontmatter.toc === false ? false : true
 
-        if (post.frontmatter.sidebar && post.frontmatter.toc) { // Layout #1: sidebar and TOC
-            leftSidebar = <NavBar location={this.props.location} sidebar={post.frontmatter.sidebar} />
-            rightSidebar = <div className="nr3 sticky top-25"><TOC headingsOffset="-200" className="pr4" listClasses="mt2" /></div>
-            justification = `justify-between`
-        } else if (post.frontmatter.sidebar || post.frontmatter.toc) { // Layout #2: sidebar only
-            if (post.frontmatter.sidebar) {
-                leftSidebar = <NavBar location={this.props.location} sidebar={post.frontmatter.sidebar} />
+        if (sidebar && toc) { // Layout #1: sidebar and TOC
+            sideBarLayout.leftSidebar = <NavBar location={location} sidebar={sidebar} />
+            sideBarLayout.rightSidebar = <div className="nr3 sticky top-25"><TOC className="pr4" listClasses="mt2" /></div>
+            sideBarLayout.justification = `justify-between`
+        } else if (sidebar || toc) { // Layout #2: sidebar only
+            if (sidebar) {
+                sideBarLayout.leftSidebar = <NavBar location={location} sidebar={sidebar} />
             } else {
-                leftSidebar = <div className="nr3 sticky top-25"><TOC headingsOffset="-200" listClasses="lefty" className="mt5 mb5 mt10-ns mb0-ns" showHeading={false} /></div>
+                sideBarLayout.leftSidebar = <div className="nr3 sticky top-25"><TOC listClasses="lefty" className="mt5 mb5 mt10-ns mb0-ns" showHeading={false} /></div>
             }
-            justification = `justify-start`
+            sideBarLayout.justification = `justify-start`
         } else {
-            justification = `justify-center`
+            sideBarLayout.justification = `justify-center`
         }
 
         return (
             <>
                 <MetaData
                     data={this.props.data}
-                    location={this.props.location}
+                    location={location}
                     type="article"
                     image={imageUrl}
                 />
                 <Layout>
-                    <PageHeader location={this.props.location} />
+                    <PageHeader location={location} />
 
-                    <div className={`${Spirit.page.xl} flex flex-column flex-row-ns ${justification} relative`}>
-
+                    <div className={`${Spirit.page.xl} flex flex-column flex-row-ns ${sideBarLayout.justification} relative`}>
                         <button
                             onClick={() => this.toggleMobileMenu()}
                             className="bg-transparent bn appearance-none absolute right-7 db dn-ns"
@@ -224,9 +224,9 @@ class DocTemplate extends React.Component {
                             <Icon name="hamburger" className="w6 h-auto stroke-white db dn-ns" />
                         </button>
 
-                        {leftSidebar ?
+                        {sideBarLayout.leftSidebar ?
                             <div className={`${(this.state.isToggleOn ? `mobile-nav-open` : ``)} w-100 w-sidebar-ns pr10 pl5 pl0-ns flex-shrink-0-l relative left-sidebar`}>
-                                {leftSidebar}
+                                {sideBarLayout.leftSidebar}
                             </div>
                             : null
                         }
@@ -241,17 +241,17 @@ class DocTemplate extends React.Component {
                                 </article>
                                 <div className="mw-content pl5 pr5 pl15-ns pr15-ns bt b--whitegrey mt5">
                                     <PrevNextSection
-                                        location={this.props.location}
-                                        sidebar={post.frontmatter.sidebar}
+                                        location={location}
+                                        sidebar={sidebar}
                                         fm={post.frontmatter}
                                     />
                                 </div>
                             </div>
-                            <FeedbackForm location={this.props.location} />
+                            <FeedbackForm location={location} />
                         </div>
-                        {rightSidebar ?
+                        {sideBarLayout.rightSidebar ?
                             <div className="order-3 w-sidebar flex-shrink-0 dn db-l pt10 pl7">
-                                {rightSidebar}
+                                {sideBarLayout.rightSidebar}
                             </div>
                             : null
                         }
