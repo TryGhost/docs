@@ -48,10 +48,10 @@ const plugins = [
                         maxWidth: 590,
                     },
                 },
+                `gatsby-remark-autolink-headers`,
                 `gatsby-remark-code-titles`,
                 `gatsby-remark-prismjs`, // TODO: make aliases work!
                 `gatsby-remark-external-links`,
-                `gatsby-remark-autolink-headers`,
             ],
         },
     },
