@@ -58,7 +58,7 @@ function PrevNextSection(props) {
         }
 
         return (
-            <PrevNext prev={ prev } next={ next } />
+            <PrevNext prev={prev} next={next} />
         )
     } else if (props.fm.next && props.fm.next.title && props.fm.next.url) {
         // We *must* have at least URL and title
@@ -69,7 +69,7 @@ function PrevNextSection(props) {
         }
 
         return (
-            <PrevNext next={ next } />
+            <PrevNext next={next} />
         )
     } else {
         return null
@@ -149,11 +149,11 @@ function PageHeader(props) {
 
     if (title) {
         return (
-            <div className={ bgClass }>
-                <div className={ Spirit.page.xl + `pt12 pb4 pt-vw1-ns pb-vw1-ns white pl10 pl0-ns` }>
-                    <h1 className={ Spirit.h4 + `gh-integration-header-shadow` }>
-                        <Link to={ mainLink } className={ `link dim ${subtitle ? `white-80 fw3` : `white`}` }>{ title }</Link>
-                        { subtitle ? <Link to={ subLink } className="link white dim titleslash-white pl4 ml4 relative">{ subtitle }</Link> : null }
+            <div className={bgClass}>
+                <div className={`${Spirit.page.xl} pt12 pb4 pt-vw1-ns pb-vw1-ns white pl10 pl0-ns`}>
+                    <h1 className={`${Spirit.h4} gh-integration-header-shadow`}>
+                        <Link to={mainLink} className={`link dim ${subtitle ? `white-80 fw3` : `white`}`}>{title}</Link>
+                        {subtitle ? <Link to={subLink} className="link white dim titleslash-white pl4 ml4 relative">{subtitle}</Link> : null}
                     </h1>
                 </div>
             </div>
@@ -167,7 +167,10 @@ class DocTemplate extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = { isToggleOn: false }
+        this.state = {
+            isToggleOn: false,
+        }
+
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
     }
 
@@ -180,22 +183,20 @@ class DocTemplate extends React.Component {
     render() {
         const post = this.props.data.markdownRemark
         const imageUrl = getMetaImageUrls()
+        let leftSidebar, rightSidebar, justification
 
-        post.frontmatter.keywords = post.frontmatter.keywords || []
         post.frontmatter.sidebar = post.frontmatter.sidebar || ``
         post.frontmatter.toc = post.frontmatter.toc === false ? false : true
 
-        var leftSidebar, rightSidebar, justification
-
         if (post.frontmatter.sidebar && post.frontmatter.toc) { // Layout #1: sidebar and TOC
-            leftSidebar = <NavBar location={ this.props.location } sidebar={ post.frontmatter.sidebar } />
+            leftSidebar = <NavBar location={this.props.location} sidebar={post.frontmatter.sidebar} />
             rightSidebar = <div className="nr3 sticky top-25"><TOC headingsOffset="-200" className="pr4" listClasses="mt2" /></div>
             justification = `justify-between`
         } else if (post.frontmatter.sidebar || post.frontmatter.toc) { // Layout #2: sidebar only
             if (post.frontmatter.sidebar) {
-                leftSidebar = <NavBar location={ this.props.location } sidebar={ post.frontmatter.sidebar } />
+                leftSidebar = <NavBar location={this.props.location} sidebar={post.frontmatter.sidebar} />
             } else {
-                leftSidebar = <div className="nr3 sticky top-25"><TOC headingsOffset="-200" listClasses="lefty" className="mt5 mb5 mt10-ns mb0-ns" showHeading={ false } /></div>
+                leftSidebar = <div className="nr3 sticky top-25"><TOC headingsOffset="-200" listClasses="lefty" className="mt5 mb5 mt10-ns mb0-ns" showHeading={false} /></div>
             }
             justification = `justify-start`
         } else {
@@ -205,33 +206,38 @@ class DocTemplate extends React.Component {
         return (
             <>
                 <MetaData
-                    data={ this.props.data }
-                    location={ this.props.location }
+                    data={this.props.data}
+                    location={this.props.location}
                     type="article"
                     image={imageUrl}
                 />
                 <Layout>
-                    <PageHeader location={ this.props.location } />
+                    <PageHeader location={this.props.location} />
 
-                    <div className={ Spirit.page.xl + `flex flex-column flex-row-ns ${justification} relative` }>
+                    <div className={`${Spirit.page.xl} flex flex-column flex-row-ns ${justification} relative`}>
 
-                        <button onClick={e => this.toggleMobileMenu(e)} className="bg-transparent bn appearance-none absolute right-7 db dn-ns" style={{
-                            top: `-40px`,
-                        }}><Icon name="hamburger" className="w6 h-auto stroke-white db dn-ns" /></button>
+                        <button
+                            onClick={() => this.toggleMobileMenu()}
+                            className="bg-transparent bn appearance-none absolute right-7 db dn-ns"
+                            style={{ top: `-40px` }}
+                        >
+                            <Icon name="hamburger" className="w6 h-auto stroke-white db dn-ns" />
+                        </button>
 
-                        { leftSidebar ?
-                            <div className={ (this.state.isToggleOn ? `mobile-nav-open` : ``) + ` w-100 w-sidebar-ns pr10 pl5 pl0-ns flex-shrink-0-l relative left-sidebar` }>
-                                { leftSidebar }
+                        {leftSidebar ?
+                            <div className={`${(this.state.isToggleOn ? `mobile-nav-open` : ``)} w-100 w-sidebar-ns pr10 pl5 pl0-ns flex-shrink-0-l relative left-sidebar`}>
+                                {leftSidebar}
                             </div>
-                            : null }
+                            : null
+                        }
                         <div>
-                            <div className={ `w-100 mw-content bg-white shadow-2 br4` + (this.state.isToggleOn ? `` : ` br--bottom`)}>
+                            <div className={`w-100 mw-content bg-white shadow-2 br4 ${(this.state.isToggleOn ? `` : ` br--bottom`)}`}>
                                 <article className="flex-auto pa5 pa8-m pa15-l pt10-ns pb10-ns pt10-l pb10-l">
-                                    <h1 className={ Spirit.h1 + `darkgrey` }>{ post.frontmatter.title }</h1>
-                                    <section className="post-content external-scripts" dangerouslySetInnerHTML={ {
-                                        __html: post.html,
-                                    } } />
-
+                                    <h1 className={`${Spirit.h1} darkgrey` }>{post.frontmatter.title}</h1>
+                                    <section
+                                        className="post-content external-scripts"
+                                        dangerouslySetInnerHTML={{ __html: post.html } }
+                                    />
                                 </article>
                                 <div className="mw-content pl5 pr5 pl15-ns pr15-ns bt b--whitegrey mt5">
                                     <PrevNextSection
@@ -241,13 +247,14 @@ class DocTemplate extends React.Component {
                                     />
                                 </div>
                             </div>
-                            <FeedbackForm location={ this.props.location } />
+                            <FeedbackForm location={this.props.location} />
                         </div>
-                        { rightSidebar ?
+                        {rightSidebar ?
                             <div className="order-3 w-sidebar flex-shrink-0 dn db-l pt10 pl7">
-                                { rightSidebar }
+                                {rightSidebar}
                             </div>
-                            : null }
+                            : null
+                        }
                     </div>
                 </Layout>
             </>
@@ -256,7 +263,22 @@ class DocTemplate extends React.Component {
 }
 
 DocTemplate.propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.shape({
+        site: PropTypes.shape({
+            siteMetadata: PropTypes.shape({
+                siteUrl: PropTypes.string.isRequired,
+                title: PropTypes.string.isRequired,
+                description: PropTypes.string.isRequired,
+            }).isRequired,
+        }).isRequired,
+        markdownRemark: PropTypes.shape({
+            frontmatter: PropTypes.shape({
+                toc: PropTypes.bool,
+                sidebar: PropTypes.string,
+                title: PropTypes.string.isRequired,
+            }).isRequired,
+        }).isRequired,
+    }).isRequired,
     location: PropTypes.object.isRequired,
 }
 
