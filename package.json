@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "algolia-html-extractor": "0.0.1",
-    "bluebird": "3.5.2",
+    "bluebird": "3.5.3",
     "gatsby": "2.0.56",
     "gatsby-image": "2.0.21",
     "gatsby-plugin-algolia": "0.3.0",
