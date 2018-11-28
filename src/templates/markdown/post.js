@@ -8,6 +8,7 @@ import { Spirit } from '../../styles/spirit-styles'
 import { SidebarNav } from '../../components/common/sidebar'
 import { FeedbackForm, Icon, PrevNext, TOC } from '../../components/common'
 import { MetaData, getMetaImageUrls } from '../../components/common/meta'
+import { getPostHeaderConfig } from '../../utils/getPostHeaderConfig'
 
 function NavBar({ sidebar, location }) {
     if (sidebar) {
@@ -76,76 +77,8 @@ function PrevNextSection(props) {
     }
 }
 
-function PageHeader(props) {
-    let title
-    let subtitle
-    let mainLink
-    let subLink
-    let bgClass = `bg-api-reference`
-
-    // Handlebars
-    if (props.location.pathname.match(/^\/api\//i)) {
-        title = `API Reference`
-        mainLink = `/api/`
-        if (props.location.pathname.match(/\/handlebars-themes\//i)) {
-            subtitle = `Handlebars`
-            subLink = `/api/handlebars-themes/`
-        }
-        if (props.location.pathname.match(/\/gatsby\//i)) {
-            subtitle = `Gatsby`
-            subLink = `/api/gatsby/`
-        }
-        if (props.location.pathname.match(/\/content\//i)) {
-            subtitle = `Content`
-            subLink = `/api/content/`
-        }
-        if (props.location.pathname.match(/\/admin\//i)) {
-            subtitle = `Admin`
-            subLink = `/api/admin/`
-        }
-        if (props.location.pathname.match(/\/webhooks\//i)) {
-            subtitle = `Webhooks`
-            subLink = `/api/webhooks/`
-        }
-        if (props.location.pathname.match(/\/ghost-cli\//i)) {
-            subtitle = `Ghost CLI`
-            subLink = `/api/ghost-cli/`
-        }
-    }
-
-    // Setup
-    if (props.location.pathname.match(/^\/setup\//i) || props.location.pathname.match(/^\/install\//i)) {
-        title = `Setup Guide`
-        mainLink = `/setup/`
-        bgClass = `bg-setup`
-        if (props.location.pathname.match(/\/ghost-pro\//i)) {
-            subtitle = `Ghost(Pro)`
-            subLink = `/setup/ghost-pro/`
-        }
-        if (props.location.pathname.match(/\/ubuntu\//i)) {
-            subtitle = `Ubuntu`
-            subLink = `/install/ubuntu/`
-        }
-        if (props.location.pathname.match(/\/docker\//i)) {
-            subtitle = `Docker`
-            subLink = `/install/docker/`
-        }
-        if (props.location.pathname.match(/\/local\//i)) {
-            subtitle = `Local`
-            subLink = `/install/local/`
-        }
-        if (props.location.pathname.match(/\/source\//i)) {
-            subtitle = `From Source`
-            subLink = `/install/source/`
-        }
-    }
-
-    // Core Concepts
-    if (props.location.pathname.match(/^\/concepts\//i)) {
-        title = `Core Concepts`
-        mainLink = `/concepts/introduction/`
-        bgClass = `bg-concepts`
-    }
+const PostHeader = ({ location }) => {
+    const { title, subtitle, bgClass, mainLink, subLink } = getPostHeaderConfig(location)
 
     if (title) {
         return (
@@ -161,6 +94,12 @@ function PageHeader(props) {
     } else {
         return null
     }
+}
+
+PostHeader.propTypes = {
+    location: PropTypes.shape({
+        pathname: PropTypes.string.isRequired,
+    }).isRequired,
 }
 
 class DocTemplate extends React.Component {
@@ -213,7 +152,7 @@ class DocTemplate extends React.Component {
                     image={imageUrl}
                 />
                 <Layout>
-                    <PageHeader location={location} />
+                    <PostHeader location={location} />
 
                     <div className={`${Spirit.page.xl} flex flex-column flex-row-ns ${sideBarLayout.justification} relative`}>
                         <button
