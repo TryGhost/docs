@@ -9,15 +9,7 @@ import { PrevNextSection } from '../../components/common/prev-next'
 import { PostHeader, FeedbackForm, Icon, TOC } from '../../components/common'
 import { MetaData, getMetaImageUrls } from '../../components/common/meta'
 
-function NavBar({ sidebar, location }) {
-    if (sidebar) {
-        return <SidebarNav sidebar={sidebar} location={location} />
-    } else {
-        return null
-    }
-}
-
-class DocTemplate extends React.Component {
+class Post extends React.Component {
     constructor(props) {
         super(props)
 
@@ -43,18 +35,21 @@ class DocTemplate extends React.Component {
         const { sidebar } = post.frontmatter || ``
         const toc = post.frontmatter.toc === false ? false : true
 
-        if (sidebar && toc) { // Layout #1: sidebar and TOC
-            sideBarLayout.leftSidebar = <NavBar location={location} sidebar={sidebar} />
+        if (sidebar && toc) {
+            // Layout #1: navigation left and right: sidebar and TOC
+
+            sideBarLayout.leftSidebar = <SidebarNav location={location} sidebar={sidebar} />
             sideBarLayout.rightSidebar = <div className="nr3 sticky top-25"><TOC className="pr4" listClasses="mt2" /></div>
             sideBarLayout.justification = `justify-between`
-        } else if (sidebar || toc) { // Layout #2: sidebar only
-            if (sidebar) {
-                sideBarLayout.leftSidebar = <NavBar location={location} sidebar={sidebar} />
-            } else {
-                sideBarLayout.leftSidebar = <div className="nr3 sticky top-25"><TOC listClasses="lefty" className="mt5 mb5 mt10-ns mb0-ns" showHeading={false} /></div>
-            }
+        } else if (sidebar || toc) {
+            // Layout #2: navigation left only, either TOC or sidebar
+
+            sideBarLayout.leftSidebar = sidebar ?
+                <SidebarNav location={location} sidebar={sidebar} /> :
+                <div className="nr3 sticky top-25"><TOC listClasses="lefty" className="mt5 mb5 mt10-ns mb0-ns" showHeading={false} /></div>
             sideBarLayout.justification = `justify-start`
         } else {
+            // Layout #3: no sidebar navigation
             sideBarLayout.justification = `justify-center`
         }
 
@@ -116,7 +111,7 @@ class DocTemplate extends React.Component {
     }
 }
 
-DocTemplate.propTypes = {
+Post.propTypes = {
     data: PropTypes.shape({
         site: PropTypes.shape({
             siteMetadata: PropTypes.shape({
@@ -136,7 +131,7 @@ DocTemplate.propTypes = {
     location: PropTypes.object.isRequired,
 }
 
-export default DocTemplate
+export default Post
 
 export const articleQuery = graphql`
     query($slug: String!) {
