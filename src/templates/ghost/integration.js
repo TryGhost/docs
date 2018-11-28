@@ -91,7 +91,7 @@ Integration.propTypes = {
         }).isRequired,
         ghostPost: PropTypes.object.isRequired,
         file: PropTypes.shape({
-            childImageSharp: PropTypes.string.isRequired,
+            childImageSharp: PropTypes.object.isRequired,
         }).isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,
