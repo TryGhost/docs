@@ -18,14 +18,14 @@ function NavBar({ sidebar, location }) {
     }
 }
 
-function PrevNextSection(props) {
+const PrevNextSection = ({ sidebar, location, next }) => {
     // Cover two cases:
     // 1. `/concepts/` page that walks through the associated sidebar file
     // 2. other pages, where we set a `next` property in frontmatter
     // The following code serializes the data and pass it to a generic component.
 
-    if (props.sidebar) {
-        const sidebarfile = getSidebarFile(props.sidebar)
+    if (sidebar) {
+        const sidebarfile = getSidebarFile(sidebar)
 
         if (!sidebarfile) {
             return null
@@ -43,24 +43,24 @@ function PrevNextSection(props) {
             })
         })
 
-        const currentIndex = _.findIndex(flatSidebar, item => item.link === props.location.pathname)
+        const currentIndex = _.findIndex(flatSidebar, item => item.link === location.pathname)
         const prev = flatSidebar[currentIndex - 1]
         let next = flatSidebar[currentIndex + 1]
 
         // Set the last page in "Concepts" to lead to the setup guide
-        if (!next && props.sidebar === `concepts`) {
+        if (!next && sidebar === `concepts`) {
             next = { group: `Setup`, link: `/setup/`, title: `Install Ghost` }
         }
 
         return (
             <PrevNext prev={prev} next={next} />
         )
-    } else if (props.fm.next && props.fm.next.title && props.fm.next.url) {
+    } else if (next && next.title && next.url) {
         // We *must* have at least URL and title
         const next = {
-            title: props.fm.next.title,
-            link: props.fm.next.url,
-            description: props.fm.next.description || ``,
+            title: next.title,
+            link: next.url,
+            description: next.description || ``,
         }
 
         return (
@@ -69,6 +69,17 @@ function PrevNextSection(props) {
     } else {
         return null
     }
+}
+
+PrevNextSection.propTypes = {
+    sidebar: PropTypes.string,
+    location: PropTypes.shape({
+        pathname: PropTypes.string.isRequired,
+    }).isRequired,
+    next: PropTypes.shape({
+        title: PropTypes.string,
+        url: PropTypes.string,
+    }),
 }
 
 class DocTemplate extends React.Component {
@@ -151,7 +162,7 @@ class DocTemplate extends React.Component {
                                     <PrevNextSection
                                         location={location}
                                         sidebar={sidebar}
-                                        fm={post.frontmatter}
+                                        next={post.frontmatter.next}
                                     />
                                 </div>
                             </div>
