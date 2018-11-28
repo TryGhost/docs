@@ -38,7 +38,7 @@
     "postcss-easy-import": "^3.0.0",
     "should": "^13.2.3",
     "sinon": "7.0.0",
-    "start-server-and-test": "^1.7.9"
+    "start-server-and-test": "1.7.11"
   },
   "dependencies": {
     "algolia-html-extractor": "^0.0.1",
