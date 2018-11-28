@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import _ from 'lodash'
 
 import { Layout } from '../../components/common/layout'
 import { Spirit } from '../../styles/spirit-styles'
 import { SidebarNav } from '../../components/common/sidebar'
+import { PostHeader } from '../../components/common'
 import { FeedbackForm, Icon, PrevNext, TOC } from '../../components/common'
 import { MetaData, getMetaImageUrls } from '../../components/common/meta'
-import { getPostHeaderConfig } from '../../utils/getPostHeaderConfig'
 
 function NavBar({ sidebar, location }) {
     if (sidebar) {
@@ -75,31 +75,6 @@ function PrevNextSection(props) {
     } else {
         return null
     }
-}
-
-const PostHeader = ({ location }) => {
-    const { title, subtitle, bgClass, mainLink, subLink } = getPostHeaderConfig(location)
-
-    if (title) {
-        return (
-            <div className={bgClass}>
-                <div className={`${Spirit.page.xl} pt12 pb4 pt-vw1-ns pb-vw1-ns white pl10 pl0-ns`}>
-                    <h1 className={`${Spirit.h4} gh-integration-header-shadow`}>
-                        <Link to={mainLink} className={`link dim ${subtitle ? `white-80 fw3` : `white`}`}>{title}</Link>
-                        {subtitle ? <Link to={subLink} className="link white dim titleslash-white pl4 ml4 relative">{subtitle}</Link> : null}
-                    </h1>
-                </div>
-            </div>
-        )
-    } else {
-        return null
-    }
-}
-
-PostHeader.propTypes = {
-    location: PropTypes.shape({
-        pathname: PropTypes.string.isRequired,
-    }).isRequired,
 }
 
 class DocTemplate extends React.Component {
