@@ -5349,9 +5349,9 @@ gatsby-node-helpers@^0.3.0:
     lodash "^4.17.4"
     p-is-promise "^1.1.0"
 
-gatsby-plugin-algolia@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-algolia/-/gatsby-plugin-algolia-0.2.0.tgz#959d0ef73fdb0fe411dd10b79de5b80a97fd3b8a"
+gatsby-plugin-algolia@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-algolia/-/gatsby-plugin-algolia-0.3.0.tgz#5f6b9954003f17bed6d871ccb335ef0b2fec7dea"
   dependencies:
     algoliasearch "^3.24.5"
     gatsby-cli "^1.1.58"
