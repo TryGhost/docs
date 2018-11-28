@@ -32,7 +32,7 @@ Also like tags, within Ghost Handlebars Themes author archives are automatically
 
 Here's an example of an [author archive](https://demo.ghost.io/author/martin/) in the default Ghost Theme:
 
-[![Author Archive](/images/concepts/author-archive.jpg)](https://demo.ghost.io/author/martin/)
+[![Author Archive](../images/concepts/author-archive.jpg)](https://demo.ghost.io/author/martin/)
 
 Public author archives are only generated for staff users who are assigned to published posts, any other staff users are not publicly visible.
 

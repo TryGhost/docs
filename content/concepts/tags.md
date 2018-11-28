@@ -60,7 +60,7 @@ All actively used public tags (so, those not prefixed with `#`) generate automat
 
 Here's an example of an [tag archive](https://demo.ghost.io/tag/getting-started/) in the default Ghost Theme:
 
-[![Tag Archive](/images/concepts/tag-archive.jpg)](https://demo.ghost.io/tag/getting-started/)
+[![Tag Archive](../images/concepts/tag-archive.jpg)](https://demo.ghost.io/tag/getting-started/)
 
 Tag archives are only generated for tags which are assigned to published posts, any other tags are not publicly visible.
 
