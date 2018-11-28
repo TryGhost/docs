@@ -3,17 +3,10 @@ import PropTypes from 'prop-types'
 
 import SidebarLink from './SidebarLink'
 import SidebarList from './SidebarList'
+import getSidebarFile from './getSidebarFile'
 
 const SidebarNav = ({ sidebar, location }) => {
-    // TODO: make util for this
-    if (sidebar) {
-        try {
-            // declare as var here, so it's accessible outside of the try scope
-            var [sidebarfile] = require(`../../../data/sidebars/${sidebar}.yaml`)
-        } catch (e) {
-            throw e
-        }
-    }
+    const sidebarfile = getSidebarFile(sidebar)
 
     if (!sidebar || !sidebarfile || !sidebarfile.groups) {
         return null

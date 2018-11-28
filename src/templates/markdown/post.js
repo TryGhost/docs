@@ -5,7 +5,7 @@ import _ from 'lodash'
 
 import { Layout } from '../../components/common/layout'
 import { Spirit } from '../../styles/spirit-styles'
-import { SidebarNav } from '../../components/common/sidebar'
+import { SidebarNav, getSidebarFile } from '../../components/common/sidebar'
 import { PostHeader } from '../../components/common'
 import { FeedbackForm, Icon, PrevNext, TOC } from '../../components/common'
 import { MetaData, getMetaImageUrls } from '../../components/common/meta'
@@ -25,13 +25,7 @@ function PrevNextSection(props) {
     // The following code serializes the data and pass it to a generic component.
 
     if (props.sidebar) {
-        // TODO: make util for this
-        try {
-            // declare as var here, so it's accessible outside of the try scope
-            var [sidebarfile] = require(`../../data/sidebars/${props.sidebar}.yaml`)
-        } catch (e) {
-            throw e
-        }
+        const sidebarfile = getSidebarFile(props.sidebar)
 
         if (!sidebarfile) {
             return null
