@@ -64,6 +64,9 @@ const plugins = [
             apiUrl: `${process.env.GHOST_API_URL}`,
             clientId: `ghost-frontend`,
             clientSecret: `${process.env.GHOST_API_KEY}`,
+            plugins: [
+                `gatsby-ghost-relatedposts`,
+            ],
         },
     },
     `gatsby-plugin-catch-links`,
