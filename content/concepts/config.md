@@ -26,7 +26,7 @@ This article explains how to setup your mail config, as well as walk you through
 
 The configuration is managed by [nconf](https://github.com/indexzero/nconf/). A custom configuration file must be a valid JSON file located in the root folder and changes to the file can be implemented using `ghost restart`.
 
-Since Node.js has the concept of environments built in, Ghost supports two envionments: **development** and **production**. All public Ghost publications run in production mode, while development mode can be used to test or build on top of Ghost locally.
+Since Node.js has the concept of environments built in, Ghost supports two environments: **development** and **production**. All public Ghost publications run in production mode, while development mode can be used to test or build on top of Ghost locally.
 
 > Check out the official install guides for [development](/install/local/) and [production](/install/ubuntu/).
 
