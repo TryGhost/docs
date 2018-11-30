@@ -19,7 +19,7 @@ Inside Ghost-Admin, any post can be turned into a page by checking the relevant 
 
 ## What's different about pages?
 
-Pages are only ever published on the slug which is given to them, and do not automatatically appear anywhere on your site. While posts are displayed in the index collection, within RSS feeds, and in author and tag archives - pages are totally independent. The only way people find them is if you create manual links to them either in your content or your navigation.
+Pages are only ever published on the slug which is given to them, and do not automatically appear anywhere on your site. While posts are displayed in the index collection, within RSS feeds, and in author and tag archives - pages are totally independent. The only way people find them is if you create manual links to them either in your content or your navigation.
 
 Here's an example of a [page](https://demo.ghost.io/about/) in the default Ghost Theme:
 
