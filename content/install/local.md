@@ -73,7 +73,7 @@ Ghost runs in a separate background process and remains running until you stop i
 * `ghost stop` to stop Ghost
 * `ghost start` to start Ghost
 * `ghost log` views logs
-* `ghost ls` to lists all running Ghost blogs
+* `ghost ls` to list all running Ghost blogs
 
 #### Troubleshooting
 For troubleshooting and errors, try searching this documentation and [FAQ section](/faq/) to find information about common error messages.
