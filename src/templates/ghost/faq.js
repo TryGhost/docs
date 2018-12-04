@@ -35,10 +35,10 @@ class FAQ extends React.Component {
                                 <Link to="/faq/" className="link dim white fw3">Frequently Asked Questions</Link>
                                 <Tags
                                     post={post}
-                                    separator="false"
-                                    html
+                                    separator=""
+                                    limit="1"
                                     classes="white titleslash-white pl4 ml4 relative"
-                                    linkToPrefix="faq"
+                                    permalink="/faq/:slug/"
                                     linkClasses="link dim white"
                                 />
                             </h1>
