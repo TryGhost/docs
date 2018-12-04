@@ -1,12 +1,19 @@
 {
   "name": "gatsby-ghost-relatedposts",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Plugin for Gatsby Ghost source to enable related posts",
+  "author": "Ghost Foundation",
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "ghost",
+    "gatsby-plugin",
+    "gatsby-ghost-plugin"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "lint": "eslint . --ext .js --cache",
+    "posttest": "yarn lint",
+    "test": "NODE_ENV=testing mocha -- $(find test -name '*.test.js')",
+    "preship": "yarn test",
+    "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn publish && git push --follow-tags; fi"
+  }
 }
