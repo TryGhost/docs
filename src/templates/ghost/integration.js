@@ -63,10 +63,10 @@ class Integration extends React.Component {
                                     <span className="mr1 ml1 f8 midgrey">/</span>
                                     <Tags
                                         post={post}
-                                        separator="false"
-                                        html
+                                        separator=""
+                                        limit="1"
                                         classes="darkgrey fw5"
-                                        linkToPrefix="integrations"
+                                        permalink="/integrations/:slug/"
                                         linkClasses="link darkgrey fw6"
                                     />
                                 </div>
