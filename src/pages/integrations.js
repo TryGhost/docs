@@ -9,7 +9,7 @@ const IntegrationsPage = ({ data, location }) => {
     // Add meta title and description for this page here to overwrite the site meta data as set in the config
     const title = `Ghost Integrations – Connect your favourite Tools & Apps to your site`
     const description = `Keep your stack aligned and integrate your most used tools & apps with your Ghost site: automation, analytics, marketing, support and much more! 👉`
-    const imageUrl = getMetaImageUrl(`integrations`)
+    const imageUrl = getMetaImageUrls(`integrations`)
 
     const posts = data.allGhostPost.edges
 
