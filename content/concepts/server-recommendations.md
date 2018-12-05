@@ -42,4 +42,4 @@ Whenever running a public-facing production web server it's **critically importa
 
 If you can't manage these things yourself, ensure that a systems administrator on your team is able to keep everything updated on your behalf.
 
-If you don't have somsone to manage your server and don't want to deal with any of the things on this page, consider using **[Ghost(Pro)](https://ghost.org/pricing)**, where all of this is handled on your behalf. It will save a significant amount of time.
+If you don't have someone to manage your server and don't want to deal with any of the things on this page, consider using **[Ghost(Pro)](https://ghost.org/pricing)**, where all of this is handled on your behalf. It will save a significant amount of time.
