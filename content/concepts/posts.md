@@ -39,7 +39,7 @@ Writing simple content is a breeze - but there are tons of powerful shortcuts, t
 
 ![MobileDoc](../images/concepts/editor.png)
 
-Additionally, the editor contains intelligent logic around pasting. You can copy and past from _most_ sources and it will be correctly transformed into readable content without needing any special treatment. (Go ahead, try copying the content of this page straight into the editor!) — You can also do things like pasting a URL over the top of any highlighted text to create a link.
+Additionally, the editor contains intelligent logic around pasting. You can copy and paste from _most_ sources and it will be correctly transformed into readable content without needing any special treatment. (Go ahead, try copying the content of this page straight into the editor!) — You can also do things like pasting a URL over the top of any highlighted text to create a link.
 
 ### Dynamic cards
 
