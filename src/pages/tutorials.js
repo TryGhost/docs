@@ -9,8 +9,8 @@ import { MetaData, getMetaImageUrls } from '../components/common/meta'
 
 const TutorialsPage = ({ data, location }) => {
     // Add meta title and description for this page here to overwrite the site meta data as set in the config
-    const title = `Tutorials - Ghost`
-    const description = `Customise your Ghost publication to suit your needs with practical guides for a variety of use-cases.`
+    const title = `Ghost Tutorials - Practical guides for custom publications`
+    const description = `Customise your Ghost publication to suit your needs with full tutorial guides for a variety of use-cases. Config, themes, dynamic routing and more 👉`
     const imageUrl = getMetaImageUrls(`tutorials`)
 
     const posts = data.allGhostPost.edges
