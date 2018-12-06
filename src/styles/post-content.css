@@ -607,7 +607,9 @@ Usage (In Ghost editor):
 
 /* Tables */
 .post-content table {
-    overflow-x: scroll;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
     margin: var(--vr-4) 0 0;
     width: 100%;
     border-spacing: 0;
