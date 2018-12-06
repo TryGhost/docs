@@ -87,20 +87,7 @@ To work on a [Ghost Handlebars Theme](/api/handlebars-themes/) locally, your cus
 
 ### Live reloading
 
-Theme development requires the ability to restart Ghost to pick up changes that won’t be applied automatically. This is accomplished using nodemon.
-
-```bash
-# Ensure Ghost is stopped
-ghost stop
-
-# Install nodemon globally
-npm install -g nodemon@latest
-
-# Start Ghost with nodemon
-nodemon current/index.js --watch content/themes/[your-theme-name] --ext hbs,js,css
-```
-
-This starts Ghost, watching all hbs, js and css files inside of the [your-theme-name] folder. When you add new templates or make changes, Ghost restarts.
+All edits made to Ghost theme files will automatically reload. If you add any **new** files to your theme during development, you'll need to restart Ghost to see the changes take effect.
 
 
 ### Validating with GScan
