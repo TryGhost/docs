@@ -85,7 +85,7 @@ For troubleshooting and errors, try searching this documentation and [FAQ sectio
 To work on a [Ghost Handlebars Theme](/api/handlebars-themes/) locally, your custom theme should always be placed in the top-level `/content/themes/` directory.
 
 
-### Live reloading
+### Live reloading
 
 All edits made to Ghost theme files will automatically reload. If you add any **new** files to your theme during development, you'll need to restart Ghost to see the changes take effect.
 
