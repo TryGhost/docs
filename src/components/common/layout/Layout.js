@@ -37,7 +37,6 @@ DefaultLayout.defaultProps = {
 
 DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
-    title: PropTypes.string,
     bodyClass: PropTypes.string,
     mainClass: PropTypes.string,
     header: PropTypes.element,
