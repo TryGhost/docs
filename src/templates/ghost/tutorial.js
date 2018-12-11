@@ -53,7 +53,12 @@ class Tutorial extends React.Component {
 }
 
 Tutorial.propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.shape({
+        ghostPost: PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            html: PropTypes.string.isRequired,
+        }).isRequired,
+    }).isRequired,
     location: PropTypes.object.isRequired,
     pageContext: PropTypes.shape({
         section: PropTypes.string.isRequired,
