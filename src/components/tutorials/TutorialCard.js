@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Box } from '../common'
+import { Box, Tags } from '../common'
 import { Spirit } from '../../styles/spirit-styles'
 import { removeInternalTags } from '../../utils/tag-utils'
 
@@ -25,7 +25,14 @@ const TutorialCard = ({ post, className, section }) => {
             <footer className="pt2 mt6 flex justify-between items-center">
                 <div className="flex items-center">
                     {post.featured ? <span className="bg-tutorial-color pa1 f-supersmall fw5 dib measure-0-2 mr2 white br2 pl3 pr3">Featured</span> : null}
-                    {tags ? tags.map((tag, i) => <span key={i} className="bg-midgrey dib word-nowrap pt1 pb1 pl2 pr2 white br2 f-supersmall">{tag.name}</span>) : null}
+                    <Tags
+                        post={post}
+                        autolink={false}
+                        separator=""
+                        visibility="all"
+                        classes="bg-midgrey dib word-nowrap pt1 pb1 pl2 pr2 white br2 f-supersmall"
+                    />
+                    {/* {tags ? tags.map((tag, i) => <span key={i} className="bg-midgrey dib word-nowrap pt1 pb1 pl2 pr2 white br2 f-supersmall">{tag.name}</span>) : null} */}
                 </div>
             </footer>
         </Box>
