@@ -36,7 +36,7 @@ const Tags = (props) => {
 
     // If the limit is one, only one tag left, or no tag left after filtering we only want the primary tag
     if (props.limit === 1 || !tags.length || tags.length === 1) {
-        tags = getPrimaryTag(tags)
+        tags = getPrimaryTag(tags, true)
     }
 
     if (props.html) {
