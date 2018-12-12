@@ -19,6 +19,7 @@ import tagsHelper from '@tryghost/helpers/tags'
 *   - linkClasses [optional, default "", classNames used for the html link tags]
 *   - autolink [optional, default true, whether to convert tags to links]
 *   - permalink [optional, default "/:slug.", the pattern used for links]
+*   - visibility [optional, default "all", the pattern used to control the if internal tags should be included]
 */
 const Tags = (props) => {
     const post = props.post
@@ -79,13 +80,18 @@ Tags.defaultProps = {
 
 Tags.propTypes = {
     post: PropTypes.shape({
-        tags: PropTypes.array.isRequired,
+        tags: PropTypes.arrayOf(
+            PropTypes.shape({
+                name: PropTypes.string,
+                slug: PropTypes.string,
+            })
+        ).isRequired,
     }).isRequired,
     limit: PropTypes.number,
     from: PropTypes.number,
     to: PropTypes.number,
     fallback: PropTypes.object,
-    visibility: PropTypes.string,
+    visibility: PropTypes.oneOf([`public`, `all`, `internal`]),
     permalink: PropTypes.string,
     autolink: PropTypes.bool,
     classes: PropTypes.string,
