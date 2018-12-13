@@ -18,7 +18,7 @@ const RelatedPosts = ({ relatedPosts, showImages }) => (
                         </div>
                         : null
                     }
-                    <div className="f8">{node.title}</div>
+                    <div className="f8 lh-1-5">{node.title}</div>
                 </Link>
             </li>
         ))}
