@@ -758,6 +758,10 @@ Usage (In Ghost editor):
 /* 7.7. FAQ Custom List Styles
 /* ---------------------------------------------------------- */
 
+.faq-content {
+    width: calc(100% - 3.2rem);
+}
+
 .faq-content ol {
     padding: 0;
     list-style: none;
