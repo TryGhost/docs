@@ -24,7 +24,7 @@ export const Spirit = {
 
     // Sections
     sectionHeading: ` mw-m center f2 f-headline-l lh-1-5 lh-h1-l fw6 pa0 ma0 measure--1-0 `,
-    sectionSubHeading: ` mw-m center f5 f4-l lh-1-65 lh-h4-l fw4 pa0 ma0 mla measure--0-2 `,
+    sectionSubHeading: ` mw-m center f5 f4-l lh-1-65 lh-h3-l fw4 pa0 ma0 mla mt3 measure--0-2 `,
 
     // Links
     link: {

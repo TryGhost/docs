@@ -71,9 +71,9 @@ class IntegrationsContent extends React.Component {
                                 <header className="top-0 left-0 right-0 z-9999">
                                     <NavBar theme="light" />
                                 </header>
-                                <div className="pa-vw4 tc">
-                                    <h1 className="f2-ns f1-m f-headline-l ma0 pa0 white gh-integration-header-shadow">Ghost Integrations</h1>
-                                    <p className="ma0 mt2 f5 f4-ns white-80 lh-1-5">All your favourite apps and tools, integrated with Ghost</p>
+                                <div className="pa-vw4 tc white">
+                                    <h1 className={`${Spirit.sectionHeading} gh-integration-header-shadow`}>Ghost Integrations</h1>
+                                    <p className={ Spirit.sectionSubHeading }>All your favourite apps and tools, integrated with Ghost</p>
                                     <IntegrationSearchBox searchActive={this.searchSwitch} />
                                 </div>
                             </div>
