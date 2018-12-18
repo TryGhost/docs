@@ -103,6 +103,8 @@
     items:
       - title: Editor
         link: /api/handlebars-themes/editor/
+      - title: Responsive Images
+        link: /api/handlebars-themes/responsive-images/
       - title: Google AMP
         link: /api/handlebars-themes/google-amp/
       - title: Subscribers
