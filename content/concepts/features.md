@@ -81,7 +81,7 @@ Ghost generates [JSON-LD](https://developers.google.com/search/docs/guides/intro
 
 #### Canonical tags
 
-Ghost automtically generates the correct `rel="canonical"` tag for each post and page so that search engines always prioritise one true link.
+Ghost automatically generates the correct `rel="canonical"` tag for each post and page so that search engines always prioritise one true link.
 
 ---
 
