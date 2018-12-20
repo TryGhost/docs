@@ -12,7 +12,7 @@ sidebar: "concepts"
 
 Ghost is completely open source software built almost entirely by volunteer contributors who use it every day.
 
-The best part about structuring a software project this was is that not only does everyone get to own the source code without restriction, but as people all over the world help to improve it: Everyone benefits.
+The best part about structuring a software project this way is that not only does everyone get to own the source code without restriction, but as people all over the world help to improve it: Everyone benefits.
 
 
 ## Development guide
