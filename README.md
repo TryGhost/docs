@@ -33,4 +33,4 @@ Ghost is dedicated to building constructive, diverse and safe community. We expe
 
 ## Copyright & License
 
-Copyright (c) 2018 Ghost Foundation - Released under the [MIT license](LICENSE).
+Copyright (c) 2018-2019 Ghost Foundation - Released under the [MIT license](LICENSE).
