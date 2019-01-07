@@ -45,6 +45,7 @@ const APIPage = ({ data, location }) => {
                         <div className={sectionStyles.cardContainer}>
                             <APICard to="/api/handlebars-themes/" icon="handlebars-logo">Handlebars</APICard>
                             <APICard to="/api/gatsby/" icon="gatsby-logo">Gatsby</APICard>
+                            <APICard to="/api/helpers/" icon="javascript-logo">Vanilla JS</APICard>
                         </div>
                     </div>
 
@@ -79,7 +80,7 @@ const APIPage = ({ data, location }) => {
                             <h4 className="f-supersmall dib ma0 pa0 bg-green pa1 br-pill pl3 pr3 tc white mt2 nudge-top--2">Coming soon</h4>
                         </div>
                         <div className={sectionStyles.cardContainer}>
-                            <APICard icon="javascript-logo" iconClass="stroke-midlightgrey o-30">JavaScript</APICard>
+                            <APICard to="/api/javascript/" icon="javascript-logo">JavaScript</APICard>
                             <APICard icon="ruby-logo" iconClass="stroke-midlightgrey o-30">Ruby</APICard>
                             <APICard icon="php-logo" iconClass="stroke-midlightgrey o-30">PHP</APICard>
                             <APICard icon="python-logo" iconClass="stroke-midlightgrey o-30">Python</APICard>
