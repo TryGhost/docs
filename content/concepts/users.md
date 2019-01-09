@@ -53,6 +53,7 @@ user: {
     "id": "1239bbfe90a518a862677abc",
     "name": "Cameron Almeida",
     "slug": "cameron-almeida",
+    "url": "https://path.to/author/cameron-almeida/",
     "bio": "Editor at large.",
     "location": "Cape Town",
     "profile_image": "https://path.to/img.png",
@@ -61,7 +62,6 @@ user: {
     "facebook": "https://facebook.com/example",
     "cover_image": null,
     "meta_title": null,
-    "meta_description": null,
-    "visibility": "public"
+    "meta_description": null
 }
 ```

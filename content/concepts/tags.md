@@ -74,14 +74,10 @@ tag: {
     "id": "1239bbfe90a518a862677abc",
     "name": "Getting Started",
     "slug": "getting-started",
-    "parent": null,
+    "url": "https://path.to/tag/getting-started/",
     "feature_image": null,
     "visibility": "public",
     "meta_title": null,
-    "meta_description": null,
-    "created_at": "2019-11-17T19:02:27.147Z",
-    "created_by": "1239bbfe90a518a862677abc",
-    "updated_at": "2019-11-17T19:02:27.147Z",
-    "updated_by": "1239bbfe90a518a862677abc"
+    "meta_description": null
 }
 ```
