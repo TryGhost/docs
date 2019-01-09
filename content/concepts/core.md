@@ -21,7 +21,7 @@ Whether you want to publish content from your favourite desktop editor, build a 
 
 Ghost's public Content API is what delivers published content to the world and can be accessed in a read-only manner by any client to render in a website, app or other embedded media.
 
-Access control is managed via an API key, and even the most complex filters are made simple with our SDK. The Content API is designed to be fully cachable, meaning you can fetch data as often as you like without limitation.
+Access control is managed via an API key, and even the most complex filters are made simple with our [query language](/api/content/#filtering). The Content API is designed to be fully cachable, meaning you can fetch data as often as you like without limitation.
 
 
 ## Admin API
@@ -35,11 +35,11 @@ When authenticated with the **admin** or **owner** role, the Admin API provides 
 
 ## JavaScript SDK
 
-Ghost core comes with an accompanying JavaScript SDK designed to remove pain around authentication and data access.
+Ghost core comes with an accompanying JavaScript [API Client](/api/javascript/) and [SDK](/api/helpers/) designed to remove pain around authentication and data access.
 
 It provides tools for working with API data to accomplish common use cases such as returning a list of tags for a post, rendering meta data in the `<head>`, and outputting data with sensible fallbacks.
 
-Leveraging FLOSS & npm, an ever-increasing amount of Ghost's JavaScript tooling has been made available via our SDK. If you're working in JavaScript, chances are you won't need to code anything more than wiring.
+Leveraging FLOSS & npm, an ever-increasing amount of Ghost's JavaScript tooling has been made available. If you're working in JavaScript, chances are you won't need to code anything more than wiring.
 
 
 ## Webhooks
