@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "@tryghost/helpers": "1.0.0",
+    "@tryghost/helpers-gatsby": "1.0.0",
     "algolia-html-extractor": "0.0.1",
     "bluebird": "3.5.3",
     "gatsby": "2.0.56",
