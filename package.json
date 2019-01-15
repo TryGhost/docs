@@ -41,7 +41,7 @@
     "start-server-and-test": "1.7.11"
   },
   "dependencies": {
-    "@tryghost/helpers": "0.1.0",
+    "@tryghost/helpers": "1.0.0",
     "algolia-html-extractor": "0.0.1",
     "bluebird": "3.5.3",
     "gatsby": "2.0.56",
