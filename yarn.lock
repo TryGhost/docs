@@ -771,11 +771,11 @@
     axios "0.18.0"
     ghost-ignition "^2.9.6"
 
-"@tryghost/helpers@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@tryghost/helpers/-/helpers-0.1.0.tgz#c8bf755d643e5a9d7d37afbc6bcbd2a3dbb14e4e"
+"@tryghost/helpers@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@tryghost/helpers/-/helpers-1.0.0.tgz#e474d54fe6c8a08a9c97bcaf8b1b4ab4a4f950fd"
   dependencies:
-    lodash "^4.17.11"
+    lodash-es "^4.17.11"
 
 "@types/blob-util@1.3.3":
   version "1.3.3"
@@ -7721,6 +7721,10 @@ lockfile@^1.0.4:
   dependencies:
     signal-exit "^3.0.2"
 
+lodash-es@^4.17.11:
+  version "4.17.11"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.11.tgz#145ab4a7ac5c5e52a3531fb4f310255a152b4be0"
+
 lodash._basecopy@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/lodash._basecopy/-/lodash._basecopy-3.0.1.tgz#8da0e6a876cf344c0ad8a54882111dd3c5c7ca36"
@@ -7909,7 +7913,7 @@ lodash@4.17.10:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
-lodash@^4.0.0, lodash@^4.11.1, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.4, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.3.0:
+lodash@^4.0.0, lodash@^4.11.1, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.4, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
