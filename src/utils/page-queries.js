@@ -149,6 +149,7 @@ export const ghostPostListFields = graphql`
         tags {
           name
           slug
+          visibility
         }
         authors {
           name
@@ -163,6 +164,7 @@ export const ghostTagListFields = graphql`
         tags {
           name
           slug
+          visibility
         }
     }
 `
