@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Tags } from '@tryghost/helpers-gatsby'
 
-import { Box, Tags } from '../common'
+import { Box } from '../common'
 import { Spirit } from '../../styles/spirit-styles'
-import { removeInternalTags } from '../../utils/tag-utils'
 
 const TutorialCard = ({ post, className, section }) => {
     const url = `/${section}/${post.slug}/`
-    const tags = removeInternalTags(post.tags)
     const excerpt = post.excerpt.length > 200 ? `${post.excerpt.substring(0, 200)}...` : post.excerpt
 
     return (
@@ -29,10 +28,9 @@ const TutorialCard = ({ post, className, section }) => {
                         post={post}
                         autolink={false}
                         separator=""
-                        visibility="all"
+                        visibility="public"
                         classes="bg-midgrey dib word-nowrap pt1 pb1 pl2 pr2 white br2 f-supersmall"
                     />
-                    {/* {tags ? tags.map((tag, i) => <span key={i} className="bg-midgrey dib word-nowrap pt1 pb1 pl2 pr2 white br2 f-supersmall">{tag.name}</span>) : null} */}
                 </div>
             </footer>
         </Box>
