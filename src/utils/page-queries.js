@@ -58,7 +58,7 @@ export const ghostPostFields = graphql`
         updated_at
 
         # SEO
-        custom_excerpt
+        excerpt
         meta_title
         meta_description
         og_description
@@ -131,7 +131,7 @@ export const ghostPostListFields = graphql`
         id
         slug
         title
-        custom_excerpt
+        excerpt
         feature_image
         plaintext
         featured

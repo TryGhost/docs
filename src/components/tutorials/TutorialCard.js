@@ -3,13 +3,12 @@ import PropTypes from 'prop-types'
 
 import { Box } from '../common'
 import { Spirit } from '../../styles/spirit-styles'
-import { getPostExcerpt } from '../../utils/getPostExcerpt'
 import { removeInternalTags } from '../../utils/tag-utils'
 
 const TutorialCard = ({ post, className, section }) => {
     const url = `/${section}/${post.slug}/`
-    const excerpt = getPostExcerpt(post)
     const tags = removeInternalTags(post.tags)
+    const excerpt = post.excerpt.length > 200 ? `${post.excerpt.substring(0, 200)}...` : post.excerpt
 
     return (
         <Box
@@ -21,7 +20,7 @@ const TutorialCard = ({ post, className, section }) => {
                 <header>
                     <h2 className={`${Spirit.h3} darkgrey nt2`}>{post.title}</h2>
                 </header>
-                {excerpt ? <section className={`${Spirit.p} midgrey mt4`}>{excerpt}</section> : null}
+                <section className={`${Spirit.p} midgrey mt4`}>{excerpt}</section>
             </div>
             <footer className="pt2 mt6 flex justify-between items-center">
                 <div className="flex items-center">
@@ -42,6 +41,7 @@ TutorialCard.propTypes = {
                 name: PropTypes.string,
             })
         ),
+        excerpt: PropTypes.string.isRequired,
     }).isRequired,
     className: PropTypes.string,
     section: PropTypes.string.isRequired,

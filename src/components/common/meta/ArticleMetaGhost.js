@@ -3,7 +3,6 @@ import Helmet from "react-helmet"
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 
-import getPostExcerpt from '../../../utils/getPostExcerpt'
 import { removeInternalTags, getPrimaryTag } from '../../../utils/tag-utils'
 import getAuthorProperties from './getAuthorProperties'
 import ImageMeta from './ImageMeta'
@@ -12,7 +11,6 @@ const ArticleMetaGhost = ({ data, canonical, fetchAuthorData, title, overwriteDe
     const { ghostPost } = data
     const { siteMetadata } = data.site
 
-    const excerpt = getPostExcerpt(ghostPost)
     const author = getAuthorProperties(ghostPost.primary_author, fetchAuthorData)
     const publicTags = _.map(removeInternalTags(ghostPost.tags), `name`)
     const primaryTag = getPrimaryTag(publicTags)
@@ -22,7 +20,7 @@ const ArticleMetaGhost = ({ data, canonical, fetchAuthorData, title, overwriteDe
         <>
             <Helmet>
                 <title>{ghostPost.meta_title || title || ghostPost.title}</title>
-                <meta name="description" content={ghostPost.meta_description || excerpt} />
+                <meta name="description" content={ghostPost.meta_description || ghostPost.excerpt} />
                 <link rel="canonical" href={canonical} />
 
                 <meta property="og:site_name" content={siteMetadata.title} />
@@ -38,7 +36,7 @@ const ArticleMetaGhost = ({ data, canonical, fetchAuthorData, title, overwriteDe
                 <meta name="og:description"
                     content={
                         ghostPost.og_description ||
-                        excerpt ||
+                        ghostPost.excerpt ||
                         ghostPost.meta_description
                     }
                 />
@@ -59,7 +57,7 @@ const ArticleMetaGhost = ({ data, canonical, fetchAuthorData, title, overwriteDe
                 <meta name="twitter:description"
                     content={
                         ghostPost.twitter_description ||
-                        excerpt ||
+                        ghostPost.excerpt ||
                         ghostPost.meta_description
                     }
                 />
@@ -93,7 +91,7 @@ const ArticleMetaGhost = ({ data, canonical, fetchAuthorData, title, overwriteDe
                             "width": 1000,
                             "height": 563
                         },
-                        "description": "${ghostPost.meta_description || excerpt}",
+                        "description": "${ghostPost.meta_description || ghostPost.excerpt}",
                         "mainEntityOfPage": {
                             "@type": "WebPage",
                             "@id": "${siteMetadata.siteUrl}"
@@ -127,6 +125,7 @@ ArticleMetaGhost.propTypes = {
             title: PropTypes.string.isRequired,
             published_at: PropTypes.string.isRequired,
             updated_at: PropTypes.string.isRequired,
+            excerpt: PropTypes.string.isRequired,
             meta_title: PropTypes.string,
             meta_description: PropTypes.string,
             primary_author: PropTypes.object.isRequired,
