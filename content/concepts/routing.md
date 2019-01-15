@@ -43,7 +43,7 @@ taxonomies:
   author: /author/{slug}/
 ```
 
-The rest of this article explains how `routes`, `collections` and `taxonomies` function, followed by how all of the available `YAML` properties can be used. 
+The rest of this article explains how `routes`, `collections` and `taxonomies` function, followed by how all of the available `YAML` properties can be used.
 
 > **Strict indentation**
 > YAML files use whitespace indentation to denote structure - using tabs is invalid. Having mismatched indentation is the most common reason for a YAML file not being valid.
@@ -67,7 +67,7 @@ routes:
   ```
 
 
-For example, to set a custom home page on `/` as well as about pages at `about/careers` and `about/team`, you'd use routes to define the URL routing. 
+For example, to set a custom home page on `/` as well as about pages at `about/careers` and `about/team`, you'd use routes to define the URL routing.
 ```yaml
 routes:
   /: home
@@ -81,9 +81,9 @@ For more information about custom pages, check out the [custom pages](/tutorials
 
 ## Collections
 
-Collections allow you to create groups of posts that match a filter, and alters the URL for all posts. Each collection has an index URL where all posts in that collection are listed and paginated and posts can only belong to one collection. 
+Collections allow you to create groups of posts that match a filter, and alters the URL for all posts. Each collection has an index URL where all posts in that collection are listed and paginated and posts can only belong to one collection.
 
-Use a collection when you want to create distinct areas on your site, where posts belong explicitly to one group or another. If you're building a content hub that does not affect the URL of posts, check out the `controller: channel` [property](/concepts/routing/#controller-channels). 
+Use a collection when you want to create distinct areas on your site, where posts belong explicitly to one group or another. If you're building a content hub that does not affect the URL of posts, check out the `controller: channel` [property](/concepts/routing/#controller-channels).
 
 ### Content structure
 
@@ -107,7 +107,7 @@ Ordering collections in the `routes.yaml` file is important. Posts that match th
 
 Taxonomies are used to group posts based on a common relation. In Ghost, this is always the author of the post, or using tags.
 
-Using taxonomies, Ghost will automatically generate URLs like `/tag/getting-started/` which will render a list of posts that have this tag. Posts can appear in multiple taxonomies and the URL of the post is not affected. 
+Using taxonomies, Ghost will automatically generate URLs like `/tag/getting-started/` which will render a list of posts that have this tag. Posts can appear in multiple taxonomies and the URL of the post is not affected.
 
 Taxonomies are structured like this:
 ```yaml
@@ -130,11 +130,11 @@ Now you have a concept of how routes, collections and taxonomies work at a high 
 
 ### controller (channels)
 
-The `controller` property has one supported value: `channel`. A channel is a paginated index of posts that match a specified filter. This allows you to create subsets and supersets by combining or dividing existing posts into content hubs. 
+The `controller` property has one supported value: `channel`. A channel is a paginated index of posts that match a specified filter. This allows you to create subsets and supersets by combining or dividing existing posts into content hubs.
 
-Unlike collections, creating a channel doesn't change a posts individual URL and posts can belong to multiple channels. For example, you can have a channel for all featured posts, and another for all featured posts with a particular tag or author. 
+Unlike collections, creating a channel doesn't change a posts individual URL and posts can belong to multiple channels. For example, you can have a channel for all featured posts, and another for all featured posts with a particular tag or author.
 
-**A channel is similar to a search results page** - it's a filtered view of your site content along with pagination. Here's an example of some channels filtering by tag in the `routes.yaml` file: 
+**A channel is similar to a search results page** - it's a filtered view of your site content along with pagination. Here's an example of some channels filtering by tag in the `routes.yaml` file:
 
 ```yaml
 routes:
@@ -146,7 +146,7 @@ routes:
     filter: tag:[imac,mac-pro]
 ```
 
-A `filter` must be used in combination with the `controller: channel` configuration to select a specific list of posts for display using the `{{posts}}` template variable. Read more about creating [channels and content hubs](/tutorials/building-a-content-hub/) in this tutorial. 
+A `filter` must be used in combination with the `controller: channel` configuration to select a specific list of posts for display using the `{{posts}}` template variable. Read more about creating [channels and content hubs](/tutorials/building-a-content-hub/) in this tutorial.
 
 ### filter
 
@@ -239,7 +239,8 @@ The trailing slash is required, so `/blog/:` is valid, but `/blog:` is not. The 
 * `example.com/blog/`
 * `example.com/blog/page/2`
 
-Ghost will use the default template to render these routes. For example, `index.hbs` for `/blog/:` and `home.hbs` for `/:` - unless specific templates are set using the [template](http://docs.ghost.org/concepts/routing/#template) property.
+Ghost will use the default template to render these routes.
+For example, `index.hbs` for `/blog/:` and `home.hbs` for `/:` - unless specific templates are set using the [template](/concepts/routing/#template) property.
 
 
 ### permalink
