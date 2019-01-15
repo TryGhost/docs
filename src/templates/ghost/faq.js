@@ -3,10 +3,11 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 import Prism from 'prismjs'
+import { Tags } from '@tryghost/helpers-gatsby'
 
 import { Layout } from '../../components/common/layout'
 import { Spirit } from '../../styles/spirit-styles'
-import { Tags, RelatedPosts } from '../../components/common'
+import { RelatedPosts } from '../../components/common'
 import { MetaData, getMetaImageUrls } from '../../components/common/meta'
 
 class FAQ extends React.Component {
