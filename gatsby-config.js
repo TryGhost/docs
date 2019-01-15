@@ -62,8 +62,7 @@ const plugins = [
         resolve: `gatsby-source-ghost`,
         options: {
             apiUrl: `${process.env.GHOST_API_URL}`,
-            clientId: `ghost-frontend`,
-            clientSecret: `${process.env.GHOST_API_KEY}`,
+            contentApiKey: `${process.env.GHOST_API_KEY}`,
         },
     },
     `gatsby-plugin-catch-links`,

@@ -764,6 +764,13 @@
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@sinonjs/samsam/-/samsam-2.1.2.tgz#16947fce5f57258d01f1688fdc32723093c55d3f"
 
+"@tryghost/content-api@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@tryghost/content-api/-/content-api-1.0.0.tgz#34da08f5f5e799d9ec31940df554072b7e5ef57c"
+  dependencies:
+    axios "0.18.0"
+    ghost-ignition "^2.9.6"
+
 "@types/blob-util@1.3.3":
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/@types/blob-util/-/blob-util-1.3.3.tgz#adba644ae34f88e1dd9a5864c66ad651caaf628a"
@@ -1516,9 +1523,9 @@ aws4@^1.6.0, aws4@^1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
 
-axios@^0.18.0:
+axios@0.18.0:
   version "0.18.0"
-  resolved "http://registry.npmjs.org/axios/-/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
   dependencies:
     follow-redirects "^1.3.0"
     is-buffer "^1.1.5"
@@ -5543,11 +5550,11 @@ gatsby-source-filesystem@2.0.9:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-gatsby-source-ghost@2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/gatsby-source-ghost/-/gatsby-source-ghost-2.1.2.tgz#4cf86a8399be663c4380a0d81a765c6afc900101"
+gatsby-source-ghost@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-source-ghost/-/gatsby-source-ghost-3.2.0.tgz#85af8ebf7d1fc32f86694432537372f451b3c5b3"
   dependencies:
-    axios "^0.18.0"
+    "@tryghost/content-api" "1.0.0"
     bluebird "^3.5.1"
     gatsby-node-helpers "^0.3.0"
     qs "^6.5.2"
@@ -5787,7 +5794,7 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-ghost-ignition@^2.7.0:
+ghost-ignition@^2.7.0, ghost-ignition@^2.9.6:
   version "2.9.6"
   resolved "https://registry.yarnpkg.com/ghost-ignition/-/ghost-ignition-2.9.6.tgz#cc8358f0a356bae490e5abeca3c3bda8383352fe"
   dependencies:

@@ -69,7 +69,6 @@ export const ghostPostFields = graphql`
         twitter_title
 
         # Authors
-        author
         authors {
             name
             slug
@@ -118,10 +117,7 @@ export const ghostPostFields = graphql`
         # Additional fields
         custom_template
         url
-        visibility
-        locale
         uuid
-        status
         page
         codeinjection_foot
         codeinjection_head
