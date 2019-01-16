@@ -65,7 +65,7 @@ class Integration extends React.Component {
                                     <Tags
                                         post={post}
                                         separator=""
-                                        limit="1"
+                                        limit={1}
                                         classes="darkgrey fw5"
                                         permalink="/integrations/:slug/"
                                         linkClasses="link darkgrey fw6"

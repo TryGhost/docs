@@ -37,7 +37,7 @@ class FAQ extends React.Component {
                                 <Tags
                                     post={post}
                                     separator=""
-                                    limit="1"
+                                    limit={1}
                                     classes="white titleslash-white pl4 ml4 relative"
                                     permalink="/faq/:slug/"
                                     linkClasses="link dim white"
