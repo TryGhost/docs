@@ -22,6 +22,7 @@
     "master": "git pull -r origin master --autostash && cd content/api/v2 && git pull -r origin master --autostash && cd ../../../ && yarn"
   },
   "devDependencies": {
+    "algoliasearch": "3.32.0",
     "autoprefixer": "9.3.1",
     "cssnano": "4.1.7",
     "cypress": "3.1.2",
