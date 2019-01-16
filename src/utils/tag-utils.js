@@ -18,34 +18,6 @@ removeInternalTags.proptypes = {
     ).isRequired,
 }
 
-/* getPrimaryTag
-* Takes an array of tags (Ghost post) and returns the first tag from
-* it. If `fallback` is passed, we return a dummy tag called `General`
-*/
-export const getPrimaryTag = function getPrimaryTag(tags, fallback) {
-    if (!tags.length) {
-        if (fallback) {
-            return {
-                name: `General`,
-                slug: `general`,
-            }
-        } else {
-            return []
-        }
-    } else {
-        return tags[0]
-    }
-}
-
-getPrimaryTag.defaultProps = {
-    fallback: false,
-}
-
-getPrimaryTag.proptypes = {
-    tags: PropTypes.array.isRequired,
-    fallback: PropTypes.bool,
-}
-
 /* getTagsforPostCollection
 * Takes a Ghost post object and a link prefix and returns the used tags
 * array for a passed post collection. The tags will not contain internal tags,
