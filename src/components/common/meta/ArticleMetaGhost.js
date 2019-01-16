@@ -2,8 +2,8 @@ import React from 'react'
 import Helmet from "react-helmet"
 import PropTypes from 'prop-types'
 import _ from 'lodash'
+import { tags as tagsHelper } from '@tryghost/helpers'
 
-import { removeInternalTags, getPrimaryTag } from '../../../utils/tag-utils'
 import getAuthorProperties from './getAuthorProperties'
 import ImageMeta from './ImageMeta'
 
@@ -12,8 +12,8 @@ const ArticleMetaGhost = ({ data, canonical, fetchAuthorData, title, overwriteDe
     const { siteMetadata } = data.site
 
     const author = getAuthorProperties(ghostPost.primary_author, fetchAuthorData)
-    const publicTags = _.map(removeInternalTags(ghostPost.tags), `name`)
-    const primaryTag = getPrimaryTag(publicTags)
+    const publicTags = _.map(tagsHelper(ghostPost, { visibility: `public`, fn: tag => tag }), `name`)
+    const primaryTag = publicTags[0] || { name: `General`, slug: `general` }
     const seoImage = (overwriteDefaultImage && ghostPost.feature_image) ? ghostPost.feature_image : image
 
     return (
@@ -66,8 +66,8 @@ const ArticleMetaGhost = ({ data, canonical, fetchAuthorData, title, overwriteDe
                 {/* <meta name="twitter:data1" content="TODO: Reading time helper and replace existing `label1` data" /> */}
                 <meta name="twitter:label1" content="Written by" />
                 <meta name="twitter:data1" content={author.name} />
-                {primaryTag ? <meta name="twitter:label2" content="Filed under" /> : null}
-                {primaryTag ? <meta name="twitter:data2" content={primaryTag} /> : null}
+                <meta name="twitter:label2" content="Filed under" />
+                <meta name="twitter:data2" content={primaryTag} />
                 <meta name="twitter:site" content="@tryghost" />
                 <meta name="twitter:creator" content="@tryghost" />
                 <script type="application/ld+json">{`
