@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, StaticQuery, graphql } from 'gatsby'
 
 import { Spirit } from '../../styles/spirit-styles'
-import { getTagsforPostCollection } from '../../utils/tag-utils'
+import { getTagsforPostCollection } from '../../utils/getTagsforPostCollection'
 
 const FAQTagList = ({ data, location }) => {
     const tags = getTagsforPostCollection(data.allGhostPost.edges, `faq`)
