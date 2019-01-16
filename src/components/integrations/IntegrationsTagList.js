@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, StaticQuery, graphql } from 'gatsby'
 
-import { getTagsforPostCollection } from '../../utils/tag-utils'
+import { getTagsforPostCollection } from '../../utils/getTagsforPostCollection'
 
 const IntegrationsTagList = ({ location, searchActive, data }) => {
     // When the search is active, we set the "All integrations" link as active and
