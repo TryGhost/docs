@@ -111,11 +111,10 @@ const plugins = [
     },
 ]
 
-if (process.env.INCOMING_HOOK_TITLE || process.env.INCOMING_HOOK_URL || process.env.INCOMING_HOOK_BODY) {
-    console.log(process.env)
-}
+const runAlgoliaBuild = () => (process.env.INCOMING_HOOK_TITLE && process.env.INCOMING_HOOK_TITLE === `Algolia`) || process.env.ALGOLIA
+const hasAlgoliaKey = () => process.env.ALGOLIA_ADMIN_KEY && !process.env.ALGOLIA_ADMIN_KEY.match(/<key>/)
 
-if (process.env.ALGOLIA_ADMIN_KEY && !process.env.ALGOLIA_ADMIN_KEY.match(/<key>/)) {
+if (runAlgoliaBuild() && hasAlgoliaKey()) {
     plugins.push({
         resolve: `gatsby-plugin-algolia`,
         options: {
