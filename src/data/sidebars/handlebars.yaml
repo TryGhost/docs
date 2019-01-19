@@ -43,8 +43,8 @@
         link: /api/handlebars-themes/helpers/data/
       - title: '@config'
         link: /api/handlebars-themes/helpers/config/
-      - title: '@blog'
-        link: /api/handlebars-themes/helpers/blog/
+      - title: '@site'
+        link: /api/handlebars-themes/helpers/site/
       - title: navigation
         link: /api/handlebars-themes/helpers/navigation/
       - title: post
