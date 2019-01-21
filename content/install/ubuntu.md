@@ -212,7 +212,7 @@ If you already have an existing MySQL database enter the the username. Otherwise
 
 #### Ghost database name
 
-Enter the name of your database. It will be automatically set up for you, unless you're using a **non**-root MySQL user/pass. In that case the database must alreay exist and have the correct permissions. 
+Enter the name of your database. It will be automatically set up for you, unless you're using a **non**-root MySQL user/pass. In that case the database must already exist and have the correct permissions. 
 
 #### Set up a ghost MySQL user? <small>(Recommended)</small>
 
@@ -250,7 +250,7 @@ Once Ghost is properly set up it's important to keep it properly maintained and 
 
 ## What to do if the install fails
 
-If an install goes horribly wrong, use `ghost uninstall` to remove it and try again. This is preferable to deleting the folder to ensure no artefacts are left behind.
+If an install goes horribly wrong, use `ghost uninstall` to remove it and try again. This is preferable to deleting the folder to ensure no artifacts are left behind.
 
 If an install is interrupted or the connection lost, use `ghost setup` to restart the configuration process.
 
