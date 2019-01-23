@@ -182,11 +182,11 @@ grunt test-all
 grunt test-unit
 # Run unit tests
 
-grunt test-integration
-# Run integration tests
+grunt test-acceptance
+# Run acceptance tests
 
-grunt test-functional
-# Run functional tests
+grunt test-regression
+# Run regression tests
 
 grunt test:path/to/test.js
 # Run a single test
