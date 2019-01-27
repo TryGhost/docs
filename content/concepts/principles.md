@@ -14,7 +14,7 @@ Developing Ghost as a product is a complex process undertaken by a small number 
 
 ## Product roadmap
 
-The Ghost product team maintains a broad 1-2 year product roadmap at any given time which defines the overall direction of the company and the software. While the exact roadmap isn't shared publicly (we tried it and it turned out to be more distracting than helpful), the things being worked on are generally very visible [on Github](https://github.com/tryghost/ghost).
+The Ghost product team maintains a broad 1-2 year product roadmap at any given time which defines the overall direction of the company and the software. While the exact roadmap isn't shared publicly (we tried it and it turned out to be more distracting than helpful), the things being worked on are generally very visible [on GitHub](https://github.com/tryghost/ghost).
 
 **Currently our primary focus areas largely surround:**
 

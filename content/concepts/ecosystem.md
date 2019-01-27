@@ -48,7 +48,7 @@ The [official Ghost forum](https://forum.ghost.org) is the best place to find ot
 We maintain a handful of social media accounts to keep in touch with people directly and give them updates about what's new with Ghost. Here are the easiest ways to keep track of Ghost and everything hapening around the web:
 
 
-- [Github](https://github.com/tryghost/ghost) - ⭐️ Star the repository to bookmark
+- [GitHub](https://github.com/tryghost/ghost) - ⭐️ Star the repository to bookmark
 - [Twitter](https://twitter.com/tryghost) - 🐧 Regular shortform updates
 - [Facebook](https://www.facebook.com/ghost) - 👩🏻‍💻 Occasional big news
 - [Instagram](https://www.instagram.com/ghost) - 🤫 New thing coming soon 

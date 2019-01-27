@@ -1,7 +1,7 @@
 ---
 title: "Storage Adapters"
 meta_title: "Custom Storage Adapters for Ghost"
-meta_description: "Find out how to use custom storage adapters to store your publication's images to externally on S3, Google Drive, Azure, Github, Imgur and more."
+meta_description: "Find out how to use custom storage adapters to store your publication's images to externally on S3, Google Drive, Azure, GitHub, Imgur and more."
 keywords:
     - storage
     - concepts 
@@ -135,5 +135,5 @@ module.exports = MyCustomAdapter;
 ## Summary
 You have discovered how to use a custom storage module to replace the storage layer which handles images with custom code.
 
-It's good practise to create a public Github repository to make your module available for others and you can share your new module in our [forum](https://forum.ghost.org/).
+It's good practise to create a public GitHub repository to make your module available for others and you can share your new module in our [forum](https://forum.ghost.org/).
 
