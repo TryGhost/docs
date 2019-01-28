@@ -27,9 +27,9 @@ yarn global add knex-migrator grunt-cli ember-cli bower
 ---
 
 
-## Create Github forks
+## Create GitHub forks
 
-First you'll need to make forks of both the [Ghost](https://github.com/tryghost/ghost) and [Ghost-Admin](https://github.com/tryghost/ghost-admin) respositories. Click on the fork button right at the top, wait for a copy to be created over on your personal Github account, and you should be all set!
+First you'll need to make forks of both the [Ghost](https://github.com/tryghost/ghost) and [Ghost-Admin](https://github.com/tryghost/ghost-admin) respositories. Click on the fork button right at the top, wait for a copy to be created over on your personal GitHub account, and you should be all set!
 
 
 ![Fork](/images/setup/fork.gif)

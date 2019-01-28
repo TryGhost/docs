@@ -28,7 +28,7 @@ Ghost Handlebars Themes have the additional benefit of being fairly widely adopt
 
 Thanks to its decoupled architecture Ghost is also compatible with just about any of the front-end frameworks or static site generators which have become increasingly popular thanks to being fun to work with, extremely fast, and more and more powerful as the JAMstack grows in maturity. So it works with the tools you already use.
 
-This very documentation site is running on a [Gatsby.js](/api/gatsby/) front-end, connected to both **Ghost** and **Github** as content sources, hosted statically on [Netlify](https://netlify.com) with dynamic serverless functions powered by [AWS Lambda](https://aws.amazon.com/lambda/) (like the feedback form at the bottom of this page). It's a brave new world!
+This very documentation site is running on a [Gatsby.js](/api/gatsby/) front-end, connected to both **Ghost** and **GitHub** as content sources, hosted statically on [Netlify](https://netlify.com) with dynamic serverless functions powered by [AWS Lambda](https://aws.amazon.com/lambda/) (like the feedback form at the bottom of this page). It's a brave new world!
 
 We're working on greatly expanding our range of documentation, tools and SDKs to better serve the wider front-end development community.
 

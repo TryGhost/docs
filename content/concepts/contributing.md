@@ -17,7 +17,7 @@ The best part about structuring a software project this way is that not only doe
 
 ## Development guide
 
-If you're a developer looking to help, but you're not sure where to begin: Check out the [good first issue](https://github.com/TryGhost/Ghost/labels/good%20first%20issue) label on Github, which contains small piece of work that have been specifically flagged as being friendly to new contributors.
+If you're a developer looking to help, but you're not sure where to begin: Check out the [good first issue](https://github.com/TryGhost/Ghost/labels/good%20first%20issue) label on GitHub, which contains small piece of work that have been specifically flagged as being friendly to new contributors.
 
 Or, if you're looking for something a little more challenging to sink your teeth into, there's a broader [help wanted](https://github.com/TryGhost/Ghost/labels/help%20wanted) label encompassing issues which need some love.
 
