@@ -29,7 +29,7 @@ Entries to the redirects file follow this structure:
 }
 ```
 
-* The from field you defines the incoming URL or pattern (regex)
+* The from field defines the incoming URL or pattern (regex)
 * The to field defines where the incoming traffic should be redirected to, which can be a static URL, or a dynamic value using regex (example: "to": "/$1/").
 * The permanent field can be defined with true for a permanent 301 redirect, or false for a temporary 302 redirect. 
 

@@ -25,7 +25,7 @@ When building a custom publication using Ghost’s theme layer on the front end,
 
 ## Routing configurations
 
-The routes configuration file is a YAML file, which is located in: `content/settings/routes.yaml`.
+The routes configuration file is a YAML file, which is located in: `content/settings/routes.yaml`. It can be downloaded and uploaded in Ghost Admin.
 
 The `routes.yaml` file is divided into three sections: `routes`, `collections`, and `taxonomies`. The default file looks like this:
 
@@ -46,7 +46,7 @@ taxonomies:
 The rest of this article explains how `routes`, `collections` and `taxonomies` function, followed by how all of the available `YAML` properties can be used.
 
 > **Strict indentation**
-> YAML files use whitespace indentation to denote structure - using tabs is invalid. Having mismatched indentation is the most common reason for a YAML file not being valid.
+> YAML files use whitespace indentation to denote structure. The suggested syntax for YAML files is to use 2 spaces for indentation - using tabs is invalid. Having mismatched indentation is the most common reason for a YAML file not being valid.
 
 ---
 
