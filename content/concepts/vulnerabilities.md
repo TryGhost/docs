@@ -59,3 +59,14 @@ Ghost's admin application does a lot to ensure that unknown scripts are not run 
 If you are concerned that trusted users you invite to create your site will act maliciously the best advice is to split your front-end and admin area onto different domains (e.g. `https://mysite.com` and `https://mysiteadmin.com/ghost/`). This way browsers offer greater built-in protection because credentials cannot be read across domains. Even in this case it should be understood that you are giving invited users completely free reign in content creation so absolute security guarantees do not exist.
 
 We take any attack vector where an untrusted user is able to inject malicious content very seriously and welcome any and all reports.
+
+## How reports are handled
+
+If you report a vulnerability to us through the security@ghost.org mailing list, we will:
+
+- Acknowledge your email within a week
+- Investigate and let you know our findings within two weeks
+- Ensure any critical issues are resolved within a month
+- Ensure any low-priority issues are resolved within three months
+- Credit any open source commits to you
+- Let you know when we have released fixes for issues you report
