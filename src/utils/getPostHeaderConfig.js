@@ -12,7 +12,7 @@ export const getPostHeaderConfig = ({ pathname }) => {
         postHeaderConfig.title = `API Reference`
         postHeaderConfig.mainLink = `/api/`
         if (pathname.match(/\/handlebars-themes\//i)) {
-            postHeaderConfig.subtitle = `Handlebars`
+            postHeaderConfig.subtitle = `Handlebars Themes`
             postHeaderConfig.subLink = `/api/handlebars-themes/`
         }
         if (pathname.match(/\/gatsby\//i)) {

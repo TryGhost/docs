@@ -39,8 +39,6 @@
     items:
       - title: Config options
         link: /concepts/config/
-      - title: Dynamic routing
-        link: /concepts/routing/
       - title: Redirects
         link: /concepts/redirects/
       - title: Storage adapters

@@ -160,14 +160,14 @@
     color: var(--blue-d2);
     word-break: break-word;
     text-decoration: none;
-    /* box-shadow: rgba(62, 176, 239, 0.4) 0 -1px 0 inset; */
+    box-shadow: var(--blue) 0 -1px 0 inset;
     transition: all 0.2s ease;
 }
 
 .post-content a:hover {
     color: #2497d6;
-    box-shadow: var(--blue) 0 -1px 0 inset;
     text-decoration: none;
+    box-shadow: var(--blue) 0 -1px 0 inset;
 }
 
 .post-content .gatsby-resp-image-link:hover,
@@ -250,6 +250,7 @@ Usage (In Ghost editor):
 .post-content h6 .anchor {
     margin: -2px 0 0 -40px;
     padding: 0 12px;
+    box-shadow: none;
 }
 
 .post-content h1 .anchor svg,
@@ -609,13 +610,11 @@ Usage (In Ghost editor):
 .post-content table {
     display: block;
     overflow-x: auto;
-    white-space: nowrap;
     margin: var(--vr-4) 0 0;
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
     font-size: 1.35rem;
-    white-space: nowrap;
     vertical-align: top;
     -webkit-overflow-scrolling: touch;
     align-self: flex-start;
@@ -630,28 +629,29 @@ Usage (In Ghost editor):
     border-top-left-radius: 4px;
 }
 
+.post-content tr {
+    width: 100%;
+}
+
 .post-content th {
-    color: var(--darkgrey);
-    font-size: 1.35rem;
-    line-height: 1em;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-    text-align: left;
     padding: 12px;
     border-bottom: 3px solid var(--whitegrey-l1);
+    text-align: left;
+    color: var(--darkgrey);
+    font-weight: 600;
+    font-size: 1.35rem;
+    line-height: 1.65em;
+    letter-spacing: 0.2px;
 }
 
 .post-content td {
-    padding: 14px 12px;
-    text-align: left;
-    line-height: 1.4em;
-    vertical-align: middle;
+    min-width: 150px;
+    padding: 14px;
     border-bottom: 1px solid var(--whitegrey-l1);
     border-right: 1px solid var(--whitegrey-l1);
-}
-
-.post-content td:last-child {
-    border-right: none;
+    vertical-align: top;
+    text-align: left;
+    line-height: 1.6em;
 }
 
 .post-content th:first-child,
@@ -659,6 +659,23 @@ Usage (In Ghost editor):
     text-align: left;
     padding-left: 0;
 }
+
+.post-content td:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.post-content td ul {
+    margin: 0.7em 0;
+    padding: 0;
+    list-style: none;
+}
+
+.post-content td ul li {
+    margin: 0.7em 0;
+    padding: 0;
+}
+
 
 /* 7.6. Koenig Styles
 /* ---------------------------------------------------------- */
