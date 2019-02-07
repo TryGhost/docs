@@ -50,7 +50,7 @@ const plugins = [
                 },
                 `gatsby-remark-autolink-headers`,
                 `gatsby-remark-code-titles`,
-                `gatsby-remark-prismjs`, // TODO: make aliases work!
+                `gatsby-remark-prismjs`,
                 `gatsby-remark-external-links`,
             ],
         },
