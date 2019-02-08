@@ -123,5 +123,7 @@
         link: /api/handlebars-themes/routing/channels/
       - title: Properties
         link: /api/handlebars-themes/routing/properties/
+      - title: Redirects
+        link: /api/handlebars-themes/routing/redirects/
       - title: Further Reading
         link: /api/handlebars-themes/routing/tips/

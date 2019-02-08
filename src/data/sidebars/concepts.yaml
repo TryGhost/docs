@@ -39,8 +39,6 @@
     items:
       - title: Config options
         link: /concepts/config/
-      - title: Redirects
-        link: /concepts/redirects/
       - title: Storage adapters
         link: /concepts/storage-adapters/
       - title: Custom schedulers

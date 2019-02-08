@@ -17,21 +17,22 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 
 
 # General
-/favicon.ico                        /favicon.png                                               302!
-/install                            /setup                              301!
+/favicon.ico                                /favicon.png                                    302!
+/install                                    /setup                                          301!
 
 
 # CURRENT REDIRECTS
-/concepts                                   /concepts/introduction/                               301!
-/api/handlebars-themes/helpers/blog    /api/handlebars-themes/helpers/site      301!
-/concepts/routing                           /api/handlebars-themes/routing/
+/concepts                                   /concepts/introduction/                         301!
+/api/handlebars-themes/helpers/blog         /api/handlebars-themes/helpers/site             301!
+/concepts/routing                           /api/handlebars-themes/routing/                 301!
+/concepts/redirects                         /api/handlebars-themes/redirects/               301!
 
 # Temporary API redirects
-/api/admin                                       https://api.ghost.org/                        301!
-/api/admin/*                                     https://api.ghost.org/                        301!
+/api/admin                                  https://api.ghost.org/                          301!
+/api/admin/*                                https://api.ghost.org/                          301!
 
 
-# OLD CONTENT -------- PROBABLY DONT EDIT BELOW HERE --------
+# ---------------- OLD CONTENT - PROBABLY DONT EDIT BELOW HERE ----------------
 
 /docs/search                           /                                        301!
 /docs/supported-node-versions          /faq/node-versions/                      301!
@@ -46,7 +47,7 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /docs/config                           /concepts/config/                        301!
 /docs/mail-config                      /concepts/config/                        301!
 /docs/upgrade                          /faq/upgrade-to-ghost-2-0/               301!
-/docs/redirects                        /concepts/redirects/                     301!
+/docs/redirects                        /api/handlebars-themes/redirects/        301!
 /docs/dynamic-routing                  /concepts/routing/                       301!
 /docs/install#section-your-user-must-own-this-directory      /install/ubuntu/#create-a-directory 301!
 /docs/install#section-create-a-new-user                      /install/ubuntu/#create-a-new-user-                                    301!
