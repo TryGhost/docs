@@ -1,5 +1,5 @@
 - groups:
-  - group: Handlebars Themes
+  - group: Getting Started
     items:
       - title: Overview
         link: /api/handlebars-themes/
@@ -7,9 +7,9 @@
         link: /api/handlebars-themes/structure/
       - title: Package.json
         link: /api/handlebars-themes/packagejson/
-  - group: Contexts
+  - group: Contexts & Templates
     items:
-      - title: Context Overview
+      - title: Overview
         link: /api/handlebars-themes/context/
       - title: Index
         link: /api/handlebars-themes/context/index/
@@ -99,9 +99,9 @@
         link: /api/handlebars-themes/helpers/log/
       - title: '@labs'
         link: /api/handlebars-themes/helpers/labs/
-  - group: Features
+  - group: Extra Features
     items:
-      - title: Editor
+      - title: Editor Output
         link: /api/handlebars-themes/editor/
       - title: Responsive Images
         link: /api/handlebars-themes/responsive-images/
@@ -109,3 +109,21 @@
         link: /api/handlebars-themes/google-amp/
       - title: Subscribers
         link: /api/handlebars-themes/subscribers/
+  - group: URLs & Routing
+    items:
+      - title: Overview
+        link: /api/handlebars-themes/routing/
+      - title: Routes
+        link: /api/handlebars-themes/routing/routes/
+      - title: Collections
+        link: /api/handlebars-themes/routing/collections/
+      - title: Taxonomies
+        link: /api/handlebars-themes/routing/taxonomies/
+      - title: Channels
+        link: /api/handlebars-themes/routing/channels/
+      - title: Properties
+        link: /api/handlebars-themes/routing/properties/
+      - title: Redirects
+        link: /api/handlebars-themes/routing/redirects/
+      - title: Further Reading
+        link: /api/handlebars-themes/routing/tips/
