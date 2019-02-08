@@ -1,4 +1,5 @@
 const createPages = require(`./gatsby/createPages`)
+const onCreateNode = require(`./gatsby/onCreateNode`)
 
 exports.createPages = ({ graphql, actions }) => {
     return {
@@ -8,4 +9,8 @@ exports.createPages = ({ graphql, actions }) => {
     }
 }
 
-exports.onCreateNode = require(`./gatsby/onCreateNode`)
+exports.onCreateNode = ({ node, getNode, actions }) => {
+    return {
+        createMarkdownNodeFields: onCreateNode.createMarkdownNodeFields(({ node, getNode, actions })),
+    }
+}
