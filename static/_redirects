@@ -331,6 +331,8 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /docs/alpha-and-beta-versions	                    /                                           301!
 /docs/log	                                        /api/ghost-cli/log/                         301!
 /mail 	                                            /concepts/config/                           301!
+/config                                             /concepts/config/                           301!
+/security                                           /concepts/vulnerabilities/                  301!
 /docs/introduction/edit                         	/                                           301!
 /usage/faq	                                        /faq/                                       301!
 /docs/log/edit	                                    /                                           301!
