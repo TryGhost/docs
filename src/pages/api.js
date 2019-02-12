@@ -43,7 +43,7 @@ const APIPage = ({ data, location }) => {
                             <p className={`${Spirit.small} midgrey-l2 mt2`}>Frameworks for working with the Ghost API to build a publication website</p>
                         </div>
                         <div className={sectionStyles.cardContainer}>
-                            <APICard to="/api/handlebars-themes/" icon="handlebars-logo">Handlebars</APICard>
+                            <APICard to="/api/handlebars-themes/" icon="ghostache">Ghost Themes</APICard>
                             <APICard to="/api/gatsby/" icon="gatsby-logo">Gatsby</APICard>
                             <APICard to="/api/helpers/" icon="javascript-logo">Vanilla JS</APICard>
                         </div>
