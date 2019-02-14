@@ -82,7 +82,13 @@ class Post extends React.Component {
                         <div>
                             <div className={`w-100 mw-content bg-white shadow-2 br4 ${(this.state.isToggleOn ? `` : ` br--bottom`)}`}>
                                 <article className="flex-auto pa5 pa8-m pa15-l pt10-ns pb10-ns pt10-l pb10-l">
-                                    <h1 className={`${Spirit.h1} darkgrey` }>{post.frontmatter.title}</h1>
+                                    <div className="flex content-between items-baseline justify-between no-wrap">
+                                        <h1 className={`${Spirit.h1} darkgrey`}>{post.frontmatter.title}</h1>
+                                        <a href="#" className="link no-underline midgrey flex items-end" target="_blank" rel="noopener noreferrer">
+                                            <Icon name="pencil" className="w4 h-auto fill-midgrey db pr2" />
+                                            Edit on GitHub
+                                        </a>
+                                    </div>
                                     <section
                                         className="post-content external-scripts"
                                         dangerouslySetInnerHTML={{ __html: post.html } }
