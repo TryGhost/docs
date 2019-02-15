@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import url from 'url'
 
 import { Layout } from '../../components/common/layout'
 import { Spirit } from '../../styles/spirit-styles'
@@ -10,62 +11,33 @@ import { PostHeader, FeedbackForm, Icon, TOC } from '../../components/common'
 import { MetaData, getMetaImageUrls } from '../../components/common/meta'
 
 const getGitHubLink = (absoluteFilePath) => {
-    console.log(`TCL: getGitHubLink -> absoluteFilePath`, absoluteFilePath)
     let contentFilePath = ``
-    // absoluteFilePath = `/something/else.js`
 
-    // Check for a valid path (= everthing inside of our /content dir) and strip off
-    // whatever comes after /content
-    if (/^(?:\S*\/content\/)(\S*)/i.exec(absoluteFilePath)) {
-        contentFilePath = /^(?:\S*\/content\/)(\S*)/i.exec(absoluteFilePath)[1]
-    } else {
-        return null
-    }
-    console.log(`TCL: getGitHubLink -> contentFilePath`, contentFilePath)
-
+    // testing only for `/content` doesn't work as we have a URL that contains
+    // `/content` twice. Therefore we're testing for each API version docs and
+    // the local content files.
     const gitHubRepos = [
         {
-            regex: /^api\/v1/i,
-            url: `v1`,
+            regex: /^(?:\S*\/content\/api\/v0\.11\/)(\S*)/i,
+            url: `https://github.com/TryGhost/docs-api/blob/v0.11/`,
         },
         {
-            regex: /^api\/v2/i,
-            url: `v2`,
+            regex: /^(?:\S*\/content\/api\/v2\/)(\S*)/i,
+            url: `https://github.com/TryGhost/docs-api/blob/master/`,
         },
         {
-            regex: /^(?!api\/)\S*/ig,
-            url: `here`,
+            regex: /^(?:\S*\/content\/)(\S*)/i,
+            url: `https://github.com/TryGhost/docs/blob/master/content/`,
         },
     ]
 
-    console.log(`TCL: getGitHubLink -> repo match?`, /^((?!api\/)\S*)/ig.test(contentFilePath))
-
-    // How can this work?
-    // 1. Our absolute file paths determine in which repo the file is:
-    //     - /content/api -> docs-api repo (different branches for different versions)
-    //     - /content/NOT api -> this repo
-
-    gitHubRepos.forEach((repo) => {
-        console.log(`TCL: getGitHubLink -> repo`, repo.regex)
-
-        if (repo.regex.test(contentFilePath)) {
-            console.log(`TCL: getGitHubLink -> repo`, repo.url)
-
-            contentFilePath = repo.url
+    // Using for...of here as we need to stop iterating as soon as we have a match
+    for (let repo of gitHubRepos) {
+        if (repo.regex.test(absoluteFilePath)) {
+            contentFilePath = url.resolve(repo.url, repo.regex.exec(absoluteFilePath)[1])
+            break
         }
-    })
-    // for (let key in gitHubRepos) {
-    //     console.log(`TCL: getGitHubLink -> key`, gitHubRepos[key].regex)
-    //     if (contentFilePath.match(gitHubRepos[key].regex)) {
-    //         console.log(`TCL: getGitHubLink -> contentFilePath.match(key.regex)`, contentFilePath.match(gitHubRepos[key].regex))
-    //         return contentFilePath = gitHubRepos[key].url
-    //     }
-    // }
-    // 2. This meeans we need to figure out what follows after /content and only take that bit of the part
-    // 3. We need to be able to look up the GitHub URL depending on what path we read. The more generic and future proof, the better -> switch case
-    // 4. Once we got the correct repository, we need to create the edit link by concatenating GitHub URL, file path, and `/edit` slug
-
-    console.log(`TCL: getGitHubLink -> returned contentFilePath`, contentFilePath)
+    }
 
     return contentFilePath
 }
@@ -90,7 +62,6 @@ class Post extends React.Component {
     render() {
         const { location } = this.props
         const post = this.props.data.markdownRemark
-        console.log(`TCL: Post -> render -> this.props.data`, this.props)
 
         const githubLink = getGitHubLink(post.fileAbsolutePath)
 
