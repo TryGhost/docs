@@ -45,7 +45,6 @@
     "@tryghost/helpers": "1.0.1",
     "@tryghost/helpers-gatsby": "1.0.1",
     "algolia-html-extractor": "0.0.1",
-    "bluebird": "3.5.3",
     "gatsby": "2.0.116",
     "gatsby-image": "2.0.29",
     "gatsby-plugin-algolia": "0.3.0",

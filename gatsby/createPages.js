@@ -1,4 +1,3 @@
-const Promise = require(`bluebird`)
 const path = require(`path`)
 const _ = require(`lodash`)
 const { allGhostPosts, allMarkdownPosts } = require(`../utils/node-queries`)
