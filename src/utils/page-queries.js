@@ -35,6 +35,7 @@ export const markdownFields = graphql`
         }
         timeToRead
         excerpt
+        fileAbsolutePath
     }
 `
 

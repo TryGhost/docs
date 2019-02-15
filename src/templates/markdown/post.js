@@ -9,6 +9,67 @@ import { PrevNextSection } from '../../components/common/prev-next'
 import { PostHeader, FeedbackForm, Icon, TOC } from '../../components/common'
 import { MetaData, getMetaImageUrls } from '../../components/common/meta'
 
+const getGitHubLink = (absoluteFilePath) => {
+    console.log(`TCL: getGitHubLink -> absoluteFilePath`, absoluteFilePath)
+    let contentFilePath = ``
+    // absoluteFilePath = `/something/else.js`
+
+    // Check for a valid path (= everthing inside of our /content dir) and strip off
+    // whatever comes after /content
+    if (/^(?:\S*\/content\/)(\S*)/i.exec(absoluteFilePath)) {
+        contentFilePath = /^(?:\S*\/content\/)(\S*)/i.exec(absoluteFilePath)[1]
+    } else {
+        return null
+    }
+    console.log(`TCL: getGitHubLink -> contentFilePath`, contentFilePath)
+
+    const gitHubRepos = [
+        {
+            regex: /^api\/v1/i,
+            url: `v1`,
+        },
+        {
+            regex: /^api\/v2/i,
+            url: `v2`,
+        },
+        {
+            regex: /^(?!api\/)\S*/ig,
+            url: `here`,
+        },
+    ]
+
+    console.log(`TCL: getGitHubLink -> repo match?`, /^((?!api\/)\S*)/ig.test(contentFilePath))
+
+    // How can this work?
+    // 1. Our absolute file paths determine in which repo the file is:
+    //     - /content/api -> docs-api repo (different branches for different versions)
+    //     - /content/NOT api -> this repo
+
+    gitHubRepos.forEach((repo) => {
+        console.log(`TCL: getGitHubLink -> repo`, repo.regex)
+
+        if (repo.regex.test(contentFilePath)) {
+            console.log(`TCL: getGitHubLink -> repo`, repo.url)
+
+            contentFilePath = repo.url
+        }
+    })
+    // for (let key in gitHubRepos) {
+    //     console.log(`TCL: getGitHubLink -> key`, gitHubRepos[key].regex)
+    //     if (contentFilePath.match(gitHubRepos[key].regex)) {
+    //         console.log(`TCL: getGitHubLink -> contentFilePath.match(key.regex)`, contentFilePath.match(gitHubRepos[key].regex))
+    //         return contentFilePath = gitHubRepos[key].url
+    //     }
+    // }
+    // 2. This meeans we need to figure out what follows after /content and only take that bit of the part
+    // 3. We need to be able to look up the GitHub URL depending on what path we read. The more generic and future proof, the better -> switch case
+    // 4. Once we got the correct repository, we need to create the edit link by concatenating GitHub URL, file path, and `/edit` slug
+
+    console.log(`TCL: getGitHubLink -> returned contentFilePath`, contentFilePath)
+
+    return contentFilePath
+}
+
 class Post extends React.Component {
     constructor(props) {
         super(props)
@@ -29,6 +90,10 @@ class Post extends React.Component {
     render() {
         const { location } = this.props
         const post = this.props.data.markdownRemark
+        console.log(`TCL: Post -> render -> this.props.data`, this.props)
+
+        const githubLink = getGitHubLink(post.fileAbsolutePath)
+
         const imageUrl = getMetaImageUrls()
         const sideBarLayout = {}
 
@@ -84,10 +149,12 @@ class Post extends React.Component {
                                 <article className="flex-auto pa5 pa8-m pa15-l pt10-ns pb10-ns pt10-l pb10-l relative">
                                     <div className="flex content-between items-baseline justify-between no-wrap">
                                         <h1 className={`${Spirit.h1} darkgrey`}>{post.frontmatter.title}</h1>
-                                        <a href="#" className="link no-underline midgrey flex items-start f8 absolute top-10 right-8 o-80 glow" target="_blank" rel="noopener noreferrer">
-                                            <Icon name="pencil" className="w3 h3 fill-midgrey db pr2 o-80" />
-                                            Edit on GitHub
-                                        </a>
+                                        {githubLink &&
+                                            <a href={githubLink} className="link no-underline midgrey flex items-start f8 absolute top-10 right-8 o-80 glow" target="_blank" rel="noopener noreferrer">
+                                                <Icon name="pencil" className="w3 h3 fill-midgrey db pr2 o-80" />
+                                                Edit on GitHub
+                                            </a>
+                                        }
                                     </div>
                                     <section
                                         className="post-content external-scripts"
