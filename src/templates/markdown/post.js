@@ -121,7 +121,11 @@ class Post extends React.Component {
                                     <div className="flex content-between items-baseline justify-between no-wrap">
                                         <h1 className={`${Spirit.h1} darkgrey`}>{post.frontmatter.title}</h1>
                                         {githubLink &&
-                                            <a href={githubLink} className="link no-underline midgrey flex items-start f8 absolute top-10 right-8 o-80 glow" target="_blank" rel="noopener noreferrer">
+                                            <a href={githubLink}
+                                                className="link no-underline midgrey flex-l dn items-start f8 absolute top-10 right-8 o-80 glow"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
                                                 <Icon name="pencil" className="w3 h3 fill-midgrey db pr2 o-80" />
                                                 Edit on GitHub
                                             </a>
