@@ -7,16 +7,11 @@
  */
 const SERVICE_WORKER_KILL_SWITCH = (process.env.SERVICE_WORKER_KILL_SWITCH === `true`) || false
 
-const killServiceWorker = () => {
-    // && /https/.test(location.protocol)
-    if (SERVICE_WORKER_KILL_SWITCH && `serviceWorker` in navigator) {
+module.exports.killServiceWorker = () => {
+    if (SERVICE_WORKER_KILL_SWITCH && `serviceWorker` in navigator && /https/.test(location.protocol)) {
         navigator.serviceWorker.getRegistrations().then(registratons => registratons.forEach((registration) => {
             console.log(`Unregister service worker:`, registration)
             return registration.unregister()
         }))
     }
-}
-
-module.exports = function () {
-    killServiceWorker()
 }

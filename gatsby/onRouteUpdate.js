@@ -10,7 +10,7 @@
  *
  * TODO: use our browser eslint for this code
  */
-var trustAllScripts = function () {
+module.exports.trustAllScripts = function () {
     var scriptNodes = document.querySelectorAll('.external-scripts script');
 
     for (var i = 0; i < scriptNodes.length; i += 1) {
@@ -23,8 +23,4 @@ var trustAllScripts = function () {
             document.getElementsByTagName('head')[0].appendChild(s);
         }
     }
-};
-
-module.exports = function () {
-    trustAllScripts();
 };

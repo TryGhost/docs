@@ -4,7 +4,7 @@ const urlUtils = require(`../utils/urls`)
 const { markdownQueryConfig, defaultMarkdownSection } = require(`../utils/query-config`)
 const knownSections = _.map(markdownQueryConfig, `section`)
 
-module.exports = async ({ node, getNode, actions }) => {
+module.exports.createMarkdownNodeFields = async ({ node, getNode, actions }) => {
     const { createNodeField } = actions
 
     if (node.internal.type === `MarkdownRemark`) {

@@ -1,4 +1,3 @@
-const Promise = require(`bluebird`)
 const path = require(`path`)
 const _ = require(`lodash`)
 const { allGhostPosts, allMarkdownPosts } = require(`../utils/node-queries`)
@@ -6,10 +5,8 @@ const { ghostQueryConfig } = require(`../utils/query-config`)
 const urlUtils = require(`../utils/urls`)
 const getRelatedPosts = require(`../utils/getRelatedPosts`)
 
-module.exports = async ({ graphql, actions }) => {
-    const { createPage } = actions
+module.exports.createRedirects = ({ actions }) => {
     const { createRedirect } = actions
-    const queryPromises = []
 
     createRedirect({
         fromPath: `/api/admin/`,
@@ -25,6 +22,11 @@ module.exports = async ({ graphql, actions }) => {
         redirectInBrowser: true,
         toPath: `/concepts/introduction/`,
     })
+}
+
+module.exports.createGhostPages = async ({ graphql, actions }) => {
+    const { createPage } = actions
+    const queryPromises = []
 
     // Query for each of the tags that we defined above
     ghostQueryConfig.forEach(({ tag, section, template, tagsTemplate }) => {
@@ -99,6 +101,13 @@ module.exports = async ({ graphql, actions }) => {
                 })
         }))
     })
+
+    return Promise.all(queryPromises)
+}
+
+module.exports.createMarkdownPages = async ({ graphql, actions }) => {
+    const { createPage } = actions
+    const queryPromises = []
 
     queryPromises.push(new Promise((resolve, reject) => {
         graphql(allMarkdownPosts())
