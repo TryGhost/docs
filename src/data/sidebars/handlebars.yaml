@@ -89,8 +89,6 @@
         link: /api/handlebars-themes/helpers/prev_next_post/
       - title: plural
         link: /api/handlebars-themes/helpers/plural/
-      - title: lang
-        link: /api/handlebars-themes/helpers/lang/
       - title: translate
         link: /api/handlebars-themes/helpers/translate/
       - title: encode
