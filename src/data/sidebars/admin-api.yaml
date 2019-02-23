@@ -1,4 +1,27 @@
-- title: Admin API
-  items:
-    - title: Overview
-      link: /api/admin/
+- groups:
+  - group: Getting Started
+    items:
+      - title: Overview
+        link: /api/admin/
+      - title: Authentication
+        link: /api/admin/authentication/
+      - title: Concepts
+        link: /api/admin/concepts/
+  - group: Endpoints
+    items:
+      - title: Overview
+        link: /api/admin/endpoints/
+      - title: Posts
+        link: /api/admin/posts/
+      - title: Pages
+        link: /api/admin/pages/
+      - title: Tags
+        link: /api/admin/tags/
+      - title: Users
+        link: /api/admin/users/
+      - title: Images
+        link: /api/admin/images/
+  - group: Advanced
+    items:
+      - title: Publishing
+        link: /api/admin/publishing/
