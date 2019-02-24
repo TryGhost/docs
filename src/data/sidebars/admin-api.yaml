@@ -12,15 +12,15 @@
       - title: Overview
         link: /api/admin/endpoints/
       - title: Posts
-        link: /api/admin/posts/
+        link: /api/admin/endpoints/#posts
       - title: Pages
-        link: /api/admin/pages/
+        link: /api/admin/endpoints/#pages
       - title: Tags
-        link: /api/admin/tags/
+        link: /api/admin/endpoints/#tags
       - title: Users
-        link: /api/admin/users/
+        link: /api/admin/endpoints/#users
       - title: Images
-        link: /api/admin/images/
+        link: /api/admin/endpoints/#images
   - group: Advanced
     items:
       - title: Publishing

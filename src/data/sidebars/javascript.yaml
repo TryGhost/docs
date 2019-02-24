@@ -1,0 +1,13 @@
+- groups:
+  - group: Getting Started
+    items:
+      - title: Overview
+        link: /api/javascript/
+  - group: Content API
+    items:
+      - title: Content API
+        link: /api/javascript/#content-api
+  - group: Admin API
+    items:
+      - title: Admin API
+        link: /api/javascript/#admin-api
