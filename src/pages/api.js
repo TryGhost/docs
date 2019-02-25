@@ -39,13 +39,12 @@ const APIPage = ({ data, location }) => {
                 <div className={`${Spirit.page.l} pb-vw4 pb-vw3-ns pt-vw4 pt-vw3-ns`}>
                     <div className="grid-12">
                         <div className={sectionStyles.headingContainer}>
-                            <h2 id="frontend-sdk" className={`${Spirit.h3} pt20 nt20`}>Frontend SDKs</h2>
+                            <h2 id="frontend-sdk" className={`${Spirit.h3} pt20 nt20`}>Frontend Frameworks</h2>
                             <p className={`${Spirit.small} midgrey-l2 mt2`}>Frameworks for working with the Ghost API to build a publication website</p>
                         </div>
                         <div className={sectionStyles.cardContainer}>
                             <APICard to="/api/handlebars-themes/" icon="ghostache">Ghost Themes</APICard>
                             <APICard to="/api/gatsby/" icon="gatsby-logo">Gatsby</APICard>
-                            <APICard to="/api/helpers/" icon="javascript-logo">Vanilla JS</APICard>
                         </div>
                     </div>
 
@@ -70,6 +69,7 @@ const APIPage = ({ data, location }) => {
                             <APICard to="/api/ghost-cli/" icon="ghost-cli-logo">Ghost-CLI</APICard>
                             <APICard to="/api/migration/" icon="migration-logo">Migration</APICard>
                             <APICard href="https://gscan.ghost.org" icon="gscan-logo">GScan</APICard>
+                            <APICard to="/api/javascript/sdk/" icon="javascript-logo">JavaScript SDK</APICard>
                         </div>
                     </div>
 
