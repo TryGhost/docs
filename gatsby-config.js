@@ -83,7 +83,70 @@ const plugins = [
         },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
+    {
+        resolve: `gatsby-plugin-advanced-sitemap`,
+        options: {
+            query: `
+                {
+                allGhostPost {
+                    edges {
+                        node {
+                            id
+                            slug
+                            published_at
+                            updated_at
+                            created_at
+                            feature_image
+                        }
+                    }
+                },
+                allGhostTag {
+                    edges {
+                        node {
+                            id
+                            slug
+                            feature_image
+                        }
+                    }
+                },
+                allMarkdownRemark{
+                    edges {
+                        node {
+                            id
+                            frontmatter {
+                                published_at: date
+                                feature_image: image
+                            }
+                            fields {
+                                slug
+                            }
+                        }
+                    }
+                }
+            }`,
+            mapping: {
+                allGhostPost: {
+                    sitemap: `pages`,
+                },
+                allGhostTag: {
+                    sitemap: `tags`,
+                },
+                allMarkdownRemark: {
+                    sitemap: `pages`,
+                },
+            },
+            exclude: [
+                `/dev-404-page`,
+                `/404`,
+                `/404.html`,
+                `/offline-plugin-app-shell-fallback`,
+                `/data-schema`,
+                `/data-schema-2`,
+                `/v0.11/README`,
+                `/README`,
+            ],
+        },
+    },
     `gatsby-plugin-force-trailing-slashes`,
     /**
      *  Display Plugins
