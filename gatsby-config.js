@@ -88,7 +88,7 @@ const plugins = [
         options: {
             query: `
                 {
-                allGhostPost(sort: {order: ASC, fields: published_at}) {
+                allGhostPost {
                     edges {
                         node {
                             id
@@ -109,7 +109,7 @@ const plugins = [
                         }
                     }
                 },
-                allMarkdownRemark(sort: {order: ASC, fields: [frontmatter___date]}) {
+                allMarkdownRemark{
                     edges {
                         node {
                             id
