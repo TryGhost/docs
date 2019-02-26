@@ -126,19 +126,13 @@ const plugins = [
             }`,
             mapping: {
                 allGhostPost: {
-                    name: `pages`,
-                    path: `/`,
-                    source: `pages`,
+                    sitemap: `pages`,
                 },
                 allGhostTag: {
-                    name: `tags`,
-                    path: `/`,
-                    source: `tags`,
+                    sitemap: `tags`,
                 },
                 allMarkdownRemark: {
-                    name: `pages`,
-                    path: `/`,
-                    source: `pages`,
+                    sitemap: `pages`,
                 },
             },
             exclude: [
