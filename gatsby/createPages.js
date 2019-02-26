@@ -8,12 +8,6 @@ const getRelatedPosts = require(`../utils/getRelatedPosts`)
 module.exports.createRedirects = ({ actions }) => {
     const { createRedirect } = actions
 
-    createRedirect({
-        fromPath: `/api/admin/`,
-        isPermanent: true,
-        redirectInBrowser: true,
-        toPath: `https://api.ghost.org`,
-    })
     // The /concepts page doesn't exist, we need to redirect to
     // the first post of this section
     createRedirect({

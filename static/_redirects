@@ -29,11 +29,6 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /concepts/redirects                         /api/handlebars-themes/redirects/               301!
 /api/helpers                                /api/javascript/sdk/#helpers
 
-# Temporary API redirects
-/api/admin                                  https://api.ghost.org/                          301!
-/api/admin/*                                https://api.ghost.org/                          301!
-
-
 # ---------------- OLD CONTENT - PROBABLY DONT EDIT BELOW HERE ----------------
 
 /docs/search                           /                                        301!
