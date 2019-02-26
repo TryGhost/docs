@@ -83,7 +83,76 @@ const plugins = [
         },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
+    {
+        resolve: `gatsby-plugin-advanced-sitemap`,
+        options: {
+            query: `
+                {
+                allGhostPost(sort: {order: ASC, fields: published_at}) {
+                    edges {
+                        node {
+                            id
+                            slug
+                            published_at
+                            updated_at
+                            created_at
+                            feature_image
+                        }
+                    }
+                },
+                allGhostTag {
+                    edges {
+                        node {
+                            id
+                            slug
+                            feature_image
+                        }
+                    }
+                },
+                allMarkdownRemark(sort: {order: ASC, fields: [frontmatter___date]}) {
+                    edges {
+                        node {
+                            id
+                            frontmatter {
+                                published_at: date
+                                feature_image: image
+                            }
+                            fields {
+                                slug
+                            }
+                        }
+                    }
+                }
+            }`,
+            mapping: {
+                allGhostPost: {
+                    name: `pages`,
+                    path: `/`,
+                    source: `pages`,
+                },
+                allGhostTag: {
+                    name: `tags`,
+                    path: `/`,
+                    source: `tags`,
+                },
+                allMarkdownRemark: {
+                    name: `pages`,
+                    path: `/`,
+                    source: `pages`,
+                },
+            },
+            exclude: [
+                `/dev-404-page`,
+                `/404`,
+                `/404.html`,
+                `/offline-plugin-app-shell-fallback`,
+                `/data-schema`,
+                `/data-schema-2`,
+                `/v0.11/README`,
+                `/README`,
+            ],
+        },
+    },
     `gatsby-plugin-force-trailing-slashes`,
     /**
      *  Display Plugins
