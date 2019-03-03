@@ -12,7 +12,7 @@ sidebar: "concepts"
 
 Take part in responsible disclosure to the Ghost Security team
 
-Potential security vulnerabilities can be reported directly us at `security@ghost.org`. The Ghost Security Team communicates privately and works in a secured, isolated repository for tracking, testing, and resolving security-related issues.
+Potential security vulnerabilities can be reported directly to us at `security@ghost.org`. The Ghost Security Team communicates privately and works in a secured, isolated repository for tracking, testing, and resolving security-related issues.
 
 
 ## Responsible disclosure guidelines

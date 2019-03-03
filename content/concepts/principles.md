@@ -36,7 +36,7 @@ The best way to get a feature you want looked at quicker is to [get involved by 
 
 There are a million things we *could* build, but we certainly can't build all of them - nor would we want to. So how do we determine what goes where?
 
-Features which are fundamentally core to creating a managing a modern publication tend to be the things which are almost always included in core. These are the types of features without which the platform would be fundamentally less useful, or too reliant on external services for comfort.
+Features which are fundamentally core to creating and managing a modern publication tend to be the things which are almost always included in core. These are the types of features without which the platform would be fundamentally less useful, or too reliant on external services for comfort.
 
 This is the area where we spend the majority of our product development time and where we believe we can create something special.
 
