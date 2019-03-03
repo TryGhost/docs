@@ -90,7 +90,7 @@ module.exports = MyCustomAdapter;
 
 Your custom storage adapter must implement five required functions: 
 * `save` - The `.save()` method stores the image and returns a promise which resolves the path from which the image should be requested in future.
-* `exists` - Used by the base storage adapter to check whether a file exists or note
+* `exists` - Used by the base storage adapter to check whether a file exists or not
 * `serve` - Ghost calls `.serve()` as part of its middleware stack, and mounts the returned function as the middleware for serving images
 * `delete`
 * `read`
