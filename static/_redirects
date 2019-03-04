@@ -27,7 +27,10 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /api/handlebars-themes/helpers/lang         /api/handlebars-themes/helpers/site             301!
 /concepts/routing                           /api/handlebars-themes/routing/                 301!
 /concepts/redirects                         /api/handlebars-themes/redirects/               301!
-/api/helpers                                /api/javascript/sdk/#helpers
+/api/helpers                                /api/javascript/sdk/#helpers                    301!
+/integrations/google-analytics/             /integrations/google/                           301!
+
+
 
 # ---------------- OLD CONTENT - PROBABLY DONT EDIT BELOW HERE ----------------
 
@@ -199,7 +202,7 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /article/102-subdomain-setup-using-cloudflare   /faq/cloudflare-custom-domain-setup/            301!
 /section/6-apps-integrations                    /integrations/                                  301!
 /article/15-disqus                              /integrations/disqus/                           301!
-/article/16-google-analytics                    /integrations/google-analytics/                 301!
+/article/16-google-analytics                    /integrations/google/                           301!
 /article/42-zapier                              /integrations/zapier/                           301!
 /article/48-slack                               /integrations/slack/                            301!
 /article/41-unsplash                            /integrations/unsplash/                         301!
