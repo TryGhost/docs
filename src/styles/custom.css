@@ -976,7 +976,7 @@ kbd {
 }
 
 
-/* Tabs  
+/* Tabs
 
 Temporary solution for switching between languages on pages. MD input has
 to be custom HTML.
@@ -1028,6 +1028,16 @@ to be custom HTML.
     width: 100%;
     order: 99;
 }
+
+/** Dear Zimo, */
+.code-tabs .panel > p:first-child {
+    display: none;
+}
+/** I am sorry. */
+.code-tabs .panel .gatsby-highlight {
+    margin-top: 0;
+}
+/** Love, Hannah */
 
 .code-tabs input:checked + label + .panel {
     display: block;
