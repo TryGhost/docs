@@ -51,6 +51,14 @@ const plugins = [
                         withWebp: true,
                     },
                 },
+                {
+                    resolve: `gatsby-remark-embed-snippet`,
+                    options: {
+                        // Example code links are relative to this dir.
+                        // eg examples/path/to/file.js
+                        directory: `${__dirname}/content/api/v2/.examples/`,
+                    },
+                },
                 `gatsby-remark-autolink-headers`,
                 `gatsby-remark-code-titles`,
                 `gatsby-remark-prismjs`,
