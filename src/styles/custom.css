@@ -974,3 +974,76 @@ kbd {
 .post-content p+.sbox {
     margin: 3.2rem 0 0;
 }
+
+
+/* Tabs  
+
+Temporary solution for switching between languages on pages. MD input has
+to be custom HTML.
+----------------------------------------------------------------------- */
+.code-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    background: #2a3644;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: relative;
+}
+
+.code-tabs:before {
+    content: "";
+    position: absolute;
+    left: 32px;
+    top: 46px;
+    right: 32px;
+    height: 1px;
+    background: color-mod(var(--midlightgrey) alpha(20%));
+}
+
+.code-tabs input {
+    position: absolute;
+    opacity: 0;
+}
+
+.code-tabs label {
+    cursor: pointer;
+    color: var(--midlightgrey);
+    padding: 4px 16px;
+    margin: 12px 0 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.code-tabs label:first-of-type {
+    margin-left: 32px;
+}
+
+.code-tabs label:hover {
+    color: var(--yellow);
+}
+
+.code-tabs input:focus + label {
+    z-index: 1;
+}
+
+.code-tabs label:active,
+.code-tabs input:checked + label {
+    color: var(--yellow);
+    font-weight: 600;
+    border-color: color-mod(var(--yellow) alpha(80%));
+}
+
+.code-tabs .panel {
+    display: none;
+    background: #fff;
+    width: 100%;
+    order: 99;
+}
+
+.code-tabs input:checked + label + .panel {
+    display: block;
+}
+
+.code-tabs .panel pre {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
