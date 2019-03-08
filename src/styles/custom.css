@@ -984,20 +984,10 @@ to be custom HTML.
 .code-tabs {
     display: flex;
     flex-wrap: wrap;
-    background: #2a3644;
+    background: #222c37;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     position: relative;
-}
-
-.code-tabs:before {
-    content: "";
-    position: absolute;
-    left: 32px;
-    top: 46px;
-    right: 32px;
-    height: 1px;
-    background: color-mod(var(--midlightgrey) alpha(20%));
 }
 
 .code-tabs input {
@@ -1008,8 +998,8 @@ to be custom HTML.
 .code-tabs label {
     cursor: pointer;
     color: var(--midlightgrey);
-    padding: 4px 16px;
-    margin: 12px 0 0;
+    padding: 4px 12px;
+    margin: 4px 8px 0 0;
     border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
 
