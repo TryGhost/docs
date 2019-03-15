@@ -7,7 +7,7 @@ import { Layout } from '../../components/common/layout'
 import { Spirit } from '../../styles/spirit-styles'
 import { SidebarNav } from '../../components/common/sidebar'
 import { PrevNextSection } from '../../components/common/prev-next'
-import { PostHeader, FeedbackForm, Icon, TOC } from '../../components/common'
+import { PostHeader, Icon, TOC } from '../../components/common'
 import { MetaData, getMetaImageUrls } from '../../components/common/meta'
 
 const getGitHubLink = (absoluteFilePath) => {
