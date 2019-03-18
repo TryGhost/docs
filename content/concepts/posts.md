@@ -99,6 +99,7 @@ post: {
     "twitter_title": null,
     "twitter_description": null,
     "custom_template": null,
+    "canonical_url": null,
     "comment_id": "59711abc12d3ab0bd61c3abc"
 }
 ```
