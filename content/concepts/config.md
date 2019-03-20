@@ -262,7 +262,7 @@ Open your production config file in any code editor and paste the username and p
 }
 ```
 
-Once you are finished, hit save and then run `restart ghost` for your changes to take effect. It is possible to reuse your settings for a development environment if you have both, by making the same changes to `config.development.json`.
+Once you are finished, hit save and then run `ghost restart` for your changes to take effect. It is possible to reuse your settings for a development environment if you have both, by making the same changes to `config.development.json`.
 
 
 #### Amazon SES
