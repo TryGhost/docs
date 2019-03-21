@@ -152,8 +152,37 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 
 # Custom Redirects for Readme.io (API)
 
-/a                                       /api/
-/a/docs                                  /api/
+/a                                              /api/                                           301!
+/a/docs                                         /api/                                           301!
+/a/docs/overview                                /concepts/core/                                 301!
+/a/docs/changelog                               /api/                                           301!
+/a/docs/errors                                  /api/content/#errors                            301!
+/a/docs/pagination                              /api/content/#pagination                        301!
+/a/docs/parameters                              /api/content/#parameters                        301!
+/a/docs/client-authentication                   /api/content/#authentication                    301!
+/a/docs/user-authentication                     /api/admin/#user-authentication                 301!
+/a/docs/posts                                   /api/content/#posts                             301!
+/a/docs/postsid                                 /api/content/#posts                             301!
+/a/docs/ptsslugslug                             /api/content/#posts                             301!
+/a/docs/tags                                    /api/content/#tags                              301!
+/a/docs/tagsid                                  /api/content/#tags                              301!
+/a/docs/tagsslugslug                            /api/content/#tags                              301!
+/a/docs/users                                   /api/content/#authors                           301!
+/a/docs/usersid                                 /api/content/#authors                           301!
+/a/docs/usersslugslug                           /api/content/#authors                           301!
+/a/docs/post                                    /api/content/#posts                             301!
+/a/docs/tag                                     /api/content/#tags                              301!
+/a/docs/user                                    /api/content/#authors                           301!
+/a/docs/limit                                   /api/content/#limit                             301!
+/a/docs/page                                    /api/content/#page                              301!
+/a/docs/order                                   /api/content/#order                             301!
+/a/docs/include                                 /api/content/#include                           301!
+/a/docs/fields                                  /api/content/#fields                            301!
+/a/docs/filter                                  /api/content/#filter                            301!
+/a/docs/formats                                 /api/content/#formats                           301!
+/a/docs/absolute-urls                           /api/content/                                   301!
+/a/docs/ajax-calls-from-an-external-website     /api/javascript/content/                        301!
+
 
 # Custom redirects for Kayako (help)
 
