@@ -150,6 +150,11 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /t/docs/recent-featured-sidebar          /api/handlebars-themes/                               301!
 
 
+# Custom Redirects for Readme.io (API)
+
+/a                                       /api/
+/a/docs                                  /api/
+
 # Custom redirects for Kayako (help)
 
 /section/7-getting-started                   /faq/                                              301!
