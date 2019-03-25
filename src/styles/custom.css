@@ -261,6 +261,12 @@ kbd {
 /* Custom styles */
 /* ----------------------------------------------------------------------- */
 
+.navbar-container {
+    flex: 1 1 auto;
+    overflow: hidden;
+    height: 38px;
+}
+
 .grid-icon-boxes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(124px, auto));
