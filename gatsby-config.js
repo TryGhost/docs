@@ -56,7 +56,7 @@ const plugins = [
                     options: {
                         // Example code links are relative to this dir.
                         // eg examples/path/to/file.js
-                        directory: `${__dirname}/content/api/v2/.examples/`,
+                        directory: `${__dirname}/content/.examples/`,
                     },
                 },
                 `gatsby-remark-autolink-headers`,
