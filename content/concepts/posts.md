@@ -70,36 +70,4 @@ Even the dynamic cards mentioned above are a part of MobileDoc! It's a fast grow
 
 Here's a sample post object from the Ghost [Content API](/api/content/)
 
-```json
-post: {
-    "id": "59711abc12d3ab0bd61c3abc",
-    "uuid": "ec630e45-3342-4d7f-a24c-e448263c975b",
-    "title": "Welcome to Ghost",
-    "slug": "welcome-to-ghost",
-    "url": "https://path.to/welcome-to-ghost/",
-    "mobiledoc": "{\"version\":\"0.3.1\",\"atoms\":[],\"cards\":[],\"markups\":[],\"sections\":[[1,\"p\",[[0,[],0,\"You're live, nice!\"]]]]}",
-    "html": "<p>You're live! Nice.</p>",
-    "plaintext": "You're live! Nice.",
-    "feature_image": "https://path.to/content/images/welcome-to-ghost.jpg",
-    "featured": false,
-    "page": false,
-    "meta_title": null,
-    "meta_description": null,
-    "created_at": "2019-04-15T12:36:28.353Z",
-    "updated_at": "2019-04-15T12:36:28.353Z",
-    "published_at": "2019-04-15T12:36:28.363Z",
-    "custom_excerpt": null,
-    "excerpt": "You're live! Nice.",
-    "codeinjection_head": null,
-    "codeinjection_foot": null,
-    "og_image": null,
-    "og_title": null,
-    "og_description": null,
-    "twitter_image": null,
-    "twitter_title": null,
-    "twitter_description": null,
-    "custom_template": null,
-    "canonical_url": null,
-    "comment_id": "59711abc12d3ab0bd61c3abc"
-}
-```
+`embed:api/v2/content/demo/posts.json`

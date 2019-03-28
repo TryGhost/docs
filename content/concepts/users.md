@@ -48,20 +48,4 @@ Ghost considers staff users to be "trusted" by default - so if you're running in
 
 Here's a sample author object from the Ghost [Content API](/api/content/)
 
-```json
-user: {
-    "id": "1239bbfe90a518a862677abc",
-    "name": "Cameron Almeida",
-    "slug": "cameron-almeida",
-    "url": "https://path.to/author/cameron-almeida/",
-    "bio": "Editor at large.",
-    "location": "Cape Town",
-    "profile_image": "https://path.to/img.png",
-    "website": "https://example.com",
-    "twitter": "https://twitter.com/example",
-    "facebook": "https://facebook.com/example",
-    "cover_image": null,
-    "meta_title": null,
-    "meta_description": null
-}
-```
+`embed:api/v2/content/demo/authors.json`

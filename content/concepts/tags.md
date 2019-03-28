@@ -69,15 +69,4 @@ Tag archives are only generated for tags which are assigned to published posts, 
 
 Here's a sample tag object from the Ghost [Content API](/api/content/):
 
-```json
-tag: {
-    "id": "1239bbfe90a518a862677abc",
-    "name": "Getting Started",
-    "slug": "getting-started",
-    "url": "https://path.to/tag/getting-started/",
-    "feature_image": null,
-    "visibility": "public",
-    "meta_title": null,
-    "meta_description": null
-}
-```
+`embed:api/v2/content/demo/tags.json`
