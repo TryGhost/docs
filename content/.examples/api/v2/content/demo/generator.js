@@ -30,6 +30,13 @@ function writeFile(name, content) {
 function writeFileFromResponse(res, type, shortName) {
     let wrapped = { [type]: [res] };
 
+    if (type === 'settings') {
+        // Deprecated!
+        delete res.ghost_head;
+        delete res.ghost_foot;
+        wrapped = { [type]: res };
+    }
+
     return writeFile(`${shortName || type}.json`, wrapped);
 }
 
@@ -53,9 +60,24 @@ requests.push(api.posts
 // Generate post example with tags and authors
 requests.push(api.posts
     .read({ slug: 'welcome-short', include: 'tags,authors' })
-    .then(res => writeFileFromResponse(res, 'posts', 'posts-tags-authors'))
+    .then(res => writeFileFromResponse(res, 'posts', 'posts-with-tags-authors'))
     .catch(err => handleError('Post "welcome-short"', err))
 );
+
+// Generate page example
+requests.push(api.pages
+    .read({ slug: 'about' })
+    .then(res => writeFileFromResponse(res, 'pages'))
+    .catch(err => handleError('Page "about"', err))
+);
+
+// Generate page example with tags anda uthors
+requests.push(api.pages
+    .read({ slug: 'about', include: 'tags,authors'})
+    .then(res => writeFileFromResponse(res, 'pages', 'pages-with-tags-authors'))
+    .catch(err => handleError('Page "about"', err))
+);
+
 
 // Generate tag example
 requests.push(api.tags
@@ -64,11 +86,32 @@ requests.push(api.tags
     .catch(err => handleError('Tag "getting-started"', err))
 );
 
+// Generate tag with count example
+requests.push(api.tags
+    .read({ slug: 'getting-started', include: 'count.posts' })
+    .then(res => writeFileFromResponse(res, 'tags', 'tags-with-count'))
+    .catch(err => handleError('Tag "getting-started"', err))
+);
+
 // Generate author example
 requests.push(api.authors
-    .read({ slug: 'cameron' })
+    .read({ slug: 'cameron'})
     .then(res => writeFileFromResponse(res, 'authors'))
     .catch(err => handleError('User "cameron"', err))
+);
+
+// Generate author with count example
+requests.push(api.authors
+    .read({ slug: 'cameron', include: 'count.posts'  })
+    .then(res => writeFileFromResponse(res, 'authors', 'authors-with-count'))
+    .catch(err => handleError('User "cameron"', err))
+);
+
+// Generate settings example
+requests.push(api.settings
+    .browse()
+    .then(res => writeFileFromResponse(res, 'settings'))
+    .catch(err => handleError('Settings', err))
 );
 
 return Promise.all(requests);
