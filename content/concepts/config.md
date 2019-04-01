@@ -264,6 +264,25 @@ Open your production config file in any code editor and paste the username and p
 
 Once you are finished, hit save and then run `ghost restart` for your changes to take effect. It is possible to reuse your settings for a development environment if you have both, by making the same changes to `config.development.json`.
 
+#### Secure connection
+
+According your Mailgun settings you may want to force secure connection and the SMTP port.
+
+```json
+"mail": {
+    "transport": "SMTP",
+    "options": {
+        "service": "Mailgun",
+        "host": "smtp.eu.mailgun.org",
+        "port": 465,
+        "secureConnection": true,
+        "auth": {
+            "user": "postmaster@example.mailgun.org",
+            "pass": "1234567890"
+        }
+    }
+}
+```
 
 #### Amazon SES
 It's also possible to use [Amazon Simple Email Service](https://aws.amazon.com/ses/). Use the SMTP username and password given when signing up and configure your `config.[env].json` file as follows:
