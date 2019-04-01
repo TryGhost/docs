@@ -49,7 +49,7 @@ We maintain a handful of social media accounts to keep in touch with people dire
 
 
 - [GitHub](https://github.com/tryghost/ghost) - ⭐️ Star the repository to bookmark
-- [Twitter](https://twitter.com/tryghost) - 🐧 Regular shortform updates
+- [Twitter](https://twitter.com/ghost) - 🐧 Regular shortform updates
 - [Facebook](https://www.facebook.com/ghost) - 👩🏻‍💻 Occasional big news
 - [Instagram](https://www.instagram.com/ghost) - 🤫 New thing coming soon 
 
