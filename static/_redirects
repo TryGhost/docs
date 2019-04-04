@@ -148,6 +148,7 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /t/docs/ghost-api-ajax                   /api/handlebars-themes/                               301!
 /t/docs/highlight-first-post-on-home     /api/handlebars-themes/                               301!
 /t/docs/recent-featured-sidebar          /api/handlebars-themes/                               301!
+/t/v2.0.0/docs/changelog                 /api/handlebars-themes/                               301!
 
 
 # Custom Redirects for Readme.io (API)
