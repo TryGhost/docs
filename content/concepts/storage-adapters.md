@@ -44,8 +44,8 @@ The storage block should have 2 items:
 * [s3-store](https://github.com/spanishdict/ghost-s3-compat) saves to Amazon S3 and proxies requests to S3
 * [s3-store](https://github.com/colinmeinke/ghost-storage-adapter-s3) saves to Amazon S3 and works with 0.10+
 * [qn-store](https://github.com/Minwe/qn-store) saves to Qiniu
-* [ghost-cloudinary-store](https://github.com/eexit/ghost-storage-cloudinary) saves to Cloudinary
-* [ghost-storage-cloudinary](https://github.com/mmornati/ghost-cloudinary-store) saves to Cloudinary with RetinaJS support
+* [ghost-cloudinary-store](https://github.com/mmornati/ghost-cloudinary-store) saves to Cloudinary
+* [ghost-storage-cloudinary](https://github.com/eexit/ghost-storage-cloudinary) saves to Cloudinary with RetinaJS support
 * [upyun-ghost-store](https://github.com/sanddudu/upyun-ghost-store) saves to Upyun
 * [ghost-upyun-store](https://github.com/pupboss/ghost-upyun-store) saves to Upyun
 * [ghost-google-drive](https://github.com/robincsamuel/ghost-google-drive) saves to Google Drive
