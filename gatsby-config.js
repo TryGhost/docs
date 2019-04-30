@@ -52,7 +52,7 @@ const plugins = [
                     },
                 },
                 {
-                    resolve: `gatsby-remark-embed-snippet`,
+                    resolve: `gatsby-remark-snippets`,
                     options: {
                         // Example code links are relative to this dir.
                         // eg examples/path/to/file.js
