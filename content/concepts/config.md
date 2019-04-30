@@ -77,7 +77,7 @@ There are a number of configuration options which are explained in detail in thi
 | `privacy`  | Optional | Disable features set in [privacy.md](https://github.com/TryGhost/Ghost/blob/master/PRIVACY.md/) |
 | `paths`   | Optional | Customise internal paths |
 | `referrerPolicy` | Optional | Control the content attribute of the meta referrer tag |
-| `useMinFiles`   | Optionl | Generate assets url with .min notation |
+| `useMinFiles`   | Optional | Generate assets url with .min notation |
 | `storage`   | Optional | Set a custom storage adapter |
 | `scheduling` | Optional | Set a custom scheduling adapter |
 | `logging`   | Optional | Configure logging for Ghost |
