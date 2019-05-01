@@ -24,8 +24,8 @@ const ArticleMetaGhost = ({ data, canonical, fetchAuthorData, title, overwriteDe
                 <link rel="canonical" href={canonical} />
 
                 <meta property="og:site_name" content={siteMetadata.title} />
-                <meta name="og:type" content="article" />
-                <meta name="og:title"
+                <meta property="og:type" content="article" />
+                <meta property="og:title"
                     content={
                         ghostPost.og_title ||
                         title ||
@@ -33,7 +33,7 @@ const ArticleMetaGhost = ({ data, canonical, fetchAuthorData, title, overwriteDe
                         ghostPost.title
                     }
                 />
-                <meta name="og:description"
+                <meta property="og:description"
                     content={
                         ghostPost.og_description ||
                         ghostPost.excerpt ||

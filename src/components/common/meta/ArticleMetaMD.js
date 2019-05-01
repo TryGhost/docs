@@ -25,9 +25,9 @@ const ArticleMetaMD = ({ data, canonical }) => {
                 <link rel="canonical" href={canonical} />
 
                 <meta property="og:site_name" content={siteMetadata.title} />
-                <meta name="og:type" content="article" />
-                <meta name="og:title" content={fm.meta_title || fm.title} />
-                <meta name="og:description" content={fm.meta_description || post.excerpt} />
+                <meta property="og:type" content="article" />
+                <meta property="og:title" content={fm.meta_title || fm.title} />
+                <meta property="og:description" content={fm.meta_description || post.excerpt} />
                 <meta property="og:url" content={canonical} />
                 <meta property="article:published_time" content={publishedAtISODate} />
                 {fm.keywords && fm.keywords.length ? fm.keywords.map((keyword, i) => (<meta property="article:tag" content={keyword} key={i} />)) : null}
