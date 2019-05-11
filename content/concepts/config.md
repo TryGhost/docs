@@ -478,7 +478,7 @@ Image compression details:
 * JPEG's are compressed to 80% quality.
 * Meta data removed
 
-The original image is kept with the suffix `_0`.
+The original image is kept with the suffix `_o`.
 
 
 ## Summary
