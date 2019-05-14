@@ -136,8 +136,8 @@ su - <user>
 You will need to have a [supported version](/faq/node-versions/) of Node installed system-wide in the manner described below. If you have a different setup, you may encounter problems.
 
 ```bash
-# Add the NodeSource APT repository for Node 8
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash
+# Add the NodeSource APT repository for Node 10
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
 
 # Install Node.js
 sudo apt-get install -y nodejs

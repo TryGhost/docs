@@ -75,6 +75,8 @@ Ghost runs in a separate background process and remains running until you stop i
 * `ghost log` views logs
 * `ghost ls` to list all running Ghost blogs
 
+Run `ghost help` for a list of available commands, or explore the full [Ghost-CLI documentation](/api/ghost-cli/).
+
 #### Troubleshooting
 For troubleshooting and errors, try searching this documentation and [FAQ section](/faq/) to find information about common error messages.
 
