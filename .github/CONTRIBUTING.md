@@ -11,9 +11,10 @@ If you just want to fix a typo or contribute a piece of content, the quickest wa
 ## Installation from Source
 
 1. `git clone` this repo & `cd` into it as usual
-2. `npm install --global gatsby-cli` to install Gatsby
-3. `yarn` to install top-level dependencies.
-4. Copy `.env.example` to `.env.development`
+2. `git submodule update --init` to pull down the submodules
+3. `npm install --global gatsby-cli` to install Gatsby
+4. `yarn` to install top-level dependencies.
+5. Copy `.env.example` to `.env.development`
 
 
 ### Run Locally
@@ -60,6 +61,8 @@ This will run some tests to verify that
 Once you've made a change on your local branch, you can commit it and open a Pull Request which will be reviewed by 1-2 members of the Ghost core team. Small changes usually get merged as soon as we've had chance to read through them!
 
 If any changes or discussion are needed, we'll let you know!
+
+If you are making changes to the submodules in the docs-api repo, you need to submit those separately as PRs to that repository.
 
 
 ## Contributor License Agreement
