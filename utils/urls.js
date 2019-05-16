@@ -1,4 +1,9 @@
-module.exports.urlForMarkdown = (node, fallback) => {
+const url = require(`url`)
+const siteUrl = process.env.SITE_URL || `https://docs.ghost.org`
+
+const convertToAbsoluteUrl = path => url.resolve(siteUrl, path)
+
+module.exports.urlForMarkdown = (node, fallback, absolute) => {
     // Passing a `path` property in frontmatter will overwrite the
     // slug that we build from the folder structure
 
@@ -10,11 +15,19 @@ module.exports.urlForMarkdown = (node, fallback) => {
         slug = slug.replace(/\/v2/, ``)
     }
 
-    return slug
+    return absolute ? convertToAbsoluteUrl(slug) : slug
 }
 
 // Create a Gatsby-style URL for resources in Ghost. These are currently the same but they might not always be
-module.exports.urlForGhostPost = (postNode, section) => `/${section}/${postNode.slug}/`
-module.exports.urlForGhostTag = (tagNode, section) => `/${section}/${tagNode.slug}/`
+module.exports.urlForGhostPost = (postNode, section, absolute) => {
+    const path = `/${section}/${postNode.slug}/`
 
-// Adding a temp change to test things
+    return absolute ? convertToAbsoluteUrl(path) : path
+}
+module.exports.urlForGhostTag = (tagNode, section, absolute) => {
+    const path = `/${section}/${tagNode.slug}/`
+
+    return absolute ? convertToAbsoluteUrl(path) : path
+}
+
+module.exports.convertToAbsoluteUrl = convertToAbsoluteUrl
