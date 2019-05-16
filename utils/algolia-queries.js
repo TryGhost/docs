@@ -34,7 +34,8 @@ const mdNodeMap = ({ node }) => {
     node.section = node.fields.section
     node.title = node.frontmatter.title
     // @TODO make this consistent?!
-    node.url = node.slug
+    // TODO: switch to relative URLs again, once the move to G3 is fully completed
+    node.url = urlUtils.convertToAbsoluteUrl(node.slug)
 
     delete node.frontmatter
     delete node.fields
@@ -51,7 +52,8 @@ const ghostQueries = ghostQueryConfig.map(({ tag, section, indexName }) => {
             .map(({ node }) => {
                 // @TODO is there some other way to do this?!
                 node.section = section
-                node.url = urlUtils.urlForGhostPost(node, section)
+                // TODO: switch to relative URLs again, once the move to G3 is fully completed
+                node.url = urlUtils.urlForGhostPost(node, section, true)
                 return node
             })
             .reduce(fragmentTransformer, []),

@@ -13,17 +13,46 @@ import Autosuggest from 'react-autosuggest'
 import { Spirit } from '../../../styles/spirit-styles'
 import { searchConfig } from '../../../../utils/query-config'
 
-const HitTemplate = ({ hit }) => (
-    <Link to={hit.url} className="tdn db pt3 pb3 blue search-result nl5 nr11 pl5 pr11 br3 br--left">
-        <h4 className={`${Spirit.h5} dib`}>
-            <Highlight attribute="title" hit={hit} tagName="mark" className="search-result-page blue" />
-        </h4>
-        <p className={`${Spirit.small} midgrey nudge-bottom--2`}>
-            <Snippet attribute="html" hit={hit} className="search-result-snippet" />
-            ...
-        </p>
-    </Link>
-)
+const HitTemplate = ({ hit }) => {
+    let hitOnCurrentSite = false
+
+    // The Algolia app now contains indexes from Docs as well as ghost.org.
+    // We therefore send absolute URLs now to Algolia, but need to strip them
+    // out again if the search result is on the current site, so we can determine
+    // if we use Gatsby Link or standard <a> tag.
+    // TODO: remove this again, once the move to G3 is fully completed
+    const siteUrl = `^${process.env.SITE_URL || `https://docs.ghost.org`}`
+    const siteUrlRegex = new RegExp(siteUrl)
+
+    if (hit.url.match(siteUrlRegex)) {
+        hit.url = hit.url.replace(siteUrlRegex, ``)
+        hitOnCurrentSite = true
+    }
+    return (
+        <>
+            {hitOnCurrentSite ?
+                <Link to={hit.url} className="tdn db pt3 pb3 blue search-result nl5 nr11 pl5 pr11 br3 br--left">
+                    <h4 className={`${Spirit.h5} dib`}>
+                        <Highlight attribute="title" hit={hit} tagName="mark" className="search-result-page blue" />
+                    </h4>
+                    <p className={`${Spirit.small} midgrey nudge-bottom--2`}>
+                        <Snippet attribute="html" hit={hit} className="search-result-snippet" />
+                ...
+                    </p>
+                </Link> :
+                <a href={hit.url} className="tdn db pt3 pb3 blue search-result nl5 nr11 pl5 pr11 br3 br--left">
+                    <h4 className={`${Spirit.h5} dib`}>
+                        <Highlight attribute="title" hit={hit} tagName="mark" className="search-result-page blue" />
+                    </h4>
+                    <p className={`${Spirit.small} midgrey nudge-bottom--2`}>
+                        <Snippet attribute="html" hit={hit} className="search-result-snippet" />
+                        ...
+                    </p>
+                </a>
+            }
+        </>
+    )
+}
 
 HitTemplate.propTypes = {
     hit: PropTypes.shape({
