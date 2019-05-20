@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Box } from '../common'
 
 const IntegrationBox = ({ post, hit, section }) => {
-    let hitOnCurrentSite = false
+    let hitOnCurrentSite = post ? true : false
 
     // The Algolia app now contains indexes from Docs as well as ghost.org.
     // We therefore send absolute URLs now to Algolia, but need to strip them
