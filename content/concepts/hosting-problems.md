@@ -1,7 +1,7 @@
 ---
 title: "Troubleshooting"
-meta_title: "Troubleshooting with Ghost - Core Concepts"
-meta_description: "If you're having trouble with running Ghost, here's a quick guide to resolving almost any problem."
+meta_title: "Troubleshooting"
+meta_description: "If you're having trouble with running Ghost, you can utilise our community forum or search our docs site. Ghost(Pro) sites can contact email support. Find out more."
 keywords:
     - concepts
     - ghost

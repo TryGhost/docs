@@ -1,7 +1,7 @@
 ---
 title: "Hosting Ghost"
-meta_title: "Hosting a Ghost publication - Core Concepts"
-meta_description: "A short guide to running Ghost in a production environment and setting it up to serve traffic at scale."
+meta_title: "Hosting a Ghost publication - Fully-managed PaaS & self-hosted"
+meta_description: "The most efficient way to deploy an instance of Ghost is on our official fully-managed PaaS. Or you can self-host using our recommended stack!"
 keywords:
     - concepts
     - ghost

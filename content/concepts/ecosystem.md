@@ -1,7 +1,7 @@
 ---
 title: "Ecosystem"
-meta_title: "The Ghost Ecosystem - Core Concepts"
-meta_description: "Become familiar with the ecosystem of Ghost with a top-level overview and useful links to get you started."
+meta_title: "The Ghost Ecosystem - Useful tools & resources"
+meta_description: "Become familiar with the ecosystem of Ghost with a top-level overview and useful links to get you started, including native apps, community, themes and more!"
 keywords:
     - concepts
     - ghost
@@ -10,7 +10,7 @@ keywords:
 sidebar: "concepts"
 ---
 
-There are a broad range of tools, resources and helpful tutorials for working with Ghost available to help  get started.
+There are a broad range of tools, resources and helpful tutorials for working with Ghost available to help get started.
 
 Before diving into Ghost's application architecture in the next section, it's useful to give you a high level overview of the wider ecosystem and where to find things!
 

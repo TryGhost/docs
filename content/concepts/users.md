@@ -1,7 +1,7 @@
 ---
 title: "Users"
-meta_title: "Users & Permissions in Ghost - Core Concepts"
-meta_description: "Ghost has built-in staff user permissions to allow teams to collaborate effectively. Learn more about user permissions in Ghost."
+meta_title: "Users & Permissions – Manage your team"
+meta_description: "Ghost has built-in staff user permissions to allow teams to collaborate effectively. Learn all about user permissions in Ghost."
 keywords:
     - concepts
     - ghost

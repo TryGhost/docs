@@ -1,7 +1,7 @@
 ---
 title: "Posts"
-meta_title: "Working with posts in Ghost - Core Concepts"
-meta_description: "Posts are the primary entry-type within Ghos. Discover how to work with posts and content."
+meta_title: "Using posts – Build customised feeds of content"
+meta_description: "Posts are the primary entry-type within Ghost and return a reverse chronological feed - or they can be customised to suit your needs."
 keywords:
     - concepts
     - ghost
@@ -35,7 +35,7 @@ Creating content in Ghost is done via the Ghost editor which, for many people, i
 
 The writing experience in Ghost will be very familiar to most people who have spent time with web based authoring tools. It generally takes after the Medium-like experience which writers want.
 
-Writing simple content is a breeze - but there are tons of powerful shortcuts, too. You can write plaintext, activating formatting options using either the mouse or keyboard shortcutcs. But you can also write in Markdown, if you prefer, and the editor will convert it as you type - rendering an instant preview.
+Writing simple content is a breeze - but there are tons of powerful shortcuts, too. You can write plaintext, activating formatting options using either the mouse or keyboard shortcuts. But you can also write in Markdown, if you prefer, and the editor will convert it as you type - rendering an instant preview.
 
 ![MobileDoc](../images/concepts/editor.png)
 

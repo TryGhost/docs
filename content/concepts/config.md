@@ -1,7 +1,7 @@
 ---
 title: "Config"
-meta_title: "Configuring Ghost - Core Concepts"
-meta_description: "Find out how to configure your site and override Ghost's default behaviour with robust config options. Read more 👉"
+meta_title: "Configuration - Adapt your publication to suit your needs"
+meta_description: "Find out how to configure your Ghost publication or override Ghost's default behaviour with robust config options, including mail, storage, scheduling and more!"
 keywords:
     - config
     - concepts

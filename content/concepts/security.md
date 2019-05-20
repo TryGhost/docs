@@ -1,7 +1,7 @@
 ---
 title: "Ghost Security"
-meta_title: "Ghost Security - Core Concepts"
-meta_description: "Ghost is committed to developing secure, reliable products utilising all modern security best practices. Find out more!"
+meta_title: "Security and Privacy"
+meta_description: "Ghost is committed to developing secure, reliable products utilising all modern security best practices. Find out more about our security and privacy."
 keywords:
     - concepts
     - ghost
@@ -12,7 +12,7 @@ sidebar: "concepts"
 
 Ghost is committed to developing secure, reliable products utilising all modern security best practices and processes.
 
-The Ghost security team is made up of full time staff employed by the Ghost Foundation as well as volunteer open source contributors and security experts. We do both consultation and penetration testing of our software and  infrastructure with external security researchers and agencies.
+The Ghost security team is made up of full time staff employed by the Ghost Foundation as well as volunteer open source contributors and security experts. We do both consultation and penetration testing of our software and infrastructure with external security researchers and agencies.
 
 We take security very seriously at Ghost and welcome any peer review of our completely [open source codebase](https://github.com/tryghost/ghost) to help ensure that it remains completely secure.
 
@@ -31,7 +31,7 @@ Ghost-CLI does not run as `root` and automatically configures all server directo
 
 User login attempts and password reset requests are all limited to 5 per hour per IP.
 
-### Data validation and serlialisation
+### Data validation and serialisation
 
 Ghost performs strong serialisation and validation on all data that goes into the database, as well as automated symlink protection on all uploaded files.
 

@@ -1,7 +1,7 @@
 ---
 title: "Pages"
-meta_title: "Using Pages in Ghost - Core Concepts"
-meta_description: "Decide whether your content is a page or a post with one click - Learn more about static content with Ghost!"
+meta_title: "Using Pages – Create static pages in Ghost"
+meta_description: "Decide whether your content is a page or a post with one click and build static independent content like an "About" or a "Contact" page with ease."
 keywords:
     - concepts
     - ghost

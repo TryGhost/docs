@@ -1,7 +1,7 @@
 ---
 title: "Contributing to Ghost"
-meta_title: "Contributing to Ghost - Core Concepts"
-meta_description: "Find out how to contribute to the completely open source Ghost software!"
+meta_title: "Contributing to Ghost - Submit your contribution to open source software"
+meta_description: "Ghost is completely open source built almost entirely by volunteer contributors. Find out how you can make a difference towards the future of modern publishing."
 keywords:
     - concepts
     - ghost

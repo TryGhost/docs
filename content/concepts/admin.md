@@ -1,7 +1,7 @@
 ---
 title: "Ghost Admin"
-meta_title: "Ghost Admin - Core Concepts"
-meta_description: "Ghost is installed with a streamlined clientside admin interface for editors who need a powerful tool to manage their content."
+meta_title: "Ghost Admin Client – An interface for editors who need a powerful tool to manage content"
+meta_description: "Ghost is installed with a streamlined admin interface for editors who need a powerful tool to manage their content, and it's decoupled for maximum performance."
 keywords:
     - concepts
     - ghost

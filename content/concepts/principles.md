@@ -1,7 +1,7 @@
 ---
 title: "Development Principles"
-meta_title: "Ghost Development Principles - Core Concepts"
-meta_description: "Ghost is developed by a small core team. Find out more about feature requests and the Ghost product roadmap!"
+meta_title: "Ghost Development Principles – Feature requests & product roadmap"
+meta_description: "Ghost is developed by a small core team and a great deal of care is given to deciding what features get built. Find out more about our development principles."
 keywords:
     - concepts
     - ghost
@@ -27,7 +27,7 @@ The Ghost product team maintains a broad 1-2 year product roadmap at any given t
 
 We welcome feature requests from users over in [the ideas category](https://forum.ghost.org/c/Ideas) of the Ghost Forum. Here people can request and suggest things which they'd like to see in Ghost, and others can add their vote or comment. 
 
-The ideas board is a great way for us to guage user demand, but it's not a democratic system. We don't automatically build things just because they get a lot of votes, and not everything that gets requested makes it into core.
+The ideas board is a great way for us to gauge user demand, but it's not a democratic system. We don't automatically build things just because they get a lot of votes, and not everything that gets requested makes it into core.
 
 The best way to get a feature you want looked at quicker is to [get involved by contributing to the project](/concepts/contributing/) to help build it. That's how open source software works!
 

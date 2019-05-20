@@ -1,7 +1,7 @@
 ---
 title: "Custom Schedulers"
-meta_title: "Custom Scheduler Modules for Ghost"
-meta_description: "Discover how to use a custom adapter for scheduling content on your Ghost publication ⏰"
+meta_title: "Custom Scheduler Modules - Control your content schedule"
+meta_description: "Discover how to use a custom adapter for scheduling content on your Ghost publication for advanced publications ⏰"
 keywords:
     - schedulers
     - concepts 

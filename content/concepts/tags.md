@@ -1,7 +1,7 @@
 ---
 title: "Tags"
-meta_title: "Using Tags in Ghost - Core Concepts"
-meta_description: "Discover how to use the primary taxonomy within Ghost for filtering and organising the relationships between your publication content."
+meta_title: "Using Tags – Filter and organise your content"
+meta_description: "Discover how to use the primary taxonomy within Ghost for filtering and organising content with ease, control design, and drive automation within your site."
 keywords:
     - concepts
     - ghost

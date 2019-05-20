@@ -1,7 +1,7 @@
 ---
 title: "Features"
-meta_title: "Ghost Features - Core Concepts"
-meta_description: "Ghost comes with powerful features built directly into the core software which are customisable and extensible to suit your needs."
+meta_title: "Ghost Features - Customisable professional publishing software"
+meta_description: "Discover the powerful features built directly into Ghost's core software, including a developer friendly API, rich editor, custom themes, apps & integrations!"
 keywords:
     - concepts
     - ghost

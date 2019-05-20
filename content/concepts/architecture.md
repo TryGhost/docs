@@ -1,7 +1,7 @@
 ---
 title: "Architecture"
-meta_title: "Ghost Architecture - Core Concepts"
-meta_description: "Ghost is structured as a modern, decoupled web application. Discover how things fit together at Ghost."
+meta_title: "Ghost Architecture – A modern, decoupled web application for professional publishers"
+meta_description: "Ghost is structured with a robust JSON API at it's core, with a beautiful client app and a fully decoupled theme layer on the front-end – find out more!"
 keywords:
     - concepts
     - ghost

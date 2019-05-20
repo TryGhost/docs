@@ -1,7 +1,7 @@
 ---
 title: "Governance"
-meta_title: "Governance at Ghost - Core Concepts"
-meta_description: "Learn about Governance at Ghost - stewarded by an independent non-profit organisation and a fully remote company!"
+meta_title: "Governance at Ghost - Stewarded by an independent non-profit"
+meta_description: "Learn more about the independent non-profit organisation behind Ghost, including our remote core team, community members and our straightforward code of conduct!"
 keywords:
     - concepts
     - ghost
