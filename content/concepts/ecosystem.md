@@ -51,7 +51,7 @@ We maintain a handful of social media accounts to keep in touch with people dire
 - [GitHub](https://github.com/tryghost/ghost) - ⭐️ Star the repository to bookmark
 - [Twitter](https://twitter.com/ghost) - 🐧 Regular shortform updates
 - [Facebook](https://www.facebook.com/ghost) - 👩🏻‍💻 Occasional big news
-- [Instagram](https://www.instagram.com/ghost) - 🤫 New thing coming soon 
+- [Instagram](https://www.instagram.com/ghost) - 🤫 New thing coming soon
 
 ---
 
@@ -65,7 +65,7 @@ The [migration docs](/api/migration/) contain details on all available automated
 
 ## Finding themes
 
-You'll find a wide range of pre-made Ghost themes for a variety of use-cases over on the [Ghost Marketplace](https://marketplace.ghost.org), which serves as an official directory of curated highlights. However, you can also find an even larger range of Ghost themes for sale on [ThemeForest](https://themeforest.net/category/blogging/ghost-themes) and [Creative Market](https://creativemarket.com/themes/ghost).
+You'll find a wide range of pre-made Ghost themes for a variety of use-cases over on the [Ghost Marketplace](https://ghost.org/marketplace), which serves as an official directory of curated highlights. However, you can also find an even larger range of Ghost themes for sale on [ThemeForest](https://themeforest.net/category/blogging/ghost-themes) and [Creative Market](https://creativemarket.com/themes/ghost).
 
 It's also pretty straightforward to convert themes for most other platforms to be compatible with Ghost, and you can always use a completely independent front-end or framework if that's your jam.
 

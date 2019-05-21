@@ -51,7 +51,7 @@ Set up your site with sensible user roles and permissions built-in from the star
 
 Ghost ships with a simple Handlebars.js front-end theme layer which is very straightforward to work with and surprisingly powerful. Many people stick with the default theme ([live demo](https://demo.ghost.io) / [source code](https://github.com/tryghost/casper)), which provides a clean magazine design - but this can be modified or entirely replaced.
 
-The Ghost [Theme Marketplace](https://marketplace.ghost.org) provides a selection of pre-made third-party themes which can be installed with ease. Of course you can also build your own [Handlebars Theme](/api/handlebars-themes/) or use a [different front-end](/api/) altogether.
+The Ghost [Theme Marketplace](https://ghost.org/marketplace) provides a selection of pre-made third-party themes which can be installed with ease. Of course you can also build your own [Handlebars Theme](/api/handlebars-themes/) or use a [different front-end](/api/) altogether.
 
 
 ## Apps & integrations

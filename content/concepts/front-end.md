@@ -12,7 +12,7 @@ sidebar: "concepts"
 
 Ghost is a full headless CMS which is completely agnostic of any particular front end or static site framework.
 
-Just like Ghost's admin client, its front-end is both optional and interchangeable. While Ghost's early architecture represented more of a standard monolithic web-app, it's now compatible with just about any front-end you can throw at it. 
+Just like Ghost's admin client, its front-end is both optional and interchangeable. While Ghost's early architecture represented more of a standard monolithic web-app, it's now compatible with just about any front-end you can throw at it.
 
 It doesn't even have to be a website!
 
@@ -21,7 +21,7 @@ It doesn't even have to be a website!
 
 Ghost ships with its own [Handlebars.js](/api/handlebars-themes/) theme layer served by an Express.js webserver, so out of the box it automatically comes with a default front-end. This is a really fast way to get a site up and running, and despite being relatively simple Handlebars is both powerful and extremely performant.
 
-Ghost Handlebars Themes have the additional benefit of being fairly widely adopted since the platform first launched back in 2013, so there's a broad [third party marketplace](https://marketplace.ghost.org) of pre-built themes as well as [extensive documentation](/api/handlebars-themes/) on how to build a custom theme.
+Ghost Handlebars Themes have the additional benefit of being fairly widely adopted since the platform first launched back in 2013, so there's a broad [third party marketplace](https://ghost.org/marketplace) of pre-built themes as well as [extensive documentation](/api/handlebars-themes/) on how to build a custom theme.
 
 
 ## Static Site Generators
