@@ -110,8 +110,7 @@ class Results extends React.Component {
             api: `middarkgrey b--middarkgrey`,
             tutorial: `tutorial-color b--tutorial-color`,
             integration: `integration-color b--integration-color`,
-            // TODO: define color for marketplace
-            marketplace: `concept-color b--concept-color`,
+            marketplace: `setup-color b--setup-color`,
         }
 
         return <span className={`br-pill bg-white ba pa1 pl2 pr2 nowrap ${labelClass[index] || `midgrey b--midgrey`}`}>{searchConfig[index]}</span>
