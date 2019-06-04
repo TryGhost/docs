@@ -18,7 +18,7 @@ const WebsiteMeta = ({ data, canonical, title, description, image, type }) => (
                 <meta name="twitter:title" content={title} />
                 <meta name="twitter:description" content={description} />
                 <meta name="twitter:url" content={canonical} />
-                <meta name="twitter:site" content="@tryghost" />
+                <meta name="twitter:site" content="@ghost" />
                 <script type="application/ld+json">{`
                     {
                         "@context": "https://schema.org/",
