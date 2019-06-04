@@ -162,7 +162,7 @@ const plugins = [
         resolve: `gatsby-plugin-postcss`,
         options: {
             postCssPlugins: [
-                autoprefixer({ browsers: [`last 2 versions`] }),
+                autoprefixer(),
                 easyImport(),
                 cssVariables(),
                 colorModFunction(),
