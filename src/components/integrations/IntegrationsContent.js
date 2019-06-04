@@ -37,13 +37,13 @@ class IntegrationsContent extends React.Component {
         switch (field) {
         case `date`:
             firstSortField = `node.published_at`
-            secondSortField = `node.title`
+            secondSortField = `node.slug`
             this.setState(() => {
                 return { activeSorting: `date` }
             })
             break
         case `title`:
-            firstSortField = `node.title`
+            firstSortField = `node.slug`
             secondSortField = `node.published_at`
             this.setState(() => {
                 return { activeSorting: `title` }
