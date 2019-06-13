@@ -102,6 +102,7 @@ class Results extends React.Component {
     renderSectionTitle({ index }) {
         // TODO: handle this with query-config
         searchConfig.marketplace = `Marketplace`
+        searchConfig.blog = `Blog`
 
         const labelClass = {
             faq: `faq-color b--faq-color`,
@@ -110,6 +111,7 @@ class Results extends React.Component {
             api: `middarkgrey b--middarkgrey`,
             tutorial: `tutorial-color b--tutorial-color`,
             integration: `integration-color b--integration-color`,
+            blog: `concept-color b--concept-color`,
             marketplace: `setup-color b--setup-color`,
         }
 
@@ -166,6 +168,7 @@ class Results extends React.Component {
                 <Index indexName="api" />
                 <Index indexName="tutorial" />
                 <Index indexName="integration" />
+                <Index indexName="blog" />
                 <Index indexName="marketplace" />
             </>
         )
