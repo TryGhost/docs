@@ -47,7 +47,7 @@ const WebsiteMeta = ({ data, canonical, title, description, image, type }) => (
 //         "name": "Ghost",
 //             "logo": {
 //         "@type": "ImageObject",
-//             "url": "https://blog.ghost.org/favicon.png",
+//             "url": "https://ghost.org/favicon.png",
 //                 "width": 60,
 //                     "height": 60
 //     }

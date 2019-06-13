@@ -37,7 +37,7 @@ Of course open source software is never just about the technology, more than any
 
 ### The blog
 
-For long-form news and announcements the best place to keep up to date with everything happening is [our blog](https://blog.ghost.org). There's an [RSS feed](https://blog.ghost.org/rss/) and also [a newsletter](https://blog.ghost.org/newsletter/) 📬
+For long-form news and announcements the best place to keep up to date with everything happening is [our blog](https://ghost.org/blog). There's an [RSS feed](https://ghost.org/blog/rss/) and also [a newsletter](https://ghost.org/blog/newsletter/) 📬
 
 ### Official forum
 
