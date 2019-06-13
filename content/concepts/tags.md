@@ -51,7 +51,7 @@ The `Ryan Reynolds` and `New Releases` tags generate archives so that readers ca
 
 The `#feature` tag is used by the front-end or theme-layer as a conditional flag for activating specific formatting. In this instance the Deadpool PR team have supplied some marketing material including a giant wallpaper image which would make a great background, so the post is tagged with `#feature` to push the post image to be full bleed and take over the whole page.
 
-You can see this use-case in action on the main Ghost blog. Here's [a regular post](https://blog.ghost.org/image-galleries/), and here's a [#feature](https://blog.ghost.org/5/). The design of the post reacts to the tags.
+You can see this use-case in action on the main Ghost blog. Here's [a regular post](https://ghost.org/blog/image-galleries/), and here's a [#feature](https://ghost.org/blog/5/). The design of the post reacts to the tags.
 
 
 ## Tag archives

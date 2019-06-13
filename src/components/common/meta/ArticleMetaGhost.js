@@ -109,7 +109,7 @@ const ArticleMetaGhost = ({ data, canonical, fetchAuthorData, title, overwriteDe
 //         "name": "Ghost",
 //             "logo": {
 //         "@type": "ImageObject",
-//             "url": "https://blog.ghost.org/favicon.png",
+//             "url": "https://ghost.org/favicon.png",
 //                 "width": 60,
 //                     "height": 60
 //     }
