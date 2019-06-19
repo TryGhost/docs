@@ -151,6 +151,7 @@ const plugins = [
                 `/data-schema-2`,
                 `/v0.11/README`,
                 `/README`,
+                /(\/)?hash-\S*/, // exclude internal tags
             ],
         },
     },
