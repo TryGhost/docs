@@ -12,7 +12,7 @@ const RelatedPosts = ({ relatedPosts, showImages }) => (
                             <img
                                 className="w-100 h-100"
                                 style={{ objectFit: `contain` }}
-                                src={`https://res.cloudinary.com/tryghost/image/fetch/w_60,h_50,c_fit/` + node.feature_image}
+                                src={`https://res.cloudinary.com/tryghost/image/fetch/w_60,h_50,c_fit,f_auto/` + node.feature_image}
                                 alt={node.title}
                             />
                         </div>

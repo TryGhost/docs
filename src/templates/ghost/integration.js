@@ -25,7 +25,7 @@ class Integration extends React.Component {
         const { relatedPosts, section } = this.props.pageContext
         const title = `Ghost + ${post.title} Integration`
         const image = post.feature_image
-        const optimisedImg = `https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit/${image}`
+        const optimisedImg = `https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit,f_auto/${image}`
         const seoImage = getMetaImageUrls(section)
 
         return (

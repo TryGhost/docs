@@ -21,7 +21,7 @@ const IntegrationBox = ({ post, hit, section }) => {
     const url = post ? `/${section}/${post.slug}/` : hit.url
     const title = post ? post.title : hit.title
     const image = post ? post.feature_image : hit.image
-    const optimisedImg = `https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit/${image}`
+    const optimisedImg = `https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit,f_auto/${image}`
 
     return (
         <>
