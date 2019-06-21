@@ -38,10 +38,10 @@ const NavBar = ({ theme }) => {
                 <div className="dn flex-ns flex-auto items-center overflow-x-auto mr12 mr0-l ml5 ml0-l pb20">
                     <Link to="/concepts/introduction/" className={`${themeClasses[theme].menuItem} nowrap f8 pa3 mr1 mr3-l nl3`}>Concepts</Link>
                     <Link to="/setup/" className={`${themeClasses[theme].menuItem} nowrap f8 pa3 mr1 mr3-l`}>Setup</Link>
-                    <Link to="/tutorials/" className={`${themeClasses[theme].menuItem} nowrap f8 pa3 mr1 mr3-l`}>Tutorials</Link>
-                    <Link to="/integrations/" className={`${themeClasses[theme].menuItem} nowrap f8 pa3 mr1 mr3-l`}>Integrations</Link>
+                    <a href="https://ghost.org/tutorials/" className={`${themeClasses[theme].menuItem} nowrap f8 pa3 mr1 mr3-l`}>Tutorials</a>
+                    <a href="https://ghost.org/integrations/" className={`${themeClasses[theme].menuItem} nowrap f8 pa3 mr1 mr3-l`}>Integrations</a>
                     <Link to="/api/" className={`${themeClasses[theme].menuItem} nowrap f8 pa3 mr1 mr3-l`}>API Reference</Link>
-                    <Link to="/faq/" className={`${themeClasses[theme].menuItem} nowrap f8 pa3 mr1 mr3-l`}>FAQ</Link>
+                    <a href="https://ghost.org/faq/" className={`${themeClasses[theme].menuItem} nowrap f8 pa3 mr1 mr3-l`}>FAQ</a>
                 </div>
             </div>
             <div className="relative pl3">

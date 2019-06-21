@@ -103,6 +103,9 @@ class Results extends React.Component {
         // TODO: handle this with query-config
         searchConfig.marketplace = `Marketplace`
         searchConfig.blog = `Blog`
+        searchConfig.faq = `FAQ`
+        searchConfig.tutorial = `Tutorials`
+        searchConfig.integration = `Integrations`
 
         const labelClass = {
             faq: `faq-color b--faq-color`,
