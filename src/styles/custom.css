@@ -577,15 +577,6 @@ kbd {
     transition: all 0.2s ease !important;
 }
 
-.bg-integrations-header-image {
-    background: url(../images/bg-integrations.svg) bottom center no-repeat, linear-gradient(60deg, #FA3973 0%, #FEE140 100%);
-    background-size: cover;
-}
-
-.bg-integrations-header-image .gh-nav-logo-suffix:before {
-    background: rgba(255,255,255,0.3);
-}
-
 /* .bg-integrations-header-cover {
     background: linear-gradient(45deg, rgba(125,185,232,0.95) 1%,rgba(0,179,184,0.95) 100%);
 } */
