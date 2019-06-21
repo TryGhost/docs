@@ -101,11 +101,11 @@ For self-hosting Ghost in production our officially recommended stack is:
 - MySQL 5.5, 5.6, or 5.7 (*not* >= 8.0)
 - NGINX
 - Systemd
-- [Recommended Node version](/faq/node-versions/) installed via NodeSource
+- [Recommended Node version](https://docs.ghost.org/faq/node-versions/) installed via NodeSource
 - A server with at least 1GB memory
 - A non-root user for running `ghost` commands
 
-**Ubuntu 16.04** and **Ubuntu 18.04** are the only officially supported operating systems. Our [Ubuntu install guide](/install/ubuntu/) walks you through how to get a server setup this way. 
+**Ubuntu 16.04** and **Ubuntu 18.04** are the only officially supported operating systems. Our [Ubuntu install guide](/install/ubuntu/) walks you through how to get a server setup this way.
 
 Other operating systems may work fine and you're welcome to use them, but we are unable to assist with debugging or optimising for them at present - so you're on your own there. Our recommendation: Use Ubuntu, because that's where you'll have the fewest headaches.
 

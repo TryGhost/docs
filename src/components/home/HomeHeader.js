@@ -36,7 +36,7 @@ const HomeHeader = () => (
                 </HomeHeaderBox>
 
                 <HomeHeaderBox
-                    to="/tutorials/"
+                    to="https://docs.ghost.org/tutorials/"
                     title="Tutorials"
                     icon="typing"
                     color="tutorial-green"

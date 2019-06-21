@@ -27,7 +27,7 @@ This install is **not** suitable for [production use](/install/ubuntu/) or [cont
 To install Ghost locally you will need the following:
 
 * A computer running MacOS, Windows or Linux
-* A [supported version](/faq/node-versions/) of [Node.js](https://nodejs.org)
+* A [supported version](https://docs.ghost.org/faq/node-versions/) of [Node.js](https://nodejs.org)
 * Either [yarn](https://yarnpkg.com/en/docs/install#alternatives-tab) or [npm](https://www.npmjs.com/get-npm) to manage packages
 * A clean, empty directory on your machine
 
@@ -78,7 +78,7 @@ Ghost runs in a separate background process and remains running until you stop i
 Run `ghost help` for a list of available commands, or explore the full [Ghost-CLI documentation](/api/ghost-cli/).
 
 #### Troubleshooting
-For troubleshooting and errors, try searching this documentation and [FAQ section](/faq/) to find information about common error messages.
+For troubleshooting and errors, try searching this documentation and [FAQ section](https://docs.ghost.org/faq/) to find information about common error messages.
 
 ---
 
@@ -115,4 +115,4 @@ You've completed a local Ghost install — congrats! You can now put Ghost throu
 
 When you're ready ship your site to production, [follow one of these guides](/setup/).
 
-For more information about theme development read the [Handlebars theme documentation](/api/handlebars-themes/) and check out the [tutorials](/tutorials/).
+For more information about theme development read the [Handlebars theme documentation](/api/handlebars-themes/) and check out the [tutorials](https://docs.ghost.org/tutorials/).

@@ -51,6 +51,6 @@ By combining Webhooks and the API it is possible to integrate into any aspect of
 
 ## Versioning
 
-Each major version of Ghost ships with multiple versions of the APIs. We maintain a [stability index](/faq/api-versioning/) so that you can be sure about depending on them in production.
+Each major version of Ghost ships with multiple versions of the APIs. We maintain a [stability index](https://docs.ghost.org/faq/api-versioning/) so that you can be sure about depending on them in production.
 
 Ghost major versions ship every 8-12 months, meaning code you write against our API today will be stable for a minimum of 2 years.

@@ -63,63 +63,63 @@ const HomePage = ({ data, location }) => {
                         </section>
 
                         <section className="col-12 col-6-ns mt0-ns bt bn-ns b--whitegrey nl5 nr5 nl0-ns nr0-ns ml0-ns mr0-ns pl5 pr5 pl0-ns pr0-ns pt5 pt0-ns ">
-                            <Link to="/faq/" className={`${Spirit.h3} link darkgrey hover-midgrey`}>FAQ</Link>
+                            <a href="https://docs.ghost.org/faq/" className={`${Spirit.h3} link darkgrey hover-midgrey`}>FAQ</a>
                             <div className="mt3 mt7-ns">
-                                <HomeFAQLink to="/faq/upgrade-to-ghost-2-0/" title="Upgrade to Ghost 2.0">
+                                <HomeFAQLink to="https://docs.ghost.org/faq/upgrade-to-ghost-2-0/" title="Upgrade to Ghost 2.0">
                                     Ghost 2.0 was released in September 2018 and the second major upgrade since the platform launched. Learn how to upgrade
                                 </HomeFAQLink>
 
-                                <HomeFAQLink to="/faq/using-custom-domains/" title="Using Custom Domains">
+                                <HomeFAQLink to="https://docs.ghost.org/faq/using-custom-domains/" title="Using Custom Domains">
                                     Map any domain you own directly to your Ghost(Pro) publication and make your site more memorable!
                                 </HomeFAQLink>
 
-                                <HomeFAQLink to="/faq/upgrading-from-deprecated-ghost-cli/" title="Upgrading from deprecated Ghost CLI">
+                                <HomeFAQLink to="https://docs.ghost.org/faq/upgrading-from-deprecated-ghost-cli/" title="Upgrading from deprecated Ghost CLI">
                                     If you are using a deprecated version and need to upgrade in order to upgrade or manage your Ghost site, some extra steps may be required.
                                 </HomeFAQLink>
 
-                                <Link to="/faq/" className={`${Spirit.p} midgrey fw5 link hover-blue`}>More FAQ...</Link>
+                                <a href="https://docs.ghost.org/faq/" className={`${Spirit.p} midgrey fw5 link hover-blue`}>More FAQ...</a>
                             </div>
                         </section>
                     </div>
 
                     <section className={`${Spirit.page.xl} col-12 mt8 mt-vw3-ns bt bn-ns b--whitegrey pt5 pt0-ns`}>
-                        <Link to="/integrations/" className={`${Spirit.h3} link darkgrey hover-midgrey`}>Integrations</Link>
+                        <a href="https://ghost.org/integrations/" className={`${Spirit.h3} link darkgrey hover-midgrey`}>Integrations</a>
                         <p className={`${Spirit.p} mt2 midgrey flex flex-column flex-row-ns justify-between items-center-ns`}>
                             All your favourite apps and tools, integrated with Ghost.
-                            <Link to="/integrations/" className="blue link din nb1 mt2 mt0-ns hover-underline-blue">
+                            <a to="https://ghost.org/integrations/" className="blue link din nb1 mt2 mt0-ns hover-underline-blue">
                                 <span className="flex items-center fw5">Browse all integrations <Icon name="arrow-right" className="w3 h3 ml1 fill-blue" /></span>
-                            </Link>
+                            </a>
                         </p>
                         <div className="grid-integrations-index mt4 mt6-l f8">
-                            <Box to="/integrations/zapier/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
+                            <Box href="https://ghost.org/integrations/zapier/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
                                 <img className="w10 mb1" src="https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit,f_auto/https://docs.ghost.io/content/images/2018/09/zapier.png" alt="Zapier" />
                                 Zapier
                             </Box>
-                            <Box to="/integrations/disqus/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
+                            <Box href="https://ghost.org/integrations/disqus/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
                                 <img className="w10 mb1" src="https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit,f_auto/https://docs.ghost.io/content/images/2018/09/disqus.svg" alt="Disqus" />
                                 Disqus
                             </Box>
-                            <Box to="/integrations/slack/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
+                            <Box href="https://ghost.org/integrations/slack/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
                                 <img className="w10 mb1" src="https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit,f_auto/https://docs.ghost.io/content/images/2018/09/slack.png" alt="Slack" />
                                 Slack
                             </Box>
-                            <Box to="/integrations/unsplash/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
+                            <Box href="https://ghost.org/integrations/unsplash/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
                                 <img className="w10 mb1" src="https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit,f_auto/https://docs.ghost.io/content/images/2018/09/unsplash.svg" alt="Unsplash" />
                                 Unsplash
                             </Box>
-                            <Box to="/integrations/google/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
+                            <Box href="https://ghost.org/integrations/google/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
                                 <img className="w10 mb1" src="https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit,f_auto/https://docs.ghost.io/content/images/2018/09/google-analytics-1.png" alt="Google Analytics" />
                                 Google Analytics
                             </Box>
-                            <Box to="/integrations/mailchimp/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
+                            <Box href="https://ghost.org/integrations/mailchimp/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
                                 <img className="w10 mb1" src="https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit,f_auto/https://docs.ghost.io/content/images/2018/09/mailchimp.png" alt="Mailchimp" />
                                 Mailchimp
                             </Box>
-                            <Box to="/integrations/google-amp/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
+                            <Box href="https://ghost.org/integrations/google-amp/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
                                 <img className="w10 mb1" src="https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit,f_auto/https://docs.ghost.io/content/images/2018/09/amp.jpg" alt="Google AMP" />
                                 Google AMP
                             </Box>
-                            <Box to="/integrations/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn" elevation="2" radius="4">
+                            <Box href="https://ghost.org/integrations/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn" elevation="2" radius="4">
                                 <Icon name="more" className="w8 nudge-top--6" />
                                 See More
                             </Box>

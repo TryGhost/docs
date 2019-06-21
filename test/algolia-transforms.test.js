@@ -22,7 +22,7 @@ describe('Algolia Transforms', function () {
                 objectID: '931c35eda23999b8124728b4bf4979eb'
             },
             {
-                html: '<li><strong>A <a href="/faq/node-versions/">supported version</a> of <a href="https://nodejs.org" target="_blank" rel="nofollow noopener noreferrer">Node.js</a></strong> - Ideally installed via <a href="https://github.com/creationix/nvm#install-script" target="_blank" rel="nofollow noopener noreferrer">nvm</a></li>',
+                html: '<li><strong>A <a href="https://docs.ghost.org/faq/node-versions/">supported version</a> of <a href="https://nodejs.org" target="_blank" rel="nofollow noopener noreferrer">Node.js</a></strong> - Ideally installed via <a href="https://github.com/creationix/nvm#install-script" target="_blank" rel="nofollow noopener noreferrer">nvm</a></li>',
                 content: 'A supported version of Node.js - Ideally installed via nvm',
                 headings: ['Pre-requisites'],
                 anchor: 'pre-requisites',

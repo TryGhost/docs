@@ -29,7 +29,7 @@ When you're ready, check out the full **[Ghost Contributing Guide](https://githu
 The primary way to contribute to Ghost is by writing code, but if you're not a developer there are still ways you can help. We always need help with:
 
 - Helping our Ghost users on [the forum](https://forum.ghost.org)
-- Creating [tutorials](/tutorials/) and [integration guides](/integrations/)
+- Creating [tutorials](https://ghost.org/tutorials/) and [integration guides](https://ghost.org/integrations/)
 - Improving our [documentation](https://github.com/tryghost/docs/) _(what you're reading now!)_
 - Testing and quality assurance
 - Hosting local events or meetups

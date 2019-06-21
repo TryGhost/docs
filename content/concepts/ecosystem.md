@@ -79,4 +79,4 @@ If you're looking for a great overview of other sites in the world built with Gh
 
 ## Finding answers
 
-**Don't forget!** If you have any questions or problems the best places to start is the search box on this page, which will immediately return all results from across our documentation and [FAQ](/faq/) archive.
+**Don't forget!** If you have any questions or problems the best places to start is the search box on this page, which will immediately return all results from across our documentation and [FAQ](https://docs.ghost.org/faq/) archive.

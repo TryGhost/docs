@@ -58,7 +58,7 @@ The Ghost [Theme Marketplace](https://ghost.org/marketplace) provides a selectio
 
 Because Ghost is completely open source, built as a JSON API, has webhooks, and gives you full control over the front-end: It essentially integrates with absolutely everything. Some things are easier than others, but almost anything is possible with a little elbow grease. Or a metaphor more recent than 1803.
 
-You can browse our large [directory of integrations](/integrations/) with instructions, or build any manner of custom integration yourself by writing a little JavaScript and Markup to do whatever you want.
+You can browse our large [directory of integrations](https://ghost.org/integrations/) with instructions, or build any manner of custom integration yourself by writing a little JavaScript and Markup to do whatever you want.
 
 You don't need janky broken plugins which slow your site down. Integrations are the modern way to achieve extended functionality with ease.
 

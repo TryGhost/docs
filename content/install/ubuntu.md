@@ -35,7 +35,7 @@ The officially recommended production installation requires the following stack:
 
 * Ubuntu 16.04 or Ubuntu 18.04
 * NGINX (minimum of 1.9.5 for SSL)
-* A [supported version](/faq/node-versions/) of [Node.js](https://nodejs.org)
+* A [supported version](https://docs.ghost.org/faq/node-versions/) of [Node.js](https://nodejs.org)
 * MySQL 5.5, 5.6, or 5.7 (*not* >= 8.0)
 * Systemd
 * A server with at least 1GB memory
@@ -161,7 +161,7 @@ Once installed, you can always run `ghost help` to see a list of available comma
 
 ## Install Ghost
 
-Once your server is correctly setup and the `ghost-cli` is installed, you can install Ghost. The following steps are the recommended setup. If you would prefer more fine-grained control, the CLI has [flags and options](/api/ghost-cli/) that allow you to break down the steps and customise exactly what they do. 
+Once your server is correctly setup and the `ghost-cli` is installed, you can install Ghost. The following steps are the recommended setup. If you would prefer more fine-grained control, the CLI has [flags and options](/api/ghost-cli/) that allow you to break down the steps and customise exactly what they do.
 
 > Note: Installing Ghost in the `/root` or `home/<user>` directories results in a broken setup. Always use a custom directory with properly configured permissions.
 
@@ -212,7 +212,7 @@ If you already have an existing MySQL database enter the the username. Otherwise
 
 #### Ghost database name
 
-Enter the name of your database. It will be automatically set up for you, unless you're using a **non**-root MySQL user/pass. In that case the database must already exist and have the correct permissions. 
+Enter the name of your database. It will be automatically set up for you, unless you're using a **non**-root MySQL user/pass. In that case the database must already exist and have the correct permissions.
 
 #### Set up a ghost MySQL user? <small>(Recommended)</small>
 
@@ -254,11 +254,11 @@ If an install goes horribly wrong, use `ghost uninstall` to remove it and try ag
 
 If an install is interrupted or the connection lost, use `ghost setup` to restart the configuration process.
 
-For troubleshooting and errors, use the site search and [FAQ section](/faq/errors/) to find information about common error messages.
+For troubleshooting and errors, use the site search and [FAQ section](https://docs.ghost.org/faq/errors/) to find information about common error messages.
 
 
 ---
 
 ## What's next?
 
-You're all set! Now you can start customising your site. Check out our range of [tutorials](/tutorials/) or the Ghost [API documentation](/api/) depending on which page of this choose-your-own-adventure experience you'd like to subject yourself to next.
+You're all set! Now you can start customising your site. Check out our range of [tutorials](https://docs.ghost.org/tutorials/) or the Ghost [API documentation](/api/) depending on which page of this choose-your-own-adventure experience you'd like to subject yourself to next.

@@ -13,7 +13,7 @@ This guide is for installing a local development copy of Ghost from source, prim
 
 Before getting started, you'll need these global packages to be installed:
 
-- **A [supported version](/faq/node-versions/) of [Node.js](https://nodejs.org)** - Ideally installed via [nvm](https://github.com/creationix/nvm#install-script)
+- **A [supported version](https://docs.ghost.org/faq/node-versions/) of [Node.js](https://nodejs.org)** - Ideally installed via [nvm](https://github.com/creationix/nvm#install-script)
 - **[Yarn](https://yarnpkg.com/en/docs/install#alternatives-tab)** - to manage all the packages
 
 
