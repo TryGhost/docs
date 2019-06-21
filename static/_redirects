@@ -30,9 +30,9 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 
 # ---------------- OLD CONTENT - PROBABLY DONT EDIT BELOW HERE ----------------
 
-/docs/search                           /                                        301!
+/docs/search                           https://ghost.org/docs/                                        301!
 /docs/supported-node-versions          https://ghost.org/faq/node-versions/                      301!
-/docs/versioning                       /                                        301!
+/docs/versioning                       https://ghost.org/docs/                                        301!
 /docs/migrating-to-ghost-2-0-0         https://ghost.org/faq/upgrade-to-ghost-2-0/               301!
 /docs/migrating-to-ghost-1-0-0         https://ghost.org/faq/upgrade-to-ghost-1-0/               301!
 /docs/markdown-changes-in-1-0          https://ghost.org/faq/markdown-breaking-changes/          301!
@@ -66,9 +66,9 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /docs/cli-knowledge-base               /api/ghost-cli/knowledgebase/            301!
 /docs/using-a-custom-storage-module    /concepts/storage-adapters/              301!
 /docs/using-a-custom-scheduling-module /concepts/custom-schedulers/             301!
-/docs/using-ghost-as-an-npm-module     /                                        301!
+/docs/using-ghost-as-an-npm-module     https://ghost.org/docs/                                        301!
 /docs/using-ghost-cli-programatically  /api/ghost-cli/                          301!
-/docs/how-does-oauth-work-with-ghost   /                                        301!
+/docs/how-does-oauth-work-with-ghost   https://ghost.org/docs/                                        301!
 /docs/the-importer                     https://ghost.org/faq/the-importer/                       301!
 /docs/contributing                     /concepts/contributing/                  301!
 /docs/code-standards                   /concepts/principles/                    301!
@@ -382,7 +382,7 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /usage/configuration/index.html	                    /concepts/config/                           301!
 /themes	                                            /api/handlebars-themes/                     301!
 /installation/mac	                                /setup/                                     301!
-/search/all	                                        /                                           301!
+/search/all	                                        https://ghost.org/docs/                                           301!
 /installation/upgrading	                            https://ghost.org/faq/self-hosting/                          301!
 /custom-amp-themes                                  https://ghost.org/tutorials/custom-amp-themes/               301!
 
@@ -394,6 +394,7 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 
 
 # Temporary redirects - catch routes
+/                                             https://ghost.org/docs/                         301!
 /faq                                          https://ghost.org/faq/                          301!
 /faq/*                                        https://ghost.org/faq/:splat                    301!
 /tutorials                                    https://ghost.org/tutorials/                    301!
