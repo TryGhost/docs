@@ -32,7 +32,7 @@ const Footer = () => (
             <div className="bt b--whitegrey flex justify-between items-center pt4">
                 <ul className="flex list pa0 ma0 items-center">
                     <li className={listItemClass}><a href="https://ghost.org" className="dib pt2 mr6"><Logo /></a></li>
-                    <li className={`${listItemClass} dn db-l`}><Link to="https://ghost.org/docs/" className={linkClass}>Docs Home</Link></li>
+                    <li className={`${listItemClass} dn db-l`}><a href="https://ghost.org/docs/" className={linkClass}>Docs Home</a></li>
                     <li className={`${listItemClass} dn db-l`}><a href="https://forum.ghost.org" className={linkClass}>Forum</a></li>
                     <li className={`${listItemClass} dn db-l`}><a href="https://status.ghost.org" className={linkClass}>Status</a></li>
                     <li className={`${listItemClass} dn db-l`}><a href="https://twitter.com/tryghost" className={linkClass}>@TryGhost</a></li>

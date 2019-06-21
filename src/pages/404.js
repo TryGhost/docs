@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import { Spirit } from '../styles/spirit-styles'
 import { Layout } from '../components/common/layout'
@@ -12,7 +11,7 @@ const NotFoundPage = () => (
             <h1 className={Spirit.h1}>404</h1>
             <p className={`${Spirit.p} midgrey`}>You just hit a route that doesn&#39;t exist... the sadness.</p>
             <div className="flex mt5">
-                <Link to="https://ghost.org/docs/" className="pa2 dib blue hover-darkgrey link br b--whitegrey">Docs Home</Link>
+                <a href="https://ghost.org/docs/" className="pa2 dib blue hover-darkgrey link br b--whitegrey">Docs Home</a>
                 <a href="https://ghost.org/" className="pa2 dib blue hover-darkgrey link">Ghost.org</a>
             </div>
         </div>
