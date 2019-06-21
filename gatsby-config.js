@@ -66,13 +66,6 @@ const plugins = [
         },
     },
     `gatsby-transformer-yaml`,
-    {
-        resolve: `gatsby-source-ghost`,
-        options: {
-            apiUrl: `${process.env.GHOST_API_URL}`,
-            contentApiKey: `${process.env.GHOST_API_KEY}`,
-        },
-    },
     `gatsby-plugin-catch-links`,
     /**
      *  Utility Plugins
@@ -95,27 +88,6 @@ const plugins = [
         options: {
             query: `
                 {
-                allGhostPost {
-                    edges {
-                        node {
-                            id
-                            slug
-                            published_at
-                            updated_at
-                            created_at
-                            feature_image
-                        }
-                    }
-                },
-                allGhostTag {
-                    edges {
-                        node {
-                            id
-                            slug
-                            feature_image
-                        }
-                    }
-                },
                 allMarkdownRemark{
                     edges {
                         node {
@@ -132,12 +104,6 @@ const plugins = [
                 }
             }`,
             mapping: {
-                allGhostPost: {
-                    sitemap: `pages`,
-                },
-                allGhostTag: {
-                    sitemap: `tags`,
-                },
                 allMarkdownRemark: {
                     sitemap: `pages`,
                 },

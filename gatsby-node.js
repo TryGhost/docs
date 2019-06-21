@@ -3,7 +3,6 @@ const onCreateNode = require(`./gatsby/onCreateNode`)
 
 exports.createPages = ({ graphql, actions }) => Promise.all([
     createPages.createRedirects({ actions }),
-    createPages.createGhostPages({ graphql, actions }),
     createPages.createMarkdownPages({ graphql, actions }),
 ])
 
