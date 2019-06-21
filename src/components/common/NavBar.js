@@ -31,7 +31,7 @@ const NavBar = ({ theme }) => {
                 <a href="https://ghost.org" className="nudge-top--3">
                     <Logo theme={theme} />
                 </a>
-                <Link to="/" className={`${themeClasses[theme].docsTitleClass} gh-nav-logo-suffix relative ma0 ml4 pa0 pl4 f6 lh-1-5 fw4 link nudge-top--1`}>Docs</Link>
+                <Link to="https://ghost.org/docs/" className={`${themeClasses[theme].docsTitleClass} gh-nav-logo-suffix relative ma0 ml4 pa0 pl4 f6 lh-1-5 fw4 link nudge-top--1`}>Docs</Link>
             </div>
             {/* navbar-container wrapper element and bottom padding is needed to hide the horizontal scrollbar on smaller screensizes */}
             <div className="navbar-container">

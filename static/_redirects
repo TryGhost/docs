@@ -394,10 +394,10 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 
 
 # Temporary redirects - catch routes
-/                                             https://ghost.org/docs/                         301!
 /faq                                          https://ghost.org/faq/                          301!
 /faq/*                                        https://ghost.org/faq/:splat                    301!
 /tutorials                                    https://ghost.org/tutorials/                    301!
 /tutorials/*                                  https://ghost.org/tutorials/:splat              301!
 /integrations                                 https://ghost.org/integrations/                 301!
 /integrations/*                               https://ghost.org/integrations/:splat           301!
+/                                             https://ghost.org/docs/                         301!
