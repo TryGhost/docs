@@ -6,6 +6,16 @@ http://tryghost.netlify.com/*       https://docs.ghost.org/:splat               
 https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  301!
 
 
+# Temporary redirects - catch routes
+/faq                                          https://ghost.org/faq/                          301!
+/faq/*                                        https://ghost.org/faq/:splat                    301!
+/tutorials                                    https://ghost.org/tutorials/                    301!
+/tutorials/*                                  https://ghost.org/tutorials/:splat              301!
+/integrations                                 https://ghost.org/integrations/                 301!
+/integrations/*                               https://ghost.org/integrations/:splat           301!
+/                                             https://ghost.org/docs/                         301!
+
+
 # Make edit links work
 /api/*/edit                         https://github.com/tryghost/docs-api/tree/master/:splat.md  302!
 /concepts/*/edit                    https://github.com/TryGhost/docs/tree/master/content/concepts/:splat.md  302!
@@ -393,11 +403,3 @@ https://newdocs.ghost.org/*      https://docs.ghost.org/:splat                  
 /hc/en-us/articles/115000301672-Public-API-Beta     /api/content/                               301!
 
 
-# Temporary redirects - catch routes
-/faq                                          https://ghost.org/faq/                          301!
-/faq/*                                        https://ghost.org/faq/:splat                    301!
-/tutorials                                    https://ghost.org/tutorials/                    301!
-/tutorials/*                                  https://ghost.org/tutorials/:splat              301!
-/integrations                                 https://ghost.org/integrations/                 301!
-/integrations/*                               https://ghost.org/integrations/:splat           301!
-/                                             https://ghost.org/docs/                         301!
