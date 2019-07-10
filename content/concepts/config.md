@@ -475,7 +475,7 @@ When uploading images into the Ghost editor, they are automatically processed an
 Image compression details:
 
 * Resize the image to 2000px max width
-* JPEG's are compressed to 80% quality.
+* JPEG's are compressed to 20% of the original quality. If you upload a 100kb JPEG file it will be compressed to around 20kb
 * Meta data removed
 
 The original image is kept with the suffix `_o`.
