@@ -70,7 +70,7 @@ There are a number of configuration options which are explained in detail in thi
 | Name      | Required?     | Description |
 | --------- | ------------- | ----------- |
 | `url`     | In production | Set the public URL for your blog |
-| `database` | In production | Type of databased used (default: sqlite3) |
+| `database` | In production | Type of database used (default: MySQL) |
 | `mail`    | In production | Add a mail service |
 | `admin`   | Optional      | Set the protocol and hostname for your admin panel |
 | `server`   | Optional | Host and port, or socket for Ghost to listen on |
