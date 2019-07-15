@@ -1,51 +1,48 @@
+/**
+# Gatsby Remark Snippet Plugin
+
+This is a gatsby plugin that describes a remark plugin which in turn uses unified.
+
+Docs:
+
+Gatsby Plugins: https://www.gatsbyjs.org/docs/creating-plugins/
+Gatsby Remark Plugins: https://www.gatsbyjs.org/docs/remark-plugin-tutorial/
+Unified Plugins: https://unified.js.org/create-a-plugin.html#plugin
+
+This Snippet Plugin describes blocks of example code that we want to appear with syntax highlighting.
+Code blocks often have a title, and may have multiple examples for different languages.
+Actual code is stored in files to keep markdown files easy to read.
+
+Usage examples:
+
+[[Snippet]]
+| embed://path/to/file.js | Title | Language Override
+| embed://path/to/file.rb | Title | Language Override
+
+[[Snippet | Title]]
+| embed://path/to/file.js
+ */
+
 const fs = require(`fs`)
 const normalizePath = require(`normalize-path`)
 const visit = require(`unist-util-visit`)
 
 // This map tracks languages that don't match their extension.
-var FILE_EXTENSION_TO_LANGUAGE_MAP = {
+const FILE_EXTENSION_TO_LANGUAGE_MAP = {
     js: `jsx`,
     md: `markup`,
     sh: `bash`,
     rb: `ruby`,
 }
 
-var getLanguage = function getLanguage(file) {
+// Utility Function to figure out what language we want to render
+function getLanguage(file) {
     if (!file.includes(`.`)) {
         return `none`
     }
 
-    var extension = file.split(`.`).pop()
+    const extension = file.split(`.`).pop()
     return FILE_EXTENSION_TO_LANGUAGE_MAP.hasOwnProperty(extension) ? FILE_EXTENSION_TO_LANGUAGE_MAP[extension] : extension.toLowerCase()
-}
-
-module.exports = function (_ref, _temp) {
-    var markdownAST = _ref.markdownAST
-
-    var _ref2 = _temp === void 0 ? {} : _temp,
-        directory = _ref2.directory
-
-    if (!directory) {
-        throw Error(`Required option "directory" not specified`)
-    } else if (!fs.existsSync(directory)) {
-        throw Error(`Invalid directory specified "` + directory + `"`)
-    } else if (!directory.endsWith(`/`)) {
-        directory += `/`
-    }
-
-    visit(markdownAST, `code`, function (node) {
-        if (node.file) {
-            var path = normalizePath(`` + directory + node.file)
-            if (!fs.existsSync(path)) {
-                throw Error(`Invalid snippet specified; no such file "` + path + `"`)
-            }
-
-            node.lang = node.lang || getLanguage(node.file)
-            node.value = fs.readFileSync(path, `utf8`).trim()
-        }
-    })
-
-    return markdownAST
 }
 
 const C_NEWLINE = `\n`
@@ -53,6 +50,12 @@ const C_FENCE = `|`
 const snippetRegex = new RegExp(`\\[\\[Snippet(?: *\\| *(.*))?\\]\\]\n`)
 const embedRegex = new RegExp(`embed://(.*)`)
 
+/**
+ * [[Snippet ]] Parser
+ *
+ * Parsers are made up of tokenizers and compilers.
+ * This code is heavily based upon https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-remark-custom-blocks
+ */
 function snippetTokenizer(eat, value) {
     const now = eat.now()
     const keep = snippetRegex.exec(value)
@@ -79,6 +82,7 @@ function snippetTokenizer(eat, value) {
         const line = lineToEat.slice(lineToEat.startsWith(`${C_FENCE} `) ? 2 : 1)
         linesToEat.push(lineToEat)
 
+        // Parse the embed lines into the AST representation of markdown code blocks
         if (!embedRegex.test(line)) {
             contents.push({ code: line, lang: `text`, type: `code` })
         } else {
@@ -90,10 +94,12 @@ function snippetTokenizer(eat, value) {
         value = value.slice(idx + 1)
     }
 
+    // Parse everything else into AST representation of HTML
     const stringToEat = eaten + linesToEat.join(C_NEWLINE)
     const add = eat(stringToEat)
     const exit = this.enterBlock()
 
+    // CASE:  This is a single snippet with a title div
     if (contents.length === 1) {
         exit()
 
@@ -119,6 +125,7 @@ function snippetTokenizer(eat, value) {
         return
     }
 
+    // CASE: This is a multiple snippet with a language switcher
     const blockChildren = []
 
     contents.forEach((content, i) => {
@@ -193,6 +200,10 @@ function snippetCompiler() {
     }
 }
 
+/**
+ * Plugin that adds [[snippet]] blocks.
+ * It sets up the usage of snippetTokenizer and snippetCompiler
+ */
 function snippetBlockPlugin() {
     const Parser = this.Parser
 
@@ -202,6 +213,7 @@ function snippetBlockPlugin() {
 
     blockTokenizers.snippetBlocks = snippetTokenizer
 
+    // This inserts the snippet parsing just after the fencedCode block parsing
     blockMethods.splice(blockMethods.indexOf(`fencedCode`) + 1, 0, `snippetBlocks`)
 
     const Compiler = this.Compiler
@@ -224,4 +236,54 @@ function snippetBlockPlugin() {
     interruptBlockquote.splice(interruptBlockquote.indexOf(`fencedCode`) + 1, 0, [`snippetBlocks`])
 }
 
+/**
+ * Read Embed from Code Block
+ *
+ * Remark Plugin for reading `code` blocks that have a file property
+ * All file paths are read and the contents injected into the code block
+ */
+function readEmbedFromCodeBlock({ markdownAST }, pluginOptions) {
+    pluginOptions = pluginOptions || {}
+    let directory = pluginOptions.directory
+
+    if (!directory) {
+        throw Error(`Required option "directory" not specified`)
+    } else if (!fs.existsSync(directory)) {
+        throw Error(`Invalid directory specified "` + directory + `"`)
+    } else if (!directory.endsWith(`/`)) {
+        directory += `/`
+    }
+
+    visit(markdownAST, `code`, function (node) {
+        if (node.file) {
+            const path = normalizePath(`` + directory + node.file)
+            if (!fs.existsSync(path)) {
+                throw Error(`Invalid snippet specified; no such file "` + path + `"`)
+            }
+
+            node.lang = node.lang || getLanguage(node.file)
+            node.value = fs.readFileSync(path, `utf8`).trim()
+        }
+    })
+
+    return markdownAST
+}
+
+// --------------
+// ## Quick Overview
+// How this works...
+
+// This sets up a remark plugin which gets called as remark walks its AST.
+// It changes the processing of the existing markdown syntax for code blocks
+// such that if the code block has a file property, the file is opened and the contents are injected into the code block.
+module.exports = readEmbedFromCodeBlock
+
+// This adds a brand new parser plugin - adding the ability for remark to understand blocks that look like
+// [[Snippet]]
+// |
+// As though it's a standard part of markdown :)
+//
+// During the parsing of a [[Snippet]] block, we turn the embeds from being lines starting with |
+// into new code blocks with a "file" property, which are then processed by readEmbedFromCodeBlock.
+// By converting these to natural code blocks, we make this plugin compatible with gatsby-remark-prismjs.
 module.exports.setParserPlugins = options => [[snippetBlockPlugin, options]]
