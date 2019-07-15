@@ -133,7 +133,7 @@ su - <user>
 
 ### Install Node.js
 
-You will need to have a [supported version](/faq/node-versions/) of Node installed system-wide in the manner described below. If you have a different setup, you may encounter problems.
+You will need to have a [supported version](https://ghost.org/faq/node-versions/) of Node installed system-wide in the manner described below. If you have a different setup, you may encounter problems.
 
 ```bash
 # Add the NodeSource APT repository for Node 10
