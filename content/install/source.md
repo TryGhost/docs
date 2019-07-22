@@ -29,7 +29,7 @@ yarn global add knex-migrator grunt-cli ember-cli bower
 
 ## Create GitHub forks
 
-First you'll need to make forks of both the [Ghost](https://github.com/tryghost/ghost) and [Ghost-Admin](https://github.com/tryghost/ghost-admin) repositories. Click on the fork button right at the top, wait for a copy to be created over on your personal GitHub account, and you should be all set!
+First you'll need to make forks of the [Ghost](https://github.com/tryghost/ghost), [Casper](https://github.com/tryghost/casper), and [Ghost-Admin](https://github.com/tryghost/ghost-admin) repositories. Click on the fork button right at the top, wait for a copy to be created over on your personal GitHub account, and you should be all set!
 
 
 ![Fork](/images/setup/fork.gif)
@@ -57,37 +57,49 @@ git clone --recurse-submodules git@github.com:TryGhost/Ghost && cd Ghost
 # Rename origin to upstream
 git remote rename origin upstream
 
-# Add your fork as an origin, editing in <YourUsername>!
+# Add your fork as an origin, editing in <YourUsername>
 git remote add origin git@github.com:<YourUsername>/Ghost.git
+
+# List remote repositories to verify they were properly added
+git remote -v
+```
+
+### Casper
+
+Because Casper is a submodule repository of the main Ghost repository, the same steps need to be repeated to configure git here, too. 
+
+```bash
+# Switch to Casper dir
+cd content/themes/casper
+```
+
+#### Properly rename your references for Casper
+
+```bash
+# Rename origin to upstream
+git remote rename origin upstream
+
+# Add your fork as an origin, editing in <YourUsername>
+git remote add origin git@github.com:<YourUsername>/Casper.git
 ```
 
 ### Ghost Admin
 
-Because Ghost-Admin is a submodule repository of the main Ghost repository, the same steps need to be repeated to configure Git here, too.
+Because Ghost-Admin is also a submodule repository of the main Ghost repository, the same steps need to be repeated to configure Git here, too.
 
 ```bash
 # Switch to Ghost-Admin dir
 cd core/client
 ```
 
-#### Properly rename your references again
+#### Properly rename your references for Ghost-Admin
 
 ```bash
-# Rename origin to upstream again
+# Rename origin to upstream
 git remote rename origin upstream
 
-# Add your fork as an origin, editing in <YourUsername>!
+# Add your fork as an origin, editing in <YourUsername>
 git remote add origin git@github.com:<YourUsername>/Ghost-Admin.git
-```
-
-#### Bring Ghost-Admin up to date
-
-```bash
-# Quick check that everything is on latest
-git checkout master && git pull upstream master
-
-# Then return to Ghost root directory
-cd ../../
 ```
 
 
