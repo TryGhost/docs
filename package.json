@@ -19,5 +19,5 @@
         "oxfmt": "0.72.0",
         "oxlint": "1.87.0"
     },
-    "packageManager": "pnpm@11.28.5+sha512.484563d30b4c2ad27cb48aa94ff2b302dbcebc8ff6bf28816c2589886e146ce7f76f354f3bc1a438e6f5e9768c302aa0a6f7add8232903cd4cf81426cbc14d9e"
+    "packageManager": "pnpm@12.11.0+sha512.29ccb4d41fadc1b389060ca7e05bb30012ca04b1d1502c75bc0930421ea26d8cfb94a674e18c00dc4e81cc0661ab10d30d0259bebd122bcc04cff6a12f682cfb"
 }
