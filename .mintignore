@@ -1,0 +1,2 @@
+# pnpm 12 uses multiple YAML documents; this lockfile is not documentation.
+/pnpm-lock.yaml
