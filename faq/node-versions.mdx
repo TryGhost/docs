@@ -1,16 +1,18 @@
 ---
 title: "Supported Node Versions"
-description: Ghost’s current required Node version is Node v22 LTS.
+description: Ghost’s current required Node version is Node v22 LTS. Node v24 is also supported.
 ---
 
 ***
 
-| Version                      | Support Level   |
-| ---------------------------- | --------------- |
-| 20.x (Node v20 Iron LTS)     | Unsupported     |
-| 21.x                         | Unsupported     |
-| **22.x (Node v22 Jod LTS)**  | **Required**    |
-| 23.x and above               | Unsupported     |
+| Version                      | Support Level              |
+| ---------------------------- | -------------------------- |
+| 20.x (Node v20 Iron LTS)     | Unsupported                |
+| 21.x                         | Unsupported                |
+| **22.x (Node v22 Jod LTS)**  | **Required (default)**     |
+| 23.x                         | Unsupported                |
+| 24.x (Node v24 LTS)          | Supported                  |
+| 25.x and above               | Unsupported                |
 
 We use the recommended version of Node.js in production on Ghost(Pro), which means it’s heavily tested and the Ghost core team actively fixes issues.
 
@@ -36,7 +38,7 @@ curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg 
 2. Create deb repository
 
 ```bash
-NODE_MAJOR=22 # Use a supported version
+NODE_MAJOR=22 # Use a supported version (22 or 24)
 echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 ```
 
@@ -97,4 +99,5 @@ If you want to run Ghost on the latest version of Node, you can, however, we can
 | 2024/04/19 | ≥5.82.3  | ^18.12.1 \|\| ^20.11.1               | Added Node 20                                                                                  |
 | 2025/02/21 | ≥5.110.0 | ^18.12.1 \|\| ^20.11.1 \|\| ^22.13.1 | Added Node 22 and bumped Ghost-CLI to ^1.27.0                                                  |
 | 2025/06/18 | ≥5.126.0 | ^18.18.0 \|\| ^20.11.1 \|\| ^22.13.1 | Bumped Node 18 minimum                                                                         |
-| 2025/08/04 | ≥6.0.0   | ^22.13.1                             | Removed Node 18 and Node 20  |
+| 2025/08/04 | ≥6.0.0   | ^22.13.1                             | Removed Node 18 and Node 20                                                                    |
+| 2026/09/02 | ≥6.63.0  | ^22.23.1 \|\| ^24.20.0               | Added Node.js 24                                                                               |
