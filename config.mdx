@@ -322,6 +322,28 @@ It’s also possible to use [Amazon Simple Email Service](https://aws.amazon.com
 }
 ```
 
+#### Pharos
+
+[Pharos](https://pharos.email/) is a transactional email service with an SMTP relay. Create SMTP credentials for a verified sending domain in the Pharos dashboard, then configure your `config.[env].json` file as follows:
+
+```json
+"mail": {
+    "transport": "SMTP",
+    "options": {
+        "host": "smtp.pharosinfra.net",
+        "port": 587,
+        "secure": false,
+        "requireTLS": true,
+        "auth": {
+            "user": "YOUR-PHAROS-SMTP-USERNAME",
+            "pass": "YOUR-PHAROS-SMTP-PASSWORD"
+        }
+    }
+}
+```
+
+Pharos also accepts STARTTLS on port 2525, which works on DigitalOcean Droplets where 587 is blocked. Pharos sends transactional email only, so newsletters still need Mailgun.
+
 #### Email addresses
 
 **Default email address**
